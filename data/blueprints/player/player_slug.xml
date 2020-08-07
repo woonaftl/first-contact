@@ -43,7 +43,7 @@
     <entry>Slug B starts with Taurus Missiles, mind control and teleporter</entry>
   </changelog>
   <!--TODO remake -->
-  <shipBlueprint name="PLAYER_SHIP_JELLY_2" layout="jelly_cruiser_red" img="jelly_cruiser">
+  <shipBlueprint name="PLAYER_SHIP_JELLY_2" layout="jelly_cruiser_blue" img="jelly_cruiser_blue">
     <class>Slug Cruiser</class>
     <name>?</name>
     <unlock>Complete 2/3 of the Slug Cruiser Achievements to unlock this ship.</unlock>
@@ -77,7 +77,7 @@
     <crewCount amount="3" class="slug"/>
     <shieldImage>jelly_cruiser</shieldImage>
     <cloakImage>jelly_cruiser</cloakImage>
-    <floorImage>jelly_cruiser_red</floorImage>
+    <floorImage>jelly_cruiser_blue</floorImage>
   </shipBlueprint>
 
   <changelog>
