@@ -45,7 +45,6 @@
     <entry>Mantis B starts with Healing Burst</entry>
     <entry>Mantis B starts with Artemis Missiles</entry>
   </changelog>
-  <!--TODO remake -->
   <shipBlueprint name="PLAYER_SHIP_MANTIS_2" layout="mantis_cruiser_brown" img="mantis_cruiser_brown">
     <class>Mantis Cruiser</class>
     <name>?</name>

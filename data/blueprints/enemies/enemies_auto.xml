@@ -20,6 +20,8 @@
     <name>AUTO_FUEL</name>
   </blueprintList>
 
+  <!-- TODO add 1-2 generic ships -->
+
   <shipBlueprintSuper name="AUTO_BASIC" layout="auto_basic" img="auto_basic">
     <class>Auto-Scout</class>
     <systemList>

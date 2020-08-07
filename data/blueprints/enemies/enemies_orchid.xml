@@ -6,6 +6,8 @@
     <name>ORCHID_GUARD</name>
   </blueprintList>
 
+  <!--TODO add 3-4 generic ships-->
+
   <shipBlueprintSuper name="ORCHID_DESTROYER" img="orchid_destroyer" layout="orchid_destroyer">
     <class>Orchid Destroyer</class>
     <systemList>

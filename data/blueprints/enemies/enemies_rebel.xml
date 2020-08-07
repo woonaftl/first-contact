@@ -29,6 +29,8 @@
     <name>REBEL_INTERCEPTOR_PIRATE</name>
   </blueprintList>
 
+  <!--TODO add 4 generic ships-->
+
   <blueprintList name="SHIPS_REBEL_TRANSPORT">
     <name>REBEL_TRANSPORT</name>
   </blueprintList>

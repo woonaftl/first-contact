@@ -13,6 +13,8 @@
     <name>ENGI_PROTECTOR</name>
   </blueprintList>
 
+  <!-- TODO add 2 generic ships -->
+
   <shipBlueprintSuper name="CIRCLE_SCOUT" layout="circle_scout" img="circle_scout">
     <class>Engi Scout</class>
     <systemList>

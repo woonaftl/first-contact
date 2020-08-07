@@ -17,11 +17,13 @@
     <name>MANTIS_INVADER_PIRATE</name>
   </blueprintList>
 
-  <blueprintList name="MANTIS_FIGHTER_LIST">
-    <name>MANTIS_FIGHTER</name> <!--TODO broken -->
+  <!--TODO add 2 generic ships-->
+
+  <blueprintList name="MANTIS_PRIZE_LIST">
+    <name>MANTIS_PRIZE</name>
   </blueprintList>
-  <blueprintList name="MANTIS_BOMBER_LIST">
-    <name>MANTIS_BOMBER</name> <!--TODO broken -->
+  <blueprintList name="MANTIS_TROPHY_LIST">
+    <name>MANTIS_TROPHY</name>
   </blueprintList>
 
   <shipBlueprintSuper name="MANTIS_SCOUT" layout="mantis_scout" img="mantis_scout">
@@ -100,7 +102,7 @@
       <weapon name="WEAPONS_SIMPLE_2"/>
     </weaponList>
     <health amount="9"/>
-    <crewCount amount="3" max="6" class="mantis"/>
+    <crewCount amount="4" max="6" class="mantis"/>
     <boardingAI>sabotage</boardingAI>
     <cloakImage>mantis_fighter</cloakImage>
   </shipBlueprintSuper>
@@ -143,7 +145,7 @@
       <weapon name="WEAPONS_SIMPLE_2"/>
     </weaponList>
     <health amount="11"/>
-    <crewCount amount="5" max="7" class="mantis"/>
+    <crewCount amount="6" max="8" class="mantis"/>
     <boardingAI>sabotage</boardingAI>
     <cloakImage>mantis_bomber</cloakImage>
   </shipBlueprintSuper>
@@ -184,7 +186,7 @@
       <weapon name="WEAPONS_LASER_1"/>
     </weaponList>
     <health amount="10"/>
-    <crewCount amount="3" max="5" class="mantis"/>
+    <crewCount amount="4" max="6" class="mantis"/>
     <boardingAI>sabotage</boardingAI>
     <cloakImage>mantis_hunter</cloakImage>
   </shipBlueprintSuper>
@@ -265,8 +267,135 @@
       <weapon name="WEAPONS_LASER_2"/>
     </weaponList>
     <health amount="11"/>
-    <crewCount amount="5" max="8" class="mantis"/>
+    <crewCount amount="6" max="8" class="mantis"/>
     <boardingAI>sabotage</boardingAI>
     <cloakImage>mantis_invader</cloakImage>
+  </shipBlueprintSuper>
+
+  <shipBlueprintSuper name="MANTIS_PRIZE" layout="mantis_fighter" img="mantis_fighter">
+    <!--TODO sprite-->
+    <class>Mantis Fighter</class>
+    <systemList>
+      <pilot power="1" max="3" room="9"/>
+      <doors power="1" max="3" room="2" start="false"/>
+      <oxygen power="1" max="3" room="5"/>
+      <medbay power="1" max="3" room="8"/>
+      <teleporter power="1" max="3" room="4"/>
+      <shields power="2" max="8" room="0"/>
+      <engines power="1" max="5" room="7"/>
+      <weapons room="3"/>
+    </systemList>
+    <weaponList sector="0" missiles="1" system_power="2">
+      <weapon name="WEAPONS_MISSILES_1"/>
+      <weapon name="WEAPONS_LASER_2"/>
+    </weaponList>
+    <weaponList sector="1" missiles="1" system_power="3">
+      <weapon name="WEAPONS_MISSILES_1"/>
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_SIMPLE_1"/>
+    </weaponList>
+    <weaponList sector="2" missiles="1" system_power="4">
+      <weapon name="WEAPONS_MISSILES_1"/>
+      <weapon name="WEAPONS_LASER_3"/>
+      <weapon name="WEAPONS_SIMPLE_1"/>
+    </weaponList>
+    <weaponList sector="3" missiles="1" system_power="5">
+      <weapon name="WEAPONS_MISSILES_2"/>
+      <weapon name="WEAPONS_LASER_3"/>
+      <weapon name="WEAPONS_SIMPLE_2"/>
+    </weaponList>
+    <weaponList sector="4" missiles="1" system_power="6">
+      <weapon name="WEAPONS_MISSILES_2"/>
+      <weapon name="WEAPONS_LASER_3"/>
+      <weapon name="WEAPONS_SIMPLE_1"/>
+      <weapon name="WEAPONS_SIMPLE_2"/>
+    </weaponList>
+    <weaponList sector="5" missiles="2" system_power="7">
+      <weapon name="WEAPONS_MISSILES_2"/>
+      <weapon name="WEAPONS_LASER_3"/>
+      <weapon name="WEAPONS_SIMPLE_2"/>
+      <weapon name="WEAPONS_SIMPLE_2"/>
+    </weaponList>
+    <weaponList sector="6" missiles="2" system_power="8">
+      <weapon name="WEAPONS_MISSILES_2"/>
+      <weapon name="WEAPONS_LASER_3"/>
+      <weapon name="WEAPONS_SIMPLE_3"/>
+      <weapon name="WEAPONS_SIMPLE_2"/>
+    </weaponList>
+    <weaponList sector="7" missiles="2" system_power="8">
+      <weapon name="WEAPONS_MISSILES_2"/>
+      <weapon name="WEAPONS_LASER_3"/>
+      <weapon name="WEAPONS_SIMPLE_3"/>
+      <weapon name="WEAPONS_SIMPLE_2"/>
+    </weaponList>
+    <health amount="9"/>
+    <crewCount amount="4" max="6" class="mantis"/>
+    <boardingAI>sabotage</boardingAI>
+    <cloakImage>mantis_fighter</cloakImage>
+  </shipBlueprintSuper>
+
+  <shipBlueprintSuper name="MANTIS_TROPHY" layout="mantis_bomber" img="mantis_bomber">
+    <!--TODO sprite-->
+    <class>Mantis Bomber</class>
+    <systemList>
+      <pilot power="1" max="3" room="3"/>
+      <doors power="1" max="3" room="9" start="false"/>
+      <oxygen power="1" max="3" room="11"/>
+      <medbay power="1" max="3" room="8"/>
+      <teleporter power="1" max="3" room="4"/>
+      <shields power="2" max="8" room="0"/>
+      <engines power="1" max="5" room="7"/>
+      <weapons room="10"/>
+    </systemList>
+    <weaponList sector="0" missiles="1" system_power="2">
+      <weapon name="WEAPONS_BOMB"/>
+      <weapon name="WEAPONS_LASER_1"/>
+      <weapon name="WEAPONS_SIMPLE_1"/>
+    </weaponList>
+    <weaponList sector="1" missiles="2" system_power="3">
+      <weapon name="WEAPONS_BOMB"/>
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_SIMPLE_1"/>
+    </weaponList>
+    <weaponList sector="2" missiles="3" system_power="4">
+      <weapon name="WEAPONS_BOMB"/>
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_LASER_1"/>
+      <weapon name="WEAPONS_SIMPLE_1"/>
+    </weaponList>
+    <weaponList sector="3" missiles="3" system_power="5">
+      <weapon name="WEAPONS_BOMB"/>
+      <weapon name="WEAPONS_LASER_3"/>
+      <weapon name="WEAPONS_LASER_1"/>
+      <weapon name="WEAPONS_SIMPLE_1"/>
+    </weaponList>
+    <weaponList sector="4" missiles="3" system_power="6">
+      <weapon name="WEAPONS_BOMB"/>
+      <weapon name="WEAPONS_LASER_3"/>
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_SIMPLE_1"/>
+    </weaponList>
+    <weaponList sector="5" missiles="3" system_power="7">
+      <weapon name="WEAPONS_BOMB"/>
+      <weapon name="WEAPONS_LASER_3"/>
+      <weapon name="WEAPONS_LASER_3"/>
+      <weapon name="WEAPONS_SIMPLE_1"/>
+    </weaponList>
+    <weaponList sector="6" missiles="4" system_power="8">
+      <weapon name="WEAPONS_BOMB"/>
+      <weapon name="WEAPONS_LASER_4"/>
+      <weapon name="WEAPONS_LASER_3"/>
+      <weapon name="WEAPONS_SIMPLE_1"/>
+    </weaponList>
+    <weaponList sector="7" missiles="5" system_power="8">
+      <weapon name="WEAPONS_BOMB"/>
+      <weapon name="WEAPONS_LASER_4"/>
+      <weapon name="WEAPONS_LASER_3"/>
+      <weapon name="WEAPONS_SIMPLE_1"/>
+    </weaponList>
+    <health amount="11"/>
+    <crewCount amount="6" max="8" class="mantis"/>
+    <boardingAI>sabotage</boardingAI>
+    <cloakImage>mantis_bomber</cloakImage>
   </shipBlueprintSuper>
 </FTL>

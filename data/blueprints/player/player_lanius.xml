@@ -47,6 +47,7 @@
     <entry>Lanius B starts without Mind Control or Teleporter</entry>
     <entry>Lanius B starts with a crew of just 2 Lanius</entry>
   </changelog>
+  <!--TODO remake-->
   <shipBlueprint name="PLAYER_SHIP_ANAEROBIC_2" layout="anaerobic_cruiser_black" img="anaerobic_cruiser_2">
     <class>Lanius Cruiser</class>
     <name>?</name>

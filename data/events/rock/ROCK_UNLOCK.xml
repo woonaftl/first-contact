@@ -47,12 +47,12 @@
       </event>
     </choice>
   </event>
-  <ship name="ROCK_UNLOCK1" auto_blueprint="ROCK_ASSAULT_ELITE">
+  <ship name="ROCK_UNLOCK1" auto_blueprint="ROCK_ASSAULT_ELITE_LIST">
     <destroyed load="DESTROYED_DEFAULT"/>
     <deadCrew load="DEAD_CREW_DEFAULT"/>
   </ship>
-  <ship name="ROCK_UNLOCK2" auto_blueprint="ROCK_ASSAULT_ELITE">
-    <escape timer="32" min="28" max="28"> <!-- was 24-->
+  <ship name="ROCK_UNLOCK2" auto_blueprint="ROCK_ASSAULT_ELITE_LIST">
+    <escape timer="32" min="28" max="28">
       <text>The Rock ship starts to power up their FTL drive. If we're going to earn their trust we must endure the heat for as long as they can!</text>
       <ship hostile="true"/>
     </escape>

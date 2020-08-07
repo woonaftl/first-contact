@@ -16,7 +16,7 @@
     <name>FED_FIGHTER_PIRATE</name>
   </blueprintList>
 
-  <!--TODO: add late game ships-->
+  <!--TODO: add 3 generic ships-->
 
   <shipBlueprintSuper name="FED_SCOUT" layout="fed_scout" img="fed_scout">
     <class>Federation Scout</class>
