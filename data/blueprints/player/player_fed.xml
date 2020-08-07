@@ -95,7 +95,8 @@
     <tooltip>Artillery: Launcher that automatically fires 7 missiles.</tooltip>
     <damage>1</damage>
     <missiles>0</missiles>
-    <shots>7</shots>
+    <!--game does not respond when there are more shots than rooms on enemy ship-->
+    <shots>5</shots>
     <sp>5</sp>
     <fireChance>1</fireChance>
     <breachChance>1</breachChance>
@@ -167,6 +168,7 @@
     <entry>Fed C flak artillery projectiles 7 to 15</entry>
     <entry>Fed C flak artillery radius 35 to 75</entry>
     <entry>Fed C shield console moved not to intersect door</entry>
+    <entry>Fed C starting reactor from 7 to 6</entry>
   </changelog>
   <weaponBlueprint name="ARTILLERY_FED_C">
     <type>BURST</type>
@@ -243,7 +245,7 @@
     </weaponList>
     <droneList drones="0"/>
     <health amount="30"/>
-    <maxPower amount="7"/>
+    <maxPower amount="6"/>
     <crewCount amount="2" class="energy"/>
     <crewCount amount="1" class="human"/>
     <crewCount amount="1" class="mantis"/>

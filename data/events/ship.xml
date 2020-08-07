@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<FTL><ship name="CIVILIAN_SHIP" auto_blueprint="SHIPS_CIVILIAN">
+<FTL>
+  <ship name="CIVILIAN_SHIP" auto_blueprint="SHIPS_CIVILIAN">
     <destroyed load="DESTROYED_DEFAULT"/>
     <deadCrew load="DEAD_CREW_DEFAULT"/>
   </ship>

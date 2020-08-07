@@ -485,4 +485,20 @@
     <value>75</value>
     <stackable>false</stackable>
   </augBlueprint>
+
+  <!--
+  couldn't get it to work even in one event...
+
+  <changelog>
+    <entry>New Missile Recycler augmentation (additional 2 missiles for each defeated ship)</entry>
+  </changelog>
+  <augBlueprint name="MISSILE_RECYCLER">
+    <title>Missile Recycler</title>
+    <desc>Additional 2 missiles for each destroyed or captured ship.</desc>
+    <cost>30</cost>
+    <bp>4</bp>
+    <rarity>1</rarity>
+    <stackable>false</stackable>
+  </augBlueprint>
+  -->
 </FTL>

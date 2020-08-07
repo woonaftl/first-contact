@@ -2,6 +2,7 @@
 <xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
   <!--TODO complete schema, make more strict-->
+  <!--TODO check that the event does not call itself, it causes a crash-->
 
   <xs:element name="FTL">
     <xs:complexType>

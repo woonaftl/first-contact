@@ -24,7 +24,7 @@
       <mind power="1" room="9" start="false" img="room_mind_7"/>
       <oxygen power="1" room="12" start="true" img="room_oxygen_7"/>
       <pilot power="1" room="14" start="true" img="room_pilot_4"/>
-      <sensors power="1" room="13" start="true" img="room_sensors_4"/>
+      <sensors power="1" room="13" start="true" img="room_sensors_5"/>
       <shields power="1" room="5" start="true" img="room_shields_18"/>
       <teleporter power="1" room="11" start="false"/>
       <weapons power="4" room="6" start="true" img="room_weapons_11"/>
@@ -50,7 +50,7 @@
     <entry>New Zoltan B ship with weak reactor, Halberd Beam and Ion Bomb</entry>
   </changelog>
   <!--TODO remake-->
-  <shipBlueprint name="PLAYER_SHIP_ENERGY_2" layout="energy_cruiser_black" img="energy_cruiser_3">
+  <shipBlueprint name="PLAYER_SHIP_ENERGY_2" layout="energy_cruiser_black" img="energy_cruiser_black">
     <class>Zoltan Cruiser</class>
     <name>?</name>
     <unlock>Complete 2/3 of the Zoltan Cruiser Achievements to unlock this ship.</unlock>
@@ -92,7 +92,7 @@
     <entry>New Zoltan C ship roughly based on old Stealth C ship</entry>
   </changelog>
   <!--TODO remake -->
-  <shipBlueprint name="PLAYER_SHIP_ENERGY_3" layout="energy_cruiser_white" img="energy_cruiser_2">
+  <shipBlueprint name="PLAYER_SHIP_ENERGY_3" layout="energy_cruiser_white" img="energy_cruiser_white">
     <class>Zoltan Cruiser</class>
     <name>?</name>
     <unlock>Get to Sector 8 with the Zoltan Cruiser Type B and Advanced Mode enabled to unlock this ship.</unlock>

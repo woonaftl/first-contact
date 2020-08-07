@@ -894,7 +894,7 @@
             <event>
               <text>You install the augmentation. One after another shield layers that protected your ship dissipate. The Zoltan ship prepares to attack you. It turns out that the ship is controlled by Slugs. With shields offline, it is going to be a tough battle.</text>
               <ship hostile="true"/>
-              <status amount="2" system="shields" target="player" type="divide"/>
+              <status amount="0" system="shields" target="player" type="limit"/>
             </event>
           </eventList>
         </choice>

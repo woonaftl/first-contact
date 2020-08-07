@@ -11,7 +11,6 @@
     <event load="NEBULA_ROCK_RACIST"/>
     <event load="NEBULA_WEAPONS_TRADER"/>
     <event load="STORM_ITEMS"/>
-    <event load="STORM_REBEL"/>
     <event load="WOONA_DEAL_DEVIL"/>
     <event load="WOONA_STORM_MONSTER"/>
     <event load="WOONA_NEBULA_STARVING_MANTIS"/>
@@ -553,11 +552,11 @@
     </choice>
     <choice hidden="true" req="slug">
       <text>(Slug) Detect life signatures.</text>
-      <event load="WOONA_STORM_MONSTER"/>
+      <event load="WOONA_STORM_MONSTER_DETECTED"/>
     </choice>
     <choice hidden="true" req="LIFE_SCANNER">
       <text>(Lifeform Scanner) Detect life signatures.</text>
-      <event load="WOONA_STORM_MONSTER"/>
+      <event load="WOONA_STORM_MONSTER_DETECTED"/>
     </choice>
   </event>
   <event name="WOONA_STORM_MONSTER_DETECTED">
