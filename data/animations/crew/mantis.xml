@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <animSheet name="mantis" w="350" h="490" fw="35" fh="35">people/mantis_base.png</animSheet>
+
+
+  <anim name="mantis_clone">
+    <sheet>mantis</sheet>
+    <desc length="6" x="0" y="2"/>
+    <time>0.7</time>
+  </anim>
+
+  <anim name="mantis_death_left">
+    <sheet>mantis</sheet>
+    <desc length="7" x="0" y="1"/>
+    <time>0.7</time>
+  </anim>
+  <anim name="mantis_death_right">
+    <sheet>mantis</sheet>
+    <desc length="7" x="0" y="1"/>
+    <time>0.7</time>
+  </anim>
+
+  <anim name="mantis_walk_down">
+    <sheet>mantis</sheet>
+    <desc length="5" x="0" y="13"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="mantis_walk_right">
+    <sheet>mantis</sheet>
+    <desc length="5" x="5" y="13"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="mantis_walk_up">
+    <sheet>mantis</sheet>
+    <desc length="5" x="0" y="12"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="mantis_walk_left">
+    <sheet>mantis</sheet>
+    <desc length="5" x="5" y="12"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="mantis_shoot_down">
+    <sheet>mantis</sheet>
+    <desc length="4" x="0" y="11"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="mantis_shoot_right">
+    <sheet>mantis</sheet>
+    <desc length="4" x="4" y="11"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="mantis_shoot_up">
+    <sheet>mantis</sheet>
+    <desc length="4" x="2" y="0"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="mantis_shoot_left">
+    <sheet>mantis</sheet>
+    <desc length="4" x="6" y="0"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="mantis_fire_down">
+    <sheet>mantis</sheet>
+    <desc length="4" x="0" y="10"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="mantis_fire_right">
+    <sheet>mantis</sheet>
+    <desc length="4" x="4" y="10"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="mantis_fire_up">
+    <sheet>mantis</sheet>
+    <desc length="4" x="0" y="9"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="mantis_fire_left">
+    <sheet>mantis</sheet>
+    <desc length="4" x="4" y="9"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="mantis_repair">
+    <sheet>mantis</sheet>
+    <desc length="9" x="0" y="8"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="mantis_punch_up">
+    <sheet>mantis</sheet>
+    <desc length="10" x="0" y="7"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="mantis_punch_down">
+    <sheet>mantis</sheet>
+    <desc length="10" x="0" y="6"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="mantis_teleport">
+    <sheet>mantis</sheet>
+    <desc length="9" x="0" y="3"/>
+    <time>0.5</time>
+  </anim>
+
+
+  <anim name="mantis_type_right">
+    <sheet>mantis</sheet>
+    <desc length="4" x="0" y="5"/>
+    <time>1</time>
+  </anim>
+  <anim name="mantis_type_left">
+    <sheet>mantis</sheet>
+    <desc length="4" x="4" y="5"/>
+    <time>1</time>
+  </anim>
+  <anim name="mantis_type_up">
+    <sheet>mantis</sheet>
+    <desc length="4" x="0" y="4"/>
+    <time>1</time>
+  </anim>
+  <anim name="mantis_type_down">
+    <sheet>mantis</sheet>
+    <desc length="4" x="4" y="4"/>
+    <time>1</time>
+  </anim>
+
+
+  <anim name="mantis_portrait">
+    <sheet>mantis</sheet>
+    <desc length="1" x="0" y="0"/>
+    <time>1</time>
+  </anim>
+</FTL>

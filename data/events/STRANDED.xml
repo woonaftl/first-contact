@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <changelog>
+    <entry>Added Save the moon from collision with asteriod event</entry>
+  </changelog>
+  <event name="STRANDED_BEACON" unique="true">
+    <text>It appears the distress beacon is coming from the surface of a nearby moon. Your sensors are picking up a single life form.</text>
+    <distressBeacon/>
+    <choice hidden="true">
+      <text>Go down to the surface to investigate.</text>
+      <eventList name="STRANDED">
+        <event>
+          <text>You find a colony that seems to have been recently attacked. Exploring the devastation, you find a lone survivor.</text>
+          <choice hidden="true">
+            <text>Invite him to join your crew.</text>
+            <eventList name="STRANDED_CHARLIES">
+              <event>
+                <text>He states that he was a weapons operator before being stranded. He happily offers his services for a time in exchange for "getting off that rock".</text>
+                <crewMember weapons="1" amount="1">Charlie</crewMember>
+              </event>
+              <event>
+                <text>He states that he was a shield operator before being stranded. He happily offers his services for a time in exchange for "getting off that rock".</text>
+                <crewMember shields="1" amount="1">Charlie</crewMember>
+              </event>
+              <event>
+                <text>He states that he was a pilot before being stranded. He happily offers his services for a time in exchange for "getting off that rock".</text>
+                <crewMember pilot="1" amount="1">Charlie</crewMember>
+              </event>
+              <event>
+                <text>He states that he was an engineer before being stranded. He happily offers his services for a time in exchange for "getting off that rock".</text>
+                <crewMember engines="1" amount="1">Charlie</crewMember>
+              </event>
+              <event>
+                <text>He states that he was an infantryman before being stranded. He happily offers his services for a time in exchange for "getting off that rock".</text>
+                <crewMember combat="1" amount="1">Charlie</crewMember>
+              </event>
+              <event>
+                <text>He states that he was a shipwright before being stranded. He happily offers his services for a time in exchange for "getting off that rock".</text>
+                <crewMember repair="1" amount="1">Charlie</crewMember>
+              </event>
+            </eventList>
+          </choice>
+          <choice hidden="true">
+            <text>Take him home to his family on a nearby planet in this system.</text>
+            <eventList name="FAMILY_RETURN">
+              <event>
+                <text>The family apparently owns one of the most valuable mining enterprises in the sector. For the safe return of his son, the patron of the family offers you a substantial reward.</text>
+                <autoReward level="HIGH">scrap_only</autoReward>
+              </event>
+              <event>
+                <text>The survivor's family is of modest means, yet they manage to offer you a reward for your virtuous deed.</text>
+                <autoReward level="MED">scrap_only</autoReward>
+              </event>
+              <event>
+                <text>Overjoyed with the return of their son, the family of the survivor arranges to repair your ship's hull as compensation.</text>
+                <damage amount="-10"/>
+              </event>
+            </eventList>
+          </choice>
+        </event>
+        <event>
+          <text>You find a man living alone in a cave. From the appearance of his wrecked ship, it seems he's been here for many years. He looks healthy, but his mental state is questionable.</text>
+          <choice hidden="true">
+            <text>Bring him back to your ship in hopes of finding some help for him.</text>
+            <eventList name="MADMAN">
+              <event>
+                <text>Once back in orbit, the man turns increasingly violent. Eventually he turns on your crew and manages to kill one before you can subdue him.</text>
+                <removeCrew>
+                  <clone>true</clone>
+                  <text>Luckily, your clone bay is able to revive your crewmember.</text>
+                </removeCrew>
+              </event>
+              <event>
+                <text>He seems to improve immensely upon getting back to the ship. It might take a while for him to truly be well again, but until then he seems happy to serve as a member of your crew.</text>
+                <crewMember amount="1">Charlie</crewMember>
+              </event>
+              <event>
+                <text>Being back in space terrifies him. He goes mad and nearly blows a hole in the side of your ship with a makeshift explosive in an attempt to "escape this metal prison." He dies in the explosion.</text>
+                <damage amount="4"/>
+                <damage amount="1" system="random"/>
+              </event>
+              <event>
+                <text>It seems he was in worse health than we first thought. He collapses on the trip up to the ship. It doesn't look like he's going to make it...</text>
+                <choice>
+                  <text id="continue"/>
+                  <event/>
+                </choice>
+                <choice req="medbay" lvl="2" hidden="true">
+                  <text>(Improved Medbay) Quickly bring him to the medbay.</text>
+                  <event>
+                    <text>Your improved medbay was able to resuscitate him. After a short time he recovers greatly saying, "I really thought I was a goner... I haven't eaten for days. Would you mind if I stayed on your ship?"</text>
+                    <crewMember amount="1">Charlie</crewMember>
+                  </event>
+                </choice>
+                <choice req="clonebay" lvl="2" hidden="true">
+                  <text>(Improved Clonebay) Quickly register him into the clonebay.</text>
+                  <event>
+                    <text>Your quick reaction allowed your Clonebay to revive him after he passes. After he steps out of the machine he states, "How am I alive? Wasn't I just dying on some shuttle? Technology sure has changed."</text>
+                    <crewMember amount="1">Charlie</crewMember>
+                  </event>
+                </choice>
+              </event>
+            </eventList>
+          </choice>
+          <choice>
+            <text>Leave the madman to his ravings, he's not worth the risk.</text>
+            <event/>
+          </choice>
+          <choice req="medbay" lvl="2" hidden="true" max_group="0">
+            <text>(Improved Medbay) Bring him to your medbay.</text>
+            <event>
+              <text>Once inside your medbay, the system is able to restore his body and undo some of the damage to his brain. Once awake he states, "I feel almost like my old self again... Thank you. Please let me serve on your ship."</text>
+              <crewMember amount="1">Charlie</crewMember>
+            </event>
+          </choice>
+          <choice req="medbay" lvl="3" hidden="true" max_group="0">
+            <text>(Advanced Medbay) Bring him to your medbay.</text>
+            <event>
+              <text>Once inside your advanced medbay, the system is able to identify and minimize the trauma associated with being alone for so long. Once awake he states, "I don't know how to repay you, I feel 10 years younger... Let me serve on your ship."</text>
+              <crewMember amount="1" all_skills="1">Charlie</crewMember>
+            </event>
+          </choice>
+          <choice req="slug" hidden="true">
+            <text>(Slug Crew) "Sir, allow me to assess his mental state."</text>
+            <eventList name="MADMAN_SLUG">
+              <event>
+                <text>You bring the ship closer. The Slug enters a trance-like state for 1 to 2 seconds, then quickly snaps out of it. He states, "This person is clearly unstable. It is best we leave them alone."</text>
+              </event>
+              <event>
+                <text>You bring the ship closer and the Slug, after a pause, says that the person is stable and with good intentions. You offer a position in your crew and it is graciously accepted.</text>
+                <choice hidden="true">
+                  <text>Offer him a position in your crew.</text>
+                  <event load="STRANDED_CHARLIES"/>
+                </choice>
+              </event>
+            </eventList>
+          </choice>
+        </event>
+        <event load="WOONA_STRANDED_ASTEROID_COLLISION"/>
+      </eventList>
+    </choice>
+    <choice>
+      <text>Ignore the signal.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <event name="WOONA_STRANDED_ASTEROID_COLLISION">
+    <text>As you prepare to land on the surface of the moon, your sensors detect a giant asteroid flying in the direction of the moon. According to onboard terminal, you have 2 hours 7 minutes before the collision.</text>
+    <choice hidden="true">
+      <text>Deal with the asteroid first.</text>
+      <event>
+        <text>You guide your ship towards the asteroid. A closer inspection shows its crust consists primarily of silicate minerals and its diameter is approximately 50 kilometers. Conventional weapons like lasers or missiles will hardly help here.</text>
+        <choice hidden="true">
+          <text>There is nothing we can do. But there is still some time to explore the moon.</text>
+          <event load="WOONA_STRANDED_ASTEROID_COLLISION_MOON"/>
+        </choice>
+        <choice hidden="true" req="ROCK_ARMOR">
+          <text>(Rock Plating) Ram the asteroid multiple times, diverting it from the moon.</text>
+          <event>
+            <text>You ram the asteroid again and again with engines at full thrust. The enhanced hull plating ensures the ship leaves the fight with an asteroid unscathed.</text>
+            <choice>
+              <text>Finally land on a moon's surface and investigate a distress signal.</text>
+              <event load="WOONA_STRANDED_ASTEROID_COLLISION_MOON_SAVED"/>
+            </choice>
+          </event>
+        </choice>
+        <choice hidden="true" req="rock">
+          <text>(Rock) Your crewmember claims to know this "rock".</text>
+          <event>
+            <text>The Rock crewmember leaves the ship in a shuttle, landing on an asteroid. Rock drums some kind of code with their limbs on asteroid surface and the asteroid changes its course immediately aiming for the lifeless planet instead.</text>
+            <choice>
+              <text>Finally land on a moon's surface and investigate a distress signal.</text>
+              <event load="WOONA_STRANDED_ASTEROID_COLLISION_MOON_SAVED"/>
+            </choice>
+          </event>
+        </choice>
+        <choice hidden="true" req="WEAPONS_BEAM_DAMAGE">
+          <text>(Beam) Cut the asteroid into pieces and divert them from the moon one by one.</text>
+          <event>
+            <text>The onboard computer calculated an optimal plan how to split the asteroid drawing it away from the moon's surface in minimal time. Several pieces will land on a nearby planet tonight. Others will continue their journey through space.</text>
+            <choice>
+              <text>Finally land on a moon's surface and investigate a distress signal.</text>
+              <event load="WOONA_STRANDED_ASTEROID_COLLISION_MOON_SAVED"/>
+            </choice>
+          </event>
+        </choice>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Land on the moon surface anyway.</text>
+      <event load="WOONA_STRANDED_ASTEROID_COLLISION_MOON"/>
+    </choice>
+  </event>
+  <event name="WOONA_STRANDED_ASTEROID_COLLISION_MOON">
+    <text>A lone Slug is waiting for you submerged in a bathtub full of unknown liquid. "Ah, hello, sssspace travelers. Have you brought the sssupplies that I requesssted? I need ssome alien sssunscreen and the newessst issue of "Sssmug Slug" magazine."</text>
+    <choice hidden="true">
+      <text>This moon is doomed! An asteroid is going to collide with it in an hour! You have to leave immediately!</text>
+      <event>
+        <text>The Slug is unimpressed. "Thisss moon is a gold mine and it's mine. I am not leaving it for anyone. An assssteroid? You could have thought of sssomething sssmarter. Now leave me alone."</text>
+        <choice>
+          <text>There is not enough time to convince the Slug. Leave.</text>
+          <event/>
+        </choice>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Shoot the Slug and take everything he has.</text>
+      <event>
+        <text>It seems that the Slugs are quite careful and hide their belongings well. You explore their dwelling but cannot find anything useful. Time to leave.</text>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Share supplies with a Slug, hoping to get a reward.</text>
+      <event>
+        <text>The Slug offers some FTL fuel as a payment and starts going through the latest issue of the magazine without paying you any attention. Time to leave.</text>
+        <choice>
+          <text id="continue"/>
+          <event>
+            <item_modify>
+              <item max="2" min="2" type="fuel"/>
+            </item_modify>
+          </event>
+        </choice>
+      </event>
+    </choice>
+  </event>
+  <event name="WOONA_STRANDED_ASTEROID_COLLISION_MOON_SAVED">
+    <text>A lone Slug is waiting for you submerged in a bathtub full of unknown liquid. "Ah, hello, sssspace travelers. Have you brought the sssupplies that I requesssted? I need ssome alien sssunscreen and the newessst issue of "Sssmug Slug" magazine."</text>
+    <choice hidden="true">
+      <text>Shoot the Slug and take everything he has.</text>
+      <event>
+        <text>It seems that the Slugs are quite careful and hide their belongings well. You explore their dwelling but cannot find anything useful. Time to leave.</text>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Share supplies with a Slug, hoping to get a reward.</text>
+      <event>
+        <text>The Slug offers some FTL fuel as a payment and starts going through the latest issue of the magazine without paying you any attention. Time to leave.</text>
+        <choice>
+          <text id="continue"/>
+          <event>
+            <item_modify>
+              <item max="2" min="2" type="fuel"/>
+            </item_modify>
+          </event>
+        </choice>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Claim to have saved the Slug from an asteroid.</text>
+      <eventList>
+        <event>
+          <text>At first the Slug did not believe you, but after seeing trajectory data and a recording of your encounter with an asteroid he thanks you. "I am grateful. I haven't met sssuch capable courierssss before. Allow me to reward you." The Slug leaves and returns with some scrap and an augmentation.</text>
+          <choice>
+            <text id="continue"/>
+            <event>
+              <autoReward level="MEDIUM">scrap_only</autoReward>
+              <augment name="SLUG_GEL"/>
+            </event>
+          </choice>
+        </event>
+        <event>
+          <text>The Slug is not impressed: "Ssssaved? I have never heard anything ssso preposterousss and untrue! I am the Ssslug Overlord and I do not need to be sssaved by the likes of you. Go away, before you would need to sssaved yourself."</text>
+        </event>
+      </eventList>
+    </choice>
+  </event>
+</FTL>

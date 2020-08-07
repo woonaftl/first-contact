@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <event name="START_BEACON_ORCHID">
+    <text>On your way to escape the Rebel fleet, you jump into the Orchid sector. Even though they're named by humans after Earth plants, they have little in common with them.</text>
+  </event>
+
+  <event name="STORE_ORCHID" unique="false">
+    <textList>
+      <text>This beacon is an Orchid trade hub. Even though most of their equipment is made of plant matter, Orchids find some use for scrap metal as well, and are willing to trade it.</text>
+      <text>A giant Orchid trade station with military escort is located at the beacon. As you dock and enter the station, you can't help but notice how calm and silent it is inside.</text>
+      <text>A lone trading Orchid vessel awaits you at the beacon. Its crew sends you a simple message: "Military goods available for sale."</text>
+      <text>You stumble upon an Orchid trading station dealing with common goods made from organic materials originating from Orchid home planet. Learning that you represent Federation, Orchids agree to sell some military goods as well.</text>
+    </textList>
+    <store/>
+  </event>
+
+  <ship name="ORCHID_SHIP" auto_blueprint="SHIPS_ORCHID">
+    <surrender chance="0.3" min="3" max="5" load="ORCHID_SURRENDER"/>
+    <escape chance="0.5" min="4" max="6" load="PIRATE_ESCAPE"/>
+    <destroyed load="DESTROYED_DEFAULT"/>
+    <deadCrew load="DEAD_CREW_DEFAULT"/>
+  </ship>
+
+  <event name="ORCHID_SURRENDER">
+    <textList>
+      <text>The Orchid ship turns all weapons offline hoping that you will do the same.</text>
+      <text>The Orchid ship is nearly destroyed. Its crew is sending you pictures symbolizing peace, and valuable cargo, probably asking to surrender.</text>
+    </textList>
+    <choice>
+      <text>Accept their offer.</text>
+      <event>
+        <ship hostile="false"/>
+        <autoReward level="RANDOM">stuff</autoReward>
+      </event>
+    </choice>
+    <choice>
+      <text>We will not accept surrender!</text>
+      <event/>
+    </choice>
+  </event>
+</FTL>

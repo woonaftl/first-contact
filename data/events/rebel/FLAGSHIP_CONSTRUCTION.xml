@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <event name="FLAGSHIP_CONSTRUCTION" unique="true">
+    <text>You arrive at the beacon to find yourself in a huge Rebel shipyard, scaffolding and construction drones filling the sector! The entire system looks devoted to ship construction, the nearby planets and moons ruthlessly mined to harvest resources for a ship of immense size...</text>
+    <choice>
+      <text>Look around.</text>
+      <event>
+        <text>Warning lights flash as scans identify the gigantic ship under construction - it's a second Rebel Flagship! This must be the secret shipyards where the first one was built, and you've accidentally stumbled across it! Even in its weakened state, the Rebel ship powers up... get ready, you've got a hell of a fight on your hands.</text>
+        <ship load="FLASHSHIP_CONSTRUCTION_SHIP" hostile="true"/>
+      </event>
+    </choice>
+    <choice>
+      <text>Leave immediately.</text>
+      <event>
+        <text>You feel the mission is the highest priority and it's too risky to stay in such a dangerous location.</text>
+      </event>
+    </choice>
+  </event>
+  <event name="FLAGSHIP_CONSTRUCTION_DONE">
+    <text>While the second flagship was not yet finished, it doesn't make the battle any less of a victory... and you've crippled the Rebel fleet's strength considerably! While you don't overstay your welcome, you quickly salvage choice bits of metal, drones, and even an unusual object or two from the wreckage and prepare to jump!</text>
+    <autoReward level="HIGH">weapon</autoReward>
+    <item_modify>
+      <item type="fuel" min="2" max="4"/>
+      <item type="missiles" min="4" max="6"/>
+      <item type="drones" min="1" max="2"/>
+    </item_modify>
+    <modifyPursuit amount="-2"/>
+    <choice hidden="true">
+      <text id="continue"/>
+      <event>
+        <text>As you are leaving you detect an interesting Federation ship signal. Apparently the Rebels were reverse engineering the advanced weaponry on a prototype Federation cruiser. You don't know how they captured the ship intact but you program its FTL drive to return the ship to the nearest Federation base. You just hope it gets there unharmed.</text>
+        <unlockShip id="4">The Federation Cruiser has been unlocked and added to the hangar!</unlockShip>
+      </event>
+    </choice>
+  </event>
+  <ship name="FLASHSHIP_CONSTRUCTION_SHIP" auto_blueprint="BOSS_SPECIAL">
+    <destroyed load="FLAGSHIP_CONSTRUCTION_DONE"/>
+    <deadCrew>
+      <text>You detect no more lifesigns on the incomplete Flagship. You'd expect a ship of that size to have more security measures, but perhaps their computer systems aren't complete yet.</text>
+      <choice hidden="true">
+        <text>Pillage the ship for supplies.</text>
+        <event load="FLAGSHIP_CONSTRUCTION_DONE"/>
+      </choice>
+    </deadCrew>
+  </ship>
+</FTL>

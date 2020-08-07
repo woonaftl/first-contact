@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="HOSTILE_ENGI">
+    <event load="ENGI_MANTIS_FIGHT"/>
+    <event load="ENGI_REBEL_FIGHT"/>
+    <event load="ENGI_PIRATE_FIGHT"/>
+
+    <event load="PIRATE"/>
+    <event load="PIRATE_CHOICE"/>
+    <event load="REBEL"/>
+    <event load="SQUAT_WARNING"/>
+    <event load="PIRATE_NO_ESCAPE"/>
+  </eventList>
+
+  <eventList name="HOSTILE_HAZARD_ENGI">
+    <event load="PIRATE_ASTEROID"/>
+    <event load="PIRATE_SUN"/>
+    <event load="PIRATE_PULSAR"/>
+  </eventList>
+
+  <event name="ENGI_MANTIS_FIGHT">
+    <textList name="ENGI_MANTIS_FIGHT">
+      <text>A mixed radar signal turns out to be a Mantis attack ship scavenging the remains of an Engi carrier. They turn and fight.</text>
+      <text>You come across a Mantis raider taking pot shots at a defenceless Engi supply station. Discovering its weapons aren't much of a match for the station's armour, it turns on your ship. Battle stations!</text>
+      <text>The area looks clear, and you prepare to jump off, but a Mantis scout jumps in behind you! They're as surprised as you are, but their weapons are already online.</text>
+      <text>You find a Mantis ship harrying a small squad of Engi. They make it to the node and jump off, leaving you toe to toe with their pursuer!</text>
+    </textList>
+    <ship load="MANTIS_FIGHT" hostile="true"/>
+  </event>
+
+  <event name="ENGI_REBEL_FIGHT">
+    <text>The rebel fighter here would seem to suggest elements of the rebel fleet are already making incursions on Engi space. You move to engage.</text>
+    <ship load="REBEL" hostile="true"/>
+  </event>
+
+  <event name="ENGI_PIRATE_FIGHT">
+    <text>There must have been rich pickings for pirates around here up until war broke out. The pirate you encounter here looks worn down, but hungry. You'll have to fight!</text>
+    <ship load="PIRATE" hostile="true"/>
+  </event>
+</FTL>

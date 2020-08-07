@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <event name="START_BEACON_ENGI">
+    <textList name="START_BEACON_ENGI">
+      <text>You have arrived in Engi space. The Mantis have been threatening the Engi core worlds, but you should be able to stock up for your journey.</text>
+      <text>You have arrived in Engi space. The fall of the Federation has brought tough times for these robotic lifeforms, but they're usually willing to help.</text>
+    </textList>
+  </event>
+
+  <event name="STORE_ENGI">
+    <textList name="STORE_ENGI">
+      <text>The Engi can do remarkable things with just a pile of scrap. The Engi hive at this beacon are selling equipment for just that.</text>
+      <text>A message arrives: "Your scrap, ours. Our weapons for you." You're about to raise the shields when you realize it's just an Engi trader looking for a trade.</text>
+      <text>An Engi ship hails: "Engine upgrade necessary for travel home. Sale of equipment necessary for engine upgrade."</text>
+    </textList>
+    <store/>
+  </event>
+
+  <event name="NOTHING_ENGI">
+    <textList name="NOTHING_ENGI">
+      <text>The complex arrangements of ship hulls and FTL drive capacitors floating abandoned in space suggest the Engi were here not too long ago; but no longer.</text>
+      <text>Even though each "individual" Engi is made up of trillions of nano-machines, their culture still revolves around traditional social interactions. A nearby station seems to be constructed for entertainment of passing Engi travellers.</text>
+      <text>You see a number of Engi space stations and fleets nearby. Despite looking like piles of junk loosely tied together they are actually a model of efficiency. They just lack a certain aesthetic emphasis in their constructions.</text>
+      <text>This system appears quite peaceful. You're not sure how long it'll last between the combined threats of the Rebels and Mantis.</text>
+      <text>There are a number of merchant ships passing through the area despite the threat of Mantis invasion. No doubt interested in buying the efficient technology of the Engi.</text>
+      <text>You see a small Rebel carrier in the distance. You lay low and try to blend in with the other traffic. However it's surprising to see a Rebel military ship alone deep in Engi space.</text>
+      <text>The Engi seem to have avoided this particular node, along with every other life-form. You keep your eyes peeled for reasons why, but spin up the FTL without event.</text>
+      <text>A cluster of Engi satellites in orbit of a nearby planet are the only clue the mechanical species was ever here. You have other places to be.</text>
+    </textList>
+  </event>
+
+    <ship name="ENGI_SHIP" auto_blueprint="SHIPS_CIRCLE">
+    <destroyed load="DESTROYED_DEFAULT"/>
+    <deadCrew load="DEAD_CREW_DEFAULT"/>
+  </ship>
+
+  <ship name="ENGI_MANTIS_CONTROLLED" auto_blueprint="SHIPS_CIRCLE">
+    <destroyed load="DESTROYED_DEFAULT"/>
+    <deadCrew load="DEAD_CREW_DEFAULT"/>
+    <crew>
+      <crewMember type="mantis" prop="1"/>
+    </crew>
+  </ship>
+</FTL>

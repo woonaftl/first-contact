@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="QUESTS_ROCK">
+    <event load="ROCK_QUEST_MARRIAGE_START"/>
+
+    <event load="QUEST_ESCORT"/>
+    <event load="FEDERATION_PLANET_SIGNAL"/>
+    <event load="MERCENARY_WORK_START"/>
+    <event load="QUEST_CREWDEAD_START"/>
+  </eventList>
+
+  <event name="ROCK_QUEST_MARRIAGE_START" unique="true">
+    <text>A Rock captain hails you: "It is improper of me to contact off-worlders, but this is an emergency. We were on our way to deliver our passenger to her new husband - the Grand Basilisk of Numa V - when our engines broke down. Will you take possession of her and make haste to Numa V?"</text>
+    <choice hidden="true">
+      <text>Accept the passenger.</text>
+      <event>
+        <text>"You surprise me, off-worlder. Thank you. The passenger will be with you momentarily." She refuses to enter the main hold and prefers to wait in the cargo bay.</text>
+        <quest event="ROCK_QUEST_MARRIAGE"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Refuse.</text>
+      <event>
+        <text>Arranged marriages aren't on your list of worthy causes. You leave the Rock to their business.</text>
+      </event>
+    </choice>
+  </event>
+  <event name="ROCK_QUEST_MARRIAGE">
+    <text>A vast tunnel network near the surface of Numa V indicates an advanced Rock civilization. This must be where you were asked to deliver the passenger.</text>
+    <choice hidden="true">
+      <text id="continue"/>
+      <event>
+        <text>Realizing arrival is imminent, the passenger - silent so far - pleads with you not to hand her over. She's interrupted by the Grand Basilisk's Chief Aid: "To the alien vessel holding the Basilisk's wife. Deliver her to us. You will be rewarded... well."</text>
+        <choice hidden="true">
+          <text>Hand her over.</text>
+          <event>
+            <text>"May your children erode into dust!" she screams as she's bundled into the waiting shuttle. The Rock guards on board hurriedly drop off an exotic piece of technology and return to the Grand Basilisk.</text>
+            <augment name="RANDOM"/>
+            <autoReward level="LOW">scrap_only</autoReward>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>Refuse to comply.</text>
+          <event>
+            <text>"I was led to believe your kind did not know mercy. I will join you. But quickly, we must jump away - they will not tolerate..." She's interrupted by weapons fire from the Basilisk's escort!</text>
+            <crewMember amount="1" class="rock">Ariadne</crewMember>
+            <ship load="ROCK_QUEST_MARRIAGE" hostile="true"/>
+          </event>
+        </choice>
+        <choice hidden="true" req="orchid">
+          <text>(Orchid) Hand the bride over. And make your Orchid a wedding gift.</text>
+          <event>
+            <text>The Grand Basilisk's Chief is very grateful for delivering his bride, and contacts you personally: "I hereby proclaim you, captain of unknown alien ship, an honorable citizen of Numa V. Allow me to present this humble gift.".</text>
+            <autoReward level="HIGH">scrap_only</autoReward>
+            <weapon name="BEAM_FIRE"/>
+            <crewMember amount="-1" class="orchid"/>
+          </event>
+        </choice>
+      </event>
+    </choice>
+  </event>
+  <ship name="ROCK_QUEST_MARRIAGE" auto_blueprint="SHIPS_ROCK">
+    <destroyed>
+      <text>His escort eliminated, the Grand Basilisk dispatches his entire fleet. There's just time to take your pick from the wreck before you jump out of their reach.</text>
+      <autoReward level="MED">standard</autoReward>
+    </destroyed>
+    <deadCrew>
+      <text>His escort eliminated, the Grand Basilisk dispatches his entire fleet. There's just time to take your pick from the wreck before you jump out of their reach.</text>
+      <autoReward level="HIGH">standard</autoReward>
+    </deadCrew>
+  </ship>
+</FTL>

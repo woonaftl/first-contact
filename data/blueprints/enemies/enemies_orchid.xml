@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../schema/autoBlueprints.xsd">
+  <blueprintList name="SHIPS_ORCHID">
+    <name>ORCHID_DESTROYER</name>
+    <name>ORCHID_FIGHTER</name>
+    <name>ORCHID_GUARD</name>
+  </blueprintList>
+
+  <shipBlueprintSuper name="ORCHID_DESTROYER" img="orchid_destroyer" layout="orchid_destroyer">
+    <class>Orchid Destroyer</class>
+    <systemList>
+      <pilot power="1" max="3" room="0"/>
+      <engines power="1" max="4" room="9"/>
+      <weapons room="4"/>
+      <oxygen power="1" room="5"/>
+      <shields power="2" max="8" room="3"/>
+      <medbay power="1" max="3" room="6" start="false"/>
+      <doors power="1" max="3" room="2"/>
+      <drones power="3" max="6" room="7"/>
+    </systemList>
+    <weaponList sector="2" missiles="0" system_power="4">
+      <weapon name="WEAPONS_CHAIN_2"/>
+      <weapon name="WEAPONS_LASER_1"/>
+      <weapon name="WEAPONS_LASER_1"/>
+    </weaponList>
+    <weaponList sector="3" missiles="0" system_power="5">
+      <weapon name="WEAPONS_CHAIN_2"/>
+      <weapon name="WEAPONS_ANY_1"/>
+      <weapon name="WEAPONS_LASER_1"/>
+      <weapon name="WEAPONS_LASER_1"/>
+    </weaponList>
+    <weaponList sector="4" missiles="0" system_power="6">
+      <weapon name="WEAPONS_CHAIN_3"/>
+      <weapon name="WEAPONS_ANY_1"/>
+      <weapon name="WEAPONS_LASER_1"/>
+      <weapon name="WEAPONS_LASER_1"/>
+    </weaponList>
+    <weaponList sector="5" missiles="0" system_power="7">
+      <weapon name="WEAPONS_CHAIN_3"/>
+      <weapon name="WEAPONS_ANY_2"/>
+      <weapon name="WEAPONS_LASER_1"/>
+      <weapon name="WEAPONS_LASER_1"/>
+    </weaponList>
+    <droneList drones="5" load="DRONES_ORCHID"/>
+    <health amount="10"/>
+    <crewCount amount="3" max="6" class="orchid"/>
+    <boardingAI>sabotage</boardingAI>
+    <cloakImage>orchid_destroyer</cloakImage>
+  </shipBlueprintSuper>
+
+  <shipBlueprintSuper name="ORCHID_FIGHTER" img="orchid_fighter" layout="orchid_fighter">
+    <class>Orchid Fighter</class>
+    <systemList>
+      <pilot power="1" max="3" room="0"/>
+      <engines power="1" max="4" room="8"/>
+      <weapons room="1"/>
+      <oxygen power="1" room="4"/>
+      <shields power="2" max="7" room="5"/>
+      <medbay power="1" max="3" room="2" start="false"/>
+      <drones power="2" max="6" room="3"/>
+    </systemList>
+    <weaponList sector="1" missiles="0" system_power="3">
+      <weapon name="WEAPONS_CHAIN_2"/>
+      <weapon name="WEAPONS_ANY_1"/>
+    </weaponList>
+    <weaponList sector="2" missiles="0" system_power="4">
+      <weapon name="WEAPONS_CHAIN_3"/>
+      <weapon name="WEAPONS_ANY_1"/>
+    </weaponList>
+    <weaponList sector="3" missiles="0" system_power="5">
+      <weapon name="WEAPONS_CHAIN_3"/>
+      <weapon name="WEAPONS_ANY_1"/>
+      <weapon name="WEAPONS_ANY_1"/>
+    </weaponList>
+    <weaponList sector="4" missiles="0" system_power="6">
+      <weapon name="WEAPONS_CHAIN_3"/>
+      <weapon name="WEAPONS_ANY_1"/>
+      <weapon name="WEAPONS_ANY_1"/>
+      <weapon name="WEAPONS_ANY_1"/>
+    </weaponList>
+    <droneList drones="5" load="DRONES_ORCHID"/>
+    <health amount="9"/>
+    <crewCount amount="3" max="5" class="orchid"/>
+    <boardingAI>sabotage</boardingAI>
+    <cloakImage>orchid_fighter</cloakImage>
+  </shipBlueprintSuper>
+
+  <shipBlueprintSuper name="ORCHID_GUARD" img="orchid_guard" layout="orchid_guard">
+    <class>Orchid Guard</class>
+    <systemList>
+      <pilot power="1" max="3" room="0"/>
+      <engines power="1" max="4" room="11"/>
+      <weapons room="8"/>
+      <oxygen power="1" room="9"/>
+      <shields power="2" max="8" room="1"/>
+      <clonebay power="1" max="3" room="10" start="false"/>
+      <doors power="1" max="3" room="6" start="false"/>
+      <drones power="4" max="8" room="7"/>
+    </systemList>
+    <weaponList sector="3" missiles="0" system_power="5">
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_CHAIN_2"/>
+      <weapon name="WEAPONS_ANY_1"/>
+    </weaponList>
+    <weaponList sector="4" missiles="0" system_power="6">
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_CHAIN_2"/>
+      <weapon name="WEAPONS_ANY_1"/>
+      <weapon name="WEAPONS_ANY_1"/>
+    </weaponList>
+    <weaponList sector="5" missiles="0" system_power="7">
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_CHAIN_3"/>
+      <weapon name="WEAPONS_ANY_1"/>
+      <weapon name="WEAPONS_ANY_1"/>
+    </weaponList>
+    <weaponList sector="6" missiles="0" system_power="8">
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_CHAIN_4"/>
+      <weapon name="WEAPONS_ANY_1"/>
+      <weapon name="WEAPONS_ANY_1"/>
+    </weaponList>
+    <droneList drones="5" load="DRONES_ORCHID"/>
+    <health amount="11"/>
+    <crewCount amount="4" max="7" class="orchid"/>
+    <boardingAI>sabotage</boardingAI>
+    <cloakImage>orchid_guard</cloakImage>
+  </shipBlueprintSuper>
+</FTL>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <blueprintList name="WEAPONS_HEAVY_2">
+    <name>LASER_HEAVY_1</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_HEAVY_3">
+    <name>LASER_HEAVY_2</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_HEAVY_4">
+    <name>LASER_HEAVY_CHARGE_3</name>
+  </blueprintList>
+
+  <blueprintList name="WEAPONS_ANY_2">
+    <name>LASER_HEAVY_1</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_ANY_3">
+    <name>LASER_HEAVY_2</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_ANY_4">
+    <name>LASER_HEAVY_CHARGE_3</name>
+  </blueprintList>
+
+  <blueprintList name="WEAPONS_PROJ_2">
+    <name>LASER_HEAVY_1</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_PROJ_3">
+    <name>LASER_HEAVY_2</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_PROJ_4">
+    <name>LASER_HEAVY_CHARGE_3</name>
+  </blueprintList>
+
+  <blueprintList name="WEAPONS_HEAVY_1_UPGRADED">
+    <name>LASER_HEAVY_1_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_HEAVY_2_UPGRADED">
+    <name>LASER_HEAVY_2_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_HEAVY_3_UPGRADED">
+    <name>LASER_HEAVY_CHARGE_3_UPGRADED</name>
+  </blueprintList>
+
+  <blueprintList name="WEAPONS_ANY_1_UPGRADED">
+    <name>LASER_HEAVY_1_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_ANY_2_UPGRADED">
+    <name>LASER_HEAVY_2_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_ANY_3_UPGRADED">
+    <name>LASER_HEAVY_CHARGE_3_UPGRADED</name>
+  </blueprintList>
+
+  <blueprintList name="WEAPONS_PROJ_1_UPGRADED">
+    <name>LASER_HEAVY_1_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_PROJ_2_UPGRADED">
+    <name>LASER_HEAVY_2_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_PROJ_3_UPGRADED">
+    <name>LASER_HEAVY_CHARGE_3_UPGRADED</name>
+  </blueprintList>
+
+  <changelog>
+    <entry>Heavy Laser I power usage 1 to 2</entry>
+    <entry>Heavy Laser I charge time 9 to 10</entry>
+    <entry>Heavy Laser I rarity 2 to 1</entry>
+  </changelog>
+  <weaponBlueprint name="LASER_HEAVY_1">
+    <type>LASER</type>
+    <title>Heavy Laser Mark I</title>
+    <short>Heavy Laser I</short>
+    <tip>tip_laser</tip>
+    <desc>Heavy lasers can wreak more havoc than their smaller, burst laser counterparts.</desc>
+    <tooltip>Fires 1 shot, causes 2 damage with low chance of fire and breaching.</tooltip>
+    <damage>2</damage>
+    <shots>1</shots>
+    <sp>0</sp>
+    <fireChance>3</fireChance>
+    <breachChance>3</breachChance>
+    <stunChance>2</stunChance>
+    <cooldown>10</cooldown>
+    <power>2</power>
+    <cost>50</cost>
+    <bp>6</bp>
+    <rarity>1</rarity>
+    <image>laser_heavy1</image>
+    <launchSounds>
+      <sound>heavyLaser1</sound>
+      <sound>heavyLaser2</sound>
+      <sound>heavyLaser3</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>hitHull1</sound>
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>hitShield1</sound>
+      <sound>hitShield2</sound>
+      <sound>hitShield3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <weaponArt>laser_heavy_1</weaponArt>
+    <iconImage>heavyL</iconImage>
+  </weaponBlueprint>
+  <weaponBlueprintInherit name="LASER_HEAVY_1_UPGRADED" base="LASER_HEAVY_1">
+    <tip>tip_laser_upgraded</tip>
+    <title>Heavy Laser Mark I+</title>
+    <short>Heavy Laser I+</short>
+    <cooldown>9</cooldown>
+    <power>1</power>
+    <rarity>0</rarity>
+  </weaponBlueprintInherit>
+
+  <changelog>
+    <entry>Heavy Laser II rarity 4 to 2</entry>
+  </changelog>
+  <weaponBlueprint name="LASER_HEAVY_2">
+    <type>LASER</type>
+    <title>Heavy Laser Mark II</title>
+    <short>Heavy Laser II</short>
+    <tip>tip_laser</tip>
+    <desc>This heavy laser fires two shots in quick succession, each dealing 2 damage.</desc>
+    <tooltip>Fires 2 heavy lasers, 2 damage each with low chance of fire and breaching.</tooltip>
+    <damage>2</damage>
+    <shots>2</shots>
+    <sp>0</sp>
+    <fireChance>3</fireChance>
+    <breachChance>3</breachChance>
+    <stunChance>2</stunChance>
+    <cooldown>13</cooldown>
+    <power>3</power>
+    <cost>65</cost>
+    <bp>10</bp>
+    <rarity>2</rarity>
+    <image>laser_heavy1</image>
+    <launchSounds>
+      <sound>heavyLaser1</sound>
+      <sound>heavyLaser2</sound>
+      <sound>heavyLaser3</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>hitHull1</sound>
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>hitShield1</sound>
+      <sound>hitShield2</sound>
+      <sound>hitShield3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <weaponArt>laser_heavy_2</weaponArt>
+    <iconImage>heavyL</iconImage>
+  </weaponBlueprint>
+  <weaponBlueprintInherit name="LASER_HEAVY_2_UPGRADED" base="LASER_HEAVY_2">
+    <tip>tip_laser_upgraded</tip>
+    <title>Heavy Laser Mark II+</title>
+    <short>Heavy Laser II+</short>
+    <cooldown>12</cooldown>
+    <power>2</power>
+    <rarity>0</rarity>
+  </weaponBlueprintInherit>
+
+  <changelog>
+    <entry>New Heavy Laser Charger (4 power, 5 sec charge time, up to 3 shots, 2 damage)</entry>
+  </changelog>
+  <weaponBlueprint name="LASER_HEAVY_CHARGE_3">
+    <type>LASER</type>
+    <title>Heavy Laser Charger</title>
+    <short>Hvy Ch.</short>
+    <tip>tip_charge</tip>
+    <desc>This model of heavy laser can launch up to 3 projectiles in quick succession dealing 2 damage with every shot.</desc>
+    <tooltip>Fires more shots the more it charges, up to a max of 3.</tooltip>
+    <damage>2</damage>
+    <shots>1</shots>
+    <sp>0</sp>
+    <fireChance>3</fireChance>
+    <breachChance>3</breachChance>
+    <stunChance>2</stunChance>
+    <cooldown>5</cooldown>
+    <power>4</power>
+    <cost>95</cost>
+    <bp>2</bp>
+    <rarity>5</rarity>
+    <chargeLevels>3</chargeLevels>
+    <image>laser_heavy1</image>
+    <launchSounds>
+      <sound>heavyLaser1</sound>
+      <sound>heavyLaser2</sound>
+      <sound>heavyLaser3</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>hitHull1</sound>
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>hitShield1</sound>
+      <sound>hitShield2</sound>
+      <sound>hitShield3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <weaponArt>laser_heavy_charge_3</weaponArt>
+    <iconImage>heavyL</iconImage>
+  </weaponBlueprint>
+  <weaponBlueprintInherit name="LASER_HEAVY_CHARGE_3_UPGRADED" base="LASER_HEAVY_CHARGE_3">
+    <tip>tip_laser_upgraded</tip>
+    <title>Heavy Laser Charger+</title>
+    <short>Hvy Ch.+</short>
+    <cooldown>4.5</cooldown>
+    <power>3</power>
+    <rarity>0</rarity>
+  </weaponBlueprintInherit>
+</FTL>

@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <blueprintList name="WEAPONS_FLAK_1">
+    <name>SHOTGUN_BASIC</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_FLAK_2">
+    <name>SHOTGUN</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_FLAK_3">
+    <name>SHOTGUN_2</name>
+  </blueprintList>
+
+  <blueprintList name="WEAPONS_ANY_1">
+    <name>SHOTGUN_BASIC</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_ANY_2">
+    <name>SHOTGUN</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_ANY_3">
+    <name>SHOTGUN_2</name>
+  </blueprintList>
+
+  <blueprintList name="WEAPONS_PROJ_1">
+    <name>SHOTGUN_BASIC</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_PROJ_2">
+    <name>SHOTGUN</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_PROJ_3">
+    <name>SHOTGUN_2</name>
+  </blueprintList>
+
+  <blueprintList name="WEAPONS_SIMPLE_1">
+    <name>SHOTGUN_BASIC</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_SIMPLE_2">
+    <name>SHOTGUN</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_SIMPLE_3">
+    <name>SHOTGUN_2</name>
+  </blueprintList>
+
+  <blueprintList name="WEAPONS_FLAK_1_UPGRADED">
+    <name>SHOTGUN_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_FLAK_2_UPGRADED">
+    <name>SHOTGUN_2_UPGRADED</name>
+  </blueprintList>
+
+  <blueprintList name="WEAPONS_ANY_1_UPGRADED">
+    <name>SHOTGUN_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_ANY_2_UPGRADED">
+    <name>SHOTGUN_2_UPGRADED</name>
+  </blueprintList>
+
+  <blueprintList name="WEAPONS_PROJ_1_UPGRADED">
+    <name>SHOTGUN_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_PROJ_2_UPGRADED">
+    <name>SHOTGUN_2_UPGRADED</name>
+  </blueprintList>
+
+  <blueprintList name="WEAPONS_SIMPLE_1_UPGRADED">
+    <name>SHOTGUN_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_SIMPLE_2_UPGRADED">
+    <name>SHOTGUN_2_UPGRADED</name>
+  </blueprintList>
+
+  <changelog>
+    <entry>Added Basic Flak Gun (1 power, 2 projectiles, 16 sec charge time, 38 radius, 2 rarity, 50 scrap cost). Unavailable in stores or random drops, similarly to Basic Laser, but commonly seen on weaker enemies.</entry>
+  </changelog>
+  <weaponBlueprint name="SHOTGUN_BASIC">
+    <type>BURST</type>
+    <flavorType>Physical Projectile Blast</flavorType>
+    <title>Basic Flak Gun</title>
+    <tip>tip_flak</tip>
+    <short>Basic Flak</short>
+    <desc>Fires a blast of debris across a random area doing up to 2 damage. Good at taking down shields but hard to aim.</desc>
+    <tooltip>Fires a blast of debris across a random area doing up to 2 damage.</tooltip>
+    <radius>38</radius>
+    <damage>1</damage>
+    <shots>1</shots>
+    <drone_targetable>1</drone_targetable>
+    <sp>0</sp>
+    <spin>720</spin>
+    <fireChance>0</fireChance>
+    <breachChance>0</breachChance>
+    <cooldown>16</cooldown>
+    <power>1</power>
+    <cost>50</cost>
+    <bp>10</bp>
+    <speed>26</speed>
+    <rarity>0</rarity>
+    <projectiles>
+      <projectile count="1" fake="false">debris_large</projectile>
+      <projectile count="1" fake="false">debris_med</projectile>
+      <projectile count="2" fake="true">debris_small</projectile>
+    </projectiles>
+    <launchSounds>
+      <sound>flak</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>flakImpact1</sound>
+      <sound>flakImpact2</sound>
+      <sound>flakImpact3</sound>
+      <sound>flakImpact4</sound>
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>hitShield1</sound>
+      <sound>hitShield2</sound>
+      <sound>hitShield3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <weaponArt>flak_2</weaponArt>
+    <iconImage>flak</iconImage>
+  </weaponBlueprint>
+
+  <changelog>
+    <entry>Flak I radius 42 to 45</entry>
+    <entry>Flak I charge time 10 to 18</entry>
+    <entry>Flak I projectile cound 3 to 4</entry>
+    <entry>Flak I rarity 1 to 2</entry>
+  </changelog>
+  <weaponBlueprint name="SHOTGUN">
+    <type>BURST</type>
+    <flavorType>Physical Projectile Blast</flavorType>
+    <drone_targetable>1</drone_targetable>
+    <title>Flak Gun Mark I</title>
+    <tip>tip_flak</tip>
+    <short>Flak I</short>
+    <desc>Fires a blast of debris across a random area doing up to 4 damage. Good at taking down shields but hard to aim.</desc>
+    <tooltip>Fires a blast of debris across a random area doing up to 4 damage.</tooltip>
+    <radius>45</radius>
+    <damage>1</damage>
+    <shots>1</shots>
+    <sp>0</sp>
+    <spin>720</spin>
+    <fireChance>0</fireChance>
+    <breachChance>0</breachChance>
+    <cooldown>18</cooldown>
+    <power>2</power>
+    <cost>65</cost>
+    <bp>10</bp>
+    <speed>26</speed>
+    <rarity>2</rarity>
+    <projectiles>
+      <projectile count="2" fake="false">debris_large</projectile>
+      <projectile count="2" fake="false">debris_med</projectile>
+      <projectile count="4" fake="true">debris_small</projectile>
+    </projectiles>
+    <launchSounds>
+      <sound>flak</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>flakImpact1</sound>
+      <sound>flakImpact2</sound>
+      <sound>flakImpact3</sound>
+      <sound>flakImpact4</sound>
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>hitShield1</sound>
+      <sound>hitShield2</sound>
+      <sound>hitShield3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <weaponArt>flak_4</weaponArt>
+    <iconImage>flak</iconImage>
+  </weaponBlueprint>
+  <weaponBlueprintInherit name="SHOTGUN_UPGRADED" base="SHOTGUN">
+    <tip>tip_flak_upgraded</tip>
+    <title>Flak Gun Mark I+</title>
+    <short>Flak I+</short>
+    <cooldown>17</cooldown>
+    <power>1</power>
+    <rarity>0</rarity>
+  </weaponBlueprintInherit>
+
+  <weaponBlueprint name="SHOTGUN_2">
+    <type>BURST</type>
+    <flavorType>Physical Projectile Blast</flavorType>
+    <drone_targetable>1</drone_targetable>
+    <title>Flak Gun Mark II</title>
+    <short>Flak II</short>
+    <tip>tip_flak</tip>
+    <desc>Fires a blast of debris across a random area doing up to 7 damage. Good at taking down shields but hard to aim.</desc>
+    <tooltip>Fires a blast of debris across a random area doing up to 7 damage.</tooltip>
+    <radius>55</radius>
+    <damage>1</damage>
+    <spin>720</spin>
+    <shots>1</shots>
+    <sp>0</sp>
+    <fireChance>0</fireChance>
+    <breachChance>0</breachChance>
+    <cooldown>21</cooldown>
+    <power>3</power>
+    <cost>80</cost>
+    <bp>10</bp>
+    <speed>26</speed>
+    <rarity>4</rarity>
+    <projectiles>
+      <projectile count="3" fake="false">debris_large</projectile>
+      <projectile count="4" fake="false">debris_med</projectile>
+      <projectile count="6" fake="true">debris_small</projectile>
+    </projectiles>
+    <launchSounds>
+      <sound>flak</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>flakImpact1</sound>
+      <sound>flakImpact2</sound>
+      <sound>flakImpact3</sound>
+      <sound>flakImpact4</sound>
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>hitShield1</sound>
+      <sound>hitShield2</sound>
+      <sound>hitShield3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <weaponArt>shotgun_2</weaponArt>
+    <iconImage>flak</iconImage>
+  </weaponBlueprint>
+  <weaponBlueprintInherit name="SHOTGUN_2_UPGRADED" base="SHOTGUN_2">
+    <tip>tip_flak_upgraded</tip>
+    <title>Flak Gun Mark II+</title>
+    <short>Flak II+</short>
+    <cooldown>20</cooldown>
+    <power>2</power>
+    <rarity>0</rarity>
+  </weaponBlueprintInherit>
+</FTL>

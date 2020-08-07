@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="NEUTRAL_ROCK">
+    <event load="ROCK_LOOTING"/>
+    <event load="ROCK_MANTIS_HUNTER"/>
+    <event load="ROCK_MANTIS_FREIGHTER"/>
+    <event load="ROCK_ATHEIST"/>
+    <event load="ROCK_STARSHIP_MINE"/>
+
+    <event load="PIRATE_CIVILIAN"/>
+    <event load="MERCENARY"/>
+    <event load="FRIENDLY_SLAVER"/>
+    <event load="ASTEROID_DERELICT_SHIP"/>
+    <event load="ROCK_SLUG_ARGUMENT"/>
+    <event load="WOONA_ROCK_RACIST_STORE"/>
+    <event load="WOONA_ROCK_DESOLATE_TRIBE"/>
+    <event load="WOONA_ROCK_MISSIONARY"/>
+    <event load="WOONA_ROCK_PULSAR"/>
+  </eventList>
+
+  <event name="ROCK_LOOTING" unique="true">
+    <text>You find a disabled rock transport floating near the beacon. You consider stripping it of useful parts but are uncertain why it's there in the first place.</text>
+    <choice hidden="true">
+      <text>Strip the ship.</text>
+      <event load="ROCK_LOOTING_STRIP"/>
+    </choice>
+    <choice hidden="true">
+      <text>Leave it alone.</text>
+      <event load="ROCK_LOOTING_LEAVE"/>
+    </choice>
+    <choice hidden="true" req="slug">
+      <text>(Slug Crew) Check for lifeforms and keep a lookout for ships while looting the wreck.</text>
+      <event load="ROCK_LOOTING_SLUG"/>
+    </choice>
+  </event>
+  <eventList name="ROCK_LOOTING_STRIP">
+    <event>
+      <text>You salvage what you can from the ship. No one bothers you during the operation.</text>
+      <autoReward level="low">standard</autoReward>
+    </event>
+    <event>
+      <text>A Rock patrol ship jumps in while you are salvaging the ship. They message you, "Filthy pirates! Prepare to die!" You doubt explaining your mission will convince them of your need.</text>
+      <ship load="ROCK_SHIP" hostile="true"/>
+      <autoReward level="low">standard</autoReward>
+    </event>
+  </eventList>
+  <eventList name="ROCK_LOOTING_LEAVE">
+    <event>
+      <text>The Rock people are not known for setting traps but you hasten to leave anyway.</text>
+    </event>
+    <event>
+      <text>The Rock people are not known for setting traps but you hasten to leave anyway.</text>
+    </event>
+    <event>
+      <text>Before you have a chance to leave, a Rock patrol ship arrives and you intercept their comm chatter, "...appears we've finally found them. Their killing spree ends now!" Before you can plead your innocence they move in to attack.</text>
+      <ship load="ROCK_SHIP" hostile="true"/>
+    </event>
+  </eventList>
+  <eventList name="ROCK_LOOTING_SLUG">
+    <event>
+      <text>You salvage what you can from the ship. No lifeforms or ships are detected nearby.</text>
+      <autoReward level="low">standard</autoReward>
+    </event>
+    <event>
+      <text>You begin the salvage operation but before long your crew warns you of an approaching ship. You hasten to leave before they get within firing range.</text>
+      <autoReward level="low">standard</autoReward>
+    </event>
+  </eventList>
+
+  <event name="ROCK_MANTIS_HUNTER" unique="true">
+    <text>A Mantis ship here is adorned with Rock body parts! It would be a gorier display if they had internal organs, but the message is clear enough: this is a hunter of a very specialized kind.</text>
+    <ship load="MANTIS_FIGHT" hostile="false"/>
+    <choice hidden="true">
+      <text>Attack!</text>
+      <event>
+        <text>No species deserves a Mantis hunter on their back - time to make the galaxy a little safer. Engage!</text>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Ignore them.</text>
+      <event>
+        <text>The Mantis take no interest in your ship - they're lying in wait for the next Rock ship to venture through. You're able to spin up the engines and jump at your leisure.</text>
+      </event>
+    </choice>
+    <choice hidden="true" req="ROCK_ARMOR">
+      <text>(Rock Ship) Ram the bastards.</text>
+      <event>
+        <text>Before they have a chance, you ram your ship into theirs, causing irreparable damage to their engines. Luckily, your ship's armored hull is hardly dented from the impact. The Mantis ship careens away and you move in to attack.</text>
+        <ship hostile="true"/>
+        <status type="limit" target="enemy" system="engines" amount="0"/>
+      </event>
+    </choice>
+    <choice hidden="true" req="rock">
+      <text>(Rock Crew) Put your Rock crewmember on the comm.</text>
+      <event>
+        <text>The two aliens face one another over the vidscreen. "Cave-dwelling pebble-man!" yells the furious Mantis captain. "See, I paint my ship with your companions! I paint my ship with you!"</text>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+  </event>
+
+  <event name="ROCK_MANTIS_FREIGHTER" unique="true">
+    <text>A curious sight greets you at this beacon: a disabled Rock freighter drifts in space while two Mantis craft battle it out - presumably over who deserves the spoils.</text>
+    <choice hidden="true">
+      <text>Wait, then attack the surviving Mantis.</text>
+      <event load="ROCK_MANTIS_FREIGHTER_LIST"/>
+    </choice>
+    <choice hidden="true">
+      <text>Ignore them.</text>
+      <event>
+        <text>There's quite enough action here already - prepare for light speed.</text>
+      </event>
+    </choice>
+    <choice hidden="true" req="REPAIR">
+      <text>(Repair Drone) Repair the Rock ship.</text>
+      <event>
+        <text>While the two Mantis fight you approach the Rock ship and send a repair drone through one of the many breaches. It fixes the ship up enough to make at least a single jump. You're surprised when, instead, they embark on a kamikaze run on the two Mantis, which results in the obliteration of all three!</text>
+        <autoReward level="HIGH">standard</autoReward>
+        <item_modify>
+          <item type="drones" min="-1" max="-1"/>
+        </item_modify>
+      </event>
+    </choice>
+    <choice hidden="true" req="SHIP_REPAIR_LIST">
+      <text>(Hull Repair Drone) Repair their hull.</text>
+      <event>
+        <text>While the two Mantis fight you approach the Rock ship and use a drone to fix up the ship. Once the breaches are fixed the life support flickers back on. In a matter of moments they are already in pursuit of one of the Mantis ships. Meanwhile the second Mantis turns toward you.</text>
+        <item_modify>
+          <item type="drones" min="-1" max="-1"/>
+        </item_modify>
+        <ship load="MANTIS_ROCK_MANTIS_FREIGHTER" hostile="true"/>
+      </event>
+    </choice>
+  </event>
+  <eventList name="ROCK_MANTIS_FREIGHTER_LIST">
+    <event>
+      <text>The Mantis craft are both too busy slaughtering one another to notice you. Eventually the smaller ship gets the upper hand, but they must have blown a fuse in the assault and their weapons system is inoperable. Now is the time to attack!</text>
+      <ship load="MANTIS_ROCK_MANTIS_FREIGHTER" hostile="true"/>
+      <status type="loss" target="enemy" system="weapons" amount="2"/>
+    </event>
+    <event>
+      <text>The Mantis craft may have their differences, but when it comes to you they are of one mind. The smaller ship suffers a power failure as it moves to engage, but the larger one lets off a volley of fire and moves in to attack!</text>
+      <ship load="MANTIS_ROCK_MANTIS_FREIGHTER" hostile="true"/>
+    </event>
+  </eventList>
+  <ship name="MANTIS_ROCK_MANTIS_FREIGHTER" auto_blueprint="SHIPS_MANTIS">
+    <destroyed>
+      <text>In the time it took you to eliminate the Mantis ship the Rock must have repaired their FTL drive and jumped away. You pick the bones of both Mantis vessels.</text>
+      <autoReward level="MED">standard</autoReward>
+    </destroyed>
+    <deadCrew>
+      <text>In the time it took you to eliminate the Mantis ship the Rock must have repaired their FTL drive and jumped away. You pick the bones of both Mantis vessels.</text>
+      <autoReward level="MED">standard</autoReward>
+    </deadCrew>
+    <crew>
+      <crewMember type="mantis" prop="0.80"/>
+      <crewMember type="engi" prop="0.20"/>
+    </crew>
+  </ship>
+
+  <event name="ROCK_ATHEIST" unique="true">
+    <text>You encounter a small craft with minimal propulsion; its Rock crew-member explains that the Rock home-world is run on lies and propaganda that keep the populace in check, and that they want no part of it.</text>
+    <ship load="ROCK_SHIP" hostile="false"/>
+    <choice hidden="true">
+      <text>Tell them their god sent them here to join your crew.</text>
+      <event>
+        <textList name="ROCK_ATHEIST_BAD">
+          <text>They barely hear out your appeals before yelling, "These are the lies I sought to escape!" Looks like they're charging weapons!</text>
+          <text>They listen to your appeals and whisper, "Traitors to truth. You're no better than them!" Chaos ensues.</text>
+        </textList>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Promise to share with them the truths they've been denied.</text>
+      <eventList name="ROCK_ATHEIST_GOOD">
+        <event>
+          <text>Your promises gain their attention and they agree to serve with you, for a while.</text>
+          <crewMember amount="1" class="rock"/>
+        </event>
+        <event count="2">
+          <text>They seem tempted by your offer, but decide they can't risk being lied to again. They close frequencies and jump away.</text>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true" req="sensors" lvl="2">
+      <text>(Improved Sensors) Show them to your data suite.</text>
+      <eventList>
+        <event>
+          <text>The Rock captain is impressed by the data you've collected and agrees to stay with you until they find their footing in the galaxy.</text>
+          <crewMember amount="1" class="rock"/>
+        </event>
+        <event count="2">
+          <text>The Rock captain is impressed by the data you've collected and offers a modest reward in exchange for the information.</text>
+          <autoReward level="MED">standard</autoReward>
+        </event>
+      </eventList>
+    </choice>
+  </event>
+
+  <event name="ROCK_STARSHIP_MINE" unique="true">
+    <text>The burnt out hull of a Rock mine layer drifts by. Behind the wreck drifts a live mine; an automated drone that drills into ships' hulls before exploding. It locks onto your ship's signature and heads your way!</text>
+    <choice hidden="true">
+      <text>Attempt evasive maneuvers.</text>
+      <event>
+        <text>The ship's turning circle proves too wide and the mine bites down onto the hull. You can hear it now, chewing through the armor.</text>
+        <choice hidden="true">
+          <text>Send someone out there to defuse it.</text>
+          <event load="ROCK_STARSHIP_MINE_DEFUSE"/>
+        </choice>
+        <choice hidden="true" req="WEAPONS_MISSILES">
+          <text>(Missile Weapon) Attempt a controlled detonation using a missile.</text>
+          <event>
+            <text>After drawing straws, a crewmember goes out to fix a modified warhead to the mine. You detonate the missile in a way that dislodges the mine. It blows up shortly after. The ship takes some damage in the blasts, but you're still sailing.</text>
+            <damage amount="3"/>
+            <damage amount="1" system="random"/>
+            <item_modify>
+              <item type="missiles" min="-1" max="-1"/>
+            </item_modify>
+            <autoReward level="LOW">scrap_only</autoReward>
+          </event>
+        </choice>
+        <choice hidden="true" req="COMBAT_BEAM_DRONE_LIST">
+          <text>(Beam Drone) Use a drone to cut away the mine with a precision beam.</text>
+          <event>
+            <text>Carefully guided from the bridge, your beam drone removes the mine's grappling arms and sends it drifting off into space, where you shoot at it until it detonates at a safe distance.</text>
+            <item_modify>
+              <item type="drones" min="-1" max="-1"/>
+            </item_modify>
+            <autoReward level="LOW">scrap_only</autoReward>
+          </event>
+        </choice>
+      </event>
+    </choice>
+    <choice hidden="true" req="engines" lvl="5">
+      <text>(Improved Engines) Reverse thrusters!</text>
+      <event>
+        <text>It stresses the inertial dampeners, but you reverse course and outrun the mine. You prepare to jump off.</text>
+      </event>
+    </choice>
+  </event>
+  <eventList name="ROCK_STARSHIP_MINE_DEFUSE">
+    <event>
+      <text>Your crewmember dons a space suit and exits the airlock. They make quick work of the basic device and return inside to relief all round. The mine makes good scrap pickings too.</text>
+      <autoReward level="MED">scrap_only</autoReward>
+    </event>
+    <event>
+      <text>Your crewmember dons a space suit and exits the airlock. When they open up the mine housing, though, they panic. The red wire or the blue?! 3... 2... 1...</text>
+      <choice hidden="true">
+        <text>Red!</text>
+        <event load="ROCK_STARSHIP_MINE_DEFUSE2"/>
+      </choice>
+      <choice hidden="true">
+        <text>Blue!</text>
+        <event load="ROCK_STARSHIP_MINE_DEFUSE2"/>
+      </choice>
+    </event>
+  </eventList>
+  <eventList name="ROCK_STARSHIP_MINE_DEFUSE2">
+    <event>
+      <text>You open your eyes and everything is still where it was a moment ago. You did it!</text>
+      <autoReward level="MED">scrap_only</autoReward>
+    </event>
+    <event>
+      <text>The weapon detonates. Everything goes dark, the bridge illuminated by flames pouring from the hull, your bomb disposal volunteer spinning off toward a nearby sun. You put out the fires and prepare to move on.</text>
+      <removeCrew>
+        <clone>true</clone>
+        <text>Fortunately, your crewmember was close enough to the ship for the Clone Bay to revive them. Sheepish and apologetic, they rejoin the crew.</text>
+      </removeCrew>
+      <damage amount="5"/>
+      <damage amount="1" system="room" effect="breach"/>
+    </event>
+  </eventList>
+
+  <changelog>
+    <entry>Added Rock racist store event</entry>
+  </changelog>
+  <event name="WOONA_ROCK_RACIST_STORE" unique="true">
+    <text>You see a small trading post and ask about refuelling but they respond, "Go away! We don't serve your kind here."</text>
+    <choice hidden="true">
+      <text id="continue"/>
+      <event/>
+    </choice>
+    <choice hidden="true" lvl="1" max_group="0" req="rock">
+      <text>(Rock) Send a crewmember to negotiate.</text>
+      <eventList>
+        <event>
+          <text>Seeing the Rockman, the trading post reluctantly agrees to sell you fuel.</text>
+          <choice>
+            <text>Buy fuel.</text>
+            <event>
+              <text>The trading post sends you some fuel and you pay for it with scrap.</text>
+              <item_modify>
+                <item max="6" min="4" type="fuel"/>
+                <item max="-12" min="-18" type="scrap"/>
+              </item_modify>
+            </event>
+          </choice>
+          <choice hidden="true">
+            <text>Refuse to buy anything.</text>
+            <event/>
+          </choice>
+        </event>
+        <event>
+          <text>"Traitor to the holy words! You shall be submerged into the waters of hell for this!" Traders, peaceful at the first glance, attack your crewmember. He barely manages to get back to the ship in one piece.</text>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true" lvl="2" max_group="0" req="rock">
+      <text>(2 Rockmen) Send 2 crewmembers to negotiate.</text>
+      <event>
+        <text>Seeing fellow Rockmen, the trading post agrees to sell you fuel and ammunition.</text>
+        <choice>
+          <text>Buy fuel.</text>
+          <event>
+            <text>The trading post sends you some fuel and you pay for it with scrap.</text>
+            <item_modify>
+              <item max="6" min="4" type="fuel"/>
+              <item max="-10" min="-15" type="scrap"/>
+            </item_modify>
+          </event>
+        </choice>
+        <choice>
+          <text>Buy missiles.</text>
+          <event>
+            <text>The trading post sends you ammunition and you pay for it with scrap.</text>
+            <item_modify>
+              <item max="6" min="4" type="missiles"/>
+              <item max="-12" min="-18" type="scrap"/>
+            </item_modify>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>Refuse to buy anything.</text>
+          <event/>
+        </choice>
+      </event>
+    </choice>
+    <choice hidden="true" lvl="3" max_group="0" req="rock">
+      <text>(Rockmen crew) Send a team to negotiate.</text>
+      <event>
+        <text>Seeing that your team is mostly composed of Rockmen, the trading post agrees to bargain with you.</text>
+        <store/>
+      </event>
+    </choice>
+  </event>
+
+  <changelog>
+    <entry>Added Rock desolate tribe event</entry>
+  </changelog>
+  <event name="WOONA_ROCK_DESOLATE_TRIBE" unique="true">
+    <text>The beacon is located deep into Rock territory, there are no ships on the radar, but there is enough time to explore the nearby planet while the FTL drive is charging.</text>
+    <choice hidden="true">
+      <text>Send a party to the planet.</text>
+      <eventList>
+        <event>
+          <!-- Aggressive tribe -->
+          <text>You arrive to a planet to find a desolate Rock tribe. They have never seen aliens before, and are being very aggressive towards you.</text>
+          <choice hidden="true">
+            <text>Fight them.</text>
+            <eventList>
+              <event>
+                <text>You manage to fend off the attacking Rocks and make a way back to your ship. Everyone is alive and well, but you could not obtain anything of value from the planet.</text>
+              </event>
+              <event>
+                <text>The fight goes badly. The Rocks are using catapults to launch each other at your party. One of them falls right on a member of your crew and pins them down. You did not have any other choice but to leave the planet without them.</text>
+                <removeCrew>
+                  <clone>true</clone>
+                  <text>The clone of lost crewmember already awaits on the ship when you return from the hostile planet.</text>
+                </removeCrew>
+              </event>
+            </eventList>
+          </choice>
+          <choice hidden="true" req="rock">
+            <text>(Rock) Communicate peacefully.</text>
+            <event>
+              <text>The natives trust your Rock crewmember much more than "smelly aliens". You trade a useless pebble souvenir from your home planet for a reasonable amount of scrap and reach the ship peacefully.</text>
+              <autoReward level="LOW">scrap_only</autoReward>
+            </event>
+          </choice>
+          <choice hidden="true" req="mantis">
+            <text>(Mantis) Carve them up.</text>
+            <event>
+              <text>The Mantis unleashes their fury on the primitives. The Rock people fight fiercely but cannot defeat a member of previously unseen alien race. You manage not only to repel the enemy but to loot their homes and bring a small amount of scrap back to your ship.</text>
+              <autoReward level="LOW">scrap_only</autoReward>
+            </event>
+          </choice>
+        </event>
+        <event>
+          <!-- Zoltan poppers! -->
+          <text>As the small shuttle lands on the planet, a Rock tribe has gathered to greet you. They offer a meager amount of supplies as a welcoming gift.</text>
+          <autoReward level="LOW">stuff</autoReward>
+          <choice blue="false" hidden="true" lvl="0" max_group="0" req="energy">
+            <text id="continue"/>
+            <event>
+              <text>You explore the surface but do not find anything else of value. The primitives are friendly and do not stop you. After a few hours, your crew returns safely to the ship.</text>
+            </event>
+          </choice>
+          <choice blue="false" hidden="true" lvl="1" max_group="0" req="energy">
+            <text id="continue"/>
+            <event>
+              <text>As soon as one of the tribesmen spots a Zoltan, the tribe's relation to you changes. "We simple Rock folks. See a green guy, pop 'em. Mind if you give us one? You know, to pop!"</text>
+              <choice hidden="true">
+                <text>Give up a Zoltan.</text>
+                <event>
+                  <text>The Rock tribe gathers in a circle as one of their people climbs a pillar above the tied Zoltan. The tribesman jumps down and crushes your former crewmember with their weight. A satisfying "pop" makes the primitives ecstatic.</text>
+                  <removeCrew class="energy">
+                    <clone>true</clone>
+                    <text>You are sure that the clone is already being made back on the ship.</text>
+                  </removeCrew>
+                  <choice hidden="true">
+                    <text id="continue"/>
+                    <event>
+                      <text>"That was some right proper poppin! Here, take this." The tribe presents you a gift.</text>
+                      <choice hidden="true">
+                        <text id="continue"/>
+                        <eventList>
+                          <event>
+                            <text>The primitives offer you an augmentation that they found installed on a ship that crashed on the planet earlier. The Rocks cheer as you leave for your ship in orbit.</text>
+                            <augment name="RANDOM"/>
+                          </event>
+                          <event>
+                            <text>The primitives offer you a weapon that they found in the remains of a ship that crashed on the planet some time ago. The Rocks cheer as you leave for your ship in orbit.</text>
+                            <weapon name="RANDOM"/>
+                          </event>
+                          <event>
+                            <text>The primitives offer you a drone that they found in the remains of a ship that crashed on the planet some time ago. The Rocks cheer as you leave for your ship in orbit.</text>
+                            <drone name="RANDOM"/>
+                          </event>
+                        </eventList>
+                      </choice>
+                    </event>
+                  </choice>
+                </event>
+              </choice>
+              <choice hidden="true">
+                <text>We need them ourselves.</text>
+                <event>
+                  <text>The tribe attacks and forces you into the shuttle. As the shuttle gains height, the Rocks cuss below. You reach the ship stationed in orbit.</text>
+                </event>
+              </choice>
+            </event>
+          </choice>
+        </event>
+        <event>
+          <!-- Stealing the shuttle -->
+          <text>The primitive tribe of Rocks is living in caves on the landing site. They do not have any weapons and are not dangerous. The scanners locate a stash hidden underground by previous visitors. Your team moves out to collect it.</text>
+          <choice hidden="true">
+            <text id="continue"/>
+            <event>
+              <text>As soon as you moved away from the shuttle to explore the surface of the planet and collect the stash, the tribe attacks: "Blasted aliens come again! Show them folks!" There is no way you can get to the shuttle in time to protect it.</text>
+              <choice hidden="true">
+                <text>Try to protect the shuttle.</text>
+                <eventList>
+                  <event>
+                    <text>You could not get to the shuttle in time. The tribe already did their best to break expensive machinery there. You fend off the attackers, but are forced to spend all the resources you found in the stash on repairs.</text>
+                  </event>
+                  <event>
+                    <text>The tribe captures the shuttle before your team reach it and uses its weapons against you. Protective suits and handguns help you to win the shuttle back, but one of your fighters who was carrying the materials from stash found earlier fell in battle. You return to the shuttle with empty hands.</text>
+                    <removeCrew>
+                      <clone>true</clone>
+                      <text>The clone of lost crewmember already awaits on the ship when you return from the hostile planet.</text>
+                    </removeCrew>
+                  </event>
+                </eventList>
+              </choice>
+              <choice hidden="true" req="WEAPONS_BEAM_DAMAGE">
+                <text>(Beam) Crack the Rocks from orbit.</text>
+                <event>
+                  <text>The primitives were not ready to get fried by a giant beam. As soon as the first wave falls to the ground in agony, the Rocks disperse, carrying the wounded to caves and hiding them. You return to the ship safely carrying the stuff found in stash.</text>
+                  <autoReward level="MED">standard</autoReward>
+                </event>
+              </choice>
+              <choice hidden="true" req="CREW_STIMS">
+                <text>(Mantis Pheromones) Sprint towards the shuttle.</text>
+                <event>
+                  <text>The team is able to outrun the Rocks easily. As soon as you enter the shuttle, the pilot takes off. You reach the ship in one piece with resources onboard.</text>
+                  <autoReward level="MED">standard</autoReward>
+                </event>
+              </choice>
+              <choice req="BATTLE_LIST">
+                <text>(Anti-Personnel Drone) Send the drone to defend the shuttle.</text>
+                <event>
+                  <text>The Rocks come to the shuttle only to see a drone waiting them with heavy blasters and grenades. Primitives run away after two of them got dissected by the murder machine.</text>
+                  <item_modify>
+                    <item max="-1" min="-1" type="drones"/>
+                  </item_modify>
+                  <choice hidden="true" req="WEAPONS_BEAM_DAMAGE">
+                    <text id="continue"/>
+                    <event>
+                      <text>You return to the ship with all the scrap found in secret stash on the planet.</text>
+                      <autoReward level="MED">standard</autoReward>
+                    </event>
+                  </choice>
+                </event>
+              </choice>
+            </event>
+          </choice>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true">
+      <text>Do not leave the ship.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <changelog>
+    <entry>Added Rock missionary event</entry>
+  </changelog>
+  <event name="WOONA_ROCK_MISSIONARY" unique="true">
+    <text>A rock ship awaits you at the beacon and hails you immediately. "Would you like to talk about our lord and savior, Vrachos the Almighty?"</text>
+    <ship hostile="false" load="ROCK_SHIP"/>
+    <choice hidden="true">
+      <text>What is it? Some kind of a boulder?</text>
+      <event>
+        <text>The rock ship starts charging its weapons in response. "Oh Lord, today we will sacrifice these unbelievers in your name!"</text>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice hidden="true" req="rock">
+      <text>(Rock) Perform the traditional welcoming ritual.</text>
+      <event>
+        <text>The Rock missionary is impressed. "Who could have thought that we, devout believers of Vrachos the Almighty, would meet in this far arm of the galaxy? It truly is Divine Providence! Now, as per tradition of true believers, you have to share what you have done to please God today."</text>
+        <choice hidden="true">
+          <text>I cleansed the galaxy from aliens with holy fire!</text>
+          <eventList>
+            <event>
+              <text>The missionary is outraged. "Our religion is a peaceful one but we won't stay idle when xenophobic fanatics boast that they murder innocents in the name of our Lord!" The Rock ship charges its weapons.</text>
+              <ship hostile="true"/>
+            </event>
+            <event>
+              <text>"Truly, it is our holy duty to contain the ever growing threat of aliens. They threaten our traditional ways of life. They threaten out religion. They threaten God!" I hope this gift will help you continue fighting the righteous war.</text>
+              <autoReward level="low">scrap_only</autoReward>
+              <weapon name="BEAM_FIRE"/>
+            </event>
+          </eventList>
+        </choice>
+        <choice hidden="true">
+          <text>I helped those in need, and saved innocents from space pirates!</text>
+          <eventList>
+            <event>
+              <text>The missionary is irritated. "You misunderstand the teachings of God. Those 'innocents' are nothing more than worthless wimps. The strong always feasts on the weak. Such are the rules of the universe." It seems that the Rocks decided to teach you these rules with their weapons.</text>
+              <ship hostile="true"/>
+            </event>
+            <event>
+              <text>"The most noble deed I have heard of in years! You have done well to follow the teachings of our Lord and save helpless civilians from horrors of war. I hope this humble gift will help you when you need it."</text>
+              <autoReward level="low">scrap_only</autoReward>
+              <augment name="ROCK_ARMOR"/>
+            </event>
+          </eventList>
+        </choice>
+        <choice hidden="true">
+          <text>I prayed for Rebellion to be over and for infinite war to finally end.</text>
+          <eventList>
+            <event>
+              <text>"Our God demands direct action, not silent prayer! Are you waiting for Lord to just give you what you want for nothing in return? Vrachos the Almighty demands sacrifice!" Judging by Rock ship's aggressive maneuvers, you will be that sacrifice.</text>
+              <ship hostile="true"/>
+            </event>
+            <event>
+              <text>"My dearest friend, I will join you in that prayer! Our people are tired of neverending war and destruction. Whole planets are barren, devastated by fighting between Rebels and Federation. I wish you safe journey whenever you go and bestow this humble gift."</text>
+              <autoReward level="low">scrap_only</autoReward>
+              <augment name="FLEET_DISTRACTION"/>
+            </event>
+          </eventList>
+        </choice>
+      </event>
+    </choice>
+  </event>
+
+  <changelog>
+    <entry>Added Rock ship on pulsar event</entry>
+  </changelog>
+  <event name="WOONA_ROCK_PULSAR" unique="true">
+    <text>The beacon is located too close to a pulsating star. Captain of the Rock ship nearby is enraged. "Why are my shields not working again? Let me leave this wretched place!"</text>
+    <environment type="pulsar"/>
+    <ship hostile="false" load="ROCK_SHIP"/>
+    <choice hidden="true">
+      <text>Advise him to turn shields off entirely to prevent them from being ionized.</text>
+      <event>
+        <text>"Are you taking me for a fool? Turn your mouth off!" The rock captain is shaking in rage and orders to attack.</text>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Ignore him and charge FTL drive.</text>
+      <event/>
+    </choice>
+    <choice hidden="true" req="ION_ARMOR">
+      <text>(Reverse Ion Field) Offer him a gift.</text>
+      <event>
+        <text>The rock captain is very grateful. He offers you his best weapon and all of his scrap in exchange.</text>
+        <remove name="ION_ARMOR"/>
+        <autoReward level="HIGH">weapon</autoReward>
+      </event>
+    </choice>
+  </event>
+</FTL>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="ITEMS_CRYSTAL">
+    <event load="CRYSTAL_CACHE"/>
+    <event load="CRYSTAL_SCRAP_EXCITED"/>
+
+    <event load="FIND_DRONE"/>
+    <event load="FIND_WEAPON"/>
+    <event load="REFUEL_STATION"/>
+    <event load="REPAIR_STATION"/>
+  </eventList>
+
+  <event name="CRYSTAL_CACHE" unique="true">
+    <text>Odd radar pings from a huge, orbiting asteroid here reveal a Crystalline cache of some kind. A deep crater has been sealed over with a thick layer of crystal to keep whatever's inside safe - it'd take some serious firepower to break though.</text>
+    <choice hidden="true">
+      <text>Attempt to break through with the weapons you have.</text>
+      <eventList name="CRYSTAL_CACHE_BREAK">
+        <event count="2">
+          <text>You fire everything you have, but the crystal barrier remains strong. After a time you give up and move on.</text>
+        </event>
+        <event>
+          <text>Against all odds, a lucky shot strikes an existing fracture in the crystal, compounding it into a crack that grows until an entire section of the barrier falls away!</text>
+          <choice hidden="true">
+            <text>Investigate the cache.</text>
+            <event load="CRYSTAL_CACHE_LIST"/>
+          </choice>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true" req="MISSILES_BREACH">
+      <text>(Breach Missiles) Use a Breach Missile.</text>
+      <event>
+        <text>Your Breach warheads dislodge and shatter a massive shard of crystal, leaving your away team enough space to climb down and take a look.</text>
+        <item_modify>
+          <item type="missiles" min="-1" max="-1"/>
+        </item_modify>
+        <choice hidden="true">
+          <text>Investigate the cache.</text>
+          <event load="CRYSTAL_CACHE_LIST"/>
+        </choice>
+      </event>
+    </choice>
+    <choice hidden="true" req="crystal">
+      <text>(Crystal crewmember) Have your Crystalline Being recalibrate your weapons.</text>
+      <event>
+        <text>Your Crystalline crew-member is able to adjust the detonation frequency of your weapons to resonate with this type of crystal, and the barrier gives little resistance.</text>
+        <choice hidden="true">
+          <text>Investigate the cache.</text>
+          <event load="CRYSTAL_CACHE_LIST"/>
+        </choice>
+      </event>
+    </choice>
+  </event>
+  <eventList name="CRYSTAL_CACHE_LIST">
+    <event count="2">
+      <text>On arriving at the base of the crater, your team discovers a long-forgotten weapons cache. Most of the equipment is out of action, but not all of it!</text>
+      <weapon name="WEAPONS_CRYSTAL"/>
+      <autoReward level="LOW">stuff</autoReward>
+    </event>
+    <event>
+      <text>You send a crewmember down to check out the cache. The comm goes dead, and shortly thereafter massive gravity readings are detected on the asteroid. You must have triggered some kind of singularity booby trap! We've got to leave now before we're pulled in!</text>
+      <choice hidden="true">
+        <text>Pull out now!</text>
+        <event>
+          <text>You push the impulse engines to their limit and are able to break out of the gravity well. Your crewmember, along with the stockpile, is reduced to the size of a tennis ball - but you're left in one piece.</text>
+          <removeCrew>
+            <clone>true</clone>
+            <text>Luckily, your clone bay is able to revive your crewmember.</text>
+          </removeCrew>
+        </event>
+      </choice>
+      <choice hidden="true">
+        <text>Detonate your entire fuel reserves to escape with your crew and the cargo.</text>
+        <event>
+          <text>You swoop into the heart of the distortion and pick up your crewmember and the cargo. You then eject your FTL fuel and ignite it, sending a shock wave that thrusts your ship well beyond the event horizon of the singularity. That was close.</text>
+          <item_modify steal="true">
+            <item type="fuel" min="-100" max="-100"/>
+          </item_modify>
+          <weapon name="RANDOM"/>
+          <autoReward level="LOW">stuff</autoReward>
+        </event>
+      </choice>
+      <choice hidden="true" req="teleporter" lvl="2">
+        <text>(Improved Teleporter) Beam your crewmember back on board.</text>
+        <event>
+          <text>You floor the engines to escape the gravity well while trying to get a teleporter lock on your crewmember despite the massive interference. You're barely able to get them back on board before the entire area is consumed into the singularity.</text>
+        </event>
+      </choice>
+      <choice hidden="true" req="engines" lvl="7">
+        <text>(Advanced Engines) Rescue your crewmember and the cargo.</text>
+        <event>
+          <text>You swoop into the heart of the distortion and pick up your crewmember and the cargo. Your top of the line impulse engines are barely able to get your ship out of the gravity well before the whole ship is consumed. That was close.</text>
+          <weapon name="RANDOM"/>
+          <autoReward level="LOW">stuff</autoReward>
+        </event>
+      </choice>
+    </event>
+  </eventList>
+
+  <event name="CRYSTAL_SCRAP_EXCITED" unique="true">
+    <text>You receive a signal from a private relay on a nearby inhabited planet. "Are you the alien ship they've been talking about?! You are! Please, I am a collector of alien artifacts, I'm sure what is scrap to you is priceless to me."</text>
+    <choice hidden="true">
+      <text>Offer 35 scrap.</text>
+      <event>
+        <text>"My word! Is this... a 25th century Rockman thrust stabilizer?! What do you want for it? Wait, I have a better proposal. I long to see the galaxy. I propose I come with you. What do you say?"</text>
+        <item_modify>
+          <item type="scrap" min="-35" max="-35"/>
+        </item_modify>
+        <choice hidden="true">
+          <text>Accept.</text>
+          <event>
+            <text>"I shan't even gather my belongings - only permit me to leave my family a message." The Crystalline Being joins your crew.</text>
+            <crewMember amount="1" class="crystal"/>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>Request another payment.</text>
+          <eventList name="CRYSTAL_SCRAP_EXCITED_LIST">
+            <event>
+              <text>"Very well, a payment in kind. I have these explosives that emulate our race's innate ability. Perhaps that would interest you."</text>
+              <weapon name="BOMB_LOCK"/>
+            </event>
+            <event>
+              <text>"Very well, a payment in kind. I have an extra ship weapon laying around here somewhere. Perhaps you could make use of it?"</text>
+              <weapon name="CRYSTAL_BURST_2"/>
+            </event>
+          </eventList>
+        </choice>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Turn him down.</text>
+      <event>
+        <text>Scrap is priceless no matter where you are in the galaxy. You hold onto your goods and prepare to jump.</text>
+      </event>
+    </choice>
+  </event>
+</FTL>

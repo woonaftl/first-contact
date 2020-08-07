@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <changelog>
+    <entry>Noether (Zoltan B) moved to slot A</entry>
+    <entry>Noether has some rooms and doors rearranged</entry>
+    <entry>Zoltan A starts with Pike Beam (no change, except for length)</entry>
+    <entry>Zoltan A starts with 2 Ions (no change)</entry>
+    <entry>Zoltan A starts with a clonebay</entry>
+  </changelog>
+  <shipBlueprint name="PLAYER_SHIP_ENERGY" layout="energy_cruiser_2" img="energy_cruiser">
+    <class>Zoltan Cruiser</class>
+    <name>Noether</name>
+    <unlock>Learn from the Zoltan that sometimes diplomacy works.</unlock>
+    <desc>The Zoltan's advanced shields technology gives this ship an edge during each battle.</desc>
+    <systemList>
+      <battery power="1" room="1" start="false" img="room_battery_7"/>
+      <cloaking power="1" room="7" start="false" img="room_cloaking_2"/>
+      <clonebay power="1" room="3" start="true" slot="0"/>
+      <doors power="1" room="4" start="true" img="room_doors_16"/>
+      <drones power="2" room="2" start="false" img="room_drones"/>
+      <engines power="2" room="0" start="true" img="room_engines_14"/>
+      <hacking power="1" room="10" start="false" img="room_hacking_16"/>
+      <medbay power="1" room="3" start="false" img="room_medbay_10"/>
+      <mind power="1" room="9" start="false" img="room_mind_7"/>
+      <oxygen power="1" room="12" start="true" img="room_oxygen_7"/>
+      <pilot power="1" room="14" start="true" img="room_pilot_4"/>
+      <sensors power="1" room="13" start="true" img="room_sensors_4"/>
+      <shields power="1" room="5" start="true" img="room_shields_18"/>
+      <teleporter power="1" room="11" start="false"/>
+      <weapons power="4" room="6" start="true" img="room_weapons_11"/>
+    </systemList>
+    <weaponSlots>4</weaponSlots>
+    <droneSlots>2</droneSlots>
+    <weaponList count="3" missiles="0">
+      <weapon name="ION_1"/>
+      <weapon name="ION_1"/>
+      <weapon name="BEAM_LONG"/>
+    </weaponList>
+    <droneList drones="2"/>
+    <health amount="30"/>
+    <maxPower amount="5"/>
+    <crewCount amount="3" class="energy"/>
+    <aug name="ENERGY_SHIELD_LOCKED"/>
+    <shieldImage>energy_cruiser</shieldImage>
+    <cloakImage>energy_cruiser</cloakImage>
+    <floorImage>energy_cruiser_2</floorImage>
+  </shipBlueprint>
+
+  <changelog>
+    <entry>New Zoltan B ship with weak reactor, Halberd Beam and Ion Bomb</entry>
+  </changelog>
+  <!--TODO remake-->
+  <shipBlueprint name="PLAYER_SHIP_ENERGY_2" layout="energy_cruiser_black" img="energy_cruiser_3">
+    <class>Zoltan Cruiser</class>
+    <name>?</name>
+    <unlock>Complete 2/3 of the Zoltan Cruiser Achievements to unlock this ship.</unlock>
+    <desc>The designer of this ship was not willing to spend the money for a decent reactor. Instead it relies on its Zoltan crew and Backup Battery.</desc>
+    <systemList>
+      <battery power="2" room="4" start="true" img="room_battery_4"/>
+      <cloaking power="1" room="9" start="false" img="room_cloaking_16"/>
+      <clonebay power="1" room="11" start="true" slot="3"/>
+      <doors power="1" room="17" start="true" img="room_doors_2"/>
+      <drones power="2" room="14" start="false" img="room_drones_18"/>
+      <engines power="2" room="0" start="true" img="room_engines_15"/>
+      <hacking power="1" room="12" start="false" img="room_hacking_9"/>
+      <medbay power="1" room="11" start="false" img="room_medbay_3"/>
+      <mind power="1" room="6" start="false" img="room_mind_15"/>
+      <oxygen power="1" room="3" start="true" img="room_oxygen_13"/>
+      <pilot power="1" room="8" start="true" img="room_pilot"/>
+      <sensors power="1" room="16" start="true" img="room_sensors"/>
+      <shields power="1" room="1" start="true" img="room_shields_18"/>
+      <teleporter power="1" room="13" start="false"/>
+      <weapons power="4" room="2" start="true" img="room_weapons_7"/>
+    </systemList>
+    <weaponSlots>4</weaponSlots>
+    <droneSlots>2</droneSlots>
+    <weaponList count="2" missiles="12">
+      <weapon name="BEAM_2"/>
+      <weapon name="BOMB_ION"/>
+    </weaponList>
+    <droneList drones="0"/>
+    <health amount="30"/>
+    <maxPower amount="1"/>
+    <crewCount amount="4" class="energy"/>
+    <aug name="ENERGY_SHIELD_LOCKED"/>
+    <shieldImage>energy_cruiser</shieldImage>
+    <cloakImage>energy_cruiser</cloakImage>
+    <floorImage>energy_cruiser_black</floorImage>
+  </shipBlueprint>
+
+  <changelog>
+    <entry>New Zoltan C ship roughly based on old Stealth C ship</entry>
+  </changelog>
+  <!--TODO remake -->
+  <shipBlueprint name="PLAYER_SHIP_ENERGY_3" layout="energy_cruiser_white" img="energy_cruiser_2">
+    <class>Zoltan Cruiser</class>
+    <name>?</name>
+    <unlock>Get to Sector 8 with the Zoltan Cruiser Type B and Advanced Mode enabled to unlock this ship.</unlock>
+    <desc>This ship was a part of an experiment to make a version of the Zoltan shield that replenishes in combat.</desc>
+    <systemList>
+      <battery power="1" room="3" start="false" img="room_battery_10"/>
+      <cloaking power="1" room="6" start="false" img="room_cloaking_2"/>
+      <clonebay power="1" room="1" start="false" slot="1"/>
+      <doors power="1" room="4" start="true" img="room_doors_7"/>
+      <drones power="3" room="10" start="true" img="room_drones_24"/>
+      <engines power="2" room="11" start="true" img="room_engines_13"/>
+      <hacking power="1" room="9" start="false" img="room_hacking_3"/>
+      <medbay power="1" room="1" start="true" img="room_medbay"/>
+      <mind power="1" room="5" start="false" img="room_mind_5"/>
+      <oxygen power="1" room="14" start="true" img="room_oxygen_22"/>
+      <pilot power="1" room="0" start="true" img="room_pilot_2"/>
+      <sensors power="1" room="7" start="true" img="room_sensors_2"/>
+      <shields power="1" room="8" start="true" img="room_shields_17"/>
+      <teleporter power="1" room="2" start="false"/>
+      <weapons power="2" room="12" start="true" img="room_weapons_4"/>
+    </systemList>
+    <weaponSlots>4</weaponSlots>
+    <droneSlots>2</droneSlots>
+    <weaponList count="2" missiles="0">
+      <weapon name="BEAM_1_UPGRADED"/>
+      <weapon name="ION_CHARGEGUN_UPGRADED"/>
+    </weaponList>
+    <droneList count="2" drones="16">
+      <drone name="DRONE_SHIELD_UPGRADED"/>
+      <drone name="ANTI_DRONE"/>
+    </droneList>
+    <health amount="30"/>
+    <maxPower amount="5"/>
+    <crewCount amount="3" class="energy"/>
+    <shieldImage>energy_cruiser</shieldImage>
+    <cloakImage>energy_cruiser</cloakImage>
+    <floorImage>energy_cruiser_white</floorImage>
+  </shipBlueprint>
+</FTL>

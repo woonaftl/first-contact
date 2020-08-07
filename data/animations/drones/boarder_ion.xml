@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <animSheet name="boarder_ion" w="210" h="245" fw="35" fh="35">people/boarder_ion_base.png</animSheet>
+  <animSheet name="boarder_ion_death" w="320" h="32" fh="32" fw="32">effects/explosion1_strip10.png</animSheet>
+
+
+  <anim name="boarder_ion_attack">
+    <sheet>boarder_ion</sheet>
+    <desc length="4" x="0" y="2"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="boarder_ion_shoot_down">
+    <sheet>boarder_ion</sheet>
+    <desc length="2" x="0" y="6"/>
+    <time>1.5</time>
+  </anim>
+
+  <anim name="boarder_ion_shoot_right">
+    <sheet>boarder_ion</sheet>
+    <desc length="2" x="2" y="6"/>
+    <time>1.5</time>
+  </anim>
+
+  <anim name="boarder_ion_shoot_up">
+    <sheet>boarder_ion</sheet>
+    <desc length="2" x="0" y="5"/>
+    <time>1.5</time>
+  </anim>
+
+  <anim name="boarder_ion_shoot_left">
+    <sheet>boarder_ion</sheet>
+    <desc length="2" x="0" y="5"/>
+    <time>1.5</time>
+  </anim>
+
+  <anim name="boarder_ion_death_right">
+    <sheet>boarder_ion_death</sheet>
+    <desc length="10" x="0" y="0"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="boarder_ion_death_right">
+    <sheet>boarder_ion_death</sheet>
+    <desc length="10" x="0" y="0"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="boarder_ion_walk_down">
+    <sheet>boarder_ion</sheet>
+    <desc length="4" x="0" y="2"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="boarder_ion_walk_right">
+    <sheet>boarder_ion</sheet>
+    <desc length="2" x="4" y="2"/>
+    <time>0.5</time>
+  </anim>
+
+  <anim name="boarder_ion_walk_up">
+    <sheet>boarder_ion</sheet>
+    <desc length="4" x="0" y="1"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="boarder_ion_walk_left">
+    <sheet>boarder_ion</sheet>
+    <desc length="2" x="4" y="1"/>
+    <time>0.5</time>
+  </anim>
+
+
+  <anim name="boarder_ion_power_up">
+    <sheet>boarder_ion</sheet>
+    <desc length="5" x="0" y="4"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="boarder_ion_power_down">
+    <sheet>boarder_ion</sheet>
+    <desc length="5" x="0" y="0"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="boarder_ion_portrait">
+    <sheet>boarder_ion</sheet>
+    <desc length="1" x="0" y="0"/>
+    <time>1</time>
+  </anim>
+
+  <anim name="boarder_ion_ion">
+    <sheet>boarder_ion</sheet>
+    <desc length="5" x="0" y="3"/>
+    <time>1</time>
+  </anim>
+
+  <anim name="boarder_ion_glow">
+    <sheet>boarder_ion</sheet>
+    <desc length="1" x="5" y="3"/>
+    <time>1</time>
+  </anim>
+</FTL>

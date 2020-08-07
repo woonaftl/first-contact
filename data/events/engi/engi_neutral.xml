@@ -1,0 +1,568 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="NEUTRAL_ENGI">
+    <event load="ENGI_SEX"/>
+    <event load="ENGI_VIRUS"/>
+    <event load="CONFUSED_MANTIS"/>
+    <event load="ALISON_MANTIS_CREW"/>
+    <event load="WOONA_ENGI_CONSTRUCTION_YARD"/>
+    <event load="WOONA_ENGI_GREEN_PLANET"/>
+    <event load="WOONA_ENGI_STATION_REQUIRES_WORKERS"/>
+
+    <event load="ASTEROID_DERELICT_SHIP"/>
+    <event load="ZOLTAN_CREW_STUDY"/>
+
+    <event load="MANTIS_FIGHT_CHOICE"/>
+    <event load="MANTIS_CIVILIAN"/>
+    <event load="ASTEROID_EXPLORE"/>
+    <event load="REFUGEE_NO_DISTRESS"/>
+    <event load="WRECKAGE_EVENT"/>
+    <event load="FUELING_STATION"/>
+  </eventList>
+
+  <changelog>
+    <entry>Removed PIRATE_BRIBER event from Engi sector</entry>
+    <entry>Removed BROKEN_REBEL_DRONE event from Engi sector</entry>
+    <entry>Removed AUTO_DEFENSE_ITEM event from Engi sector</entry>
+  </changelog>
+
+  <event name="ENGI_SEX" unique="true">
+    <text>What appeared to be a single damaged ship is in fact two ships that have smashed into each other... there is a flurry of comm signals and damage, and it's hard to determine what occurred. The vessels appear to be... Engi? They look locked together by the impact and can't free themselves.</text>
+    <choice hidden="true">
+      <text>Attempt to help the ships by prying them apart.</text>
+      <event>
+        <text>To your surprise, one of the Engi vessels attacks! One ship detaches itself, surprisingly still quite whole, and opens fire - it looks like it's somehow identified you as hostile!</text>
+        <ship name="ENGI_SEX_SHIP" auto_blueprint="SHIPS_CIRCLE" hostile="true">
+          <destroyed>
+            <text>With the ship destroyed, the remaining Engi ship hails you frantically and explains the situation to you.</text>
+            <choice hidden="true">
+              <text id="continue"/>
+              <event>
+                <text>Apparently, you interrupted the equivalent of a "consolidation" of two ships that were using each other's parts to construct a new vessel. The Engi were not truly hostile, their targeting computers had not finished adjusting. There's nothing to be done about it now. You leave the remains for the surviving ship.</text>
+              </event>
+            </choice>
+          </destroyed>
+          <deadCrew>
+            <text>With the ship disabled, the remaining Engi ship hails you frantically and explains the situation to you.</text>
+            <choice hidden="true">
+              <text id="continue"/>
+              <event>
+                <text>Apparently, you interrupted the equivalent of a "consolidation" of two ships that were using each other's parts to construct a new vessel. The Engi were not truly hostile, their targeting computers had not finished adjusting. There's nothing to be done about it now. You leave the remains for the surviving ship.</text>
+              </event>
+            </choice>
+          </deadCrew>
+        </ship>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Ignore the damaged vessels.</text>
+      <event/>
+    </choice>
+    <choice req="engi">
+      <text>[Engi Crew] Have your Engi crewmember hail the vessel and assess the damage.</text>
+      <event>
+        <text>Your Engi crewmember refuses. In a halting use of adjectives and nouns, followed by some animated holographic aids, the Engi explains the ships are... using each other to, loosely translated, "achieve a union." For some reason, this consolidation of ship matter sounds embarrassing and personal.</text>
+        <choice hidden="true">
+          <text id="continue"/>
+          <event>
+            <text>You elect to leave the two Engi ships... to their "business." After questioning your Engi crewmember, however, you do manage to salvage what scrap parts you can from the perimeter, even though you feel slightly dirty for doing so.</text>
+            <autoReward level="MEDIUM">stuff</autoReward>
+          </event>
+        </choice>
+      </event>
+    </choice>
+  </event>
+
+  <changelog>
+    <entry>ENGI_VIRUS event reward changed from Drone Reactor Booster to Engi Med-bot Dispersal</entry>
+  </changelog>
+  <event name="ENGI_VIRUS" unique="true">
+    <text>The Engi are awaiting you at the beacon, with their weapons on-line! They explain a computer virus that is wanted for hostile acts against the Engi (multiple counts of binary scrambling, nano-dissolution, and variable interference) is aboard your vessel.</text>
+    <choice>
+      <text id="continue"/>
+      <event>
+        <text>They insist they must destroy your ship to prevent the virus from escaping!</text>
+        <choice hidden="true">
+          <text>Hold on! Let us try to purge the system code!</text>
+          <event>
+            <text>Wiping your engine core and shields proves useless... eventually you trap the virus in the weapons systems to purge it, but before you do, the Engi grow restless and attack!</text>
+            <status type="divide" target="player" system="shields" amount="2"/>
+            <status type="divide" target="player" system="engines" amount="2"/>
+            <ship load="ENGI_VIRUS_SHIP" hostile="true"/>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>Attack the Engi vessel!</text>
+          <event>
+            <text>The Engi be damned, no one threatens your ship. You prepare for a fight!</text>
+            <ship load="ENGI_VIRUS_SHIP" hostile="true"/>
+          </event>
+        </choice>
+        <choice req="hacking" lvl="1" max_group="0" hidden="true">
+          <text>[Hacking System] Isolate and quarantine the virus.</text>
+          <event>
+            <text>It takes some time, and the virus is slippery, but you eventually confine it to a useless sub-system prison where it frantically begins calculating insults at you. You eject the system from the ship and then silence the little binary criminal with your weapons.</text>
+            <choice hidden="true">
+              <text id="continue"/>
+              <event>
+                <text>The Engi thank you for deleting the virus, and jump away. They offer a unique ship augmentation as a reward.</text>
+                <autoReward level="LOW">standard</autoReward>
+                <augment name="NANO_MEDBAY"/>
+              </event>
+            </choice>
+          </event>
+        </choice>
+        <choice req="hacking" lvl="2" max_group="0" hidden="true">
+          <text>[Improved Hacking] Reprogram the virus.</text>
+          <event>
+            <text>You proceed to interface with the virus and optimize its repair and benevolence routines.</text>
+            <choice hidden="true">
+              <text id="continue"/>
+              <event>
+                <text>After a few minutes, the virus "sees the light" and integrates itself in a positive manner with the computer society on your ship, repairing your hull and attempting to optimize your reactor.</text>
+                <damage amount="-15"/>
+                <upgrade amount="1" system="reactor"/>
+                <choice hidden="true">
+                  <text id="continue"/>
+                  <event>
+                    <text>The Engi thank you for deleting the virus, and jump away. They offer a unique ship augmentation as a reward.</text>
+                    <augment name="NANO_MEDBAY"/>
+                  </event>
+                </choice>
+              </event>
+            </choice>
+          </event>
+        </choice>
+        <choice req="hacking" lvl="3" max_group="0" hidden="true">
+          <text>[Advanced Hacking] Reprogram the virus.</text>
+          <event>
+            <text>You proceed to interface with the virus and optimize its repair and benevolence routines.</text>
+            <choice hidden="true">
+              <text id="continue"/>
+              <event>
+                <text>After a few minutes, the virus "sees the light" and integrates itself in a positive manner with the computer society on your ship, repairing your hull and attempting to optimize your reactor.</text>
+                <damage amount="-30"/>
+                <upgrade amount="1" system="reactor"/>
+                <choice hidden="true">
+                  <text id="continue"/>
+                  <event>
+                    <text>The Engi thank you for deleting the virus, and jump away. They offer a unique ship augmentation as a reward.</text>
+                    <augment name="NANO_MEDBAY"/>
+                  </event>
+                </choice>
+              </event>
+            </choice>
+          </event>
+        </choice>
+        <choice req="anaerobic" hidden="true">
+          <text>[Lanius Crew] Your Lanius crewmember gestures frantically.</text>
+          <event>
+            <text>Oddly enough, the Lanius seems aware of which computer the virus is present in, and proceeds to... digest the terminal. There is a burst of O2, and the Engi ship powers down its weapons, no longer sensing the virus on board. The Engi send some parts over to repair your damaged computer, along with a unique ship augmentation as a reward for terminating the virus.</text>
+            <autoReward level="MEDIUM">scrap_only</autoReward>
+            <augment name="NANO_MEDBAY"/>
+          </event>
+        </choice>
+        <choice req="engi" hidden="true">
+          <text>[Engi Crew] Have your Engi crewmember negotiate with the Engi ship.</text>
+          <event>
+            <text>As the Engi attempts to contact the vessel and negotiate, your Engi crewmember suddenly dissolves into nanites - the virus has murdered again! Detecting activity on board your ship, the Engi vessel opens fire!</text>
+            <ship load="ENGI_VIRUS_SHIP_ALT" hostile="true"/>
+            <removeCrew class="engi">
+              <clone>false</clone>
+              <text>The virus appears to have disrupted your clone bay's capability to revive the lost crewmember!</text>
+            </removeCrew>
+          </event>
+        </choice>
+      </event>
+    </choice>
+  </event>
+  <ship name="ENGI_VIRUS_SHIP" auto_blueprint="SHIPS_CIRCLE">
+    <destroyed>
+      <text>With the ship destroyed, you detect that the virus has abandoned your ship and disappeared somewhere within the systems of the wreckage. It will likely infect whatever Engi ship passes next, but your mission is too vital to risk re-infection by stopping it.</text>
+      <autoReward level="MEDIUM">standard</autoReward>
+      <status type="clear" target="player" system="engines" amount="100"/>
+      <status type="clear" target="player" system="shields" amount="100"/>
+    </destroyed>
+    <deadCrew>
+      <text>With the Engi crew dead, you detect that the virus has abandoned your ship and disappeared somewhere within the systems of Engi vessel. It will likely infect whatever Engi ship passes next, but your mission is too vital to risk re-infection by stopping it.</text>
+      <autoReward level="MEDIUM">standard</autoReward>
+      <status type="clear" target="player" system="engines" amount="100"/>
+      <status type="clear" target="player" system="shields" amount="100"/>
+    </deadCrew>
+  </ship>
+  <ship name="ENGI_VIRUS_SHIP_ALT" auto_blueprint="SHIPS_CIRCLE">
+    <destroyed>
+      <text>With the ship destroyed, you scrap it and prepare to jump away.</text>
+      <autoReward level="MEDIUM">standard</autoReward>
+      <choice hidden="true">
+        <text id="continue"/>
+        <event load="ENGI_VIRUS_REBORN"/>
+      </choice>
+    </destroyed>
+    <deadCrew>
+      <text>With all the Engi dead, you take what you can and prepare to jump away.</text>
+      <autoReward level="MEDIUM">standard</autoReward>
+      <choice hidden="true">
+        <text id="continue"/>
+        <event load="ENGI_VIRUS_REBORN"/>
+      </choice>
+    </deadCrew>
+  </ship>
+  <event name="ENGI_VIRUS_REBORN">
+    <text>To your surprise your Engi crewmember reforms. It looks as if the virus reconstituted, repurposed, and reprogrammed the Engi host and wants to travel with you... and it seems to have learned a great deal from its time on your ship.</text>
+    <crewMember amount="1" class="engi" all_skills="2">Virus</crewMember>
+  </event>
+
+  <event name="CONFUSED_MANTIS" unique="true">
+    <text>As soon as you jump into the system, you receive a hail from a nearby civilian Engi vessel. Their Captain appears on your screen: "Strange bug. Can you assist in debugging?"</text>
+    <choice>
+      <text>Listen to their problem.</text>
+      <event>
+        <text>"Found malfunctioning Mantis. Believes it is human. Will receive input only from human. Danger Evaluation: Extremely High. Provide assistance."</text>
+        <choice>
+          <text>Send a shuttle with an away team to help.</text>
+          <eventList name="CONFUSED_MANTIS_DEFAULT">
+            <event>
+              <text>After an hour of convincing, the Mantis finally calms down and introduces himself as Robert Smith. He explains he's from a nearby human colony and would appreciate being returned there.</text>
+              <choice>
+                <text id="continue"/>
+                <event load="CONFUSED_MANTIS_HOME"/>
+              </choice>
+            </event>
+            <event>
+              <text>The cornered and frightened Mantis attacks as soon as you approach. One of your crew is eviscerated before the rest are able to stop him. The Engi apologize for your loss.</text>
+              <removeCrew>
+                <clone>true</clone>
+                <text>Your crew's clone is waiting when you return to the ship.</text>
+              </removeCrew>
+            </event>
+            <event>
+              <text>The cornered and frightened Mantis attacks as soon as you approach. You're able to subdue him and leave him at a Mantis colony in a neighboring system. They don't seem pleased or grateful at his return.</text>
+            </event>
+          </eventList>
+        </choice>
+        <choice>
+          <text>Leave them, a cornered Mantis is too dangerous.</text>
+          <event/>
+        </choice>
+        <choice req="human" hidden="true">
+          <text>(Human Crew) Send your human crewmember to communicate with the Mantis.</text>
+          <event>
+            <text>The Mantis is grateful to see 'another human', and introduces himself as Robert Smith. He explains he's from a nearby human colony and would appreciate being returned there.</text>
+            <choice>
+              <text>Return him home.</text>
+              <event load="CONFUSED_MANTIS_HOME"/>
+            </choice>
+          </event>
+        </choice>
+        <choice req="mantis" hidden="true">
+          <text>(Mantis Crew) Send your Mantis crewmember to communicate with the Mantis.</text>
+          <event>
+            <text>The Mantis is terrified at the sight of your crewmember. He immediately attacks his Engi rescuers, and your crewmember is forced to kill him. The Engi are grateful for your help and offer a small reward.</text>
+            <autoReward level="LOW">standard</autoReward>
+          </event>
+        </choice>
+        <choice req="mind" lvl="1" hidden="true">
+          <text>(Mind Control) Use your Mind control System to calm him down.</text>
+          <event>
+            <text>The Mantis calms down and communicates thanks to the Engi and yourself for helping. He requests to be dropped off at a nearby planet, at the human colony where he was raised. They are grateful for his return and offer a reward.</text>
+            <autoReward level="MED">standard</autoReward>
+          </event>
+        </choice>
+      </event>
+    </choice>
+    <choice>
+      <text>Explain that you can't do any programming and leave.</text>
+      <event/>
+    </choice>
+  </event>
+  <event name="CONFUSED_MANTIS_HOME">
+    <text>The colony is a mining operation that specializes in FTL fuel. Robert's family, the head engineers, are excited to see him, and are very grateful for his return. Apparently he ran away to 'join the Federation' like his older brother, but was never accepted onto a ship.</text>
+    <choice hidden="true">
+      <text>Offer him a position on your ship.</text>
+      <event>
+        <text>He graciously accepts, having always wanted to serve in the Federation.</text>
+        <crewMember amount="1" class="mantis">Robert Smith</crewMember>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Ask if they can take a look at your engines.</text>
+      <event>
+        <text>They are happy to take a look, and are able to offer some suggestions for improvements.</text>
+        <upgrade amount="1" system="engines"/>
+      </event>
+    </choice>
+  </event>
+
+  <changelog>
+    <entry>Added Engi Construction Yard event</entry>
+  </changelog>
+  <event name="WOONA_ENGI_CONSTRUCTION_YARD" unique="false">
+    <text>You have arrived near an Engi construction yard. Most Engi maintain their bi-pedal appearance out of habit but here you see a number of Engi hives working together to create massive organic machines adept at building ships. Truly a sight to behold.</text>
+    <!-- uses old empty beacon text -->
+    <choice blue="false" hidden="true" lvl="0" max_group="0" req="shields">
+      <text>Ask for help in your mission.</text>
+      <event>
+        <text>Once the Engi learn that you are Federation, they offer their help. While the construction yard specializes in building ships from scratch, for a small price, the Engi agree to install a new system on your ship.</text>
+        <choice hidden="true">
+          <text id="continue"/>
+          <event>
+            <text>The Engi inform you that the workshop heavily relies on drones for material transportation so it only accepts payment in drone parts.</text>
+            <choice>
+              <text>Agree to install Shields.</text>
+              <event>
+                <text>The system built and optimized for your ship class by the Engi designers is successfully installed.</text>
+                <system lvl="2" name="shields"/>
+                <item_modify>
+                  <item max="-6" min="-10" type="drones"/>
+                </item_modify>
+              </event>
+            </choice>
+            <choice hidden="true">
+              <text>Do not buy anything.</text>
+              <event/>
+            </choice>
+          </event>
+        </choice>
+      </event>
+    </choice>
+    <choice blue="false" hidden="true" lvl="1" max_group="0" req="shields">
+      <text>Ask for help in your mission.</text>
+      <event>
+        <text>Once the Engi learn that you are Federation, they offer their help. While the construction yard specializes in building ships from scratch, for a small price, the Engi agree to install a new system on your ship.</text>
+        <choice blue="false" hidden="true" lvl="0" max_group="0" req="drones">
+          <text id="continue"/>
+          <event>
+            <text>The Engi inform you that the workshop heavily relies on drones for material transportation so it only accepts payment in drone parts.</text>
+            <choice>
+              <text>Agree to install Drone Control.</text>
+              <event>
+                <text>The system built and optimized for your ship class by the Engi designers is successfully installed.</text>
+                <system lvl="2" name="drones"/>
+                <drone name="RANDOM"/>
+                <item_modify>
+                  <item max="-6" min="-10" type="drones"/>
+                </item_modify>
+              </event>
+            </choice>
+            <choice hidden="true">
+              <text>Do not buy anything.</text>
+              <event/>
+            </choice>
+          </event>
+        </choice>
+        <choice blue="false" hidden="true" lvl="1" max_group="0" req="drones">
+          <text id="continue"/>
+          <event>
+            <text>The Engi inform you that the workshop heavily relies on drones for material transportation so it only accepts payment in drone parts.</text>
+            <choice blue="false" lvl="0" max_group="0" req="hacking">
+              <text>Agree to install Hacking.</text>
+              <event>
+                <text>The system built and optimized for your ship class by the Engi designers is successfully installed.</text>
+                <system lvl="1" name="hacking"/>
+                <item_modify>
+                  <item max="-8" min="-12" type="drones"/>
+                </item_modify>
+              </event>
+            </choice>
+            <choice blue="false" lvl="1" max_group="0" req="hacking">
+              <text>Agree to install Cloaking.</text>
+              <event>
+                <text>The system built and optimized for your ship class by the Engi designers is successfully installed.</text>
+                <system lvl="1" name="cloaking"/>
+                <item_modify>
+                  <item max="-10" min="-14" type="drones"/>
+                </item_modify>
+              </event>
+            </choice>
+            <choice hidden="true">
+              <text>Do not buy anything.</text>
+              <event/>
+            </choice>
+          </event>
+        </choice>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Leave the Engi alone.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <changelog>
+    <entry>Added Green Planet event to Engi sector</entry>
+  </changelog>
+  <event name="WOONA_ENGI_GREEN_PLANET" unique="true">
+    <text>You arrive at a green planet with great plains and rolling waterfalls. It would be of little interest to the Engi nearby.</text>
+    <img planet="PLANET_GREEN"/>
+    <choice hidden="true">
+      <text>Send the shuttle.</text>
+      <eventList>
+        <event>
+          <!-- metal-eating animals -->
+          <text>Your team landed in a shuttle and spreaded out to explore the planet. After a few minutes, a cloud of dust appeared on the horizon. Using optic magnifiers, you could make out a herd of giant long-legged alien beasts.</text>
+          <choice blue="false" hidden="true" lvl="0" max_group="0" req="engi">
+            <text id="continue"/>
+            <event>
+              <text>As soon as the animals saw a shuttle made of metallic parts, they charged. The herd moved so fast, that your team was too late to react and the animals managed to eat large parts of shuttle's hull before being driven away. You would need to use all spare scrap to repair the transport.</text>
+              <item_modify>
+                <item max="-12" min="-15" type="scrap"/>
+              </item_modify>
+              <choice hidden="true">
+                <text>The exploration team did not find anything useful on the planet and returned with empty hands, understanding why Engi had so little interest in settling there.</text>
+                <event/>
+              </choice>
+            </event>
+          </choice>
+          <choice blue="false" hidden="true" lvl="1" max_group="0" req="engi">
+            <text id="continue"/>
+            <event>
+              <text>As soon as the animals saw an Engi, they charged. The herd moved so fast, your team did not have enough time to react. The animals ate the Engi and galloped away, uninterested in attacking anyone alse.</text>
+              <removeCrew class="engi">
+                <clone>true</clone>
+                <text>You are sure that the eaten crewmember is already being cloned back on the ship.</text>
+              </removeCrew>
+              <choice hidden="true">
+                <text>The exploration team did not find anything useful on the planet and returned with empty hands, understanding why Engi had so little interest in settling there.</text>
+                <event/>
+              </choice>
+            </event>
+          </choice>
+        </event>
+        <event>
+          <!-- windy desert -->
+          <text>Even though it seemed that the planet would be full of life after initial scans, after landing the team found nothing but a devastated desert. The winds on the planet are so strong, that organic life is eroded away.</text>
+          <choice hidden="true" lvl="2" req="sensors">
+            <text>(Advanced Sensors) Scan the landing site thoroughly.</text>
+            <event>
+              <text>Scanning indicated that there is an abnormal amount of rare metals deep within the soil near the landing site. After hours of drilling, your team excavates a cache left by someone years ago. Probably, pirates.</text>
+              <autoReward level="MED">scrap_only</autoReward>
+            </event>
+          </choice>
+          <choice hidden="true" req="LIFE_SCANNER">
+            <text>(Lifeform Scanner) Scan the planet again.</text>
+            <event>
+              <text>It turns out, that the planet is not barren after all. The atmosphere is full of microscopic organisms, that fly very fast, causing the winds. Using the nets, your team captures some of the creatures who are revealed to have high concentration of rare metals in their bodies.</text>
+              <autoReward level="MED">scrap_only</autoReward>
+            </event>
+          </choice>
+          <choice hidden="true" req="slug">
+            <text>(Slug) A crewmember senses something in the air.</text>
+            <event>
+              <text>It turns out, that the planet is not barren after all. The atmosphere is full of microscopic organisms, that fly very fast, causing the winds. Using the nets, your team captures some of the creatures who are revealed to have high concentration of rare metals in their bodies.</text>
+              <autoReward level="MED">scrap_only</autoReward>
+            </event>
+          </choice>
+          <choice hidden="true">
+            <text>Leave the planet.</text>
+            <event/>
+          </choice>
+        </event>
+        <event>
+          <!-- flying reptiles -->
+          <text>After landing on the planet, your team learns that it is inhabited by flying reptiles of enormous size. Scanning the surface shows that the lair nearby contains useful materials including rare metals.</text>
+          <choice hidden="true">
+            <text>Visit the lair.</text>
+            <event>
+              <text>Your team approaches the reptile's lair. It is a cave in a giant mountain, far above the surface. Entering the cave using powered exoskeletons will not be difficult, but someone must distract the reptile.</text>
+              <choice hidden="true">
+                <text>Order one of your crewmembers to distract the reptile.</text>
+                <event>
+                  <text>A volunteer makes a distraction, while the rest of the team sneaks into the cave. The reptile eats the sacrificed crewmember alive and returns back to the lair. Your team grabs whatever they can, and gets safely to the shuttle, almost detected by an animal.</text>
+                  <removeCrew>
+                    <clone>true</clone>
+                    <text>The clone of the lost crewmember is ready on the ship, making a note to themselves to never volunteer to distract giant monsters ever again.</text>
+                  </removeCrew>
+                  <autoReward level="LOW">scrap_only</autoReward>
+                </event>
+              </choice>
+              <choice hidden="true" req="mantis">
+                <text>(Mantis) Sneak into the cave.</text>
+                <event>
+                  <text>The Mantis successfully sneaks into the cave using paths, too tight for other races. The Mantis picks up as much equipment as they can carry, choosing what they think most valuable: food, everything shiny, and everything of red color.</text>
+                  <autoReward level="LOW">scrap_only</autoReward>
+                </event>
+              </choice>
+              <choice hidden="true" req="BATTLE">
+                <text>(Anti-Personnel Drone) Use a drone as a distraction.</text>
+                <event>
+                  <text>The drone makes an excellent distraction, letting your team into the dangerous cave without losses. The team does not have much time, so they grab whatever they see first, what will be used as scrap later.</text>
+                  <item_modify>
+                    <item max="-1" min="-1" type="drones"/>
+                  </item_modify>
+                  <autoReward level="LOW">scrap_only</autoReward>
+                </event>
+              </choice>
+              <choice hidden="true" req="BOARDER_LIST">
+                <text>(Boarding Drone) Use a drone as a distraction.</text>
+                <event>
+                  <text>The drone makes an excellent distraction, letting your team into the dangerous cave without losses. The team does not have much time, so they grab whatever they see first, what will be used as scrap later.</text>
+                  <item_modify>
+                    <item max="-1" min="-1" type="drones"/>
+                  </item_modify>
+                  <autoReward level="LOW">scrap_only</autoReward>
+                </event>
+              </choice>
+              <choice hidden="true" req="BOARDER_ION_LIST">
+                <text>(Ion Intruder) Use a drone as a distraction.</text>
+                <event>
+                  <text>The Ion Intruder distracts the reptile successfully, and even manages to stun it when devoured. Your team has enough time to enter the cave, pick the most valuable equipment there, and leave safely.</text>
+                  <item_modify>
+                    <item max="-1" min="-1" type="drones"/>
+                  </item_modify>
+                  <autoReward level="HIGH">weapon</autoReward>
+                </event>
+              </choice>
+              <choice hidden="true">
+                <text>Leave the planet.</text>
+                <event/>
+              </choice>
+            </event>
+          </choice>
+          <choice hidden="true">
+            <text>Leave the planet.</text>
+            <event/>
+          </choice>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true">
+      <text>Jump away.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <changelog>
+    <entry>Added Engi station requires workers event</entry>
+  </changelog>
+  <event name="WOONA_ENGI_STATION_REQUIRES_WORKERS" unique="true">
+    <text>You jump in to find a big industrial Engi station broadcasting a message. "Assistance required. Insufficient workforce. Station security compromised." You could send a part of your crew to find out if they need any help.</text>
+    <choice hidden="true">
+      <text>Send one crewmember to the station.</text>
+      <event>
+        <text>Your crewmember leaves in a small one-man shuttle for the Engi station. The remaining crew is looking forward to seeing them again.</text>
+        <removeCrew>
+          <clone>false</clone>
+          <text>As your crewman is still alive and helping on the Engi station, it would be against Federation regulation to create a clone to continue with you on your journey.</text>
+        </removeCrew>
+        <choice hidden="true">
+          <text id="continue"/>
+          <eventList>
+            <event>
+              <text>After hours of wait, an Engi worker arrives to your ship and requests a permission to work for the Federation. "Subordinate left. Substitution arrived." It seems that your former crewmember could not return.</text>
+              <crewMember amount="1" class="engi" repair="2"/>
+            </event>
+            <event>
+              <text>You wait for your crewmember to return. After several hours you receive a message. "I am staying here. The pay is better, social benefits, and stable oxygen production." The Engi station compensates your loss with resources.</text>
+              <autoReward level="MED">stuff</autoReward>
+            </event>
+          </eventList>
+        </choice>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Ignore them.</text>
+      <event/>
+    </choice>
+  </event>
+</FTL>

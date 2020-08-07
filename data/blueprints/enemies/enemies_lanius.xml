@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../schema/autoBlueprints.xsd">
+  <blueprintList name="SHIPS_LANIUS">
+    <name>ANAEROBIC_SCOUT</name>
+    <name>ANAEROBIC_BOMBER</name>
+    <name>LANIUS_COLLECTOR</name>
+    <name>LANIUS_HARVESTER</name>
+    <name>LANIUS_SHREDDER</name>
+    <name>LANIUS_MARAUDER</name>
+  </blueprintList>
+
+  <shipBlueprintSuper name="ANAEROBIC_SCOUT" layout="anaerobic_scout" img="anaerobic_scout">
+    <class>Lanius Scout</class>
+    <systemList>
+      <pilot power="1" max="3" room="1"/>
+      <clonebay power="1" max="3" room="3" start="false"/>
+      <shields power="2" max="8" room="5"/>
+      <engines power="1" max="5" room="6"/>
+      <weapons room="4"/>
+      <doors power="1" max="3" room="0" start="false"/>
+      <hacking power="1" max="3" room="2" start="false"/>
+    </systemList>
+    <weaponList sector="1" missiles="0" system_power="4">
+      <weapon name="WEAPONS_FLAK_2"/>
+      <weapon name="WEAPONS_PROJ_2"/>
+    </weaponList>
+    <weaponList sector="2" missiles="0" system_power="5">
+      <weapon name="WEAPONS_FLAK_2"/>
+      <weapon name="WEAPONS_PROJ_2"/>
+      <weapon name="WEAPONS_SIMPLE_1"/>
+    </weaponList>
+    <weaponList sector="3" missiles="0" system_power="5">
+      <weapon name="WEAPONS_FLAK_2"/>
+      <weapon name="WEAPONS_PROJ_2"/>
+      <weapon name="WEAPONS_SIMPLE_1"/>
+    </weaponList>
+    <weaponList sector="4" missiles="0" system_power="6">
+      <weapon name="WEAPONS_FLAK_2"/>
+      <weapon name="WEAPONS_PROJ_2"/>
+      <weapon name="WEAPONS_SIMPLE_2"/>
+    </weaponList>
+    <droneList drones="3"/>
+    <health amount="7"/>
+    <crewCount amount="2" max="3" class="anaerobic"/>
+    <boardingAI>sabotage</boardingAI>
+    <cloakImage>anaerobic_scout</cloakImage>
+  </shipBlueprintSuper>
+
+  <shipBlueprintSuper name="ANAEROBIC_BOMBER" layout="anaerobic_bomber" img="anaerobic_bomber">
+    <class>Lanius Bomber</class>
+    <systemList>
+      <pilot power="1" max="3" room="3"/>
+      <doors power="1" max="3" room="10" start="false"/>
+      <clonebay power="1" max="3" room="7" start="false"/>
+      <shields power="2" max="8" room="0"/>
+      <engines power="1" max="5" room="9"/>
+      <weapons room="1"/>
+      <mind power="1" max="2" room="4" start="false"/>
+      <teleporter power="1" max="3" room="8"/>
+    </systemList>
+    <weaponList sector="3" missiles="3" system_power="5">
+      <weapon name="WEAPONS_BOMB"/>
+      <weapon name="WEAPONS_FLAK_2"/>
+      <weapon name="WEAPONS_CHAIN_2"/>
+      <weapon name="WEAPONS_SIMPLE_1"/>
+    </weaponList>
+    <weaponList sector="4" missiles="3" system_power="5">
+      <weapon name="WEAPONS_BOMB"/>
+      <weapon name="WEAPONS_FLAK_2"/>
+      <weapon name="WEAPONS_CHAIN_2"/>
+      <weapon name="WEAPONS_SIMPLE_1"/>
+    </weaponList>
+    <weaponList sector="5" missiles="3" system_power="6">
+      <weapon name="WEAPONS_BOMB"/>
+      <weapon name="WEAPONS_FLAK_3"/>
+      <weapon name="WEAPONS_CHAIN_2"/>
+      <weapon name="WEAPONS_SIMPLE_1"/>
+    </weaponList>
+    <weaponList sector="6" missiles="3" system_power="7">
+      <weapon name="WEAPONS_BOMB"/>
+      <weapon name="WEAPONS_FLAK_2"/>
+      <weapon name="WEAPONS_CHAIN_4"/>
+      <weapon name="WEAPONS_SIMPLE_1"/>
+    </weaponList>
+    <health amount="9"/>
+    <crewCount amount="3" max="5" class="anaerobic"/>
+    <boardingAI>sabotage</boardingAI>
+    <cloakImage>anaerobic_bomber</cloakImage>
+  </shipBlueprintSuper>
+
+  <shipBlueprintSuper name="LANIUS_COLLECTOR" layout="lanius_collector" img="lanius_collector">
+    <class>Lanius Collector</class>
+    <systemList>
+      <pilot power="1" max="2" room="0"/>
+      <clonebay power="1" max="3" room="3"/>
+      <shields power="2" max="8" room="2"/>
+      <engines power="1" max="5" room="4"/>
+      <weapons room="1"/>
+      <doors power="1" max="3" room="6" start="false"/>
+      <mind power="1" max="2" room="5" start="false"/>
+    </systemList>
+    <weaponList sector="1" missiles="1" system_power="4">
+      <weapon name="WEAPONS_MISSILES_1"/>
+      <weapon name="WEAPONS_FLAK_1"/>
+      <weapon name="WEAPONS_FLAK_2"/>
+      <weapon name="WEAPONS_PROJ_1"/>
+    </weaponList>
+    <weaponList sector="2" missiles="1" system_power="5">
+      <weapon name="WEAPONS_MISSILES_1"/>
+      <weapon name="WEAPONS_FLAK_2"/>
+      <weapon name="WEAPONS_FLAK_2"/>
+      <weapon name="WEAPONS_PROJ_1"/>
+    </weaponList>
+    <weaponList sector="3" missiles="2" system_power="5">
+      <weapon name="WEAPONS_MISSILES_1"/>
+      <weapon name="WEAPONS_FLAK_2"/>
+      <weapon name="WEAPONS_FLAK_2"/>
+      <weapon name="WEAPONS_PROJ_1"/>
+    </weaponList>
+    <weaponList sector="4" missiles="2" system_power="6">
+      <weapon name="WEAPONS_MISSILES_2"/>
+      <weapon name="WEAPONS_FLAK_2"/>
+      <weapon name="WEAPONS_FLAK_2"/>
+      <weapon name="WEAPONS_PROJ_2"/>
+    </weaponList>
+    <health amount="7"/>
+    <crewCount amount="2" max="4" class="anaerobic"/>
+    <boardingAI>sabotage</boardingAI>
+    <cloakImage>lanius_collector</cloakImage>
+  </shipBlueprintSuper>
+
+  <shipBlueprintSuper name="LANIUS_HARVESTER" layout="lanius_harvester" img="lanius_harvester">
+    <class>Lanius Harvester</class>
+    <systemList>
+      <pilot power="1" max="3" room="0"/>
+      <clonebay power="1" max="3" room="3"/>
+      <shields power="2" max="8" room="7"/>
+      <engines power="1" max="5" room="8"/>
+      <weapons room="5"/>
+      <doors power="1" max="3" room="6" start="false"/>
+      <hacking power="1" max="2" room="4" start="false"/>
+    </systemList>
+    <weaponList sector="2" missiles="0" system_power="5">
+      <weapon name="WEAPONS_FLAK_3"/>
+      <weapon name="WEAPONS_BEAM_2"/>
+    </weaponList>
+    <weaponList sector="3" missiles="0" system_power="6">
+      <weapon name="WEAPONS_FLAK_3"/>
+      <weapon name="WEAPONS_BEAM_3"/>
+    </weaponList>
+    <weaponList sector="4" missiles="0" system_power="7">
+      <weapon name="WEAPONS_FLAK_3"/>
+      <weapon name="WEAPONS_BEAM_4"/>
+    </weaponList>
+    <weaponList sector="5" missiles="0" system_power="8">
+      <weapon name="WEAPONS_FLAK_3"/>
+      <weapon name="WEAPONS_BEAM_4"/>
+      <weapon name="WEAPONS_FLAK_1"/>
+    </weaponList>
+    <droneList drones="4"/>
+    <health amount="8"/>
+    <crewCount amount="3" max="5" class="anaerobic"/>
+    <boardingAI>sabotage</boardingAI>
+    <cloakImage>lanius_harvester</cloakImage>
+  </shipBlueprintSuper>
+
+  <shipBlueprintSuper name="LANIUS_SHREDDER" layout="lanius_shredder" img="lanius_shredder">
+    <class>Lanius Shredder</class>
+    <systemList>
+      <pilot power="1" max="3" room="0"/>
+      <clonebay power="1" max="3" room="3"/>
+      <shields power="2" max="8" room="8"/>
+      <engines power="1" max="5" room="1"/>
+      <weapons room="9"/>
+      <doors power="1" max="3" room="6" start="false"/>
+      <cloaking power="1" max="1" room="7" start="false"/>
+    </systemList>
+    <weaponList sector="3" missiles="1" system_power="6">
+      <weapon name="WEAPONS_MISSILES_2"/>
+      <weapon name="WEAPONS_PROJ_2"/>
+      <weapon name="WEAPONS_PROJ_2"/>
+      <weapon name="WEAPONS_FLAK_2"/>
+    </weaponList>
+    <weaponList sector="4" missiles="1" system_power="7">
+      <weapon name="WEAPONS_MISSILES_2"/>
+      <weapon name="WEAPONS_PROJ_3"/>
+      <weapon name="WEAPONS_PROJ_2"/>
+      <weapon name="WEAPONS_FLAK_2"/>
+    </weaponList>
+    <weaponList sector="5" missiles="2" system_power="8">
+      <weapon name="WEAPONS_MISSILES_2"/>
+      <weapon name="WEAPONS_PROJ_3"/>
+      <weapon name="WEAPONS_PROJ_2"/>
+      <weapon name="WEAPONS_FLAK_3"/>
+    </weaponList>
+    <weaponList sector="6" missiles="2" system_power="8">
+      <weapon name="WEAPONS_MISSILES_2"/>
+      <weapon name="WEAPONS_PROJ_3"/>
+      <weapon name="WEAPONS_PROJ_2"/>
+      <weapon name="WEAPONS_FLAK_3"/>
+    </weaponList>
+    <health amount="9"/>
+    <crewCount amount="3" max="5" class="anaerobic"/>
+    <boardingAI>sabotage</boardingAI>
+    <cloakImage>lanius_shredder</cloakImage>
+  </shipBlueprintSuper>
+
+  <shipBlueprintSuper name="LANIUS_INTERCEPTOR" layout="lanius_interceptor" img="lanius_interceptor">
+    <class>Lanius Interceptor</class>
+    <systemList>
+      <pilot power="1" max="3" room="0"/>
+      <clonebay power="1" max="3" room="2" start="false"/>
+      <shields power="2" max="6" room="1"/>
+      <engines power="1" max="6" room="3"/>
+      <weapons room="4"/>
+    </systemList>
+    <weaponList sector="1" missiles="0" system_power="4">
+      <weapon name="WEAPONS_FLAK_2"/>
+      <weapon name="WEAPONS_PROJ_1"/>
+      <weapon name="WEAPONS_FLAK_1"/>
+    </weaponList>
+    <weaponList sector="2" missiles="0" system_power="5">
+      <weapon name="WEAPONS_FLAK_3"/>
+      <weapon name="WEAPONS_PROJ_1"/>
+      <weapon name="WEAPONS_SIMPLE_1"/>
+    </weaponList>
+    <weaponList sector="3" missiles="0" system_power="5">
+      <weapon name="WEAPONS_FLAK_3"/>
+      <weapon name="WEAPONS_PROJ_1"/>
+      <weapon name="WEAPONS_SIMPLE_1"/>
+    </weaponList>
+    <weaponList sector="4" missiles="0" system_power="6">
+      <weapon name="WEAPONS_FLAK_3"/>
+      <weapon name="WEAPONS_PROJ_2"/>
+      <weapon name="WEAPONS_SIMPLE_1"/>
+    </weaponList>
+    <health amount="6"/>
+    <crewCount amount="2" max="4" class="anaerobic"/>
+    <boardingAI>sabotage</boardingAI>
+    <cloakImage>lanius_interceptor</cloakImage>
+  </shipBlueprintSuper>
+
+  <shipBlueprintSuper name="LANIUS_MARAUDER" layout="lanius_marauder" img="lanius_marauder">
+    <class>Lanius Marauder</class>
+    <systemList>
+      <pilot power="1" max="3" room="0"/>
+      <clonebay power="1" max="3" room="6"/>
+      <shields power="2" max="6" room="5"/>
+      <engines power="1" max="6" room="3"/>
+      <doors power="1" max="3" room="1" start="false"/>
+      <weapons room="4"/>
+    </systemList>
+    <weaponList sector="3" missiles="0" system_power="5">
+      <weapon name="WEAPONS_PROJ_2"/>
+      <weapon name="WEAPONS_FLAK_2"/>
+      <weapon name="WEAPONS_FLAK_1"/>
+    </weaponList>
+    <weaponList sector="4" missiles="0" system_power="6">
+      <weapon name="WEAPONS_PROJ_3"/>
+      <weapon name="WEAPONS_FLAK_2"/>
+      <weapon name="WEAPONS_FLAK_1"/>
+    </weaponList>
+    <weaponList sector="5" missiles="0" system_power="7">
+      <weapon name="WEAPONS_PROJ_4"/>
+      <weapon name="WEAPONS_FLAK_2"/>
+      <weapon name="WEAPONS_FLAK_1"/>
+    </weaponList>
+    <weaponList sector="6" missiles="0" system_power="8">
+      <weapon name="WEAPONS_PROJ_4"/>
+      <weapon name="WEAPONS_FLAK_2"/>
+      <weapon name="WEAPONS_FLAK_1"/>
+      <weapon name="WEAPONS_FLAK_1"/>
+    </weaponList>
+    <health amount="8"/>
+    <crewCount amount="3" max="5" class="anaerobic"/>
+    <boardingAI>sabotage</boardingAI>
+    <cloakImage>lanius_marauder</cloakImage>
+  </shipBlueprintSuper>
+</FTL>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="DISTRESS_BEACON_MANTIS">
+    <event load="ESCORT_BEACON"/>
+    <event load="FRIENDLY_BEACON"/>
+    <event load="TRAP_BEACON"/>
+    <event load="DISTRESS_TRAPPED_MINER"/>
+    <event load="DISTRESS_INFESTATION"/>
+    <event load="DISTRESS_SATELLITE_DEFENSE"/>
+    <event load="DISTRESS_STATION_FIRE"/>
+    <event load="DISTRESS_STATION_DISEASE"/>
+  </eventList>
+
+  <event name="START_BEACON_MANTIS">
+    <text>You've entered a poorly charted area of space that's known to be home to the Mantis. Ensure your hull plating is up to scratch and that you have enough fuel in the tank to make it through.</text>
+  </event>
+
+  <event name="STORE_MANTIS">
+    <textList name="STORE_MANTIS">
+      <text>Upon arriving at the beacon, you're hailed by a well-spoken Mantis, "Hail, traveler. These are dangerous times. Perhaps you find yourself in need of our services?" He appears to be a trader.</text>
+      <text>Uncertain about what you'll discover at this beacon, you scan the surroundings. You detect several warnings on wide-band channels discouraging any violence in protected trade-space. Perhaps you can find some wares nearby.</text>
+      <text>Merchants are not highly respected among the Mantis race, so few undertake the profession. You're mildly surprised to receive an advertisement from a nearby space dock. You decide to see what they have to offer.</text>
+      <text>Identifying a Mantis trading post ahead, you signal them so that your approach won't be taken as a threat. The leader hails you: "You have scrap? Quickly, come dock before the warriors see you."</text>
+      <text>A struggling Mantis cargo ship headed for the node raises what's left of shields as you jump in. You power up your weapons as a show of force, and they reluctantly agree to offload some of their cargo to you - for a price.</text>
+      <text>The Rebels are already here! The crew braces for impact, but none comes. The sensors report the unmanned rebel supply ship is malfunctioning and is stuck in vending mode - for a little scrap you can take your pick.</text>
+    </textList>
+    <store/>
+  </event>
+
+  <event name="NOTHING_MANTIS">
+    <textList name="NOTHING_MANTIS">
+      <text>At this point you almost expect a fight with the Mantis, but this beacon appears to be entirely devoid of other ships. You take the time to catch your breath and double check the ship's systems.</text>
+      <text>The only thing this beacon offers is a view of deep space and a brief respite from battles. For some this must be a welcome refuge.</text>
+      <text>A nearby Mantis mining operation is clearly using heavy Engi slave labor. You briefly consider the possibility of emancipating the slaves, but the Mantis presence is too formidable. You decide to lay low.</text>
+      <text>There aren't so many parts of Mantis space that aren't dotted by the wrecks of battles past, but this is one of them. You take a deep breath and prepare to move on.</text>
+      <text>You fancy you see something moving in the shadow of the beacon, but all remains still.</text>
+      <text>There's nothing here but space debris and some uninhabitable planetoids.</text>
+    </textList>
+  </event>
+
+  <ship name="MANTIS_FIGHT" auto_blueprint="SHIPS_MANTIS">
+    <destroyed load="DESTROYED_DEFAULT"/>
+    <deadCrew load="DEAD_CREW_DEFAULT"/>
+    <crew>
+      <crewMember type="mantis" prop="0.80"/>
+      <crewMember type="engi" prop="0.20"/>
+    </crew>
+  </ship>
+</FTL>

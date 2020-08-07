@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <event name="FUEL_EXPLORE">
+    <text>Although your lack of fuel cells prevents your ship from jumping, you can still use your impulse engines. Will you spend some time exploring the nearby system?</text>
+    <choice hidden="true">
+      <text>Explore the nearby area.</text>
+      <eventList name="FUEL_EXPLORE_LIST">
+        <event>
+          <text>You happen across a small asteroid field near the beacon.</text>
+          <choice hidden="true">
+            <text>Approach the asteroid field to scan it.</text>
+            <event load="ASTEROID_EXPLORE_RESULTS"/>
+          </choice>
+          <choice>
+            <text>Avoid the risk.</text>
+            <event/>
+          </choice>
+        </event>
+        <event>
+          <text>You find a small outpost for local travelers, but it seems few ships in this area employ FTL drives. Their stock of fuel cells is small and their price high, but beggars can't be choosers...</text>
+          <choice hidden="true">
+            <text>Trade 20 scrap for 5 fuel.</text>
+            <event>
+              <text>You gladly make the trade.</text>
+              <item_modify>
+                <item type="fuel" min="5" max="5"/>
+                <item type="scrap" min="-20" max="-20"/>
+              </item_modify>
+            </event>
+          </choice>
+          <choice hidden="true">
+            <text>Trade 10 scrap for 2 fuel.</text>
+            <event>
+              <text>This fuel won't last long, but you gladly make the trade.</text>
+              <item_modify>
+                <item type="fuel" min="2" max="2"/>
+                <item type="scrap" min="-10" max="-10"/>
+              </item_modify>
+            </event>
+          </choice>
+          <choice hidden="true">
+            <text>Trade 5 scrap for 1 fuel.</text>
+            <event>
+              <text>This fuel won't last long, but at least you can jump to another beacon.</text>
+              <item_modify>
+                <item type="fuel" min="1" max="1"/>
+                <item type="scrap" min="-5" max="-5"/>
+              </item_modify>
+            </event>
+          </choice>
+          <choice>
+            <text>Don't make a trade.</text>
+            <event/>
+          </choice>
+        </event>
+        <event>
+          <text>No ships respond to your hails and you find nothing of interest.</text>
+        </event>
+        <event>
+          <text>You wander within scanning range of a small Rebel automated scout!</text>
+          <ship name="REBEL_AUTO_FUEL" auto_blueprint="SHIPS_AUTO" hostile="true">
+            <escape timer="80" min="30" max="30"/>
+            <gotaway>
+              <text>The ship jumps away without a word. You hope they didn't leave to get reinforcements.</text>
+            </gotaway>
+            <destroyed>
+              <text>As the ship explodes, you scramble to collect as much fuel as possible.</text>
+              <autoReward level="MED">fuel</autoReward>
+            </destroyed>
+          </ship>
+        </event>
+      </eventList>
+    </choice>
+    <choice>
+      <text>Stay near the beacon.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <event name="FUEL_APPROACH">
+    <text>A ship approaches. They hail you saying, "You need some fuel? We'll prepare to dock to help."</text>
+    <choice hidden="true">
+      <text>Graciously accept their offer.</text>
+      <eventList name="FUEL_APPROACH_ACCEPT_LIST">
+        <event>
+          <text>They pull close to your ship and unload some fuel saying, "Try not to run out of fuel again. These are dangerous times; who knows who could have showed up."</text>
+          <ship load="CIVILIAN_SHIP" hostile="false"/>
+          <item_modify>
+            <item type="fuel" min="2" max="6"/>
+          </item_modify>
+        </event>
+        <event>
+          <text>They approach and dock with your ship. On board they present an offer.</text>
+          <ship load="CIVILIAN_SHIP" hostile="false"/>
+          <choice>
+            <text>Gladly trade.</text>
+            <event load="FUEL_TRADER_HIGH_LIST"/>
+          </choice>
+          <choice>
+            <text>Respectfully decline.</text>
+            <event load="FUEL_TRADER_PT2"/>
+          </choice>
+        </event>
+        <event>
+          <text>As their ship pulls up next to yours, their captain continues, "Yes, we'll certainly help... Help to relieve you of that nice ship!" Sensors detect a hidden teleporter has been activated. We've been boarded!</text>
+          <ship load="PIRATE_FUEL" hostile="true"/>
+          <boarders min="2" max="3" class="human"/>
+        </event>
+        <event>
+          <text>As they approach, you detect their weapons powering up. It seems their intentions are hostile!</text>
+          <ship load="PIRATE_FUEL" hostile="true"/>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true">
+      <text>Request that they keep their distance.</text>
+      <eventList name="FUEL_APPROACH_DECLINE_LIST">
+        <event>
+          <text>"I assure you that we mean no harm. See, we'll send some fuel over on a transport." A small ship docks and offloads some fuel just as they said. They leave, saying, "Stay cautious, friend."</text>
+          <ship load="CIVILIAN_SHIP" hostile="false"/>
+          <item_modify>
+            <item type="fuel" min="1" max="4"/>
+          </item_modify>
+        </event>
+        <event>
+          <text>"No one trusts anyone these days..." The ship jumps away.</text>
+        </event>
+        <event>
+          <text>They reply,"Keep our distance? Let's see if you can stop us!" They power up their weapons and advance.</text>
+          <ship load="PIRATE_FUEL" hostile="true"/>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true" req="sensors" lvl="3">
+      <text>(Advanced Sensors) Run a detailed scan with your sensors before responding.</text>
+      <eventList name="FUEL_APPROACH_SCAN_LIST">
+        <event>
+          <text>Sensors indicate their ship is without military-grade weaponry, even small arms. You allow them to dock and they give you some fuel saying, "I remember a time when we didn't have to be so paranoid about each others' intentions... Stay safe."</text>
+          <item_modify>
+            <item type="fuel" min="3" max="7"/>
+          </item_modify>
+        </event>
+        <event>
+          <text>Sensors are picking up armed crew and considerably more weaponry than is legal for a craft of this size. This is surely a trap.</text>
+          <choice>
+            <text>Power up weapons and prepare for a fight.</text>
+            <event>
+              <ship load="PIRATE_FUEL" hostile="true"/>
+            </event>
+          </choice>
+          <choice req="cloaking" hidden="true">
+            <text>(Cloaking) Cloak and get out of scanning range before they have a chance to lock on.</text>
+            <event>
+              <text>Your highly advanced cloaking system allows you to get out of range easily since they were still out of firing range. Eventually the ship jumps away.</text>
+            </event>
+          </choice>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true" req="ADV_SCANNERS">
+      <text>(Long-Ranged Scanners) Run a detailed scan before responding.</text>
+      <event load="FUEL_APPROACH_SCAN_LIST"/>
+    </choice>
+  </event>
+  <changelog>
+    <entry>Credits to Twinge's balance mod: enemy in FUEL_APPROACH event drops fuel</entry>
+  </changelog>
+  <ship name="PIRATE_FUEL" auto_blueprint="SHIPS_PIRATE">
+    <escape timer="80" min="30" max="30"/>
+    <gotaway>
+      <text>The ship jumps away without a word. You hope they didn't leave to get reinforcements.</text>
+    </gotaway>
+    <surrender chance="0.5" min="3" max="4" load="PIRATE_SURRENDER"/>
+    <destroyed>
+      <text>As the pirate's ship explodes, you scramble to collect as much fuel as possible.</text>
+      <autoReward level="MED">fuel</autoReward>
+    </destroyed>
+    <deadCrew>
+      <text>With the pirate crew dead you are free to haul back a good quantity of scrap and fuel.</text>
+      <autoReward level="HIGH">fuel</autoReward>
+    </deadCrew>
+  </ship>
+</FTL>

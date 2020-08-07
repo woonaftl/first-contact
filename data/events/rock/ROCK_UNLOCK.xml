@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL><event name="ROCK_UNLOCK1" unique="true">
+    <text>You are immediately messaged by an imposing looking Rock war vessel, "You're the ship off to 'save the Federation,' aren't you? And you expect to survive with that hunk of junk?"</text>
+    <ship load="ROCK_UNLOCK2" hostile="false"/>
+    <choice hidden="true">
+      <text>"We're going to save them or die trying."</text>
+      <event>
+        <text>"The latter being more likely. Still... we can potentially help you and your precious fleet, but you'll need to prove yourself first. Meet us at these coordinates." They jump away.</text>
+        <quest event="ROCK_UNLOCK2"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>"We're strong enough to destroy you!"</text>
+      <event>
+        <text>"One ship is not the same as a fleet, but at least you've got some fire. Meet us at these coordinates if you want to prove to us that the Federation is worth saving." They jump away.</text>
+        <quest event="ROCK_UNLOCK2"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Ignore them.</text>
+      <event>
+        <text>"Heh. Like I expected. If the Federation is as weak as you it deserves to fall." They jump away without another word.</text>
+      </event>
+    </choice>
+  </event>
+  <event name="ROCK_UNLOCK2">
+    <text>You arrive at the coordinates given and find yourself dangerously close to an M-class star! The other ship messages you, "Let's see how long your puny ship can handle this heat! Prepare for a challenge!"</text>
+    <ship load="ROCK_UNLOCK2" hostile="true"/>
+    <environment type="sun"/>
+  </event>
+  <event name="ROCK_UNLOCK3">
+    <text>You arrive at a massive Rockman shipyard and notice the ship that had just tried to kill you is docked and already being repaired. "Well fought! I must say I did not expect you to survive."</text>
+    <ship load="ROCK_UNLOCK1" hostile="false"/>
+    <choice hidden="true">
+      <text id="continue"/>
+      <event>
+        <text>"I am convinced of your strength and pledge to assist your cause. We'll immediately send an advanced cruiser to the Federation fleet and we will prepare our warships to move out."</text>
+        <unlockShip id="6">The Rock deliver a cruiser to the hangar. The Bulwark has been unlocked!</unlockShip>
+        <choice hidden="true">
+          <text id="continue"/>
+          <event>
+            <text>"Now that that's taken care of, let us patch up your hull. Maybe we can improve its armor plating while we're at it."</text>
+            <augment name="ROCK_ARMOR"/>
+            <damage amount="-29"/>
+          </event>
+        </choice>
+      </event>
+    </choice>
+  </event>
+  <ship name="ROCK_UNLOCK1" auto_blueprint="ROCK_ASSAULT_ELITE">
+    <destroyed load="DESTROYED_DEFAULT"/>
+    <deadCrew load="DEAD_CREW_DEFAULT"/>
+  </ship>
+  <ship name="ROCK_UNLOCK2" auto_blueprint="ROCK_ASSAULT_ELITE">
+    <escape timer="32" min="28" max="28"> <!-- was 24-->
+      <text>The Rock ship starts to power up their FTL drive. If we're going to earn their trust we must endure the heat for as long as they can!</text>
+      <ship hostile="true"/>
+    </escape>
+    <gotaway>
+      <text>As they jump away they relay coordinates to your navigation system. They must mean for you to follow them!</text>
+      <quest event="ROCK_UNLOCK3"/>
+    </gotaway>
+    <destroyed>
+      <text>Their ship breaks apart and you feel a twinge of guilt. Perhaps they could have helped the Federation if this had gone another way. You scrap what you can and prepare to jump out of the heat.</text>
+      <autoReward level="MED">standard</autoReward>
+    </destroyed>
+    <deadCrew>
+      <text>Their ship goes quiet and you feel a twinge of guilt. Perhaps they could have helped the Federation if this had gone another way. You scrap what you can and prepare to jump out of the heat.</text>
+      <autoReward level="HIGH">standard</autoReward>
+    </deadCrew>
+  </ship>
+</FTL>

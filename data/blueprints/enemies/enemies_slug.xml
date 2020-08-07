@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../schema/autoBlueprints.xsd">
+  <blueprintList name="SHIPS_JELLY">
+    <name>JELLY_BUTTON</name>
+    <name>JELLY_CROISSANT</name>
+    <name>JELLY_TRUFFLE</name>
+    <name>SLUG_ABDUCTOR</name>
+    <name>SLUG_DEFENDER</name>
+    <name>SLUG_INFILTRATOR</name>
+    <name>SLUG_SCAVENGER</name>
+  </blueprintList>
+  <blueprintList name="SHIPS_CIVILIAN">
+    <name>JELLY_BUTTON</name>
+  </blueprintList>
+  <blueprintList name="SHIPS_PIRATE">
+    <name>JELLY_BUTTON_PIRATE</name>
+    <name>JELLY_CROISSANT_PIRATE</name>
+    <name>JELLY_TRUFFLE_PIRATE</name>
+    <name>SLUG_ABDUCTOR_PIRATE</name>
+    <name>SLUG_DEFENDER_PIRATE</name>
+    <name>SLUG_INFILTRATOR_PIRATE</name>
+    <name>SLUG_SCAVENGER_PIRATE</name>
+  </blueprintList>
+  <blueprintList name="SLUG_BLACK_RAVEN_LIST">
+    <name>SLUG_BLACK_RAVEN</name>
+  </blueprintList>
+  <blueprintList name="JELLY_BUTTON_LIST">
+    <name>JELLY_BUTTON</name> <!--TODO: broken! needs unique ships-->
+  </blueprintList>
+  <blueprintList name="JELLY_TRUFFLE_LIST">
+    <name>JELLY_TRUFFLE</name> <!--TODO: broken! needs unique ships-->
+  </blueprintList>
+
+  <shipBlueprintSuper name="JELLY_BUTTON" layout="jelly_button" img="jelly_button">
+    <class>Slug Scout</class>
+    <class_pirate>Pirate Scout</class_pirate>
+    <systemList>
+      <oxygen power="1" max="3" room="1" room_pirate="1"/>
+      <pilot power="1" max="3" room="0" room_pirate="4"/>
+      <shields power="2" max="8" room="3" room_pirate="5"/>
+      <engines power="1" max="8" room="4" room_pirate="3"/>
+      <mind power="1" max="2" room="2" room_pirate="2"/>
+      <weapons room="5" room_pirate="0"/>
+    </systemList>
+    <weaponList sector="0" missiles="0" system_power="3">
+      <weapon name="WEAPONS_ANY_2"/>
+      <weapon name="WEAPONS_PROJ_1"/>
+    </weaponList>
+    <weaponList sector="1" missiles="0" system_power="3">
+      <weapon name="WEAPONS_ANY_2"/>
+      <weapon name="WEAPONS_PROJ_1"/>
+    </weaponList>
+    <weaponList sector="2" missiles="0" system_power="4">
+      <weapon name="WEAPONS_ANY_2"/>
+      <weapon name="WEAPONS_PROJ_2"/>
+    </weaponList>
+    <weaponList sector="3" missiles="0" system_power="5">
+      <weapon name="WEAPONS_ANY_3"/>
+      <weapon name="WEAPONS_PROJ_2"/>
+    </weaponList>
+    <health amount="9"/>
+    <crewCount amount="2" max="3" class="slug"/>
+    <boardingAI>sabotage</boardingAI>
+    <aug name="SLUG_GEL"/>
+    <cloakImage>jelly_button</cloakImage>
+  </shipBlueprintSuper>
+
+  <shipBlueprintSuper name="JELLY_CROISSANT" layout="jelly_croissant" img="jelly_croissant">
+    <class>Slug Light-Surveyor</class>
+    <class_pirate>Pirate Light-Surveyor</class_pirate>
+    <systemList>
+      <pilot power="1" max="3" room="0" room_pirate="0"/>
+      <oxygen power="1" max="3" room="4" room_pirate="3"/>
+      <clonebay power="1" max="3" room="7" room_pirate="1" start="false"/>
+      <shields power="2" max="8" room="3" room_pirate="4"/>
+      <engines power="1" max="6" room="2" room_pirate="8"/>
+      <mind power="1" max="2" room="6" room_pirate="2"/>
+      <weapons room="1" room_pirate="5"/>
+    </systemList>
+    <weaponList sector="1" missiles="1" system_power="4">
+      <weapon name="WEAPONS_MISSILES_2"/>
+      <weapon name="WEAPONS_PROJ_1"/>
+      <weapon name="WEAPONS_ANY_1"/>
+      <weapon name="WEAPONS_ANY_2"/>
+    </weaponList>
+    <weaponList sector="2" missiles="1" system_power="5">
+      <weapon name="WEAPONS_MISSILES_2"/>
+      <weapon name="WEAPONS_PROJ_2"/>
+      <weapon name="WEAPONS_ANY_1"/>
+      <weapon name="WEAPONS_ANY_2"/>
+    </weaponList>
+    <weaponList sector="3" missiles="2" system_power="5">
+      <weapon name="WEAPONS_MISSILES_2"/>
+      <weapon name="WEAPONS_PROJ_2"/>
+      <weapon name="WEAPONS_ANY_1"/>
+      <weapon name="WEAPONS_ANY_2"/>
+    </weaponList>
+    <weaponList sector="4" missiles="2" system_power="6">
+      <weapon name="WEAPONS_MISSILES_2"/>
+      <weapon name="WEAPONS_PROJ_3"/>
+      <weapon name="WEAPONS_ANY_1"/>
+      <weapon name="WEAPONS_ANY_2"/>
+    </weaponList>
+    <health amount="10"/>
+    <crewCount amount="3" max="5" class="slug"/>
+    <boardingAI>sabotage</boardingAI>
+    <aug name="SLUG_GEL"/>
+    <cloakImage>jelly_croissant</cloakImage>
+  </shipBlueprintSuper>
+
+  <shipBlueprintSuper name="JELLY_TRUFFLE" layout="jelly_truffle" img="jelly_truffle">
+    <class>Slug Instigator</class>
+    <class_pirate>Pirate Instigator</class_pirate>
+    <systemList>
+      <pilot power="1" max="3" room="0" room_pirate="0"/>
+      <mind power="1" max="2" room="4" room_pirate="5"/>
+      <oxygen power="1" max="3" room="6" room_pirate="1"/>
+      <clonebay power="1" max="3" room="7" room_pirate="3" start="false"/>
+      <shields power="2" max="8" room="5" room_pirate="7"/>
+      <engines power="1" max="5" room="3" room_pirate="8"/>
+      <weapons room="1" room_pirate="4"/>
+      <cloaking power="1" max="1" room="2" room_pirate="2" start="false"/>
+    </systemList>
+    <weaponList sector="3" missiles="0" system_power="6">
+      <weapon name="WEAPONS_BEAM_3"/>
+      <weapon name="WEAPONS_SIMPLE_2"/>
+      <weapon name="WEAPONS_SIMPLE_1"/>
+    </weaponList>
+    <weaponList sector="4" missiles="0" system_power="7">
+      <weapon name="WEAPONS_BEAM_3"/>
+      <weapon name="WEAPONS_SIMPLE_2"/>
+      <weapon name="WEAPONS_SIMPLE_2"/>
+    </weaponList>
+    <weaponList sector="5" missiles="0" system_power="8">
+      <weapon name="WEAPONS_BEAM_4"/>
+      <weapon name="WEAPONS_SIMPLE_2"/>
+      <weapon name="WEAPONS_SIMPLE_2"/>
+    </weaponList>
+    <weaponList sector="6" missiles="0" system_power="8">
+      <weapon name="WEAPONS_BEAM_4"/>
+      <weapon name="WEAPONS_SIMPLE_2"/>
+      <weapon name="WEAPONS_SIMPLE_2"/>
+    </weaponList>
+    <health amount="11"/>
+    <crewCount amount="4" max="6" class="slug"/>
+    <boardingAI>sabotage</boardingAI>
+    <aug name="SLUG_GEL"/>
+    <cloakImage>jelly_truffle</cloakImage>
+    <cloakImage_pirate>jelly_truffle_pirate</cloakImage_pirate>
+  </shipBlueprintSuper>
+
+  <shipBlueprintSuper name="SLUG_ABDUCTOR" layout="slug_abductor" img="slug_abductor">
+    <class>Slug Abductor</class>
+    <class_pirate>Pirate Abductor</class_pirate>
+    <systemList>
+      <pilot power="1" max="3" room="0" room_pirate="0"/>
+      <oxygen power="1" max="3" room="5" room_pirate="5"/>
+      <shields power="2" max="8" room="7" room_pirate="4"/>
+      <engines power="1" max="6" room="6" room_pirate="7"/>
+      <weapons room="1" room_pirate="3"/>
+      <medbay power="1" max="2" room="3" room_pirate="1" start="false"/>
+      <doors power="1" max="3" room="4" room_pirate="2" start="false"/>
+      <mind power="1" max="2" room="2" room_pirate="6"/>
+    </systemList>
+    <weaponList sector="2" missiles="3" system_power="5">
+      <weapon name="WEAPONS_BOMB"/>
+      <weapon name="WEAPONS_PROJ_2"/>
+      <weapon name="WEAPONS_ANY_2"/>
+      <weapon name="WEAPONS_ANY_1"/>
+    </weaponList>
+    <weaponList sector="3" missiles="3" system_power="6">
+      <weapon name="WEAPONS_BOMB"/>
+      <weapon name="WEAPONS_PROJ_3"/>
+      <weapon name="WEAPONS_ANY_2"/>
+      <weapon name="WEAPONS_ANY_1"/>
+    </weaponList>
+    <weaponList sector="4" missiles="5" system_power="6">
+      <weapon name="WEAPONS_BOMB"/>
+      <weapon name="WEAPONS_PROJ_3"/>
+      <weapon name="WEAPONS_ANY_2"/>
+      <weapon name="WEAPONS_ANY_1"/>
+    </weaponList>
+    <weaponList sector="5" missiles="5" system_power="7">
+      <weapon name="WEAPONS_BOMB"/>
+      <weapon name="WEAPONS_PROJ_3"/>
+      <weapon name="WEAPONS_ANY_3"/>
+      <weapon name="WEAPONS_ANY_1"/>
+    </weaponList>
+    <health amount="9"/>
+    <crewCount amount="3" max="6" class="slug"/>
+    <boardingAI>sabotage</boardingAI>
+    <aug name="SLUG_GEL"/>
+    <cloakImage>slug_abductor</cloakImage>
+  </shipBlueprintSuper>
+
+  <shipBlueprintSuper name="SLUG_BLACK_RAVEN" layout="slug_black_raven" img="slug_black_raven">
+    <class>Black Raven</class>
+    <systemList>
+      <pilot power="1" max="3" room="0"/>
+      <medbay power="1" max="3" room="1"/>
+      <shields power="3" max="8" room="2"/>
+      <engines power="1" max="5" room="3"/>
+      <mind power="2" max="3" room="4"/>
+      <weapons room="5"/>
+      <oxygen power="1" max="3" room="6"/>
+      <cloaking power="1" max="2" room="7"/>
+    </systemList>
+    <weaponList sector="0" missiles="1" system_power="4">
+      <weapon name="WEAPONS_MISSILES_1"/>
+      <weapon name="WEAPONS_ANY_3"/>
+      <weapon name="WEAPONS_ANY_1"/>
+    </weaponList>
+    <weaponList sector="1" missiles="2" system_power="4">
+      <weapon name="WEAPONS_MISSILES_1"/>
+      <weapon name="WEAPONS_ANY_3"/>
+      <weapon name="WEAPONS_ANY_1"/>
+    </weaponList>
+    <weaponList sector="2" missiles="2" system_power="5">
+      <weapon name="WEAPONS_MISSILES_1"/>
+      <weapon name="WEAPONS_ANY_4"/>
+      <weapon name="WEAPONS_ANY_1"/>
+    </weaponList>
+    <weaponList sector="3" missiles="2" system_power="6">
+      <weapon name="WEAPONS_MISSILES_2"/>
+      <weapon name="WEAPONS_ANY_4"/>
+      <weapon name="WEAPONS_ANY_2"/>
+    </weaponList>
+    <weaponList sector="4" missiles="2" system_power="7">
+      <weapon name="WEAPONS_MISSILES_3"/>
+      <weapon name="WEAPONS_ANY_4"/>
+      <weapon name="WEAPONS_ANY_3"/>
+    </weaponList>
+    <weaponList sector="5" missiles="2" system_power="8">
+      <weapon name="WEAPONS_MISSILES_3"/>
+      <weapon name="WEAPONS_ANY_4"/>
+      <weapon name="WEAPONS_PROJ_1"/>
+      <weapon name="WEAPONS_ANY_3"/>
+    </weaponList>
+    <weaponList sector="6" missiles="3" system_power="8">
+      <weapon name="WEAPONS_MISSILES_3"/>
+      <weapon name="WEAPONS_ANY_4"/>
+      <weapon name="WEAPONS_PROJ_1"/>
+      <weapon name="WEAPONS_ANY_3"/>
+    </weaponList>
+    <weaponList sector="7" missiles="4" system_power="8">
+      <weapon name="WEAPONS_MISSILES_3"/>
+      <weapon name="WEAPONS_ANY_4"/>
+      <weapon name="WEAPONS_PROJ_1"/>
+      <weapon name="WEAPONS_ANY_3"/>
+    </weaponList>
+    <health amount="12"/>
+    <crewCount amount="6" max="9" class="slug"/>
+    <boardingAI>sabotage</boardingAI>
+    <aug name="SLUG_GEL"/>
+    <cloakImage>slug_black_raven</cloakImage>
+  </shipBlueprintSuper>
+
+  <shipBlueprintSuper name="SLUG_DEFENDER" layout="slug_defender" img="slug_defender">
+    <class>Slug Defender</class>
+    <class_pirate>Pirate Defender</class_pirate>
+    <systemList>
+      <pilot power="1" max="3" room="0" room_pirate="0"/>
+      <oxygen power="1" max="3" room="5" room_pirate="6"/>
+      <shields power="2" max="8" room="7" room_pirate="7"/>
+      <engines power="1" max="6" room="6" room_pirate="4"/>
+      <weapons room="1" room_pirate="3"/>
+      <medbay power="1" max="2" room="3" room_pirate="1"/>
+      <hacking power="1" max="3" room="4" room_pirate="2"/>
+      <mind power="1" max="3" room="2" room_pirate="5"/>
+    </systemList>
+    <weaponList sector="4" missiles="2" system_power="6">
+      <weapon name="WEAPONS_MISSILES_2"/>
+      <weapon name="WEAPONS_ANY_4"/>
+      <weapon name="WEAPONS_PROJ_1"/>
+      <weapon name="WEAPONS_ANY_1"/>
+    </weaponList>
+    <weaponList sector="5" missiles="2" system_power="7">
+      <weapon name="WEAPONS_MISSILES_2"/>
+      <weapon name="WEAPONS_ANY_4"/>
+      <weapon name="WEAPONS_PROJ_1"/>
+      <weapon name="WEAPONS_ANY_2"/>
+    </weaponList>
+    <weaponList sector="6" missiles="3" system_power="7">
+      <weapon name="WEAPONS_MISSILES_2"/>
+      <weapon name="WEAPONS_ANY_4"/>
+      <weapon name="WEAPONS_PROJ_1"/>
+      <weapon name="WEAPONS_ANY_2"/>
+    </weaponList>
+    <weaponList sector="7" missiles="3" system_power="8">
+      <weapon name="WEAPONS_MISSILES_2"/>
+      <weapon name="WEAPONS_ANY_4"/>
+      <weapon name="WEAPONS_PROJ_2"/>
+      <weapon name="WEAPONS_ANY_2"/>
+    </weaponList>
+    <health amount="10"/>
+    <crewCount amount="4" max="7" class="slug"/>
+    <boardingAI>sabotage</boardingAI>
+    <aug name="SLUG_GEL"/>
+    <cloakImage>slug_defender</cloakImage>
+  </shipBlueprintSuper>
+
+  <shipBlueprintSuper name="SLUG_INFILTRATOR" layout="slug_infiltrator" img="slug_infiltrator">
+    <class>Slug Infiltrator</class>
+    <class_pirate>Pirate Infiltrator</class_pirate>
+    <systemList>
+      <pilot power="1" max="3" room="0" room_pirate="0"/>
+      <oxygen power="1" max="3" room="6" room_pirate="2"/>
+      <shields power="2" max="8" room="2" room_pirate="1"/>
+      <engines power="1" max="6" room="3" room_pirate="10"/>
+      <weapons room="4" room_pirate="4"/>
+      <medbay power="1" max="3" room="1" room_pirate="3"/>
+      <doors power="1" max="3" room="5" room_pirate="9" start="false"/>
+      <mind power="2" max="3" room="7" room_pirate="5"/>
+      <cloaking power="1" max="2" room="8" room_pirate="6" start="false"/>
+    </systemList>
+    <weaponList sector="4" missiles="0" system_power="7">
+      <weapon name="WEAPONS_LASER_4"/>
+      <weapon name="WEAPONS_LASER_3"/>
+    </weaponList>
+    <weaponList sector="5" missiles="0" system_power="7">
+      <weapon name="WEAPONS_LASER_4"/>
+      <weapon name="WEAPONS_LASER_3"/>
+    </weaponList>
+    <weaponList sector="6" missiles="0" system_power="8">
+      <weapon name="WEAPONS_LASER_4"/>
+      <weapon name="WEAPONS_LASER_4"/>
+    </weaponList>
+    <weaponList sector="7" missiles="0" system_power="8">
+      <weapon name="WEAPONS_LASER_4"/>
+      <weapon name="WEAPONS_LASER_4"/>
+    </weaponList>
+    <health amount="9"/>
+    <crewCount amount="3" max="6" class="slug"/>
+    <boardingAI>sabotage</boardingAI>
+    <aug name="SLUG_GEL"/>
+    <cloakImage>slug_infiltrator</cloakImage>
+  </shipBlueprintSuper>
+
+  <shipBlueprintSuper name="SLUG_SCAVENGER" layout="slug_scavenger" img="slug_scavenger">
+    <class>Slug Scavenger</class>
+    <class_pirate>Pirate Scavenger</class_pirate>
+    <systemList>
+      <pilot power="1" max="3" room="0" room_pirate="0"/>
+      <oxygen power="1" max="3" room="1" room_pirate="3"/>
+      <shields power="2" max="7" room="2" room_pirate="4"/>
+      <engines power="2" max="8" room="3" room_pirate="7"/>
+      <weapons room="4" room_pirate="6"/>
+      <medbay power="1" max="3" room="5" room_pirate="1" start="false"/>
+      <hacking power="1" max="1" room="6" room_pirate="2" start="false"/>
+      <mind power="1" max="2" room="7" room_pirate="5"/>
+    </systemList>
+    <weaponList sector="1" missiles="0" system_power="4">
+      <weapon name="WEAPONS_ANY_3"/>
+      <weapon name="WEAPONS_PROJ_1"/>
+    </weaponList>
+    <weaponList sector="2" missiles="0" system_power="5">
+      <weapon name="WEAPONS_ANY_4"/>
+      <weapon name="WEAPONS_PROJ_1"/>
+    </weaponList>
+    <weaponList sector="3" missiles="0" system_power="5">
+      <weapon name="WEAPONS_ANY_4"/>
+      <weapon name="WEAPONS_PROJ_1"/>
+    </weaponList>
+    <weaponList sector="4" missiles="0" system_power="6">
+      <weapon name="WEAPONS_ANY_4"/>
+      <weapon name="WEAPONS_PROJ_2"/>
+    </weaponList>
+    <health amount="8"/>
+    <crewCount amount="3" max="5" class="slug"/>
+    <boardingAI>sabotage</boardingAI>
+    <aug name="SLUG_GEL"/>
+    <cloakImage>slug_scavenger</cloakImage>
+  </shipBlueprintSuper>
+
+</FTL>

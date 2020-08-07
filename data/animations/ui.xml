@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <!-- Customize screen stuff-->
+  <animSheet name="custom_repair" w="315" h="35" fw="35" fh="35">customizeUI/custom_repair_strip9.png</animSheet>
+  <animSheet name="custom_rock" w="140" h="35" fw="35" fh="35">customizeUI/custom_rockman_strip4.png</animSheet>
+  <animSheet name="custom_type" w="96" h="24" fw="24" fh="24">customizeUI/custom_type_strip4.png</animSheet>
+
+  <anim name="custom_repair">
+    <sheet>custom_repair</sheet>
+    <desc length="9" x="0" y="0"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="custom_rock">
+    <sheet>custom_rock</sheet>
+    <desc length="4" x="0" y="0"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="custom_type">
+    <sheet>custom_type</sheet>
+    <desc length="4" x="0" y="0"/>
+    <time>1.0</time>
+  </anim>
+
+  <animSheet name="room_touch2x2" w="420" h="70" fw="70" fh="70">ipad/tap_2x2.png</animSheet>
+
+<anim name="room_touch2x2">
+	<sheet>room_touch2x2</sheet>
+	<desc length="6" x="0" y="0"/>
+	<time>0.3</time>
+</anim>
+
+<animSheet name="room_touch2x1" w="420" h="35" fw="70" fh="35">ipad/tap_2x1.png</animSheet>
+
+<anim name="room_touch2x1">
+	<sheet>room_touch2x1</sheet>
+	<desc length="6" x="0" y="0"/>
+	<time>0.3</time>
+</anim>
+</FTL>

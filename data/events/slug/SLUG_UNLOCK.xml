@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <event name="NEBULA_SLUG_FIGHT_UNLOCK" unique="true"> <!-- this is the special fight that looks like the normal ones but actually gives you the unlock-->
+    <text load="NEBULA_SLUG_FIGHT"/>
+    <ship load="JELLY_UNLOCK1" hostile="true"/>
+    <environment type="nebula"/>
+  </event>
+  <event name="SLUG_UNLOCK_SURRENDER">  <!-- this is the hidden special surrender event-->
+    <text>"You have besssted us! Will you accept what is in our storeesss in exchange for our livess?"</text>
+    <choice hidden="true">
+      <text>Let them live.</text>
+      <event>
+        <text>"Take thisss newly developed weapon we're transporting... They're not going to be happy we gave it up, that isss for ssure..."</text>
+        <choice>
+          <text>Accept the prototype weapon.</text>
+          <event>
+            <text>This odd beam weapon does no damage to ships but instead greatly hurts the crew! Diabolical!</text>
+            <weapon name="BEAM_BIO"/>
+            <ship hostile="false"/>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>We don't want the weapon, we want information.</text>
+          <event>
+            <text>You ask where they were delivering the weapon. "By telling you we will probably die jussst as like as not... Oh well." They give you the coordinates of the a prototype cruiser's mobile construction platform.</text>
+            <quest event="SLUG_UNLOCK_1"/>
+            <ship hostile="false"/>
+          </event>
+        </choice>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>We will not accept surrender!</text>
+      <event/>
+    </choice>
+  </event>
+  <event name="SLUG_UNLOCK_1"> <!-- This is the quest after you decline the weapon -->
+    <text>You arrive to discover an impressive cruiser being worked on by a few smaller ships and guarded by an assault ship. The mobile construction platform is slowly slipping into the clouds. You have not yet been noticed.</text>
+    <environment type="nebula"/>
+    <choice hidden="true">
+      <text>Charge them before they escape.</text>
+      <event>
+        <text>As you approach, the assault ship swoops in on an intercept trajectory. Prepare for a fight!</text>
+        <ship load="JELLY_UNLOCK2" hostile="true"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Try to tail them without being noticed.</text>
+      <event load="SLUG_UNLOCK_2"/>
+    </choice>
+    <!-- Changed this part to be easier
+      <text>It's not long before they detect your presence. The assault ship moves in to attack!</text>
+      <ship load="JELLY_UNLOCK2" hostile="true"/>
+    </event>
+  </choice>
+  <choice hidden="true" req="cloaking" lvl="1">
+    <text>(Cloaking) Cloak and slip into the clouds.</text>
+    <event load="SLUG_UNLOCK_2"/>
+  </choice>
+  <choice hidden="true" req="pilot" lvl="2">
+    <text>(Advanced Piloting) Quickly maneuver into the clouds and stay out of their detection range.</text>
+    <event load="SLUG_UNLOCK_2"/>
+  </choice> -->
+  </event>
+  <event name="SLUG_UNLOCK_2">   <!-- if you use cloaking or piloting from SLUG_UNLOCK_1-->
+    <text>You slip into the nebula undetected but at this rate you are likely to get lost and lose track of them.</text>
+    <choice hidden="true">
+      <text>Fly slowly toward their last known position.</text>
+      <event>
+        <text>You are advancing slowly when suddenly the assault ship bursts through the clouds. They must have been able to detect you with their telepathy!</text>
+        <ship load="JELLY_UNLOCK2" hostile="true"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Wait and hope the escort leaves.</text>
+      <event>
+        <text>You wait for a time before attempting to advance toward the platform. However, after some frantic searching you can't tell if they left or you simply miscalculated your trajectory... You give up the search and prepare to leave.</text>
+      </event>
+    </choice>
+    <choice hidden="true" req="slug">
+      <text>(Slug Crew) Have your crewmember monitor their life signatures.</text>
+      <event>
+        <text>You try to stay just far enough away that they won't detect your life signatures without actively searching for you. After a time, your Slug tells you the ship with a larger crew has jumped away. He guides the helm toward the platform...</text>
+        <choice hidden="true">
+          <text id="continue"/>
+          <event>
+            <text>The only ship left near the cruiser is an interceptor. This should be easy!</text>
+            <ship load="JELLY_UNLOCK3" hostile="true"/>
+          </event>
+        </choice>
+      </event>
+    </choice>
+    <choice hidden="true" req="sensors" lvl="2">
+      <text>(Improved Sensors) Try to maintain a lock on their ships from a distance.</text>
+      <event>
+        <text>You overclock your sensors, trying to get them to function in the clouds. They work just enough to let you keep tabs on their general position. After a time, the assault ship and most of the escort jumps away from the platform. You take the opportunity and move in to attack.</text>
+        <choice hidden="true">
+          <text id="continue"/>
+          <event>
+            <text>The only ship left near the cruiser is an interceptor. This should be easy!</text>
+            <ship load="JELLY_UNLOCK3" hostile="true"/>
+          </event>
+        </choice>
+      </event>
+    </choice>
+  </event>
+  <ship name="JELLY_UNLOCK1" auto_blueprint="SHIPS_JELLY">
+    <surrender chance="0" min="3" max="4" load="SLUG_UNLOCK_SURRENDER"/>
+    <escape chance="0.5" min="3" max="4" load="PIRATE_ESCAPE"/>
+    <destroyed load="DESTROYED_DEFAULT"/>
+    <deadCrew load="DEAD_CREW_DEFAULT"/>
+  </ship>
+  <ship name="JELLY_UNLOCK2" auto_blueprint="JELLY_TRUFFLE_LIST">  <!-- this is the hard ship defending the platform-->
+    <destroyed>
+      <text>With the assault ship taken care of, you turn your attention to the construction platform. However, you find that it has long since disappeared into the clouds. You scrap what you can and prepare to move on.</text>
+      <autoReward level="HIGH">standard</autoReward>
+    </destroyed>
+    <deadCrew>
+      <text>With the assault ship taken care of, you turn your attention to the construction platform. However, you find that it has long since disappeared into the clouds. You scrap what you can and prepare to move on.</text>
+      <autoReward level="HIGH">standard</autoReward>
+    </deadCrew>
+  </ship>
+  <ship name="JELLY_UNLOCK3" auto_blueprint="JELLY_BUTTON_LIST">  <!-- this is the weak ship that gives you the unlock -->
+    <escape timer="35" min="22" max="22">
+      <text>The interceptor powers up its FTL drive in preparation to escape. At the same time, the cruiser's FTL drive does the same. They must be linked! Don't let them get away!</text>
+      <ship hostile="true"/>
+    </escape>
+    <gotaway>
+      <text>The interceptor jumps away with the cruiser linked to its FTL signatures. You were so close...</text>
+    </gotaway>
+    <destroyed>
+      <text>With the escort destroyed you take a look at your impressive prize. Your mission is too pressing to take a test flight. Before you rig the ship's computer to guide it back to the main Federation hangar you discover a unique augment that duplicates the Slug's ability to heal breaches!</text>
+      <unlockShip id="5">The Slug cruiser has been unlocked and added to the hangar!</unlockShip>
+      <autoReward level="HIGH">standard</autoReward>
+      <augment name="SLUG_GEL"/>
+    </destroyed>
+    <deadCrew>
+      <text>With the escort destroyed you take a look at your impressive prize. Your mission is too pressing to take a test flight. Before you rig the ship's computer to guide it back to the main Federation hangar you discover a unique augment that duplicates the Slug's ability to heal breaches!</text>
+      <unlockShip id="5">The Slug cruiser has been unlocked and added to the hangar!</unlockShip>
+      <autoReward level="HIGH">standard</autoReward>
+      <augment name="SLUG_GEL"/>
+    </deadCrew>
+  </ship>
+</FTL>

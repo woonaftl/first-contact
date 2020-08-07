@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <roomLayout name="doors">
+    <computerGlow slot="1" dir="UP"/>
+  </roomLayout>
+  <roomLayout name="doors_2">
+    <computerGlow slot="0" dir="DOWN"/>
+  </roomLayout>
+  <roomLayout name="doors_3">
+    <computerGlow slot="1" dir="RIGHT"/>
+  </roomLayout>
+  <roomLayout name="doors_4">
+    <computerGlow slot="0" dir="RIGHT"/>
+  </roomLayout>
+  <roomLayout name="doors_5">
+    <computerGlow slot="0" dir="RIGHT"/>
+  </roomLayout>
+  <roomLayout name="doors_6">
+    <computerGlow slot="1" dir="RIGHT"/>
+  </roomLayout>
+  <roomLayout name="doors_7">
+    <computerGlow slot="1" dir="UP"/>
+  </roomLayout>
+  <roomLayout name="doors_8">
+    <computerGlow slot="0" dir="LEFT"/>
+  </roomLayout>
+  <roomLayout name="doors_9">
+    <computerGlow slot="1" dir="RIGHT"/>
+  </roomLayout>
+  <roomLayout name="doors_10">
+    <computerGlow slot="1" dir="RIGHT"/>
+  </roomLayout>
+  <roomLayout name="doors_11">
+    <computerGlow slot="1" dir="UP"/>
+  </roomLayout>
+  <roomLayout name="doors_12">
+    <computerGlow slot="0" dir="DOWN"/>
+  </roomLayout>
+  <roomLayout name="doors_13">
+    <computerGlow slot="1" dir="RIGHT"/>
+  </roomLayout>
+  <roomLayout name="doors_14">
+    <computerGlow slot="0" dir="LEFT"/>
+  </roomLayout>
+  <roomLayout name="doors_15">
+    <computerGlow slot="0" dir="LEFT"/>
+  </roomLayout>
+  <roomLayout name="doors_16">
+    <computerGlow slot="0" dir="UP"/>
+  </roomLayout>
+  <roomLayout name="doors_17">
+    <computerGlow slot="1" dir="DOWN"/>
+  </roomLayout>
+
+  <roomLayout name="engines">
+    <computerGlow x="5" y="53" slot="2" dir="DOWN"/>
+  </roomLayout>
+  <roomLayout name="engines_2">
+    <computerGlow x="5" y="53" slot="2" dir="DOWN"/>
+  </roomLayout>
+  <roomLayout name="engines_3">
+    <computerGlow x="53" y="7" slot="1" dir="RIGHT"/>
+  </roomLayout>
+  <roomLayout name="engines_4">
+    <computerGlow x="5" y="53" slot="2" dir="DOWN"/>
+  </roomLayout>
+  <roomLayout name="engines_5">
+    <computerGlow x="5" y="1" slot="0" dir="UP"/>
+  </roomLayout>
+  <roomLayout name="engines_6">
+    <computerGlow x="43" y="53" slot="3" dir="DOWN"/>
+  </roomLayout>
+  <roomLayout name="engines_7">
+    <computerGlow x="54" y="44" slot="3" dir="RIGHT"/>
+  </roomLayout>
+  <roomLayout name="engines_8">
+    <computerGlow x="0" y="44" slot="1" dir="LEFT"/>
+  </roomLayout>
+  <roomLayout name="engines_9">
+    <computerGlow x="43" y="1" slot="1" dir="UP"/>
+  </roomLayout>
+  <roomLayout name="engines_10">
+    <computerGlow x="53" y="7" slot="1" dir="RIGHT"/>
+  </roomLayout>
+  <roomLayout name="engines_11">
+    <computerGlow x="5" y="53" slot="2" dir="DOWN"/>
+  </roomLayout>
+  <roomLayout name="engines_12">
+    <computerGlow x="43" y="1" slot="1" dir="UP"/>
+  </roomLayout>
+  <roomLayout name="engines_13">
+    <computerGlow x="43" y="53" slot="3" dir="DOWN"/>
+  </roomLayout>
+  <roomLayout name="engines_14">
+    <computerGlow x="43" y="1" slot="1" dir="UP"/>
+  </roomLayout>
+  <roomLayout name="engines_15">
+    <computerGlow x="0" y="44" slot="2" dir="LEFT"/>
+  </roomLayout>
+
+  <roomLayout name="medbay">
+    <computerGlow slot="1"/>
+  </roomLayout>
+  <roomLayout name="medbay_2">
+    <computerGlow slot="-2"/>
+  </roomLayout>
+  <roomLayout name="medbay_3">
+    <computerGlow slot="3"/>
+  </roomLayout>
+  <roomLayout name="medbay_4">
+    <computerGlow slot="0"/>
+  </roomLayout>
+  <roomLayout name="medbay_5">
+    <computerGlow slot="-2"/>
+  </roomLayout>
+  <roomLayout name="medbay_6">
+    <computerGlow slot="-2"/>
+  </roomLayout>
+  <roomLayout name="medbay_7">
+    <computerGlow slot="2"/>
+  </roomLayout>
+  <roomLayout name="medbay_8">
+    <computerGlow slot="1"/>
+  </roomLayout>
+  <roomLayout name="medbay_9">
+    <computerGlow slot="-2"/>
+  </roomLayout>
+  <roomLayout name="medbay_10">
+    <computerGlow slot="-2"/>
+  </roomLayout>
+
+  <roomLayout name="pilot">
+    <computerGlow name="glow_pilot" x="19" y="9" slot="0" dir="RIGHT"/>
+  </roomLayout>
+  <roomLayout name="pilot_2">
+    <computerGlow name="glow_pilot" x="54" y="8" slot="1" dir="RIGHT"/>
+  </roomLayout>
+  <roomLayout name="pilot_3">
+    <computerGlow name="glow_pilot" x="54" y="8" slot="1" dir="RIGHT"/>
+  </roomLayout>
+  <roomLayout name="pilot_4">
+    <computerGlow name="glow_pilot" x="19" y="9" slot="0" dir="RIGHT"/>
+  </roomLayout>
+  <roomLayout name="pilot_5">
+    <computerGlow name="glow_pilot" x="54" y="9" slot="1" dir="RIGHT"/>
+  </roomLayout>
+
+  <roomLayout name="sensors">
+    <computerGlow slot="1" dir="DOWN"/>
+  </roomLayout>
+  <roomLayout name="sensors_2">
+    <computerGlow slot="0" dir="UP"/>
+  </roomLayout>
+  <roomLayout name="sensors_3">
+    <computerGlow slot="1" dir="RIGHT"/>
+  </roomLayout>
+  <roomLayout name="sensors_4">
+    <computerGlow slot="1" dir="LEFT"/>
+  </roomLayout>
+  <roomLayout name="sensors_5">
+    <computerGlow slot="1" dir="DOWN"/>
+  </roomLayout>
+  <roomLayout name="sensors_6">
+    <computerGlow slot="1" dir="RIGHT"/>
+  </roomLayout>
+  <roomLayout name="sensors_7">
+    <computerGlow slot="0" dir="UP"/>
+  </roomLayout>
+  <roomLayout name="sensors_8">
+    <computerGlow slot="1" dir="UP"/>
+  </roomLayout>
+  <roomLayout name="sensors_9">
+    <computerGlow slot="0" dir="LEFT"/>
+  </roomLayout>
+
+  <roomLayout name="shields">
+    <computerGlow x="1" y="8" slot="0" dir="LEFT"/>
+  </roomLayout>
+  <roomLayout name="shields_2">
+    <computerGlow x="1" y="8" slot="0" dir="LEFT"/>
+  </roomLayout>
+  <roomLayout name="shields_3">
+    <computerGlow x="1" y="41" slot="2" dir="LEFT"/>
+  </roomLayout>
+  <roomLayout name="shields_4">
+    <computerGlow x="1" y="8" slot="0" dir="LEFT"/>
+  </roomLayout>
+  <roomLayout name="shields_5">
+    <computerGlow x="5" y="1" slot="0" dir="UP"/>
+  </roomLayout>
+  <roomLayout name="shields_6">
+    <computerGlow x="1" y="8" slot="0" dir="LEFT"/>
+  </roomLayout>
+  <roomLayout name="shields_7">
+    <computerGlow x="38" y="1" slot="1" dir="UP"/>
+  </roomLayout>
+  <roomLayout name="shields_8">
+    <computerGlow x="1" y="8" slot="0" dir="LEFT"/>
+  </roomLayout>
+  <roomLayout name="shields_9">
+    <computerGlow x="38" y="1" slot="1" dir="UP"/>
+  </roomLayout>
+  <roomLayout name="shields_10">
+    <computerGlow x="40" y="53" slot="3" dir="DOWN"/>
+  </roomLayout>
+  <roomLayout name="shields_11">
+    <computerGlow x="40" y="18" slot="1" dir="DOWN"/>
+  </roomLayout>
+  <roomLayout name="shields_12">
+    <computerGlow x="40" y="18" slot="1" dir="DOWN"/>
+  </roomLayout>
+  <roomLayout name="shields_13">
+    <computerGlow x="5" y="1" slot="0" dir="UP"/>
+  </roomLayout>
+  <roomLayout name="shields_14">
+    <computerGlow x="38" y="1" slot="1" dir="UP"/>
+  </roomLayout>
+  <roomLayout name="shields_15">
+    <computerGlow x="1" y="40" slot="1" dir="LEFT"/>
+  </roomLayout>
+  <roomLayout name="shields_16">
+    <computerGlow x="1" y="41" slot="2" dir="LEFT"/>
+  </roomLayout>
+  <roomLayout name="shields_17">
+    <computerGlow x="5" y="1" slot="0" dir="UP"/>
+  </roomLayout>
+  <roomLayout name="shields_18">
+    <computerGlow x="40" y="53" slot="3" dir="DOWN"/>
+  </roomLayout>
+
+  <roomLayout name="weapons">
+    <computerGlow x="40" y="0" slot="1" dir="UP"/>
+  </roomLayout>
+  <roomLayout name="weapons_2">
+    <computerGlow x="40" y="0" slot="1" dir="UP"/>
+  </roomLayout>
+  <roomLayout name="weapons_3">
+    <computerGlow x="40" y="0" slot="1" dir="UP"/>
+  </roomLayout>
+  <roomLayout name="weapons_4">
+    <computerGlow x="8" y="0" slot="0" dir="UP"/>
+  </roomLayout>
+  <roomLayout name="weapons_5">
+    <computerGlow x="54" y="7" slot="1" dir="RIGHT"/>
+  </roomLayout>
+  <roomLayout name="weapons_6">
+    <computerGlow x="40" y="0" slot="1" dir="UP"/>
+  </roomLayout>
+  <roomLayout name="weapons_7">
+    <computerGlow x="40" y="0" slot="1" dir="UP"/>
+  </roomLayout>
+  <roomLayout name="weapons_8">
+    <computerGlow x="40" y="0" slot="1" dir="UP"/>
+  </roomLayout>
+  <roomLayout name="weapons_9">
+    <computerGlow x="40" y="0" slot="1" dir="UP"/>
+  </roomLayout>
+  <roomLayout name="weapons_10">
+    <computerGlow x="8" y="0" slot="0" dir="UP"/>
+  </roomLayout>
+  <roomLayout name="weapons_11">
+    <computerGlow x="2" y="9" slot="0" dir="LEFT"/>
+  </roomLayout>
+</FTL>

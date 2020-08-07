@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <blueprintList name="WEAPONS_ION">
+    <name>ION_CHAINGUN</name>
+    <name>ION_CHAINGUN_UPGRADED</name>
+  </blueprintList>
+
+  <blueprintList name="WEAPONS_CHAIN_2">
+    <name>ION_CHAINGUN</name>
+    <name>LASER_CHAINGUN</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_CHAIN_3">
+    <name>CHAIN_ERASER</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_CHAIN_4">
+    <name>LASER_CHAINGUN_2</name>
+  </blueprintList>
+
+  <blueprintList name="WEAPONS_LASER_2">
+    <name>LASER_CHAINGUN</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_ION_2">
+    <name>ION_CHAINGUN</name>
+    <name>LASER_CHAINGUN</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_ANY_2">
+    <name>ION_CHAINGUN</name>
+    <name>LASER_CHAINGUN</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_PROJ_2">
+    <name>ION_CHAINGUN</name>
+    <name>LASER_CHAINGUN</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_ANY_3">
+    <name>CHAIN_ERASER</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_ANY_4">
+    <name>LASER_CHAINGUN_2</name>
+  </blueprintList>
+
+  <blueprintList name="WEAPONS_LASER_1_UPGRADED">
+    <name>LASER_CHAINGUN_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_ION_1_UPGRADED">
+    <name>ION_CHAINGUN_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_ANY_1_UPGRADED">
+    <name>ION_CHAINGUN_UPGRADED</name>
+    <name>LASER_CHAINGUN_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_PROJ_1_UPGRADED">
+    <name>ION_CHAINGUN_UPGRADED</name>
+    <name>LASER_CHAINGUN_UPGRADED</name>
+  </blueprintList>
+
+  <changelog>
+    <entry>Chain Ion charge time 14 to 12</entry>
+    <entry>Chain Ion power usage 3 to 2</entry>
+    <entry>Chain Ion maximum ion damage 4 to 3</entry>
+    <entry>Chain Ion stun chance 0 to 0.1</entry>
+    <entry>Chain Ion scrap cost 55 to 45</entry>
+    <entry>Chain Ion rarity 4 to 3</entry>
+  </changelog>
+  <weaponBlueprint name="ION_CHAINGUN">
+    <type>LASER</type>
+    <title>Chain Ion</title>
+    <short>Chain I.</short>
+    <locked>1</locked>
+    <tip>tip_chain_ion</tip>
+    <desc>This weapon's Ion damage increases each time it fires to a max of 3.</desc>
+    <tooltip>Fires a single blast that does 1 ion damage. Can hit and disable shields as well as systems.</tooltip>
+    <damage>0</damage>
+    <ion>1</ion>
+    <speed>30</speed>
+    <shots>1</shots>
+    <sp>0</sp>
+    <fireChance>0</fireChance>
+    <breachChance>0</breachChance>
+    <stunChance>1</stunChance>
+    <cooldown>12</cooldown>
+    <power>2</power>
+    <cost>45</cost>
+    <bp>3</bp>
+    <rarity>3</rarity>
+    <image>ion_2_shot</image>
+    <boost>
+      <type>damage</type>
+      <amount>1</amount>
+      <count>2</count>
+    </boost>
+    <explosion>explosion_small_ion</explosion>
+    <launchSounds>
+      <sound>ionShoot1</sound>
+      <sound>ionShoot2</sound>
+      <sound>ionShoot3</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>ionHit1</sound>
+      <sound>ionHit2</sound>
+      <sound>ionHit3</sound>
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>ionShields1</sound>
+      <sound>ionShields2</sound>
+      <sound>ionShields3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <weaponArt>ion_chaingun_3</weaponArt>
+    <iconImage>ion_chain</iconImage>
+  </weaponBlueprint>
+  <weaponBlueprintInherit name="ION_CHAINGUN_UPGRADED" base="ION_CHAINGUN">
+    <tip>tip_chain_ion_upgraded</tip>
+    <title>Chain Ion+</title>
+    <short>Chain I.+</short>
+    <cooldown>11</cooldown>
+    <power>1</power>
+    <rarity>0</rarity>
+  </weaponBlueprintInherit>
+
+  <changelog>
+    <entry>Chain Burst Laser scrap cost 65 to 50</entry>
+  </changelog>
+  <weaponBlueprint name="LASER_CHAINGUN">
+    <type>LASER</type>
+    <title>Chain Burst Laser</title>
+    <short>Chain L.</short>
+    <tip>tip_chain_laser</tip>
+    <desc>This dual shot laser decreases in cooldown the more it fires. After 3 volleys it only takes 7 seconds to charge.</desc>
+    <tooltip>Fires two lasers that deal 1 damage each. Cooldown drops the more it fires.</tooltip>
+    <damage>1</damage>
+    <shots>2</shots>
+    <sp>0</sp>
+    <fireChance>1</fireChance>
+    <breachChance>0</breachChance>
+    <cooldown>16</cooldown>
+    <power>2</power>
+    <cost>50</cost>
+    <bp>2</bp>
+    <rarity>3</rarity>
+    <image>laser_light1</image>
+    <boost>
+      <type>cooldown</type>
+      <amount>3</amount>
+      <count>3</count>
+    </boost>
+    <launchSounds>
+      <sound>lightLaser1</sound>
+      <sound>lightLaser2</sound>
+      <sound>lightLaser3</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>hitHull2</sound>
+      <sound>hitHull3</sound>
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>hitShield1</sound>
+      <sound>hitShield2</sound>
+      <sound>hitShield3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <weaponArt>chainlaser</weaponArt>
+    <iconImage>laser_chain</iconImage>
+  </weaponBlueprint>
+  <weaponBlueprintInherit name="LASER_CHAINGUN_UPGRADED" base="LASER_CHAINGUN">
+    <tip>tip_chain_laser_upgraded</tip>
+    <title>Chain Burst Laser+</title>
+    <short>Chain L.+</short>
+    <cooldown>13.9</cooldown>
+    <power>1</power>
+    <rarity>0</rarity>
+    <boost>
+      <type>cooldown</type>
+      <amount>2.3</amount>
+      <count>3</count>
+    </boost>
+  </weaponBlueprintInherit>
+
+  <weaponBlueprint name="LASER_CHAINGUN_2">
+    <type>LASER</type>
+    <title>Chain Vulcan</title>
+    <short>Vulcan</short>
+    <tip>tip_chain_laser</tip>
+    <desc>This laser weapon takes a long time to warm up. Each time it fires it decreases the cooldown, eventually able to take down any amount of shields.</desc>
+    <tooltip>Cooldown drops the more it fires.</tooltip>
+    <damage>1</damage>
+    <shots>1</shots>
+    <sp>0</sp>
+    <fireChance>1</fireChance>
+    <breachChance>0</breachChance>
+    <cooldown>11.1</cooldown>
+    <power>4</power>
+    <cost>95</cost>
+    <bp>2</bp>
+    <rarity>5</rarity>
+    <image>laser_light1</image>
+    <boost>
+      <type>cooldown</type>
+      <amount>2</amount>
+      <count>5</count>
+    </boost>
+    <launchSounds>
+      <sound>lightLaser1</sound>
+      <sound>lightLaser2</sound>
+      <sound>lightLaser3</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>hitHull2</sound>
+      <sound>hitHull3</sound>
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>hitShield1</sound>
+      <sound>hitShield2</sound>
+      <sound>hitShield3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <weaponArt>chainlaser_2</weaponArt>
+    <iconImage>laser_chain</iconImage>
+  </weaponBlueprint>
+  <weaponBlueprintInherit name="LASER_CHAINGUN_2_UPGRADED" base="LASER_CHAINGUN_2">
+    <tip>tip_chain_laser_upgraded</tip>
+    <title>Chain Vulcan+</title>
+    <short>Vulcan+</short>
+    <cooldown>9.1</cooldown>
+    <power>3</power>
+    <rarity>0</rarity>
+    <boost>
+      <type>cooldown</type>
+      <amount>1.6</amount>
+      <count>5</count>
+    </boost>
+  </weaponBlueprintInherit>
+
+  <changelog>
+    <entry>New Chain Eraser weapon (3 power, 1 projectile, 11 sec charge time, 2 to 6 damage)</entry>
+  </changelog>
+  <weaponBlueprint name="CHAIN_ERASER">
+    <type>LASER</type>
+    <title>Chain Eraser</title>
+    <short>Eraser</short>
+    <tip>tip_eraser</tip>
+    <desc>This devastating weapon deals more damage with each shot fired.</desc>
+    <tooltip>Fires 1 shot, causes 2 damage. Damage increases with each shot.</tooltip>
+    <damage>2</damage>
+    <shots>1</shots>
+    <sp>0</sp>
+    <fireChance>4</fireChance>
+    <breachChance>7</breachChance>
+    <stunChance>5</stunChance>
+    <cooldown>11</cooldown>
+    <power>3</power>
+    <cost>75</cost>
+    <bp>6</bp>
+    <rarity>4</rarity>
+    <image>eraser_projectile</image>
+    <boost>
+      <type>damage</type>
+      <amount>1</amount>
+      <count>4</count>
+    </boost>
+    <launchSounds>
+      <sound>heavyLaser1</sound>
+      <sound>heavyLaser2</sound>
+      <sound>heavyLaser3</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>hitHull1</sound>
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>hitShield1</sound>
+      <sound>hitShield2</sound>
+      <sound>hitShield3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <weaponArt>chain_eraser</weaponArt>
+    <iconImage>laser_chain</iconImage>
+  </weaponBlueprint>
+  <weaponBlueprintInherit name="CHAIN_ERASER_UPGRADED" base="CHAIN_ERASER">
+    <tip>tip_eraser_upgraded</tip>
+    <title>Chain Eraser+</title>
+    <short>Eraser+</short>
+    <cooldown>10</cooldown>
+    <power>2</power>
+    <rarity>0</rarity>
+  </weaponBlueprintInherit>
+</FTL>

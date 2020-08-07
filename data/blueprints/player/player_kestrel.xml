@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <changelog>
+    <entry>Kestrel A starts with upgraded Burst Laser II (no change)</entry>
+    <entry>Kestrel A starts with Artemis (no change)</entry>
+  </changelog>
+  <shipBlueprint name="PLAYER_SHIP_HARD" layout="kestral" img="kestral">
+    <class>Kestrel Cruiser</class>
+    <name>The Kestrel</name>
+    <desc>This class of ship was decommissioned from Federation service years ago. After a number of refits and updates this classic ship is ready for battle.</desc>
+    <systemList>
+      <battery power="1" room="11" start="false" img="room_battery"/>
+      <cloaking power="1" room="8" start="false"/>
+      <clonebay power="1" room="4" start="false" slot="1"/>
+      <doors power="1" room="2" start="true" img="room_doors"/>
+      <drones power="2" room="1" start="false"/>
+      <engines power="2" room="14" start="true" img="room_engines"/>
+      <hacking power="1" room="12" start="false" img="room_hacking"/>
+      <medbay power="1" room="4" start="true" img="room_medbay"/>
+      <mind power="1" room="7" start="false" img="room_mind"/>
+      <oxygen power="1" room="13" start="true" img="room_oxygen"/>
+      <pilot power="1" room="0" start="true" img="room_pilot"/>
+      <sensors power="1" room="3" start="true" img="room_sensors"/>
+      <shields power="2" room="5" start="true" img="room_shields"/>
+      <teleporter power="1" room="15" start="false"/>
+      <weapons power="3" room="10" start="true" img="room_weapons"/>
+    </systemList>
+    <weaponSlots>4</weaponSlots>
+    <droneSlots>2</droneSlots>
+    <weaponList count="2" missiles="8">
+      <weapon name="MISSILES_2"/>
+      <weapon name="LASER_BURST_3_UPGRADED"/>
+    </weaponList>
+    <droneList count="1" drones="2">
+    </droneList>
+    <health amount="30"/>
+    <maxPower amount="8"/>
+    <crewCount amount="3" class="human"/>
+  </shipBlueprint>
+
+  <changelog>
+    <entry>Kestrel B starts with 4 Basic Lasers (no change)</entry>
+  </changelog>
+  <shipBlueprint name="PLAYER_SHIP_HARD_2" layout="kestral_2" img="kestral_2">
+    <class>Kestrel Cruiser</class>
+    <name>Red-Tail</name>
+    <unlock>Complete 2/3 of the Kestrel Cruiser Achievements to unlock this ship.</unlock>
+    <desc>This modified Kestrel class ship was created by a laser weapon aficionado.</desc>
+    <systemList>
+      <battery power="1" room="6" start="false" img="room_battery_2"/>
+      <cloaking power="1" room="12" start="false" img="room_cloaking_2"/>
+      <clonebay power="1" room="0" start="false" slot="0"/>
+      <doors power="1" room="7" start="true" img="room_doors"/>
+      <drones power="2" room="13" start="false" img="room_drones_12"/>
+      <engines power="2" room="5" start="true" img="room_engines_3"/>
+      <hacking power="1" room="14" start="false" img="room_hacking_4"/>
+      <medbay power="1" room="0" start="true" img="room_medbay_4"/>
+      <mind power="1" room="1" start="false" img="room_mind_1"/>
+      <oxygen power="1" room="3" start="true" img="room_oxygen_11"/>
+      <pilot power="1" room="9" start="true" img="room_pilot_3"/>
+      <sensors power="1" room="11" start="true" img="room_sensors_2"/>
+      <shields power="2" room="2" start="true" img="room_shields_9"/>
+      <teleporter power="1" room="4" start="false"/>
+      <weapons power="4" room="10" start="true" img="room_weapons_2"/>
+    </systemList>
+    <weaponSlots>4</weaponSlots>
+    <droneSlots>2</droneSlots>
+    <weaponList count="4" missiles="5">
+      <weapon name="LASER_BURST_1"/>
+      <weapon name="LASER_BURST_1"/>
+      <weapon name="LASER_BURST_1"/>
+      <weapon name="LASER_BURST_1"/>
+    </weaponList>
+    <health amount="30"/>
+    <maxPower amount="8"/>
+    <crewCount amount="1" class="human"/>
+    <crewCount amount="1" class="energy"/>
+    <crewCount amount="1" class="human"/>
+    <crewCount amount="1" class="mantis"/>
+    <shieldImage>kestral</shieldImage>
+    <cloakImage>kestral</cloakImage>
+  </shipBlueprint>
+
+  <changelog>
+    <entry>Kestrel C starts with upgraded Burst Laser I (no change)</entry>
+    <entry>Kestrel C starts with upgraded Burst Ion Stunner I (buff)</entry>
+  </changelog>
+  <shipBlueprint name="PLAYER_SHIP_HARD_3" layout="kestral_3" img="kestral_3">
+    <class>Kestrel Cruiser</class>
+    <name>The Swallow</name>
+    <desc>This model was modified by pirates to utilize newly discovered technology. It can clone lost crewmembers and stun enemies.</desc>
+    <unlock>Get to Sector 8 with the Kestrel Cruiser Type B and Advanced Mode enabled to unlock this ship.</unlock>
+    <systemList>
+      <battery power="1" room="8" start="false" img="room_battery_6"/>
+      <cloaking power="1" room="1" start="false" img="room_cloaking_3"/>
+      <clonebay power="1" room="9" start="true" slot="1"/>
+      <doors power="1" room="10" start="true" img="room_doors"/>
+      <drones power="2" room="6" start="false" img="room_drones_13"/>
+      <engines power="2" room="5" start="true" img="room_engines"/>
+      <hacking power="1" room="14" start="false" img="room_hacking"/>
+      <medbay power="1" room="9" start="false" img="room_medbay_8"/>
+      <mind power="1" room="16" start="false" img="room_mind_1"/>
+      <oxygen power="1" room="7" start="true" img="room_oxygen_10"/>
+      <pilot power="1" room="11" start="true" img="room_pilot"/>
+      <sensors power="2" room="13" start="true" img="room_sensors"/>
+      <shields power="2" room="12" start="true" img="room_shields_3"/>
+      <teleporter power="1" room="4" start="false"/>
+      <weapons power="2" room="2" start="true" img="room_weapons_2"/>
+    </systemList>
+    <weaponSlots>4</weaponSlots>
+    <droneSlots>2</droneSlots>
+    <weaponList count="2" missiles="4">
+      <weapon name="LASER_BURST_2_UPGRADED"/>
+      <weapon name="ION_STUN_BURST_UPGRADED"/>
+    </weaponList>
+    <droneList count="0" drones="3">
+    </droneList>
+    <health amount="30"/>
+    <maxPower amount="7"/>
+    <crewCount amount="1" class="anaerobic"/>
+    <crewCount amount="2" class="human"/>
+    <shieldImage>kestral</shieldImage>
+    <cloakImage>kestral</cloakImage>
+    <floorImage>kestral</floorImage>
+  </shipBlueprint>
+</FTL>

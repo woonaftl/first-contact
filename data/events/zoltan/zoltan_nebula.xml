@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="NEBULA_ZOLTAN">
+    <event load="NEBULA_ZOLTAN_ROCK"/>
+    <event load="NEBULA_ZOLTAN_EYE"/>
+
+    <event load="NEBULA_AUTO_DEFENSE_ITEM"/>
+    <event load="NEBULA_LOST_SHIP"/>
+    <event load="NEBULA_ROCK_RACIST"/>
+    <event load="NEBULA_TRADER"/>
+    <event load="NEBULA_WEAPONS_TRADER"/>
+    <event load="STORM_AUTO"/>
+    <event load="STORM_ITEMS"/>
+    <event load="STORM_REBEL"/>
+    <event load="STORM_ZOLTAN_SUPPLY_CHOICE"/>
+    <event load="WOONA_STORM_MONSTER"/>
+  </eventList>
+
+  <event name="NEBULA_ZOLTAN_ROCK" unique="false">
+    <text>This nebula turns out to be the hiding place of a terrified rock crew taking refuge from the Zoltan border police. They don't seem prepared to risk your leaving with their co-ordinates, and open fire!</text>
+    <environment type="nebula"/>
+    <ship load="ROCK_SHIP" hostile="true"/>
+  </event>
+
+  <event name="NEBULA_ZOLTAN_EYE" unique="true">
+    <text>Inside this nebula you detect a rogue planet drifting through space, on its surface a huge monolith visible at this distance even to the naked eye. A Zoltan elder hails you from the planet. "Through luck or intent, you have discovered the Great Eye. Look into its depths and receive your just deserts."</text>
+    <environment type="nebula"/>
+    <choice hidden="true">
+      <text>Pull the ship in closer.</text>
+      <eventList name="NEBULA_ZOLTAN_EYE_LIST">
+        <event>
+          <text>As you approach, an ancient alien voice speaks to you: "Your mission has brought you great battles, and great losses. This will help ease the pain." A few minutes later someone reports medical equipment has appeared on the ship!</text>
+          <weapon name="BOMB_HEAL"/>
+        </event>
+        <event>
+          <text>You approach the planet and wait, but nothing happens. The Zoltan hail: "And in the coming times, when the monolith speaks not with a man he has no future and must be left wanting."</text>
+          <ship load="ZOLTAN_SHIP" hostile="true"/>
+        </event>
+        <event>
+          <text>You approach the planet carefully, trying to keep your ship from breaking up in orbit. The monolith, whatever it is, must sense as much because the next thing you know you have enough scrap to patch up your damage and more besides!</text>
+          <autoReward level="HIGH">scrap_only</autoReward>
+        </event>
+        <event>
+          <text>As you approach, a kaleidoscope of colors fills the viewscreen and one of your crew begins to age rapidly in reverse, eventually disappearing into nothingness. Let's hope they've transcended physical existence, and not just been forced out of it.</text>
+          <removeCrew>
+            <clone>false</clone>
+            <text>You check your Cloning Bay but it lies dormant. Whatever just happened to your crewmember must be irreversible.</text>
+          </removeCrew>
+        </event>
+      </eventList>
+    </choice>
+    <choice>
+      <text>Leave.</text>
+      <event>
+        <text>Your mission is to save the Federation, not discover new wonders around the galaxy. You prepare to jump.</text>
+      </event>
+    </choice>
+  </event>
+
+  <event name="STORM_ZOLTAN_SUPPLY_CHOICE" unique="true">
+    <text>You spy two pirate ships lurking in the nebula here. They remain unaware of your presence; you're able to get your scanners to at least identify their cargo: One is carrying the fuel supplies, the other the ammunition. They begin to drift away from each other in the storm.</text>
+    <environment type="storm"/>
+    <choice hidden="true">
+      <text>Secure the fuel supply.</text>
+      <event>
+        <text>You jet toward the pirate with the fuel supplies and engage - hopefully you can leave the ship in one piece!</text>
+        <ship name="STORM_PIRATE_SUPPLY_FUEL" auto_blueprint="SHIPS_PIRATE" hostile="true">
+          <escape chance="0.5" min="2" max="4" load="PIRATE_ESCAPE"/>
+          <destroyed>
+            <text>The ship obliterated, only scant fuel canisters can be scavenged from the wreckage before the ion storm clears and you have to jump away.</text>
+            <autoReward level="LOW">fuel</autoReward>
+          </destroyed>
+          <gotaway>
+            <text>The pirate jumped away.</text>
+          </gotaway>
+          <deadCrew>
+            <text>With the ship in one piece, you are able to salvage most of the fuel supplies before the ion storm clears and you have to jump away.</text>
+            <autoReward level="HIGH">fuel</autoReward>
+          </deadCrew>
+        </ship>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Secure the ammunition.</text>
+      <event>
+        <text>You jet toward the pirate with the ammunition and engage - hopefully you can leave the ship in one piece!</text>
+        <ship name="STORM_PIRATE_SUPPLY_AMMO" auto_blueprint="SHIPS_PIRATE" hostile="true">
+          <escape chance="0.5" min="2" max="4" load="PIRATE_ESCAPE"/>
+          <destroyed>
+            <text>The ship obliterated, only scant ammunition crates can be scavenged from the wreckage before the ion storm clears and you have to jump away.</text>
+            <autoReward level="LOW">missiles</autoReward>
+          </destroyed>
+          <gotaway>
+            <text>The pirate jumped away.</text>
+          </gotaway>
+          <deadCrew>
+            <text>With the ship in one piece, you are able to salvage most of the ammunition before the ion storm clears and you have to jump away.</text>
+            <autoReward level="HIGH">missiles</autoReward>
+          </deadCrew>
+        </ship>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Let them leave.</text>
+      <event>
+        <text>Sometimes discretion is the better part of valor.</text>
+      </event>
+    </choice>
+  </event>
+</FTL>

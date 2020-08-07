@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <blueprintList name="DRONES_STANDARD">
+    <name>DEFENSE_1</name>
+    <name>DEFENSE_2</name>
+    <name>DRONE_SHIELD</name>
+    <name>ANTI_DRONE</name>
+  </blueprintList>
+  <blueprintList name="DRONES_STANDARD_UPGRADED">
+    <name>DEFENSE_1_UPGRADED</name>
+    <name>DEFENSE_2_UPGRADED</name>
+    <name>DRONE_SHIELD_UPGRADED</name>
+    <name>ANTI_DRONE</name>
+  </blueprintList>
+  <blueprintList name="DRONES_DEFENSE">
+    <name>DEFENSE_1</name>
+    <name>DEFENSE_2</name>
+    <name>ANTI_DRONE</name>
+  </blueprintList>
+  <blueprintList name="DRONES_DEFENSE_UPGRADED">
+    <name>DEFENSE_1_UPGRADED</name>
+    <name>DEFENSE_2_UPGRADED</name>
+    <name>ANTI_DRONE</name>
+  </blueprintList>
+  <blueprintList name="DRONES_DEFENSE_LIST">
+    <name>DEFENSE_1</name>
+    <name>DEFENSE_2</name>
+    <name>DEFENSE_1_UPGRADED</name>
+    <name>DEFENSE_2_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="DRONES_ENGI">
+    <name>DEFENSE_1</name>
+    <name>DEFENSE_2</name>
+    <name>DRONE_SHIELD</name>
+    <name>ANTI_DRONE</name>
+  </blueprintList>
+  <blueprintList name="DRONES_ORCHID">
+    <name>DEFENSE_1</name>
+    <name>DEFENSE_2</name>
+    <name>DRONE_SHIELD</name>
+    <name>ANTI_DRONE</name>
+  </blueprintList>
+  <blueprintList name="SHIP_REPAIR_LIST">
+    <name>SHIP_REPAIR</name>
+    <name>SHIP_REPAIR_UPGRADED</name>
+  </blueprintList>
+
+  <weaponBlueprint NOLOC="1" name="DRONE_LASER_DEFENSE">
+    <type>LASER</type>
+    <title>Drone Laser</title>
+    <damage>1</damage>
+    <shots>1</shots>
+    <fireChance>0</fireChance>
+    <breachChance>0</breachChance>
+    <rarity>0</rarity>
+    <image>laser_light1</image>
+    <launchSounds>
+      <sound>lightLaser1</sound>
+      <sound>lightLaser2</sound>
+      <sound>lightLaser3</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>hitHull2</sound>
+      <sound>hitHull3</sound>
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>hitShield1</sound>
+      <sound>hitShield2</sound>
+      <sound>hitShield3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <weaponArt>laser_burst_1</weaponArt>
+  </weaponBlueprint>
+  <droneBlueprint name="DEFENSE_1">
+    <type>DEFENSE</type>
+    <level>1</level>
+    <tip>tip_defense</tip>
+    <title>Defense Drone Mark I</title>
+    <short>Defense I</short>
+    <desc>Shoots down incoming missiles, asteroids, and flak debris.</desc>
+    <power>2</power>
+    <cooldown>1000</cooldown>
+    <dodge>0</dodge>
+    <speed>5</speed>
+    <cost>50</cost>
+    <bp>2</bp>
+    <droneImage>drone_defense</droneImage>
+    <weaponBlueprint>DRONE_LASER_DEFENSE</weaponBlueprint>
+    <iconImage>defense</iconImage>
+    <rarity>1</rarity>
+  </droneBlueprint>
+  <droneBlueprintInherit name="DEFENSE_1_UPGRADED" base="DEFENSE_1">
+    <tip>tip_defense_upgraded</tip>
+    <title>Defense Drone Mark I+</title>
+    <short>Defense I+</short>
+    <desc>Shoots down incoming missiles, asteroids, and flak debris. This modified schematic requires 1 less power.</desc>
+    <power>1</power>
+    <rarity>0</rarity>
+  </droneBlueprintInherit>
+
+  <changelog>
+    <entry>Defense II Drone scrap cost 70 to 60</entry>
+  </changelog>
+  <weaponBlueprint NOLOC="1" name="DRONE_LASER_2">
+    <type>LASER</type>
+    <title>Drone Laser 2</title>
+    <damage>1</damage>
+    <shots>1</shots>
+    <fireChance>0</fireChance>
+    <breachChance>0</breachChance>
+    <rarity>0</rarity>
+    <speed>120</speed>
+    <image>laser_light2</image>
+    <launchSounds>
+      <sound>lightLaser1</sound>
+      <sound>lightLaser2</sound>
+      <sound>lightLaser3</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>hitHull2</sound>
+      <sound>hitHull3</sound>
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>hitShield1</sound>
+      <sound>hitShield2</sound>
+      <sound>hitShield3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <weaponArt>laser_burst_1</weaponArt>
+  </weaponBlueprint>
+  <droneBlueprint name="DEFENSE_2">
+    <type>DEFENSE</type>
+    <tip>tip_defense</tip>
+    <target>LASERS</target>
+    <title>Defense Drone Mark II</title>
+    <short>Defense II</short>
+    <desc>It fires faster than Mark I and can also shoot down incoming lasers.</desc>
+    <power>3</power>
+    <cooldown>880</cooldown>
+    <dodge>0</dodge>
+    <speed>7</speed>
+    <cost>60</cost>
+    <bp>6</bp>
+    <droneImage>drone_defense2</droneImage>
+    <weaponBlueprint>DRONE_LASER_2</weaponBlueprint>
+    <iconImage>defense2</iconImage>
+    <rarity>3</rarity>
+  </droneBlueprint>
+  <droneBlueprintInherit name="DEFENSE_2_UPGRADED" base="DEFENSE_2">
+    <tip>tip_defense_upgraded</tip>
+    <title>Defense Drone Mark II+</title>
+    <short>Defense II+</short>
+    <desc>It fires faster than Mark I and can also shoot down incoming lasers. This modified schematic requires 1 less power.</desc>
+    <power>2</power>
+    <rarity>0</rarity>
+  </droneBlueprintInherit>
+
+  <changelog>
+    <entry>Hull Repair Drone power usage 2 to 3</entry>
+    <entry>Hull Repair Drone scrap cost 85 to 60</entry>
+    <entry>Hull Repair Drone rarity 4 to 5</entry>
+  </changelog>
+  <droneBlueprint name="SHIP_REPAIR">
+    <type>SHIP_REPAIR</type>
+    <tip>tip_crew</tip>
+    <title>Hull Repair</title>
+    <short>Hull Repair</short>
+    <desc>Automatically repairs 3-5 damage to your hull per drone part.</desc>
+    <power>3</power>
+    <cooldown>1000</cooldown>
+    <dodge>0</dodge>
+    <speed>20</speed>
+    <cost>60</cost>
+    <bp>5</bp>
+    <droneImage>drone_shiprepair</droneImage>
+    <image>weapons/laser_light2_strip4.png</image>
+    <rarity>5</rarity>
+    <iconImage>Srepair</iconImage>
+  </droneBlueprint>
+  <droneBlueprintInherit name="SHIP_REPAIR_UPGRADED" base="SHIP_REPAIR">
+    <tip>tip_crew_upgraded</tip>
+    <title>Hull Repair+</title>
+    <short>Hull Repair+</short>
+    <desc>Automatically repairs 3-5 damage to your hull per drone part. This modified schematic requires 1 less power.</desc>
+    <power>2</power>
+    <rarity>0</rarity>
+  </droneBlueprintInherit>
+
+  <changelog>
+    <entry>Anti-Drone scrap cost 35 to 30</entry>
+    <entry>Anti-Drone rarity 1 to 3</entry>
+  </changelog>
+  <weaponBlueprint NOLOC="1" name="ANTI_DRONE_ION">
+    <type>LASER</type>
+    <title>Drone Laser</title>
+    <damage>0</damage>
+    <shots>1</shots>
+    <ion>1</ion>
+    <fireChance>0</fireChance>
+    <breachChance>0</breachChance>
+    <rarity>0</rarity>
+    <speed>90</speed>
+    <image>ion_1_shot</image>
+    <explosion>explosion_small_ion</explosion>
+    <launchSounds>
+      <sound>ionShoot1</sound>
+      <sound>ionShoot2</sound>
+      <sound>ionShoot3</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>ionHit1</sound>
+      <sound>ionHit2</sound>
+      <sound>ionHit3</sound>
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>ionShields1</sound>
+      <sound>ionShields2</sound>
+      <sound>ionShields3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <weaponArt>ion_1</weaponArt>
+    <iconImage>ion</iconImage>
+  </weaponBlueprint>
+  <droneBlueprint name="ANTI_DRONE">
+    <type>DEFENSE</type>
+    <tip>tip_defense</tip>
+    <target>DRONES</target>
+    <level>1</level>
+    <title>Anti-Combat Drone</title>
+    <short>Anti-Drone</short>
+    <desc>Stuns combat drones attacking your ship.</desc>
+    <power>1</power>
+    <cooldown>7000</cooldown>
+    <dodge>0</dodge>
+    <speed>5</speed>
+    <cost>30</cost>
+    <bp>2</bp>
+    <droneImage>drone_anti</droneImage>
+    <weaponBlueprint>ANTI_DRONE_ION</weaponBlueprint>
+    <rarity>3</rarity>
+    <iconImage>antiD</iconImage>
+  </droneBlueprint>
+
+  <changelog>
+    <entry>Shield Overcharger scrap cost 60 to 40</entry>
+  </changelog>
+  <droneBlueprint name="DRONE_SHIELD">
+    <type>SHIELD</type>
+    <level>1</level>
+    <tip>tip_defense</tip>
+    <title>Shield Overcharger</title>
+    <short>Shield</short>
+    <desc>Creates single Supershield barrier periodically.</desc>
+    <power>3</power>
+    <cooldown>15000</cooldown>
+    <dodge>0</dodge>
+    <speed>5</speed>
+    <cost>40</cost>
+    <bp>2</bp>
+    <droneImage>drone_shield</droneImage>
+    <rarity>4</rarity>
+    <iconImage>shield</iconImage>
+  </droneBlueprint>
+  <droneBlueprintInherit name="DRONE_SHIELD_UPGRADED" base="DRONE_SHIELD">
+    <tip>tip_defense_upgraded</tip>
+    <title>Shield Overcharger+</title>
+    <short>Shield+</short>
+    <desc>Creates single Supershield barrier periodically. This modified schematic requires 1 less power.</desc>
+    <power>2</power>
+    <rarity>0</rarity>
+  </droneBlueprintInherit>
+</FTL>

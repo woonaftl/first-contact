@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="ITEMS_ORCHID">
+    <event load="ORCHID_FIND_DRONE"/>
+    <event load="ORCHID_FIND_WEAPON"/>
+    <event load="ORCHID_FREE_ITEMS"/>
+    <event load="ORCHID_FREE_CREW"/>
+
+    <event load="REFUEL_STATION"/>
+    <event load="REPAIR_STATION"/>
+    <event load="SELL_DRONES_STATION"/>
+    <event load="SELL_MISSILES_STATION"/>
+    <event load="TRADER_CIV"/>
+    <event load="TAVERN_HIRE"/>
+    <event load="TRADER_UPGRADES"/>
+    <event load="TRADER_UPGRADES_EXCHANGE"/>
+  </eventList>
+
+  <event name="ORCHID_FIND_DRONE" unique="false">
+    <textList>
+      <text>Given how fragile Orchids are, they often resort to using drones to deal with emergencies on their ships. A drone factory, still loyal to Federation, is located at the beacon. Orchid engineers offer one of their creations for free.</text>
+      <text>While the FTL drive charges, you decide to explore the surface of a planet nearby. A depowered drone is hidden within foliage of a giant tree, probably left by pirates. You can find some use for it in your journey.</text>
+    </textList>
+    <autoReward level="LOW">drone</autoReward>
+  </event>
+
+  <event name="ORCHID_FIND_WEAPON" unique="false">
+    <textList>
+      <text>You are surprised to find a secret Federation station deep within Orchid space. Its team went as far as hiding the base using traditional Orchid materials like leaves and bark. Allies at the station offer a weapon to help on your journey.</text>
+      <text>An Orchid colony at the nearby moon agrees to give you a weapon in exchange for some rare plant specimen from your home planet you were lucky to have on hand.</text>
+      <text>As you complete the jump, an Orchid ship explodes nearby for unknown reason. The only things that survive the explosion are some melt metal parts and a single weapon.</text>
+    </textList>
+    <autoReward level="LOW">weapon</autoReward>
+  </event>
+
+  <event name="ORCHID_FREE_ITEMS" unique="false">
+    <textList>
+      <text>A friendly Orchid station at the beacon is offering scrap metal for free. Orchids make many of their structures of natural materials so they usually have a lot of spare metal.</text>
+      <text back="BG_DARK" planet="NONE">The beacon is empty, with no ships or stars around. A single container, resembling a giant seed, is drifting through space. There are some useful scrap and resources within.</text>
+      <text back="BG_DARK" planet="NONE">The beacon is located far away from systems populated by Orchids. Some remains of destroyed ships are floating around: aftermath of a battle long ago. You harvest what you can.</text>
+    </textList>
+    <autoReward level="MED">standard</autoReward>
+  </event>
+
+  <event name="ORCHID_FREE_CREW" unique="true">
+    <text>You encounter a giant Orchid passenger ship with military escort. One of the passengers contacts you using a makeshift communicator: "Please take me. I can fight. I've stolen a shuttle."</text>
+    <choice>
+      <text>Offer them a position on your ship.</text>
+      <event>
+        <text>The new addition to your crew turns out to be an Orchid youth. They take a combat pose and excrete chemicals that fill your other crewmembers with determination.</text>
+        <crewMember amount="1" class="orchid"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Decline.</text>
+      <event/>
+    </choice>
+  </event>
+</FTL>

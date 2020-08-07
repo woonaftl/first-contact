@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <text name="map_icon_upgrade">UPGRADE</text>
+  <text name="map_upgrade_loc">Unvisited. Equipment upgrade available.</text>
+
+  <text name="tip_beams_upgraded">Tip: For every shield bar on the enemy, a beam's damage is reduced by one. For example, a three damage beam against two shield bars will cause one damage in every room it hits.\n\nTip: This weapon is upgraded. It cannot be upgraded again. Upgraded weapons require 1 less power and charge faster than stock weapons.</text>
+  <text name="tip_missiles_upgraded">Tip: Missiles will ignore all enemy shields, but cost one missile to launch. Enemy defense drones will shoot down incoming missiles.\n\nTip: This weapon is upgraded. It cannot be upgraded again. Upgraded weapons require 1 less power and charge faster than stock weapons.</text>
+  <text name="tip_bombs_upgraded">Tip: Bombs teleport past shields and defense drones to land directly on the ship. Like missiles, they cost one missile to launch. They never damage hull, but can be effective at disrupting crew and systems. You can even launch them at boarders on your own ship.\n\nTip: This weapon is upgraded. It cannot be upgraded again. Upgraded weapons require 1 less power and charge faster than stock weapons.</text>
+  <text name="tip_ion_upgraded">Tip: For every one point of ion damage, one power bar is removed from the target system and it is then locked for 5 seconds, preventing re-powering. If an ion weapon hits shields, the damage is automatically applied to the Shield System.\n\nTip: This weapon is upgraded. It cannot be upgraded again. Upgraded weapons require 1 less power and charge faster than stock weapons.</text>
+  <text name="tip_laser_upgraded">Tip: Each laser shot will be blocked by a single shield bubble, regardless of the laser's damage.\n\nTip: This weapon is upgraded. It cannot be upgraded again. Upgraded weapons require 1 less power and charge faster than stock weapons.</text>
+  <text name="tip_hull_upgraded">Tip: Hull weapons deal double damage if they hit a room that does not have a system or a subsystem.\n\nTip: This weapon is upgraded. It cannot be upgraded again. Upgraded weapons require 1 less power and charge faster than stock weapons.</text>
+  <text name="tip_charge_upgraded">Tip: Charge weapons can be charged multiple times to generate more firepower. You can save time and fire the weapon prematurely but it will have fewer shots ready as a result.\n\nTip: This weapon is upgraded. It cannot be upgraded again. Upgraded weapons require 1 less power and charge faster than stock weapons.</text>
+  <text name="tip_chain_laser_upgraded">Tip: Chain lasers decrease their cooldown every time they fire. Check the green lights on the weapon to see how many times it has fired.\n\nTip: This weapon is upgraded. It cannot be upgraded again. Upgraded weapons require 1 less power and charge faster than stock weapons.</text>
+  <text name="tip_chain_ion_upgraded">Tip: The Chain Ion increases its damage every time it fires. Check the green lights on the weapon to see how many times it has fired.\n\nTip: This weapon is upgraded. It cannot be upgraded again. Upgraded weapons require 1 less power and charge faster than stock weapons.</text>
+  <text name="tip_flak_upgraded">Tip: Flak weapons target an area instead of a single room. This loss of accuracy means more firepower and speed than their laser counterparts.\n\nTip: This weapon is upgraded. It cannot be upgraded again. Upgraded weapons require 1 less power and charge faster than stock weapons.</text>
+  <text name="tip_crystal_upgraded">Tip: Crystal weapons pierce a single layer of shields. Only level 2 shields and higher can stop them.\n\nTip: This weapon is upgraded. It cannot be upgraded again. Upgraded weapons require 1 less power and charge faster than stock weapons.</text>
+  <text name="tip_repair_bomb_upgraded">Tip: Bombs never miss when targeting your own ship, so this bomb is a guaranteed full heal for any of your systems.\n\nTip: This weapon is upgraded. It cannot be upgraded again. Upgraded weapons require 1 less power and charge faster than stock weapons.</text>
+  <text name="tip_heal_bomb_upgraded">Tip: Remember, bombs can miss the enemy ship so don't count on this as a guaranteed heal for your boarders!\n\nTip: This weapon is upgraded. It cannot be upgraded again. Upgraded weapons require 1 less power and charge faster than stock weapons.</text>
+  <text name="tip_fire_beam_upgraded">Tip: This Fire Beam does no hull damage, so it cannot pierce any amount of shields.\n\nTip: This weapon is upgraded. It cannot be upgraded again. Upgraded weapons require 1 less power and charge faster than stock weapons.</text>
+  <text name="tip_crew_beam_upgraded">Tip: This Anti-Bio Beam does no hull damage, so it cannot pierce any amount of shields. It also won't hurt drones!\n\nTip: This weapon is upgraded. It cannot be upgraded again. Upgraded weapons require 1 less power and charge faster than stock weapons.</text>
+  <text name="tip_combat_upgraded">Tip: Combat Drones require 1 drone part to deploy for each new enemy. They will attack the enemy as long as they are powered.\n\nTip: This drone is upgraded. It cannot be upgraded again. Upgraded drones require 1 less power than stock drones.</text>
+  <text name="tip_defense_upgraded">Tip: Defense Drones require 1 drone part to deploy at every new location. They will defend your ship as long as they are powered.\n\nTip: This drone is upgraded. It cannot be upgraded again. Upgraded drones require 1 less power than stock drones.</text>
+  <text name="tip_boarding_upgraded">Tip: Boarding Drones require 1 drone part to deploy for each new enemy. They will board the enemy ship and attack as long as they are powered.\n\nTip: This drone is upgraded. It cannot be upgraded again. Upgraded drones require 1 less power than stock drones.</text>
+  <text name="tip_crew_upgraded">Tip: Crew Drones require 1 drone to deploy, but will not need to be deployed again until destroyed. They stay on ship and help your crew as long as they are powered.\n\nTip: This drone is upgraded. It cannot be upgraded again. Upgraded drones require 1 less power than stock drones.</text>
+
+  <text name="tip_eraser">Tip: The Chain Eraser increases its damage every time it fires. Check the green lights on the weapon to see how many times it has fired.</text>
+  <text name="tip_eraser_upgraded">Tip: The Chain Eraser increases its damage every time it fires. Check the green lights on the weapon to see how many times it has fired.\n\nTip: This weapon is upgraded. It cannot be upgraded again. Upgraded weapons require 1 less power and charge faster than stock weapons.</text>
+
+  <text name="type_missile_chain">Chain Missile</text>
+
+  <mod:findName type="text" name="ach_easy">
+    <mod:setValue>Unlocked on HARD</mod:setValue>
+  </mod:findName>
+  <mod:findName type="text" name="ach_normal">
+    <mod:setValue>Unlocked on HARDER</mod:setValue>
+  </mod:findName>
+  <mod:findName type="text" name="ach_hard">
+    <mod:setValue>Unlocked on HARDEST</mod:setValue>
+  </mod:findName>
+  <mod:findName type="text" name="easy">
+    <mod:setValue>Hard</mod:setValue>
+  </mod:findName>
+  <mod:findName type="text" name="normal">
+    <mod:setValue>Harder</mod:setValue>
+  </mod:findName>
+  <mod:findName type="text" name="hard">
+    <mod:setValue>Hardest</mod:setValue>
+  </mod:findName>
+  <mod:findName type="text" name="easy_button">
+    <mod:setValue>HARD</mod:setValue>
+  </mod:findName>
+  <mod:findName type="text" name="easy_title">
+    <mod:setValue>Hard Mode</mod:setValue>
+  </mod:findName>
+  <mod:findName type="text" name="easy_text">
+    <mod:setValue>High scrap rewards. Enemies have weaker systems (but their weapons are the same on all difficulty levels).</mod:setValue>
+  </mod:findName>
+  <mod:findName type="text" name="normal_button">
+    <mod:setValue>HARDER</mod:setValue>
+  </mod:findName>
+  <mod:findName type="text" name="normal_title">
+    <mod:setValue>Harder Mode</mod:setValue>
+  </mod:findName>
+  <mod:findName type="text" name="normal_text">
+    <mod:setValue>Medium scrap rewards. Enemies have slightly weaker systems (but their weapons are the same on all difficulty levels).\nYour score gets a 25 percent boost.</mod:setValue>
+  </mod:findName>
+  <mod:findName type="text" name="hard_button">
+    <mod:setValue>HARDEST</mod:setValue>
+  </mod:findName>
+  <mod:findName type="text" name="hard_title">
+    <mod:setValue>Hardest Mode</mod:setValue>
+  </mod:findName>
+  <mod:findName type="text" name="hard_text">
+    <mod:setValue>Low scrap rewards. Enemies prioritize manning weapons. Enemies prioritize targeting critical systems.\nYour score gets a 50 percent boost.</mod:setValue>
+  </mod:findName>
+
+  <!--<text name="ach_easy">Unlocked on HARD</text>
+  <text name="ach_normal">Unlocked on HARDER</text>
+  <text name="ach_hard">Unlocked on HARDEST</text>
+  <text name="easy">Hard</text>
+  <text name="normal">Harder</text>
+  <text name="hard">Hardest</text>
+  <text name="easy_button">HARD</text>
+  <text name="easy_title">Hard Mode</text>
+  <text name="easy_text">High scrap rewards. Enemies have weaker systems (but their weapons are the same on all difficulty levels).</text>
+  <text name="normal_button">HARDER</text>
+  <text name="normal_title">Harder Mode</text>
+  <text name="normal_text">Medium scrap rewards. Enemies have slightly weaker systems (but their weapons are the same on all difficulty levels).\nYour score gets a 25 percent boost.</text>
+  <text name="hard_button">HARDEST</text>
+  <text name="hard_title">Hardest Mode</text>
+  <text name="hard_text">Low scrap rewards. Enemies prioritize manning weapons. Enemies prioritize targeting critical systems.\nYour score gets a 50 percent boost.</text>-->
+</FTL>

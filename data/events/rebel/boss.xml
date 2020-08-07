@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <event name="FEDERATION_BASE">
+    <text>You arrive near the Federation Base to find the bulk of their fleet skirmishing with Rebel forces. You hang back near the far side of the moon to avoid the conflict. There's not much you can do to help in that battle, and your mission holds the key to turn the tide of the war. You prepare to face the Flagship.</text>
+  </event>
+
+  <event name="LAST_STAND_START">
+    <text>You arrive at an outpost close to the Federation Base. Your access codes get you past initial security and an officer sets up a direct feed to the Federation Base's war room. Admiral Tully speaks first saying, "What is the meaning of this?! Who are you?"</text>
+    <fleet>fed</fleet>
+    <choice>
+      <text>Explain your mission.</text>
+      <event>
+        <text>Your explanation is met with murmurs of cynicism and disbelief among the officers. General Turzil of the Engi Brigade speaks up, "Intel suggests potential counter to Rebel technology. Risk all or save none."</text>
+        <choice hidden="true">
+          <text>Explain the weakness of the enemy fleet, the Rebel flagship.</text>
+          <event>
+            <text>Tully responds, "It's settled. The Rebels will be here in a matter of moments. We will do what we can to hold off their warships but you must succeed in destroying this flagship. Your current outpost can provide some repairs and fuel, and the other repair stations can provide aid as well. Good luck."</text>
+            <item_modify>
+              <item type="fuel" min="10" max="10"/>
+            </item_modify>
+            <damage amount="-10"/>
+          </event>
+        </choice>
+      </event>
+    </choice>
+  </event>
+
+  <changelog>
+    <entry>Rebel Flagship depowers its medbay and oxygen when its crew is dead</entry>
+  </changelog>
+  <event name="BOSS_AUTOMATED">
+    <text>It appears this ship is also equipped with an advanced AI system. Now that the crew is dead, it has taken control!</text>
+    <status type="limit" target="enemy" system="medbay" amount="0"/>
+    <status type="limit" target="enemy" system="oxygen" amount="0"/>
+  </event>
+
+  <event name="BOSS_DESTROYED">
+    <text>Its explosion rocks your ship and you shudder with relief. You did it. The Federation is saved....</text>
+    <status type="clear" target="player" system="sensors" amount="100"/>
+    <choice>
+      <text id="continue"/>
+      <event>
+        <text>Thanks for playing! Keep in mind this is still in beta and we have not created a satisfying conclusion to the game. Head to our forums to give us some feedback and let us know that you beat it. Thanks!</text>
+      </event>
+    </choice>
+  </event>
+
+  <event name="BOSS_ESCAPED">
+    <text>Just as you finally gain the upper hand it finds a way to make an FTL jump. You've got to keep up the assault!</text>
+    <autoReward level="HIGH">standard</autoReward>
+    <status type="clear" target="player" system="sensors" amount="100"/>
+  </event>
+
+  <event name="BOSS_TEXT_1">
+    <text>This is it... The Rebel flagship. If you are able to destroy this monstrosity, the Federation fleet will have a chance of surviving. There's no turning back!</text>
+  </event>
+
+  <event name="BOSS_TEXT_2">
+    <text>You chase down the flagship and discover it is heavily damaged from the previous fight. Scans indicate that it has redirected considerable power to its drones. Get ready for a fight.</text>
+  </event>
+
+  <event name="BOSS_TEXT_3">
+    <text>You're not certain how it's able to keep fighting with the amount of damage it has sustained. It looks like it's transferred power to the teleporter as well as... some kind of super weapon. Be prepared... this is it!</text>
+  </event>
+
+  <event name="BOSS_REPAIR_STATION">
+    <textList name="BOSS_REPAIR_STATION">
+      <text>There is a a mobile ship construction platform stationed at this beacon. After a brief exchange they give you clearance to receive emergency repairs and military supplies.</text>
+      <text>An Engi civilian ship-yard has been converted into a military refueling station. They offer you the chance to patch up your ship and refresh some supplies.</text>
+      <text>Chatter on the comm suggests the nearby Federation base is outfitted with a repair station. When you forward your mission priority they quickly help repair your ship and give you some supplies.</text>
+      <text>A forward construction station is in the process of repairing damaged warships. Your command codes convince them to do a quick patch job on your ship.</text>
+      <text>A trade station was abandoned nearby. Some Federation engineers repurposed their shipyard to perform military repairs. They offer to help fix your ship.</text>
+    </textList>
+    <damage amount="-15"/>
+    <repair/>
+    <item_modify>
+      <item type="missiles" min="4" max="4"/>
+      <item type="fuel" min="5" max="5"/>
+      <item type="drones" min="5" max="5"/>
+      <item type="scrap" min="22" max="44"/>
+    </item_modify>
+  </event>
+</FTL>

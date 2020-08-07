@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../schema/autoBlueprints.xsd">
+  <blueprintList name="SHIPS_FED">
+    <name>FED_SCOUT</name>
+    <name>FED_BOMBER</name>
+    <name>FED_FIGHTER</name>
+  </blueprintList>
+  <blueprintList name="SHIPS_CIVILIAN">
+    <name>FED_SCOUT</name>
+    <name>FED_BOMBER</name>
+    <name>FED_FIGHTER</name>
+  </blueprintList>
+  <blueprintList name="SHIPS_PIRATE">
+    <name>FED_SCOUT_PIRATE</name>
+    <name>FED_BOMBER_PIRATE</name>
+    <name>FED_FIGHTER_PIRATE</name>
+  </blueprintList>
+
+  <!--TODO: add late game ships-->
+
+  <shipBlueprintSuper name="FED_SCOUT" layout="fed_scout" img="fed_scout">
+    <class>Federation Scout</class>
+    <class_pirate>Pirate Scout</class_pirate>
+    <systemList>
+      <pilot power="1" max="3" room="0" room_pirate="0"/>
+      <doors power="1" max="3" room="2" room_pirate="2" start="false"/>
+      <oxygen power="1" max="3" room="5" room_pirate="5"/>
+      <shields power="2" max="8" room="1" room_pirate="1"/>
+      <engines power="1" max="5" room="4" room_pirate="4"/>
+      <weapons room="3" room_pirate="3"/>
+    </systemList>
+    <weaponList sector="0" missiles="1" system_power="3">
+      <weapon name="WEAPONS_MISSILES_1"/>
+      <weapon name="WEAPONS_PROJ_1"/>
+      <weapon name="WEAPONS_PROJ_1"/>
+      <weapon name="WEAPONS_PROJ_1"/>
+    </weaponList>
+    <weaponList sector="1" missiles="1" system_power="4">
+      <weapon name="WEAPONS_MISSILES_1"/>
+      <weapon name="WEAPONS_PROJ_2"/>
+      <weapon name="WEAPONS_PROJ_1"/>
+      <weapon name="WEAPONS_PROJ_1"/>
+    </weaponList>
+    <weaponList sector="2" missiles="1" system_power="5">
+      <weapon name="WEAPONS_MISSILES_2"/>
+      <weapon name="WEAPONS_PROJ_2"/>
+      <weapon name="WEAPONS_PROJ_1"/>
+      <weapon name="WEAPONS_PROJ_2"/>
+    </weaponList>
+    <weaponList sector="3" missiles="1" system_power="6">
+      <weapon name="WEAPONS_MISSILES_2"/>
+      <weapon name="WEAPONS_PROJ_3"/>
+      <weapon name="WEAPONS_PROJ_1"/>
+      <weapon name="WEAPONS_PROJ_2"/>
+    </weaponList>
+    <health amount="7"/>
+    <crewCount amount="2" max="3" class="human"/>
+    <boardingAI>sabotage</boardingAI>
+    <cloakImage>fed_scout</cloakImage>
+  </shipBlueprintSuper>
+
+  <shipBlueprintSuper name="FED_BOMBER" layout="fed_bomber" img="fed_bomber">
+    <class>Federation Bomber</class>
+    <class_pirate>Pirate Bomber</class_pirate>
+    <systemList>
+      <pilot power="1" max="3" room="0" room_pirate="0"/>
+      <doors power="1" max="3" room="2" room_pirate="2" start="false"/>
+      <medbay power="1" max="3" room="8" room_pirate="8" start="false"/>
+      <oxygen power="1" max="3" room="5" room_pirate="5"/>
+      <shields power="2" max="8" room="1" room_pirate="1"/>
+      <engines power="1" max="5" room="9" room_pirate="9"/>
+      <weapons room="6" room_pirate="6"/>
+    </systemList>
+    <weaponList sector="2" missiles="3" system_power="5">
+      <weapon name="WEAPONS_BOMB"/>
+      <weapon name="WEAPONS_PROJ_2"/>
+      <weapon name="WEAPONS_ANY_2"/>
+      <weapon name="WEAPONS_PROJ_1"/>
+    </weaponList>
+    <weaponList sector="3" missiles="3" system_power="6">
+      <weapon name="WEAPONS_BOMB"/>
+      <weapon name="WEAPONS_PROJ_2"/>
+      <weapon name="WEAPONS_ANY_3"/>
+      <weapon name="WEAPONS_PROJ_1"/>
+    </weaponList>
+    <weaponList sector="4" missiles="3" system_power="6">
+      <weapon name="WEAPONS_BOMB"/>
+      <weapon name="WEAPONS_PROJ_2"/>
+      <weapon name="WEAPONS_ANY_3"/>
+      <weapon name="WEAPONS_PROJ_1"/>
+    </weaponList>
+    <weaponList sector="5" missiles="3" system_power="7">
+      <weapon name="WEAPONS_BOMB"/>
+      <weapon name="WEAPONS_PROJ_3"/>
+      <weapon name="WEAPONS_ANY_3"/>
+      <weapon name="WEAPONS_PROJ_1"/>
+    </weaponList>
+    <health amount="9"/>
+    <crewCount amount="3" max="6" class="human"/>
+    <cloakImage>fed_bomber</cloakImage>
+  </shipBlueprintSuper>
+
+  <shipBlueprintSuper name="FED_FIGHTER" layout="fed_fighter" img="fed_fighter">
+    <class>Federation Fighter</class>
+    <class_pirate>Pirate Fighter</class_pirate>
+    <systemList>
+      <pilot power="1" max="3" room="0" room_pirate="0"/>
+      <clonebay power="1" max="3" room="8" room_pirate="1" start="false"/>
+      <shields power="2" max="8" room="1" room_pirate="4"/>
+      <engines power="1" max="5" room="2" room_pirate="6"/>
+      <weapons room="6" room_pirate="5"/>
+      <oxygen power="1" max="2" room="7" room_pirate="7"/>
+      <teleporter power="1" max="2" room="3" room_pirate="3" start="false"/>
+    </systemList>
+    <weaponList sector="2" missiles="1" system_power="5">
+      <weapon name="WEAPONS_MISSILES_1"/>
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_LASER_1"/>
+    </weaponList>
+    <weaponList sector="3" missiles="2" system_power="5">
+      <weapon name="WEAPONS_MISSILES_1"/>
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_LASER_1"/>
+    </weaponList>
+    <weaponList sector="4" missiles="2" system_power="6">
+      <weapon name="WEAPONS_MISSILES_1"/>
+      <weapon name="WEAPONS_LASER_3"/>
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_LASER_1"/>
+    </weaponList>
+    <weaponList sector="5" missiles="2" system_power="7">
+      <weapon name="WEAPONS_MISSILES_1"/>
+      <weapon name="WEAPONS_LASER_4"/>
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_LASER_1"/>
+    </weaponList>
+    <health amount="8"/>
+    <crewCount amount="4" max="7" class="human"/>
+    <boardingAI>sabotage</boardingAI>
+    <cloakImage>fed_fighter</cloakImage>
+  </shipBlueprintSuper>
+</FTL>

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../schema/autoBlueprints.xsd">
+  <blueprintList name="SHIPS_ZOLTAN">
+    <name>ZOLTAN_FIGHTER</name>
+    <name>ZOLTAN_BOMBER</name>
+    <name>ENERGY_SCOUT</name>
+    <name>ENERGY_RIGGER</name>
+    <name>ENERGY_INSTIGATOR</name>
+  </blueprintList>
+  <blueprintList name="SHIPS_ZOLTAN_PIRATE">
+    <name>ZOLTAN_FIGHTER_PIRATE</name>
+    <name>ZOLTAN_BOMBER_PIRATE</name>
+    <name>ENERGY_SCOUT_PIRATE</name>
+    <name>ENERGY_RIGGER_PIRATE</name>
+    <name>ENERGY_INSTIGATOR_PIRATE</name>
+  </blueprintList>
+  <blueprintList name="SHIPS_PIRATE">
+    <name>ZOLTAN_FIGHTER_PIRATE</name>
+    <name>ZOLTAN_BOMBER_PIRATE</name>
+    <name>ENERGY_SCOUT_PIRATE</name>
+    <name>ENERGY_RIGGER_PIRATE</name>
+    <name>ENERGY_INSTIGATOR_PIRATE</name>
+  </blueprintList>
+
+  <shipBlueprintSuper name="ZOLTAN_FIGHTER" layout="energy_fighter" img="energy_fighter">
+    <class>Energy Fighter</class>
+    <class_pirate>Pirate Fighter</class_pirate>
+    <systemList>
+      <pilot power="1" max="3" room="5" room_pirate="1"/>
+      <doors power="1" max="3" room="2" room_pirate="4" start="false"/>
+      <medbay power="1" max="3" room="6" room_pirate="0" start="false"/>
+      <oxygen power="1" max="3" room="3" room_pirate="3"/>
+      <shields power="2" max="8" room="1" room_pirate="2"/>
+      <engines power="1" max="5" room="0" room_pirate="6"/>
+      <weapons room="4" room_pirate="5"/>
+    </systemList>
+    <weaponList sector="1" missiles="0" system_power="4">
+      <weapon name="WEAPONS_ION_1"/>
+      <weapon name="WEAPONS_BEAM_2"/>
+      <weapon name="WEAPONS_ION_1"/>
+    </weaponList>
+    <weaponList sector="2" missiles="0" system_power="5">
+      <weapon name="WEAPONS_ION_1"/>
+      <weapon name="WEAPONS_BEAM_3"/>
+      <weapon name="WEAPONS_ION_1"/>
+    </weaponList>
+    <weaponList sector="3" missiles="1" system_power="5">
+      <weapon name="WEAPONS_MISSILES_1"/>
+      <weapon name="WEAPONS_ION_1"/>
+      <weapon name="WEAPONS_BEAM_3"/>
+      <weapon name="WEAPONS_ION_1"/>
+    </weaponList>
+    <weaponList sector="4" missiles="1" system_power="6">
+      <weapon name="WEAPONS_MISSILES_1"/>
+      <weapon name="WEAPONS_ION_2"/>
+      <weapon name="WEAPONS_BEAM_3"/>
+      <weapon name="WEAPONS_ION_1"/>
+    </weaponList>
+    <health amount="7"/>
+    <crewCount amount="2" max="3" class="energy"/>
+    <boardingAI>sabotage</boardingAI>
+    <aug name="ENERGY_SHIELD"/>
+    <cloakImage>energy_fighter</cloakImage>
+  </shipBlueprintSuper>
+
+  <shipBlueprintSuper name="ZOLTAN_BOMBER" layout="energy_bomber" img="energy_bomber">
+    <class>Energy Bomber</class>
+    <class_pirate>Pirate Bomber</class_pirate>
+    <systemList>
+      <pilot power="1" max="3" room="1" room_pirate="0"/>
+      <doors power="1" max="3" room="2" room_pirate="6" start="false"/>
+      <medbay power="1" max="3" room="6" room_pirate="2" start="false"/>
+      <oxygen power="1" max="3" room="5" room_pirate="5"/>
+      <shields power="2" max="8" room="3" room_pirate="3"/>
+      <engines power="1" max="5" room="7" room_pirate="7"/>
+      <drones power="2" max="4" room="0" room_pirate="1" start="false"/>
+      <weapons room="4" room_pirate="4"/>
+    </systemList>
+    <weaponList sector="3" missiles="3" system_power="5">
+      <weapon name="WEAPONS_BOMB"/>
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_ION_1"/>
+    </weaponList>
+    <weaponList sector="4" missiles="3" system_power="6">
+      <weapon name="WEAPONS_BOMB"/>
+      <weapon name="WEAPONS_LASER_3"/>
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_ION_1"/>
+    </weaponList>
+    <weaponList sector="5" missiles="3" system_power="7">
+      <weapon name="WEAPONS_BOMB"/>
+      <weapon name="WEAPONS_LASER_3"/>
+      <weapon name="WEAPONS_LASER_3"/>
+      <weapon name="WEAPONS_ION_1"/>
+    </weaponList>
+    <weaponList sector="6" missiles="3" system_power="8">
+      <weapon name="WEAPONS_BOMB"/>
+      <weapon name="WEAPONS_LASER_4"/>
+      <weapon name="WEAPONS_LASER_3"/>
+      <weapon name="WEAPONS_ION_1"/>
+    </weaponList>
+    <droneList drones="3" load="DRONES_COMBAT"/>
+    <health amount="7"/>
+    <crewCount amount="3" max="6" class="energy"/>
+    <boardingAI>sabotage</boardingAI>
+    <aug name="ENERGY_SHIELD"/>
+    <cloakImage>energy_bomber</cloakImage>
+  </shipBlueprintSuper>
+
+  <shipBlueprintSuper name="ENERGY_SCOUT" layout="energy_scout" img="energy_scout">
+    <class>Energy Scout</class>
+    <class_pirate>Pirate Scout</class_pirate>
+    <systemList>
+      <pilot power="1" max="2" room="0" room_pirate="0"/>
+      <clonebay power="1" max="2" room="3" room_pirate="3" start="false"/>
+      <shields power="2" max="4" room="1" room_pirate="2" start="false"/>
+      <engines power="1" max="5" room="4" room_pirate="1"/>
+      <oxygen power="2" max="3" room="5" room_pirate="6"/>
+      <weapons room="2" room_pirate="4"/>
+    </systemList>
+    <weaponList sector="0" missiles="0" system_power="3">
+      <weapon name="WEAPONS_ION_2"/>
+      <weapon name="WEAPONS_LASER_1"/>
+    </weaponList>
+    <weaponList sector="1" missiles="0" system_power="4">
+      <weapon name="WEAPONS_ION_2"/>
+      <weapon name="WEAPONS_LASER_1"/>
+      <weapon name="WEAPONS_LASER_1"/>
+    </weaponList>
+    <weaponList sector="2" missiles="0" system_power="5">
+      <weapon name="WEAPONS_ION_3"/>
+      <weapon name="WEAPONS_LASER_1"/>
+      <weapon name="WEAPONS_LASER_1"/>
+    </weaponList>
+    <weaponList sector="3" missiles="1" system_power="5">
+      <weapon name="WEAPONS_MISSILES_1"/>
+      <weapon name="WEAPONS_ION_3"/>
+      <weapon name="WEAPONS_LASER_1"/>
+      <weapon name="WEAPONS_LASER_1"/>
+    </weaponList>
+    <health amount="5"/>
+    <crewCount amount="2" max="2" class="energy"/>
+    <boardingAI>sabotage</boardingAI>
+    <aug name="ENERGY_SHIELD"/>
+    <cloakImage>energy_scout</cloakImage>
+  </shipBlueprintSuper>
+
+  <shipBlueprintSuper name="ENERGY_RIGGER" layout="energy_rigger" img="energy_rigger">
+    <class>Energy Rigger</class>
+    <class_pirate>Pirate Rigger</class_pirate>
+    <systemList>
+      <pilot power="1" max="3" room="0" room_pirate="0"/>
+      <clonebay power="1" max="3" room="4" room_pirate="8"/>
+      <shields power="2" max="8" room="7" room_pirate="5"/>
+      <engines power="1" max="4" room="2" room_pirate="6"/>
+      <oxygen power="1" max="3" room="6" room_pirate="3"/>
+      <doors power="1" max="3" room="5" room_pirate="7" start="false"/>
+      <drones power="3" max="5" room="3" room_pirate="4"/>
+      <weapons room="1" room_pirate="1"/>
+    </systemList>
+    <weaponList sector="4" missiles="2" system_power="6">
+      <weapon name="WEAPONS_MISSILES_1"/>
+      <weapon name="WEAPONS_ION_3"/>
+      <weapon name="WEAPONS_ION_2"/>
+      <weapon name="WEAPONS_LASER_1"/>
+    </weaponList>
+    <weaponList sector="5" missiles="2" system_power="7">
+      <weapon name="WEAPONS_MISSILES_1"/>
+      <weapon name="WEAPONS_ION_3"/>
+      <weapon name="WEAPONS_ION_3"/>
+      <weapon name="WEAPONS_LASER_1"/>
+    </weaponList>
+    <weaponList sector="6" missiles="2" system_power="8">
+      <weapon name="WEAPONS_MISSILES_2"/>
+      <weapon name="WEAPONS_ION_3"/>
+      <weapon name="WEAPONS_ION_3"/>
+      <weapon name="WEAPONS_LASER_1"/>
+    </weaponList>
+    <weaponList sector="7" missiles="3" system_power="8">
+      <weapon name="WEAPONS_MISSILES_2"/>
+      <weapon name="WEAPONS_ION_3"/>
+      <weapon name="WEAPONS_ION_3"/>
+      <weapon name="WEAPONS_LASER_2"/>
+    </weaponList>
+    <droneList drones="3" load="DRONES_COMBAT"/>
+    <health amount="7"/>
+    <crewCount amount="3" max="6" class="energy"/>
+    <boardingAI>sabotage</boardingAI>
+    <aug name="ENERGY_SHIELD"/>
+    <cloakImage>energy_rigger</cloakImage>
+  </shipBlueprintSuper>
+
+  <shipBlueprintSuper name="ENERGY_INSTIGATOR" layout="energy_instigator" img="energy_instigator">
+    <class>Energy Instigator</class>
+    <class_pirate>Pirate Instigator</class_pirate>
+    <systemList>
+      <pilot power="1" max="3" room="0" room_pirate="0"/>
+      <clonebay power="1" max="3" room="4" room_pirate="4" start="false"/>
+      <shields power="2" max="8" room="6" room_pirate="5"/>
+      <engines power="1" max="5" room="2" room_pirate="7"/>
+      <oxygen power="1" max="3" room="7" room_pirate="8"/>
+      <doors power="1" max="3" room="5" room_pirate="10" start="false"/>
+      <mind power="1" max="3" room="3" room_pirate="6" start="false"/>
+      <weapons room="1" room_pirate="9"/>
+    </systemList>
+    <weaponList sector="2" missiles="0" system_power="4">
+      <weapon name="WEAPONS_BEAM_2"/>
+      <weapon name="WEAPONS_ION_1"/>
+      <weapon name="WEAPONS_SIMPLE_1"/>
+    </weaponList>
+    <weaponList sector="3" missiles="0" system_power="5">
+      <weapon name="WEAPONS_BEAM_2"/>
+      <weapon name="WEAPONS_ION_1"/>
+      <weapon name="WEAPONS_SIMPLE_2"/>
+    </weaponList>
+    <weaponList sector="4" missiles="0" system_power="5">
+      <weapon name="WEAPONS_BEAM_2"/>
+      <weapon name="WEAPONS_ION_1"/>
+      <weapon name="WEAPONS_SIMPLE_2"/>
+    </weaponList>
+    <weaponList sector="5" missiles="0" system_power="6">
+      <weapon name="WEAPONS_BEAM_2"/>
+      <weapon name="WEAPONS_ION_2"/>
+      <weapon name="WEAPONS_SIMPLE_2"/>
+    </weaponList>
+    <health amount="6"/>
+    <crewCount amount="3" max="5" class="energy"/>
+    <boardingAI>sabotage</boardingAI>
+    <aug name="ENERGY_SHIELD"/>
+    <cloakImage>energy_instigator</cloakImage>
+  </shipBlueprintSuper>
+
+  <shipBlueprint name="ZOLTAN_PEACE" layout="energy_peace" img="energy_peace">
+    <class>Energy Envoy</class>
+    <systemList>
+      <pilot power="1" max="3" room="0"/>
+      <doors power="1" max="3" room="2" start="false"/>
+      <medbay power="1" max="3" room="4" start="false"/>
+      <oxygen power="1" max="3" room="3"/>
+      <engines power="1" max="5" room="5"/>
+    </systemList>
+    <health amount="7"/>
+    <maxPower amount="3"/>
+    <crewCount amount="2" max="3" class="energy"/>
+    <boardingAI>sabotage</boardingAI>
+  </shipBlueprint>
+</FTL>

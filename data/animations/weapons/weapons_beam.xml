@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <animSheet name="beam_contact" w="240" h="48" fw="48" fh="48">weapons/laser_contact.png</animSheet>
+  <anim name="beam_contact">
+    <sheet>beam_contact</sheet>
+    <desc length="1" x="0" y="0"/>
+    <time>0.75</time>
+  </anim>
+
+  <animSheet name="beam_1" w="192" h="33" fw="24" fh="33">weapons/beam_1_strip8.png</animSheet>
+  <weaponAnim name="beam_1">
+    <sheet>beam_1</sheet>
+    <desc length="8" x="0" y="0"/>
+    <chargedFrame>1</chargedFrame>
+    <fireFrame>2</fireFrame>
+    <firePoint x="16" y="9"/>
+    <mountPoint x="5" y="24"/>
+    <chargeImage>weapons/beam_1_glow.png</chargeImage>
+  </weaponAnim>
+
+  <animSheet name="beam_2" w="300" h="41" fw="30" fh="41">weapons/beam_2_strip10.png</animSheet>
+  <weaponAnim name="beam_2">
+    <sheet>beam_2</sheet>
+    <desc length="10" x="0" y="0"/>
+    <chargedFrame>1</chargedFrame>
+    <fireFrame>2</fireFrame>
+    <firePoint x="16" y="13"/>
+    <mountPoint x="3" y="30"/>
+    <chargeImage>weapons/beam_2_glow.png</chargeImage>
+  </weaponAnim>
+
+  <animSheet name="beam_3" w="330" h="75" fw="33" fh="75">weapons/beam_3_strip10.png</animSheet>
+  <weaponAnim name="beam_3">
+    <sheet>beam_3</sheet>
+    <desc length="10" x="0" y="0"/>
+    <chargedFrame>1</chargedFrame>
+    <fireFrame>2</fireFrame>
+    <firePoint x="19" y="40"/>
+    <mountPoint x="4" y="62"/>
+    <chargeImage>weapons/beam_3_glow.png</chargeImage>
+  </weaponAnim>
+
+  <animSheet name="beam_fire" w="280" h="52" fw="28" fh="52">weapons/beam_fire_strip10.png</animSheet>
+  <weaponAnim name="beam_fire">
+    <sheet>beam_fire</sheet>
+    <desc length="10" x="0" y="0"/>
+    <chargedFrame>1</chargedFrame>
+    <fireFrame>2</fireFrame>
+    <firePoint x="16" y="21"/>
+    <mountPoint x="6" y="38"/>
+    <chargeImage>weapons/beam_fire_glow.png</chargeImage>
+  </weaponAnim>
+
+  <animSheet name="beam_long" w="260" h="71" fw="26" fh="71">weapons/beam_long_strip10.png</animSheet>
+  <weaponAnim name="beam_long">
+    <sheet>beam_long</sheet>
+    <desc length="10" x="0" y="0"/>
+    <chargedFrame>1</chargedFrame>
+    <fireFrame>2</fireFrame>
+    <firePoint x="16" y="44"/>
+    <mountPoint x="5" y="56"/>
+    <chargeImage>weapons/beam_long_glow.png</chargeImage>
+  </weaponAnim>
+
+  <changelog>
+    <entry>Fixed minor Anti-Bio Beam visual bug</entry>
+  </changelog>
+  <animSheet name="beam_bio" w="272" h="46" fw="34" fh="46">weapons/beam_bio_strip8.png</animSheet>
+  <weaponAnim name="beam_bio">
+    <sheet>beam_bio</sheet>
+    <desc length="8" x="0" y="0"/>
+    <chargedFrame>1</chargedFrame>
+    <fireFrame>2</fireFrame>
+    <firePoint x="18" y="19"/>
+    <mountPoint x="3" y="37"/>
+    <chargeImage>weapons/beam_bio_glow.png</chargeImage>
+  </weaponAnim>
+
+  <animSheet name="beam_hull" w="182" h="62" fw="26" fh="62">weapons/beam_hull_strip7.png</animSheet>
+  <weaponAnim name="beam_hull">
+    <sheet>beam_hull</sheet>
+    <desc length="8" x="0" y="0"/>
+    <chargedFrame>1</chargedFrame>
+    <fireFrame>2</fireFrame>
+    <firePoint x="18" y="10"/>
+    <mountPoint x="5" y="50"/>
+    <chargeImage>weapons/beam_hull_glow.png</chargeImage>
+  </weaponAnim>
+
+  <animSheet name="beam_2_long" w="612" h="67" fw="34" fh="67">weapons/beam_2_long_strip18.png</animSheet>
+  <weaponAnim name="beam_2_long">
+    <sheet>beam_2_long</sheet>
+    <desc length="18" x="0" y="0"/>
+    <chargedFrame>1</chargedFrame>
+    <fireFrame>2</fireFrame>
+    <firePoint x="17" y="33"/>
+    <mountPoint x="5" y="56"/>
+    <chargeImage>weapons/beam_2_long_glow.png</chargeImage>
+  </weaponAnim>
+
+  <animSheet name="beam_3_short" w="330" h="53" fw="33" fh="53">weapons/beam_3_short_strip10.png</animSheet>
+  <weaponAnim name="beam_3_short">
+    <sheet>beam_3_short</sheet>
+    <desc length="10" x="0" y="0"/>
+    <chargedFrame>1</chargedFrame>
+    <fireFrame>2</fireFrame>
+    <firePoint x="17" y="25"/>
+    <mountPoint x="4" y="41"/>
+    <chargeImage>weapons/beam_3_short_glow.png</chargeImage>
+  </weaponAnim>
+</FTL>

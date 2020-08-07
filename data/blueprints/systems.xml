@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <systemBlueprint name="oxygen">
+    <type>oxygen</type>
+    <title>Oxygen</title>
+    <desc>Refills the oxygen in the ship. Upgrading increases the rate of refill.</desc>
+    <startPower>1</startPower>
+    <maxPower>3</maxPower>
+    <rarity>1</rarity>
+    <upgradeCost>
+      <level>25</level>
+      <level>50</level>
+      <level>75</level>
+    </upgradeCost>
+    <cost>0</cost>
+  </systemBlueprint>
+
+  <systemBlueprint name="teleporter">
+    <type>teleporter</type>
+    <title>Crew Teleporter</title>
+    <desc>Allows you to send your crew-members to board enemy vessels.</desc>
+    <startPower>1</startPower>
+    <maxPower>3</maxPower>
+    <rarity>1</rarity>
+    <upgradeCost>
+      <level>30</level>
+      <level>60</level>
+    </upgradeCost>
+    <cost>90</cost>
+    <locked>1</locked>
+  </systemBlueprint>
+
+  <systemBlueprint name="cloaking">
+    <type>cloaking</type>
+    <title>Cloaking</title>
+    <desc>Cloaks the ship, adding 60 to your evasion and preventing the enemy ship from locking on with their weapons.</desc>
+    <startPower>1</startPower>
+    <maxPower>3</maxPower>
+    <rarity>1</rarity>
+    <upgradeCost>
+      <level>30</level>
+      <level>50</level>
+    </upgradeCost>
+    <cost>150</cost>
+    <locked>1</locked>
+  </systemBlueprint>
+
+  <changelog>
+    <entry>Piloting level 2 upgrade cost 20 to 30</entry>
+  </changelog>
+  <systemBlueprint name="pilot">
+    <type>pilot</type>
+    <title>Piloting</title>
+    <desc>Allows the ship to make FTL jumps and dodge when piloted. Upgrading adds auto-pilot that allows some evasion even without a pilot.</desc>
+    <startPower>1</startPower>
+    <maxPower>3</maxPower>
+    <rarity>1</rarity>
+    <upgradeCost>
+      <level>30</level>
+      <level>50</level>
+    </upgradeCost>
+    <cost>1</cost>
+  </systemBlueprint>
+
+  <systemBlueprint name="medbay">
+    <type>medbay</type>
+    <title>Medbay</title>
+    <desc>Heals all crew-members within the Medbay room. Upgrading increases healing speed.</desc>
+    <startPower>1</startPower>
+    <maxPower>3</maxPower>
+    <rarity>1</rarity>
+    <upgradeCost>
+      <level>35</level>
+      <level>45</level>
+    </upgradeCost>
+    <cost>50</cost>
+  </systemBlueprint>
+
+  <systemBlueprint name="shields">
+    <type>shields</type>
+    <title>Shields</title>
+    <desc>Powers your shields. Each additional barrier can block one shot.</desc>
+    <startPower>2</startPower>
+    <maxPower>8</maxPower>
+    <rarity>1</rarity>
+    <upgradeCost>
+      <level>100</level>
+      <level>20</level>
+      <level>30</level>
+      <level>40</level>
+      <level>60</level>
+      <level>80</level>
+      <level>100</level>
+      <level>120</level>
+    </upgradeCost>
+    <cost>125</cost>
+  </systemBlueprint>
+
+  <changelog>
+    <entry>Artillery level 2 upgrade cost 30 to 50</entry>
+    <entry>Artillery level 3 upgrade cost 50 to 100</entry>
+    <entry>Artillery level 4 upgrade cost 80 to 150</entry>
+  </changelog>
+  <systemBlueprint NOLOC="1" name="artillery">
+    <type>artillery</type>
+    <title>dummy</title>
+    <desc>dummy</desc>
+    <startPower>1</startPower>
+    <maxPower>4</maxPower>
+    <rarity>0</rarity>
+    <upgradeCost>
+      <level>50</level>
+      <level>100</level>
+      <level>150</level>
+    </upgradeCost>
+    <cost>150</cost>
+  </systemBlueprint>
+
+  <changelog>
+    <entry>Engines level 2 upgrade cost 10 to 25</entry>
+    <entry>Engines level 3 upgrade cost 15 to 30</entry>
+    <entry>Engines level 4 upgrade cost 30 to 35</entry>
+  </changelog>
+  <systemBlueprint name="engines">
+    <type>engines</type>
+    <title>Engines</title>
+    <desc>Powers the FTL drive and allows the ship to dodge. Upgrading improves dodge chance and the rate that your FTL drive charges.</desc>
+    <startPower>2</startPower>
+    <maxPower>8</maxPower>
+    <rarity>1</rarity>
+    <upgradeCost>
+      <level>25</level>
+      <level>30</level>
+      <level>35</level>
+      <level>40</level>
+      <level>60</level>
+      <level>80</level>
+      <level>120</level>
+      <level>150</level>
+    </upgradeCost>
+    <cost>1</cost>
+  </systemBlueprint>
+
+  <systemBlueprint name="weapons">
+    <type>weapons</type>
+    <title>Weapon Control</title>
+    <desc>Powers all of the ship's weapons. Upgrading lets you power more weapons.</desc>
+    <startPower>1</startPower>
+    <rarity>1</rarity>
+    <maxPower>8</maxPower>
+    <upgradeCost>
+      <level>40</level>
+      <level>25</level>
+      <level>35</level>
+      <level>50</level>
+      <level>75</level>
+      <level>90</level>
+      <level>100</level>
+      <level>120</level>
+    </upgradeCost>
+    <cost>20</cost>
+  </systemBlueprint>
+
+  <systemBlueprint name="drones">
+    <type>drones</type>
+    <title>Drone Control</title>
+    <desc>Powers all of the ship's drones. Drones are automated robots that perform tasks like attacking enemy ships or repairing systems.</desc>
+    <startPower>2</startPower>
+    <maxPower>8</maxPower>
+    <rarity>1</rarity>
+    <upgradeCost>
+      <level>10</level>
+      <level>20</level>
+      <level>30</level>
+      <level>45</level>
+      <level>60</level>
+      <level>80</level>
+      <level>100</level>
+      <level>120</level>
+    </upgradeCost>
+    <cost>60</cost>
+  </systemBlueprint>
+
+  <systemBlueprint name="sensors">
+    <type>sensors</type>
+    <title>Sensors</title>
+    <desc>Reveals the interior of your ship and gives information about enemy ships.</desc>
+    <startPower>1</startPower>
+    <maxPower>3</maxPower>
+    <rarity>1</rarity>
+    <upgradeCost>
+      <level>25</level>
+      <level>40</level>
+    </upgradeCost>
+    <cost>40</cost>
+  </systemBlueprint>
+
+  <systemBlueprint name="doors">
+    <type>doors</type>
+    <title>Door System</title>
+    <desc>Allows remote opening and closing of doors. Upgrades to Blast Doors that impede fire spread and intruder movement.</desc>
+    <startPower>1</startPower>
+    <maxPower>3</maxPower>
+    <rarity>1</rarity>
+    <upgradeCost>
+      <level>35</level>
+      <level>50</level>
+    </upgradeCost>
+    <cost>60</cost>
+  </systemBlueprint>
+
+  <systemBlueprint name="clonebay">
+    <type>clonebay</type>
+    <title>Clone Bay</title>
+    <desc>Automatically clones dead crew with skill penalty. Taking advantage of micro-cloning, crew heals partially every jump. Jump heal is passive and requires no power.</desc>
+    <startPower>1</startPower>
+    <maxPower>3</maxPower>
+    <rarity>1</rarity>
+    <upgradeCost>
+      <level>35</level>
+      <level>45</level>
+    </upgradeCost>
+    <cost>50</cost>
+  </systemBlueprint>
+
+  <changelog>
+    <entry>Hacking system initial cost 80 to 100</entry>
+  </changelog>
+  <systemBlueprint name="hacking">
+    <type>hacking</type>
+    <title>Hacking</title>
+    <desc>Targets a single system, locking its doors and granting the ability to temporarily disable or disrupt it. Requires drone part to launch.</desc>
+    <startPower>1</startPower>
+    <maxPower>3</maxPower>
+    <rarity>1</rarity>
+    <upgradeCost>
+      <level>35</level>
+      <level>60</level>
+    </upgradeCost>
+    <cost>100</cost>
+  </systemBlueprint>
+
+  <changelog>
+    <entry>Backup Battery system initial cost 35 to 50</entry>
+  </changelog>
+  <systemBlueprint name="battery">
+    <type>battery</type>
+    <title>Backup Battery</title>
+    <desc>Provides a 30 second power boost to your Reactor. Upgrading increases the boost amount.</desc>
+    <startPower>1</startPower>
+    <maxPower>2</maxPower>
+    <rarity>1</rarity>
+    <upgradeCost>
+      <level>50</level>
+    </upgradeCost>
+    <cost>50</cost>
+  </systemBlueprint>
+
+  <systemBlueprint name="mind">
+    <type>mind</type>
+    <title>Mind Control</title>
+    <desc>Temporarily turn enemies into allies.</desc>
+    <startPower>1</startPower>
+    <maxPower>3</maxPower>
+    <rarity>1</rarity>
+    <upgradeCost>
+      <level>30</level>
+      <level>60</level>
+    </upgradeCost>
+    <cost>75</cost>
+    <locked>1</locked>
+  </systemBlueprint>
+</FTL>

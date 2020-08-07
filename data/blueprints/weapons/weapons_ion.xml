@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <blueprintList name="WEAPONS_ION">
+    <name>ION_1</name>
+    <name>ION_4</name>
+    <name>ION_STUN_BURST</name>
+    <name>ION_STUN_HEAVY</name>
+    <name>ION_CHARGEGUN</name>
+
+    <name>ION_4_UPGRADED</name>
+    <name>ION_STUN_BURST_UPGRADED</name>
+    <name>ION_STUN_HEAVY_UPGRADED</name>
+    <name>ION_CHARGEGUN_UPGRADED</name>
+  </blueprintList>
+
+  <blueprintList name="WEAPONS_ION_1">
+    <name>ION_1</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_ION_2">
+    <name>ION_STUN_BURST</name>
+    <name>ION_CHARGEGUN</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_ION_3">
+    <name>ION_STUN_HEAVY</name>
+    <name>ION_4</name>
+  </blueprintList>
+
+  <blueprintList name="WEAPONS_ANY_1">
+    <name>ION_1</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_ANY_2">
+    <name>ION_STUN_BURST</name>
+    <name>ION_CHARGEGUN</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_ANY_3">
+    <name>ION_STUN_HEAVY</name>
+    <name>ION_4</name>
+  </blueprintList>
+
+  <blueprintList name="WEAPONS_PROJ_1">
+    <name>ION_1</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_PROJ_2">
+    <name>ION_STUN_BURST</name>
+    <name>ION_CHARGEGUN</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_PROJ_3">
+    <name>ION_STUN_HEAVY</name>
+    <name>ION_4</name>
+  </blueprintList>
+
+  <blueprintList name="WEAPONS_ION_1_UPGRADED">
+    <name>ION_STUN_BURST_UPGRADED</name>
+    <name>ION_CHARGEGUN_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_ION_2_UPGRADED">
+    <name>ION_STUN_HEAVY_UPGRADED</name>
+    <name>ION_4_UPGRADED</name>
+  </blueprintList>
+
+  <blueprintList name="WEAPONS_ANY_1_UPGRADED">
+    <name>ION_STUN_BURST_UPGRADED</name>
+    <name>ION_CHARGEGUN_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_ANY_2_UPGRADED">
+    <name>ION_STUN_HEAVY_UPGRADED</name>
+    <name>ION_4_UPGRADED</name>
+  </blueprintList>
+
+  <blueprintList name="WEAPONS_PROJ_1_UPGRADED">
+    <name>ION_STUN_BURST_UPGRADED</name>
+    <name>ION_CHARGEGUN_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_PROJ_2_UPGRADED">
+    <name>ION_STUN_HEAVY_UPGRADED</name>
+    <name>ION_4_UPGRADED</name>
+  </blueprintList>
+
+  <changelog>
+    <entry>Basic Ion rarity 3 to 1</entry>
+  </changelog>
+  <weaponBlueprint name="ION_1">
+    <type>LASER</type>
+    <title>Basic Ion</title>
+    <short>Basic Ion</short>
+    <tip>tip_ion</tip>
+    <desc>Ion weapons can disable systems without causing hull damage.</desc>
+    <tooltip>Fires a single blast that does 1 ion damage. Can hit and disable shields as well as systems.</tooltip>
+    <damage>0</damage>
+    <ion>1</ion>
+    <speed>30</speed>
+    <shots>1</shots>
+    <sp>0</sp>
+    <fireChance>0</fireChance>
+    <breachChance>0</breachChance>
+    <stunChance>1</stunChance>
+    <cooldown>8</cooldown>
+    <power>1</power>
+    <cost>30</cost>
+    <bp>3</bp>
+    <rarity>1</rarity>
+    <image>ion_1_shot</image>
+    <explosion>explosion_small_ion</explosion>
+    <launchSounds>
+      <sound>ionShoot1</sound>
+      <sound>ionShoot2</sound>
+      <sound>ionShoot3</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>ionHit1</sound>
+      <sound>ionHit2</sound>
+      <sound>ionHit3</sound>
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>ionShields1</sound>
+      <sound>ionShields2</sound>
+      <sound>ionShields3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <weaponArt>ion_1</weaponArt>
+    <iconImage>ion</iconImage>
+  </weaponBlueprint>
+
+  <changelog>
+    <entry>Heavy Ion removed from the game</entry>
+  </changelog>
+
+  <changelog>
+    <entry>Ion Blast II is replaced with Ion Charger II (4 charge levels)</entry>
+    <entry>Ion Charger II scrap cost 70 to 60</entry>
+  </changelog>
+  <weaponBlueprint name="ION_4">
+    <type>LASER</type>
+    <title>Ion Charger Mark II</title>
+    <short>IC II</short>
+    <tip>tip_charge</tip>
+    <desc>This ion weapon can charge multiple times, giving it additional projectiles.</desc>
+    <tooltip>Fires more shots the more it charges, up to a max of 4.</tooltip>
+    <damage>0</damage>
+    <ion>1</ion>
+    <speed>30</speed>
+    <shots>1</shots>
+    <sp>0</sp>
+    <fireChance>0</fireChance>
+    <breachChance>0</breachChance>
+    <stunChance>1</stunChance>
+    <cooldown>4</cooldown>
+    <power>3</power>
+    <chargeLevels>4</chargeLevels>
+    <cost>60</cost>
+    <bp>6</bp>
+    <rarity>4</rarity>
+    <image>ion_1_shot</image>
+    <explosion>explosion_small_ion</explosion>
+    <launchSounds>
+      <sound>ionShoot1</sound>
+      <sound>ionShoot2</sound>
+      <sound>ionShoot3</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>ionHit1</sound>
+      <sound>ionHit2</sound>
+      <sound>ionHit3</sound>
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>ionShields1</sound>
+      <sound>ionShields2</sound>
+      <sound>ionShields3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <weaponArt>ion_charger_2</weaponArt>
+    <iconImage>ion_charge</iconImage>
+  </weaponBlueprint>
+  <weaponBlueprintInherit name="ION_4_UPGRADED" base="ION_4">
+    <tip>tip_charge_upgraded</tip>
+    <title>Ion Charger Mark II+</title>
+    <short>IC II+</short>
+    <cooldown>3.5</cooldown>
+    <power>2</power>
+    <rarity>0</rarity>
+  </weaponBlueprintInherit>
+
+  <changelog>
+    <entry>Ion Charger stun chance 0 to 0.1</entry>
+  </changelog>
+  <weaponBlueprint name="ION_CHARGEGUN">
+    <type>LASER</type>
+    <title>Ion Charger Mark I</title>
+    <short>IC I</short>
+    <tip>tip_charge</tip>
+    <desc>This ion weapon can charge multiple times, giving it additional projectiles.</desc>
+    <tooltip>Fires more shots the more it charges, up to a max of 3.</tooltip>
+    <damage>0</damage>
+    <ion>1</ion>
+    <shots>1</shots>
+    <sp>0</sp>
+    <fireChance>0</fireChance>
+    <speed>30</speed>
+    <breachChance>0</breachChance>
+    <cooldown>6</cooldown>
+    <power>2</power>
+    <cost>50</cost>
+    <bp>2</bp>
+    <rarity>3</rarity>
+    <image>ion_1_shot</image>
+    <chargeLevels>3</chargeLevels>
+    <explosion>explosion_small_ion</explosion>
+    <launchSounds>
+      <sound>ionShoot1</sound>
+      <sound>ionShoot2</sound>
+      <sound>ionShoot3</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>ionHit1</sound>
+      <sound>ionHit2</sound>
+      <sound>ionHit3</sound>
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>ionShields1</sound>
+      <sound>ionShields2</sound>
+      <sound>ionShields3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <weaponArt>chargeion</weaponArt>
+    <iconImage>ion_charge</iconImage>
+  </weaponBlueprint>
+  <weaponBlueprintInherit name="ION_CHARGEGUN_UPGRADED" base="ION_CHARGEGUN">
+    <tip>tip_charge_upgraded</tip>
+    <title>Ion Charger Mark I+</title>
+    <short>IC I+</short>
+    <cooldown>5.5</cooldown>
+    <power>1</power>
+    <rarity>0</rarity>
+  </weaponBlueprintInherit>
+
+  <changelog>
+    <entry>Ion Stunner removed from the game</entry>
+    <entry>New Burst Ion Stunner (2 shots, 2 power, 11 sec charge time, 5 sec stun)</entry>
+  </changelog>
+  <weaponBlueprint name="ION_STUN_BURST">
+    <type>LASER</type>
+    <tip>tip_ion</tip>
+    <title>Burst Ion Stunner</title>
+    <short>Burst Stunner</short>
+    <desc>Ion weapons can disable systems without causing hull damage. This ion weapon fires 2 times, stunning crew inside affected rooms for 5 seconds.</desc>
+    <tooltip>Fires 2 blasts that does 1 ion damage. Can hit and disable shields as well as systems.</tooltip>
+    <damage>0</damage>
+    <ion>1</ion>
+    <speed>30</speed>
+    <shots>2</shots>
+    <sp>0</sp>
+    <fireChance>0</fireChance>
+    <breachChance>0</breachChance>
+    <stun>5</stun>
+    <cooldown>11</cooldown>
+    <power>2</power>
+    <cost>45</cost>
+    <bp>3</bp>
+    <rarity>3</rarity>
+    <image>ion_stun_shot</image>
+    <explosion>explosion_stun_ion</explosion>
+    <launchSounds>
+      <sound>ionShoot1</sound>
+      <sound>ionShoot2</sound>
+      <sound>ionShoot3</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>ionHit1</sound>
+      <sound>ionHit2</sound>
+      <sound>ionHit3</sound>
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>ionShields1</sound>
+      <sound>ionShields2</sound>
+      <sound>ionShields3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <weaponArt>ion_stun_burst</weaponArt>
+    <iconImage>ion</iconImage>
+  </weaponBlueprint>
+  <weaponBlueprintInherit name="ION_STUN_BURST_UPGRADED" base="ION_STUN_BURST">
+    <tip>tip_ion_upgraded</tip>
+    <title>Burst Ion Stunner+</title>
+    <short>Burst Stunner+</short>
+    <cooldown>10</cooldown>
+    <power>1</power>
+    <rarity>0</rarity>
+  </weaponBlueprintInherit>
+
+  <changelog>
+    <entry>New Heavy Ion Stunner (3 power, 3 ion damage, 14 sec charge time, 10 sec stun)</entry>
+  </changelog>
+  <weaponBlueprint name="ION_STUN_HEAVY">
+    <type>LASER</type>
+    <tip>tip_ion</tip>
+    <title>Heavy Ion Stunner</title>
+    <short>Heavy Stunner</short>
+    <desc>Ion weapons can disable systems without causing hull damage. This ion weapon stuns crew inside the room for 10 seconds.</desc>
+    <tooltip>Fires a single blast that does 3 ion damage. Can hit and disable shields as well as systems.</tooltip>
+    <damage>0</damage>
+    <ion>3</ion>
+    <speed>30</speed>
+    <shots>1</shots>
+    <sp>0</sp>
+    <fireChance>0</fireChance>
+    <breachChance>0</breachChance>
+    <stun>10</stun>
+    <cooldown>14</cooldown>
+    <power>3</power>
+    <cost>60</cost>
+    <bp>3</bp>
+    <rarity>4</rarity>
+    <image>ion_stun_shot</image>
+    <explosion>explosion_stun_ion</explosion>
+    <launchSounds>
+      <sound>ionShoot1</sound>
+      <sound>ionShoot2</sound>
+      <sound>ionShoot3</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>ionHit1</sound>
+      <sound>ionHit2</sound>
+      <sound>ionHit3</sound>
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>ionShields1</sound>
+      <sound>ionShields2</sound>
+      <sound>ionShields3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <weaponArt>ion_stun_heavy</weaponArt>
+    <iconImage>ion</iconImage>
+  </weaponBlueprint>
+  <weaponBlueprintInherit name="ION_STUN_HEAVY_UPGRADED" base="ION_STUN_HEAVY">
+    <tip>tip_ion_upgraded</tip>
+    <title>Heavy Ion Stunner+</title>
+    <short>Heavy Stunner+</short>
+    <cooldown>13</cooldown>
+    <power>2</power>
+    <rarity>0</rarity>
+  </weaponBlueprintInherit>
+</FTL>

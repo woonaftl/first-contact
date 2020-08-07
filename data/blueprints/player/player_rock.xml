@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <changelog>
+    <entry>Rock A starts with Artemis (no change)</entry>
+    <entry>Rock A starts with upgraded Janus Missiles (buff)</entry>
+  </changelog>
+  <shipBlueprint name="PLAYER_SHIP_ROCK" layout="rock_cruiser" img="rock_cruiser">
+    <class>Rock Cruiser</class>
+    <name>Bulwark</name>
+    <unlock>Prove yourself to the Rockmen to earn this powerful cruiser.</unlock>
+    <desc>Similar to its designers, this super-dense behemoth uses brute force to overwhelm its foes.</desc>
+    <systemList>
+      <battery power="1" room="13" start="false" img="room_battery_10"/>
+      <cloaking power="1" room="3" start="false" img="room_cloaking"/>
+      <clonebay power="1" room="16" start="false" slot="2"/>
+      <doors power="1" room="1" start="true" img="room_doors_5"/>
+      <drones power="2" room="4" start="false" img="room_drones_7"/>
+      <engines power="2" room="14" start="true" img="room_engines_11"/>
+      <hacking power="1" room="11" start="false" img="room_hacking_4"/>
+      <medbay power="1" room="16" start="true" img="room_medbay_7"/>
+      <mind power="1" room="8" start="false" img="room_mind_3"/>
+      <oxygen power="1" room="0" start="true" img="room_oxygen_7"/>
+      <pilot power="1" room="5" start="true" img="room_pilot"/>
+      <sensors power="1" room="12" start="true" img="room_sensors_4"/>
+      <shields power="2" room="2" start="true" img="room_shields_4"/>
+      <teleporter power="1" room="17" start="false"/>
+      <weapons power="3" room="15" start="true" img="room_weapons_5"/>
+    </systemList>
+    <weaponSlots>4</weaponSlots>
+    <droneSlots>2</droneSlots>
+    <weaponList count="2" missiles="28">
+      <weapon name="MISSILES_2"/>
+      <weapon name="MISSILES_CHARGE_HEAVY_UPGRADED"/>
+    </weaponList>
+    <droneList drones="0"/>
+    <health amount="30"/>
+    <maxPower amount="8"/>
+    <crewCount amount="3" class="rock"/>
+    <aug name="ROCK_ARMOR_LOCKED"/>
+  </shipBlueprint>
+
+  <changelog>
+    <entry>Rock B has a new layout with one terribly located airlock</entry>
+    <entry>Rock B starts with upgraded Heavy Laser Charger</entry>
+  </changelog>
+  <shipBlueprint name="PLAYER_SHIP_ROCK_2" layout="rock_cruiser_white" img="rock_cruiser_white">
+    <class>Rock Cruiser</class>
+    <name>Albino</name>
+    <unlock>Complete 2/3 of the Rock Cruiser Achievements to unlock this ship.</unlock>
+    <desc>This ship was built by Rockmen in an attempt to rely less on missile weapons. With enough time to charge, its weapon can unleash a devastating barrage.</desc>
+    <systemList>
+      <battery power="1" room="1" start="false" img="room_battery_16"/>
+      <cloaking power="1" room="14" start="false" img="room_cloaking_11"/>
+      <clonebay power="1" room="13" start="false" slot="3"/>
+      <doors power="1" room="5" start="true" img="room_doors_9"/>
+      <drones power="2" room="17" start="false" img="room_drones_7"/>
+      <engines power="2" room="12" start="true" img="room_engines_2"/>
+      <hacking power="1" room="2" start="false" img="room_hacking_5"/>
+      <medbay power="1" room="13" start="true" img="room_medbay_3"/>
+      <mind power="1" room="9" start="false" img="room_mind_11"/>
+      <oxygen power="1" room="3" start="true" img="room_oxygen_19"/>
+      <pilot power="1" room="4" start="true" img="room_pilot_2"/>
+      <sensors power="1" room="15" start="true" img="room_sensors_6"/>
+      <shields power="2" room="8" start="true" img="room_shields_7"/>
+      <teleporter power="1" room="10" start="false"/>
+      <weapons power="3" room="0" start="true" img="room_weapons_6"/>
+    </systemList>
+    <weaponSlots>4</weaponSlots>
+    <droneSlots>2</droneSlots>
+    <weaponList count="1" missiles="6">
+      <weapon name="LASER_HEAVY_CHARGE_3_UPGRADED"/>
+    </weaponList>
+    <droneList drones="0"/>
+    <health amount="30"/>
+    <maxPower amount="8"/>
+    <crewCount amount="4" class="rock"/>
+    <aug name="ROCK_ARMOR_LOCKED"/>
+    <shieldImage>rock_cruiser</shieldImage>
+    <cloakImage>rock_cruiser</cloakImage>
+    <floorImage>rock_cruiser_white</floorImage>
+  </shipBlueprint>
+
+  <changelog>
+    <entry>Rock C has a new layout with 2 airlocks</entry>
+    <entry>Rock C starts with upgraded Swarm Missiles (faster, 1 power)</entry>
+    <entry>Rock C starts with upgraded Heavy Laser II (2 power)</entry>
+    <entry>Rock C starts with just 3 Rockmen</entry>
+  </changelog>
+  <shipBlueprint name="PLAYER_SHIP_ROCK_3" layout="rock_cruiser_purple" img="rock_cruiser_purple">
+    <class>Rock Cruiser</class>
+    <name>Tanzanite</name>
+    <unlock>Get to Sector 8 with the Rock Cruiser Type B and Advanced Mode enabled to unlock this ship.</unlock>
+    <desc>Armed with a powerful combination of heavy weapons, this cruiser is able to deliver maximum damage at minimum resource cost.</desc>
+    <systemList>
+      <battery power="1" room="1" start="false" img="room_battery_3"/>
+      <cloaking power="1" room="5" start="false"/>
+      <clonebay power="1" room="13" start="true" slot="3"/>
+      <doors power="1" room="14" start="true" img="room_doors_14"/>
+      <drones power="2" room="9" start="false" img="room_drones_8"/>
+      <engines power="2" room="8" start="true" img="room_engines_2"/>
+      <hacking power="1" room="2" start="false" img="room_hacking_14"/>
+      <medbay power="1" room="13" start="false" img="room_medbay_3"/>
+      <mind power="1" room="6" start="false" img="room_mind_7"/>
+      <oxygen power="1" room="7" start="true" img="room_oxygen_17"/>
+      <pilot power="1" room="4" start="true" img="room_pilot_5"/>
+      <sensors power="1" room="15" start="true" img="room_sensors_9"/>
+      <shields power="2" room="3" start="true"/>
+      <teleporter power="1" room="10" start="false"/>
+      <weapons power="3" room="11" start="true"/>
+    </systemList>
+    <weaponSlots>4</weaponSlots>
+    <droneSlots>2</droneSlots>
+    <weaponList count="2" missiles="15">
+      <weapon name="MISSILE_CHARGEGUN_UPGRADED"/>
+      <weapon name="LASER_HEAVY_2_UPGRADED"/>
+    </weaponList>
+    <droneList count="0" drones="0">
+    </droneList>
+    <health amount="30"/>
+    <maxPower amount="8"/>
+    <crewCount amount="3" class="rock"/>
+    <aug name="ROCK_ARMOR_LOCKED"/>
+    <shieldImage>rock_cruiser</shieldImage>
+    <cloakImage>rock_cruiser</cloakImage>
+    <floorImage>rock_cruiser_purple</floorImage>
+  </shipBlueprint>
+</FTL>

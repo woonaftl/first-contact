@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <event name="START_GAME">
+    <text>The data you carry is vital to the remaining Federation fleet. You'll need supplies for the journey, so make sure to explore each sector before moving on to the next. But get to the exit before the pursuing Rebel fleet can catch up!</text>
+  </event>
+
+  <event name="START_BEACON">
+    <text>Welcome to a new sector! Get to the exit beacon and jump to the next sector before the pursuing Rebels catch you!</text>
+  </event>
+
+  <event name="STORE">
+    <textList name="STORE_TEXT">
+      <text>A ship engineer has set up a small shop here.</text>
+      <text planet="NONE">You find yourself surrounded by a group of mysterious alien vessels. They hail you and apparently have some valuable technology for sale.</text>
+      <text planet="PLANET_POPULATED">A transmission from the nearby planet indicates an outpost below which offers supplies to travelers. You send down an away party to check it out.</text>
+      <text planet="PLANET_POPULATED">The space station here has a traveling merchant who shows you his wares.</text>
+      <text planet="NONE">There is only one other ship at this beacon, and it is showing heavy damage. You receive a message on your console: "Greetings traveler. We were crippled by a band of pirates and are now forced to sell our remaining valuable equipment to acquire the necessary supplies to get home."</text>
+    </textList>
+    <store/>
+  </event>
+
+  <event name="NOTHING">
+    <textList name="NOTHING">
+      <text planet="NONE" back="BG_DARK">Your jump leads you to nothing but empty space. This Jump Beacon serves no purpose other than as a connection.</text>
+      <text planet="NONE">You jump into an unremarkable system. No life signs detected within scanning range.</text>
+      <text>Your scans reveal a mining base on a nearby planet long since abandoned. No life signs detected.</text>
+      <text planet="PLANET_POPULATED_SMALL">Your scans reveal an ore refinery and several factories, all standing still and empty. No life signs detected.</text>
+      <text planet="PLANET_POPULATED_SMALL">You discover a nearby planet speckled with settlements, although none respond to your hails.</text>
+      <text>This beacon has been built for a nearby civilian space-station. No one hails your ship.</text>
+      <text planet="PLANET_POPULATED_SMALL">The nearby planet shows sign of habitation and great beauty. A rudimentary automated planetary defense system is looping its message into space: "Warning! Quarantine Level 5 in effect under FHA Act 22, article 11.2. Warning! Quarantine Level 5..."</text>
+      <text planet="NONE">Your jump leads to a completely unremarkable binary star system. There is nothing else around.</text>
+      <text planet="NONE">Your jump leads to a remarkable binary star system. The view is beautiful, but there is nothing else around.</text>
+    </textList>
+  </event>
+
+  <event name="START_BEACON_NEBULA">
+    <textList name="START_BEACON_NEBULA">
+      <text>This nebula must have been an important hub at one point; placing all of these jump beacons would be no easy task. However, now it's hardly navigable.</text>
+      <text>Nebulas were always dangerous places. Many electronics fail in these clouds. You will have to tread lightly.</text>
+      <text>You've entered a sector thick with nebulas. You'll have to navigate on instinct.</text>
+      <text>You've entered a nebula-rich sector. You may put a few light years on the fleet, but that's only useful if you make it out the other side.</text>
+      <text>Thanks to the high nebula density of this sector very little of it has been charted, and rumours of what lurks in the depths abound.</text>
+      <text>The gases that make up the nebulas in this sector threaten to impair your systems; but you have to press on.</text>
+    </textList>
+  </event>
+
+  <event name="NEBULA_EMPTY">
+    <textList name="NEBULA_EMPTY_LIST">
+      <text>You can't see anything through the thick gases surrounding your ship. Without knowing what is out there, all you can do is wait for your FTL to charge.</text>
+      <text>Without active sensors you have no other option but to look out of the view-ports in apprehension. It's eerily quiet.</text>
+      <text>As you wait for the FTL drive to charge, you half expect to be ambushed at any moment. However, no attack comes...</text>
+      <text>You feel naked without functioning sensors. You half expect a Rebel ship to appear from behind a cloud at any moment, but none come.</text>
+      <text>Your crew are constantly looking out of the windows, checking for hostiles. They jump at every creak and moan of the ship. The tension is almost palpable...</text>
+      <text>You nervously glance out the windows but the only thing to greet you is more clouds and silence.</text>
+      <text>You cycle through wide-band comm channels as soon as you arrive. Nothing but static.</text>
+      <text>With the sensors down, you spend a good deal of time staring out the window. It is, you must admit, rather beautiful here.</text>
+      <text>There's nothing here, save for vast swirls of gas reflecting rays from a distant sun.</text>
+    </textList>
+    <environment type="nebula"/>
+  </event>
+
+  <event name="NEBULA_STORE">
+    <textList name="NEBULA_STORE">
+      <text>Some brave entrepreneurs set up a station here to extract elements from the nebula. There seems to be a public shipyard and rest stop here as well.</text>
+      <text>Seeing a trade depot set up near the beacon implies there is an alien settlement on some nearby rock. You decide to check out their wares.</text>
+      <text>The centre of a hydrogen cloud doesn't seem like a very usual place for a store, but the Engi aren't a usual species. Wouldn't hurt to take a look.</text>
+      <text>An Engi cargo vessel hails: "Propose mutually beneficial exchange of properties." That smells like a bargain.</text>
+      <text>You discover a cluster of Federation refugee ships taking shelter in the folds of the nebula. "I'm sorry we've got nothing to give you, but we need scrap to keep the engines running." You sense they'll strike a trade.</text>
+    </textList>
+    <environment type="nebula"/>
+    <store/>
+  </event>
+  
+  <event name="START_BEACON_PIRATE">
+    <textList name="START_BEACON_PIRATE">
+      <text>A few years ago this region was bustling with trade activity. Now it is overrun with bandits and marauders. You should tread lightly here.</text>
+      <text>This somewhat isolated region was thrown into chaos at the start of the rebellion. Even in peacetime it was always beset by pirates but now it houses a center of operations for countless pirate fleets.</text>
+      <text>If the reports are true, this area has been under the control of pirates for quite some time. Some traders still attempt to trade with the few settlements that remain, but they do so at great risk.</text>
+      <text>A few Federation-friendly planets still exist in this sector, but they are constantly under attack by pirate raids. This is a dangerous sector, so be careful.</text>
+    </textList>
+  </event>
+
+  <event name="STORE_PIRATE">
+    <textList name="STORE_PIRATE">
+      <text>A few small ships are visible on the vidscreen, and you almost activate weapons targeting. However, sensors indicate they are simply honest merchants. The pirates must be making you jumpy. You message them asking about their wares.</text>
+      <text>You detect a hub of activity nearby. A large corporation has set up a trade depot and has a number of well armed ships patrolling. This appears to be a relatively safe place to get repairs.</text>
+      <text>You receive a wide-band automated message, "Welcome to our humble trade depot and shipyard! All are welcome, but try any funny business and our 152 automated turret satellites will tear your ship to shreds!"</text>
+      <text>A well armed transport ship and a squadron of fighters are in orbit nearby. You are wary of their trustworthiness but beggars can't be choosers.</text>
+    </textList>
+    <store/>
+  </event>
+
+  <event name="NOTHING_PIRATE">
+    <textList name="NOTHING_PIRATE">
+      <text>As soon as you arrive, a small ship de-cloaks behind yours. You immediately power up the shields and weapons, but they continue on their trajectory unimpressed. You try to calm your nerves.</text>
+      <text>A small pirate ship messages you, "That sure is a shiny ship you got there." You fire a warning shot across their bow and they respond, "Hey! No need for violence! It was just a comment..."</text>
+      <text>The only thing within scanning range is an old abandoned mining structure and a resupply station. They appear to have been picked clean by marauders.</text>
+      <text>You arrive to have a small fleet of Engi ships target you with a message, "Piracy results in negative societal impact. Not permitted." You assure them of your honest intentions and they allow you to pass.</text>
+    </textList>
+  </event>
+
+  <changelog>
+    <entry>Removed NOTHING event (with all variations)</entry>
+    <entry>Removed BOARDERS event</entry>
+    <entry>Removed BOARDERS_ASTEROID event</entry>
+    <entry>Removed BOARDERS_HACKING event</entry>
+    <entry>Removed BOARDERS_SUN event</entry>
+    <entry>Removed ROCK_BOARDERS_SUN event</entry>
+    <entry>Removed MANTIS_BOARDERS event</entry>
+    <entry>Removed LANIUS_PIRATE_BOARDERS event</entry>
+    <entry>Removed BOARDERS_CRYSTAL event</entry>
+  </changelog>
+
+  <event name="BOARDERS" unique="true"> <!--kept for testing-->
+    <textList name="BOARDERS_TEXT" unique="false">
+      <text>What appears to be a civilian ship sends a friendly hail. As you approach the vessel, you detect a teleporter signal but it's too late... intruders have beamed aboard!"</text>
+      <text>A heavily damaged ship is drifting near this beacon. You receive a communication: "Hello! Nice of you to drop by. As you can see, our ship has seen better days. Yours is looking quite nice, I think we might be taking it from you now." Intruders beam aboard.</text>
+      <text>You detect life-signs actually on the beacon itself! A teleporter signal warns you but it's too late, they've beamed from the beacon onto your ship and seem intent on taking it over.</text>
+      <text>Your ship detects a faint distress signal on a nearby moon. As you approach the rock, warning lights flash as hostiles beam aboard the ship from some hidden location.</text>
+      <text>As you arrive, you become aware of a small Rebel outpost near the beacon. You are hardly able to bark an order before a small team is beamed aboard your ship. They must have been expecting you...</text>
+    </textList>
+    <boarders min="2" max="4" class="human"/>
+  </event>
+
+  <changelog>
+    <entry>Credits to Twinge's balance mod: Added an option in STALEMATE_SURRENDER to continue the fight</entry>
+  </changelog>
+  <event name="STALEMATE_SURRENDER">
+    <text>The ship suddenly disables their weapons. There's no explanation and they don't respond to hails. It seems during the battle they lost some fuel cells from their storage. Continue the engagement?</text>
+    <choice>
+      <text>Keep fighting - we can still take them out.</text>
+      <event/>
+    </choice>
+    <choice>
+      <text>Quickly collect the fuel and leave.</text>
+      <event>
+        <text>You grab the fuel and leave without further incident.</text>
+        <item_modify>
+          <item type="fuel" min="2" max="2"/>
+        </item_modify>
+        <ship hostile="false"/>
+      </event>
+    </choice>
+  </event>
+
+  <event name="BOSS_STALEMATE">
+    <text>The ship jumped away without warning, you prepare to pursue.</text>
+  </event>
+
+  <event name="CREW_STUCK">
+    <text>With your teleporter damaged and no way to fix it, you take one of the enemy ship's shuttles to return to your own ship.</text>
+  </event>
+
+  <event name="FUEL_ESCAPE_SUN">
+    <text>While waiting for help, you drained what little power you had left to pull away to a safe distance from the sun.</text>
+  </event>
+
+  <event name="FUEL_ESCAPE_STORM">
+    <text>The ion storm died down, leaving your ship in peace as you wait for help.</text>
+  </event>
+
+  <event name="FUEL_ESCAPE_ASTEROIDS">
+    <text>While waiting, you managed to navigate out of the asteroid field using only your impulse engines.</text>
+  </event>
+
+  <event name="FUEL_ESCAPE_PULSAR">
+    <text>Taking advantage of the last of your fuel reserves, you were able to navigate to a safe distance from the pulsar.</text>
+  </event>
+
+  <event name="FUEL_ESCAPE_PDS">
+    <text>Using your impulse engines, you were able to pull to a safe distance from the hostile planet.</text>
+  </event>
+
+  <event name="FUEL_ESCAPE_FLEET">
+    <text>Your pilot deftly avoids the artillery fire from the surrounding fleet while you try to sort out exactly what your plan is....</text>
+  </event>
+
+  <event name="AUGMENT_FULL">
+    <text>Your ship already has this augment and its effect cannot stack. You break it down into scrap.</text>
+  </event>
+
+  <textList name="GAMEOVER">
+    <text>The last hope of the Federation dies as your ship breaks apart.</text>
+  </textList>
+
+  <event name="DUMMY">
+    <text>Dummy</text>
+  </event>
+
+  <event name="TOO_MANY_CREW">
+    <text>Your ship cannot support any more active crew-members. You apologize and leave the extra crew at the nearest friendly outpost. They pay you for your troubles.</text>
+    <choice>
+      <text id="continue"/>
+      <event/>
+    </choice>
+  </event>
+
+  <event name="FINISH_BEACON">
+    <text>You've arrived at the Long-Range Beacon. When the FTL Drive is charged you can jump to the next Sector.</text>
+    <choice hidden="true">
+      <text id="continue"/>
+      <event load="EXIT_LIST"/>
+    </choice>
+  </event>
+
+  <event name="FINISH_BEACON_NEBULA">
+    <text>This Long-Range Beacon is almost hidden within a nebula. When the FTL Drive is charged you can jump to the next Sector.</text>
+  </event>
+
+  <event name="CHARACTER_TEST">
+    <text>`abcdefghijklmno °±²³´µ¶·¸¹º»¼½ ¾¿ÀÁÂÃÄÅÆÇ ÈÉÊËÌÍÎÏ ÐÑÒÓÔÕ Ö×ØÙÚÛ ÜÝÞßàá âãäåæç èéêëìí îïðñòóô õö÷øùúûüýþ ÿŒœŠšŸƒ</text>
+  </event>
+
+  <textList name="TIPS_LIST">
+    <text>TIP: Death - Remember, losing is part of the fun! ... No, I'm serious...</text>
+    <text>TIP: Grinding Sectors - It can be beneficial to stay in a Sector for as long as possible to improve the ship since each Sector is increasingly difficult.</text>
+    <text>TIP: Exits - It's tempting to rush for the Sector exits, but exploring is the only way to upgrade your ship. Try and get as much out of each Sector as possible.</text>
+    <text>TIP: Targets - Prioritize your targeting in combat. Weapons and Shields are usually the best choice, but if they're fleeing, hit their Engines or Piloting to prevent escape.</text>
+    <text>TIP: Hidden Choices - When you see a blue colored choice in an event, it's a special option that has been made available by your current equipment.</text>
+    <text>TIP: System Damage - When a System fully breaks due to fire or boarders, the hull also takes one damage.</text>
+    <text>TIP: Power Bars - Upgraded Systems can be helpful even if you don't have enough reactor power to use them; they still absorb one damage.</text>
+    <text>TIP: Weapons - You can queue up an attack before the weapon is charged. It will fire when it's charged.</text>
+    <text>TIP: Cloaking - Cloaking prevents enemies from firing on your ship or charging their weapons. It also increases your base evasion by 60.</text>
+    <text>TIP: Boarding - If you're having trouble with boarders, fight within the medbay. If all else fails, vent the rest of the oxygen out of the ship!</text>
+    <text>TIP: Oxygen - If the ship's room color changes from tan to red, it means you're losing oxygen. Crew will be damaged and fires will burn out in rooms with red hazard stripes.</text>
+    <text>TIP: Shield Piercing - Missiles ignore shields. Use missiles to damage a powerful ship's Shields System. Just remember that Defense Drones can shoot down missiles!</text>
+    <text>TIP: Choices - Results of most choices have multiple outcomes. You can never be sure what will happen.</text>
+    <text>TIP: Autofire - Autofire will let a weapon maintain its target. Just keep an eye on your missile count!</text>
+    <text>TIP: Evasion - Evading enemy shots is crucial, but it requires functioning engines AND a pilot. Having someone man the engines will increase your evasion as well.</text>
+    <text>TIP: Sensors - If the ship goes dark, don't panic. Just fix the Sensors Subsystem.</text>
+    <text>TIP: Drones - If you're struggling against enemy Drones, target the Drone System to temporarily disable them.</text>
+    <text>TIP: Beams - Beam weapons do damage based on the number of rooms they hit. Each Shield bubble will block 1 damage of a beam; it's best to use beams when the enemy's shields are down.</text>
+    <text>TIP: Fire - If fire is spreading, consider opening airlocks and doors to vent the oxygen from parts of your ship. Fire is quickly extinguished without O2.</text>
+    <text>TIP: Health - Pay attention to your crew's health! Use the Medbay to keep them patched up.</text>
+    <text>TIP: Upgrades - Don't forget to upgrade your ship! Often shields are the highest priority, but don't underestimate the usefulness of subsystems.</text>
+    <text>TIP: Fuel - Every jump consumes one unit of fuel, so keep an eye on your reserves. Buy fuel at stores to avoid being left stranded.</text>
+    <text>TIP: Sound - Go into the options menu to turn on or off the sound effects and music.</text>
+    <text>TIP: Asteroids - Fighting in asteroid fields is dangerous, but use it to your advantage. Take out enemy Shields and let the rocks take care of the rest.</text>
+    <text>TIP: Nebulas - Passing through a Nebula will allow you to temporarily slow down the fleet advancement but they contain their own unique dangers.</text>
+    <text>TIP: Solar Flares - Solar flares will cause hull damage in addition to starting fires. Make sure your shields are up to help mitigate this effect.</text>
+    <text>TIP: Score - Your score is based on how many ships you defeat, the number of beacons explored, and your total scrap collection.</text>
+    <text>TIP: Augmentations - Your ship can only hold 3 augmentations. They provide unique benefits to a system, the crew or the entire ship.</text>
+    <text>TIP: Breaches - If a room with a breach has no Oxygen, try opening all the doors surrounding it to make it less hazardous.</text>
+    <text>TIP: Rebel Fleet - The Rebel fleet (represented by the red circle on the map) moves closer to your position every time you jump. Certain events can slow or speed up their movement.</text>
+    <text>TIP: Ion Weapons - Ion weapons de-power and lock a System for a time. If they hit the enemy shields they deal their stun damage directly to the Shields System.</text>
+    <text>TIP: Bomb Weapons - Bombs teleport directly onto either ship. They bypass Shields AND Defense Drones. However, they affect only crew and Systems; they do no damage to the ship's hull.</text>
+    <text>TIP: Door Subsystem - Upgrading your doors will greatly reduce the chance of fire spreading between rooms and will significantly slow boarder movement.</text>
+  </textList>
+
+  <textList name="TIPS_LIST_PC">
+    <text load="TIPS_LIST"/>
+    <text>TIP: Pausing - Press SPACE at any time to pause the game. You can still issue orders to crew or manipulate system power while paused.</text>
+    <text>TIP: Selling - Weapons, Drones and Augments can be sold for 1/2 the purchasing price at stores. Click on the SELL tab at the top.</text>
+    <text>TIP: Hotkeys - You can charge or arm weapons using number hotkeys: The Weapon Slots are 1-4 on your keyboard, and the Drones are 5-7 (customizeable in the options).</text>
+    <text>TIP: Font Size - Pressing +/- (customizable in options) will let you change the event text size.</text>
+    <text>TIP: Weapon Order - Rearrange a Weapon or Drone schematic by dragging it into the desired position. The left-most slot will be the last to power down if the system is damaged.</text>
+  </textList>
+
+  <textList name="TIPS_LIST_IPAD">
+    <text load="TIPS_LIST"/>
+    <text>TIP: Pausing - Tap the PAUSE button at any time to pause the game. You can still issue orders to crew or manipulate system power while paused.</text>
+    <text>TIP: Selling - Weapons, Drones and Augments can be sold for 1/2 the purchasing price at stores. Tap the SELL tab at the top.</text>
+    <text>TIP: Weapon Order - Rearrange a Weapon or Drone schematic by dragging it into the desired position. The bottom-most slot will be the last to power down if the system is damaged.</text>
+  </textList>
+</FTL>

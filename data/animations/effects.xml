@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <!-- fire stuff -->
+  <animSheet name="fire_large" w="256" h="32" fw="32" fh="32">effects/fire_L1_strip8.png</animSheet>
+  <animSheet name="fire_small" w="256" h="32" fw="32" fh="32">effects/fire_S1_strip8.png</animSheet>
+
+  <anim name="fire_large">
+    <sheet>fire_large</sheet>
+    <desc length="8" x="0" y="0"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="fire_small">
+    <sheet>fire_small</sheet>
+    <desc length="8" x="0" y="0"/>
+    <time>1.0</time>
+  </anim>
+
+  <!-- breach stuff -->
+  <animSheet name="breach" w="154" h="19" fw="22" fh="19">effects/breach.png</animSheet>
+
+  <anim name="breach">
+    <sheet>breach</sheet>
+    <desc length="7" x="0" y="0"/>
+    <time>1.0</time>
+  </anim>
+
+  <animSheet name="explosion_big1" w="768" h="64" fw="64" fh="64">effects/explosion_big2.png</animSheet>
+  <anim name="explosion_big1">
+    <sheet>explosion_big1</sheet>
+    <desc length="12" x="0" y="0"/>
+    <time>0.75</time>
+  </anim>
+
+  <animSheet name="explosion_crystal" w="512" h="64" fw="64" fh="64">effects/explosion_crystal.png</animSheet>
+  <anim name="explosion_crystal">
+    <sheet>explosion_crystal</sheet>
+    <desc length="8" x="0" y="0"/>
+    <time>0.5</time>
+  </anim>
+
+  <animSheet name="explosion_crystal_2" w="336" h="48" fw="48" fh="48">effects/explosion_crystal_2.png</animSheet>
+  <anim name="explosion_crystal_2">
+    <sheet>explosion_crystal_2</sheet>
+    <desc length="7" x="0" y="0"/>
+    <time>0.5</time>
+  </anim>
+
+  <animSheet name="explosion_missile1" w="289" h="32" fw="32" fh="32">effects/explosion_missile1_strip9.png</animSheet>
+  <anim name="explosion_missile1">
+    <sheet>explosion_missile1</sheet>
+    <desc length="9" x="0" y="0"/>
+    <time>0.6</time>
+  </anim>
+
+  <animSheet name="explosion_big1_green" w="640" h="64" fw="64" fh="64">effects/explosion_big1_strip10_green.png</animSheet>
+  <anim name="explosion_big1_green">
+    <sheet>explosion_big1_green</sheet>
+    <desc length="10" x="0" y="0"/>
+    <time>0.75</time>
+  </anim>
+
+  <animSheet name="explosion_big1_ion" w="640" h="64" fw="64" fh="64">effects/explosion_big1_strip10_ion.png</animSheet>
+  <anim name="explosion_big1_ion">
+    <sheet>explosion_big1_ion</sheet>
+    <desc length="10" x="0" y="0"/>
+    <time>0.5</time>
+  </anim>
+
+  <animSheet name="explosion_small_ion" w="144" h="16" fw="16" fh="16">effects/explosion_ion2.png</animSheet>
+  <anim name="explosion_small_ion">
+    <sheet>explosion_small_ion</sheet>
+    <desc length="9" x="0" y="0"/>
+    <time>0.5</time>
+  </anim>
+
+  <animSheet name="explosion_big1_heal" w="640" h="64" fw="64" fh="64">effects/explosion_big1_strip10_heal.png</animSheet>
+  <anim name="explosion_big1_heal">
+    <sheet>explosion_big1_heal</sheet>
+    <desc length="10" x="0" y="0"/>
+    <time>0.75</time>
+  </anim>
+
+  <animSheet name="explosion_lockdown" w="640" h="64" fw="64" fh="64">effects/explosion_lockdown.png</animSheet>
+  <anim name="explosion_lockdown">
+    <sheet>explosion_lockdown</sheet>
+    <desc length="10" x="0" y="0"/>
+    <time>0.4</time>
+  </anim>
+
+  <animSheet name="explosion1" w="320" h="32" fw="32" fh="32">effects/explosion1_strip10.png</animSheet>
+  <anim name="explosion1">
+    <sheet>explosion1</sheet>
+    <desc length="10" x="0" y="0"/>
+    <time>0.75</time>
+  </anim>
+
+  <!-- THESE EXPLOSIONS are called randomly when you use "explosion_random" as an explosion name -->
+  <animSheet name="explosion_big2" w="576" h="64" fw="64" fh="64">effects/explosion_big2.png</animSheet>
+  <anim name="explosion_big2">
+    <sheet>explosion_big2</sheet>
+    <desc length="9" x="0" y="0"/>
+    <time>0.75</time>
+  </anim>
+
+  <animSheet name="explosion_big3" w="704" h="64" fw="64" fh="64">effects/explosion_big3.png</animSheet>
+  <anim name="explosion_big3">
+    <sheet>explosion_big3</sheet>
+    <desc length="11" x="0" y="0"/>
+    <time>0.75</time>
+  </anim>
+
+  <animSheet name="explosion_big4" w="640" h="64" fw="64" fh="64">effects/explosion_big4.png</animSheet>
+  <anim name="explosion_big4">
+    <sheet>explosion_big4</sheet>
+    <desc length="10" x="0" y="0"/>
+    <time>0.75</time>
+  </anim>
+
+  <animSheet name="stun_floor" w="700" h="70" fw="70" fh="70">effects/stun_floor.png</animSheet>
+
+  <anim name="stun_spark_big">
+    <sheet>stun_floor</sheet>
+    <desc length="10" x="0" y="0"/>
+    <time>1.0</time>
+  </anim>
+
+  <animSheet name="hacked_console" w="245" h="35" fw="35" fh="35">effects/stun_computer.png</animSheet>
+
+  <anim name="hacked_console">
+    <sheet>hacked_console</sheet>
+    <desc length="7" x="0" y="0"/>
+    <time>1.0</time>
+  </anim>
+
+  <animSheet name="mindcontrol" w="112" h="14" fw="14" fh="14">people/mindcontrol_strip8.png</animSheet>
+
+  <anim name="mindcontrol">
+    <sheet>mindcontrol</sheet>
+    <desc length="8" x="0" y="0"/>
+    <time>1.0</time>
+  </anim>
+
+  <animSheet name="explosion_stun_ion" w="144" h="16" fw="16" fh="16">effects/explosion_ion_stun.png</animSheet>
+  <anim name="explosion_stun_ion">
+    <sheet>explosion_stun_ion</sheet>
+    <desc length="9" x="0" y="0"/>
+    <time>0.5</time>
+  </anim>
+
+  <animSheet name="explosion_repair" w="448" h="64" fw="64" fh="64">effects/explosion_big1_repair2.png</animSheet>
+  <anim name="explosion_repair">
+    <sheet>explosion_repair</sheet>
+    <desc length="7" x="0" y="0"/>
+    <time>0.7</time>
+  </anim>
+
+  <animSheet name="rainbow_spiral" w="512" h="64" fw="64" fh="64">effects/rainbow_spiral.png</animSheet>
+  <anim name="rainbow_spiral">
+    <sheet>rainbow_spiral</sheet>
+    <desc length="8" x="0" y="0"/>
+    <time>0.5</time>
+  </anim>
+</FTL>

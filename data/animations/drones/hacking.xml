@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <animSheet name="drone_hack_land" w="155" h="49" fw="31" fh="49">ship/drones/drone_hack_land.png</animSheet>
+  <anim name="drone_hack_fly">
+    <sheet>drone_hack_land</sheet>
+    <desc length="1" x="0" y="0"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="drone_hack_land">
+    <sheet>drone_hack_land</sheet>
+    <desc length="5" x="0" y="0"/>
+    <time>0.3</time>
+  </anim>
+
+  <animSheet name="drone_hack_extend" w="155" h="49" fw="31" fh="49">ship/drones/drone_hack_extend.png</animSheet>
+  <anim name="drone_hack_extend">
+    <sheet>drone_hack_extend</sheet>
+    <desc length="5" x="0" y="0"/>
+    <time>1.0</time>
+  </anim>
+</FTL>

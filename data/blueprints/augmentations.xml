@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <changelog>
+    <entry>Rock Plating scrap cost 80 to 40</entry>
+  </changelog>
+  <augBlueprint name="ROCK_ARMOR">
+    <title>Rock Plating</title>
+    <desc>Superior hull armor provides a 15 percent chance to negate incoming hull damage (hit systems will still be damaged).</desc>
+    <cost>40</cost>
+    <bp>8</bp>
+    <rarity>0</rarity>
+    <stackable>false</stackable>
+    <value>0.15</value>
+  </augBlueprint>
+  <augBlueprintInherit name="ROCK_ARMOR_LOCKED" base="ROCK_ARMOR"/>
+
+  <changelog>
+    <entry>Crystal Vengeance scrap cost 80 to 40</entry>
+    <entry>Crystal Vengeance proc chance 0.1 to 0.5</entry>
+    <entry>Crystal Vengeance damage 1 to 2</entry>
+    <entry>Crystal Vengeance shield piercing 5 to 1</entry>
+    <entry>Crystal Vengeance breach chance 0.1 to 1</entry>
+    <entry>Crystal Vengeance stun chance 0.2 to 0</entry>
+    <entry>Enemy Crystal ships now have Crystal Vengeance installed</entry>
+  </changelog>
+  <augBlueprint name="CRYSTAL_SHARDS">
+    <title>Crystal Vengeance</title>
+    <desc>Every time your ship takes damage, there is a 50 percent chance to break off a shard that flies at your enemy and deals 2 damage piercing 1 layer of shields.</desc>
+    <cost>40</cost>
+    <bp>8</bp>
+    <rarity>0</rarity>
+    <stackable>false</stackable>
+    <value>0.5</value>
+  </augBlueprint>
+  <augBlueprintInherit name="CRYSTAL_SHARDS_LOCKED" base="CRYSTAL_SHARDS"/>
+  <weaponBlueprint NOLOC="1" name="CRYSTAL_1">
+    <type>MISSILES</type>
+    <title>Crystal Shard</title>
+    <short>Crystal</short>
+    <desc>Should Never See This Description.</desc>
+    <tooltip>Should Never See This Description.</tooltip>
+    <damage>2</damage>
+    <missiles>0</missiles>
+    <shots>1</shots>
+    <sp>5</sp>
+    <fireChance>0</fireChance>
+    <breachChance>10</breachChance>
+    <stunChance>0</stunChance>
+    <cooldown>9</cooldown>
+    <power>1</power>
+    <cost>20</cost>
+    <bp>2</bp>
+    <rarity>0</rarity>
+    <image>crystal_shard3</image>
+    <launchSounds>
+      <sound>smallMissile1</sound>
+      <sound>smallMissile2</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>crystalExplosion</sound>
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>hitShield1</sound>
+      <sound>hitShield2</sound>
+      <sound>hitShield3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <explosion>explosion_crystal</explosion>
+    <weaponArt>crystal_shard</weaponArt>
+  </weaponBlueprint>
+
+  <augBlueprint name="ENERGY_SHIELD">
+    <title>Zoltan Shield</title>
+    <desc>An unexplained technology creates this nearly impenetrable shield. Only the energy outburst from an FTL engine is powerful enough to recharge it.</desc>
+    <cost>80</cost>
+    <bp>8</bp>
+    <rarity>0</rarity>
+    <stackable>false</stackable>
+    <value>2</value>
+  </augBlueprint>
+  <augBlueprintInherit name="ENERGY_SHIELD_LOCKED" base="ENERGY_SHIELD"/>
+
+  <changelog>
+    <entry>Engi Med-Bot Dispersal scrap cost 60 to 40</entry>
+  </changelog>
+  <augBlueprint name="NANO_MEDBAY">
+    <title>Engi Med-bot Dispersal</title>
+    <desc>Engi nano med-bots heal the crew outside of the med-bay (at a reduced speed).</desc>
+    <cost>40</cost>
+    <bp>12</bp>
+    <rarity>0</rarity>
+    <stackable>false</stackable>
+    <value>0.25</value>
+  </augBlueprint>
+  <augBlueprintInherit name="NANO_MEDBAY_LOCKED" base="NANO_MEDBAY"/>
+
+  <changelog>
+    <entry>Slug Repair Gel scrap cost 60 to 30</entry>
+  </changelog>
+  <augBlueprint name="SLUG_GEL">
+    <title>Slug Repair Gel</title>
+    <desc>Slug ships excrete a thick gel that automatically repairs any hull breaches.</desc>
+    <cost>30</cost>
+    <bp>12</bp>
+    <rarity>0</rarity>
+    <stackable>false</stackable>
+    <value>0.25</value>
+  </augBlueprint>
+  <augBlueprintInherit name="SLUG_GEL_LOCKED" base="SLUG_GEL"/>
+
+  <changelog>
+    <entry>Mantis Pheromones scrap cost 50 to 30</entry>
+    <entry>Mantis Pheromones speed modifier 1.25 to 1.4</entry>
+  </changelog>
+  <augBlueprint name="CREW_STIMS">
+    <title>Mantis Pheromones</title>
+    <desc>Your crew's movement speed is increased by 40 percent.</desc>
+    <cost>30</cost>
+    <bp>9</bp>
+    <rarity>0</rarity>
+    <value>0.4</value>
+    <stackable>false</stackable>
+  </augBlueprint>
+  <augBlueprintInherit name="CREW_STIMS_LOCKED" base="CREW_STIMS"/>
+
+  <changelog>
+    <entry>Drone Reactor Booster scrap cost 50 to 30</entry>
+    <entry>Drone Reactor Booster speed modifier 1.25 to 3</entry>
+  </changelog>
+  <augBlueprint name="DRONE_SPEED">
+    <title>Drone Reactor Booster</title>
+    <desc>Your shipboard drones have their movement speed TRIPLED. Whoosh!</desc>
+    <cost>30</cost>
+    <bp>9</bp>
+    <rarity>0</rarity>
+    <value>2</value>
+    <stackable>false</stackable>
+  </augBlueprint>
+  <augBlueprintInherit name="DRONE_SPEED_LOCKED" base="DRONE_SPEED"/>
+
+  <changelog>
+    <entry>System Casing scrap cost 80 to 40</entry>
+    <entry>System Casing proc chance 0.15 to 0.25</entry>
+  </changelog>
+  <augBlueprint name="SYSTEM_CASING">
+    <title>Orchid System Casing</title>
+    <desc>All ship systems have additional plating that provides a 25 percent chance to negate damage when hit (hull will still be damaged)</desc>
+    <cost>40</cost>
+    <bp>15</bp>
+    <rarity>0</rarity>
+    <stackable>false</stackable>
+    <value>0.25</value>
+  </augBlueprint>
+  <augBlueprintInherit name="SYSTEM_CASING_LOCKED" base="SYSTEM_CASING"/>
+
+  <changelog>
+    <entry>Reverse Ion Field scrap cost 45 to 30</entry>
+  </changelog>
+  <augBlueprint name="ION_ARMOR">
+    <title>Reverse Ion Field</title>
+    <desc>Protects your ship from ion damage, giving a 50 percent chance to negate it entirely.</desc>
+    <cost>30</cost>
+    <bp>8</bp>
+    <rarity>2</rarity>
+    <stackable>true</stackable>
+    <value>0.50</value>
+  </augBlueprint>
+
+  <changelog>
+    <entry>Stealth Weapons scrap cost 50 to 30</entry>
+  </changelog>
+  <augBlueprint name="CLOAK_FIRE">
+    <title>Stealth Weapons</title>
+    <desc>Prevents your weapon fire from disrupting your cloak, allowing you to shoot at will while cloaked.</desc>
+    <cost>30</cost>
+    <bp>8</bp>
+    <rarity>3</rarity>
+    <stackable>false</stackable>
+    <value>0.15</value>
+  </augBlueprint>
+
+  <changelog>
+    <entry>Repair Arm scrap cost 50 to 30</entry>
+  </changelog>
+  <augBlueprint name="REPAIR_ARM">
+    <title>Repair Arm</title>
+    <desc>Repairs your hull every time you collect scrap, but reduces scrap collected by 15 percent.</desc>
+    <cost>30</cost>
+    <bp>8</bp>
+    <rarity>3</rarity>
+    <stackable>false</stackable>
+    <value>0.15</value>
+  </augBlueprint>
+
+  <changelog>
+    <entry>Scrap Recovery Arm bonus 0.1 to 0.15</entry>
+    <entry>Scrap Recovery Arm made unavailable in stores or loot (Lanius ships start with it)</entry>
+  </changelog>
+  <augBlueprint name="SCRAP_COLLECTOR">
+    <title>Lanius Recovery Arm</title>
+    <desc>Allows the ship to collect 15 percent more scrap from any source.</desc>
+    <cost>50</cost>
+    <bp>8</bp>
+    <rarity>0</rarity>
+    <stackable>true</stackable>
+    <value>0.15</value>
+  </augBlueprint>
+  <augBlueprintInherit name="SCRAP_COLLECTOR_LOCKED" base="SCRAP_COLLECTOR"/>
+
+  <changelog>
+    <entry>Long-Ranged Scanners made unavailable in stores or loot (Stealth ships start with it)</entry>
+  </changelog>
+  <augBlueprint name="ADV_SCANNERS">
+    <title>Long-Ranged Scanners</title>
+    <desc>Adds additional info about nearby Beacons on the star map.</desc>
+    <cost>30</cost>
+    <bp>3</bp>
+    <rarity>0</rarity>
+    <stackable>false</stackable>
+  </augBlueprint>
+  <augBlueprintInherit name="ADV_SCANNERS_LOCKED" base="ADV_SCANNERS"/>
+
+  <augBlueprint name="AUTO_COOLDOWN">
+    <title>Automated Re-loader</title>
+    <desc>Cooldown between weapon shots is improved by 10 percent.</desc>
+    <cost>40</cost>
+    <bp>5</bp>
+    <rarity>2</rarity>
+    <stackable>true</stackable>
+    <value>0.10</value>
+  </augBlueprint>
+
+  <changelog>
+    <entry>Shield Recharge Booster scrap cost 45 to 40</entry>
+  </changelog>
+  <augBlueprint name="SHIELD_RECHARGE">
+    <title>Shield Charge Booster</title>
+    <desc>Boosts the ship's shield recharge rate by 15 percent.</desc>
+    <cost>40</cost>
+    <bp>5</bp>
+    <rarity>2</rarity>
+    <stackable>true</stackable>
+    <value>0.15</value>
+  </augBlueprint>
+
+  <augBlueprint name="WEAPON_PREIGNITE">
+    <title>Weapon Pre-igniter</title>
+    <desc>Weapons are made immediately available after an FTL jump.</desc>
+    <cost>120</cost>
+    <bp>16</bp>
+    <rarity>4</rarity>
+    <stackable>false</stackable>
+  </augBlueprint>
+
+  <changelog>
+    <entry>FTL Recharge Booster scrap cost 50 to 30</entry>
+    <entry>FTL Recharge Booster modifier 1.25 to 1.5</entry>
+    <entry>FTL Recharge Booster rarity 2 to 1</entry>
+  </changelog>
+  <augBlueprint name="FTL_BOOSTER">
+    <title>FTL Recharge Booster</title>
+    <desc>The ship's FTL Drive powers up 50 percent faster.</desc>
+    <cost>30</cost>
+    <bp>4</bp>
+    <rarity>1</rarity>
+    <stackable>true</stackable>
+    <value>0.5</value>
+  </augBlueprint>
+
+  <changelog>
+    <entry>Adv. FTL Navigation scrap cost 50 to 40</entry>
+    <entry>Adv. FTL Navigation allows to jump to any beacon in the sector insead of any previously visited beacon.</entry>
+  </changelog>
+  <augBlueprint name="FTL_JUMPER_GOOD">
+    <title>Adv. FTL Navigation</title>
+    <desc>Allows the ship to jump to any beacon in the sector.</desc>
+    <cost>40</cost>
+    <bp>5</bp>
+    <rarity>2</rarity>
+    <stackable>false</stackable>
+  </augBlueprint>
+
+  <changelog>
+    <entry>Drone Recovery Arm scrap cost 50 to 40</entry>
+    <entry>Drone Recovery Arm rarity 2 to 1</entry>
+  </changelog>
+  <augBlueprint name="DRONE_RECOVERY">
+    <title>Drone Recovery Arm</title>
+    <desc>Non-destroyed drones will be retrieved when jumping, allowing their parts to be reused.</desc>
+    <cost>40</cost>
+    <bp>8</bp>
+    <rarity>1</rarity>
+    <stackable>false</stackable>
+  </augBlueprint>
+
+  <changelog>
+    <entry>FTL Jammer rarity 3 to 4</entry>
+  </changelog>
+  <augBlueprint name="FTL_JAMMER">
+    <title>FTL Jammer</title>
+    <desc>Scramble enemy ships' FTL computers, doubling the time it takes for them to jump.</desc>
+    <cost>30</cost>
+    <bp>4</bp>
+    <rarity>4</rarity>
+    <value>2</value>
+    <stackable>false</stackable>
+  </augBlueprint>
+
+  <augBlueprint name="STASIS_POD">
+    <title>Damaged Stasis Pod</title>
+    <desc>This bizarre alien artifact appears to be barely operational. It has no practical function but perhaps someone can repair it.</desc>
+    <cost>30</cost>
+    <bp>15</bp>
+    <rarity>0</rarity>
+    <stackable>true</stackable>
+    <value>0.15</value>
+  </augBlueprint>
+
+  <changelog>
+    <entry>Emergency Respirators scrap cost 50 to 30</entry>
+  </changelog>
+  <augBlueprint name="O2_MASKS">
+    <title>Emergency Respirators</title>
+    <desc>Crew take half damage from low oxygen.</desc>
+    <cost>30</cost>
+    <bp>8</bp>
+    <rarity>2</rarity>
+    <stackable>false</stackable>
+    <value>0.5</value>
+  </augBlueprint>
+  <augBlueprintInherit name="O2_MASKS_LOCKED" base="O2_MASKS">
+    <rarity>0</rarity>
+  </augBlueprintInherit>
+
+  <changelog>
+    <entry>Explosive Replicator scrap cost 60 to 40</entry>
+    <entry>Explosive Replicator rarity 3 to 1</entry>
+  </changelog>
+  <augBlueprint name="EXPLOSIVE_REPLICATOR">
+    <title>Explosive Replicator</title>
+    <desc>Missile based weapons have a 50 percent chance of not using a missile.</desc>
+    <cost>40</cost>
+    <bp>8</bp>
+    <rarity>1</rarity>
+    <stackable>false</stackable>
+    <value>0.5</value>
+  </augBlueprint>
+
+  <changelog>
+    <entry>Fire Suppression scrap cost 65 to 30</entry>
+    <entry>Fire Suppression extinguishing speed increased by 20% (exactly the same speed as humans now)</entry>
+  </changelog>
+  <augBlueprint name="FIRE_EXTINGUISHERS">
+    <title>Fire Suppression</title>
+    <desc>Automatically put out fires throughout the ship.</desc>
+    <cost>30</cost>
+    <bp>8</bp>
+    <rarity>3</rarity>
+    <stackable>false</stackable>
+    <value>1.2</value>
+  </augBlueprint>
+  <augBlueprintInherit name="FIRE_EXTINGUISHERS_LOCKED" base="FIRE_EXTINGUISHERS">
+    <rarity>0</rarity>
+  </augBlueprintInherit>
+
+  <changelog>
+    <entry>Distraction Buoys scrap cost 55 to 40</entry>
+    <entry>Distraction Buoys rarity 3 to 2</entry>
+  </changelog>
+  <augBlueprint name="FLEET_DISTRACTION">
+    <title>Distraction Buoys</title>
+    <desc>Leaves a false signal at sector start to delay Rebels 1 jump.</desc>
+    <cost>40</cost>
+    <bp>8</bp>
+    <rarity>2</rarity>
+    <stackable>false</stackable>
+    <value>1.f</value>
+  </augBlueprint>
+
+  <changelog>
+    <entry>Reconstructive Teleport scrap cost 70 to 40</entry>
+  </changelog>
+  <augBlueprint name="TELEPORT_HEAL">
+    <title>Reconstructive Teleport</title>
+    <desc>Crew gets fully healed by teleportation.</desc>
+    <cost>40</cost>
+    <bp>8</bp>
+    <rarity>3</rarity>
+    <stackable>false</stackable>
+    <value>1.f</value>
+  </augBlueprint>
+
+  <changelog>
+    <entry>Battery Charger scrap cost 40 to 30</entry>
+    <entry>Battery Charger cooldown 10 sec to 5 sec</entry>
+  </changelog>
+  <augBlueprint name="BATTERY_BOOSTER">
+    <title>Battery Charger</title>
+    <desc>Backup Battery's lock time is 4 times shorter (5 seconds instead of 20).</desc>
+    <cost>30</cost>
+    <bp>8</bp>
+    <rarity>2</rarity>
+    <stackable>false</stackable>
+    <value>0.25</value>
+  </augBlueprint>
+
+  <changelog>
+    <entry>Defense Scrambler scrap cost 80 to 60</entry>
+    <entry>Defense Scrambler rarity 4 to 3</entry>
+  </changelog>
+  <augBlueprint name="DEFENSE_SCRAMBLER">
+    <title>Defense Scrambler</title>
+    <desc>Prevents enemy defense drones from targeting anything.</desc>
+    <cost>60</cost>
+    <bp>8</bp>
+    <rarity>3</rarity>
+    <stackable>false</stackable>
+    <value>0.0</value>
+  </augBlueprint>
+
+  <changelog>
+    <entry>Backup DNA scrap cost 40 to 30</entry>
+  </changelog>
+  <augBlueprint name="BACKUP_DNA">
+    <title>Backup DNA Bank</title>
+    <desc>Your crew is safe in clone storage even if the system is off or broken.</desc>
+    <cost>30</cost>
+    <bp>8</bp>
+    <rarity>2</rarity>
+    <stackable>false</stackable>
+    <value>0.0</value>
+  </augBlueprint>
+
+  <changelog>
+    <entry>Hacking Stun scrap cost 60 to 30</entry>
+    <entry>Hacking Stun rarity 3 to 4</entry>
+  </changelog>
+  <augBlueprint name="HACKING_STUN">
+    <title>Hacking Stun</title>
+    <desc>All crew inside a room during a Hacking Pulse will be stunned for the duration.</desc>
+    <cost>30</cost>
+    <rarity>4</rarity>
+    <stackable>false</stackable>
+    <value>0.0</value>
+  </augBlueprint>
+
+  <changelog>
+    <entry>Lifeform Scanner scrap cost 40 to 30</entry>
+    <entry>Lifeform Scanner rarity 3 to 2</entry>
+  </changelog>
+  <augBlueprint name="LIFE_SCANNER">
+    <title>Lifeform Scanner</title>
+    <desc>Detects the location of any life forms, even when sensors don't function.</desc>
+    <cost>30</cost>
+    <bp>8</bp>
+    <rarity>2</rarity>
+    <stackable>false</stackable>
+    <value>0.0</value>
+  </augBlueprint>
+
+  <changelog>
+    <entry>Zoltan Shield Bypass scrap cost 55 to 40</entry>
+  </changelog>
+  <augBlueprint name="ZOLTAN_BYPASS">
+    <title>Zoltan Shield Bypass</title>
+    <desc>Allows crew/bomb teleportation and mind control to work through Super Shields.</desc>
+    <cost>40</cost>
+    <bp>8</bp>
+    <rarity>3</rarity>
+    <stackable>false</stackable>
+    <value>0.0</value>
+  </augBlueprint>
+
+  <changelog>
+    <entry>New Nanobot Defense System augmentation (deals damage to boarders on your ship)</entry>
+  </changelog>
+  <augBlueprint name="NANOBOT_DEFENSE_SYSTEM">
+    <title>Nanobot Defense System</title>
+    <desc>Boarders take damage over time on your ship.</desc>
+    <cost>40</cost>
+    <bp>4</bp>
+    <rarity>4</rarity>
+    <value>75</value>
+    <stackable>false</stackable>
+  </augBlueprint>
+</FTL>

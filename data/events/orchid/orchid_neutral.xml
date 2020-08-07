@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="NEUTRAL_ORCHID">
+    <event load="ORCHID_UNDER_ATTACK_PIRATE"/>
+    <event load="ORCHID_UNARMED_TRADER"/>
+    <event load="ORCHID_SLAVES"/>
+    <event load="ORCHID_BOTANICAL_GALLERY"/>
+    <event load="ORCHID_SLUG_TAUNT"/>
+
+    <event load="MERCENARY"/>
+    <event load="REFUGEE_NO_DISTRESS"/>
+    <event load="FUELING_STATION"/>
+  </eventList>
+
+  <event name="ORCHID_UNDER_ATTACK_PIRATE" unique="false">
+    <text>An unarmed Orchid vessel is trying to flee from a ship with the markings of a space pirate that is chasing behind.</text>
+    <choice hidden="true">
+      <text>Help the Orchid ship.</text>
+      <event>
+        <text>You fire a warning shot and the pirate ship changes direction to face you. "That ship is even bigger! Let's loot this one instead." The Orchid vessel stopped far beyond firing distance to watch the battle.</text>
+        <ship auto_blueprint="SHIPS_PIRATE" hostile="true">
+          <destroyed>
+            <text>The pirate ship breaks apart. You hasten to contact the Orchid ship.</text>
+            <autoReward level="LOW">standard</autoReward>
+            <choice hidden="true">
+              <text>Contact the Orchid ship.</text>
+              <eventList name="ORCHID_SAVED_LIST">
+                <event>
+                  <text>The Orchid ship has taken heavy damage before you came to help. The only surviving Orchid offers to join your crew.</text>
+                  <crewMember amount="1" class="orchid"/>
+                </event>
+                <event>
+                  <text>The Orchid ship offers you some resources as a reward for saving them.</text>
+                  <autoReward level="LOW">standard</autoReward>
+                </event>
+                <event>
+                  <text>As you fought the pirate, the Orchid ship charged the FTL-drive and jumped away.</text>
+                </event>
+              </eventList>
+            </choice>
+          </destroyed>
+          <deadCrew>
+            <text>No more life signs detected on the pirate ship. You hasten to contact the Orchid ship.</text>
+            <autoReward level="MED">standard</autoReward>
+            <choice hidden="true">
+              <text>Contact the Orchid ship.</text>
+              <event load="ORCHID_SAVED_LIST"/>
+            </choice>
+          </deadCrew>
+        </ship>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Do not intervene.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <event name="ORCHID_UNARMED_TRADER" unique="true">
+    <text>A tiny Orchid trading vessel awaits you at the beacon. Learning that you are Federation, they offer some of their supplies to help the cause.</text>
+    <choice>
+      <text>Accept their offer.</text>
+      <event>
+        <autoReward level="LOW">standard</autoReward>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Extort additional resources: they surely have more.</text>
+      <eventList>
+        <event>
+          <text>The trader sends a distress signal, and an Orchid military ship jumps in immediately to help with weapons online.</text>
+          <ship auto_blueprint="SHIPS_ORCHID" hostile="true">
+            <destroyed>
+              <text>By the time you dealt with an Orchid military ship, the trading vessel has already escaped the system. You loot the destroyed ship, harvesting some useful scrap material.</text>
+              <autoReward level="MED">standard</autoReward>
+            </destroyed>
+            <deadCrew>
+              <text>By the time you dealt with an Orchid military ship, the trading vessel has already escaped the system. You loot the empty ship, harvesting all resources.</text>
+              <autoReward level="HIGH">standard</autoReward>
+            </deadCrew>
+          </ship>
+        </event>
+        <event>
+          <text>The Orchid ship sent a distress signal asking for help... But nobody came. They have to give up all of their goods to save their lives.</text>
+          <autoReward level="MED">standard</autoReward>
+        </event>
+      </eventList>
+    </choice>
+  </event>
+
+  <event name="ORCHID_SLAVES" unique="true">
+    <text>A rogue ship awaits you at the beacon. "Laborers for cheap! Can be used as oxygen emitters, cannon fodder, gifts to tribal chiefs, firewood, or healthy food."</text>
+    <ship auto_blueprint="SHIPS_PIRATE" hostile="false">
+      <surrender chance="0.2" max="4" min="2">
+        <text>The slavers surrender. "You can take one of these for free! Use them for whatever purpose you want. Just let us go."</text>
+        <choice>
+          <text>Accept their offer.</text>
+          <event>
+            <crewMember amount="1"/>
+            <ship hostile="false"/>
+          </event>
+        </choice>
+        <choice>
+          <text>Surrender is not an option.</text>
+          <event/>
+        </choice>
+      </surrender>
+      <escape chance="0.5" load="PIRATE_ESCAPE" max="4" min="2"/>
+      <destroyed>
+        <text>The slave ship is destroyed. They won't continue their evil trade, but many lives were probably lost on that ship.</text>
+        <autoReward level="MED">standard</autoReward>
+      </destroyed>
+      <deadCrew>
+        <text>With all of the overlords dead, one of enslaved Orchids accepts an offer to join your crew.</text>
+        <crewMember amount="1" class="orchid"/>
+        <autoReward level="MED">standard</autoReward>
+      </deadCrew>
+    </ship>
+    <choice hidden="true">
+      <text>Save the enslaved Orchids!</text>
+      <event>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice>
+      <text>Buy one Orchid slave.</text>
+      <event>
+        <crewMember amount="1" class="orchid"/>
+        <item_modify>
+          <item max="-30" min="-40" type="scrap"/>
+        </item_modify>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Decline and jump away.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <event name="ORCHID_BOTANICAL_GALLERY" unique="true">
+    <text>A giant Orchid station is located at the beacon. It's marked as an "Augmented Botanical Gallery" on your star map.</text>
+    <choice hidden="true">
+      <text>Visit the station.</text>
+      <event>
+        <text>The atmosphere of tranquility with a small touch of curiosity fills the main hall. There are all kinds of strange exhibits in the gallery. You wonder which to visit.</text>
+        <choice>
+          <text>Pay an entry fee to visit "Kernel".</text>
+          <event>
+            <text>The exhibit contains a giant sphere, protected from all sides with reinforced metal coating. Giant trees are growing inside. You are a bit disappointed.</text>
+            <item_modify>
+              <item max="-9" min="-12" type="scrap"/>
+            </item_modify>
+            <choice hidden="true">
+              <text id="continue"/>
+              <event>
+                <text>Suddenly, a series of explosions rocks entire station wing. The trees are bursting, releasing giant kernels out. The protective sphere can barely stop the kernels from destroying the station. The Orchids offer some explosive kernels for free: they are looking for every opportunity to get rid of them.</text>
+                <item_modify>
+                  <item max="12" min="9" type="missiles"/>
+                </item_modify>
+              </event>
+            </choice>
+          </event>
+        </choice>
+        <choice>
+          <text>Pay an entry fee to visit "Cat"</text>
+          <event>
+            <text>The exhibit is a tight overgrown labyrinth of trees and vines containing swarms of creatures of various size moving everywhere rapidly, climbing on surfaces and swinging from vines. You feel overwhelmed and scared even though the creatures do not harm you.</text>
+            <item_modify>
+              <item max="-9" min="-12" type="scrap"/>
+            </item_modify>
+            <choice hidden="true">
+              <text id="continue"/>
+              <event>
+                <text>A small creature jumps right into your hands and purrs! You examine it and realize that it's a drone made by Orchids with metal and organic parts tightly intertwined. After leaving the gallery, you aren't allowed to take the drone: it wasn't built for combat. The Orchids offer you another drone instead.</text>
+                <drone name="RANDOM"/>
+              </event>
+            </choice>
+          </event>
+        </choice>
+        <choice>
+          <text>Pay an entry fee to visit "Hemp".</text>
+          <event>
+            <text>The exhibit contains a field of... grass. It looks like usual Earth grass with plain flowers but strangely familiar leaf pattern. Was it really worth it?</text>
+            <item_modify>
+              <item max="-9" min="-12" type="scrap"/>
+            </item_modify>
+            <choice hidden="true">
+              <text id="continue"/>
+              <event>
+                <text>After a few minutes on the meadow you feel your worries go away, a desire to laugh, and an irresistible urge to hug a Mantis nearby. After a while, you and the Mantis who turned out to be another visitor become best friends and they agree to join your crew.</text>
+                <crewMember amount="1" class="mantis"/>
+              </event>
+            </choice>
+          </event>
+        </choice>
+        <choice>
+          <text>Pay an entry fee to visit "Sap".</text>
+          <event>
+            <text>This exhibit is a giant machine which is made entirely from plant matter. The contraption sap of lean white-barked trees and moving the sap into processing part which outputs a liquid advertised as high quality FTL fuel.</text>
+            <item_modify>
+              <item max="-9" min="-12" type="scrap"/>
+            </item_modify>
+            <choice hidden="true">
+              <text id="continue"/>
+              <event>
+                <text>Since you have already paid for entry, the Orchids are offering some of experimental fuel for free.</text>
+                <item_modify>
+                  <item max="7" min="5" type="fuel"/>
+                </item_modify>
+              </event>
+            </choice>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>Leave a gallery without visiting anything.</text>
+          <event/>
+        </choice>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Charge FTL drive.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <event name="ORCHID_SLUG_TAUNT" unique="true">
+    <text>You are surprised to find a Slug ship in a system, mostly populated by Orchids. The Slugs are requesting to communicate using encrypted channel.</text>
+    <ship hostile="false" load="JELLY"/>
+    <choice hidden="true">
+      <text>Agree to talk with Slugs.</text>
+      <event>
+        <text>"Greetings, two-legged meatsssack. We have been looking for sssuch a fine ssspecimen for a century. You are truly the ugliessst human in the galaxy and deserve to be embalmed and shown in a museum. I only wonder what your mom looksss like."</text>
+        <choice hidden="true">
+          <text>Attack!</text>
+          <event>
+            <text>You fire at the Slug ship and they immediately respond with evasive maneuvers. The Slug captain sends a distress message to nearby Orchid planet claiming to be attacked by pirates. To your surprise, the Orchids respond with locking Anti-ship battery onto your ship. It was all a part of Slug plan.</text>
+            <ship hostile="true"/>
+            <environment target="player" type="PDS"/>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>Close communication and leave the beacon.</text>
+          <event/>
+        </choice>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Decline.</text>
+      <event/>
+    </choice>
+  </event>
+</FTL>

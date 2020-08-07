@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="HOSTILE_LANIUS">
+    <event load="LANIUS_FIGHT"/>
+    <event load="LANIUS_REBEL_FIGHT"/>
+    <event load="LANIUS_PIRATE_FIGHT"/>
+    <event load="LANIUS_HARVESTER"/>
+
+    <event load="REBEL"/>
+    <event load="REBEL_AUTO"/>
+  </eventList>
+
+  <eventList name="HOSTILE_HAZARD_LANIUS">
+    <event load="LANIUS_FIGHT_ASTEROID"/>
+    <event load="LANIUS_FIGHT_PULSAR"/>
+    <event load="LANIUS_NOBOARDERS_PDS"/>
+  </eventList>
+
+  <event name="LANIUS_FIGHT">
+    <textList name="LANIUS_FIGHT_TEXT">
+      <text>Sensors indicate a small Lanius cruiser in the process of salvaging another small Lanius ship. Before you have a chance to wonder what caused them to turn on each other, the survivor notices you and moves in to attack.</text>
+      <text>Shortly after your arrival, a Lanius ship jumps near the beacon. It begins to move slowly toward you. You open wide band communication channels, attempting to make contact. However, it either ignores you or is unable to receive the messages. As they get closer you issue the order to charge weapons and find they do the same.</text>
+      <text>You receive a message on a wide band frequency, originating from an approaching Lanius ship. It appears not to be directed at you, but your translator does its best all the same: "... metallic opportunity... acquisition... by force..." Looks like you're in for a fight.</text>
+      <text>A military Lanius vessel stops repurposing an abandoned satellite as soon as you jump in. It blocks all hails and powers its weapons.</text>
+      <text>The beacon is surrounded by many tiny Lanius craft, surely only capable of holding one occupant. Perhaps they are some kind of forward scout searching for 'metallic opportunities'? As you consider this, a much larger Lanius vessel moves in to engage you, and the scout ships scatter in all directions.</text>
+      <text>You arrive to see a well-armed Lanius craft preparing to salvage a badly damaged Rebel patrol ship. Noticing your arrival, the Lanius greedily moves in to intercept its second target of the day.</text>
+      <text>As you arrive in the system, your proximity alarm begins screaming: there is a Lanius ship right on top of you! Before you have a chance to hail, they open fire!</text>
+      <text>As you are getting your bearings, another ship suddenly arrives at the beacon - it's the Lanius, and they've marked your ship for salvage!</text>
+      <text>At first everything seems quiet, then your scanners pick up a ship approaching at high speed - the Lanius have detected your arrival and are powering up their weapons!</text>
+      <text>You have stumbled across a mining expedition - unfortunately, the miners are the Lanius, and they've chosen your ship as their target!</text>
+    </textList>
+    <ship load="LANIUS_SHIP" hostile="true"/>
+  </event>
+
+  <event name="LANIUS_REBEL_FIGHT">
+    <textList name="LANIUS_REBEL_FIGHT_TEXT">
+      <text>You arrive to see a number of Rebel ships attempting to dissuade Lanius scavenger ships from "acquiring" their forward station. A passing Rebel patrol ship spots you and moves in to intercept.</text>
+      <text>A Rebel scout patrols near the beacon. "Hah! I knew you would try to sneak through this sector as soon as I heard it had become treacherous. Surrender!"</text>
+      <text>You intercept discussions between a Rebel patrol and a human mining colony, "... we realize you're scared but all reports indicate the metal bastards target abandoned settlements only. If we relocated our fleets based on every request from backwater... wait, what's that..." Before you can react, the channel is cut and the Rebel ship moves in to attack.</text>
+      <text>You arrive at the beacon and notice a small Rebel ship chasing Lanius scavengers away from a wrecked Rebel battleship. As soon as the Rebel notices you and moves in to attack, the Lanius ships return to their prey like flies on garbage.</text>
+      <text>A Rebel messages you. "Who would have thought the most wanted ship in the quadrant would just happen by my station? Prepare to meet your maker."</text>
+      <text>Your arrival coincides almost exactly with that of a Rebel ship. It's hard to know who is more surprised, but there is no option but to fight.</text>
+    </textList>
+    <ship load="REBEL" hostile="true"/>
+  </event>
+
+  <event name="LANIUS_PIRATE_FIGHT">
+    <textList name="LANIUS_PIRATE_FIGHT_TEXT">
+      <text>A pirate ship appears to be threatening a small refugee ship near the beacon. Upon seeing you jump in, it turns to approach. The civilian wastes no time and jumps away, but that appears only to harden the pirate's resolve.</text>
+      <text>An upgraded pirate ship sits among the remains of a number of Lanius ships. It hails you, "These punks think they can jus' waltz in here into our sector? Obnoxious, right? Well, I'm sure you know the routine, let's do this."</text>
+      <text>Debris from a number of battleships are scattered around the beacon. As you approach the area a pirate ship thrusts itself through the hulks to attack. It must be using the metal to lure the Lanius into a trap.</text>
+      <text>The pirate ship patroling this sector has been busy. The debris of several Rebel scouts and at least one civilian ship litter the area. "Welcome, welcome, there's room for one more!" The over-confident pirate hails you as he charges his weapons and moves in to attack.</text>
+      <text>The pirate sees you before you see him... prepare for a fight!</text>
+    </textList>
+    <ship load="PIRATE" hostile="true"/>
+  </event>
+
+  <event name="LANIUS_FIGHT_ASTEROID" unique="false">
+    <text>This beacon appears to have been set up within an asteroid field to access a mining settlement. However, half of the settlement has been disassembled by a number of Lanius scavengers. Their military escort moves in to scare you off.</text>
+    <ship load="LANIUS_SHIP" hostile="true"/>
+    <environment type="asteroid"/>
+  </event>
+
+  <event name="LANIUS_FIGHT_PULSAR" unique="false">
+    <text>There appears to be some sort of research station near a pulsar, although it's hard to tell since a portion of it has been melted. The Lanius ship that has been working at it moves in to intercept you, totally oblivious to the threat of EM pulses.</text>
+    <ship load="LANIUS_SHIP" hostile="true"/>
+    <environment type="pulsar"/>
+  </event>
+
+  <event name="LANIUS_NOBOARDERS_PDS" unique="false">
+    <text planet="PLANET_POPULATED">Upon arrival you are immediately surrounded by chaos: a planet's Anti-Ship Battery is firing on a number of Lanius ships; one of the combat ships mistakenly believes your ship has arrived to assist the planetary defenses. Combat positions!</text>
+    <environment type="PDS" target="enemy"/>
+    <ship load="LANIUS_BOARDERS_PDS" hostile="true"/>
+  </event>
+  <eventList name="LANIUS_BOARDERS_PDS_LIST">
+    <event>
+      <text>After your skirmish the fighting dies down and you're contacted by the planetary defense team. "Sorry you got caught up in that fight, stranger. No matter how many of these monsters we blow out of the sky they just keep coming. We can patch up your ship for you."</text>
+      <damage amount="-8"/>
+    </event>
+    <event>
+      <text>You finish off your assailant with the help of the Anti-Ship Battery but the fight rages on in the distance. You'd best leave before you get dragged into it again.</text>
+    </event>
+  </eventList>
+  <ship name="LANIUS_BOARDERS_PDS" auto_blueprint="SHIPS_LANIUS">
+    <destroyed>
+      <text>The ship breaks apart. You decide to salvage it when the opportunity arises.</text>
+      <autoReward level="MED">standard</autoReward>
+      <choice hidden="true">
+        <text id="continue"/>
+        <event load="LANIUS_BOARDERS_PDS_LIST"/>
+      </choice>
+    </destroyed>
+    <deadCrew>
+      <text>No more life signs detected on the Lanius ship. You decide to salvage it when the opportunity arises.</text>
+      <autoReward level="HIGH">standard</autoReward>
+      <choice hidden="true">
+        <text id="continue"/>
+        <event load="LANIUS_BOARDERS_PDS_LIST"/>
+      </choice>
+    </deadCrew>
+  </ship>
+
+  <event name="LANIUS_HARVESTER" unique="true">
+    <text>Your scans have picked up a Lanius vessel in this system: it appears to be navigating a rich debris field, harvesting the minerals.</text>
+    <choice hidden="true">
+      <text>Attempt to harvest some for yourself.</text>
+      <event>
+        <text>As you attempt to navigate the debris, you come too close to the Lanius ship - and they proceed to try to harvest you!</text>
+        <ship load="LANIUS_HARVESTER_SHIP" hostile="true"/>
+      </event>
+    </choice>
+    <choice req="pilot" lvl="2" hidden="true" max_group="0">
+      <text>[Improved Piloting] Engage the auto-pilot and safely harvest the debris.</text>
+      <event>
+        <text>With help from the computer, you are able to keep a comfortable distance between you and the Lanius ship, and you are able to gather resources from the debris field without conflict.</text>
+        <autoReward level="MED">standard</autoReward>
+      </event>
+    </choice>
+    <choice req="pilot" lvl="3" hidden="true" max_group="0">
+      <text>[Advanced Piloting] Engage the auto-pilot and safely harvest the debris.</text>
+      <event>
+        <text>With help from the computer, you are able to keep a comfortable distance between you and the Lanius ship, and you gather a considerable amount of resources from the debris field without conflict.</text>
+        <autoReward level="HIGH">standard</autoReward>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Attack the vessel.</text>
+      <event>
+        <text>You go on the offensive and power up your weapons - with any luck, you'll soon have the mineral field all to yourself.</text>
+        <ship load="LANIUS_HARVESTER_SHIP" hostile="true"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Ignore the vessel.</text>
+      <event>
+        <text>You charge up your drive and prepare to make the next jump. No sense in antagonizing the Lanius if you don't need to.</text>
+      </event>
+    </choice>
+  </event>
+  <ship name="LANIUS_HARVESTER_SHIP" auto_blueprint="SHIPS_LANIUS">
+    <destroyed>
+      <text>The ship explodes, leaving behind a collection of useful scrap material.</text>
+      <autoReward level="MED">standard</autoReward>
+      <choice hidden="true">
+        <text>Investigate the debris.</text>
+        <event load="LANIUS_HARVESTER_SHIP_LIST"/>
+      </choice>
+    </destroyed>
+    <deadCrew>
+      <text>There are no more life-signs remaining on the ship. You strip it of useful materials.</text>
+      <autoReward level="MED">standard</autoReward>
+      <choice hidden="true">
+        <text>Investigate the debris.</text>
+        <event load="LANIUS_HARVESTER_SHIP_LIST"/>
+      </choice>
+    </deadCrew>
+  </ship>
+  <eventList name="LANIUS_HARVESTER_SHIP_LIST">
+    <event>
+      <text>The competitor gone, you investigate the debris, but it looks as if the Lanius harvested much of it before you arrived.</text>
+      <item_modify>
+        <item type="scrap" min="8" max="10"/>
+      </item_modify>
+    </event>
+    <event>
+      <text>The competitor gone, you proceed to investigate the field and scavenge what you can.</text>
+      <autoReward level="LOW">standard</autoReward>
+    </event>
+    <event>
+      <text>It looks like you interrupted the Lanius before they had a chance to scavenge much from the debris, and you make off with a good haul.</text>
+      <autoReward level="MED">standard</autoReward>
+    </event>
+  </eventList>
+</FTL>

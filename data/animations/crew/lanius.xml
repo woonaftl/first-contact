@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <animSheet name="anaerobic" w="280" h="490" fw="35" fh="35">people/anaerobic_base.png</animSheet>
+
+  <anim name="anaerobic_clone">
+    <sheet>anaerobic</sheet>
+    <desc length="6" x="0" y="1"/>
+    <time>0.75</time>
+  </anim>
+
+  <anim name="anaerobic_death_right">
+    <sheet>anaerobic</sheet>
+    <desc length="8" x="0" y="2"/>
+    <time>0.75</time>
+  </anim>
+
+  <anim name="anaerobic_death_left">
+    <sheet>anaerobic</sheet>
+    <desc length="8" x="0" y="2"/>
+    <time>0.75</time>
+  </anim>
+
+  <anim name="anaerobic_walk_down">
+    <sheet>anaerobic</sheet>
+    <desc length="4" x="0" y="13"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="anaerobic_walk_right">
+    <sheet>anaerobic</sheet>
+    <desc length="4" x="4" y="13"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="anaerobic_walk_up">
+    <sheet>anaerobic</sheet>
+    <desc length="4" x="0" y="12"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="anaerobic_walk_left">
+    <sheet>anaerobic</sheet>
+    <desc length="4" x="4" y="12"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="anaerobic_shoot_down">
+    <sheet>anaerobic</sheet>
+    <desc length="3" x="0" y="11"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="anaerobic_shoot_right">
+    <sheet>anaerobic</sheet>
+    <desc length="3" x="3" y="11"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="anaerobic_shoot_up">
+    <sheet>anaerobic</sheet>
+    <desc length="3" x="0" y="10"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="anaerobic_shoot_left">
+    <sheet>anaerobic</sheet>
+    <desc length="3" x="3" y="10"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="anaerobic_fire_down">
+    <sheet>anaerobic</sheet>
+    <desc length="4" x="0" y="9"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="anaerobic_fire_right">
+    <sheet>anaerobic</sheet>
+    <desc length="4" x="4" y="9"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="anaerobic_fire_up">
+    <sheet>anaerobic</sheet>
+    <desc length="4" x="0" y="8"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="anaerobic_fire_left">
+    <sheet>anaerobic</sheet>
+    <desc length="4" x="4" y="8"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="anaerobic_repair">
+    <sheet>anaerobic</sheet>
+    <desc length="4" x="3" y="0"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="anaerobic_punch_up">
+    <sheet>anaerobic</sheet>
+    <desc length="6" x="0" y="7"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="anaerobic_punch_down">
+    <sheet>anaerobic</sheet>
+    <desc length="6" x="0" y="6"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="anaerobic_teleport">
+    <sheet>anaerobic</sheet>
+    <desc length="9" x="0" y="3"/>
+    <time>0.5</time>
+  </anim>
+
+  <anim name="anaerobic_type_right">
+    <sheet>anaerobic</sheet>
+    <desc length="4" x="0" y="5"/>
+    <time>0.75</time>
+  </anim>
+  <anim name="anaerobic_type_left">
+    <sheet>anaerobic</sheet>
+    <desc length="4" x="4" y="5"/>
+    <time>0.75</time>
+  </anim>
+  <anim name="anaerobic_type_up">
+    <sheet>anaerobic</sheet>
+    <desc length="4" x="0" y="4"/>
+    <time>0.75</time>
+  </anim>
+  <anim name="anaerobic_type_down">
+    <sheet>anaerobic</sheet>
+    <desc length="4" x="4" y="4"/>
+    <time>0.75</time>
+  </anim>
+
+  <anim name="anaerobic_portrait">
+    <sheet>anaerobic</sheet>
+    <desc length="1" x="0" y="0"/>
+    <time>1</time>
+  </anim>
+</FTL>

@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <event name="REFUGEE_DISTRESS">
+    <text>You have encountered a refugee ship drifting in space. It looks as if it was fleeing the Rebel advance and ran out of fuel. Its distress beacon is active, but you're not sure anyone is on board.</text>
+    <choice>
+      <text>Hail them.</text>
+      <event load="REFUGEE_HAIL_LIST"/>
+    </choice>
+    <choice>
+      <text>Ignore the refugees.</text>
+      <event/>
+    </choice>
+    <distressBeacon/>
+  </event>
+  <event name="REFUGEE_NO_DISTRESS">
+    <text>Your sensors have picked up a refugee ship drifting through the system, no doubt one of many fleeing the Rebel advance. It doesn't appear to have detected you... or else it is trying to avoid notice.</text>
+    <choice>
+      <text>Hail them.</text>
+      <event load="REFUGEE_HAIL_LIST"/>
+    </choice>
+    <choice>
+      <text>Ignore the refugees.</text>
+      <event/>
+    </choice>
+  </event>
+  <event name="REFUGEE_TRADER">
+    <text>The vessel is relieved to hear from you! They are running low on supplies. They suggest a trade.</text>
+    <choice>
+      <text>Trade with them.</text>
+      <event load="TRADER_LIST"/>
+    </choice>
+    <choice>
+      <text>Politely decline.</text>
+      <event/>
+    </choice>
+  </event>
+  <eventList name="REFUGEE_HAIL_LIST">
+    <event load="REFUGEE_TRADER" count="4"/>
+    <event>
+      <text>As you hail the freighter, it advances, weapons bristling from its hull! It's a pirate ambush!</text>
+      <ship load="PIRATE" hostile="true"/>
+    </event>
+    <event>
+      <text>As you hail the refugee ship, a Zoltan ship suddenly jumps into the system... it claims the refugees are criminals, and accuses you of escorting fugitives! Before you can respond, it cuts communications, and powers up its weapons!</text>
+      <ship load="ZOLTAN_REFUGEE" hostile="true"/>
+    </event>
+    <event>
+      <text>As you hail the refugee ship, a pirate ship jumps into the system... it was using the refugee ship as bait!</text>
+      <ship load="PIRATE_REFUGEE" hostile="true"/>
+    </event>
+    <event>
+      <text>As you hail the refugee ship, a Slug ship jumps into the system... it was hunting the refugee ship for sport and now they've found you instead!</text>
+      <ship load="SLUG_REFUGEE" hostile="true"/>
+    </event>
+  </eventList>
+  <ship name="ZOLTAN_REFUGEE" auto_blueprint="SHIPS_ZOLTAN">
+    <destroyed>
+      <text>The Zoltan ship breaks apart and you salvage what you can.</text>
+      <autoReward level="MED">standard</autoReward>
+      <choice hidden="true">
+        <text>Contact the refugee ship.</text>
+        <event>
+          <text>The refugee ship thanks you for your assistance. As a gesture of good will (and seeing how effectively you dispatched the enemy ship), they offer up what supplies they can spare.</text>
+          <autoReward level="LOW">standard</autoReward>
+        </event>
+      </choice>
+    </destroyed>
+    <deadCrew>
+      <text>The Zoltan ship, now empty of lifeforms, provides easy salvage.</text>
+      <autoReward level="HIGH">standard</autoReward>
+      <choice hidden="true">
+        <text>Contact the refugee ship.</text>
+        <event>
+          <text>The refugee ship thanks you for your assistance. As a gesture of good will (and seeing how effectively you dispatched the enemy ship), they offer up what supplies they can spare.</text>
+          <autoReward level="LOW">standard</autoReward>
+        </event>
+      </choice>
+    </deadCrew>
+  </ship>
+  <ship name="PIRATE_REFUGEE" auto_blueprint="SHIPS_PIRATE">
+    <destroyed>
+      <text>The pirate ship breaks apart and you salvage what you can.</text>
+      <autoReward level="MED">standard</autoReward>
+      <choice hidden="true">
+        <text>Contact the refugee ship.</text>
+        <event>
+          <text>The refugee ship thanks you for your assistance. As a gesture of good will (and seeing how effectively you dispatched the enemy ship), they offer up what supplies they can spare.</text>
+          <autoReward level="LOW">standard</autoReward>
+        </event>
+      </choice>
+    </destroyed>
+    <deadCrew>
+      <text>The pirate ship, now empty of lifeforms, provides easy salvage.</text>
+      <autoReward level="HIGH">standard</autoReward>
+      <choice hidden="true">
+        <text>Contact the refugee ship.</text>
+        <event>
+          <text>The refugee ship claims pirates have been following their trail since they left their homeworld. As a gesture of good will (and seeing how effectively you dispatched the enemy ship), they offer up what supplies they can spare.</text>
+          <autoReward level="LOW">standard</autoReward>
+        </event>
+      </choice>
+    </deadCrew>
+  </ship>
+  <ship name="SLUG_REFUGEE" auto_blueprint="SHIPS_JELLY">
+    <destroyed>
+      <text>The Slug ship breaks apart and you salvage what you can.</text>
+      <autoReward level="MED">standard</autoReward>
+      <choice hidden="true">
+        <text>Contact the refugee ship.</text>
+        <event>
+          <text>The refugee ship claims the Slugs have been hounding them since they left their homeworld. As a gesture of good will (and seeing how effectively you dispatched the enemy ship), they offer up what supplies they can spare.</text>
+          <autoReward level="LOW">standard</autoReward>
+        </event>
+      </choice>
+    </destroyed>
+    <deadCrew>
+      <text>The Slug ship, now empty of lifeforms, provides easy salvage.</text>
+      <autoReward level="HIGH">standard</autoReward>
+      <choice hidden="true">
+        <text>Contact the refugee ship.</text>
+        <event>
+          <text>The refugee ship claims the Slugs have been hounding them since they left their homeworld. As a gesture of good will (and seeing how effectively you dispatched the enemy ship), they offer up what supplies they can spare.</text>
+          <autoReward level="LOW">standard</autoReward>
+        </event>
+      </choice>
+    </deadCrew>
+  </ship>
+  <event name="REFUGEE_DISTRESS_ZOLTAN">
+    <text>You have encountered a refugee ship drifting in space. It looks as if it was fleeing the Rebel advance and ran out of fuel. Its distress beacon is active, but you're not sure anyone is on board.</text>
+    <choice>
+      <text>Hail them.</text>
+      <event load="REFUGEE_HAIL_LIST_ZOLTAN"/>
+    </choice>
+    <choice>
+      <text>Ignore the refugees.</text>
+      <event/>
+    </choice>
+    <distressBeacon/>
+  </event>
+  <event name="REFUGEE_NO_DISTRESS_ZOLTAN">
+    <text>Your sensors have picked up a refugee ship drifting through the system, no doubt one of many fleeing the Rebel advance. It doesn't appear to have detected you... or else it is trying to avoid notice.</text>
+    <choice>
+      <text>Hail them.</text>
+      <event load="REFUGEE_HAIL_LIST_ZOLTAN"/>
+    </choice>
+    <choice>
+      <text>Ignore the refugees.</text>
+      <event/>
+    </choice>
+  </event>
+  <eventList name="REFUGEE_HAIL_LIST_ZOLTAN">
+    <event load="REFUGEE_TRADER"/>
+    <event>
+      <text>As you hail the refugee ship, a Zoltan ship suddenly jumps into the system... it claims the refugees are criminals, and accuses you of escorting fugitives! Before you can respond, it cuts communications, and powers up its weapons!</text>
+      <ship load="ZOLTAN_REFUGEE" hostile="true"/>
+    </event>
+  </eventList>
+
+  <event name="REFUGEE_DISTRESS_PIRATE">
+    <text>You have encountered a refugee ship drifting in space. It looks as if it was fleeing the Rebel advance and ran out of fuel. Its distress beacon is active, but you're not sure anyone is on board.</text>
+    <choice>
+      <text>Hail them.</text>
+      <event load="REFUGEE_HAIL_LIST_PIRATE"/>
+    </choice>
+    <choice>
+      <text>Ignore the refugees.</text>
+      <event/>
+    </choice>
+    <distressBeacon/>
+  </event>
+  <event name="REFUGEE_NO_DISTRESS_PIRATE">
+    <text>Your sensors have picked up a refugee ship drifting through the system, no doubt one of many fleeing the Rebel advance. It doesn't appear to have detected you... or else it is trying to avoid notice.</text>
+    <choice>
+      <text>Hail them.</text>
+      <event load="REFUGEE_HAIL_LIST_PIRATE"/>
+    </choice>
+    <choice>
+      <text>Ignore the refugees.</text>
+      <event/>
+    </choice>
+  </event>
+  <eventList name="REFUGEE_HAIL_LIST_PIRATE">
+    <event load="REFUGEE_TRADER"/>
+    <event>
+      <text>As you hail the refugee ship, a pirate ship jumps into the system... it was using the refugee ship as bait!</text>
+      <ship load="PIRATE_REFUGEE" hostile="true"/>
+    </event>
+  </eventList>
+  <event name="REFUGEE_DISTRESS_SLUG">
+    <text>You have encountered a refugee ship drifting in space. It looks as if it was fleeing the Rebel advance and ran out of fuel. Its distress beacon is active, but you're not sure anyone is on board.</text>
+    <choice>
+      <text>Hail them.</text>
+      <event load="REFUGEE_HAIL_LIST_SLUG"/>
+    </choice>
+    <choice>
+      <text>Ignore the refugees.</text>
+      <event/>
+    </choice>
+    <distressBeacon/>
+  </event>
+  <event name="REFUGEE_NO_DISTRESS_SLUG">
+    <text>Your sensors have picked up a refugee ship drifting through the system, no doubt one of many fleeing the Rebel advance. It doesn't appear to have detected you... or else it is trying to avoid notice.</text>
+    <environment type="nebula"/>
+    <choice>
+      <text>Hail them.</text>
+      <event load="REFUGEE_HAIL_LIST_SLUG"/>
+    </choice>
+    <choice>
+      <text>Ignore the refugees.</text>
+      <event/>
+    </choice>
+  </event>
+  <eventList name="REFUGEE_HAIL_LIST_SLUG">
+    <event load="REFUGEE_TRADER"/>
+    <event>
+      <text>As you hail the refugee ship, a pirate ship jumps into the system... it was using the refugee ship as bait!</text>
+      <ship load="PIRATE_REFUGEE" hostile="true"/>
+    </event>
+  </eventList>
+</FTL>

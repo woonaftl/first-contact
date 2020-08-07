@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../schema/autoBlueprints.xsd">
+  <blueprintList name="SHIPS_REBEL_AND_AUTO">
+    <name>AUTO_BASIC</name>
+    <name>AUTO_ASSAULT</name>
+    <name>AUTO_EXPLORER</name>
+    <name>AUTO_HUNTER</name>
+    <name>AUTO_DEFENDER</name>
+    <name>AUTO_INVADER</name>
+  </blueprintList>
+  <blueprintList name="SHIPS_AUTO">
+    <name>AUTO_BASIC</name>
+    <name>AUTO_ASSAULT</name>
+    <name>AUTO_EXPLORER</name>
+    <name>AUTO_HUNTER</name>
+    <name>AUTO_DEFENDER</name>
+    <name>AUTO_INVADER</name>
+  </blueprintList>
+  <blueprintList name="AUTO_FUEL_LIST">
+    <name>AUTO_FUEL</name>
+  </blueprintList>
+
+  <shipBlueprintSuper name="AUTO_BASIC" layout="auto_basic" img="auto_basic">
+    <class>Auto-Scout</class>
+    <systemList>
+      <pilot power="1" max="2" room="2"/>
+      <shields power="2" max="8" room="3" start="false"/>
+      <engines power="1" max="8" room="1"/>
+      <weapons room="4"/>
+      <cloaking power="1" max="2" room="0" start="false"/>
+    </systemList>
+    <weaponList sector="0" missiles="0" system_power="2">
+      <weapon name="WEAPONS_LASER_1"/>
+      <weapon name="WEAPONS_ANY_1"/>
+    </weaponList>
+    <weaponList sector="1" missiles="0" system_power="3">
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_ANY_1"/>
+    </weaponList>
+    <weaponList sector="2" missiles="0" system_power="4">
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_ANY_2"/>
+    </weaponList>
+    <weaponList sector="3" missiles="0" system_power="5">
+      <weapon name="WEAPONS_LASER_3"/>
+      <weapon name="WEAPONS_ANY_2"/>
+    </weaponList>
+    <health amount="6"/>
+    <crewCount amount="0" max="0" class="human"/>
+    <cloakImage>auto_basic</cloakImage>
+  </shipBlueprintSuper>
+
+  <shipBlueprintSuper name="AUTO_ASSAULT" layout="auto_assault" img="auto_assault">
+    <class>Auto-Assault</class>
+    <systemList>
+      <pilot power="1" max="3" room="2"/>
+      <shields power="2" max="8" room="3"/>
+      <engines power="1" max="5" room="4"/>
+      <weapons room="1"/>
+      <drones power="2" room="0" max="6"/>
+    </systemList>
+    <weaponList sector="2" missiles="0" system_power="2">
+      <weapon name="WEAPONS_ION_1"/>
+      <weapon name="WEAPONS_LASER_1"/>
+    </weaponList>
+    <weaponList sector="3" missiles="0" system_power="3">
+      <weapon name="WEAPONS_ION_2"/>
+      <weapon name="WEAPONS_LASER_1"/>
+    </weaponList>
+    <weaponList sector="4" missiles="0" system_power="4">
+      <weapon name="WEAPONS_ION_3"/>
+      <weapon name="WEAPONS_LASER_1"/>
+    </weaponList>
+    <weaponList sector="5" missiles="0" system_power="5">
+      <weapon name="WEAPONS_ION_3"/>
+      <weapon name="WEAPONS_LASER_1"/>
+      <weapon name="WEAPONS_LASER_1"/>
+    </weaponList>
+    <droneList drones="5" load="DRONES_COMBAT"/>
+    <health amount="8"/>
+    <crewCount amount="0" max="0" class="human"/>
+    <cloakImage>auto_assault</cloakImage>
+  </shipBlueprintSuper>
+
+  <shipBlueprintSuper name="AUTO_EXPLORER" layout="auto_explorer" img="auto_explorer">
+    <class>Auto-Explorer</class>
+    <systemList>
+      <pilot power="1" max="3" room="0"/>
+      <engines power="1" max="8" room="3"/>
+      <weapons room="1"/>
+      <shields power="2" max="6" room="4"/>
+      <hacking power="1" max="1" room="2" start="false"/>
+    </systemList>
+    <weaponList sector="0" missiles="1" system_power="2">
+      <weapon name="WEAPONS_MISSILES_1"/>
+      <weapon name="WEAPONS_ANY_1"/>
+      <weapon name="WEAPONS_LASER_1"/>
+    </weaponList>
+    <weaponList sector="1" missiles="1" system_power="3">
+      <weapon name="WEAPONS_MISSILES_1"/>
+      <weapon name="WEAPONS_ANY_2"/>
+      <weapon name="WEAPONS_LASER_1"/>
+    </weaponList>
+    <weaponList sector="2" missiles="1" system_power="4">
+      <weapon name="WEAPONS_MISSILES_1"/>
+      <weapon name="WEAPONS_ANY_3"/>
+      <weapon name="WEAPONS_LASER_1"/>
+    </weaponList>
+    <weaponList sector="3" missiles="1" system_power="5">
+      <weapon name="WEAPONS_MISSILES_1"/>
+      <weapon name="WEAPONS_ANY_3"/>
+      <weapon name="WEAPONS_ANY_1"/>
+      <weapon name="WEAPONS_LASER_1"/>
+    </weaponList>
+    <droneList drones="4"/>
+    <health amount="5"/>
+    <crewCount amount="0" max="0" class="human"/>
+    <cloakImage>auto_explorer</cloakImage>
+  </shipBlueprintSuper>
+
+  <shipBlueprintSuper name="AUTO_FUEL" layout="auto_fuel" img="auto_fuel">
+    <class>Auto-Fuel Trader</class>
+    <systemList>
+      <pilot power="1" max="3" room="0"/>
+      <engines power="1" max="8" room="1"/>
+      <weapons room="2"/>
+      <shields power="2" max="6" room="3"/>
+    </systemList>
+    <weaponList sector="0" missiles="0" system_power="2">
+      <weapon name="WEAPONS_LASER_1"/>
+      <weapon name="WEAPONS_ANY_1"/>
+    </weaponList>
+    <weaponList sector="1" missiles="0" system_power="3">
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_ANY_1"/>
+    </weaponList>
+    <weaponList sector="2" missiles="0" system_power="4">
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_ANY_2"/>
+    </weaponList>
+    <weaponList sector="3" missiles="0" system_power="5">
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_ANY_2"/>
+      <weapon name="WEAPONS_ANY_1"/>
+    </weaponList>
+    <weaponList sector="4" missiles="1" system_power="5">
+      <weapon name="WEAPONS_MISSILES_1"/>
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_ANY_2"/>
+      <weapon name="WEAPONS_ANY_1"/>
+    </weaponList>
+    <weaponList sector="5" missiles="1" system_power="6">
+      <weapon name="WEAPONS_MISSILES_1"/>
+      <weapon name="WEAPONS_LASER_3"/>
+      <weapon name="WEAPONS_ANY_2"/>
+      <weapon name="WEAPONS_ANY_1"/>
+    </weaponList>
+    <weaponList sector="6" missiles="1" system_power="7">
+      <weapon name="WEAPONS_MISSILES_1"/>
+      <weapon name="WEAPONS_LASER_3"/>
+      <weapon name="WEAPONS_ANY_3"/>
+      <weapon name="WEAPONS_ANY_1"/>
+    </weaponList>
+    <weaponList sector="7" missiles="1" system_power="8">
+      <weapon name="WEAPONS_MISSILES_2"/>
+      <weapon name="WEAPONS_LASER_3"/>
+      <weapon name="WEAPONS_ANY_3"/>
+      <weapon name="WEAPONS_ANY_2"/>
+    </weaponList>
+    <health amount="6"/>
+    <crewCount amount="0" max="0" class="human"/>
+    <cloakImage>auto_fuel</cloakImage>
+  </shipBlueprintSuper>
+
+  <shipBlueprintSuper name="AUTO_HUNTER" layout="auto_hunter" img="auto_hunter">
+    <class>Auto-Hunter</class>
+    <systemList>
+      <pilot power="1" max="3" room="0"/>
+      <engines power="1" max="6" room="1"/>
+      <weapons room="2"/>
+      <shields power="2" max="8" room="3"/>
+      <drones power="3" max="6" room="4"/>
+      <cloaking power="1" max="2" room="5" start="false"/>
+    </systemList>
+    <weaponList sector="4" missiles="0" system_power="5">
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_ANY_1"/>
+    </weaponList>
+    <weaponList sector="5" missiles="0" system_power="6">
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_ANY_2"/>
+    </weaponList>
+    <weaponList sector="6" missiles="0" system_power="7">
+      <weapon name="WEAPONS_LASER_3"/>
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_ANY_2"/>
+    </weaponList>
+    <weaponList sector="7" missiles="0" system_power="8">
+      <weapon name="WEAPONS_LASER_3"/>
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_ANY_2"/>
+      <weapon name="WEAPONS_ANY_1"/>
+    </weaponList>
+    <droneList drones="5" load="DRONES_BOARDER"/>
+    <health amount="8"/>
+    <crewCount amount="0" max="0" class="human"/>
+    <cloakImage>auto_hunter</cloakImage>
+  </shipBlueprintSuper>
+
+  <shipBlueprintSuper name="AUTO_INVADER" layout="auto_invader" img="auto_invader">
+    <class>Auto-Invader</class>
+    <systemList>
+      <pilot power="1" max="3" room="1"/>
+      <engines power="1" max="8" room="2"/>
+      <weapons room="4"/>
+      <shields power="2" max="6" room="3"/>
+      <hacking power="1" max="2" room="5" start="false"/>
+    </systemList>
+    <weaponList sector="0" missiles="0" system_power="2">
+      <weapon name="WEAPONS_ION_1"/>
+      <weapon name="WEAPONS_LASER_1"/>
+    </weaponList>
+    <weaponList sector="1" missiles="0" system_power="3">
+      <weapon name="WEAPONS_ION_2"/>
+      <weapon name="WEAPONS_LASER_1"/>
+    </weaponList>
+    <weaponList sector="2" missiles="0" system_power="4">
+      <weapon name="WEAPONS_ION_2"/>
+      <weapon name="WEAPONS_LASER_1"/>
+      <weapon name="WEAPONS_LASER_1"/>
+    </weaponList>
+    <weaponList sector="3" missiles="0" system_power="5">
+      <weapon name="WEAPONS_ION_2"/>
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_LASER_1"/>
+    </weaponList>
+    <droneList drones="4"/>
+    <health amount="6"/>
+    <crewCount amount="0" max="0" class="human"/>
+    <cloakImage>auto_invader</cloakImage>
+  </shipBlueprintSuper>
+
+  <shipBlueprintSuper name="AUTO_DEFENDER" layout="auto_defender" img="auto_defender">
+    <class>Auto-Defender</class>
+    <systemList>
+      <pilot power="1" max="3" room="0"/>
+      <engines power="1" max="8" room="1"/>
+      <weapons room="2"/>
+      <shields power="2" max="8" room="5"/>
+      <cloaking power="1" max="3" room="4" start="false"/>
+      <drones power="2" max="8" room="3"/>
+    </systemList>
+    <weaponList sector="4" missiles="0" system_power="5">
+      <weapon name="WEAPONS_ION_2"/>
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_ION_1"/>
+    </weaponList>
+    <weaponList sector="5" missiles="0" system_power="6">
+      <weapon name="WEAPONS_ION_2"/>
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_ION_2"/>
+    </weaponList>
+    <weaponList sector="6" missiles="0" system_power="7">
+      <weapon name="WEAPONS_ION_3"/>
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_ION_2"/>
+    </weaponList>
+    <weaponList sector="7" missiles="0" system_power="8">
+      <weapon name="WEAPONS_ION_3"/>
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_ION_2"/>
+      <weapon name="WEAPONS_ANY_1"/>
+    </weaponList>
+    <droneList drones="5" load="DRONES_COMBAT"/>
+    <health amount="7"/>
+    <crewCount amount="0" max="0" class="human"/>
+    <cloakImage>auto_defender</cloakImage>
+  </shipBlueprintSuper>
+
+</FTL>

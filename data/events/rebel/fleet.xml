@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <event name="FLEET_EASY_NEBULA">
+    <text>An advanced Rebel hunter easily found your ship. You can't see it through the nebula, but you can assume the fleet is right on top of you. You need to escape quickly.</text>
+    <ship load="LONG_FLEET" hostile="true"/>
+    <environment type="storm"/>
+  </event>
+
+  <event name="FLEET_EASY">
+    <fleet>rebel</fleet>
+    <text>The Rebel fleet has found you, and a nearby scout turns to engage. The cruisers in the distance are firing on you!</text>
+    <ship load="LONG_FLEET" hostile="true"/>
+    <environment type="PDS" target="player"/>
+  </event>
+
+  <event name="FLEET_EASY_DLC">
+    <fleet>rebel</fleet>
+    <text>The Rebel fleet has found you, and a nearby scout turns to engage. The cruisers in the distance are firing on you!</text>
+    <ship load="LONG_FLEET" hostile="true"/>
+    <environment type="PDS" target="player"/>
+  </event>
+
+  <event name="FLEET_EASY_BEACON">
+    <fleet>rebel</fleet>
+    <text>You've found the exit beacon but the Rebels got here first! You must survive long enough to be able to jump to the next sector.</text>
+    <ship load="LONG_FLEET" hostile="true"/>
+  </event>
+
+  <event name="FLEET_EASY_BEACON_DLC">
+    <fleet>rebel</fleet>
+    <text>You've found the exit beacon but the Rebels got here first! You must survive long enough to be able to jump to the next sector.</text>
+    <ship load="LONG_FLEET" hostile="true"/>
+    <environment type="PDS" target="player"/>
+  </event>
+
+  <event name="FLEET_HARD">
+    <fleet>rebel</fleet>
+    <text>The Rebel fleet has found you, and a nearby scout turns to engage. You must flee before their cruisers open fire!</text>
+    <ship load="LONG_FLEET" hostile="true"/>
+  </event>
+
+  <event name="NO_FUEL_FLEET">
+    <text>The Rebel fleet has caught up to you. You detect significant fuel reserves in one of their closer fighters and move in to attack. Maybe you can still pull this off.</text>
+    <ship load="REBEL_FLEET_FUEL" hostile="true"/>
+    <fleet>rebel</fleet>
+  </event>
+
+  <event name="NO_FUEL_FLEET_DLC">
+    <text>Your pilot deftly avoids incoming artillery fire from the surrounding fleet while you try to sort out exactly what your plan is... One of the many approaching fighters gets into weapon range and your scanners detect it has surplus fuel. Maybe you can still pull this off.</text>
+    <ship load="REBEL_FLEET_FUEL" hostile="true"/>
+    <fleet>rebel</fleet>
+    <environment type="PDS" target="player"/>
+  </event>
+
+  <ship name="LONG_FLEET" auto_blueprint="SHIPS_REBEL_ELITE">
+    <destroyed>
+      <text>There's no time to salvage the enemy ship... You must jump away before the cruisers get in firing range!</text>
+      <item_modify>
+        <item type="fuel" min="1" max="1"/>
+      </item_modify>
+    </destroyed>
+    <deadCrew>
+      <text>There's no time to salvage the enemy ship... You must jump away before the cruisers get in firing range!</text>
+      <item_modify>
+        <item type="fuel" min="1" max="1"/>
+      </item_modify>
+    </deadCrew>
+  </ship>
+
+  <ship name="REBEL_FLEET_FUEL" auto_blueprint="SHIPS_REBEL_ELITE">
+    <escape timer="80" min="30" max="30"/>
+    <gotaway>
+      <text>The ship jumps away without a word. You assume they just went to get reinforcements...</text>
+    </gotaway>
+    <destroyed>
+      <text>You manage to retrieve a few precious fuel capsules. You hurry to jump away from the cruiser fire!</text>
+      <item_modify>
+        <item type="fuel" min="2" max="4"/>
+      </item_modify>
+    </destroyed>
+    <deadCrew>
+      <text>You manage to retrieve a few precious fuel capsules. You hurry to jump away from the cruiser fire!</text>
+      <item_modify>
+        <item type="fuel" min="2" max="4"/>
+      </item_modify>
+    </deadCrew>
+  </ship>
+</FTL>

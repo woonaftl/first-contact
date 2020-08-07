@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="HOSTILE_ORCHID">
+    <event load="ORCHID_FIGHT" count="2"/>
+    <event load="ORCHID_PIRATE_FIGHT"/>
+    <event load="ORCHID_ROCK_FIGHT"/>
+    <event load="ORCHID_MANTIS_FIGHT"/>
+    <event load="ORCHID_REBEL_FIGHT"/>
+    <event load="ORCHID_AUTO_FIGHT"/>
+    <event load="ORCHID_CAPTURED_REBEL_FIGHT"/>
+    <event load="ORCHID_PIRATE_FRIENDLY_ASB"/>
+  </eventList>
+
+  <eventList name="HOSTILE_HAZARD_ORCHID">
+    <event load="PIRATE_ASTEROID"/>
+    <event load="PIRATE_SUN"/>
+    <event load="PIRATE_PULSAR"/>
+  </eventList>
+
+  <event name="ORCHID_FIGHT" unique="false">
+    <textList>
+      <text>A hostile Orchid ship awaits you at the beacon. Without a single word, they open fire.</text>
+      <text>The Orchids at the beacon behave unusually aggressive. One of the ships moves in your direction with weapons online. Scans indicate that the crew is being consumed by some form of alien plant parasites.</text>
+      <text>An Orchid military ship approaches and scans your ship. Having found that you're far from being peaceful, the Orchids arm their weapons to protect their home.</text>
+      <text>An unusually verbose Orchid ship at the beacon sends you a message using a word communicator: "We got reports that you aliens are feeding upon sentient flora after cooking them with fire! For that crime you shall be punished!"</text>
+      <text>An Orchid ship awaits you at the beacon. An ominous message appears on communication screen: "In this world... It's KILL or BE killed!"</text>
+    </textList>
+    <ship hostile="true" load="ORCHID_SHIP"/>
+  </event>
+
+  <event name="ORCHID_PIRATE_FIGHT" unique="false">
+    <textList>
+      <text>The Orchids put a lot of effort into maintaining security of their homeworlds, but a pirate still managed to slip through their defenses. Prepare for battle!</text>
+      <text>The Orchid sectors are considered relatively safe and attract traders and refugees. Those, in turn, attract pirates.</text>
+      <text>A ship with pirate markings awaits you at the beacon. You overhear a conversation on their ship: "Those are not space weeds." "Whatever. Kill them anyway."</text>
+      <text planet="PLANET_POPULATED">You were enjoying the view of overgrown Orchid planet as the pirate jumped in out of nowhere. Conflict is inevitable.</text>
+    </textList>
+    <ship hostile="true" load="PIRATE"/>
+  </event>
+
+  <event name="ORCHID_ROCK_FIGHT" unique="false">
+    <textList>
+      <text>Rock ships are often seen in Orchid sectors. Contrary to their xenophobic nature, Rocks are quite fond of Orchids. This particular ship is acting hostile towards you, though.</text>
+      <text>Rocks are often seen as useful by Orchids for theie ability to withstand fire and how easy they are to manipulate. A Rock ship at the beacon sees you as a threat to their floral overlords and attacks!</text>
+      <text>Orchid sectors are common destination for wealthier Rock travelers. Having a body overgrown with rare plants is considered fashionable in Rock culture. A Rock ship at the beacon considers you threatening and retaliates.</text>
+    </textList>
+    <ship hostile="true" load="ROCK_SHIP"/>
+  </event>
+
+  <event name="ORCHID_MANTIS_FIGHT" unique="false">
+    <textList>
+      <text>The warlike Mantis send their ships all over the galaxy to hunt other ships for loot and glory. Orchid sectors are no exception.</text>
+      <text>The Orchids put tremendous effort into pacifying invading Mantis and forming friendly relations with them. But some Mantis will never leave the path of a warrior. The ship at the beacon belongs to those.</text>
+      <text>Some Mantis are influenced by Orchids so much that they begin to worship all kinds of plants and do the only thing they think would please their gods: kill everyone who doesn't belong.</text>
+    </textList>
+    <ship hostile="true" load="MANTIS_FIGHT"/>
+  </event>
+
+  <event name="ORCHID_REBEL_FIGHT" unique="false">
+    <textList>
+      <text>A Rebel fighter awaits you at the beacon. An image of a human officer appears on the comm screen: "We have come to weed this sector from aliens and Federation sympathizers. Starting with you!"</text>
+      <text>An aggressive Rebel ship has chosen a beacon far away from primary Orchid worlds to wait for your potential arrival. As soon as it sees you, it moves closer with weapons armed.</text>
+      <text>This beacon was marked as populated by friendly Orchids on star charts but the Rebel fleet has already began capturing it. One of the smaller Rebel ships attacks.</text>
+    </textList>
+    <ship hostile="true" load="REBEL"/>
+  </event>
+
+  <event name="ORCHID_AUTO_FIGHT" unique="false">
+    <textList>
+      <text>Learning that many Federation ships are using Orchid homeworlds as a hiding place, the Rebels sent many automated ships to hunt those who oppose the Rebellion. One of those crewless ships is waiting for you at the beacon.</text>
+      <text>An automated ship is broadcasting a message: "Plant life outlawed. Only humans allowed in the sector. Glory to Rebellion." It's openly hostile to everyone except Rebels.</text>
+      <text>The remains of an Orchid civilian ship are drifting at the beacon. The culprit, an automated Rebel ship, turns around and moves towards you with weapons charging.</text>
+    </textList>
+    <ship hostile="true" load="REBEL_AUTO"/>
+  </event>
+
+  <event name="ORCHID_CAPTURED_REBEL_FIGHT" unique="false">
+    <textList>
+      <text>You are surprised to hear the crew of an Orchid ship talk in human language: "Surrender. All nearby worlds are controlled by Rebellion forces. Resistance is futile."</text>
+      <text>An Orchid ship behaves unusually aggressively. Scans show that it is captured by humans wearing Rebel uniform.</text>
+      <text>The Orchid ship, located at the beacon, moves back and forth. The Rebels who captured it haven't learned how to pilot it yet, but are already attacking you.</text>
+    </textList>
+    <ship auto_blueprint="SHIPS_ORCHID" hostile="true">
+      <surrender chance="0.5" load="PIRATE_SURRENDER" max="3" min="2"/>
+      <escape chance="0.5" load="PIRATE_ESCAPE" max="4" min="3"/>
+      <destroyed load="DESTROYED_DEFAULT"/>
+      <deadCrew load="DEAD_CREW_DEFAULT"/>
+      <crew>
+        <crewMember prop="1" type="human"/>
+      </crew>
+    </ship>
+  </event>
+
+  <event name="ORCHID_PIRATE_FRIENDLY_ASB" unique="true">
+    <img back="BACKGROUND" planet="PLANET_POPULATED"/>
+    <text>A pirate ship worn out by many battles moves in your direction from behind an Orchid planet. Maybe the time has come to test famous Orchid security?</text>
+    <ship hostile="true" load="PIRATE"/>
+    <choice hidden="true">
+      <text>Engage the pirate alone.</text>
+      <event/>
+    </choice>
+    <choice hidden="true">
+      <text>Ask for help.</text>
+      <event>
+        <text>You send a distress signal, and Orchid military stationed at the planet responds immediately and targets the pirate with anti ship battery.</text>
+        <environment target="enemy" type="PDS"/>
+      </event>
+    </choice>
+  </event>
+</FTL>

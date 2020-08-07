@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+
+  <changelog>
+    <entry>Crystal A starts with upgraded Crystal I and upgraded Crystal II (buff, these weapons are significantly stronger)</entry>
+  </changelog>
+
+  <shipBlueprint name="PLAYER_SHIP_CRYSTAL" layout="crystal_cruiser" img="crystal_cruiser">
+    <class>Crystal Cruiser</class>
+    <name>Bravais</name>
+    <unlock>Travel to a lost sector of the galaxy to find this powerful vessel.</unlock>
+    <desc>This powerful vessel is powered by the secret technologies of the lost Crystalline Beings.</desc>
+    <systemList>
+      <battery power="1" room="12" start="false" img="room_battery_3"/>
+      <cloaking power="1" room="9" start="false" img="room_cloaking_2"/>
+      <clonebay power="1" room="13" start="false" slot="3"/>
+      <doors power="1" room="16" start="true" img="room_doors_8"/>
+      <drones power="2" room="1" start="false" img="room_drones_7"/>
+      <engines power="2" room="0" start="true" img="room_engines_2"/>
+      <hacking power="1" room="14" start="false" img="room_hacking_6"/>
+      <medbay power="1" room="13" start="true" img="room_medbay_3"/>
+      <mind power="1" room="2" start="false" img="room_mind_10"/>
+      <oxygen power="1" room="7" start="true" img="room_oxygen_10"/>
+      <pilot power="1" room="8" start="true"/>
+      <sensors power="1" room="3" start="true" img="room_sensors_2"/>
+      <shields power="2" room="6" start="true" img="room_shields_13"/>
+      <teleporter power="1" room="15" start="false"/>
+      <weapons power="3" room="17" start="true" img="room_weapons_7"/>
+    </systemList>
+    <weaponSlots>4</weaponSlots>
+    <droneSlots>2</droneSlots>
+    <weaponList count="2" missiles="0">
+      <weapon name="CRYSTAL_BURST_1_UPGRADED"/>
+      <weapon name="CRYSTAL_HEAVY_1_UPGRADED"/>
+    </weaponList>
+    <droneList drones="0"/>
+    <health amount="30"/>
+    <maxPower amount="8"/>
+    <crewCount amount="1" class="crystal"/>
+    <crewCount amount="1" class="human"/>
+    <crewCount amount="1" class="crystal"/>
+    <crewCount amount="1" class="human"/>
+    <aug name="CRYSTAL_SHARDS_LOCKED"/>
+  </shipBlueprint>
+
+  <changelog>
+    <entry>Crystal B starting reactor power 8 to 6</entry>
+    <entry>Crystal B starts without cloaking system</entry>
+  </changelog>
+
+  <shipBlueprint name="PLAYER_SHIP_CRYSTAL_2" layout="crystal_cruiser_2" img="crystal_cruiser_2">
+    <class>Crystal Cruiser</class>
+    <name>Carnelian</name>
+    <unlock>Complete 2/3 of this Cruiser's Achievements to unlock this ship.</unlock>
+    <desc>Their unique racial ability makes the Crystal beings very adept at ship boarding. This ship was designed for such raiding parties.</desc>
+    <systemList>
+      <battery power="1" room="12" start="false" img="room_battery_13"/>
+      <cloaking power="1" room="7" start="false"/>
+      <clonebay power="1" room="9" start="false" slot="0"/>
+      <doors power="1" room="14" start="true" img="room_doors_7"/>
+      <drones power="2" room="13" start="false" img="room_drones_5"/>
+      <engines power="2" room="2" start="true" img="room_engines_2"/>
+      <hacking power="1" room="5" start="false" img="room_hacking_2"/>
+      <medbay power="1" room="9" start="true" img="room_medbay_4"/>
+      <mind power="1" room="0" start="false" img="room_mind_11"/>
+      <oxygen power="1" room="8" start="true" img="room_oxygen_7"/>
+      <pilot power="1" room="15" start="true"/>
+      <sensors power="1" room="10" start="true" img="room_sensors_2"/>
+      <shields power="2" room="1" start="true" img="room_shields_7"/>
+      <teleporter power="1" room="3" start="true"/>
+      <weapons power="1" room="4" start="true" img="room_weapons_7"/>
+    </systemList>
+    <weaponSlots>4</weaponSlots>
+    <droneSlots>2</droneSlots>
+    <weaponList count="0" missiles="0">
+    </weaponList>
+    <droneList drones="0"/>
+    <health amount="30"/>
+    <maxPower amount="6"/>
+    <crewCount amount="3" class="crystal"/>
+    <shieldImage>crystal_cruiser</shieldImage>
+    <cloakImage>crystal_cruiser</cloakImage>
+    <aug name="CRYSTAL_SHARDS_LOCKED"/>
+  </shipBlueprint>
+
+</FTL>

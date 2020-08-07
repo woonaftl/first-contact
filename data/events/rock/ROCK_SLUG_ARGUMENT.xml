@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <changelog>
+    <entry>Added 2 auto ships in endless loop event</entry>
+  </changelog>
+  <event name="ROCK_SLUG_ARGUMENT_NEBULA" unique="true">
+    <text>You detect multiple ships running at maximum power nearby, but you can't see anything through this thick nebula.</text>
+    <choice>
+      <text>Get closer.</text>
+      <eventList>
+        <event load="ROCK_SLUG_ARGUMENT"/>
+        <event load="WOONA_AUTO_ENDLESS_LOOP"/>
+      </eventList>
+    </choice>
+    <choice>
+      <text>Ignore them.</text>
+      <event/>
+    </choice>
+    <environment type="nebula"/>
+  </event>
+  <event name="ROCK_SLUG_ARGUMENT" unique="true">
+    <text>You find a Slug Cruiser and Rock ship at a standoff, both with weapons armed and ready to fight. You could intervene before this gets out of hand.</text>
+    <choice>
+      <text>Hail them to see what's wrong.</text>
+      <event>
+        <text>The Slug captain explains that they upgraded the Rock ship's reactor and now the 'thick boulder heads' are refusing to pay for the work done. The Rock Captain says the 'slime balls' did a poor job that is not worth their agreed upon price.</text>
+        <choice>
+          <text>Offer to pay off the Rock debt.</text>
+          <event>
+            <text>You pay off the debt. The Rock Captain still seems annoyed at the Slug's getting their 'undeserved' scrap, but at least the situation will remain peaceful.</text>
+            <item_modify>
+              <item type="scrap" min="-15" max="-10"/>
+            </item_modify>
+            <choice hidden="true">
+              <text id="continue"/>
+              <eventList name="ROCK_SLUG_GRATEFUL">
+                <event>
+                  <text>The Slugs offer their thanks for your help, and jump away. Their true appreciation is questionable, but at least you can get back to your mission.</text>
+                </event>
+                <event>
+                  <text>The Slug Captain offers a free reactor upgrade for your help. It never hurts to get a little power boost!</text>
+                  <upgrade amount="1" system="reactor"/>
+                </event>
+                <event>
+                  <text>The Slug Captain, thankful for your help, offers a reactor upgrade for your ship... for a 'fair' price.</text>
+                  <choice req="reactor" max_lvl="24" blue="false">
+                    <text>Agree to the price.</text>
+                    <event>
+                      <text>You let their team on board and after a short time they finish their work.</text>
+                      <item_modify>
+                        <item type="scrap" min="-15" max="-10"/>
+                      </item_modify>
+                      <upgrade amount="1" system="reactor"/>
+                    </event>
+                  </choice>
+                  <choice>
+                    <text>Decline the offer.</text>
+                    <event>
+                      <text>You break communications and prepare to move on.</text>
+                    </event>
+                  </choice>
+                </event>
+              </eventList>
+            </choice>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>Demand the Rock ship pay the agreed upon price.</text>
+          <eventList name="ROCK_SLUG_COMMAND">
+            <event>
+              <text>Apparently the Rock Captain was more annoyed than you thought, they shut off all communication and turn on you, the 'slime balls' defender.'</text>
+              <ship load="ROCK_SLUG_REACTOR_SHIP" hostile="true"/>
+            </event>
+            <event>
+              <text>With much grumbling, the Rock Captain agrees to pay the price.</text>
+              <choice hidden="true">
+                <text id="continue"/>
+                <event load="ROCK_SLUG_GRATEFUL"/>
+              </choice>
+            </event>
+            <event>
+              <text>A massive explosion emanates from the Rock Ship, shattering its hull and sending debris on an unavoidable collision course to your ship. Seems like that reactor upgrade was poorly done after all, and the Slugs took the opportunity to jump away.</text>
+              <damage amount="3"/>
+              <damage amount="1" system="random"/>
+              <damage amount="1" system="random"/>
+            </event>
+          </eventList>
+        </choice>
+        <choice>
+          <text>You have better things to attend to, leave them.</text>
+          <event/>
+        </choice>
+      </event>
+    </choice>
+    <choice>
+      <text>Leave them be.</text>
+      <event/>
+    </choice>
+  </event>
+  <ship name="ROCK_SLUG_REACTOR_SHIP" auto_blueprint="SHIPS_ROCK">
+    <destroyed>
+      <text>With the Rock Ship destroyed, you take the time to collect what little scrap remains.</text>
+      <autoReward level="LOW">standard</autoReward>
+      <choice hidden="true">
+        <text>Contact the Slugs.</text>
+        <event load="ROCK_SLUG_GRATEFUL"/>
+      </choice>
+    </destroyed>
+    <deadCrew>
+      <text>With the Rock crew dead, you scrap the ship for supplies.</text>
+      <autoReward level="MED">standard</autoReward>
+      <choice hidden="true">
+        <text>Contact the Slugs.</text>
+        <event load="ROCK_SLUG_GRATEFUL"/>
+      </choice>
+    </deadCrew>
+  </ship>
+
+  <event name="WOONA_AUTO_ENDLESS_LOOP">
+    <text>You find two automated Rebel scouts. The AI behaves very strange, not reacting to your arrival. Two ships are completely focused on each other.</text>
+    <choice hidden="true">
+      <text>Scan the ships.</text>
+      <event>
+        <text>Upon closer examination, it seems that the automated ships are caught in an endless loop. The first ship detects that the second lacks FTL fuel, then shares it, becoming low on fuel itself. You follow the actions of AI for minutes until you can finally avert your eyes and order the next action.</text>
+        <choice hidden="true">
+          <text>Attack!</text>
+          <event>
+            <text>The ship that currently had FTL fuel immediately jumps away to bring reinforcements. The other ship charges the weapons, readying itself for fight.</text>
+            <modifyPursuit amount="1"/>
+            <ship hostile="true" load="REBEL_AUTO"/>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>Leave the ships to themselves.</text>
+          <event/>
+        </choice>
+      </event>
+    </choice>
+  </event>
+</FTL>

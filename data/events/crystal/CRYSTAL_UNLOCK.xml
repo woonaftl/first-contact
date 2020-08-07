@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <event name="ASTEROID_DERELICT_SHIP" unique="true">
+    <text>A ship without life forms within a nearby dense asteroid field is giving off the distress call. Shall we investigate? It could be dangerous.</text>
+    <distressBeacon/>
+    <choice hidden="true">
+      <text>Search for the ship.</text>
+      <eventList name="ASTEROID_DERELICT_SHIP_SEARCH">
+        <event>
+          <text>You find what appears to be pieces of a derelict ship coated with ice or crystal. Before you have a chance to dock, a few asteroids get past your shields and partially damage your engines. You'll have to pull out!</text>
+          <damage amount="4"/>
+          <damage amount="1" system="engines"/>
+        </event>
+        <event>
+          <text>You find a pirate ship, damaged and abandoned. You salvage what you can and move on.</text>
+          <autoReward level="RANDOM">standard</autoReward>
+        </event>
+        <event>
+          <text>You find the decaying remains of some kind of ship coated with ice or crystal. You send some crew aboard to explore. Nearly everything is either destroyed or unidentifiable, but one of the weapons appears salvageable and there's a strange stasis pod that catches your eye.</text>
+          <choice hidden="true">
+            <text id="continue"/>
+            <event>
+              <text>It looks like a massive asteroid is in a direct collision course with the derelict ship! You have to pull your crew out but they want to grab what they can first. What do they take?</text>
+              <choice hidden="true">
+                <text>Take the weapon and any spare scrap.</text>
+                <event>
+                  <text>Your crew grabs what they can and returns to the ship before the asteroid hits. You take a look at what you've recovered once you move clear of the asteroid field.</text>
+                  <autoReward level="LOW">weapon</autoReward>
+                </event>
+              </choice>
+              <choice hidden="true">
+                <text>Grab the stasis chamber.</text>
+                <event>
+                  <text>Your crew drags the pod back to your ship before the asteroid smashes into the ship, shattering through the crystal coating and destroying the ship.</text>
+                  <choice hidden="true">
+                    <text id="continue"/>
+                    <event>
+                      <text>The pod appears to be functioning but you see nothing but shards of crystal inside. Perhaps someone else will know how to open it.</text>
+                      <augment name="STASIS_POD"/>
+                      <autoReward level="LOW">scrap_only</autoReward>
+                    </event>
+                  </choice>
+                </event>
+              </choice>
+            </event>
+          </choice>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true">
+      <text>Avoid the area.</text>
+      <event>
+        <text>Discretion is the better part of valor. Better not risk it.</text>
+      </event>
+    </choice>
+    <choice hidden="true" req="ROCK_ARMOR">
+      <text>(Rock Plating) Make a thorough search for the ship without fear of stray asteroids.</text>
+      <eventList name="ASTEROID_DERELICT_SHIP_ROCK">
+        <event>
+          <text>You find the decaying remains of some kind of ship coated with ice or crystal. You send some crew aboard to explore. Nearly everything is either destroyed or unidentifiable, but one of the weapons appears salvageable and there's a strange stasis pod that catches your eye.</text>
+          <choice hidden="true">
+            <text id="continue"/>
+            <event>
+              <text>It looks like a massive asteroid is in a direct collision course with the derelict ship! You have to pull your crew out but they want to grab what they can first. What do they take?</text>
+              <choice hidden="true">
+                <text>Take the weapon and any spare scrap.</text>
+                <event>
+                  <text>Your crew grabs what they can and returns to the ship before the asteroid hits. You take a look at what you've recovered once you move clear of the asteroid field.</text>
+                  <autoReward level="LOW">weapon</autoReward>
+                </event>
+              </choice>
+              <choice hidden="true">
+                <text>Grab the stasis chamber.</text>
+                <event>
+                  <text>Your crew drags the pod back to your ship before the asteroid smashes into the ship, shattering through the crystal coating and destroying the ship.</text>
+                  <choice hidden="true">
+                    <text id="continue"/>
+                    <event>
+                      <text>The pod appears to be functioning but you see nothing but shards of crystal inside. Perhaps someone else will know how to open it.</text>
+                      <augment name="STASIS_POD"/>
+                      <autoReward level="LOW">scrap_only</autoReward>
+                    </event>
+                  </choice>
+                </event>
+              </choice>
+            </event>
+          </choice>
+        </event>
+      </eventList>
+    </choice>
+  </event>
+
+  <event name="ZOLTAN_CREW_STUDY">
+    <text>You arrive at a Zoltan research facility. They say they are researching genetic distortion due to stasis sleep and prolonged FTL travel. They ask if your crew has the time to undergo a few scans.</text>
+    <choice hidden="true">
+      <text>Participate in their study.</text>
+      <eventList name="ZOLTAN_CREW_STUDY_LIST">
+        <event>
+          <text>Your crew calmly lines up for the Zoltans to take their readings. After a short time, the process is done. They contact you, "Thank you for your participation in our study. Please accept these small cakes made from stiff dough as well as some scrap."</text>
+          <autoReward level="LOW">scrap_only</autoReward>
+        </event>
+        <event>
+          <text>Your crew calmly lines up for the Zoltans to take their readings. After a short time, the process is done. They contact you, "Thank you for your participation in our study. Please accept these small cakes made from stiff dough as well as some scrap."</text>
+          <autoReward level="LOW">scrap_only</autoReward>
+        </event>
+        <event>
+          <text>As soon as you dock, pirates burst on board and a hostile ship appears on the radar. You hear the Zoltans yell in the distance, "We're being held hostage!"</text>
+          <ship name="PIRATE_ZOLTAN_CREW_STUDY" auto_blueprint="SHIPS_PIRATE" hostile="true">
+            <destroyed>
+              <text>You take out the ship and contact the research station.</text>
+              <autoReward level="LOW">standard</autoReward>
+              <choice hidden="true">
+                <text id="continue"/>
+                <event>
+                  <text>"Thank you for rescuing us! They held us hostage to ambush unsuspecting passersby. Please, take this."</text>
+                  <autoReward level="LOW">stuff</autoReward>
+                  <drone name="RANDOM"/>
+                </event>
+              </choice>
+            </destroyed>
+            <deadCrew>
+              <text>You disable the ship and contact the research station.</text>
+              <autoReward level="MED">standard</autoReward>
+              <choice hidden="true">
+                <text id="continue"/>
+                <event>
+                  <text>"Thank you for rescuing us! They held us hostage to ambush unsuspecting passersby. Please, take this."</text>
+                  <autoReward level="LOW">stuff</autoReward>
+                  <drone name="RANDOM"/>
+                </event>
+              </choice>
+            </deadCrew>
+          </ship>
+          <boarders min="2" max="2" class="random"/>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true">
+      <text>Decline.</text>
+      <event>
+        <text>"Alright. Fly safe." You prepare to leave.</text>
+      </event>
+    </choice>
+    <choice hidden="true" req="medbay" lvl="3">
+      <text>(Advanced Medbay) Give them your medical records.</text>
+      <event>
+        <text>"Thank you! We didn't expect to receive such a significant amount of data regarding your crew's health during FTL travel. Please, accept this for your trouble."</text>
+        <drone name="RANDOM"/>
+        <autoReward level="LOW">stuff</autoReward>
+      </event>
+    </choice>
+    <choice hidden="true" req="STASIS_POD">
+      <text>(Damaged Stasis Pod) Ask if they can fix this.</text>
+      <event>
+        <text>"Interesting. I've never seen a cryogenic system like this. It appears to still be functioning..." They hook it up to their system and run a number of tests on it.</text>
+        <choice hidden="true">
+          <text id="continue"/>
+          <event>
+            <text>"Amazing! It has the ability to reconstruct the body if it was damaged during transit. Watch." They reactivate the pod and you watch as the hunks of crystal inside reform to build a humanoid structure. The pod slides open and the re-formed alien steps out.</text>
+            <choice hidden="true">
+              <text id="continue"/>
+              <event>
+                <text>It speaks slowly, "Greetings. I appear to be in your debt. My people isolated themselves a long time ago, but perhaps it's time to re-establish a connection. There's a hidden wormhole near the Rock home-worlds. Perhaps you can take me there so I can properly repay you?"</text>
+                <crewMember amount="1" class="crystal">Ruwen</crewMember>
+              </event>
+            </choice>
+          </event>
+        </choice>
+      </event>
+    </choice>
+  </event>
+
+  <event name="ROCK_CRYSTAL_BEACON">
+    <text>An ancient device is orbiting within the crystal rings of a nearby gas giant. You can't discern its nature or function, but it seems to have been deactivated for a very long time. Perhaps you can get some scrap from it.</text>
+    <choice hidden="true">
+      <text>Scrap it.</text>
+      <eventList name="ROCK_CRYSTAL_BEACON_LIST">
+        <event>
+          <text>You break it apart and take it for scrap. No one will miss it.</text>
+          <autoReward level="HIGH">scrap_only</autoReward>
+        </event>
+        <event>
+          <text>As you start to break it apart a Rock military ship jumps nearby, "You think you can come into our sector and just steal whatever you please?! Prepare to die, vandals!"</text>
+          <ship load="ROCK_SHIP" hostile="true"/>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true">
+      <text>Leave it alone.</text>
+      <event>
+        <text>Better not risk it. The Rock people are unlikely to respond well to vandalism.</text>
+      </event>
+    </choice>
+    <choice hidden="true" req="crystal">
+      <text>(Crystal Crew) Reactivate it.</text>
+      <event>
+        <text>Your Crystalline companion says, "It looks like we have found the abandoned link to the Crystal home worlds. I can reactivate it." He transmits some codes to the device and it immediately powers on.</text>
+        <item_modify>
+          <item type="fuel" min="1" max="1"/>
+        </item_modify>
+        <choice hidden="true">
+          <text>Continue.</text>
+          <event>
+            <text>Before you can react, the space around you distorts and a wormhole forms. You begin to sound the alarm, but your companion calms you and indicates that you should fly directly into the wormhole. You reluctantly do as he says.</text>
+            <secretSector/>
+          </event>
+        </choice>
+      </event>
+    </choice>
+  </event>
+</FTL>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <animSheet name="slug" w="315" h="455" fw="35" fh="35">people/slug_base.png</animSheet>
+
+  <anim name="slug_clone">
+    <sheet>slug</sheet>
+    <desc length="6" x="0" y="1"/>
+    <time>0.75</time>
+  </anim>
+
+  <anim name="slug_death_right">
+    <sheet>slug</sheet>
+    <desc length="7" x="2" y="0"/>
+    <time>0.75</time>
+  </anim>
+
+  <anim name="slug_walk_down">
+    <sheet>slug</sheet>
+    <desc length="4" x="0" y="12"/>
+    <time>0.75</time>
+  </anim>
+
+  <anim name="slug_walk_right">
+    <sheet>slug</sheet>
+    <desc length="4" x="4" y="12"/>
+    <time>0.75</time>
+  </anim>
+
+  <anim name="slug_walk_up">
+    <sheet>slug</sheet>
+    <desc length="4" x="0" y="11"/>
+    <time>0.75</time>
+  </anim>
+
+  <anim name="slug_walk_left">
+    <sheet>slug</sheet>
+    <desc length="4" x="4" y="11"/>
+    <time>0.75</time>
+  </anim>
+
+  <anim name="slug_shoot_down">
+    <sheet>slug</sheet>
+    <desc length="3" x="0" y="10"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="slug_shoot_right">
+    <sheet>slug</sheet>
+    <desc length="3" x="3" y="10"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="slug_shoot_up">
+    <sheet>slug</sheet>
+    <desc length="3" x="6" y="10"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="slug_shoot_left">
+    <sheet>slug</sheet>
+    <desc length="3" x="6" y="6"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="slug_fire_down">
+    <sheet>slug</sheet>
+    <desc length="4" x="0" y="9"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="slug_fire_right">
+    <sheet>slug</sheet>
+    <desc length="4" x="4" y="9"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="slug_fire_up">
+    <sheet>slug</sheet>
+    <desc length="4" x="0" y="8"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="slug_fire_left">
+    <sheet>slug</sheet>
+    <desc length="4" x="4" y="8"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="slug_repair">
+    <sheet>slug</sheet>
+    <desc length="9" x="0" y="7"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="slug_punch_up">
+    <sheet>slug</sheet>
+    <desc length="6" x="0" y="5"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="slug_punch_down">
+    <sheet>slug</sheet>
+    <desc length="6" x="0" y="6"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="slug_teleport">
+    <sheet>slug</sheet>
+    <desc length="9" x="0" y="2"/>
+    <time>0.5</time>
+  </anim>
+
+  <anim name="slug_type_right">
+    <sheet>slug</sheet>
+    <desc length="4" x="0" y="4"/>
+    <time>0.75</time>
+  </anim>
+  <anim name="slug_type_left">
+    <sheet>slug</sheet>
+    <desc length="4" x="4" y="4"/>
+    <time>0.75</time>
+  </anim>
+  <anim name="slug_type_up">
+    <sheet>slug</sheet>
+    <desc length="4" x="0" y="3"/>
+    <time>0.75</time>
+  </anim>
+  <anim name="slug_type_down">
+    <sheet>slug</sheet>
+    <desc length="4" x="4" y="3"/>
+    <time>0.75</time>
+  </anim>
+
+
+  <anim name="slug_portrait">
+    <sheet>slug</sheet>
+    <desc length="1" x="0" y="0"/>
+    <time>1</time>
+  </anim>
+</FTL>

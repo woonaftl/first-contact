@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL><ship name="CIVILIAN_SHIP" auto_blueprint="SHIPS_CIVILIAN">
+    <destroyed load="DESTROYED_DEFAULT"/>
+    <deadCrew load="DEAD_CREW_DEFAULT"/>
+  </ship>
+
+  <ship name="FED_SHIP" auto_blueprint="SHIPS_FED">
+    <destroyed load="DESTROYED_DEFAULT"/>
+    <deadCrew load="DEAD_CREW_DEFAULT"/>
+  </ship>
+
+  <eventList name="DEAD_CREW_DEFAULT">
+    <event count="8">
+      <text>There are no more life-signs remaining on the ship. You strip it of useful materials.</text>
+      <autoReward level="MED">standard</autoReward>
+    </event>
+    <event count="4">
+      <text>There are no more life-signs remaining on the ship. You strip it of useful materials.</text>
+      <autoReward level="HIGH">standard</autoReward>
+    </event>
+    <event count="4">
+      <text>With the crew dead, you are able to take the fuel out of storage. You also take all the scrap you can manage.</text>
+      <autoReward level="HIGH">fuel</autoReward>
+    </event>
+    <event>
+      <text>Now that their ship has been emptied of hostiles, you search it. Eventually you find a prisoner who offers to join your crew.</text>
+      <crewMember amount="1"/>
+      <autoReward level="LOW">scrap_only</autoReward>
+    </event>
+    <event>
+      <text>You find a weapon system on their ship. With no crew to stop you, you can install it on your own.</text>
+      <autoReward level="LOW">weapon</autoReward>
+    </event>
+  </eventList>
+
+  <eventList name="DESTROYED_DEFAULT">
+    <event count="4">
+      <text>The ship explodes, leaving behind a substantial collection of useful scrap material.</text>
+      <autoReward level="MED">standard</autoReward>
+    </event>
+    <event>
+      <text>The ship explodes, leaving behind a substantial collection of useful scrap material.</text>
+      <autoReward level="LOW">standard</autoReward>
+    </event>
+  </eventList>
+</FTL>

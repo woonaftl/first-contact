@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <blueprintList name="CREW_RANDOM">
+    <name>mantis</name>
+    <name>rock</name>
+    <name>engi</name>
+    <name>human</name>
+    <name>slug</name>
+    <name>energy</name>
+  </blueprintList>
+
+  <crewBlueprint name="human">
+    <title>Human</title>
+    <short>Human</short>
+    <desc>Humans are common and uninteresting.</desc>
+    <cost>45</cost>
+    <bp>2</bp>
+    <rarity>1</rarity>
+    <powerList>
+      <power>No special powers</power>
+    </powerList>
+    <colorList>
+      <layer>
+        <color a="0.7" b="255" g="140" r="140"/>
+      </layer>
+      <layer>
+        <color a="0.4" b="150" g="150" r="255"/>
+        <color a="0.7" b="40" g="60" r="90"/>
+        <color a="0" b="89" g="124" r="255"/>
+        <color a="0.2" b="255" g="255" r="255"/>
+      </layer>
+    </colorList>
+  </crewBlueprint>
+
+  <changelog>
+    <entry>Engi deal half damage to systems in addition to crew</entry>
+  </changelog>
+  <crewBlueprint name="engi">
+    <title>Engi</title>
+    <short>Engi</short>
+    <desc>It's unclear if the 'Engi' are partly organic or entirely mechanical, but it's well known that they make exceptional engineers.</desc>
+    <cost>50</cost>
+    <bp>2</bp>
+    <rarity>2</rarity>
+    <powerList>
+      <power>Repair speed is doubled</power>
+      <power>Deals half damage to crew and systems</power>
+    </powerList>
+  </crewBlueprint>
+
+  <changelog>
+    <entry>Mantis store price 55 to 50</entry>
+    <entry>Mantis deal 50 percent more damage to systems in addition to crew</entry>
+  </changelog>
+  <crewBlueprint name="mantis">
+    <title>Mantis</title>
+    <short>Mantis</short>
+    <desc>The Mantis disregard for individual lives led to their evolution as a vicious warrior race.</desc>
+    <cost>50</cost>
+    <bp>2</bp>
+    <rarity>2</rarity>
+    <powerList>
+      <power>Deals 1.5x damage to crew and systems</power>
+      <power>Movement speed increased by 20 percent</power>
+      <power>Repair speed halved</power>
+    </powerList>
+    <colorList>
+      <layer>
+        <color a="0" b="45" g="165" r="119"/>
+        <color a="0.5" b="35" g="156" r="156"/>
+        <color a="0.9" b="0" g="241" r="51"/>
+        <color a="0.9" b="207" g="241" r="111"/>
+        <color a="0.2" b="0" g="0" r="255"/>
+      </layer>
+    </colorList>
+  </crewBlueprint>
+
+  <changelog>
+    <entry>Slug store price 45 to 60</entry>
+  </changelog>
+  <crewBlueprint name="slug">
+    <title>Slug</title>
+    <short>Slug</short>
+    <desc>These telepathic Slugs were shunned in the Galactic Federation for their constant thievery and attempts at manipulation.</desc>
+    <cost>60</cost>
+    <bp>2</bp>
+    <rarity>0</rarity>
+    <powerList>
+      <power>Reveal adjacent rooms</power>
+      <power>Reveal lifeforms</power>
+      <power>Immune to mind control</power>
+    </powerList>
+    <colorList>
+      <layer>
+        <color a="0.8" b="175" g="230" r="255"/>
+        <color a="0.6" b="60" g="240" r="120"/>
+        <color a="1" b="0" g="241" r="255"/>
+        <color a="1" b="0" g="170" r="255"/>
+        <color a="0" b="0" g="0" r="0"/>
+        <color a="0.5" b="200" g="140" r="140"/>
+      </layer>
+    </colorList>
+  </crewBlueprint>
+
+  <changelog>
+    <entry>Rockmen movement speed 0.5 to 0.6</entry>
+    <entry>Rockmen fire fire extinguishing speed 1.67 to 2.0</entry>
+    <entry>Rockmen store price 55 to 50</entry>
+  </changelog>
+  <crewBlueprint name="rock">
+    <title>Rockman</title>
+    <short>Rockman</short>
+    <desc>The 'Rockmen' of Vrachos IV are rarely seen and are known for their fortitude.</desc>
+    <cost>50</cost>
+    <bp>4</bp>
+    <rarity>3</rarity>
+    <powerList>
+      <power>Max Health is increased to 150</power>
+      <power>Movement speed reduced by 40 percent</power>
+      <power>Immune to fire</power>
+      <power>Fire extinguishing speed doubled</power>
+    </powerList>
+    <colorList>
+      <layer>
+        <color a="0.7" b="31" g="42" r="76"/>
+        <color a="0.2" b="35" g="80" r="120"/>
+        <color a="0.7" b="220" g="100" r="140"/>
+        <color a="0.7" b="64" g="111" r="240"/>
+      </layer>
+    </colorList>
+  </crewBlueprint>
+
+  <crewBlueprint name="energy">
+    <title>Zoltan</title>
+    <short>Zoltan</short>
+    <desc>The 'Zoltan' are allies of the 'Engi.' Their innate energy can power ship systems.</desc>
+    <cost>60</cost>
+    <bp>4</bp>
+    <rarity>5</rarity>
+    <powerList>
+      <power>Provides 1 power to occupied system</power>
+      <power>Max health reduced to 70</power>
+      <power>15 damage to enemy crew on death</power>
+    </powerList>
+    <colorList>
+      <layer>
+        <color a="1" b="147" g="255" r="249"/>
+        <color a="0.8" b="161" g="241" r="212"/>
+        <color a="1" b="87" g="255" r="79"/>
+        <color a="0.6" b="109" g="133" r="99"/>
+        <color a="0.1" b="200" g="255" r="240"/>
+      </layer>
+    </colorList>
+  </crewBlueprint>
+
+  <changelog>
+    <entry>Crystal crew fire extinguishing speed 0.83 to 1.0</entry>
+    <entry>Crystal crew suffocation damage 0.5 to 1.0</entry>
+  </changelog>
+  <crewBlueprint name="crystal">
+    <title>Crystal</title>
+    <short>Crystal</short>
+    <desc>Ancient ancestors of the Rockmen.</desc>
+    <cost>60</cost>
+    <bp>4</bp>
+    <rarity>0</rarity>
+    <powerList>
+      <power>Max Health is increased to 125</power>
+      <power>Movement speed reduced by 20 percent</power>
+      <power>Active: lock the room with a wall of crystals</power>
+    </powerList>
+    <colorList>
+      <layer>
+        <color a="0.5" b="255" g="187" r="40"/>
+        <color a="0.4" b="255" g="40" r="55"/>
+        <color a="0.2" b="255" g="40" r="55"/>
+        <color a="0.1" b="138" g="131" r="115"/>
+      </layer>
+    </colorList>
+  </crewBlueprint>
+
+  <changelog>
+    <entry>Lanius movement speed 0.85 to 1.0 (normal)</entry>
+  </changelog>
+  <crewBlueprint name="anaerobic">
+    <title>Lanius</title>
+    <short>Lanius</short>
+    <desc>These anaerobic beings seem friendly enough.</desc>
+    <cost>50</cost>
+    <bp>2</bp>
+    <rarity>0</rarity>
+    <powerList>
+      <power>Drains oxygen from rooms</power>
+      <power>No damage from lack of oxygen</power>
+    </powerList>
+    <colorList>
+      <layer>
+        <color a="0.3" b="232" g="117" r="196"/>
+        <color a="0" b="1" g="1" r="1"/>
+        <color a="0.2" b="1" g="1" r="1"/>
+        <color a="0.5" b="117" g="220" r="232"/>
+      </layer>
+    </colorList>
+  </crewBlueprint>
+
+  <crewBlueprint name="orchid">
+    <title>Orchid</title>
+    <short>Orchid</short>
+    <desc>These floral lifeforms have little in common with Earth plants but fill air with oxygen just as well.</desc>
+    <cost>50</cost>
+    <bp>2</bp>
+    <rarity>0</rarity>
+    <powerList>
+      <power>Provide oxygen to rooms they are in (as long as the ship they're on has O2 system)</power>
+      <power>Take 4x damage from fire</power>
+      <power>Put out fires at half speed</power>
+    </powerList>
+    <colorList>
+      <layer><!-- Layer 1 - Leaves -->
+        <color r="100" g="180" b="0" a="0.7"/>
+        <color r="0" g="180" b="100" a="0.7"/>
+        <color r="80" g="150" b="80" a="0.7"/>
+      </layer>
+      <layer><!-- Layer 2 - Flower -->
+        <color r="255" g="130" b="240" a="0.7"/>
+        <color r="255" g="65" b="50" a="0.7"/>
+        <color r="255" g="150" b="130" a="0.7"/>
+        <color r="255" g="200" b="50" a="0.7"/>
+        <color r="255" g="240" b="140" a="0.7"/>
+        <color r="50" g="255" b="230" a="0.7"/>
+        <color r="150" g="255" b="240" a="0.7"/>
+        <color r="120" g="50" b="255" a="0.7"/>
+        <color r="180" g="100" b="255" a="0.7"/>
+      </layer>
+      <layer><!-- Layer 3 - That part -->
+        <color r="252" g="222" b="93" a="0"/>
+      </layer>
+    </colorList>
+  </crewBlueprint>
+
+  <crewBlueprint name="lizard">
+    <title>Lizard</title>
+    <short>Lizard</short>
+    <desc>With their massive bodies, fearsome jaws, and inpenetrable scales, Lizards are respected by all races of the Federation.</desc>
+    <cost>50</cost>
+    <bp>2</bp>
+    <rarity>0</rarity>
+    <powerList>
+      <power>Slowly regenerates when not in danger</power>
+    </powerList>
+  </crewBlueprint>
+
+  <crewBlueprint name="pavonian">
+    <!--named by SallySpartan -->
+    <title>Pavonian</title>
+    <short>Pavonian</short>
+    <desc>Proud Pavonians are fragile creatures, and prefer to resolve conflicts indirectly.</desc>
+    <cost>50</cost>
+    <bp>2</bp>
+    <rarity>0</rarity>
+    <powerList>
+      <power>Takes double damage in close combat</power>
+      <!--<power>Immune to stun</power>-->
+      <power>Active: stun enemies for 5 seconds</power>
+    </powerList>
+  </crewBlueprint>
+
+  <crewBlueprint name="ngal">
+    <title>Ngal</title>
+    <short>Ngal</short>
+    <desc>Masters of staying unseen, even the mysterious Ngals have not managed to remain neutral in the Galactic War.</desc>
+    <cost>50</cost>
+    <bp>2</bp>
+    <rarity>0</rarity>
+    <powerList>
+      <power>Active: become invisible and invulnerable for 5 seconds</power>
+    </powerList>
+  </crewBlueprint>
+</FTL>

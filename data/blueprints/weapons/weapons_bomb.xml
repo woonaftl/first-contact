@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <blueprintList name="WEAPONS_BOMB">
+    <name>BOMB_1</name>
+    <name>BOMB_BREACH_1</name>
+    <name>BOMB_FIRE</name>
+    <name>BOMB_ION</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_ION">
+    <name>BOMB_ION</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_ALL_FIRE">
+    <name>BOMB_FIRE</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_BOMBS_CHEAP">
+    <name>BOMB_ION</name>
+    <name>BOMB_1</name>
+    <name>BOMB_BREACH_1</name>
+    <name>BOMB_FIRE</name>
+    <name>BOMB_STUN</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_BOMB_DELAY">
+    <name>BOMB_DELAY_FIRE_STUN</name>
+    <name>BOMB_DELAY_BIO</name>
+  </blueprintList>
+
+  <changelog>
+    <entry>Small Bomb damage to crew 30 to 0</entry>
+    <entry>Small Bomb fire chance 0.1 to 0</entry>
+    <entry>Small Bomb scrap cost 45 to 40</entry>
+  </changelog>
+  <weaponBlueprint name="BOMB_1">
+    <type>BOMB</type>
+    <tip>tip_bombs</tip>
+    <title>Small Bomb</title>
+    <short>S. Bomb</short>
+    <desc>Self-teleporting explosive that damages systems but not the hull. Can target your own ship.</desc>
+    <tooltip>Bomb weapon; requires a missile; does 2 damage, but only damages system, not hull. Can target your own ship.</tooltip>
+    <damage>0</damage>
+    <sysDamage>2</sysDamage>
+    <persDamage>0</persDamage>
+    <missiles>1</missiles>
+    <shots>1</shots>
+    <sp>0</sp>
+    <fireChance>0</fireChance>
+    <breachChance>0</breachChance>
+    <cooldown>13</cooldown>
+    <power>1</power>
+    <cost>40</cost>
+    <bp>4</bp>
+    <rarity>1</rarity>
+    <image>bomb1</image>
+    <explosion>explosion_random</explosion>
+    <launchSounds>
+      <sound>bombTeleport</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>smallExplosion</sound>
+    </hitShipSounds>
+    <weaponArt>bomb_1</weaponArt>
+    <iconImage>bomb</iconImage>
+  </weaponBlueprint>
+
+  <changelog>
+    <entry>Breach Bomb I and II replaced with a single Breach Bomb (6 sec charge time, no damage, causes a breach, can be bought for 30 scrap)</entry>
+  </changelog>
+  <weaponBlueprint name="BOMB_BREACH_1">
+    <type>BOMB</type>
+    <tip>tip_bombs</tip>
+    <title>Breach Bomb</title>
+    <short>Breach</short>
+    <desc>Self-teleporting explosive designed to cause a breach. Can target your own ship.</desc>
+    <tooltip>Bomb weapon; requires a missile; does no damage but creates a hull breach. Can target your own ship.</tooltip>
+    <damage>0</damage>
+    <sysDamage>0</sysDamage>
+    <persDamage>0</persDamage>
+    <missiles>1</missiles>
+    <shots>1</shots>
+    <sp>0</sp>
+    <fireChance>0</fireChance>
+    <breachChance>10</breachChance>
+    <cooldown>6</cooldown>
+    <power>1</power>
+    <cost>30</cost>
+    <bp>4</bp>
+    <rarity>1</rarity>
+    <image>bomb_breach</image>
+    <explosion>explosion_random</explosion>
+    <launchSounds>
+      <sound>bombTeleport</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>smallExplosion</sound>
+    </hitShipSounds>
+    <weaponArt>bomb_breach</weaponArt>
+    <iconImage>bomb</iconImage>
+  </weaponBlueprint>
+
+  <changelog>
+    <entry>Fire Bomb power usage 2 to 1</entry>
+    <entry>Fire Bomb charge time 15 to 10</entry>
+    <entry>Fire Bomb damage to crew 30 to 0</entry>
+    <entry>Fire Bomb scrap cost 50 to 30</entry>
+    <entry>Fire Bomb rarity 2 to 1</entry>
+  </changelog>
+  <weaponBlueprint name="BOMB_FIRE">
+    <type>BOMB</type>
+    <tip>tip_bombs</tip>
+    <title>Fire Bomb</title>
+    <short>Fire B.</short>
+    <desc>Self-teleporting explosive designed to start fires. Can target your own ship.</desc>
+    <tooltip>Bomb weapon; requires a missile; does no damage but lights fires. Can target your own ship.</tooltip>
+    <damage>0</damage>
+    <sysDamage>0</sysDamage>
+    <persDamage>0</persDamage>
+    <missiles>1</missiles>
+    <shots>1</shots>
+    <sp>0</sp>
+    <fireChance>10</fireChance>
+    <breachChance>0</breachChance>
+    <cooldown>10</cooldown>
+    <power>1</power>
+    <cost>30</cost>
+    <bp>5</bp>
+    <rarity>1</rarity>
+    <image>bomb_fire</image>
+    <explosion>explosion_random</explosion>
+    <launchSounds>
+      <sound>bombTeleport</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>fireBomb</sound>
+    </hitShipSounds>
+    <weaponArt>bomb_fire</weaponArt>
+    <iconImage>bomb</iconImage>
+  </weaponBlueprint>
+
+  <changelog>
+    <entry>Ion Bomb ion damage 4 to 3</entry>
+    <entry>Ion Bomb charge time 22 to 16</entry>
+    <entry>Ion Bomb stun chance 0.2 to 0</entry>
+    <entry>Ion Bomb scrap cost 55 to 40</entry>
+    <entry>Ion Bomb rarity 3 to 1</entry>
+  </changelog>
+  <weaponBlueprint name="BOMB_ION">
+    <type>BOMB</type>
+    <tip>tip_bombs</tip>
+    <title>Ion Bomb</title>
+    <short>I. Bomb</short>
+    <desc>Self-teleporting explosive that uses ion damage to disable systems. Can target your own ship.</desc>
+    <tooltip>Bomb weapon; requires a missile; does no damage but deals 3 ion damage. Can target your own ship.</tooltip>
+    <damage>0</damage>
+    <ion>3</ion>
+    <missiles>1</missiles>
+    <shots>1</shots>
+    <sp>0</sp>
+    <fireChance>0</fireChance>
+    <breachChance>0</breachChance>
+    <stunChance>0</stunChance>
+    <cooldown>16</cooldown>
+    <power>1</power>
+    <cost>40</cost>
+    <bp>4</bp>
+    <rarity>1</rarity>
+    <image>bomb_ion</image>
+    <explosion>explosion_big1_ion</explosion>
+    <launchSounds>
+      <sound>bombTeleport</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>ionHit1</sound>
+      <sound>ionHit2</sound>
+      <sound>ionHit3</sound>
+    </hitShipSounds>
+    <weaponArt>bomb_ion</weaponArt>
+    <iconImage>bomb</iconImage>
+  </weaponBlueprint>
+
+  <changelog>
+    <entry>Healing Burst charge time 18 to 6</entry>
+    <entry>Healing Burst scrap cost 40 to 30</entry>
+    <entry>Healing Burst rarity 3 to 5</entry>
+  </changelog>
+  <weaponBlueprint name="BOMB_HEAL">
+    <type>BOMB</type>
+    <tip>tip_heal_bomb</tip>
+    <title>Healing Burst</title>
+    <short>Heal B.</short>
+    <desc>Self-teleporting healing unit that instantly heals all friendly crew in the room. Can target your own ship. Does not heal enemies.</desc>
+    <tooltip>Bomb weapon; requires a missile; heals nearby crewmembers. Can target your own ship.</tooltip>
+    <damage>0</damage>
+    <sysDamage>0</sysDamage>
+    <persDamage>-10</persDamage>
+    <missiles>1</missiles>
+    <shots>1</shots>
+    <sp>0</sp>
+    <fireChance>0</fireChance>
+    <breachChance>0</breachChance>
+    <cooldown>6</cooldown>
+    <power>1</power>
+    <cost>30</cost>
+    <bp>4</bp>
+    <rarity>5</rarity>
+    <image>bomb_heal</image>
+    <explosion>explosion_big1_heal</explosion>
+    <launchSounds>
+      <sound>bombTeleport</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>healBomb</sound>
+    </hitShipSounds>
+    <weaponArt>bomb_heal</weaponArt>
+    <iconImage>bomb_heal</iconImage>
+  </weaponBlueprint>
+
+  <changelog>
+    <entry>Lockdown Bomb charge time 15 to 6</entry>
+    <entry>Lockdown Bomb scrap cost 45 to 30</entry>
+  </changelog>
+  <weaponBlueprint name="BOMB_LOCK">
+    <type>BOMB</type>
+    <tip>tip_bombs</tip>
+    <title>Crystal Lockdown Bomb</title>
+    <short>Lock B.</short>
+    <desc>Self-teleporting explosive that does no damage but creates a dense wall preventing movement in or out of the room. Can target your own ship.</desc>
+    <tooltip>Bomb weapon; requires a missile; does no damage; prevents movement in or out of room. Can target your own ship.</tooltip>
+    <damage>0</damage>
+    <sysDamage>0</sysDamage>
+    <persDamage>0</persDamage>
+    <missiles>1</missiles>
+    <shots>1</shots>
+    <sp>0</sp>
+    <fireChance>0</fireChance>
+    <breachChance>0</breachChance>
+    <lockdown>1</lockdown>
+    <cooldown>6</cooldown>
+    <power>1</power>
+    <cost>30</cost>
+    <bp>4</bp>
+    <rarity>0</rarity>
+    <image>bomb_lockdown</image>
+    <explosion>explosion_lockdown</explosion>
+    <launchSounds>
+      <sound>bombTeleport</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>smallExplosion</sound>
+    </hitShipSounds>
+    <weaponArt>bomb_lockdown</weaponArt>
+    <iconImage>bomb</iconImage>
+  </weaponBlueprint>
+
+  <changelog>
+    <entry>Repair Burst charge time 14 to 4</entry>
+    <entry>Repair Burst scrap cost 40 to 30</entry>
+    <entry>Repair Burst rarity 3 to 4</entry>
+  </changelog>
+  <weaponBlueprint name="BOMB_HEAL_SYSTEM">
+    <type>BOMB</type>
+    <tip>tip_repair_bomb</tip>
+    <title>Repair Burst</title>
+    <short>Repair B.</short>
+    <desc>Self-teleporting unit that floods a room with nano-bots capable of completely repairing all system damage.</desc>
+    <tooltip>Bomb weapon; requires a Missile; fully repairs system. Can target your own ship.</tooltip>
+    <damage>0</damage>
+    <sysDamage>-8</sysDamage>
+    <persDamage>0</persDamage>
+    <missiles>1</missiles>
+    <shots>1</shots>
+    <sp>0</sp>
+    <fireChance>0</fireChance>
+    <breachChance>0</breachChance>
+    <cooldown>4</cooldown>
+    <power>1</power>
+    <cost>30</cost>
+    <bp>4</bp>
+    <rarity>4</rarity>
+    <image>bomb_repair_anim</image>
+    <explosion>explosion_repair</explosion>
+    <launchSounds>
+      <sound>bombTeleport</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>healBomb</sound>
+    </hitShipSounds>
+    <weaponArt>bomb_repair</weaponArt>
+    <iconImage>bomb_heal</iconImage>
+  </weaponBlueprint>
+
+  <changelog>
+    <entry>Stun Bomb charge time 17 to 6</entry>
+    <entry>Stun Bomb ion damage 1 to 0</entry>
+    <entry>Stun Bomb scrap cost 45 to 30</entry>
+    <entry>Stun Bomb made unavailable to enemies (they didn't target crew with it)</entry>
+  </changelog>
+  <weaponBlueprint name="BOMB_STUN">
+    <type>BOMB</type>
+    <tip>tip_bombs</tip>
+    <title>Stun Bomb</title>
+    <short>Stun B.</short>
+    <desc>Self-teleporting explosive that does no damage but stuns all crew inside the room. Can target your own ship.</desc>
+    <tooltip>Bomb weapon; requires a missile; does no damage but stuns all crew inside the room. Can target your own ship.</tooltip>
+    <damage>0</damage>
+    <stun>15</stun>
+    <sysDamage>0</sysDamage>
+    <persDamage>0</persDamage>
+    <ion>0</ion>
+    <missiles>1</missiles>
+    <shots>1</shots>
+    <sp>0</sp>
+    <fireChance>0</fireChance>
+    <breachChance>0</breachChance>
+    <cooldown>6</cooldown>
+    <power>1</power>
+    <cost>30</cost>
+    <bp>4</bp>
+    <rarity>2</rarity>
+    <image>bomb_stun_anim</image>
+    <explosion>explosion_big1_ion</explosion>
+    <launchSounds>
+      <sound>bombTeleport</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>smallExplosion</sound>
+    </hitShipSounds>
+    <weaponArt>bomb_stun</weaponArt>
+    <iconImage>bomb</iconImage>
+  </weaponBlueprint>
+
+  <changelog>
+    <entry>New Delayed Fire Bomb: 2 sec charge time, starts a fire and stuns crew for 15 sec, takes extra 10 sec to explode</entry>
+  </changelog>
+  <weaponBlueprint name="BOMB_DELAY_FIRE_STUN">
+    <type>BOMB</type>
+    <tip>tip_bombs</tip>
+    <title>Delayed Fire Bomb</title>
+    <short>D. Fire</short>
+    <desc>Self-teleporting explosive that starts a fire and stuns the crew. Takes 10 seconds to explode after teleporting. Can target your own ship.</desc>
+    <tooltip>Bomb weapon; requires a missile; starts a fire; stuns the crew. Can target your own ship.</tooltip>
+    <damage>0</damage>
+    <stun>15</stun>
+    <missiles>1</missiles>
+    <shots>1</shots>
+    <sp>0</sp>
+    <fireChance>10</fireChance>
+    <breachChance>0</breachChance>
+    <cooldown>2</cooldown>
+    <power>1</power>
+    <cost>40</cost>
+    <bp>4</bp>
+    <rarity>5</rarity>
+    <image>bomb_delay_fire_stun_bomb</image>
+    <explosion>explosion_random</explosion>
+    <launchSounds>
+      <sound>bombTeleport</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>smallExplosion</sound>
+    </hitShipSounds>
+    <weaponArt>bomb_delay_fire_stun_launcher</weaponArt>
+    <iconImage>bomb</iconImage>
+  </weaponBlueprint>
+
+  <changelog>
+    <entry>New Delayed Toxic Bomb: 2 sec charge time, does 90 damage to crew, takes extra 10 sec to explode</entry>
+  </changelog>
+  <weaponBlueprint name="BOMB_DELAY_BIO">
+    <type>BOMB</type>
+    <tip>tip_bombs</tip>
+    <title>Delayed Toxic Bomb</title>
+    <short>D. Toxic</short>
+    <desc>Self-teleporting explosive that deals heavy damage to crew. Takes 10 seconds to explode after teleporting. Can target your own ship.</desc>
+    <tooltip>Bomb weapon; requires a missile; does 90 damage to crew. Can target your own ship.</tooltip>
+    <damage>0</damage>
+    <persDamage>6</persDamage>
+    <missiles>1</missiles>
+    <shots>1</shots>
+    <sp>0</sp>
+    <fireChance>0</fireChance>
+    <breachChance>0</breachChance>
+    <cooldown>2</cooldown>
+    <power>1</power>
+    <cost>40</cost>
+    <bp>4</bp>
+    <rarity>0</rarity>
+    <image>bomb_delay_bio_bomb</image>
+    <explosion>explosion_random</explosion>
+    <launchSounds>
+      <sound>bombTeleport</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>smallExplosion</sound>
+    </hitShipSounds>
+    <weaponArt>bomb_delay_bio_launcher</weaponArt>
+    <iconImage>bomb</iconImage>
+  </weaponBlueprint>
+</FTL>

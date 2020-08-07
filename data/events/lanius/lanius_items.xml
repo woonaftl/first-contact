@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="ITEM_LANIUS">
+    <event load="LANIUS_FREE_STUFF"/>
+    <event load="LANIUS_RESEARCHER_CONTACT"/>
+    <event load="LANIUS_TRADER_TRANSLATOR"/>
+    <event load="LANIUS_TRADER"/>
+  </eventList>
+
+  <changelog>
+    <entry>Removed LANIUS_RESEARCHER_CRAFT event</entry>
+  </changelog>
+
+  <event name="LANIUS_FREE_STUFF" unique="true">
+    <text>You stumble across a badly damaged Lanius craft. It jumps away as soon as it sees you. Looking around the area, you discover a number of destroyed Rebel automated ships. It must have been quite the fight. You scrap what remains.</text>
+    <autoReward level="HIGH">standard</autoReward>
+  </event>
+
+  <event name="LANIUS_RESEARCHER_CONTACT" unique="true">
+    <text>A Federation science craft is docked with a few Lanius ships. You hail them and ask what is going on. "Greetings! We have been attempting to understand our region's newest visitors, the Lanius, although we have been making little headway in deciphering their language."</text>
+    <choice hidden="true">
+      <text>Ask if they have anything that could help your mission.</text>
+      <event load="LANIUS_RESEARCHER_CONTACT_LIST"/>
+    </choice>
+    <choice hidden="true" req="anaerobic">
+      <text>(Lanius Crew) Offer to copy your translator's data suite.</text>
+      <event>
+        <text>Your Lanius crew had tweaked the ship's translator to slowly improve itself over time. The data collected from your interactions with the Lanius could be very helpful to these scientists.</text>
+        <choice hidden="true">
+          <text id="continue"/>
+          <event load="LANIUS_RESEARCHER_CONTACT_LIST2"/>
+        </choice>
+      </event>
+    </choice>
+    <choice>
+      <text>Leave.</text>
+      <event>
+        <text>You wish them well and prepare to jump.</text>
+      </event>
+    </choice>
+  </event>
+  <eventList name="LANIUS_RESEARCHER_CONTACT_LIST">
+    <event>
+      <text>"There should be some extra junk metal in some cargo bay..." You thank them once they transfer the scrap and prepare to move on.</text>
+      <autoReward level="MED">scrap_only</autoReward>
+    </event>
+    <event>
+      <text>"We use drones frequently in our work and have extra parts lying around." They transfer the parts over and you thank them for their generosity.</text>
+      <autoReward level="MED">droneparts</autoReward>
+    </event>
+    <event>
+      <text>"We were doing research on some Lanius weaponry before. I hope you don't have to use it but perhaps it will aid you on your mission." You thank them and prepare to move on.</text>
+      <weapon name="RANDOM"/>
+    </event>
+    <event>
+      <text>"Sorry we don't really carry much equipment that would be of use to a military vessel." You thank them and prepare to move on.</text>
+    </event>
+  </eventList>
+  <eventList name="LANIUS_RESEARCHER_CONTACT_LIST2">
+    <event>
+      <text>They are grateful for your contribution and offer you some Lanius equipment that they were previously studying.</text>
+      <augment name="RANDOM"/>
+    </event>
+    <event>
+      <text>They are grateful for your contribution and offer you some Lanius equipment that they were previously studying.</text>
+      <weapon name="RANDOM"/>
+    </event>
+    <event>
+      <text>They are grateful for your contribution and offer you some Lanius equipment that they were previously studying.</text>
+      <drone name="RANDOM"/>
+    </event>
+  </eventList>
+
+  <event name="LANIUS_TRADER_TRANSLATOR" unique="true">
+    <text>A Lanius merchant appears to have a significantly improved translator as you clearly understand their message. "Metal content more than sufficient. Does your ship care to exchange resources for our excess metal?"</text>
+    <choice>
+      <text>Agree to the exchange.</text>
+      <event load="LANIUS_TRADER_LIST"/>
+    </choice>
+    <choice>
+      <text>Decline.</text>
+      <event>
+        <text>They leave without a word.</text>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Decline but ask about their translation device.</text>
+      <event>
+        <text>"Yes. It is quality. Our ship contains excess. Care to purchase?"</text>
+        <choice hidden="true">
+          <text>Purchase the translator for 40 scrap.</text>
+          <event>
+            <text>Your ships dock and you are more than a little surprised when the Lanius you spoke with boards your ship. It appears the 'device' you purchased was one of the beings that learned your language.</text>
+            <crewMember amount="1" class="anaerobic">Translator</crewMember>
+            <item_modify>
+              <item type="scrap" min="-40" max="-40"/>
+            </item_modify>
+          </event>
+        </choice>
+        <choice>
+          <text>Decline again.</text>
+          <event>
+            <text>"No matter. This one does not mind this ship." They pull away and you are left to wonder what it meant by that. Perhaps the translation device has not yet been perfected?</text>
+          </event>
+        </choice>
+      </event>
+    </choice>
+  </event>
+
+  <event name="LANIUS_TRADER" unique="true">
+    <textList name="LANIUS_TRADER_TEXT">
+      <text planet="PLANET_POPULATED">Aided by a modified translator, a nearby Lanius scavenger ship messages you, saying, "Metal sufficient. Request exchange." It appears there are some Lanius who wish sociable interaction with other races.</text>
+      <text>A small Lanius craft approaches. You prepare for a fight but they do not seem to be carrying any weapons. After a brief moment they message you, although your translator struggles with the unfamiliar dialect. It appears they wish to trade.</text>
+      <text>You arrive to find a large Lanius vessel laden with recently collected metal. They are apparently offering to trade for supplies they are lacking.</text>
+    </textList>
+    <choice>
+      <text>Agree to the exchange.</text>
+      <event load="LANIUS_TRADER_LIST"/>
+    </choice>
+    <choice>
+      <text>Decline.</text>
+      <event>
+        <text>They leave without a word.</text>
+      </event>
+    </choice>
+    <choice hidden="true" req="anaerobic">
+      <text>(Lanius Crew) Ask for an alternative trade.</text>
+      <event>
+        <text>After a short discussion you do not understand, the trader comes back with a second proposal.</text>
+        <choice>
+          <text>Agree to the exchange.</text>
+          <event load="LANIUS_TRADER_LIST2"/>
+        </choice>
+        <choice>
+          <text>Decline.</text>
+          <event>
+            <text>They leave without a word.</text>
+          </event>
+        </choice>
+      </event>
+    </choice>
+  </event>
+  <eventList name="LANIUS_TRADER_LIST">
+    <event>
+      <text>After the exchange is complete they leave without a word.</text>
+      <item_modify>
+        <item type="fuel" min="-7" max="-3"/>
+        <item type="scrap" min="15" max="30"/>
+      </item_modify>
+    </event>
+    <event>
+      <text>After the exchange is complete they leave without a word.</text>
+      <item_modify>
+        <item type="missiles" min="-7" max="-3"/>
+        <item type="scrap" min="20" max="40"/>
+      </item_modify>
+    </event>
+    <event>
+      <text>After the exchange is complete they leave without a word.</text>
+      <item_modify>
+        <item type="drones" min="-7" max="-3"/>
+        <item type="scrap" min="20" max="40"/>
+      </item_modify>
+    </event>
+  </eventList>
+  <eventList name="LANIUS_TRADER_LIST2">
+    <event>
+      <text>After the exchange is complete they leave without a word.</text>
+      <item_modify>
+        <item type="fuel" min="-7" max="-3"/>
+        <item type="scrap" min="20" max="35"/>
+      </item_modify>
+    </event>
+    <event>
+      <text>After the exchange is complete they leave without a word.</text>
+      <item_modify>
+        <item type="missiles" min="-7" max="-3"/>
+        <item type="scrap" min="25" max="50"/>
+      </item_modify>
+    </event>
+    <event>
+      <text>After the exchange is complete they leave without a word.</text>
+      <item_modify>
+        <item type="drones" min="-7" max="-3"/>
+        <item type="scrap" min="25" max="50"/>
+      </item_modify>
+    </event>
+  </eventList>
+</FTL>

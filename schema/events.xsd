@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!--TODO complete schema, make more strict-->
+
+  <xs:element name="FTL">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="event" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:complexContent>
+              <xs:extension base="eventType">
+                <xs:attribute name="name" type="xs:string" use="required"/>
+                <xs:attribute name="unique" type="xs:boolean" default="false">
+                  <xs:annotation>
+                    <xs:documentation>If true, event won't be able repeat twice in one sector.</xs:documentation>
+                  </xs:annotation>
+                </xs:attribute>
+              </xs:extension>
+            </xs:complexContent>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="eventCounts" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="event" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="name" type="xs:string" use="required"/>
+                  <xs:attribute name="min" type="xs:nonNegativeInteger" use="required"/>
+                  <xs:attribute name="max" type="xs:nonNegativeInteger" use="required"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="sector" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="eventList" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="event" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:extension base="eventType">
+                      <xs:attribute name="load" type="xs:string"/>
+                    </xs:extension>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string" use="required"/>
+            <xs:attribute name="unique" type="xs:boolean" default="false">
+              <xs:annotation>
+                <xs:documentation>If true, event won't be able repeat twice in one sector.</xs:documentation>
+              </xs:annotation>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="imageList" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="img" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="stringOrIdType">
+                      <xs:attribute name="w" type="xs:nonNegativeInteger" use="required"/>
+                      <xs:attribute name="h" type="xs:nonNegativeInteger" use="required"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string" use="required"/>
+            <xs:attribute name="ui">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:enumeration value="ipad"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="ship" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:all>
+              <xs:element name="crew" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>Replaces crew defined in shipBlueprint with crew defined in this element.</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="crewMember" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="type" type="xs:string"/>
+                        <xs:attribute name="prop" type="chanceType"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="deadCrew" minOccurs="0">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:extension base="eventType">
+                      <xs:attribute name="load" type="xs:string"/>
+                    </xs:extension>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="destroyed" minOccurs="0">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:extension base="eventType">
+                      <xs:attribute name="load" type="xs:string"/>
+                    </xs:extension>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="escape" minOccurs="0">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:extension base="eventType">
+                      <xs:attribute name="chance" type="chanceType"/>
+                      <xs:attribute name="min" type="xs:nonNegativeInteger" use="required"/>
+                      <xs:attribute name="max" type="xs:nonNegativeInteger" use="required"/>
+                      <xs:attribute name="timer" type="xs:nonNegativeInteger"/>
+                      <xs:attribute name="load" type="xs:string"/>
+                    </xs:extension>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="gotaway" minOccurs="0">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:extension base="eventType">
+                      <xs:attribute name="load" type="xs:string"/>
+                    </xs:extension>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="surrender" minOccurs="0">
+                <xs:complexType>
+                  <xs:complexContent>
+                    <xs:extension base="eventType">
+                      <xs:attribute name="chance" type="chanceType"/>
+                      <xs:attribute name="min" type="xs:nonNegativeInteger" use="required"/>
+                      <xs:attribute name="max" type="xs:nonNegativeInteger" use="required"/>
+                      <xs:attribute name="load" type="xs:string"/>
+                    </xs:extension>
+                  </xs:complexContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="weaponOverride" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="name" type="xs:string" maxOccurs="unbounded"/>
+                  </xs:sequence>
+                  <xs:attribute name="count" type="xs:nonNegativeInteger"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:all>
+            <xs:attribute name="name" type="xs:string" use="required"/>
+            <xs:attribute name="auto_blueprint" type="xs:string"/>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="textList" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="text" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="stringOrIdType">
+                      <xs:attribute name="back" type="xs:string"/>
+                      <xs:attribute name="planet" type="xs:string"/>
+                      <xs:attribute name="load" type="xs:string"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string" use="required"/>
+            <xs:attribute name="unique" type="xs:boolean" default="false"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="eventType">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="augment" type="nameType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="autoReward" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="autoRewardType">
+              <xs:attribute name="level" type="autoRewardLevelType"/>
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="boarders" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:attribute name="min" type="xs:nonNegativeInteger" use="required"/>
+          <xs:attribute name="max" type="xs:nonNegativeInteger" use="required"/>
+          <xs:attribute name="class" type="xs:string"/>
+          <xs:attribute name="breach" type="xs:boolean" default="false"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="choice" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="text">
+              <xs:complexType>
+                <xs:simpleContent>
+                  <xs:extension base="stringOrIdType">
+                    <xs:attribute name="load" type="xs:string"/>
+                  </xs:extension>
+                </xs:simpleContent>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="event" minOccurs="0">
+              <xs:complexType>
+                <xs:complexContent>
+                  <xs:extension base="eventType">
+                    <xs:attribute name="load" type="xs:string"/>
+                    <xs:attribute name="name" type="xs:string">
+                      <xs:annotation>
+                        <xs:documentation>Even though it works, it's recommended to use 'load' for consistency.</xs:documentation>
+                      </xs:annotation>
+                    </xs:attribute>
+                  </xs:extension>
+                </xs:complexContent>
+              </xs:complexType>
+            </xs:element>
+          </xs:all>
+          <xs:attribute name="hidden" type="xs:boolean" default="false"/>
+          <xs:attribute name="req" type="xs:string"/>
+          <xs:attribute name="lvl" type="xs:nonNegativeInteger"/>
+          <xs:attribute name="min_level" type="xs:nonNegativeInteger"/>
+          <xs:attribute name="max_lvl" type="xs:nonNegativeInteger"/>
+          <xs:attribute name="max_group" type="xs:nonNegativeInteger"/>
+          <xs:attribute name="blue" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>By default, the text is blue if there is a 'req' attribute. This attribute overrides it.</xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="crewMember" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="stringOrIdType">
+              <xs:attribute name="amount" type="xs:integer" use="required"/>
+              <xs:attribute name="class" type="xs:string"/>
+              <xs:attribute name="weapons" type="skillType"/>
+              <xs:attribute name="shields" type="skillType"/>
+              <xs:attribute name="pilot" type="skillType"/>
+              <xs:attribute name="engines" type="skillType"/>
+              <xs:attribute name="repair" type="skillType"/>
+              <xs:attribute name="combat" type="skillType"/>
+              <xs:attribute name="all_skills" type="skillType"/>
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="damage" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Damages the player. Cannot damage enemy. Deals damage to hull AND specified system as if it was hit with a weapon.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:attribute name="amount" type="xs:integer" use="required"/>
+          <xs:attribute name="system" type="systemExtendedType"/>
+          <xs:attribute name="effect" type="effectType"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="distressBeacon" minOccurs="0">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="drone" type="nameType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="environment" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:attribute name="type" type="environmentType" use="required"/>
+          <xs:attribute name="target" type="targetType"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="fleet" type="xs:string" minOccurs="0"/>
+      <xs:element name="img" minOccurs="0">
+        <xs:complexType>
+          <xs:attribute name="back" type="xs:string"/>
+          <xs:attribute name="planet" type="xs:string"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="item_modify" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="item" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:attribute name="type" type="itemType" use="required"/>
+                <xs:attribute name="min" type="xs:integer" use="required"/>
+                <xs:attribute name="max" type="xs:integer" use="required"/>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+          <xs:attribute name="steal" type="xs:boolean" default="false"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="modifyPursuit" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Rebel fleet is advanced by amount. Negative amount stops the fleet for several turns.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:attribute name="amount" type="xs:integer" use="required"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="quest" minOccurs="0">
+        <xs:complexType>
+          <xs:attribute name="event" type="xs:string" use="required"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="remove" type="nameType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="removeCrew" minOccurs="0">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="clone" type="xs:boolean"/>
+            <xs:element name="text" type="stringOrIdType"/>
+          </xs:all>
+          <xs:attribute name="class" type="xs:string"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="repair" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>REPAIR text on star map. Does not repair anyone's ship by itself.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="reveal_map" minOccurs="0">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="secretSector" minOccurs="0">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="ship" minOccurs="0">
+        <xs:complexType>
+          <xs:attribute name="load" type="xs:string"/>
+          <xs:attribute name="hostile" type="booleanType" default="true"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="status" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:attribute name="type" type="statusType" use="required"/>
+          <xs:attribute name="target" type="targetType" use="required"/>
+          <xs:attribute name="system" type="systemType" use="required"/>
+          <xs:attribute name="amount" type="xs:nonNegativeInteger"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="system" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:attribute name="name" type="systemShortType" use="required"/>
+          <xs:attribute name="lvl" type="xs:nonNegativeInteger"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="store" minOccurs="0">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="text" minOccurs="0">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="stringOrIdType">
+              <xs:attribute name="load" type="xs:string"/>
+              <xs:attribute name="planet" type="xs:string"/>
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="unlockShip" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute name="id" type="xs:nonNegativeInteger" use="required"/>
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="upgrade" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:attribute name="amount" type="xs:nonNegativeInteger" use="required"/>
+          <xs:attribute name="system" type="systemType" use="required"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="weapon" type="nameType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:choice>
+  </xs:complexType>
+
+
+  <xs:complexType name="nameType">
+    <xs:attribute name="name" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="stringOrIdType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="id" type="xs:string"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+
+  <xs:simpleType name="autoRewardType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="standard"/>
+      <xs:enumeration value="stuff"/>
+      <xs:enumeration value="scrap"/>
+      <xs:enumeration value="scrap_only"/>
+      <xs:enumeration value="fuel"/>
+      <xs:enumeration value="fuel_only"/>
+      <xs:enumeration value="missiles"/>
+      <xs:enumeration value="missiles_only"/>
+      <xs:enumeration value="droneparts"/>
+      <xs:enumeration value="droneparts_only"/>
+      <xs:enumeration value="weapon"/>
+      <xs:enumeration value="drone"/>
+      <xs:enumeration value="augment"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="autoRewardLevelType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="low"/>
+      <xs:enumeration value="LOW"/>
+      <xs:enumeration value="MED"/>
+      <xs:enumeration value="MEDIUM"/>
+      <xs:enumeration value="HIGH"/>
+      <xs:enumeration value="RANDOM"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="booleanType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="true"/>
+      <xs:enumeration value="false"/>
+      <xs:enumeration value="TRUE"/>
+      <xs:enumeration value="FALSE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="chanceType">
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="1"/>
+      <xs:fractionDigits value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+
+  <xs:simpleType name="effectType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="breach"/>
+      <xs:enumeration value="fire"/>
+      <xs:enumeration value="all"/>
+      <xs:enumeration value="random"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="environmentType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="asteroid"/>
+      <xs:enumeration value="nebula"/>
+      <xs:enumeration value="PDS">
+        <xs:annotation>
+          <xs:documentation>aka Planetary Defense System, aka Anti Ship Battery.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="pulsar"/>
+      <xs:enumeration value="storm"/>
+      <xs:enumeration value="sun"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="itemType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="scrap"/>
+      <xs:enumeration value="fuel"/>
+      <xs:enumeration value="missiles"/>
+      <xs:enumeration value="drones"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="skillType">
+    <xs:restriction base="xs:nonNegativeInteger">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="statusType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="clear">
+        <xs:annotation>
+          <xs:documentation>Restores maximum power of target system.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="divide">
+        <xs:annotation>
+          <xs:documentation>Divides maximum power of target system by amount.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="limit">
+        <xs:annotation>
+          <xs:documentation>Limits maximum power of target system to amount.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="loss">
+        <xs:annotation>
+          <xs:documentation>Reduces maximum power of target system by amount.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="systemShortType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="pilot"/>
+      <xs:enumeration value="sensors"/>
+      <xs:enumeration value="artillery"/>
+      <xs:enumeration value="doors"/>
+      <xs:enumeration value="engines"/>
+      <xs:enumeration value="shields"/>
+      <xs:enumeration value="weapons"/>
+      <xs:enumeration value="drones"/>
+      <xs:enumeration value="teleporter"/>
+      <xs:enumeration value="cloaking"/>
+      <xs:enumeration value="medbay"/>
+      <xs:enumeration value="oxygen"/>
+      <xs:enumeration value="clonebay"/>
+      <xs:enumeration value="hacking"/>
+      <xs:enumeration value="mind"/>
+      <xs:enumeration value="battery"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="systemType">
+    <xs:union memberTypes="systemShortType">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="reactor"/>
+          <xs:enumeration value="random"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="systemExtendedType">
+    <xs:union memberTypes="systemType">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="room"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="targetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="all"/>
+      <xs:enumeration value="enemy"/>
+      <xs:enumeration value="player"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

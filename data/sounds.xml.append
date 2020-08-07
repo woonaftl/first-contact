@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <orchidDeath volume="6">aliens/bp_sfx_orchid_death.ogg</orchidDeath>
+  <orchidShoot1 volume="4">aliens/bp_sfx_orchid_shoot1.ogg</orchidShoot1>
+  <orchidShoot2 volume="4">aliens/bp_sfx_orchid_shoot2.ogg</orchidShoot2>
+  <orchidShoot3 volume="4">aliens/bp_sfx_orchid_shoot3.ogg</orchidShoot3>
+</FTL>

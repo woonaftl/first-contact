@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <animSheet name="ion_1_shot" w="192" h="24" fw="24" fh="24">weapons/ion_1_shot_strip8.png</animSheet>
+  <anim name="ion_1_shot">
+    <sheet>ion_1_shot</sheet>
+    <desc length="8" x="0" y="0"/>
+    <time>0.3</time>
+  </anim>
+
+  <animSheet name="ion_2_shot" w="192" h="24" fw="24" fh="24">weapons/ion_2_shot_strip8.png</animSheet>
+  <anim name="ion_2_shot">
+    <sheet>ion_2_shot</sheet>
+    <desc length="8" x="0" y="0"/>
+    <time>0.3</time>
+  </anim>
+
+  <animSheet name="ion_4_shot" w="256" h="32" fw="32" fh="32">weapons/ion_4_shot_strip8.png</animSheet>
+  <anim name="ion_4_shot">
+    <sheet>ion_4_shot</sheet>
+    <desc length="8" x="0" y="0"/>
+    <time>0.3</time>
+  </anim>
+
+  <animSheet name="ion_stun_shot" w="192" h="24" fw="24" fh="24">weapons/ion_stun_shot_strip8.png</animSheet>
+  <anim name="ion_stun_shot">
+    <sheet>ion_stun_shot</sheet>
+    <desc length="8" x="0" y="0"/>
+    <time>0.3</time>
+  </anim>
+
+  <animSheet name="ion_1" w="240" h="50" fw="30" fh="50">weapons/ion_1_strip8.png</animSheet>
+  <weaponAnim name="ion_1">
+    <sheet>ion_1</sheet>
+    <desc length="8" x="0" y="0"/>
+    <chargedFrame>1</chargedFrame>
+    <fireFrame>5</fireFrame>
+    <firePoint x="17" y="7"/>
+    <mountPoint x="9" y="35"/>
+    <chargeImage>weapons/ion_1_glow.png</chargeImage>
+  </weaponAnim>
+
+  <animSheet name="ion_2" w="216" h="52" fw="27" fh="52">weapons/ion_2_strip8.png</animSheet>
+  <weaponAnim name="ion_2">
+    <sheet>ion_2</sheet>
+    <desc length="8" x="0" y="0"/>
+    <chargedFrame>1</chargedFrame>
+    <fireFrame>5</fireFrame>
+    <firePoint x="15" y="6"/>
+    <mountPoint x="3" y="36"/>
+    <chargeImage>weapons/ion_2_glow.png</chargeImage>
+  </weaponAnim>
+
+  <animSheet name="ion_4" w="216" h="54" fw="27" fh="54">weapons/ion_4_strip8.png</animSheet>
+  <weaponAnim name="ion_4">
+    <sheet>ion_4</sheet>
+    <desc length="8" x="0" y="0"/>
+    <chargedFrame>1</chargedFrame>
+    <fireFrame>5</fireFrame>
+    <firePoint x="16" y="12"/>
+    <mountPoint x="5" y="38"/>
+    <chargeImage>weapons/ion_4_glow.png</chargeImage>
+  </weaponAnim>
+
+  <animSheet name="chargeion_charge" w="105" h="40" fw="35" fh="40">weapons/ion_charger_charges.png</animSheet>
+  <anim name="chargeion_charge">
+    <sheet>chargeion_charge</sheet>
+    <desc length="4" x="0" y="0"/>
+    <time>1.0</time>
+  </anim>
+
+  <animSheet name="chargeion" w="385" h="40" fw="35" fh="40">weapons/ion_charger_base.png</animSheet>
+  <weaponAnim name="chargeion">
+    <sheet>chargeion</sheet>
+    <desc length="11" x="0" y="0"/>
+    <chargedFrame>1</chargedFrame>
+    <fireFrame>2</fireFrame>
+    <firePoint x="24" y="10" charge="6"/>
+    <mountPoint x="8" y="34"/>
+    <boost>chargeion_charge</boost>
+    <chargeImage>weapons/ion_charger_glow.png</chargeImage>
+  </weaponAnim>
+
+  <animSheet name="ion_stun" w="240" h="45" fw="30" fh="45">weapons/ion_stun_strip8.png</animSheet>
+  <weaponAnim name="ion_stun">
+    <sheet>ion_stun</sheet>
+    <desc length="8" x="0" y="0"/>
+    <chargedFrame>1</chargedFrame>
+    <fireFrame>5</fireFrame>
+    <firePoint x="15" y="12"/>
+    <mountPoint x="5" y="35"/>
+    <chargeImage>weapons/ion_stun_glow.png</chargeImage>
+  </weaponAnim>
+
+  <animSheet name="ion_charger_2_charge" w="156" h="49" fw="39" fh="49">weapons/ion_charger_2_charges.png</animSheet>
+  <anim name="ion_charger_2_charge">
+    <sheet>ion_charger_2_charge</sheet>
+    <desc length="4" x="0" y="0"/>
+    <time>1.0</time>
+  </anim>
+  <animSheet name="ion_charger_2" w="546" h="49" fw="39" fh="49">weapons/ion_charger_2_strip14.png</animSheet>
+  <weaponAnim name="ion_charger_2">
+    <sheet>ion_charger_2</sheet>
+    <desc length="14" x="0" y="0"/>
+    <chargedFrame>1</chargedFrame>
+    <fireFrame>2</fireFrame>
+    <firePoint x="30" y="11" charge="6"/>
+    <mountPoint x="8" y="37"/>
+    <boost>ion_charger_2_charge</boost>
+    <chargeImage>weapons/ion_charger_2_glow.png</chargeImage>
+  </weaponAnim>
+
+  <animSheet name="ion_stun_burst" w="232" h="46" fw="29" fh="46">weapons/ion_stun_burst_strip8.png</animSheet>
+  <weaponAnim name="ion_stun_burst">
+    <sheet>ion_stun_burst</sheet>
+    <desc length="8" x="0" y="0"/>
+    <chargedFrame>1</chargedFrame>
+    <fireFrame>5</fireFrame>
+    <firePoint x="16" y="12"/>
+    <mountPoint x="5" y="35"/>
+    <chargeImage>weapons/ion_stun_burst_glow.png</chargeImage>
+  </weaponAnim>
+
+  <animSheet name="ion_stun_heavy" w="304" h="59" fw="38" fh="59">weapons/ion_stun_heavy_strip8.png</animSheet>
+  <weaponAnim name="ion_stun_heavy">
+    <sheet>ion_stun_heavy</sheet>
+    <desc length="8" x="0" y="0"/>
+    <chargedFrame>1</chargedFrame>
+    <fireFrame>5</fireFrame>
+    <firePoint x="19" y="13"/>
+    <mountPoint x="5" y="45"/>
+    <chargeImage>weapons/ion_stun_heavy_glow.png</chargeImage>
+  </weaponAnim>
+</FTL>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="NO_FUEL">
+    <event load="FUEL_FLEET_DELAY"/>
+    <event load="FUEL_NOTHING" count="4"/>
+    <event load="FUEL_TRADER"/>
+    <event load="FUEL_OFF_ENGI_DUBIOUS"/>
+    <event load="FUEL_OFF_ROCK_WRECK"/>
+    <event load="NO_FUEL_REFUGEE_FRIENDLY"/>
+
+    <event load="FUEL_EXPLORE"/>
+    <event load="FUEL_APPROACH"/>
+  </eventList>
+
+  <event name="FUEL_FLEET_DELAY">
+    <textList name="FUEL_FLEET_DELAY_LIST">
+      <text>As you are keeping a low profile, you're certain that the Rebel fleet is having a hard time tracking your ship.</text>
+      <text>Since your distress beacon has not been activated, you feel confident that the Rebel fleet is having difficulty tracking you. It should buy you a little time.</text>
+      <text>Long range scanners indicate the Rebel fleet has temporarily paused its advance on your position. Your decision to leave the distress beacon deactivated was farsighted.</text>
+      <text>Scanners show that the Rebel fleet has ceased its pursuit for a short time.</text>
+      <text>Your intuition as captain is telling you that the Rebels are having a hard time trying to find your ship.</text>
+      <text>Without a distress beacon or any FTL signatures to trace, you're sure that the Rebels are struggling to find you. You can only hope their confusion lasts until more fuel can be found.</text>
+      <text>The Rebel fleet seems to be unable to locate your ship's signature. If only you could get some fuel, you might still have a chance to place some distance between you and them...</text>
+    </textList>
+    <modifyPursuit amount="-1"/>
+    <choice hidden="true">
+      <text id="continue"/>
+      <event load="NO_FUEL"/>
+    </choice>
+  </event>
+
+  <event name="FUEL_NOTHING">
+    <textList name="FUEL_NOTHING_LIST">
+      <text>No ship is in scanning range and no one arrives at the beacon.</text>
+      <text>Your waiting yields nothing while the fleet surely gets closer...</text>
+      <text>A freighter suddenly arrives nearby. They are so close you can almost wave at them, but your hails are ignored and the ship quickly jumps away.</text>
+      <text>Small traffic passes within a short distance of you, but no one responds to your hails.</text>
+      <text>The only ship within hailing range appears to be a civilian vessel. However, it quickly leaves once it picks up your signal.</text>
+      <text>As you wait, a small asteroid storm pelts softly against your shields and hull.</text>
+      <text>You begin to wonder if turning on the beacon would be worth the risk of detection. The fleet slowly approaches.</text>
+      <text>You contemplate the vastness of space.</text>
+      <text>The prolonged wait in empty space is causing tension among the crew. Still no contact.</text>
+      <text>Cabin fever begins to spread among your crew.</text>
+      <text>Long range scanners detect a small settlement, but they refuse all contact.</text>
+    </textList>
+  </event>
+
+  <event name="FUEL_TRADER">
+    <textList name="FUEL_TRADER_TEXT_LIST">
+      <text>A merchant ship jumps into the sector and you quickly hail them asking for help. They respond, "Perhaps we could work out an exchange..."</text>
+      <text>A number of ships pass through the sector. You relay your message to each, and one finally responds. "I can't help much right now but perhaps we can trade."</text>
+      <text>A nearby settlement sends a small ship in your direction. It keeps its distance and hails you, "We can give you fuel for a price. Just don't even think of doing anything rash. We've got a teleporter at our base and a squad ready to defend us.</text>
+      <text>A large caravan of merchant ships jumps to a location near your position. Sensing an opportunity, one ship breaks off from the fleet to offer you an exchange.</text>
+      <text>A modified YT-1300 freighter jumps to an area near your sector. Your gut tells you these people are smugglers, but they seem to be feeling altruistic and present an offer of assistance.</text>
+    </textList>
+    <ship load="CIVILIAN_SHIP" hostile="false"/>
+    <choice>
+      <text>Gladly trade.</text>
+      <event load="FUEL_TRADER_HIGH_LIST"/>
+    </choice>
+    <choice>
+      <text>Respectfully decline.</text>
+      <event load="FUEL_TRADER_PT2"/>
+    </choice>
+  </event>
+
+  <event name="FUEL_OFF_ENGI_DUBIOUS">
+    <text>As you drift through space an Engi ship passes through. From listening to their com channel it sounds like they're discussing making repairs on their ship.</text>
+    <ship name="FUEL_OFF_ENGI_DUBIOUS" auto_blueprint="SHIPS_CIRCLE" hostile="false">
+      <escape timer="80" min="30" max="30"/>
+      <gotaway>
+        <text>The ship jumps away without a word. You hope they didn't leave to get reinforcements.</text>
+      </gotaway>
+      <destroyed>
+        <text>With the hostile Engi ship destroyed you carefully extract as much fuel as possible from the wreckage.</text>
+        <autoReward level="MED">fuel</autoReward>
+      </destroyed>
+      <deadCrew>
+        <text>With the hostile Engies subdued you carefully extract as much fuel as possible from the ship.</text>
+        <autoReward level="HIGH">fuel</autoReward>
+      </deadCrew>
+    </ship>
+    <choice hidden="true">
+      <text>Hail them.</text>
+      <eventList name="FUEL_OFF_ENGI_DUBIOUS_LIST">
+        <event>
+          <text>The Engi respond to your signal. "Identity: Federation. I/O error: Federation = [void]." All further hails go unanswered.</text>
+        </event>
+        <event>
+          <text>The Engi fail to respond, but move to intercept. You detect abnormal electromagnetic signals aboard the ship - someone has reprogrammed them to fight!</text>
+          <ship hostile="true"/>
+        </event>
+        <event>
+          <text>The Engi respond to your signal. "Your need: fuel. This unit's need: scrap. Exchange beneficial. Exchange permitted?</text>
+          <choice>
+            <text>Make the trade.</text>
+            <event>
+              <text>You make the exchange and the Engi leave without another word.</text>
+              <item_modify>
+                <item type="scrap" min="-20" max="-10"/>
+                <item type="fuel" min="4" max="6"/>
+              </item_modify>
+            </event>
+          </choice>
+          <choice>
+            <text>Decline.</text>
+            <event>
+              <text>The Engi coolly cut communications and continue on their journey.</text>
+            </event>
+          </choice>
+        </event>
+        <event>
+          <text>Upon discovering your need, the Engi gladly offer some of their extra fuel reserves. It's amazing how altruistic these robotic creatures can be.</text>
+          <item_modify>
+            <item type="fuel" min="2" max="6"/>
+          </item_modify>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true">
+      <text>Ignore them.</text>
+      <event>
+        <text>They clearly are busy because they don't notice your ship at all.</text>
+      </event>
+    </choice>
+    <choice hidden="true" req="SHIP_REPAIR_LIST">
+      <text>(Hull Repair Drone) Offer to help repair their hull.</text>
+      <event>
+        <text>They happily accept your offer for help. Once the drone does its work they transfer over some fuel for your trouble.</text>
+        <item_modify>
+          <item type="drones" min="-1" max="-1"/>
+          <item type="fuel" min="4" max="6"/>
+        </item_modify>
+      </event>
+    </choice>
+  </event>
+
+  <event name="FUEL_OFF_ROCK_WRECK">
+    <text>As you await either salvation or death, your attention is drawn to a sea of debris drifting past the starboard view port. The chunks gliding by grow bigger in size until the stern of a Rock frigate, gutted in some distant war, comes into view.</text>
+    <choice hidden="true">
+      <text>Send an away team.</text>
+      <event>
+        <text>Perhaps there's some viable fuel left on board; a small away team boards the vessel.</text>
+        <choice hidden="true">
+          <text>Report!</text>
+          <eventList name="FUEL_OFF_ROCK_WRECK_LIST">
+            <event>
+              <text>A short time later the team returns with a stash of ammunition and scrap - but all the fuel on board is long gone.</text>
+              <autoReward level="MED">missiles</autoReward>
+            </event>
+            <event>
+              <text>One of the crew reports that the main computer was housed in this section and is still partially operational. They're able to download local telemetry as well the location of the ship's reserve fuel! Your map has been updated.</text>
+              <reveal_map/>
+              <autoReward level="MED">fuel_only</autoReward>
+            </event>
+            <event>
+              <text>The team returns home rather sooner than expected. Turns out just as they were making entry to the frigate, the ship's emergency fuel cell just happened to drift by!</text>
+              <autoReward level="MED">fuel_only</autoReward>
+            </event>
+            <event>
+              <text>The away team reports in, but then screams are heard and the comm goes dead! When it comes back online a Rockman can be heard - he's the lone survivor from the frigate's crew, and completely mad. He demands you pay a scrap ransom in return for your crew-member's life!</text>
+              <choice>
+                <text>Pay.</text>
+                <event>
+                  <text>Despite his fragile condition, the Rockman is good to his word and returns your crew-member, who is suitably grateful. Sadly, gratitude doesn't power the FTL drive.</text>
+                  <item_modify>
+                    <item type="scrap" min="-40" max="-25"/>
+                  </item_modify>
+                </event>
+              </choice>
+              <choice>
+                <text>Refuse.</text>
+                <event>
+                  <text>It's a tough call, but it's for the Federation and the liberty of all. You set off before you can change your mind.</text>
+                  <removeCrew>
+                    <clone>false</clone>
+                    <text>Before preparing to jump you check the Clone Bay but there is no sign of activity.</text>
+                  </removeCrew>
+                </event>
+              </choice>
+            </event>
+          </eventList>
+        </choice>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Let it drift by.</text>
+      <event>
+        <text>The Rock don't take kindly to aliens picking through their belongings, no matter how decrepit they may seem, and you don't take risks in Rock territory.</text>
+      </event>
+    </choice>
+    <choice hidden="true" req="LIFE_SCANNER">
+      <text>(Life Scanner) Run additional scans.</text>
+      <event>
+        <text>The ship appears to be entirely lifeless. Your crew is able to find some usable fuel cells after a brief search.</text>
+        <autoReward level="MED">fuel_only</autoReward>
+      </event>
+    </choice>
+  </event>
+
+  <event name="NO_FUEL_REFUGEE_FRIENDLY">
+    <text>A refugee ship fleeing the Rebel advance enters the system. It seems surprised to see you stranded, and admits it was following you from afar in the hopes of you leading it to Federation space. While it doesn't have much fuel to spare, it recognizes you are part of the Federation and offers to split its remaining fuel with you.</text>
+    <autoReward level="MED">fuel_only</autoReward>
+  </event>
+</FTL>

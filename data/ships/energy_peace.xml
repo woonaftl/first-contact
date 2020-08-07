@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <img x="-66" y="-55" w="247" h="399"/>
+  <offsets>
+    <floor x="108" y="175"/>
+    <cloak x="0" y="0"/>
+  </offsets>
+  <weaponMounts>
+    <mount x="214" y="149" rotate="false" mirror="false" gib="2" slide="right"/>
+    <mount x="43" y="64" rotate="false" mirror="true" gib="1" slide="left"/>
+    <mount x="162" y="51" rotate="false" mirror="false" gib="2" slide="up"/>
+    <mount x="95" y="27" rotate="false" mirror="true" gib="2" slide="up"/>
+  </weaponMounts>
+  <explosion>
+    <gib1>
+      <velocity min="0.30" max="0.70"/>
+      <direction min="20" max="100"/>
+      <angular min="0.00" max="0.50"/>
+      <x>5</x>
+      <y>24</y>
+    </gib1>
+    <gib2>
+      <velocity min="0.50" max="0.80"/>
+      <direction min="-78" max="7"/>
+      <angular min="-0.50" max="0.00"/>
+      <x>32</x>
+      <y>5</y>
+    </gib2>
+    <gib3>
+      <velocity min="0.30" max="0.70"/>
+      <direction min="200" max="280"/>
+      <angular min="0.50" max="1.00"/>
+      <x>48</x>
+      <y>140</y>
+    </gib3>
+    <gib4>
+      <velocity min="0.20" max="0.50"/>
+      <direction min="224" max="303"/>
+      <angular min="-1.00" max="-0.50"/>
+      <x>95</x>
+      <y>132</y>
+    </gib4>
+  </explosion>
+</FTL>

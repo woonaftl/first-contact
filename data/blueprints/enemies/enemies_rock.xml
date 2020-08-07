@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../schema/autoBlueprints.xsd">
+  <blueprintList name="SHIPS_CIVILIAN">
+    <name>ROCK_SCOUT</name>
+    <name>ROCK_FIGHT</name>
+    <name>ROCK_EXPLORER</name>
+  </blueprintList>
+  <blueprintList name="SHIPS_ROCK">
+    <name>ROCK_SCOUT</name>
+    <name>ROCK_FIGHT</name>
+    <name>ROCK_ASSAULT</name>
+    <name>ROCK_GUARD</name>
+    <name>ROCK_EXPLORER</name>
+    <name>ROCK_DEFENDER</name>
+  </blueprintList>
+  <blueprintList name="SHIPS_ROCK_PIRATE">
+    <name>ROCK_SCOUT_PIRATE</name>
+    <name>ROCK_FIGHT_PIRATE</name>
+    <name>ROCK_GUARD_PIRATE</name>
+    <name>ROCK_EXPLORER_PIRATE</name>
+  </blueprintList>
+  <blueprintList name="SHIPS_PIRATE">
+    <name>ROCK_SCOUT_PIRATE</name>
+    <name>ROCK_FIGHT_PIRATE</name>
+    <name>ROCK_GUARD_PIRATE</name>
+    <name>ROCK_EXPLORER_PIRATE</name>
+  </blueprintList>
+
+  <blueprintList name="ROCK_ASSAULT_ELITE">
+    <name>ROCK_ASSAULT</name> <!--TODO: broken-->
+  </blueprintList>
+
+  <shipBlueprintSuper name="ROCK_SCOUT" layout="rock_scout" img="rock_scout">
+    <class>Rock Scout</class>
+    <class_pirate>Pirate Scout</class_pirate>
+    <systemList>
+      <pilot power="1" max="3" room="3" room_pirate="0"/>
+      <doors power="1" max="3" room="5" start="false"/>
+      <oxygen power="1" max="3" room="0" room_pirate="3"/>
+      <medbay power="1" max="3" room="2" room_pirate="4" start="false"/>
+      <shields power="2" max="8" room="4" room_pirate="2"/>
+      <engines power="1" max="5" room="6" room_pirate="5"/>
+      <weapons room="1" room_pirate="1"/>
+    </systemList>
+    <weaponList sector="0" missiles="1" system_power="3">
+      <weapon name="WEAPONS_MISSILES_1"/>
+      <weapon name="WEAPONS_SIMPLE_2"/>
+      <weapon name="WEAPONS_SIMPLE_1"/>
+    </weaponList>
+    <weaponList sector="1" missiles="1" system_power="4">
+      <weapon name="WEAPONS_MISSILES_2"/>
+      <weapon name="WEAPONS_SIMPLE_2"/>
+      <weapon name="WEAPONS_SIMPLE_2"/>
+    </weaponList>
+    <weaponList sector="2" missiles="2" system_power="4">
+      <weapon name="WEAPONS_MISSILES_2"/>
+      <weapon name="WEAPONS_SIMPLE_2"/>
+      <weapon name="WEAPONS_SIMPLE_2"/>
+    </weaponList>
+    <weaponList sector="3" missiles="2" system_power="5">
+      <weapon name="WEAPONS_MISSILES_2"/>
+      <weapon name="WEAPONS_SIMPLE_2"/>
+      <weapon name="WEAPONS_SIMPLE_2"/>
+      <weapon name="WEAPONS_SIMPLE_1"/>
+    </weaponList>
+    <health amount="8"/>
+    <crewCount amount="2" max="5" class="rock"/>
+    <boardingAI>sabotage</boardingAI>
+    <aug name="ROCK_ARMOR"/>
+    <cloakImage>rock_scout</cloakImage>
+  </shipBlueprintSuper>
+
+  <shipBlueprintSuper name="ROCK_FIGHT" layout="rock_fight" img="rock_fight">
+    <class>Rock Fighter</class>
+    <class_pirate>Pirate Fighter</class_pirate>
+    <systemList>
+      <pilot power="1" max="3" room="3" room_pirate="2"/>
+      <doors power="1" max="3" room="6" room_pirate="1" start="false"/>
+      <oxygen power="1" max="3" room="7" room_pirate="0"/>
+      <medbay power="1" max="3" room="4" room_pirate="7" start="false"/>
+      <shields power="2" max="8" room="5" room_pirate="4"/>
+      <engines power="1" max="5" room="8" room_pirate="6"/>
+      <weapons room="0" room_pirate="3"/>
+    </systemList>
+    <weaponList sector="2" missiles="4" system_power="4">
+      <weapon name="WEAPONS_MISSILES_2"/>
+      <weapon name="WEAPONS_MISSILES_2"/>
+      <weapon name="WEAPONS_SIMPLE_2"/>
+      <weapon name="WEAPONS_SIMPLE_2"/>
+    </weaponList>
+    <weaponList sector="3" missiles="4" system_power="5">
+      <weapon name="WEAPONS_MISSILES_3"/>
+      <weapon name="WEAPONS_MISSILES_2"/>
+      <weapon name="WEAPONS_SIMPLE_3"/>
+      <weapon name="WEAPONS_SIMPLE_2"/>
+    </weaponList>
+    <weaponList sector="4" missiles="4" system_power="6">
+      <weapon name="WEAPONS_MISSILES_3"/>
+      <weapon name="WEAPONS_MISSILES_3"/>
+      <weapon name="WEAPONS_SIMPLE_3"/>
+      <weapon name="WEAPONS_SIMPLE_3"/>
+    </weaponList>
+    <weaponList sector="5" missiles="6" system_power="6">
+      <weapon name="WEAPONS_MISSILES_3"/>
+      <weapon name="WEAPONS_MISSILES_3"/>
+      <weapon name="WEAPONS_SIMPLE_3"/>
+      <weapon name="WEAPONS_SIMPLE_3"/>
+    </weaponList>
+    <health amount="10"/>
+    <crewCount amount="3" max="5" class="rock"/>
+    <boardingAI>sabotage</boardingAI>
+    <aug name="ROCK_ARMOR"/>
+    <cloakImage>rock_fight</cloakImage>
+  </shipBlueprintSuper>
+
+  <shipBlueprintSuper name="ROCK_ASSAULT" layout="rock_assault" img="rock_assault">
+    <class>Rock Assault</class>
+    <systemList>
+      <pilot power="1" max="3" room="0"/>
+      <doors power="1" max="3" room="3" start="false"/>
+      <oxygen power="1" max="3" room="9"/>
+      <medbay power="1" max="2" room="1" start="false"/>
+      <shields power="2" max="8" room="6"/>
+      <engines power="1" max="5" room="7"/>
+      <weapons room="5"/>
+      <cloaking power="1" max="1" room="4" start="false"/>
+      <teleporter power="1" max="2" room="8" start="false"/>
+    </systemList>
+    <weaponList sector="4" missiles="2" system_power="6">
+      <weapon name="WEAPONS_MISSILES_2"/>
+      <weapon name="WEAPONS_SIMPLE_3"/>
+      <weapon name="WEAPONS_SIMPLE_1"/>
+      <weapon name="WEAPONS_HEAVY_2"/>
+    </weaponList>
+    <weaponList sector="5" missiles="2" system_power="7">
+      <weapon name="WEAPONS_MISSILES_2"/>
+      <weapon name="WEAPONS_SIMPLE_3"/>
+      <weapon name="WEAPONS_SIMPLE_2"/>
+      <weapon name="WEAPONS_HEAVY_2"/>
+    </weaponList>
+    <weaponList sector="6" missiles="2" system_power="8">
+      <weapon name="WEAPONS_MISSILES_3"/>
+      <weapon name="WEAPONS_SIMPLE_3"/>
+      <weapon name="WEAPONS_SIMPLE_2"/>
+      <weapon name="WEAPONS_HEAVY_3"/>
+    </weaponList>
+    <weaponList sector="7" missiles="2" system_power="8">
+      <weapon name="WEAPONS_MISSILES_3"/>
+      <weapon name="WEAPONS_SIMPLE_3"/>
+      <weapon name="WEAPONS_SIMPLE_2"/>
+      <weapon name="WEAPONS_HEAVY_3"/>
+    </weaponList>
+    <health amount="12"/>
+    <crewCount amount="4" max="7" class="rock"/>
+    <boardingAI>sabotage</boardingAI>
+    <aug name="ROCK_ARMOR"/>
+    <cloakImage>rock_assault</cloakImage>
+  </shipBlueprintSuper>
+
+  <shipBlueprintSuper name="ROCK_EXPLORER" layout="rock_explorer" img="rock_explorer">
+    <class>Rock Explorer</class>
+    <class_pirate>Pirate Explorer</class_pirate>
+    <systemList>
+      <pilot power="1" max="2" room="0" room_pirate="0"/>
+      <oxygen power="1" max="2" room="2" room_pirate="4"/>
+      <shields power="2" max="6" room="4" room_pirate="7"/>
+      <engines power="1" max="4" room="5" room_pirate="5"/>
+      <weapons room="3" room_pirate="1"/>
+      <clonebay power="1" max="3" room="1" room_pirate="3" start="false"/>
+    </systemList>
+    <weaponList sector="0" missiles="0" system_power="4">
+      <weapon name="WEAPONS_HEAVY_2"/>
+      <weapon name="WEAPONS_SIMPLE_2"/>
+    </weaponList>
+    <weaponList sector="1" missiles="0" system_power="5">
+      <weapon name="WEAPONS_HEAVY_2"/>
+      <weapon name="WEAPONS_SIMPLE_2"/>
+      <weapon name="WEAPONS_SIMPLE_1"/>
+    </weaponList>
+    <weaponList sector="2" missiles="0" system_power="6">
+      <weapon name="WEAPONS_HEAVY_2"/>
+      <weapon name="WEAPONS_SIMPLE_3"/>
+      <weapon name="WEAPONS_SIMPLE_1"/>
+    </weaponList>
+    <weaponList sector="3" missiles="0" system_power="6">
+      <weapon name="WEAPONS_HEAVY_2"/>
+      <weapon name="WEAPONS_SIMPLE_3"/>
+      <weapon name="WEAPONS_SIMPLE_1"/>
+    </weaponList>
+    <health amount="9"/>
+    <crewCount amount="3" max="4" class="rock"/>
+    <boardingAI>sabotage</boardingAI>
+    <aug name="ROCK_ARMOR"/>
+    <cloakImage>rock_explorer</cloakImage>
+  </shipBlueprintSuper>
+
+  <shipBlueprintSuper name="ROCK_GUARD" layout="rock_guard" img="rock_guard">
+    <class>Rock Guard</class>
+    <class_pirate>Pirate Guard</class_pirate>
+    <systemList>
+      <pilot power="1" max="2" room="0" room_pirate="0"/>
+      <oxygen power="1" max="3" room="4" room_pirate="11"/>
+      <shields power="2" max="8" room="1" room_pirate="12"/>
+      <engines power="1" max="4" room="3" room_pirate="5"/>
+      <weapons room="9" room_pirate="3"/>
+      <medbay power="1" max="3" room="8" room_pirate="13"/>
+      <teleporter power="1" max="3" room="5" room_pirate="4"/>
+      <doors power="1" max="3" room="2" room_pirate="7" start="false"/>
+    </systemList>
+    <weaponList sector="4" missiles="5" system_power="5">
+      <weapon name="WEAPONS_MISSILES_2"/>
+      <weapon name="WEAPONS_MISSILES_3"/>
+      <weapon name="WEAPONS_SIMPLE_2"/>
+      <weapon name="WEAPONS_SIMPLE_3"/>
+    </weaponList>
+    <weaponList sector="5" missiles="5" system_power="6">
+      <weapon name="WEAPONS_MISSILES_3"/>
+      <weapon name="WEAPONS_MISSILES_3"/>
+      <weapon name="WEAPONS_SIMPLE_2"/>
+      <weapon name="WEAPONS_SIMPLE_3"/>
+    </weaponList>
+    <weaponList sector="6" missiles="5" system_power="6">
+      <weapon name="WEAPONS_MISSILES_3"/>
+      <weapon name="WEAPONS_MISSILES_3"/>
+      <weapon name="WEAPONS_SIMPLE_3"/>
+      <weapon name="WEAPONS_SIMPLE_3"/>
+    </weaponList>
+    <weaponList sector="7" missiles="5" system_power="7">
+      <weapon name="WEAPONS_MISSILES_3"/>
+      <weapon name="WEAPONS_MISSILES_3"/>
+      <weapon name="WEAPONS_SIMPLE_4"/>
+      <weapon name="WEAPONS_SIMPLE_3"/>
+    </weaponList>
+    <health amount="12"/>
+    <crewCount amount="4" max="7" class="rock"/>
+    <boardingAI>sabotage</boardingAI>
+    <aug name="ROCK_ARMOR"/>
+    <cloakImage>rock_guard</cloakImage>
+  </shipBlueprintSuper>
+
+  <shipBlueprintSuper name="ROCK_DEFENDER" layout="rock_defender" img="rock_defender">
+    <class>Rock Defender</class>
+    <systemList>
+      <pilot power="1" max="3" room="0"/>
+      <medbay power="1" max="3" room="1"/>
+      <shields power="2" max="8" room="2"/>
+      <engines power="1" max="5" room="10"/>
+      <doors power="2" max="3" room="4"/>
+      <weapons room="3"/>
+      <oxygen power="1" max="3" room="6"/>
+      <cloaking power="1" max="1" room="7" start="false"/>
+    </systemList>
+    <weaponList sector="2" missiles="2" system_power="5">
+      <weapon name="WEAPONS_MISSILES_2"/>
+      <weapon name="WEAPONS_SIMPLE_1"/>
+      <weapon name="WEAPONS_HEAVY_2"/>
+      <weapon name="WEAPONS_SIMPLE_2"/>
+    </weaponList>
+    <weaponList sector="3" missiles="2" system_power="6">
+      <weapon name="WEAPONS_MISSILES_2"/>
+      <weapon name="WEAPONS_SIMPLE_2"/>
+      <weapon name="WEAPONS_HEAVY_2"/>
+      <weapon name="WEAPONS_SIMPLE_2"/>
+    </weaponList>
+    <weaponList sector="4" missiles="2" system_power="7">
+      <weapon name="WEAPONS_MISSILES_2"/>
+      <weapon name="WEAPONS_SIMPLE_3"/>
+      <weapon name="WEAPONS_HEAVY_2"/>
+      <weapon name="WEAPONS_SIMPLE_2"/>
+    </weaponList>
+    <weaponList sector="5" missiles="2" system_power="7">
+      <weapon name="WEAPONS_MISSILES_2"/>
+      <weapon name="WEAPONS_SIMPLE_3"/>
+      <weapon name="WEAPONS_HEAVY_2"/>
+      <weapon name="WEAPONS_SIMPLE_2"/>
+    </weaponList>
+    <health amount="9"/>
+    <crewCount amount="4" max="6" class="rock"/>
+    <boardingAI>sabotage</boardingAI>
+    <aug name="ROCK_ARMOR"/>
+    <cloakImage>rock_defender</cloakImage>
+  </shipBlueprintSuper>
+
+</FTL>

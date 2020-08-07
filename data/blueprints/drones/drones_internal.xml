@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <blueprintList name="DRONES_STANDARD">
+    <name>REPAIR</name>
+    <name>BATTLE</name>
+    <name>BOARDER</name>
+    <name>BOARDER_ION</name>
+  </blueprintList>
+  <blueprintList name="DRONES_ORCHID">
+    <name>REPAIR</name>
+    <name>BATTLE</name>
+    <name>BOARDER</name>
+    <name>BOARDER_ION</name>
+  </blueprintList>
+  <blueprintList name="DRONES_STANDARD_UPGRADED">
+    <name>REPAIR</name>
+    <name>BATTLE_UPGRADED</name>
+    <name>BOARDER_UPGRADED</name>
+    <name>BOARDER_ION_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="DRONES_INTERNAL">
+    <name>REPAIR</name>
+    <name>BATTLE</name>
+  </blueprintList>
+  <blueprintList name="DRONES_INTERNAL_UPGRADED">
+    <name>REPAIR</name>
+    <name>BATTLE_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="DRONES_BOARDER">
+    <name>BOARDER</name>
+    <name>BOARDER_ION</name>
+  </blueprintList>
+  <blueprintList name="BATTLE_LIST">
+    <name>BATTLE</name>
+    <name>BATTLE_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="BOARDER_ALL_LIST">
+    <name>BOARDER</name>
+    <name>BOARDER_UPGRADED</name>
+    <name>BOARDER_ION</name>
+    <name>BOARDER_ION_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="BOARDER_LIST">
+    <name>BOARDER</name>
+    <name>BOARDER_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="BOARDER_ION_LIST">
+    <name>BOARDER_ION</name>
+    <name>BOARDER_ION_UPGRADED</name>
+  </blueprintList>
+
+  <!--TODO Fire Intruder if possible, 3 power-->
+  <!--TODO Med Drone if possible, follows friendly crew on your ship and heals everyone in the same room, same as lvl1 Medbay, 2 power, add to free drone list-->
+
+  <crewBlueprint name="repair" NOLOC="1">
+    <desc>Dummy blueprint needed now.</desc>
+    <cost>50</cost>
+    <bp>2</bp>
+    <title>Repair</title>
+    <short>Repair</short>
+    <rarity>0</rarity>
+    <powerList/>
+  </crewBlueprint>
+  <droneBlueprint name="REPAIR">
+    <type>REPAIR</type>
+    <tip>tip_crew</tip>
+    <title>System Repair Drone</title>
+    <short>Sys Rep.</short>
+    <desc>Will seek out damaged systems and repair them automatically.</desc>
+    <power>1</power>
+    <cost>30</cost>
+    <bp>2</bp>
+    <rarity>1</rarity>
+    <iconImage>repair</iconImage>
+  </droneBlueprint>
+
+  <changelog>
+    <entry>Anti-Personnel Drone scrap cost 35 to 30</entry>
+  </changelog>
+  <crewBlueprint name="battle" NOLOC="1">
+    <desc>Dummy blueprint needed now.</desc>
+    <cost>50</cost>
+    <bp>2</bp>
+    <title>Battle</title>
+    <short>Battle</short>
+    <rarity>0</rarity>
+    <powerList/>
+  </crewBlueprint>
+  <droneBlueprint name="BATTLE">
+    <type>BATTLE</type>
+    <tip>tip_crew</tip>
+    <title>Anti-Personnel Drone</title>
+    <short>Anti-Pers.</short>
+    <desc>Will seek out and attempt to destroy any intruders on-board your ship.</desc>
+    <power>2</power>
+    <cost>30</cost>
+    <bp>3</bp>
+    <rarity>2</rarity>
+    <iconImage>battle</iconImage>
+  </droneBlueprint>
+  <droneBlueprintInherit name="BATTLE_UPGRADED" base="BATTLE">
+    <tip>tip_crew_upgraded</tip>
+    <title>Anti-Personnel Drone+</title>
+    <short>Anti-Pers.+</short>
+    <desc>Will seek out and attempt to destroy any intruders on-board your ship. This modified schematic requires 1 less power.</desc>
+    <power>1</power>
+    <rarity>0</rarity>
+  </droneBlueprintInherit>
+
+  <changelog>
+    <entry>Boarding Drone scrap cost 70 to 40</entry>
+    <entry>Boarding Drone rarity 4 to 3</entry>
+  </changelog>
+  <droneBlueprint name="BOARDER">
+    <type>BOARDER</type>
+    <tip>tip_boarding</tip>
+    <title>Boarding Drone</title>
+    <short>Boarding</short>
+    <desc>Breaches through the enemy hull and wreaks havoc. Awesome.</desc>
+    <power>3</power>
+    <speed>18</speed>
+    <cost>40</cost>
+    <rarity>0</rarity>
+    <iconImage>boarder</iconImage>
+  </droneBlueprint>
+  <droneBlueprintInherit name="BOARDER_UPGRADED" base="BOARDER">
+    <tip>tip_boarding_upgraded</tip>
+    <title>Boarding Drone+</title>
+    <short>Boarding+</short>
+    <desc>Breaches through the enemy hull and wreaks havoc. Awesome. This modified schematic requires 1 less power.</desc>
+    <power>2</power>
+    <rarity>0</rarity>
+  </droneBlueprintInherit>
+
+  <changelog>
+    <entry>Ion Intuder scrap cost 65 to 40</entry>
+  </changelog>
+  <droneBlueprint name="BOARDER_ION">
+    <type>BOARDER_ION</type>
+    <tip>tip_boarding</tip>
+    <title>Ion Intruder Drone</title>
+    <short>I. Intruder</short>
+    <desc>Breaches through the enemy hull and randomly ionizes systems.</desc>
+    <power>3</power>
+    <speed>18</speed>
+    <cost>40</cost>
+    <rarity>0</rarity>
+    <iconImage>ionD</iconImage>
+  </droneBlueprint>
+  <droneBlueprintInherit name="BOARDER_ION_UPGRADED" base="BOARDER_ION">
+    <tip>tip_boarding_upgraded</tip>
+    <title>Ion Intruder Drone+</title>
+    <short>I. Intruder+</short>
+    <desc>Breaches through the enemy hull and randomly ionizes systems. This modified schematic requires 1 less power.</desc>
+    <power>2</power>
+    <rarity>0</rarity>
+  </droneBlueprintInherit>
+</FTL>

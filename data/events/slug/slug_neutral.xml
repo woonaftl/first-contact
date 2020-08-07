@@ -1,0 +1,922 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="NEBULA_NEUTRAL_SLUG">
+    <event load="NEBULA_SLUG_CHOOSE_DEATH"/>
+    <event load="NEBULA_SLUG_HULLFIX"/>
+    <event load="NEBULA_SLUG_FAKE_STORE"/>
+    <event load="SLUG_DRINK"/>
+    <event load="NEBULA_BATTLEFIELD"/>
+
+    <event load="REFUGEE_NO_DISTRESS_SLUG"/>
+    <event load="ROCK_SLUG_ARGUMENT_NEBULA"/>
+
+    <event load="NEBULA_AUTO_DEFENSE_ITEM"/>
+    <event load="NEBULA_LOST_SHIP"/>
+    <event load="NEBULA_WEAPONS_TRADER"/>
+    <event load="WOONA_SLUG_SNEAKY_THIEF"/>
+    <event load="WOONA_SLUG_TRADER_LASER"/>
+    <event load="WOONA_SLUG_UPGRADE_OXYGEN"/>
+    <event load="WOONA_SLUG_SLAVER_EXTORTION"/>
+    <event load="WOONA_ZOLTAN_TRADER_SLUG"/>
+  </eventList>
+
+  <changelog>
+    <entry>System limiting in NEBULA_SLUG_CHOOSE_DEATH event increased from power divided by 2 to 0 power</entry>
+  </changelog>
+  <event name="NEBULA_SLUG_CHOOSE_DEATH" unique="true">
+    <text>You are immediately hailed by a dangerous looking ship guarding a station. "I'm feeling generouss today. I shall allow you to choose your own death. Which do you like leasst: shields, oxygen, or weaponsss?"</text>
+    <environment type="nebula"/>
+    <choice hidden="true">
+      <text>Shields.</text>
+      <event>
+        <text>"Very good then!" Your shield power suddenly drops and they charge.</text>
+        <ship load="JELLY_STATUS" hostile="true"/>
+        <status type="limit" target="player" system="shields" amount="0"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Oxygen.</text>
+      <event>
+        <text>"A being that would choose sssuffocation? Who am I to judge..." Your life support is sabatoged and they move in to attack.</text>
+        <ship load="JELLY_STATUS" hostile="true"/>
+        <status type="limit" target="player" system="oxygen" amount="0"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Weapons.</text>
+      <event>
+        <text>"Your acceptance of death is almosst admirable... Almosst." Your weapons system registers a hacking module. You hardly have time to respond before they attack.</text>
+        <ship load="JELLY_STATUS" hostile="true"/>
+        <status type="limit" target="player" system="weapons" amount="0"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Offer 35 scrap to leave you alone.</text>
+      <event>
+        <text>"I really am feeling generousss..." They take the scrap and leave.</text>
+        <item_modify>
+          <item type="scrap" min="-35" max="-35"/>
+        </item_modify>
+      </event>
+    </choice>
+    <choice hidden="true" req="hacking">
+      <text>(Hacking System) Counter any hack attempt.</text>
+      <event>
+        <text>"Sssilence won't protect you. I'll make the choice mysself... Wait. Why isn't this working?" You cut transmission and move in to attack.</text>
+        <ship load="JELLY_STATUS" hostile="true"/>
+        <status type="limit" target="player" system="hacking" amount="0"/>
+      </event>
+    </choice>
+  </event>
+
+  <event name="NEBULA_SLUG_HULLFIX" unique="true">
+    <text>You arrive to find a small Slug repair station. "Greetingsss traveller! Care for a fix up? We could eassily patch up ssome of that damage."</text>
+    <environment type="nebula"/>
+    <choice hidden="true">
+      <text>No thanks.</text>
+      <event>
+        <text>"Too bad! Trussst iss a rare commodity these days." You prepare to jump.</text>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Sure.</text>
+      <eventList name="NEBULA_SLUG_HULLFIX_RESULT1">
+        <event>
+          <text>You pull up to the automatic station and after a short time they repair 10 hull damage. You begin to offer your thanks but discover that you can't detach from the station.</text>
+          <damage amount="-10"/>
+          <choice>
+            <text>Demand an explanation.</text>
+            <eventList name="NEBULA_SLUG_HULLFIX_RESULT2">
+              <event>
+                <text>"We're glad you have enjoyed our servicessss. Perhaps some fuel would be an appropriate compensssation?"</text>
+                <choice hidden="true">
+                  <text>Give them the 15 fuel they demand.</text>
+                  <event>
+                    <text>You transfer the fuel and they release your ship. "Tell your friendsss about us!" Their portable station slips into the clouds.</text>
+                    <item_modify>
+                      <item type="fuel" min="-15" max="-15"/>
+                    </item_modify>
+                  </event>
+                </choice>
+                <choice hidden="true">
+                  <text>That's ridiculous!</text>
+                  <event>
+                    <text>"I'm ssssorry to hear that." He presses a button and an explosion rocks the ship. They must have planted a bomb while 'repairing'! Prepare for a fight!</text>
+                    <ship load="JELLY" hostile="true"/>
+                    <damage amount="4"/>
+                    <damage amount="1" system="random"/>
+                  </event>
+                </choice>
+              </event>
+              <event>
+                <text>"We're glad you have enjoyed our servicessss. Now for payment. To enssssure your cooperation we've taken the liberty of installing a limiter on your weapons system."</text>
+                <choice hidden="true">
+                  <text>Give them the 50 scrap they demand.</text>
+                  <event>
+                    <text>You transfer the scrap and they release your ship. "Tell your friendsss about us!" Their portable station slips into the clouds.</text>
+                    <item_modify>
+                      <item type="scrap" min="-50" max="-50"/>
+                    </item_modify>
+                  </event>
+                </choice>
+                <choice hidden="true">
+                  <text>Let's get out of here!</text>
+                  <event>
+                    <text>You activate your thrusters and force your way away from the station. A ship quickly moves in to engage. You'll need to get out of here fast; there may not be time to get the weapons fully operational!</text>
+                    <ship load="JELLY_STATUS" hostile="true"/>
+                    <status type="divide" target="player" system="weapons" amount="2"/>
+                  </event>
+                </choice>
+              </event>
+            </eventList>
+          </choice>
+        </event>
+        <event>
+          <text>You dock with the station hoping for a quick turnaround, but the automatic machines take their sweet time. When the process finally finishes, you notice only one damage has been repaired.</text>
+          <damage amount="-1"/>
+          <choice>
+            <text>Demand an explanation.</text>
+            <event load="NEBULA_SLUG_HULLFIX_RESULT2"/>
+          </choice>
+        </event>
+        <event>
+          <text>As you dock with the station your readings go haywire. An EMP blast resonates throughout the ship and your engines shut down. You're a sitting duck as a ship reveals itself and silently moves in to attack!</text>
+          <ship load="JELLY_STATUS" hostile="true"/>
+          <status type="limit" target="player" system="engines" amount="1"/>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true">
+      <text>Ask if they would like payment.</text>
+      <eventList name="NEBULA_SLUG_HULLFIX_REQUEST">
+        <event>
+          <text>"Ahhh. A fellow businessman. We offer to fix 10 damage for 50 ssscrap."</text>
+          <choice hidden="true">
+            <text>Accept.</text>
+            <event>
+              <text>You perform the transaction and watch carefully as their machines patch the hull. However, everything seems fine. Once they're complete you get ready to jump.</text>
+              <damage amount="-10"/>
+              <item_modify>
+                <item type="scrap" min="-50" max="-50"/>
+              </item_modify>
+            </event>
+          </choice>
+          <choice hidden="true">
+            <text>Decline.</text>
+            <event>
+              <text>"Too bad. Farewell, traveller." Their mobile station slips into the clouds.</text>
+            </event>
+          </choice>
+        </event>
+        <event>
+          <text>Just before the transmission is cut you hear, "They're not falling for it. Just kill the crew and we can ssstrip..." Looks like you're not getting out of here without a fight.</text>
+          <ship load="JELLY" hostile="true"/>
+        </event>
+      </eventList>
+    </choice>
+  </event>
+
+  <event name="NEBULA_SLUG_FAKE_STORE" unique="true">
+    <text>A Slug transport ship is stationed near the beacon with a military escort ship. They message you, "We have been waiting for a customer for agesss. Care to see our waresss?"</text>
+    <environment type="nebula"/>
+    <ship load="JELLY" hostile="false"/>
+    <choice hidden="true">
+      <text>Decline.</text>
+      <event>
+        <text>"Oh well... We ssshall wait here then." You cautiously put distance between your ships before preparing to jump.</text>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Ask to see the goods.</text>
+      <event>
+        <text>"Before we get ahead of ourssselves, I need to explain sssome ground ruless of our transsaction. Thesse are dangerous times, yess?"</text>
+        <choice>
+          <text>Continue.</text>
+          <event>
+            <text>"Firssst... We accept no tradesss, couponss or refundss. Purchasess are final. Underssstand?"</text>
+            <choice>
+              <text>Understood.</text>
+              <event>
+                <text>"We hold no liability for productsss damaged post ssale. We offer no insurance or customer sservice. Not a problem?"</text>
+                <choice hidden="true">
+                  <text>Not a problem.</text>
+                  <eventList name="NEBULA_SLUG_FAKE_STORE_LIST">
+                    <event>
+                      <text>"Great. Let me show you our waress. It's not often I meet patient alienss, have this complimentary fuel as well."</text>
+                      <item_modify>
+                        <item type="fuel" min="5" max="5"/>
+                      </item_modify>
+                      <store/>
+                    </event>
+                    <event>
+                      <text>"During our discussion, my man hass taken the liberty of disabling your weaponss to prevent any complications while completing our... transssaction..." You suddenly register multiple weapon locks, but your own weapons are not responding. Get out of there!</text>
+                      <ship load="JELLY_STATUS" hostile="true"/>
+                      <boarders min="1" max="1" class="slug"/>
+                      <status type="limit" target="player" system="weapons" amount="0"/>
+                    </event>
+                    <event>
+                      <text>"Thank you. If you could do me one more courtesssy... please die quietly." You suddenly hear gunshots aboard the ship. He must have been stalling for time while they boarded your ship!</text>
+                      <ship load="JELLY" hostile="true"/>
+                      <boarders min="2" max="2" class="slug"/>
+                    </event>
+                  </eventList>
+                </choice>
+                <choice hidden="true">
+                  <text>Forget this.</text>
+                  <eventList name="NEBULA_SLUG_FAKE_STORE_LEAVING">
+                    <event>
+                      <text>"Very well... Impatient alienss..." You prepare to jump.</text>
+                    </event>
+                    <event>
+                      <text>You prepare to leave but notice noises in your ship. It looks like the merchant was trying to stall you while they hacked into your systems. You barely have time to order a red alert before a military ship flies through the clouds intent on your destruction!</text>
+                      <ship load="JELLY" hostile="true"/>
+                      <boarders min="1" max="1" class="slug"/>
+                    </event>
+                  </eventList>
+                </choice>
+              </event>
+            </choice>
+            <choice>
+              <text>Forget this.</text>
+              <event>
+                <text>"Fine... Not everyone appreciates good dealss..."</text>
+              </event>
+            </choice>
+            <choice hidden="true" req="slug">
+              <text>(Slug crewmember) Our Slug senses someone aboard the ship. Investigate it.</text>
+              <event>
+                <text>It looks like the merchant was trying to stall you while someone teleported on board. You catch him before he could finish and he teleports away. You immediately prepare for battle.</text>
+                <ship load="JELLY" hostile="true"/>
+              </event>
+            </choice>
+          </event>
+        </choice>
+      </event>
+    </choice>
+  </event>
+
+  <event name="SLUG_DRINK" unique="true">
+    <environment type="nebula"/>
+    <text>A Slug captain hails and invites himself aboard your ship to present a flask of something slimy. "Now, most gracioussss captain, you must join me please in a drink to our alliance!"</text>
+    <ship load="JELLY" hostile="false"/>
+    <choice hidden="true">
+      <text>Drink.</text>
+      <eventList name="SLUG_DRINK_DRINK">
+        <event>
+          <text>You take a cautious gulp. It's foul, but doesn't do any lasting damage. It's a thousand to one chance, but this Slug actually seems to be trustworthy. He casually celebrates your newfound trust by repairing part of your ship and offering to sell you his wares.</text>
+          <damage amount="-10"/>
+          <store/>
+        </event>
+        <event>
+          <text>You take one gulp and wake up with the rest of the crew in the cargo hold... which contains noticeably less scrap than before.</text>
+          <item_modify steal="true">
+            <item type="scrap" min="-35" max="-25"/>
+          </item_modify>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true">
+      <text>Refuse.</text>
+      <event>
+        <text>The Slug feigns offense at your refusal, but you sense that he respects your caution. This does not, however, prevent him from returning to his ship and opening fire.</text>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice hidden="true" req="rock">
+      <text>(Rock Crew) Have your Rockman pose as captain.</text>
+      <eventList name="SLUG_DRINK_ROCK">
+        <event>
+          <text>Even if there was something malicious in the drink, you doubt it would affect the Rock digestive system. The Slug casually celebrates your newfound trust by repairing part of your ship and offering to sell you his wares.</text>
+          <damage amount="-10"/>
+          <store/>
+        </event>
+        <event>
+          <text>Your crewmember is able to identify a heavy anaesthetic contained in the flask when he feels slightly drowsy (the Rock digestion system is very robust). His ruse discovered, the Slug immediately returns to his ship and opens fire.</text>
+          <ship hostile="true"/>
+        </event>
+      </eventList>
+    </choice>
+  </event>
+
+  <event name="NEBULA_BATTLEFIELD" unique="true">
+    <text>This nebula looks like it's recently seen two ships exchange fire... with mutually-assured destructive results. Wreckage drifts by your screens and tumbles into the depths of the nebula to be lost to sight. It's hard to determine who the combatants were without closer investigation.</text>
+    <choice req="slug" hidden="true">
+      <text>(Slug Crew) Ask your Slug crew to scan for survivors.</text>
+      <event>
+        <text>Despite the destruction filling the system, your crewman is able to pick up the faint thoughts of a life form in the debris - it looks like they won't last much longer without help.</text>
+        <choice>
+          <text>Assist the survivor.</text>
+          <event load="BATTLEFIELD_SURVIVOR"/>
+        </choice>
+        <choice>
+          <text>Leave the battlefield before other ships arrive.</text>
+          <event/>
+        </choice>
+      </event>
+    </choice>
+    <choice>
+      <text>Investigate the battlefield.</text>
+      <eventList name="BATTLEFIELD_INVESTIGAGE">
+        <event>
+          <text>As you investigate the battlefield, your ship is pummeled by drifting wreckage - unable to detect anything of interest, you decide not to risk any further damage to your hull and prepare to jump.</text>
+          <damage amount="4"/>
+          <damage amount="1" system="room" effect="fire"/>
+        </event>
+        <event>
+          <text>The wreckage is drifting faster than it first appeared. You barely avoid being pummeled by drifting wreckage - unable to detect anything of interest, you decide not to risk your ship and prepare to jump.</text>
+        </event>
+        <event>
+          <text>The wreckage is drifting faster than it first appeared. You barely avoid being pummeled by drifting wreckage - unable to detect anything of interest, you decide not to risk your ship and prepare to jump.</text>
+        </event>
+        <event>
+          <text>The wreckage is drifting faster than it first appeared. You barely avoid being pummeled by drifting wreckage - unable to detect anything of interest, you decide not to risk your ship and prepare to jump.</text>
+        </event>
+        <event>
+          <text>You spot a life form floating within the wreckage.</text>
+          <choice>
+            <text>Assist the survivor.</text>
+            <event load="BATTLEFIELD_SURVIVOR"/>
+          </choice>
+          <choice>
+            <text>Leave the battlefield before other ships arrive.</text>
+            <event/>
+          </choice>
+        </event>
+      </eventList>
+    </choice>
+    <choice>
+      <text>Leave the battlefield before other ships arrive.</text>
+      <event/>
+    </choice>
+    <environment type="nebula"/>
+  </event>
+  <event name="BATTLEFIELD_SURVIVOR">
+    <text>Your bring the survivor aboard, but discover their wounds are severe. They won't live much longer.</text>
+    <choice>
+      <text>Make them comfortable for their final moments.</text>
+      <event>
+        <text>On their death bed, they croak out a series of coordinates and beg you to go there - when you attempt to ask them why, the survivor simply says, "ABADOTH" and perishes.</text>
+        <quest event="SECRET_WORD_ABADOTH"/>
+      </event>
+    </choice>
+    <choice req="medbay" lvl="2" hidden="true">
+      <text>(Advanced Medbay) Get them into the medbay!</text>
+      <event>
+        <text>Using your upgraded medical bay, you are able to heal the survivor's wounds and they recover quickly. Grateful to be saved, they offer to join your crew and help however they can.</text>
+        <crewMember amount="1"/>
+      </event>
+    </choice>
+    <choice req="clonebay" hidden="true">
+      <text>(Clonebay) Try to clone them before it's too late.</text>
+      <event>
+        <text>You clone the individual and let the host pass away. The clone decides to join you - although it has little choice in the matter.</text>
+        <crewMember amount="1"/>
+      </event>
+    </choice>
+  </event>
+  <event name="SECRET_WORD_ABADOTH">
+    <text>You have arrived at the coordinates given to you by the dead crewman you attempted to save. There doesn't seem to be anything here - no planets, no vessels, and no clue as to what he meant by sending you here.</text>
+    <choice req="slug" hidden="true">
+      <text>(Slug Crew) Ask your Slug crewmember to scan for life forms.</text>
+      <event load="SECRET_WORD_ABADOTH_CONCLUSION"/>
+    </choice>
+    <choice hidden="true">
+      <text>Do a full system scan - though you're sure to lose some of your lead with the Rebels.</text>
+      <event>
+        <text>You start the arduous task of a full system scan. This better be worth it.</text>
+        <modifyPursuit amount="1"/>
+        <choice>
+          <text id="continue"/>
+          <event load="SECRET_WORD_ABADOTH_CONCLUSION"/>
+        </choice>
+      </event>
+    </choice>
+  </event>
+  <event name="SECRET_WORD_ABADOTH_CONCLUSION">
+    <text>A Zoltan ship decloaks and demands your reason for being here!</text>
+    <choice>
+      <text>Explain about finding the dead crewman.</text>
+      <event>
+        <text>There is a moment of silence, and suddenly the Zoltan ship cloaks - must have been the wrong word to use... now you've got a fight on your hands!</text>
+        <ship load="ZOLTAN_SHIP" hostile="true"/>
+      </event>
+    </choice>
+    <choice req="engi" hidden="true">
+      <text>(Engi Crew) Say ABADOTH.</text>
+      <event>
+        <text>Your Engi crewman easily recalls the phrase the deadman used from its memory banks. There is a moment of silence, and the ship's captain solemnly thanks you for the information. He wishes you well on your journey, and he offers several upgrades to assist you in exchange for your service to the Zoltan race.</text>
+        <autoReward level="MED">standard</autoReward>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Say ANODYNE.</text>
+      <event>
+        <text>There is a moment of silence, and suddenly the Zoltan ship cloaks - must have been the wrong word to use... now you've got a fight on your hands!</text>
+        <ship load="ZOLTAN_SHIP" hostile="true"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Say ABADOTH.</text>
+      <event>
+        <text>There is a moment of silence, and the ship's captain solemnly thanks you for the information. He wishes you well on your journey, and he offers several upgrades to assist you in exchange for your service to the Zoltan race.</text>
+        <autoReward level="MED">standard</autoReward>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Say ABATODH.</text>
+      <event>
+        <text>There is a moment of silence, and suddenly the Zoltan ship cloaks - must have been the wrong word to use... now you've got a fight on your hands!</text>
+        <ship load="ZOLTAN_SHIP" hostile="true"/>
+      </event>
+    </choice>
+  </event>
+
+  <changelog>
+    <entry>Added Slug sneaky thief event</entry>
+  </changelog>
+  <event name="WOONA_SLUG_SNEAKY_THIEF">
+    <environment type="nebula"/>
+    <text>The beacon you arrived at is located in a dense nebula cloud. With sensors offline, you feel vulnerable but no attack comes.</text>
+    <choice hidden="true">
+      <text id="continue"/>
+      <eventList>
+        <event>
+          <text>As you leave the dense part of the nebula behind, your crew notices that a part of the fuel reserves disappeared.</text>
+          <item_modify>
+            <item max="-1" min="-3" type="fuel"/>
+          </item_modify>
+        </event>
+        <event>
+          <text>As you leave the dense part of the nebula behind, your weapon operator notices that several missiles disappeared from ammo storage.</text>
+          <item_modify>
+            <item max="-2" min="-5" type="missiles"/>
+          </item_modify>
+        </event>
+        <event>
+          <text>As you leave the dense part of the nebula behind, you notice that some scrap material disappeared from the hold.</text>
+          <item_modify>
+            <item max="-5" min="-10" type="scrap"/>
+          </item_modify>
+        </event>
+        <event>
+          <text>As you leave the dense part of the nebula behind, one of your crewmembers notices that several drone parts disappeared from the storage.</text>
+          <item_modify>
+            <item max="-1" min="-3" type="drones"/>
+          </item_modify>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true" req="slug">
+      <text>(Slug) Your crewmember senses disturbance in the hold.</text>
+      <event>
+        <text>Intruder! A sneaky Slug tried to take advantage of the nebula cloud and steal some cargo from your hold. Thankfully, he was detected and can now be stopped.</text>
+        <boarders class="slug" max="1" min="1"/>
+      </event>
+    </choice>
+    <choice hidden="true" req="LIFE_SCANNER">
+      <text>(Lifeform Scanner) The scanner detects intruder aboard the ship.</text>
+      <event>
+        <text>Intruder! A sneaky Slug tried to take advantage of the nebula cloud and steal some cargo from your hold. Thankfully, he was detected and can now be stopped.</text>
+        <boarders class="slug" max="1" min="1"/>
+      </event>
+    </choice>
+    <choice hidden="true" lvl="2" req="doors">
+      <text>(Improved doors) Lock all the doors just in case.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <changelog>
+    <entry>Added Slug laser trader event</entry>
+  </changelog>
+  <event name="WOONA_SLUG_TRADER_LASER" unique="true">
+    <text>A friendly Slug trader greets you at the beacon. "Congratulationsss! You are the winner! You are our 95th customer today! All of our productsss have 95% discount! Just for you!" The Slug offers a selection of laser weapons.</text>
+    <environment type="nebula"/>
+    <ship auto_blueprint="SHIPS_JELLY" hostile="false">
+      <escape max="22" min="22" timer="40">
+        <text>The Slug trader try to jump away. They charge the FTL drive.</text>
+        <ship hostile="true"/>
+      </escape>
+      <gotaway>
+        <text>The Slug ship jumped away.</text>
+      </gotaway>
+      <destroyed load="DESTROYED_DEFAULT"/>
+      <deadCrew load="DEAD_CREW_DEFAULT"/>
+      <weaponOverride count="1">
+        <name>LASER_BURST_3</name>
+      </weaponOverride>
+    </ship>
+    <choice>
+      <text>Buy a Burst Laser Mark I.</text>
+      <event>
+        <text>You do not have any extra scrap so decide to settle for the cheapest of laser weapons.</text>
+        <item_modify>
+          <item max="-30" min="-40" type="scrap"/>
+        </item_modify>
+        <choice hidden="true">
+          <text id="continue"/>
+          <eventList>
+            <event>
+              <text>The Slugs complete the transaction. "Thanksss. It was great to do businessss with you. Please tell all your friends about our store."</text>
+              <weapon name="LASER_BURST_2"/>
+            </event>
+            <event load="WOONA_SLUG_TRADER_LASER_SUBSTITUTION_BASIC" count="2"/>
+          </eventList>
+        </choice>
+      </event>
+    </choice>
+    <choice>
+      <text>Buy a Burst Laser Mark II.</text>
+      <event>
+        <text>Given the choice, Burst Laser II seems like the most efficient option.</text>
+        <item_modify>
+          <item max="-55" min="-70" type="scrap"/>
+        </item_modify>
+        <choice hidden="true">
+          <text id="continue"/>
+          <eventList>
+            <event>
+              <text>The Slugs complete the transaction. "Thanksss. It was great to do businessss with you. Please tell all your friends about our store."</text>
+              <weapon name="LASER_BURST_3"/>
+            </event>
+            <event load="WOONA_SLUG_TRADER_LASER_SUBSTITUTION_BURST"/>
+            <event load="WOONA_SLUG_TRADER_LASER_SUBSTITUTION_BASIC" count="4"/>
+          </eventList>
+        </choice>
+      </event>
+    </choice>
+    <choice>
+      <text>Ask for a Chain Laser Vulcan.</text>
+      <event>
+        <text>Guns follow simple logic. The bigger, the better. You ask for Vulcan, looking forward to using that monster against the Rebels.</text>
+        <item_modify>
+          <item max="-55" min="-70" type="scrap"/>
+        </item_modify>
+        <choice hidden="true">
+          <text id="continue"/>
+          <eventList>
+            <event>
+              <text>The Slugs complete the transaction. "Thanksss. It was great to do businessss with you. Please tell all your friends about our store."</text>
+              <weapon name="LASER_CHAINGUN_2"/>
+            </event>
+            <event load="WOONA_SLUG_TRADER_LASER_SUBSTITUTION_BURST"/>
+            <event load="WOONA_SLUG_TRADER_LASER_SUBSTITUTION_BASIC" count="6"/>
+          </eventList>
+        </choice>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Leave.</text>
+      <event/>
+    </choice>
+  </event>
+  <event name="WOONA_SLUG_TRADER_LASER_SUBSTITUTION_BASIC">
+    <text>"We apologize but we do not have this particular model available. We have provided you with a sssubstitution. Please remember that we do not accept refunds for disscounted productsss." The Slugs have robbed you again!</text>
+    <weapon name="LASER_BURST_1"/>
+    <choice hidden="true">
+      <text>Give me back my scrap! Attack!</text>
+      <event>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Leave. No refunds is an acceptable policy.</text>
+      <event/>
+    </choice>
+  </event>
+  <event name="WOONA_SLUG_TRADER_LASER_SUBSTITUTION_BURST">
+    <text>"We apologize but we do not have this particular model available. We have provided you with a sssubstitution. Please remember that we do not accept refunds for disscounted productsss." The Slugs have robbed you again!</text>
+    <weapon name="LASER_BURST_2"/>
+    <choice hidden="true">
+      <text>Give me back my scrap! Attack!</text>
+      <event>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Leave. No refunds is an acceptable policy.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <changelog>
+    <entry>Added Slug upgrading oxygen system event</entry>
+  </changelog>
+  <event name="WOONA_SLUG_UPGRADE_OXYGEN" unique="true">
+    <text>There is nothing interesting at the beacon, with exception of nebula clouds and a lonely Slug ship hiding within them.</text>
+    <environment type="nebula"/>
+    <choice blue="false" lvl="0" max_group="0" req="oxygen">
+      <text id="continue"/>
+      <event>
+        <text>The captain of the Slug ship contacts you. "Greetingssss, aliensss. We Slugsss are the greatest engineersss in the galaxy! Allow us to prove it by upgrading your ship. For a modest price."</text>
+        <choice>
+          <text>Accept the deal.</text>
+          <event>
+            <text>Workers arrive from the Slug ship and quickly install a life support system.</text>
+            <item_modify>
+              <item max="-40" min="-60" type="scrap"/>
+            </item_modify>
+            <system lvl="1" name="oxygen"/>
+            <choice hidden="true">
+              <text id="continue"/>
+              <event load="WOONA_SLUG_UPGRADE_OXYGEN_LIST"/>
+            </choice>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>Attack them.</text>
+          <event>
+            <ship hostile="true" load="WOONA_SLUG_UPGRADE_OXYGEN_SHIP"/>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>Ignore them.</text>
+          <event/>
+        </choice>
+      </event>
+    </choice>
+    <choice blue="false" lvl="1" max_group="0" req="oxygen">
+      <text id="continue"/>
+      <event>
+        <text>The captain of the Slug ship contacts you. "Greetingssss, aliensss. We Slugsss are the greatest engineersss in the galaxy! Allow us to prove it by upgrading your ship. For a modest price."</text>
+        <choice>
+          <text>Accept the deal.</text>
+          <event>
+            <text>Workers arrive from the Slug ship and quickly install necessary upgrades to your life support system.</text>
+            <item_modify>
+              <item max="-10" min="-15" type="scrap"/>
+            </item_modify>
+            <upgrade amount="1" system="oxygen"/>
+            <choice hidden="true">
+              <text id="continue"/>
+              <event load="WOONA_SLUG_UPGRADE_OXYGEN_LIST"/>
+            </choice>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>Attack them.</text>
+          <event>
+            <ship hostile="true" load="WOONA_SLUG_UPGRADE_OXYGEN_SHIP"/>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>Ignore them.</text>
+          <event/>
+        </choice>
+      </event>
+    </choice>
+    <choice blue="false" lvl="2" max_group="0" req="oxygen">
+      <text id="continue"/>
+      <event>
+        <text>The captain of the Slug ship contacts you. "Greetingssss, aliensss. We Slugsss are the greatest engineersss in the galaxy! Allow us to prove it by upgrading your ship. For a modest price."</text>
+        <choice>
+          <text>Accept the deal.</text>
+          <event>
+            <text>Workers arrive from the Slug ship and quickly install necessary upgrades to your life support system.</text>
+            <item_modify>
+              <item max="-25" min="-30" type="scrap"/>
+            </item_modify>
+            <upgrade amount="1" system="oxygen"/>
+            <choice hidden="true">
+              <text id="continue"/>
+              <event load="WOONA_SLUG_UPGRADE_OXYGEN_LIST"/>
+            </choice>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>Attack them.</text>
+          <event>
+            <ship hostile="true" load="WOONA_SLUG_UPGRADE_OXYGEN_SHIP"/>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>Ignore them.</text>
+          <event/>
+        </choice>
+      </event>
+    </choice>
+    <choice blue="false" lvl="3" max_group="0" req="oxygen">
+      <text id="continue"/>
+      <event>
+        <text>The Slug ship scans you and silently moves away. You charge FTL drive and prepare to jump.</text>
+      </event>
+    </choice>
+  </event>
+  <eventList name="WOONA_SLUG_UPGRADE_OXYGEN_LIST">
+    <event>
+      <text>The Slugs have done an excellent job. Maybe they really are the best engineers after all.</text>
+    </event>
+    <event>
+      <text>The Slugs have done an excellent job and jumped away. After they are gone, you find out that most of your resources from hold and hidden compartments have disappeared. Maybe the Slugs are good engineers, but they can never be trusted.</text>
+      <item_modify>
+        <item max="-20" min="-30" type="scrap"/>
+        <item max="-3" min="-4" type="fuel"/>
+        <item max="-3" min="-4" type="missiles"/>
+        <item max="-3" min="-4" type="drones"/>
+      </item_modify>
+    </event>
+    <event>
+      <text>The Slugs have outdone themselves. Your life support system pumps out oxygen at alarming speed. They have failed to install limiting measures and soon oxygen explodes, turning your ship into burning inferno. The Slugs attack, it all was a part of their plan.</text>
+      <damage amount="0" effect="fire" system="random"/>
+      <damage amount="0" effect="fire" system="random"/>
+      <damage amount="0" effect="fire" system="random"/>
+      <damage amount="0" effect="fire" system="random"/>
+      <damage amount="0" effect="fire" system="room"/>
+      <damage amount="0" effect="fire" system="room"/>
+      <damage amount="0" effect="fire" system="room"/>
+      <damage amount="0" effect="fire" system="room"/>
+      <ship hostile="true" load="JELLY"/>
+    </event>
+    <event>
+      <text>The Slugs have done an excellent job. But they took remote control over your life support system with them. As soon as they leave, they charge the weapons. Their intentions are clear.</text>
+      <status amount="0" system="oxygen" target="player" type="limit"/>
+      <ship hostile="true" load="JELLY_STATUS_OXYGEN"/>
+    </event>
+  </eventList>
+  <ship auto_blueprint="SHIPS_JELLY" name="WOONA_SLUG_UPGRADE_OXYGEN_SHIP">
+    <escape max="22" min="22" timer="35">
+      <text>The Slugs clearly do not want to fight. They try to escape.</text>
+      <ship hostile="true"/>
+    </escape>
+    <gotaway>
+      <text>The Slug ship jumped away.</text>
+    </gotaway>
+    <destroyed>
+      <text>The Slug ship breaks apart and your systems return to normal. You collect what you can.</text>
+      <status amount="100" system="oxygen" target="player" type="clear"/>
+      <autoReward level="LOW">standard</autoReward>
+    </destroyed>
+    <deadCrew>
+      <text>With their crew dead, your systems return to normal. You strip the ship.</text>
+      <status amount="100" system="oxygen" target="player" type="clear"/>
+      <autoReward level="MED">standard</autoReward>
+    </deadCrew>
+  </ship>
+
+  <changelog>
+    <entry>Added Slug slaver extortion event</entry>
+  </changelog>
+  <event name="WOONA_SLUG_SLAVER_EXTORTION" unique="true">
+    <text>You encounter a Slug ship of impressive size. Slug captain appears on screen. "Welcome, dear friend! I know who you are and where you are going. With a presssss of this button I can inform everyone in the galaxy. Let's make a deal: sssend me a laborer and I will keep your location sssecret."</text>
+    <environment type="nebula"/>
+    <ship auto_blueprint="SHIPS_JELLY" hostile="false">
+      <escape max="22" min="22" timer="40">
+        <text>The Slug captain laughs. "Goodbye, friend!" He charges the FTL drive.</text>
+        <ship hostile="true"/>
+      </escape>
+      <gotaway>
+        <text>The Slug ship jumped away.</text>
+      </gotaway>
+      <destroyed load="DESTROYED_DEFAULT"/>
+      <deadCrew load="DEAD_CREW_DEFAULT"/>
+    </ship>
+    <choice hidden="true">
+      <text>Accept to send a crewmember into slavery.</text>
+      <event>
+        <text>The chosen crewmember leaves the ship to meet his new master. Slug captain laughs in your face. "Thanksss. Don't worry, I will find a honessst job for them."</text>
+        <removeCrew>
+          <clone>false</clone>
+          <text>You briefly consider cloning a replacement, but decide to respect the Federation laws regarding simultaneous duplicates.</text>
+        </removeCrew>
+        <choice hidden="true">
+          <text id="continue"/>
+          <eventList>
+            <event>
+              <text>The Slug captain calms down and pings you again. "I never expected you would actually agree to thisss deal. Might as well pay you sssome scrap."</text>
+              <autoReward level="LOW">scrap_only</autoReward>
+            </event>
+            <event/>
+          </eventList>
+        </choice>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Attack!</text>
+      <eventList>
+        <event>
+          <text>The Slug captain presses a big red button and sends information about your precise location to Rebels.</text>
+          <ship hostile="true"/>
+          <modifyPursuit amount="1"/>
+        </event>
+        <event>
+          <text>"Not going for that, huh?" Turns out the Slug captain was bluffing.</text>
+          <ship hostile="true"/>
+        </event>
+      </eventList>
+    </choice>
+  </event>
+
+  <changelog>
+    <entry>Added Zoltan trader in Slug sector event</entry>
+  </changelog>
+  <event name="WOONA_ZOLTAN_TRADER_SLUG" unique="true">
+    <text>It is unusual to see a Zoltan ship deep inside Slug territory. "Greetings! Would you like to purchase some resources? I have heard about your mission and I am sure that this ammunition will help you bring peace to the galaxy."</text>
+    <environment type="nebula"/>
+    <ship auto_blueprint="SHIPS_ZOLTAN" hostile="false">
+      <destroyed>
+        <text>The Zoltan ship breaks apart. You collect what you can. After hours of work your crew manages to restore functionality of all systems.</text>
+        <autoReward level="MED">standard</autoReward>
+        <status amount="100" system="engines" target="player" type="clear"/>
+        <status amount="100" system="weapons" target="player" type="clear"/>
+        <status amount="100" system="shields" target="player" type="clear"/>
+      </destroyed>
+      <deadCrew>
+        <text>With all the Slugs dead, you strip the ship. Your crew manages to restore functionality of all systems.</text>
+        <autoReward level="HIGH">standard</autoReward>
+        <status amount="100" system="engines" target="player" type="clear"/>
+        <status amount="100" system="weapons" target="player" type="clear"/>
+        <status amount="100" system="shields" target="player" type="clear"/>
+      </deadCrew>
+      <crew>
+        <crewMember prop="1" type="slug"/>
+      </crew>
+    </ship>
+    <choice>
+      <text>Buy fuel.</text>
+      <event>
+        <text>You ask for fuel and send some scrap in exchange.</text>
+        <item_modify>
+          <item max="8" min="6" type="fuel"/>
+          <item max="-9" min="-12" type="scrap"/>
+        </item_modify>
+        <choice hidden="true">
+          <text id="continue"/>
+          <eventList>
+            <event>
+              <text>After the trade is complete you prepare to leave the system. Zoltans wish you luck: "Slugs in this sector do all kinds of dirty tricks. Make sure to upgrade your oxygen system."</text>
+            </event>
+            <event>
+              <text>You did not understand what exactly happened but after you loaded the fuel, your engines stopped working. The Zoltan ship prepares to attack you. It turns out that the ship is controlled by Slugs. Get ready for battle!</text>
+              <ship hostile="true"/>
+              <status amount="1" system="engines" target="player" type="limit"/>
+            </event>
+          </eventList>
+        </choice>
+      </event>
+    </choice>
+    <choice>
+      <text>Buy missiles.</text>
+      <event>
+        <text>You ask for missiles and send some scrap in exchange.</text>
+        <item_modify>
+          <item max="8" min="6" type="missiles"/>
+          <item max="-9" min="-12" type="scrap"/>
+        </item_modify>
+        <choice hidden="true">
+          <text id="continue"/>
+          <eventList>
+            <event>
+              <text>After the trade is complete you prepare to leave the system. Zoltans wish you luck: "Slugs in this sector do all kinds of dirty tricks. Make sure to upgrade your oxygen system."</text>
+            </event>
+            <event>
+              <text>After the missiles are loaded you are immediately contacted by your engineer. "Weapon system is out of order, sir!" The Zoltan ship prepares to attack you. It turns out that the ship is controlled by Slugs. It will be difficult to defend yourself without any weapons.</text>
+              <ship hostile="true"/>
+              <status amount="0" system="weapons" target="player" type="limit"/>
+            </event>
+          </eventList>
+        </choice>
+      </event>
+    </choice>
+    <choice blue="false" req="shields">
+      <text>Buy an augmentation.</text>
+      <event>
+        <text>You ask for the special offer and send some scrap in exchange.</text>
+        <item_modify>
+          <item max="-20" min="-25" type="scrap"/>
+        </item_modify>
+        <augment name="SHIELD_RECHARGE"/>
+        <choice hidden="true">
+          <text id="continue"/>
+          <eventList>
+            <event>
+              <text>After the trade is complete you prepare to leave the system. Zoltans wish you luck: "Slugs in this sector do all kinds of dirty tricks. Make sure to upgrade your oxygen system."</text>
+            </event>
+            <event>
+              <text>You install the augmentation. One after another shield layers that protected your ship dissipate. The Zoltan ship prepares to attack you. It turns out that the ship is controlled by Slugs. With shields offline, it is going to be a tough battle.</text>
+              <ship hostile="true"/>
+              <status amount="2" system="shields" target="player" type="divide"/>
+            </event>
+          </eventList>
+        </choice>
+      </event>
+    </choice>
+    <choice hidden="true" req="slug">
+      <text>(Slug) Your crewmember advises against the deal.</text>
+      <event>
+        <text>Your crewmember detects that the Zoltan ship is actually controlled by Slugs! They were going to trick you and capture your ship. As soon as you blew their cover, they arm the weapons.</text>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice hidden="true" req="LIFE_SCANNER">
+      <text>(Lifeform Scanner) Scan Zoltan ship.</text>
+      <event>
+        <text>After you scan the ship, you detect that it is actually controlled by Slugs! They were going to trick you and capture your ship. As soon as you blew their cover, they arm the weapons.</text>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Leave.</text>
+      <event/>
+    </choice>
+  </event>
+</FTL>

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="HOSTILE_SLUG">
+    <event load="SLUG_FIGHT"/>
+    <event load="SLUG_MANTIS"/>
+    <event load="SLUG_PIRATE"/>
+    <event load="SLUG_REBEL"/>
+    <event load="WOONA_MANTIS_STUCK_SLUG"/>
+    <event load="WOONA_SLUG_FREE_WEAPON_TRAP"/>
+  </eventList>
+
+  <eventList name="NEBULA_HOSTILE_SLUG">
+    <event load="NEBULA_SLUG_FIGHT"/>
+    <event load="NEBULA_SLUG_MANTIS"/>
+    <event load="NEBULA_SLUG_PIRATE"/>
+    <event load="NEBULA_SLUG_MEDBAY"/>
+  </eventList>
+
+  <eventList name="NEBULA_HOSTILE_HAZARD_SLUG">
+    <event load="STORM_SLUG_FIGHT" count="2"/>
+    <event load="DONOR_BLACK_RAVEN"/>
+
+    <event load="STORM_REBEL"/>
+  </eventList>
+
+  <event name="SLUG_FIGHT" unique="true">
+    <text>It's rare for the Slugs to stay exposed in open space for long periods - the ship here may be lost, or just passing through, but either way he moves in to attack!</text>
+    <ship load="JELLY" hostile="true"/>
+  </event>
+
+  <event name="SLUG_MANTIS" unique="true">
+    <text>You intercept comm chatter from an incoming Mantis ship. "Look. This ship appears not to be owned by the squishy ones. Maybe they won't smell so bad when we cut them open." They move in on your position.</text>
+    <ship load="MANTIS_FIGHT" hostile="true"/>
+  </event>
+
+  <event name="SLUG_PIRATE" unique="false">
+    <textList name="SLUG_PIRATE" unique="false">
+      <text>There appears to be a pirate ship nearby. Be on your guard; anyone trying to hunt in Slug territory is either formidable or deeply stupid, and in space, either can be dangerous.</text>
+      <text>"We knew anyone foolish enough to try and sneak through a Slug nebula would stick to open space. Yield your goods and we may let you live." You cut the transmission in lieu of a response.</text>
+      <text>Before you can take a moment's rest from the ever present nebulas in this sector, a pirate ship appears behind you and opens fire.</text>
+    </textList>
+    <ship load="PIRATE" hostile="true"/>
+  </event>
+
+  <event name="SLUG_REBEL" unique="false">
+    <textList name="SLUG_REBEL" unique="false">
+      <text>As you arrive at the beacon, a hostile ship immediately registers on your scanners. You didn't expect to see Rebels extending their reach into Slug territory. Charge the weapons!</text>
+      <text>You jump into empty space and are relieved to see your sensors blink back to life. However, you are less pleased to see them immediately register a rebel ship on an approach vector!</text>
+      <text>You receive a message from a nearby ship, "Looks like our intelligence was correct! Sneaking through the clouds with the Slugs... No one can hide from the rebellion!"</text>
+    </textList>
+    <ship load="REBEL" hostile="true"/>
+  </event>
+
+  <event name="NEBULA_SLUG_FIGHT">
+    <textList name="NEBULA_SLUG_FIGHT">
+      <text>Your sensors are no match for the Slug's telepathic abilities - a ship you never even saw opens fire from astern!</text>
+      <text>The Slug vessel you encounter here has obviously made a big score and is looking to test its new armaments. They picked the wrong ship to attack.</text>
+      <text>A Slug passenger ship hails: "Please, your worthy alien highnessesss, we are unarmed and sseeking asssylum." You approach cautiously, and weapons immediately spring from their hull!</text>
+      <text>A Slug ship - a rogue, you suspect - approaches, but when he sees you're Federation he thinks better of the sneak attack and fires everything he has.</text>
+      <text>Direct attacks are not preferred by the Slugs, but of the three you see at this beacon, one has the brass to make a move on your position!</text>
+    </textList>
+    <ship load="JELLY" hostile="true"/>
+    <environment type="nebula"/>
+  </event>
+
+  <event name="NEBULA_SLUG_MANTIS" unique="true">
+    <text>The Mantis attack ship here looks to have been hunting Slugs on their home turf - a rare test of honor for the mightiest Mantis crews. Weapons up!</text>
+    <ship load="MANTIS_FIGHT" hostile="true"/>
+    <environment type="nebula"/>
+  </event>
+
+  <event name="NEBULA_SLUG_PIRATE" unique="true">
+    <text>You're surprised to find a ship without Slug markings stranded all the way out here, and move in to provide assistance. When you see the pirate insignia on the hull you quickly reconsider.</text>
+    <ship load="PIRATE" hostile="false"/>
+    <environment type="nebula"/>
+    <choice>
+      <text>Attack!</text>
+      <event>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice>
+      <text>Keep your distance and hope they haven't seen you yet.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <changelog>
+    <entry>Removed NEBULA_SLUG_DOORS event</entry>
+    <entry>Removed NEBULA_SLUG_OXYGEN event</entry>
+  </changelog>
+
+  <event name="NEBULA_SLUG_MEDBAY" unique="true">
+    <text>A Slug ship hails you: "We've detected some worrying radiation coming from your medical unit, perhaps you should take a look?" As he signs off, your system shuts off and their crew teleports aboard from a nearby station. They don't look like engineers.</text>
+    <ship load="JELLY_STATUS" hostile="true"/>
+    <boarders min="2" max="2" class="slug"/>
+    <environment type="nebula"/>
+    <choice hidden="true">
+      <text id="continue"/>
+      <event>
+        <status type="limit" target="player" system="medbay" amount="0"/>
+        <status type="limit" target="player" system="clonebay" amount="0"/>
+      </event>
+    </choice>
+    <choice hidden="true" req="medbay" lvl="2">
+      <text>(Improved Medbay) Try to squeeze some extra power to the system.</text>
+      <event>
+        <text>Fearing the imminent battle you desperately try to get the medbay working again. Its lights flicker back on and you turn to face the intruders.</text>
+        <status type="divide" target="player" system="medbay" amount="2"/>
+      </event>
+    </choice>
+    <choice hidden="true" req="hacking">
+      <text>(Hacking System) Counter the remote hacking.</text>
+      <event>
+        <text>You are able to undo the damage of their remote hacking satellite but it's taking everything your hacking system has. Time to take out the enemy the old fashioned way.</text>
+        <status type="limit" target="player" system="hacking" amount="0"/>
+      </event>
+    </choice>
+  </event>
+
+  <event name="STORM_SLUG_FIGHT">
+    <textList name="STORM_SLUG_FIGHT">
+      <text>The ion storm here threatens to deactivate your core systems, a fact made all the worse for the largely unaffected Slug ships circling like space-vultures.</text>
+      <text>The Slug ship that descends into view as you enter the ion storm must have sensed your distress - defensive action!</text>
+      <text>You arrive in the middle of an ion storm. Slugs generally avoid these storms but you find one waiting in ambush. Prepare for a fight!</text>
+      <text>You find yourself stuck in the middle of an ion storm with a Slug ship just a short distance away, refusing all hails. You cautiously try to slip further into the clouds, but they turn suddenly to attack!</text>
+    </textList>
+    <ship load="JELLY" hostile="true"/>
+    <environment type="storm"/>
+  </event>
+
+  <changelog>
+    <entry>Unique Black Raven ship for DONOR_BLACK_RAVEN event</entry>
+    <entry>Moved Black Raven into ion storm</entry>
+  </changelog>
+  <event name="DONOR_BLACK_RAVEN" unique="true">
+    <text>As you jump in, you immediately see an impressive Slug pirate ship with "The Black Raven" painted on one side. They hail you, "Greetingsss. I am the dreaded pirate, Captain Nights. You mussst be full of fear, no? You have heard of me... no?"</text>
+    <environment type="storm"/>
+    <ship name="DONOR_BLACK_RAVEN" auto_blueprint="SLUG_BLACK_RAVEN_LIST" hostile="false">
+      <surrender chance="0" min="3" max="4">
+        <text>"I see the rumorsss are true. I yield, we are no match for you. Take this and let us leave in ssshame."</text>
+        <choice>
+          <text>Accept his surrender.</text>
+          <event>
+            <text>He transfers over the goods and starts to repair his ship.</text>
+            <ship hostile="false"/>
+            <autoReward level="HIGH">weapon</autoReward>
+          </event>
+        </choice>
+        <choice>
+          <text>Ignore him and attack.</text>
+          <event>
+            <text>"Wait! There is no need to be...." You cut off the transmission and prepare to fire.</text>
+          </event>
+        </choice>
+      </surrender>
+      <destroyed>
+        <text>"The Black Raven" breaks apart and you salvage the remains.</text>
+        <autoReward level="MED">standard</autoReward>
+      </destroyed>
+      <deadCrew>
+        <text>The once-dreaded pirate Nights has been killed and you proceed to loot his ship.</text>
+        <autoReward level="HIGH">standard</autoReward>
+      </deadCrew>
+    </ship>
+    <choice hidden="true">
+      <text>No.</text>
+      <event>
+        <text>"Well I have heard of you and I must see if you are as dangerousss as they say. I challenge you!"</text>
+        <choice hidden="true">
+          <text>Accept his challenge.</text>
+          <event>
+            <ship hostile="true"/>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>Decline.</text>
+          <event>
+            <text>"I sssee... However you have no choice in the matter!" They move in to attack.</text>
+            <ship hostile="true"/>
+          </event>
+        </choice>
+        <choice hidden="true" req="slug">
+          <text>(Slugman Crew) Engage in a duel of the mind.</text>
+          <eventList name="DONOR_BLACK_RAVEN_SLUG">
+            <event>
+              <text>Your Slug crewman's eyes glaze over as the two telepaths concentrate. You can only wonder what is happening. After a short time your comrade grunts in pain and collapses onto the floor, stunned. Nights responds, "Hah! It'll take more than that to defeat me! Let the real battle begin!"</text>
+              <ship hostile="true"/>
+              <boarders min="1" max="2" class="slug"/>
+            </event>
+            <event>
+              <text>Your Slug crewman's eyes glaze over as the two telepaths concentrate. You are powerless to help, but after a short time your comrade shakes off the daze and appears victorious.</text>
+              <choice hidden="true">
+                <text id="continue"/>
+                <event>
+                  <text>His face contorted with pain, Nights concedes his defeat: "If this is the caliber of subordinatesss you keep, there iss no way we can defeat you. Take thisss and let us leave in shame."</text>
+                  <autoReward level="HIGH">weapon</autoReward>
+                </event>
+              </choice>
+            </event>
+          </eventList>
+        </choice>
+      </event>
+    </choice>
+  </event>
+
+  <changelog>
+    <entry>Added Slug free weapon trap event</entry>
+  </changelog>
+  <event name="WOONA_SLUG_FREE_WEAPON_TRAP" unique="true">
+    <textList>
+      <text planet="NONE">Holy crap! A weapon is just floating in space!</text>
+      <text>Debris from a battle is scattered around this system. A few pieces bounce against your ship. You passively scan them and discover there is a functioning weapon among them!</text>
+    </textList>
+    <autoReward level="LOW">weapon</autoReward>
+    <choice hidden="true">
+      <text id="continue"/>
+      <event>
+        <text>As soon as you install the new gun, your weapon bay goes offline. It turns out that the weapon was booby trapped! A Slug ship outfitted for combat is detected by your sensors.</text>
+        <ship hostile="true" load="WOONA_SLUG_FREE_WEAPON_TRAP_SHIP"/>
+        <status amount="0" system="weapons" target="player" type="limit"/>
+      </event>
+    </choice>
+    <choice hidden="true" req="slug">
+      <text>(Slug) Your crewmember senses that something is wrong.</text>
+      <event>
+        <text>Before installing the new weapon, your Slug crewmember checks it thoroughly, and finds a hidden device meant to disable your system. A Slug ship appears on a radar, with an intention to return the trapped weapon back.</text>
+        <ship hostile="true" load="WOONA_SLUG_FREE_WEAPON_TRAP_SHIP"/>
+      </event>
+    </choice>
+  </event>
+  <ship auto_blueprint="SHIPS_JELLY" name="WOONA_SLUG_FREE_WEAPON_TRAP_SHIP">
+    <destroyed>
+      <text>The Slug ship breaks apart and your systems return to normal. You collect what you can.</text>
+      <autoReward level="LOW">standard</autoReward>
+      <status amount="100" system="weapons" target="player" type="clear"/>
+    </destroyed>
+    <deadCrew>
+      <text>With their crew dead, your systems return to normal. You strip the ship.</text>
+      <autoReward level="MED">standard</autoReward>
+      <status amount="100" system="weapons" target="player" type="clear"/>
+    </deadCrew>
+  </ship>
+</FTL>

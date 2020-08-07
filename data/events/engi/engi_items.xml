@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="ITEMS_ENGI">
+    <event load="ENGI_GIFT"/>
+    <event load="ENGI_FLEET_DELAY"/>
+    <event load="ENGI_SURRENDER"/>
+
+    <event load="FIND_DRONE"/>
+    <event load="FIND_WEAPON"/>
+    <event load="REFUEL_STATION"/>
+  </eventList>
+
+  <event name="ENGI_GIFT">
+    <textList name="ENGI_GIFT">
+      <text>An Engi vessel hails you. "Identity: Federation? Outlier probability. Implies... revival. Implies... hope. Assistance suggested." They offer some supplies.</text>
+      <text>You cross paths with an Engi cargo vessel hurrying home before the Mantis fleets attempt to take over this sector. They're happy to offload some of their cargo to get home faster.</text>
+      <text>You make contact with an isolated Engi science station who are staying put despite the likelihood of Mantis invasion. They suggest you trial some experimental technology.</text>
+      <text>This was the site of a recent battle. Either a show of Mantis force, or the Engi here weren't disposed to go peacefully. You pick through the pieces.</text>
+    </textList>
+    <autoReward level="RANDOM">standard</autoReward>
+  </event>
+
+  <event name="ENGI_FLEET_DELAY" unique="true">
+    <text>You notice an Engi colony hiding on the other side of a nearby moon. It turns out they're excavating an equipment cache from the Federation-Mantis War, and they suggest it might be used to lure the pursuing rebel fleet.</text>
+    <choice>
+      <text>Booby trap the cache.</text>
+      <event>
+        <text>You transfer down some missile warheads and the Engi rig them to blow before setting a distress signal to attract the fleet's attention.</text>
+        <item_modify>
+          <item type="missiles" min="-2" max="-2"/>
+        </item_modify>
+        <modifyPursuit amount="-2"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Secure the cache.</text>
+      <event>
+        <text>You have the Engi complete their excavations and bring the supplies on-board.</text>
+        <autoReward level="MED">drone</autoReward>
+      </event>
+    </choice>
+  </event>
+
+  <event name="ENGI_SURRENDER" unique="true">
+    <text>An Engi ship in the vicinity, seeing you jump in armed to the teeth, immediately broadcasts its surrender: "Subject goal: wealth. Engi motivation: survival. Transfer of goods acceptable?"</text>
+    <choice hidden="true">
+      <text>Explain that you're friendly.</text>
+      <eventList name="ENGI_SURRENDER_LIST">
+        <event>
+          <text>The Engi seem relieved, and eager to get underway. They set off without saying goodbye.</text>
+        </event>
+        <event>
+          <text>The Engi are satisfied with your explanation. "Beneficial. Subject goal: long, long journey. Remains compatible with transfer of goods from Engi." They send over the gear willingly, and you feel better for it.</text>
+          <autoReward level="RANDOM">standard</autoReward>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true">
+      <text>Accept their offer of surrender.</text>
+      <event>
+        <text>The Engi obediently transfer over the goods and get on their way. Money for nothing.</text>
+        <autoReward level="RANDOM">standard</autoReward>
+      </event>
+    </choice>
+  </event>
+</FTL>

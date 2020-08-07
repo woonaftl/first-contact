@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="DISTRESS_BEACON_ENGI">
+    <event load="ENGI_STATION_DISTRESS"/>
+    <event load="DISTRESS_ENGI_REBEL"/>
+    <event load="DISTRESS_ENGI_REACTOR"/>
+
+    <event load="CIVILIAN_ASTEROIDS_BEACON"/>
+    <event load="FRIENDLY_BEACON"/>
+    <event load="TRAP_BEACON"/>
+    <event load="DISTRESS_TRAPPED_MINER"/>
+    <event load="DISTRESS_INFESTATION"/>
+    <event load="DISTRESS_SATELLITE_DEFENSE"/>
+  </eventList>
+
+  <changelog>
+    <entry>Added a distress signal to ENGI_STATION_DISTRESS event</entry>
+  </changelog>
+  <event name="ENGI_STATION_DISTRESS" unique="false">
+    <text>You receive a distress call from a nearby Engi ship. "Assistance requested. Danger present. Imminent destruction."</text>
+    <distressBeacon/>
+    <choice>
+      <text>Respond to the call and move in to assist.</text>
+      <eventList name="ENGI_STATION_DISTRESS_LIST">
+        <event>
+          <text>You receive another message from the ship, this time with a Mantis at the comm-log. "Foolish meatsacks," he yells. Sensors indicate the ship is moving in to attack and boarders teleport from the station.</text>
+          <ship load="ENGI_MANTIS_CONTROLLED" hostile="true"/>
+          <boarders min="1" max="2" class="mantis"/>
+        </event>
+        <event>
+          <text>You approach to find a Mantis ship assaulting a small Engi space station. You prepare for a fight!</text>
+          <ship name="MANTIS_ENGI_STATION" auto_blueprint="SHIPS_MANTIS" hostile="true">
+            <destroyed>
+              <text>The Mantis ship breaks apart.</text>
+              <autoReward level="MED">standard</autoReward>
+              <choice hidden="true">
+                <text>Attempt to contact the Engi.</text>
+                <event load="SAVE_ENGI_STATION"/>
+              </choice>
+            </destroyed>
+            <deadCrew>
+              <text>No more life signs detected on the Mantis ship. You hasten to contact the Engi.</text>
+              <autoReward level="HIGH">standard</autoReward>
+              <choice hidden="true">
+                <text>Attempt to contact the Engi.</text>
+                <event load="SAVE_ENGI_STATION"/>
+              </choice>
+            </deadCrew>
+          </ship>
+        </event>
+      </eventList>
+    </choice>
+    <choice>
+      <text>Keep your distance.</text>
+      <event/>
+    </choice>
+  </event>
+  <eventList name="SAVE_ENGI_STATION">
+    <event>
+      <text>The Engi station is stripped bare and there are signs of a fierce battle. The Mantis must have left the distress call active to lure other ships into a trap.</text>
+    </event>
+    <event>
+      <text>The station was in the process of being evacuated. A number of civilian Engi offer their gratitude as they finalize their preparations to leave. They offer some fuel as a reward.</text>
+      <autoReward level="MED">fuel_only</autoReward>
+    </event>
+    <event>
+      <text>The station hails you, "Gratitude. Expected probability of defeat without assistance... 86.2 percent. Request suitable reward."</text>
+      <choice hidden="true">
+        <text>Request fuel.</text>
+        <event>
+          <text>"Request granted. Fuel transferring."</text>
+          <autoReward level="HIGH">fuel</autoReward>
+        </event>
+      </choice>
+      <choice hidden="true">
+        <text>Request weapon.</text>
+        <event>
+          <text>"Request granted. Weapon transferring."</text>
+          <autoReward level="LOW">weapon</autoReward>
+        </event>
+      </choice>
+      <choice hidden="true">
+        <text>Request drone.</text>
+        <event>
+          <text>"Request granted. Drone schematic transferring."</text>
+          <autoReward level="LOW">drone</autoReward>
+        </event>
+      </choice>
+      <choice req="engi" hidden="true">
+        <text>(Engi Crew) Threat unresolved. Current mission imperative: Protocol 52.34.</text>
+        <event>
+          <text>They respond, "Understood. Re-establishment of Federation highest import. Transmitting hidden base coordinates. Repairing hull and attaching ship to ship ordnance."</text>
+          <autoReward level="LOW">weapon</autoReward>
+          <quest event="HIDDEN_FEDERATION_BASE_LIST"/>
+          <damage amount="-10"/>
+        </event>
+      </choice>
+    </event>
+    <event>
+      <text>They thank you for the assistance and when you tell them of your mission, one of the Engi asks if they can assist your crew. You welcome them aboard.</text>
+      <crewMember amount="1" class="engi"/>
+      <autoReward level="LOW">standard</autoReward>
+    </event>
+  </eventList>
+
+  <event name="DISTRESS_ENGI_REBEL" unique="true">
+    <text>The distress signal originates from a small Engi ship under attack by a rebel fighter - but when the Rebels see Federation markings they turn to attack!</text>
+    <distressBeacon/>
+    <ship name="DISTRESS_ENGI_REBEL" auto_blueprint="SHIPS_REBEL" hostile="true">
+      <destroyed>
+        <text>The Rebels destroyed, you pick the bones of their ship and wait for the small Engi ship to catch up.</text>
+        <autoReward level="LOW">standard</autoReward>
+        <choice hidden="true">
+          <text id="continue"/>
+          <event load="DISTRESS_ENGI_REBEL_RESULT"/>
+        </choice>
+      </destroyed>
+      <deadCrew>
+        <text>The Rebels destroyed, you pick the bones of their ship and wait for the small Engi ship to catch up.</text>
+        <autoReward level="MED">standard</autoReward>
+        <choice hidden="true">
+          <text id="continue"/>
+          <event load="DISTRESS_ENGI_REBEL_RESULT"/>
+        </choice>
+      </deadCrew>
+    </ship>
+  </event>
+  <event name="DISTRESS_ENGI_REBEL_RESULT">
+    <text>The Engi vessel turns out to be very poorly equipped - barely a runabout, really. They're trying to outrun the Rebels, and need all the help they can get.</text>
+    <choice hidden="true">
+      <text>Give them 25 scrap.</text>
+      <eventList name="DISTRESS_ENGI_REBEL_LIST1">
+        <event>
+          <text>The words they use are "Need = fulfilled", but you take it for gratitude. They take the next jump in their long journey home.</text>
+          <item_modify>
+            <item type="scrap" min="-25" max="-25"/>
+          </item_modify>
+        </event>
+        <event>
+          <text>The Engi are grateful. They don't have any supplies or weapons to spare, but they do send over a self-teleporting med-bot disperser they hope they won't need.</text>
+          <weapon name="BOMB_HEAL"/>
+          <item_modify>
+            <item type="scrap" min="-25" max="-25"/>
+          </item_modify>
+        </event>
+        <event>
+          <text>The Engi are grateful. They don't have much by way of supplies but they do offer a drone schematic for your use.</text>
+          <drone name="RANDOM"/>
+          <item_modify>
+            <item type="scrap" min="-25" max="-25"/>
+          </item_modify>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true">
+      <text>Give them 40 scrap, 2 missiles and 2 fuel.</text>
+      <event name="DISTRESS_ENGI_REBEL_LIST2">
+        <text>They wouldn't get more than a few jumps with that load-out. You provide them with all the munitions and supplies they should need for the journey home. "Generosity magnitude unpredicted. Well-being syntax error [value too high]. Accept this token."</text>
+        <item_modify>
+          <item type="scrap" min="-40" max="-40"/>
+          <item type="fuel" min="-2" max="-2"/>
+          <item type="missiles" min="-2" max="-2"/>
+        </item_modify>
+        <augment name="NANO_MEDBAY"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Give them nothing.</text>
+      <event>
+        <text>Engi can't feel fear, so they bear you no ill will when you explain you're unwilling to help. They set off on their journey and you do the same.</text>
+      </event>
+    </choice>
+  </event>
+
+  <event name="DISTRESS_ENGI_REACTOR" unique="true">
+    <text>You arrive at a smoldering Engi research station, its distress call unanswered - attacked by pirates or Mantis most likely. There may be someone left alive, or else something of value left on board.</text>
+    <distressBeacon/>
+    <choice hidden="true">
+      <text>Board the station.</text>
+      <eventList name="DISTRESS_ENGI_REACTOR_LIST1">
+        <event>
+          <text>You send an away team to investigate, but there's nothing save for the acidic stench of burnt Engi parts. This place is dead.</text>
+        </event>
+        <event>
+          <text>Your away team reports a wounded Engi and a functioning drone schematic. Then someone yells. The station reactor is overloading and they're running out of time!</text>
+          <choice hidden="true">
+            <text>Save the Engi!</text>
+            <eventList name="DISTRESS_ENGI_REACTOR_ENGI">
+              <event>
+                <text>One of your crew valiantly grabs the Engi and throws it into the airlock right before the reactor blows and the automatic blast doors slam shut. You have no choice but to mourn their sacrifice and move on.</text>
+                <removeCrew>
+                  <clone>true</clone>
+                  <text>The brave crewmember's clone strides from the Clone Bay, rather full of themself after such a heroic act.</text>
+                </removeCrew>
+                <choice hidden="true">
+                  <text id="continue"/>
+                  <event>
+                    <text>The Engi who was saved offers to join your crew.</text>
+                    <crewMember amount="1" class="engi"/>
+                    <autoReward level="LOW">scrap_only</autoReward>
+                  </event>
+                </choice>
+              </event>
+              <event>
+                <text>Your crew return safely to the airlock with the injured Engi and you put some distance on the station before it blows. The Engi, impressed by your crew, volunteers to join you.</text>
+                <crewMember amount="1" class="engi"/>
+                <autoReward level="LOW">scrap_only</autoReward>
+              </event>
+            </eventList>
+          </choice>
+          <choice hidden="true">
+            <text>Save the drone schematic.</text>
+            <eventList name="DISTRESS_ENGI_REACTOR_DRONE">
+              <event>
+                <text>Your away team heads home with the goods, but as they transfer back to the ship a small explosion blows the airlock and one of the crew is sucked out into space!</text>
+                <removeCrew>
+                  <clone>true</clone>
+                  <text>Fortunately, your crewmember was close enough to the ship for the Clone Bay to revive them.</text>
+                </removeCrew>
+                <autoReward level="LOW">scrap_only</autoReward>
+              </event>
+              <event>
+                <text>The Engi don't feel things the same way other species do. They'd want the tech to be saved. Your crew return safely to the airlock with the drone control and you put some distance on the station before it blows.</text>
+                <autoReward level="LOW">drone</autoReward>
+              </event>
+            </eventList>
+          </choice>
+          <choice hidden="true">
+            <text>Save yourselves!</text>
+            <event>
+              <text>It's a tough order, but your crew's lives are the priority. They drop everything and return to the ship unharmed. You put some distance on the station before it blows.</text>
+              <autoReward level="LOW">scrap_only</autoReward>
+            </event>
+          </choice>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true">
+      <text>Ignore it.</text>
+      <event>
+        <text>The place looks in bad state, probably nothing of use there. Time to move on.</text>
+      </event>
+    </choice>
+    <choice hidden="true" req="sensors" lvl="2">
+      <text>(Improved Sensors) Run another scan.</text>
+      <event name="DISTRESS_ENGI_REACTOR_SCAN">
+        <text>Scans reveal the station's reactor is overloading! Not only that, but an injured Engi and a functioning drone schematic are still on board! There's not time for both...</text>
+        <choice hidden="true">
+          <text>Save the Engi!</text>
+          <event>
+            <text>Your away team heads straight for the Engi and returns with time to spare. You put some distance on the station before it blows and the Engi is so impressed by your crew that they volunteer to join you!</text>
+            <crewMember amount="1" class="engi"/>
+            <autoReward level="LOW">scrap_only</autoReward>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>Save the Drone Schematic!</text>
+          <event>
+            <text>The Engi don't feel things the same way other species do. They'd want the tech to be saved. Your away team heads straight for the goods and returns with time to spare. You put some distance on the station before it blows.</text>
+            <autoReward level="LOW">drone</autoReward>
+          </event>
+        </choice>
+      </event>
+    </choice>
+    <choice hidden="true" req="ADV_SCANNERS">
+      <text>(Long Ranged Scanners) Run another scan.</text>
+      <event load="DISTRESS_ENGI_REACTOR_SCAN"/>
+    </choice>
+  </event>
+</FTL>

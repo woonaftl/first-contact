@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <blueprintList name="WEAPONS_LASER_1">
+    <name>LASER_BURST_1</name>
+    <name>LASER_HULL_BASIC</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_LASER_2">
+    <name>LASER_BURST_2</name>
+    <name>LASER_CHARGEGUN</name>
+    <name>LASER_HULL_1</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_LASER_3">
+    <name>LASER_BURST_3</name>
+    <name>LASER_CHARGEGUN_2</name>
+    <name>LASER_HULL_2</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_LASER_4">
+    <name>LASER_BURST_5</name>
+  </blueprintList>
+
+  <blueprintList name="WEAPONS_ANY_1">
+    <name>LASER_BURST_1</name>
+    <name>LASER_HULL_BASIC</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_ANY_2">
+    <name>LASER_BURST_2</name>
+    <name>LASER_CHARGEGUN</name>
+    <name>LASER_HULL_1</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_ANY_3">
+    <name>LASER_BURST_3</name>
+    <name>LASER_CHARGEGUN_2</name>
+    <name>LASER_HULL_2</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_ANY_4">
+    <name>LASER_BURST_5</name>
+  </blueprintList>
+
+  <blueprintList name="WEAPONS_PROJ_1">
+    <name>LASER_BURST_1</name>
+    <name>LASER_HULL_BASIC</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_PROJ_2">
+    <name>LASER_BURST_2</name>
+    <name>LASER_CHARGEGUN</name>
+    <name>LASER_HULL_1</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_PROJ_3">
+    <name>LASER_BURST_3</name>
+    <name>LASER_CHARGEGUN_2</name>
+    <name>LASER_HULL_2</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_PROJ_4">
+    <name>LASER_BURST_5</name>
+  </blueprintList>
+
+  <blueprintList name="WEAPONS_SIMPLE_1">
+    <name>LASER_BURST_1</name>
+    <name>LASER_HULL_BASIC</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_SIMPLE_2">
+    <name>LASER_BURST_2</name>
+    <name>LASER_CHARGEGUN</name>
+    <name>LASER_HULL_1</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_SIMPLE_3">
+    <name>LASER_BURST_3</name>
+    <name>LASER_CHARGEGUN_2</name>
+    <name>LASER_HULL_2</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_SIMPLE_4">
+    <name>LASER_BURST_5</name>
+  </blueprintList>
+
+  <blueprintList name="WEAPONS_LASER_1_UPGRADED">
+    <name>LASER_BURST_2_UPGRADED</name>
+    <name>LASER_CHARGEGUN_UPGRADED</name>
+    <name>LASER_HULL_1_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_LASER_2_UPGRADED">
+    <name>LASER_BURST_3_UPGRADED</name>
+    <name>LASER_CHARGEGUN_2_UPGRADED</name>
+    <name>LASER_HULL_2_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_LASER_3_UPGRADED">
+    <name>LASER_BURST_5_UPGRADED</name>
+  </blueprintList>
+
+  <blueprintList name="WEAPONS_ANY_1_UPGRADED">
+    <name>LASER_BURST_2_UPGRADED</name>
+    <name>LASER_CHARGEGUN_UPGRADED</name>
+    <name>LASER_HULL_1_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_ANY_2_UPGRADED">
+    <name>LASER_BURST_3_UPGRADED</name>
+    <name>LASER_CHARGEGUN_2_UPGRADED</name>
+    <name>LASER_HULL_2_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_ANY_3_UPGRADED">
+    <name>LASER_BURST_5_UPGRADED</name>
+  </blueprintList>
+
+  <blueprintList name="WEAPONS_PROJ_1_UPGRADED">
+    <name>LASER_BURST_2_UPGRADED</name>
+    <name>LASER_CHARGEGUN_UPGRADED</name>
+    <name>LASER_HULL_1_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_PROJ_2_UPGRADED">
+    <name>LASER_BURST_3_UPGRADED</name>
+    <name>LASER_CHARGEGUN_2_UPGRADED</name>
+    <name>LASER_HULL_2_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_PROJ_3_UPGRADED">
+    <name>LASER_BURST_5_UPGRADED</name>
+  </blueprintList>
+
+  <blueprintList name="WEAPONS_SIMPLE_1_UPGRADED">
+    <name>LASER_BURST_2_UPGRADED</name>
+    <name>LASER_CHARGEGUN_UPGRADED</name>
+    <name>LASER_HULL_1_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_SIMPLE_2_UPGRADED">
+    <name>LASER_BURST_3_UPGRADED</name>
+    <name>LASER_CHARGEGUN_2_UPGRADED</name>
+    <name>LASER_HULL_2_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_SIMPLE_3_UPGRADED">
+    <name>LASER_BURST_5_UPGRADED</name>
+  </blueprintList>
+
+  <weaponBlueprint name="LASER_BURST_1">
+    <type>LASER</type>
+    <title>Defense Laser Mark I</title>
+    <short>Basic Laser</short>
+    <tip>tip_laser</tip>
+    <desc>Very weak laser.</desc>
+    <tooltip>Only one shot, one damage per shot.</tooltip>
+    <damage>1</damage>
+    <shots>1</shots>
+    <sp>0</sp>
+    <fireChance>1</fireChance>
+    <breachChance>0</breachChance>
+    <cooldown>10</cooldown>
+    <power>1</power>
+    <cost>20</cost>
+    <bp>2</bp>
+    <rarity>0</rarity>
+    <image>laser_light1</image>
+    <launchSounds>
+      <sound>lightLaser1</sound>
+      <sound>lightLaser2</sound>
+      <sound>lightLaser3</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>hitHull2</sound>
+      <sound>hitHull3</sound>
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>hitShield1</sound>
+      <sound>hitShield2</sound>
+      <sound>hitShield3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <weaponArt>laser_burst_1</weaponArt>
+    <iconImage>laser</iconImage>
+  </weaponBlueprint>
+
+  <changelog>
+    <entry>Dual Lasers (called upgraded Burst Laser I now) scrap cost 25 to 50 (consistency)</entry>
+  </changelog>
+  <weaponBlueprint name="LASER_BURST_2">
+    <type>LASER</type>
+    <title>Burst Laser Mark I</title>
+    <short>Burst Laser I</short>
+    <tip>tip_laser</tip>
+    <desc>This simple burst laser isn't flashy but it gets the job done.</desc>
+    <tooltip>Shoots 2 lasers that do 1 damage each.</tooltip>
+    <damage>1</damage>
+    <shots>2</shots>
+    <sp>0</sp>
+    <fireChance>1</fireChance>
+    <breachChance>0</breachChance>
+    <cooldown>11</cooldown>
+    <power>2</power>
+    <cost>50</cost>
+    <bp>4</bp>
+    <rarity>1</rarity>
+    <image>laser_light1</image>
+    <launchSounds>
+      <sound>lightLaser1</sound>
+      <sound>lightLaser2</sound>
+      <sound>lightLaser3</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>hitHull2</sound>
+      <sound>hitHull3</sound>
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>hitShield1</sound>
+      <sound>hitShield2</sound>
+      <sound>hitShield3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <weaponArt>laser_burst_2</weaponArt>
+    <iconImage>laser</iconImage>
+  </weaponBlueprint>
+  <weaponBlueprintInherit name="LASER_BURST_2_UPGRADED" base="LASER_BURST_2">
+    <tip>tip_laser_upgraded</tip>
+    <title>Burst Laser Mark I+</title>
+    <short>Burst Laser I+</short>
+    <cooldown>10</cooldown>
+    <power>1</power>
+    <rarity>0</rarity>
+  </weaponBlueprintInherit>
+
+  <changelog>
+    <entry>Burst Laser II power usage 2 to 3</entry>
+    <entry>Burst Laser II charge time 12 to 13</entry>
+    <entry>Burst Laser II scrap cost 80 to 70</entry>
+    <entry>Burst Laser II rarity 4 to 2</entry>
+  </changelog>
+  <weaponBlueprint name="LASER_BURST_3">
+    <type>LASER</type>
+    <title>Burst Laser Mark II</title>
+    <short>Burst Laser II</short>
+    <tip>tip_laser</tip>
+    <desc>Slightly improved version of the burst laser that fires more shots per charge.</desc>
+    <tooltip>Fires 3 lasers, 1 damage each.</tooltip>
+    <damage>1</damage>
+    <shots>3</shots>
+    <sp>0</sp>
+    <fireChance>1</fireChance>
+    <breachChance>0</breachChance>
+    <cooldown>13</cooldown>
+    <power>3</power>
+    <cost>80</cost>
+    <bp>7</bp>
+    <rarity>2</rarity>
+    <image>laser_light2</image>
+    <launchSounds>
+      <sound>lightLaser1</sound>
+      <sound>lightLaser2</sound>
+      <sound>lightLaser3</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>hitHull2</sound>
+      <sound>hitHull3</sound>
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>hitShield1</sound>
+      <sound>hitShield2</sound>
+      <sound>hitShield3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <weaponArt>laser_burst_3</weaponArt>
+    <iconImage>laser</iconImage>
+  </weaponBlueprint>
+  <weaponBlueprintInherit name="LASER_BURST_3_UPGRADED" base="LASER_BURST_3">
+    <tip>tip_laser_upgraded</tip>
+    <title>Burst Laser Mark II+</title>
+    <short>Burst Laser II+</short>
+    <cooldown>12</cooldown>
+    <power>2</power>
+    <rarity>0</rarity>
+  </weaponBlueprintInherit>
+
+  <changelog>
+    <entry>Burst Laser III charge time 19 to 17</entry>
+    <entry>Burst Laser III fire chance 0 to 0.1</entry>
+  </changelog>
+  <weaponBlueprint name="LASER_BURST_5">
+    <type>LASER</type>
+    <title>Burst Laser Mark III</title>
+    <short>Burst L. III</short>
+    <tip>tip_laser</tip>
+    <desc>Powerful burst laser that fires off an impressive barrage.</desc>
+    <tooltip>Fires 5 lasers, 1 damage per shot.</tooltip>
+    <damage>1</damage>
+    <shots>5</shots>
+    <sp>0</sp>
+    <fireChance>0</fireChance>
+    <breachChance>0</breachChance>
+    <cooldown>17</cooldown>
+    <power>4</power>
+    <cost>95</cost>
+    <bp>10</bp>
+    <rarity>4</rarity>
+    <image>laser_light2</image>
+    <launchSounds>
+      <sound>lightLaser1</sound>
+      <sound>lightLaser2</sound>
+      <sound>lightLaser3</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>hitHull2</sound>
+      <sound>hitHull3</sound>
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>hitShield1</sound>
+      <sound>hitShield2</sound>
+      <sound>hitShield3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <weaponArt>laser_burst_5</weaponArt>
+    <iconImage>laser</iconImage>
+  </weaponBlueprint>
+  <weaponBlueprintInherit name="LASER_BURST_5_UPGRADED" base="LASER_BURST_5">
+    <tip>tip_laser_upgraded</tip>
+    <title>Burst Laser Mark III+</title>
+    <short>Burst L. III+</short>
+    <cooldown>16</cooldown>
+    <power>3</power>
+    <rarity>0</rarity>
+  </weaponBlueprintInherit>
+
+  <changelog>
+    <entry>Added Basic Hull Laser (1 projectile, 1 power, 13 sec charge time, 0.3 breach chance, double damage to empty rooms). Unavailable in stores or random drops, similarly to Basic Laser, but commonly seen on weaker enemies.</entry>
+  </changelog>
+  <weaponBlueprint name="LASER_HULL_BASIC">
+    <type>LASER</type>
+    <title>Hull Smasher Laser</title>
+    <short>Hull Smasher</short>
+    <desc>A powerful laser designed to maximize hull damage.</desc>
+    <tip>tip_hull</tip>
+    <tooltip>Only 1 shot, 1 damage and 2x damage in systemless rooms.</tooltip>
+    <damage>1</damage>
+    <shots>1</shots>
+    <sp>0</sp>
+    <fireChance>0</fireChance>
+    <breachChance>3</breachChance>
+    <cooldown>13</cooldown>
+    <hullBust>1</hullBust>
+    <power>1</power>
+    <cost>30</cost>
+    <rarity>0</rarity>
+    <speed>75</speed>
+    <image>laser_hull_projectile</image>
+    <launchSounds>
+      <sound>heavyLaser1</sound>
+      <sound>heavyLaser2</sound>
+      <sound>heavyLaser3</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>hitHull1</sound>
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>hitShield1</sound>
+      <sound>hitShield2</sound>
+      <sound>hitShield3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <weaponArt>laser_hull_1</weaponArt>
+    <iconImage>laserH</iconImage>
+  </weaponBlueprint>
+
+  <changelog>
+    <entry>Hull Laser I breach chance 0.2 to 0.3 (consistency)</entry>
+  </changelog>
+  <weaponBlueprint name="LASER_HULL_1">
+    <type>LASER</type>
+    <title>Hull Smasher Laser Mark I</title>
+    <short>Hull Laser I</short>
+    <desc>A powerful laser designed to maximize hull damage.</desc>
+    <tip>tip_hull</tip>
+    <tooltip>Fires 2 lasers, 1 damage each and 2x damage in systemless rooms.</tooltip>
+    <damage>1</damage>
+    <shots>2</shots>
+    <sp>0</sp>
+    <fireChance>0</fireChance>
+    <breachChance>2</breachChance>
+    <cooldown>14</cooldown>
+    <hullBust>1</hullBust>
+    <power>2</power>
+    <cost>55</cost>
+    <rarity>2</rarity>
+    <speed>75</speed>
+    <image>laser_hull_projectile</image>
+    <launchSounds>
+      <sound>heavyLaser1</sound>
+      <sound>heavyLaser2</sound>
+      <sound>heavyLaser3</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>hitHull1</sound>
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>hitShield1</sound>
+      <sound>hitShield2</sound>
+      <sound>hitShield3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <weaponArt>laser_hull_2</weaponArt>
+    <iconImage>laserH</iconImage>
+  </weaponBlueprint>
+  <weaponBlueprintInherit name="LASER_HULL_1_UPGRADED" base="LASER_HULL_1">
+    <tip>tip_hull_upgraded</tip>
+    <title>Hull Smasher Laser Mark I+</title>
+    <short>Hull Laser I+</short>
+    <cooldown>13</cooldown>
+    <power>1</power>
+    <rarity>0</rarity>
+  </weaponBlueprintInherit>
+
+  <changelog>
+    <entry>Hull Laser II fire chance 0.1 to 0 (consistency)</entry>
+    <entry>Hull Laser II slower projectile to match Hull Laser I</entry>
+  </changelog>
+  <weaponBlueprint name="LASER_HULL_2">
+    <type>LASER</type>
+    <title>Hull Smasher Laser Mark II</title>
+    <short>Hull Laser II</short>
+    <tip>tip_hull</tip>
+    <desc>This powerful counterpart to the Hull Smasher Mark I fires more projectiles per shot.</desc>
+    <tooltip>Fires 3 lasers, 1 damage each and 2x damage in systemless rooms.</tooltip>
+    <damage>1</damage>
+    <shots>3</shots>
+    <sp>0</sp>
+    <fireChance>0</fireChance>
+    <breachChance>3</breachChance>
+    <cooldown>15</cooldown>
+    <hullBust>1</hullBust>
+    <power>3</power>
+    <cost>75</cost>
+    <bp>7</bp>
+    <rarity>3</rarity>
+    <image>laser_hull_projectile</image>
+    <speed>75</speed>
+    <launchSounds>
+      <sound>heavyLaser1</sound>
+      <sound>heavyLaser2</sound>
+      <sound>heavyLaser3</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>hitHull1</sound>
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>hitShield1</sound>
+      <sound>hitShield2</sound>
+      <sound>hitShield3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <weaponArt>laser_hull_3</weaponArt>
+    <iconImage>laserH</iconImage>
+  </weaponBlueprint>
+  <weaponBlueprintInherit name="LASER_HULL_2_UPGRADED" base="LASER_HULL_2">
+    <tip>tip_hull_upgraded</tip>
+    <title>Hull Smasher Laser Mark II+</title>
+    <short>Hull Laser II+</short>
+    <cooldown>14</cooldown>
+    <power>2</power>
+    <rarity>0</rarity>
+  </weaponBlueprintInherit>
+
+  <changelog>
+    <entry>Laser Charger fire chance 0 to 0.1</entry>
+    <entry>Laser Charger rarity 3 to 1</entry>
+    <entry>Laser Charger+ fire chance 0 to 0.1</entry>
+    <entry>Laser Charger+ scrap cost 30 to 55 (consistency)</entry>
+  </changelog>
+  <weaponBlueprint name="LASER_CHARGEGUN">
+    <type>LASER</type>
+    <title>Laser Charger</title>
+    <short>LC I</short>
+    <tip>tip_charge</tip>
+    <desc>This laser weapon can charge two times, giving it an additional projectile.</desc>
+    <tooltip>Fires more shots the more it charges, up to a max of 2.</tooltip>
+    <damage>1</damage>
+    <shots>1</shots>
+    <sp>0</sp>
+    <fireChance>1</fireChance>
+    <breachChance>0</breachChance>
+    <cooldown>6</cooldown>
+    <power>2</power>
+    <cost>55</cost>
+    <bp>2</bp>
+    <rarity>1</rarity>
+    <image>laser_light1</image>
+    <chargeLevels>2</chargeLevels>
+    <launchSounds>
+      <sound>lightLaser1</sound>
+      <sound>lightLaser2</sound>
+      <sound>lightLaser3</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>hitHull2</sound>
+      <sound>hitHull3</sound>
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>hitShield1</sound>
+      <sound>hitShield2</sound>
+      <sound>hitShield3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <weaponArt>chargelaser</weaponArt>
+    <iconImage>laser_charge2</iconImage>
+  </weaponBlueprint>
+  <weaponBlueprintInherit name="LASER_CHARGEGUN_UPGRADED" base="LASER_CHARGEGUN">
+    <tip>tip_charge_upgraded</tip>
+    <title>Laser Charger+</title>
+    <short>LC I+</short>
+    <cooldown>5.5</cooldown>
+    <power>1</power>
+    <rarity>0</rarity>
+  </weaponBlueprintInherit>
+
+  <weaponBlueprint name="LASER_CHARGEGUN_2">
+    <type>LASER</type>
+    <title>Laser Charger Mark II</title>
+    <short>LC II</short>
+    <tip>tip_charge</tip>
+    <desc>This laser weapon can charge multiple times, giving it additional projectiles.</desc>
+    <tooltip>Fires more shots the more it charges, up to a max of 4.</tooltip>
+    <damage>1</damage>
+    <shots>1</shots>
+    <sp>0</sp>
+    <fireChance>1</fireChance>
+    <breachChance>0</breachChance>
+    <cooldown>5</cooldown>
+    <power>3</power>
+    <cost>70</cost>
+    <bp>2</bp>
+    <rarity>3</rarity>
+    <image>laser_light1</image>
+    <chargeLevels>4</chargeLevels>
+    <launchSounds>
+      <sound>lightLaser1</sound>
+      <sound>lightLaser2</sound>
+      <sound>lightLaser3</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>hitHull2</sound>
+      <sound>hitHull3</sound>
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>hitShield1</sound>
+      <sound>hitShield2</sound>
+      <sound>hitShield3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <weaponArt>chargelaser2</weaponArt>
+    <iconImage>laser_charge4</iconImage>
+  </weaponBlueprint>
+  <weaponBlueprintInherit name="LASER_CHARGEGUN_2_UPGRADED" base="LASER_CHARGEGUN_2">
+    <tip>tip_charge_upgraded</tip>
+    <title>Laser Charger Mark II+</title>
+    <short>LC II+</short>
+    <cooldown>4.5</cooldown>
+    <power>2</power>
+    <rarity>0</rarity>
+  </weaponBlueprintInherit>
+</FTL>

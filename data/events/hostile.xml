@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="HOSTILE">
+    <event load="AUTO_CIVILIAN"/>
+    <event load="AUTO_REFUEL_STATION"/>
+    <event load="AUTO_WARNING"/>
+    <event load="MANTIS_FIGHT"/>
+    <event load="PIRATE"/>
+    <event load="PIRATE_CHOICE"/>
+    <event load="PIRATE_NO_ESCAPE"/>
+    <event load="PIRATE_SLAVER"/>
+    <event load="REBEL"/>
+    <event load="REBEL_AUTO"/>
+    <event load="SQUAT_REFUEL_STATION"/>
+    <event load="SQUAT_WARNING"/>
+  </eventList>
+
+  <eventList name="HOSTILE_HAZARD">
+    <event load="AUTO_ASTEROID"/>
+    <event load="AUTO_SUN"/>
+    <event load="PIRATE_ASTEROID"/>
+    <event load="PIRATE_SUN"/>
+  </eventList>
+
+  <changelog>
+    <entry>Removed AUTO_HACKER event</entry>
+  </changelog>
+
+  <changelog>
+    <entry>Added special ship for dread pirate Tuco</entry>
+  </changelog>
+  <eventList name="PIRATE">
+    <event count="8">
+      <textList name="PIRATE">
+        <text>As you jump into the system a pirate advances on your position. They are refusing all hails. Prepare for a fight.</text>
+        <text>Soon after arriving in the system you are hailed by a small cruiser. "What good fortune that we happen to run into each other. Nothing personal, but you have some information we need!"</text>
+        <text>The only other ship at this beacon messages you: "Finally, after months of waiting, someone has fallen into our trap!"</text>
+        <text>You barely have time to register jump completion before your ship warns you of an incoming ship with weapons hot.</text>
+      </textList>
+      <ship load="PIRATE" hostile="true"/>
+    </event>
+    <event>
+      <text>At first it appears you've arrived in an empty system, but a ship appears from behind a planet and hails you: "Haha! I am the dread pirate Tuco, prepare to die!"</text>
+      <img back="BACKGROUND" planet="PLANET_POPULATED"/>
+      <ship auto_blueprint="PIRATE_TUCO_LIST" hostile="true">
+        <surrender chance="0.5" min="3" max="4" load="PIRATE_SURRENDER"/>
+        <escape chance="0.5" min="2" max="4" load="PIRATE_ESCAPE"/>
+        <destroyed load="DESTROYED_DEFAULT"/>
+        <gotaway>
+          <text id="ship_PIRATE_gotaway_text"/>
+        </gotaway>
+        <deadCrew load="DEAD_CREW_DEFAULT"/>
+      </ship>
+    </event>
+  </eventList>
+
+  <event name="PIRATE_NO_ESCAPE" unique="true">
+    <text>Once you arrive, your screen lights up with warnings. A nearby pirate seems to have advanced hacking tools and they have tried to shut down your engines. Your crew manages to keep them barely operational and you move into attack.</text>
+    <ship name="PIRATE_NO_ESCAPE" auto_blueprint="SHIPS_PIRATE" hostile="true">
+      <destroyed>
+        <text>With the pirate ship destroyed, your ship's system is restored to full functionality. You salvage what you can from the debris.</text>
+        <autoReward level="RANDOM">fuel</autoReward>
+        <status type="clear" target="player" system="engines" amount="100"/>
+        <status type="clear" target="player" system="hacking" amount="100"/>
+      </destroyed>
+      <deadCrew>
+        <text>With the pirate ship disabled, your engines come online again. You salvage what you can from their ship.</text>
+        <autoReward level="MED">fuel</autoReward>
+        <status type="clear" target="player" system="engines" amount="100"/>
+        <status type="clear" target="player" system="hacking" amount="100"/>
+      </deadCrew>
+    </ship>
+    <choice hidden="true">
+      <text id="continue"/>
+      <event>
+        <status type="limit" target="player" system="engines" amount="1"/>
+      </event>
+    </choice>
+    <choice hidden="true" req="hacking">
+      <text>(Hacking System) Counter the remote hacking.</text>
+      <event>
+        <text>Your Hacking System automatically counters the digital assault and you move in to fight the ship.</text>
+        <status type="limit" target="player" system="hacking" amount="0"/>
+      </event>
+    </choice>
+  </event>
+
+  <event name="PIRATE_SUN" unique="false">
+    <img back="BG_DARK"/>
+    <text>This beacon has been placed too close to a super-giant class M star! The ship will gradually overheat until you get out of here... or die. A pirate, apparently oblivious to the danger of the sun, moves in to engage.</text>
+    <ship load="PIRATE" hostile="true"/>
+    <environment type="sun"/>
+  </event>
+
+  <event name="PIRATE_ASTEROID">
+    <img planet="NONE" back="BG_DARK"/>
+    <environment type="asteroid"/>
+    <text>A pirate ship was lying in wait inside this asteroid field. It immediately moves in to attack.</text>
+    <ship load="PIRATE" hostile="true"/>
+    <choice>
+      <text>Turn and fight.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <event name="PIRATE_PULSAR" unique="false">
+    <textList name="PIRATE_PULSAR_TEXT">
+      <text>Sensors go wild as a nearby pulsar is detected. While you are attempting to recalibrate the FTL drive, a pirate sneaks up on your ship, weapons charging. Prepare for a fight!</text>
+      <text>You arrive to find a pulsar dominating the view screen. You see a small silhouette pass in front of the star. Before you can ponder what it is, warning signals go off. It appears to be a ship in a firing trajectory!</text>
+      <text>A small research station orbits a nearby pulsar. It appears largely abandoned, but you detect power signatures flaring up as soon as you're in scanning distance. A small combat ship launches from the station. Pirates!</text>
+    </textList>
+    <ship load="PIRATE" hostile="true"/>
+    <environment type="pulsar"/>
+  </event>
+
+  <event name="AUTO_ASTEROID">
+    <img back="BG_DARK" planet="NONE"/>
+    <text>You arrive in an asteroid belt to discover that a Rebel automated-scout has been stationed here. Prepare for a fight!</text>
+    <ship load="REBEL_AUTO" hostile="true"/>
+    <environment type="asteroid"/>
+  </event>
+
+  <event name="AUTO_SUN">
+    <text>You arrive at the beacon to find yourself dangerously close to a star. An automated Rebel ship, impervious to the heat, moves in to engage.</text>
+    <ship load="REBEL_AUTO" hostile="true"/>
+    <environment type="sun"/>
+  </event>
+
+  <event name="PIRATE_CHOICE" unique="false">
+    <img planet="NONE"/>
+    <text>Upon completing your jump, you receive a message from a nearby ship. "Greetings and welcome to our beacon! For a small fee, we'll let you continue on your way."</text>
+    <ship load="PIRATE" hostile="false"/>
+    <choice>
+      <text>Pay their toll.</text>
+      <event>
+        <text>"You made the right decision, friend."</text>
+        <item_modify>
+          <item type="scrap" min="-25" max="-15"/>
+        </item_modify>
+      </event>
+    </choice>
+    <choice>
+      <text>Reject their 'offer'.</text>
+      <event>
+        <text>"Too bad... You will regret this decision!"</text>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+  </event>
+</FTL>

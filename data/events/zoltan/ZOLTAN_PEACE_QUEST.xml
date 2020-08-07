@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <event name="ZOLTAN_PEACE_QUEST" unique="true">
+    <text>An unarmed Zoltan transport vessel is slowly making its way toward the beacon here. They hail: "This is a Zoltan peace envoy. We carry no weapons or shielding and rely on the mercy of others to communicate our message."</text>
+    <choice hidden="true">
+      <text>Attack them.</text>
+      <event load="ZOLTAN_PEACE_QUEST_ATTACK"/>
+    </choice>
+    <choice hidden="true">
+      <text>Hear them out.</text>
+      <event>
+        <text>They continue. "We take your silence for interested contemplation." They talk at length about peace and harmony, but either it's beyond your simple mind or it's all nonsense.</text>
+        <choice hidden="true">
+          <text id="continue"/>
+          <event>
+            <text>They finish: "Please, spread the word of enlightenment to those that have not heard. Once you have, contact our brethren." They transmit coordinates of their so-called "brethren".</text>
+            <quest event="ZOLTAN_PEACE_QUEST2"/>
+          </event>
+        </choice>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Leave.</text>
+      <event>
+        <text>The galaxy is at war - there's no time for talk of peace. You leave their hails unanswered and charge the jump drive.</text>
+      </event>
+    </choice>
+  </event>
+
+  <eventList name="ZOLTAN_PEACE_QUEST_ATTACK">
+    <event>
+      <text>You charge your weapons - not that this will take much.</text>
+      <ship load="ZOLTAN_PEACE_QUEST_ATTACK1" hostile="true"/>
+    </event>
+    <event>
+      <text>Just as you're preparing to attack you detect a nearby jump signature. A Zoltan defense ship comes to their aid!</text>
+      <ship load="ZOLTAN_PEACE_QUEST_ATTACK2" hostile="true"/>
+    </event>
+  </eventList>
+
+  <ship name="ZOLTAN_PEACE_QUEST_ATTACK1" auto_blueprint="ZOLTAN_PEACE">
+    <surrender chance="0.2" min="3" max="4">
+      <text>They are clearly not putting up a fight. Are you sure you want to destroy them?</text>
+      <choice hidden="true">
+        <text>Finish them off.</text>
+        <event>
+          <text>You continue the assault.</text>
+        </event>
+      </choice>
+      <choice hidden="true">
+        <text>Let them go.</text>
+        <event>
+          <text>You power down your weapons and after a time the ship slowly limps away. They refuse all communications. You can't help but feel somewhat guilty.</text>
+          <ship hostile="false"/>
+        </event>
+      </choice>
+    </surrender>
+    <destroyed>
+      <text>You can't help but feel somewhat guilty as you search through the debris. It was probably a trap... right?</text>
+      <autoReward level="LOW">standard</autoReward>
+    </destroyed>
+    <deadCrew>
+      <text>You begin to strip their ship and don't find anything that would indicate they were on anything other than a peaceful mission. Perhaps you were too hasty.</text>
+      <autoReward level="RANDOM">standard</autoReward>
+    </deadCrew>
+  </ship>
+
+  <ship name="ZOLTAN_PEACE_QUEST_ATTACK2" auto_blueprint="SHIPS_ZOLTAN">
+    <destroyed>
+      <text>You defeat your assailant, but the peace ship has jumped away in the commotion.</text>
+      <autoReward level="LOW">standard</autoReward>
+    </destroyed>
+    <deadCrew>
+      <text>You defeat your assailant, but the peace ship has jumped away in the commotion.</text>
+      <autoReward level="RANDOM">standard</autoReward>
+    </deadCrew>
+  </ship>
+
+  <event name="ZOLTAN_PEACE_QUEST2">
+    <text>You arrive at the location specified by the peace-loving Zoltan, but the only thing nearby is a Rebel ship, closing in fast! "We've found you! You're not getting away this time!"</text>
+    <ship load="REBEL" hostile="false"/>
+    <choice hidden="true">
+      <text>Attack.</text>
+      <event>
+        <text>You power your weapons and prepare to fight.</text>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Attempt to hail them.</text>
+      <event>
+        <text>They open communications: "I can't imagine there's anything you could say that will save you. The rebellion must destroy those that are still loyal to the obsolete Federation."</text>
+        <choice hidden="true">
+          <text>"Perhaps there could be a reconciliation of our ideals without war?"</text>
+          <event>
+            <text>"Our ideals are too different to be so easily reconciled. You think this could end any way but war?"</text>
+            <choice hidden="true">
+              <text>The galaxy is huge - you can find a place for your ideals elsewhere without causing this destruction.</text>
+              <event>
+                <text>"No! We will not be consigned to the backwaters of space just because we don't fit into your 'Federation ideals'!" They charge.</text>
+                <ship hostile="true"/>
+              </event>
+            </choice>
+            <choice hidden="true">
+              <text>True progress can only be achieved without bloodshed.</text>
+              <event>
+                <text>Suddenly all indications of the Rebel ship fade away and a Zoltan fleet appears around your ship. The captain of the ship you met previously materializes on your bridge.</text>
+                <choice hidden="true">
+                  <text id="continue"/>
+                  <event load="ZOLTAN_PEACE_QUEST_REWARD"/>
+                </choice>
+              </event>
+            </choice>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>"Surrender. Your ultimate destruction is inevitable. We've left scores of Rebels destroyed in our wake."</text>
+          <event>
+            <text>They shut off communications and immediately engage.</text>
+            <ship hostile="true"/>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>"Your Rebellion is causing millions of deaths. Your beliefs are dividing the galaxy. Unity is the only option!"</text>
+          <event>
+            <text>"Humans are treated as 'equal' to aliens in the weak Federation. The sacrifice of BILLIONS of alien or human lives are justified if it means we reach our full potential!" They charge.</text>
+            <ship hostile="true"/>
+          </event>
+        </choice>
+      </event>
+    </choice>
+  </event>
+  <eventList name="ZOLTAN_PEACE_QUEST_REWARD">
+    <event>
+      <text>"Although your methods are crude and most certainly ineffective, it is clear you took our previous meeting to heart. If your ship represents the Federation's willingness to adapt we shall do what we can to aid in their fight. This technology should aid your quest."</text>
+      <unlockShip id="7">A Zoltan cruiser has been unlocked and added to the hangar!</unlockShip>
+      <autoReward level="LOW">scrap_only</autoReward>
+      <augment name="ENERGY_SHIELD"/>
+    </event>
+    <event>
+      <text>"Although your methods are crude and most certainly ineffective, it is clear you took our previous meeting to heart. If your ship represents the Federation's willingness to adapt we shall do what we can to aid in their fight. I will personally assist."</text>
+      <autoReward level="HIGH">standard</autoReward>
+      <unlockShip id="7">A Zoltan cruiser has been unlocked and added to the hangar!</unlockShip>
+      <crewMember amount="1" class="energy" all_skills="2">Envoy</crewMember>
+    </event>
+  </eventList>
+</FTL>

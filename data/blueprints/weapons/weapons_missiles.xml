@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <blueprintList name="WEAPONS_MISSILES_EVENTS">
+    <name>MISSILES_1</name>
+    <name>MISSILES_2</name>
+    <name>MISSILES_3</name>
+    <name>MISSILE_CHARGEGUN</name>
+    <name>MISSILES_CHARGE_HEAVY</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_ALL_FIRE">
+    <name>MISSILES_3</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_MISSILES">
+    <name>MISSILES_1</name>
+    <name>MISSILES_2</name>
+    <name>MISSILES_3</name>
+    <name>MISSILE_CHARGEGUN</name>
+    <name>MISSILES_CHARGE_HEAVY</name>
+  </blueprintList>
+
+  <blueprintList name="WEAPONS_MISSILES_EXPENSIVE">
+    <name>MISSILES_3</name>
+    <name>MISSILE_CHARGEGUN</name>
+    <name>MISSILES_CHARGE_HEAVY</name>
+  </blueprintList>
+
+  <blueprintList name="WEAPONS_MISSILES_1">
+    <name>MISSILES_2</name>
+    <name>MISSILES_1</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_MISSILES_2">
+    <name>MISSILE_CHARGEGUN</name>
+    <name>MISSILES_3_ROTATED</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_MISSILES_3">
+    <name>MISSILES_CHARGE_HEAVY</name>
+  </blueprintList>
+
+  <blueprintList name="WEAPONS_MISSILES_1_UPGRADED">
+    <name>MISSILE_CHARGEGUN_UPGRADED</name>
+    <name>MISSILES_3_ROTATED_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_MISSILES_2_UPGRADED">
+    <name>MISSILES_CHARGE_HEAVY_UPGRADED</name>
+  </blueprintList>
+
+  <changelog>
+    <entry>Leto fire chance 0.1 to 0</entry>
+    <entry>Leto breach chance 0.1 to 1</entry>
+    <entry>Leto stun chance 0.1 to 0</entry>
+    <entry>Leto rarity 0 to 2 (available at stores and random drops)</entry>
+    <entry>Leto scrap cost 20 to 40</entry>
+  </changelog>
+  <weaponBlueprint name="MISSILES_1">
+    <type>MISSILES</type>
+    <tip>tip_missiles</tip>
+    <title>Taurus Missiles</title>
+    <short>Taurus</short>
+    <desc>This missile launcher deals low damage but is fast to charge and causes a hull breach with each shot.</desc>
+    <tooltip>Fires 1 missile; does 1 damage; pierces all shields.</tooltip>
+    <damage>1</damage>
+    <missiles>1</missiles>
+    <shots>1</shots>
+    <sp>5</sp>
+    <fireChance>0</fireChance>
+    <breachChance>10</breachChance>
+    <stunChance>0</stunChance>
+    <cooldown>9</cooldown>
+    <power>1</power>
+    <cost>40</cost>
+    <bp>2</bp>
+    <rarity>2</rarity>
+    <image>missile_1</image>
+    <launchSounds>
+      <sound>smallMissile1</sound>
+      <sound>smallMissile2</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>smallExplosion</sound>
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>hitShield1</sound>
+      <sound>hitShield2</sound>
+      <sound>hitShield3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <weaponArt>missiles_breach</weaponArt>
+    <iconImage>missile</iconImage>
+  </weaponBlueprint>
+
+  <changelog>
+    <entry>Enemies can use the same Artemis Missiles version as the player</entry>
+    <entry>Artemis rarity 0 to 1 (available at stores and random drops)</entry>
+    <entry>Artemis scrap cost 38 to 40</entry>
+  </changelog>
+  <weaponBlueprint name="MISSILES_2">
+    <type>MISSILES</type>
+    <tip>tip_missiles</tip>
+    <title>Artemis Missiles</title>
+    <short>Artemis</short>
+    <desc>Standard missile launcher on most Federation ships.</desc>
+    <tooltip>Fires 1 missile; does 2 damage; pierces all shields.</tooltip>
+    <damage>2</damage>
+    <missiles>1</missiles>
+    <shots>1</shots>
+    <sp>5</sp>
+    <fireChance>1</fireChance>
+    <breachChance>1</breachChance>
+    <stunChance>1</stunChance>
+    <cooldown>11</cooldown>
+    <power>1</power>
+    <cost>40</cost>
+    <bp>5</bp>
+    <rarity>1</rarity>
+    <image>missile_2</image>
+    <launchSounds>
+      <sound>smallMissile1</sound>
+      <sound>smallMissile2</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>smallExplosion</sound>
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>hitShield1</sound>
+      <sound>hitShield2</sound>
+      <sound>hitShield3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <weaponArt>missiles_1</weaponArt>
+    <iconImage>missile</iconImage>
+  </weaponBlueprint>
+
+  <changelog>
+    <entry>Hermes power usage 3 to 2</entry>
+    <entry>Hermes fire chance 0.3 to 1</entry>
+    <entry>Hermes breach chance 0.2 to 0</entry>
+    <entry>Hermes stun chance 0.1 to 0</entry>
+    <entry>Hermes scrap cost 45 to 50</entry>
+  </changelog>
+  <weaponBlueprint name="MISSILES_3">
+    <type>MISSILES</type>
+    <tip>tip_missiles</tip>
+    <title>Prometheus Missiles</title>
+    <short>Prom.</short>
+    <desc>Powerful missiles that deals heavy hull damage and starts a fire with each shot.</desc>
+    <tooltip>Fires 1 missile; does 3 damage; pierces all shields.</tooltip>
+    <damage>3</damage>
+    <missiles>1</missiles>
+    <shots>1</shots>
+    <sp>5</sp>
+    <fireChance>10</fireChance>
+    <breachChance>0</breachChance>
+    <stunChance>0</stunChance>
+    <cooldown>14</cooldown>
+    <power>2</power>
+    <cost>50</cost>
+    <bp>6</bp>
+    <rarity>2</rarity>
+    <image>missile_3</image>
+    <launchSounds>
+      <sound>smallMissile1</sound>
+      <sound>smallMissile2</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>smallExplosion</sound>
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>hitShield1</sound>
+      <sound>hitShield2</sound>
+      <sound>hitShield3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <weaponArt>missiles_fire</weaponArt>
+    <iconImage>missile</iconImage>
+  </weaponBlueprint>
+  <weaponBlueprintInherit name="MISSILES_3_UPGRADED" base="MISSILES_3">
+    <tip>tip_missiles_upgraded</tip>
+    <title>Prometheus Missiles+</title>
+    <short>Prom.+</short>
+    <cooldown>13</cooldown>
+    <power>1</power>
+    <rarity>0</rarity>
+  </weaponBlueprintInherit>
+  <weaponBlueprintInherit name="MISSILES_3_ROTATED" base="MISSILES_3">
+    <rarity>0</rarity>
+    <weaponArt>missiles_fire_rotated</weaponArt>
+  </weaponBlueprintInherit>
+  <weaponBlueprintInherit name="MISSILES_3_ROTATED_UPGRADED" base="MISSILES_3">
+    <cooldown>13</cooldown>
+    <power>1</power>
+    <rarity>0</rarity>
+    <weaponArt>missiles_fire_rotated</weaponArt>
+  </weaponBlueprintInherit>
+
+  <changelog>
+    <entry>Pegasus, Breach Missiles, Hull Missiles removed from the game</entry>
+  </changelog>
+
+  <changelog>
+    <entry>Swarm Missiles stun chance 0 to 0.1</entry>
+    <entry>Swarm Missiles projectile speed decreased to match other missiles</entry>
+    <entry>Swarm Missiles scrap cost 65 to 50</entry>
+    <entry>Swarm Missiles rarity 4 to 3</entry>
+  </changelog>
+  <weaponBlueprint name="MISSILE_CHARGEGUN">
+    <type>BURST</type>
+    <tip>tip_charge</tip>
+    <flavorType>Charge Blast Missile</flavorType>
+    <title>Swarm Missiles</title>
+    <short>Swarm</short>
+    <desc>This launcher can fire up to three missiles.</desc>
+    <tooltip>Charges up to 3 shield-piercing missiles. However it always uses only one missile resource.</tooltip>
+    <drone_targetable>1</drone_targetable>
+    <radius>31</radius>
+    <missiles>1</missiles>
+    <damage>1</damage>
+    <shots>1</shots>
+    <sp>5</sp>
+    <fireChance>1</fireChance>
+    <breachChance>1</breachChance>
+    <stunChance>1</stunChance>
+    <cooldown>7</cooldown>
+    <power>2</power>
+    <chargeLevels>3</chargeLevels>
+    <cost>50</cost>
+    <bp>10</bp>
+    <speed>35</speed>
+    <rarity>3</rarity>
+    <explosion>explosion_random</explosion>
+    <projectiles>
+      <projectile count="1" fake="false">missile_burst</projectile>
+    </projectiles>
+    <launchSounds>
+      <sound>smallMissile1</sound>
+      <sound>smallMissile2</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>smallExplosion</sound>
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>hitShield1</sound>
+      <sound>hitShield2</sound>
+      <sound>hitShield3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <weaponArt>chargemissile</weaponArt>
+    <iconImage>missile_charge</iconImage>
+  </weaponBlueprint>
+  <weaponBlueprintInherit name="MISSILE_CHARGEGUN_UPGRADED" base="MISSILE_CHARGEGUN">
+    <tip>tip_missiles_upgraded</tip>
+    <title>Swarm Missiles+</title>
+    <short>Swarm+</short>
+    <cooldown>6.5</cooldown>
+    <power>1</power>
+    <rarity>0</rarity>
+  </weaponBlueprintInherit>
+
+  <changelog>
+    <entry>New Janus missiles (3 power, 12 sec charge time, maximum 2 charges, 3 damage, 5 sec stun, guaranteed fire or breach)</entry>
+  </changelog>
+  <weaponBlueprint name="MISSILES_CHARGE_HEAVY">
+    <type>BURST</type>
+    <tip>tip_charge</tip>
+    <flavorType>Charge Blast Missile</flavorType>
+    <title>Janus Missiles</title>
+    <short>Janus</short>
+    <desc>This launcher can fire up to two missiles.</desc>
+    <tooltip>Fires up to 2 missiles; 3 damage; pierces all shields.</tooltip>
+    <radius>38</radius>
+    <missiles>1</missiles>
+    <damage>3</damage>
+    <shots>1</shots>
+    <sp>5</sp>
+    <fireChance>5</fireChance>
+    <breachChance>10</breachChance>
+    <stun>5</stun>
+    <drone_targetable>1</drone_targetable>
+    <cooldown>12</cooldown>
+    <power>3</power>
+    <chargeLevels>2</chargeLevels>
+    <cost>60</cost>
+    <bp>10</bp>
+    <speed>35</speed>
+    <rarity>4</rarity>
+    <explosion>explosion_random</explosion>
+    <projectiles>
+      <projectile count="1" fake="false">missile_burst</projectile>
+    </projectiles>
+    <launchSounds>
+      <sound>smallMissile1</sound>
+      <sound>smallMissile2</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>smallExplosion</sound>
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>hitShield1</sound>
+      <sound>hitShield2</sound>
+      <sound>hitShield3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <weaponArt>missiles_charge_heavy</weaponArt>
+    <iconImage>missile_charge</iconImage>
+  </weaponBlueprint>
+  <weaponBlueprintInherit name="MISSILES_CHARGE_HEAVY_UPGRADED" base="MISSILES_CHARGE_HEAVY">
+    <tip>tip_missiles_upgraded</tip>
+    <title>Janus Missiles+</title>
+    <short>Janus+</short>
+    <cooldown>11.5</cooldown>
+    <power>2</power>
+    <rarity>0</rarity>
+  </weaponBlueprintInherit>
+</FTL>

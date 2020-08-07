@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <event name="ENGI_UNLOCK_1" unique="true">
+    <text>You arrive near a small fleet of civilian Engi ships. A simple decryption and translation of their comm frequency tells you that they are having a frantic discussion about something obviously troubling them.</text>
+    <choice>
+      <text>Message them and ask if you can help.</text>
+      <event>
+        <text>Slightly shocked at your question, their leader quickly responds, "Declined offer with apologetic gratitude. Topic of discussion private matter, no concern of Federation."</text>
+      </event>
+    </choice>
+    <choice>
+      <text>Ignore it and move on.</text>
+      <event>
+        <text>You can't help but wonder what they were discussing as you prepare to jump.</text>
+      </event>
+    </choice>
+    <choice req="engi" hidden="true">
+      <text>(Engi Crew) Have your Engi crewmember contact them.</text>
+      <event>
+        <text>Your crewmember syncs with the comm unit to communicate with them directly. You offer your help and a summary of the ship's mission. They respond, "Our goals have analogous elements. However, not all available for disclosure, discretion necessary."</text>
+        <choice>
+          <text>Offer your help.</text>
+          <event>
+            <text>"Secret technologies stolen by Mantis. Implicit connection to Rebels. Implicit. Tracked Mantis to hidden Rebel base, uploading coordinates."</text>
+            <quest event="ENGI_UNLOCK_2REAL"/>
+            <choice>
+              <text id="continue"/>
+              <event>
+                <quest event="ENGI_UNLOCK_2FAKE"/>
+                <text>"However, tracked second ship to different base. Would calculate probability but data insufficient. Cannot risk obvious Rebel-Engi conflict. Also, need time to acquire military ships. Assist in finding technology?"</text>
+                <choice>
+                  <text>Agree.</text>
+                  <event/>
+                </choice>
+              </event>
+            </choice>
+          </event>
+        </choice>
+      </event>
+    </choice>
+  </event>
+  <event name="ENGI_UNLOCK_2FAKE">
+    <text>You arrive at one of the Rebel bases that the Engi told you about. It appears abandoned except for one scout ship. Perhaps you could extract information from them.</text>
+    <ship name="REBEL_ENGI_UNLOCK_2FAKE" auto_blueprint="SHIPS_REBEL" hostile="true">
+      <escape timer="40" min="18" max="18">
+        <text>As soon as they see you, they power up their engines to jump away. Stop them!</text>
+        <ship hostile="true"/>
+      </escape>
+      <gotaway>
+        <text>With the ship gone you search through the abandoned base for any signs of their destination but find none.</text>
+      </gotaway>
+      <surrender min="4" max="4" load="ENGI_UNLOCK_2FAKE_SURRENDER"/>
+      <destroyed>
+        <text>You take what you can from the debris.</text>
+        <autoReward level="MED">standard</autoReward>
+      </destroyed>
+      <deadCrew>
+        <text>A quick search of their communication logs shows that the tech you were searching for never passed through this base... It must have been a decoy! You strip what you can and prepare to jump.</text>
+        <autoReward level="MED">standard</autoReward>
+      </deadCrew>
+    </ship>
+  </event>
+  <event name="ENGI_UNLOCK_2FAKE_SURRENDER">
+    <text>"Stop! I don't want to die here."</text>
+    <choice>
+      <text>Demand information on the stolen technology.</text>
+      <event>
+        <text>"Ah, so that's what you're after. Too bad, you followed the wrong ship. The envoy that passed through here was a fake, to trick fools like you. Now let us go!"</text>
+        <choice>
+          <text>Let them go.</text>
+          <event>
+            <ship hostile="false"/>
+          </event>
+        </choice>
+        <choice>
+          <text>Ignore him and attack.</text>
+          <event>
+            <text>"No, wait..." You cut the transmission and continue the assault.</text>
+          </event>
+        </choice>
+      </event>
+    </choice>
+  </event>
+  <event name="ENGI_UNLOCK_2REAL">
+    <text>You arrive at one of the Rebel bases that the Engi told you about. It appears abandoned except for one scout ship. Perhaps you could extract information from them.</text>
+    <ship name="REBEL_ENGI_UNLOCK_2REAL" auto_blueprint="SHIPS_REBEL" hostile="true">
+      <escape timer="40" min="18" max="18">
+        <text>As soon as they see you they power up their engines to jump away. Stop them!</text>
+        <ship hostile="true"/>
+      </escape>
+      <gotaway>
+        <text>With the ship gone, you search through the abandoned base for any signs of their destination but find none.</text>
+      </gotaway>
+      <surrender min="5" max="5" load="ENGI_UNLOCK_2REAL_SURRENDER"/>
+      <destroyed>
+        <text>You take what you can from the debris.</text>
+        <autoReward level="MED">standard</autoReward>
+      </destroyed>
+      <deadCrew>
+        <text>Once their crew is dead you scan the log for information regarding the envoy. You're in luck! It seems ships matching the thieves' description passed through here not too long ago. You strip the ship and prepare to pursue them.</text>
+        <autoReward level="HIGH">standard</autoReward>
+        <quest event="ENGI_UNLOCK_3"/>
+      </deadCrew>
+    </ship>
+  </event>
+  <event name="ENGI_UNLOCK_2REAL_SURRENDER">
+    <text>"Stop! This isn't worth dying for..."</text>
+    <choice>
+      <text>Demand information on the stolen technology.</text>
+      <event>
+        <text>"Of course, that's why you're here. Yes, they passed by here but I had nothing to do with it, I don't know what they were carrying. I'll transmit coordinates. Now just let us go..."</text>
+        <quest event="ENGI_UNLOCK_3"/>
+        <choice>
+          <text>Let them go.</text>
+          <event>
+            <text>You prepare an FTL message containing the coordinates to send to the Engi and get ready to jump.</text>
+            <ship hostile="false"/>
+          </event>
+        </choice>
+      </event>
+    </choice>
+  </event>
+  <event name="ENGI_UNLOCK_3">
+    <text>You have finally caught up with the ships you've been hunting. A hangar-sized cargo ship is being escorted by a number of Mantis ships. As you reconsider the assault, a squadron of Engi ships with pirate emblems jump in and assist you. You prepare to fight the Mantis but scans indicate they are manned by Rebels!</text>
+    <ship load="MANTIS_ENGI_UNLOCK_3" hostile="true"/>
+  </event>
+  <event name="ENGI_UNLOCK_4">
+    <text>The Engi emerge victorious from their battles with only minor losses. They message you, "Project X-ME56 commissioned by Federation military research division. Advanced stealth cruiser. Project finished during rebellion. Unable to reconnect with Federation military command."</text>
+    <choice>
+      <text>Ask about the Mantis ships.</text>
+      <event>
+        <text>"Likely ploy by Rebels to avoid breaking non-aggression pact with Engi. 97.56 percent likely. Your mission to assist last Federation fleet, correct? Coordinates?"</text>
+        <choice hidden="true">
+          <text>Transmit coordinates of Federation command.</text>
+          <event>
+            <text>"Satisfactory. Delivery of tech will assist in Federation cause. Gratitude alone insufficient. Commencing ship repair and compensation." Their crews deliver an advanced augmentation for installation but you're more pleased to hear that the Federation will have an improved arsenal.</text>
+            <damage amount="-20"/>
+            <autoReward level="HIGH">standard</autoReward>
+            <augment name="SYSTEM_CASING"/>
+            <unlockShip id="1">The Engi secret tech has been delivered to the hangar. The stealth ship has been unlocked!</unlockShip>
+          </event>
+        </choice>
+      </event>
+    </choice>
+  </event>
+  <ship name="MANTIS_ENGI_UNLOCK_3" auto_blueprint="SHIPS_MANTIS">
+    <destroyed load="ENGI_UNLOCK_4"/>
+    <deadCrew>
+      <text>You strip what you can and contact the Engi ships.</text>
+      <autoReward level="MED">standard</autoReward>
+      <choice>
+        <text id="continue"/>
+        <event load="ENGI_UNLOCK_4"/>
+      </choice>
+    </deadCrew>
+    <crew>
+      <crewMember type="human" prop="1"/>
+    </crew>
+  </ship>
+</FTL>

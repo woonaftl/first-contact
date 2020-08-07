@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <blueprintList name="WEAPONS_BEAM_DAMAGE">
+    <name>BEAM_1</name>
+    <name>BEAM_LONG</name>
+    <name>BEAM_2</name>
+    <name>BEAM_2_LONG</name>
+    <name>BEAM_3_SHORT</name>
+    <name>BEAM_3</name>
+    <name>BEAM_1_UPGRADED</name>
+    <name>BEAM_LONG_UPGRADED</name>
+    <name>BEAM_2_UPGRADED</name>
+    <name>BEAM_2_LONG_UPGRADED</name>
+    <name>BEAM_3_SHORT_UPGRADED</name>
+    <name>BEAM_3_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_BEAM_BIO">
+    <name>BEAM_BIO</name>
+    <name>BEAM_BIO_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_BEAM_FIRE">
+    <name>BEAM_FIRE</name>
+    <name>BEAM_FIRE_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_ALL_FIRE">
+    <name>BEAM_FIRE</name>
+    <name>BEAM_FIRE_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="BEAM_3_LIST">
+    <name>BEAM_3</name>
+    <name>BEAM_3_UPGRADED</name>
+  </blueprintList>
+
+  <blueprintList name="WEAPONS_BEAM_2">
+    <name>BEAM_1</name>
+    <name>BEAM_LONG</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_BEAM_3">
+    <name>BEAM_2</name>
+    <name>BEAM_2_LONG</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_BEAM_4">
+    <name>BEAM_3_SHORT</name>
+    <name>BEAM_3</name>
+  </blueprintList>
+
+  <blueprintList name="WEAPONS_ANY_2">
+    <name>BEAM_1</name>
+    <name>BEAM_LONG</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_ANY_3">
+    <name>BEAM_2</name>
+    <name>BEAM_2_LONG</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_ANY_4">
+    <name>BEAM_3_SHORT</name>
+    <name>BEAM_3</name>
+  </blueprintList>
+
+  <blueprintList name="WEAPONS_BEAM_1_UPGRADED">
+    <name>BEAM_1_UPGRADED</name>
+    <name>BEAM_LONG_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_BEAM_2_UPGRADED">
+    <name>BEAM_2_UPGRADED</name>
+    <name>BEAM_2_LONG_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_BEAM_3_UPGRADED">
+    <name>BEAM_3_SHORT_UPGRADED</name>
+    <name>BEAM_3_UPGRADED</name>
+  </blueprintList>
+
+  <blueprintList name="WEAPONS_ANY_1_UPGRADED">
+    <name>BEAM_1_UPGRADED</name>
+    <name>BEAM_LONG_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_ANY_2_UPGRADED">
+    <name>BEAM_2_UPGRADED</name>
+    <name>BEAM_2_LONG_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_ANY_3_UPGRADED">
+    <name>BEAM_3_SHORT_UPGRADED</name>
+    <name>BEAM_3_UPGRADED</name>
+  </blueprintList>
+
+  <changelog>
+    <entry>Mini Beam power usage 1 to 2</entry>
+    <entry>Mini Beam charge time 12 to 13</entry>
+    <entry>Mini Beam fire chance 0.1 to 0</entry>
+    <entry>Mini Beam rarity 0 to 3 (now available in stores/random drops)</entry>
+    <entry>Mini Beam scrap cost 20 to 50</entry>
+  </changelog>
+  <weaponBlueprint name="BEAM_1">
+    <type>BEAM</type>
+    <tip>tip_beams</tip>
+    <title>Mini Beam</title>
+    <short>Mini Beam</short>
+    <desc>Extremely cheap and weak beam weapon.</desc>
+    <tooltip>One damage per room beam weapon.</tooltip>
+    <damage>1</damage>
+    <sp>0</sp>
+    <fireChance>0</fireChance>
+    <breachChance>0</breachChance>
+    <cooldown>13</cooldown>
+    <speed>3</speed>
+    <power>2</power>
+    <cost>50</cost>
+    <bp>2</bp>
+    <rarity>3</rarity>
+    <image>beam_contact</image>
+    <length>45</length>
+    <launchSounds>
+      <sound>beam1</sound>
+      <sound>beam1_2</sound>
+    </launchSounds>
+    <weaponArt>beam_1</weaponArt>
+    <iconImage>beam</iconImage>
+  </weaponBlueprint>
+  <weaponBlueprintInherit name="BEAM_1_UPGRADED" base="BEAM_1">
+    <tip>tip_beams_upgraded</tip>
+    <title>Mini Beam+</title>
+    <short>Mini Beam+</short>
+    <cooldown>12</cooldown>
+    <power>1</power>
+    <rarity>0</rarity>
+  </weaponBlueprintInherit>
+
+  <changelog>
+    <entry>Pike Beam length 170 to 140</entry>
+    <entry>Pike Beam rarity 2 to 3</entry>
+  </changelog>
+  <weaponBlueprint name="BEAM_LONG">
+    <type>BEAM</type>
+    <tip>tip_beams</tip>
+    <title>Pike Beam</title>
+    <short>Pike Beam</short>
+    <desc>Can cut across entire ships, assuming there's no shield to stop it.</desc>
+    <tooltip>Beam weapon with extended line. 1 damage per room.</tooltip>
+    <damage>1</damage>
+    <sp>0</sp>
+    <fireChance>0</fireChance>
+    <breachChance>0</breachChance>
+    <speed>13</speed>
+    <cooldown>16</cooldown>
+    <power>2</power>
+    <cost>55</cost>
+    <bp>5</bp>
+    <rarity>3</rarity>
+    <image>beam_contact</image>
+    <length>140</length>
+    <launchSounds>
+      <sound>beam1</sound>
+      <sound>beam1_2</sound>
+    </launchSounds>
+    <weaponArt>beam_long</weaponArt>
+    <iconImage>beam</iconImage>
+  </weaponBlueprint>
+  <weaponBlueprintInherit name="BEAM_LONG_UPGRADED" base="BEAM_LONG">
+    <tip>tip_beams_upgraded</tip>
+    <title>Pike Beam+</title>
+    <short>Pike Beam+</short>
+    <cooldown>15</cooldown>
+    <power>1</power>
+    <rarity>0</rarity>
+  </weaponBlueprintInherit>
+
+  <changelog>
+    <entry>Halberd Beam length 80 to 45, speed 5 to 3 (same as Mini Beam now)</entry>
+    <entry>Halberd Beam rarity 2 to 4</entry>
+    <entry>Halberd Beam scrap cost 65 to 80</entry>
+  </changelog>
+  <weaponBlueprint name="BEAM_2">
+    <type>BEAM</type>
+    <tip>tip_beams</tip>
+    <title>Halberd Beam</title>
+    <short>Halberd Beam</short>
+    <desc>Slow but reliably powerful standard beam weapon.</desc>
+    <tooltip>Beam weapon, 2 damage per room.</tooltip>
+    <damage>2</damage>
+    <sp>0</sp>
+    <fireChance>0</fireChance>
+    <breachChance>0</breachChance>
+    <speed>3</speed>
+    <cooldown>17</cooldown>
+    <power>3</power>
+    <cost>80</cost>
+    <bp>7</bp>
+    <rarity>4</rarity>
+    <length>45</length>
+    <image>beam_contact</image>
+    <launchSounds>
+      <sound>beam2</sound>
+    </launchSounds>
+    <weaponArt>beam_2</weaponArt>
+    <iconImage>beam</iconImage>
+  </weaponBlueprint>
+  <weaponBlueprintInherit name="BEAM_2_UPGRADED" base="BEAM_2">
+    <tip>tip_beams_upgraded</tip>
+    <title>Halberd Beam+</title>
+    <short>Halberd Beam+</short>
+    <cooldown>16</cooldown>
+    <power>2</power>
+    <rarity>0</rarity>
+  </weaponBlueprintInherit>
+
+  <changelog>
+    <entry>New Scythe Beam (3 power, 2 damage, 20 sec charge time, 140 length)</entry>
+  </changelog>
+  <weaponBlueprint name="BEAM_2_LONG">
+    <type>BEAM</type>
+    <tip>tip_beams</tip>
+    <title>Scythe Beam</title>
+    <short>Scythe Beam</short>
+    <desc>Slow and powerful beam designed to cut across entire ships.</desc>
+    <tooltip>Beam weapon, 2 damage per room.</tooltip>
+    <damage>2</damage>
+    <sp>0</sp>
+    <fireChance>0</fireChance>
+    <breachChance>0</breachChance>
+    <cooldown>20</cooldown>
+    <power>3</power>
+    <cost>80</cost>
+    <bp>7</bp>
+    <rarity>5</rarity>
+    <speed>13</speed>
+    <length>140</length>
+    <image>beam_contact</image>
+    <launchSounds>
+      <sound>beam2</sound>
+    </launchSounds>
+    <weaponArt>beam_2_long</weaponArt>
+    <iconImage>beam</iconImage>
+  </weaponBlueprint>
+  <weaponBlueprintInherit name="BEAM_2_LONG_UPGRADED" base="BEAM_2_LONG">
+    <tip>tip_beams_upgraded</tip>
+    <title>Scythe Beam+</title>
+    <short>Scythe Beam+</short>
+    <cooldown>19</cooldown>
+    <power>2</power>
+    <rarity>0</rarity>
+  </weaponBlueprintInherit>
+
+  <changelog>
+    <entry>New Rapier Beam (4 power, 3 damage, 22 sec cooldown, 45 length)</entry>
+  </changelog>
+  <weaponBlueprint name="BEAM_3_SHORT">
+    <type>BEAM</type>
+    <tip>tip_beams</tip>
+    <title>Rapier Beam</title>
+    <short>Rapier Beam</short>
+    <desc>Slow charging beam that deals massive damage but has limited range.</desc>
+    <tooltip>Beam that does 3 damage per room.</tooltip>
+    <damage>3</damage>
+    <sp>0</sp>
+    <fireChance>0</fireChance>
+    <breachChance>0</breachChance>
+    <cooldown>22</cooldown>
+    <power>4</power>
+    <cost>95</cost>
+    <bp>7</bp>
+    <rarity>5</rarity>
+    <speed>3</speed>
+    <length>45</length>
+    <image>beam_contact</image>
+    <launchSounds>
+      <sound>beam2</sound>
+    </launchSounds>
+    <weaponArt>beam_3_short</weaponArt>
+    <iconImage>beam</iconImage>
+  </weaponBlueprint>
+  <weaponBlueprintInherit name="BEAM_3_SHORT_UPGRADED" base="BEAM_3_SHORT">
+    <tip>tip_beams_upgraded</tip>
+    <title>Rapier Beam+</title>
+    <short>Rapier Beam+</short>
+    <cooldown>21</cooldown>
+    <power>3</power>
+    <rarity>0</rarity>
+  </weaponBlueprintInherit>
+
+  <changelog>
+    <entry>Glaive Beam length 80 to 140, speed 5 to 13</entry>
+  </changelog>
+  <weaponBlueprint name="BEAM_3">
+    <type>BEAM</type>
+    <title>Glaive Beam</title>
+    <short>Glaive Beam</short>
+    <tip>tip_beams</tip>
+    <desc>One of the most powerful weapons of war ever created. Known to take out some ships in a single blast.</desc>
+    <tooltip>Large beam that does 3 damage per room.</tooltip>
+    <damage>3</damage>
+    <sp>0</sp>
+    <fireChance>0</fireChance>
+    <breachChance>0</breachChance>
+    <speed>13</speed>
+    <cooldown>25</cooldown>
+    <power>4</power>
+    <cost>95</cost>
+    <bp>12</bp>
+    <rarity>5</rarity>
+    <length>140</length>
+    <image>beam_contact</image>
+    <launchSounds>
+      <sound>beam2</sound>
+    </launchSounds>
+    <weaponArt>beam_3</weaponArt>
+    <iconImage>beam</iconImage>
+  </weaponBlueprint>
+  <weaponBlueprintInherit name="BEAM_3_UPGRADED" base="BEAM_3">
+    <tip>tip_beams_upgraded</tip>
+    <title>Glaive Beam+</title>
+    <short>Glaive Beam+</short>
+    <cooldown>24</cooldown>
+    <power>3</power>
+    <rarity>0</rarity>
+  </weaponBlueprintInherit>
+
+  <weaponBlueprint name="BEAM_FIRE">
+    <type>BEAM</type>
+    <tip>tip_fire_beam</tip>
+    <title>Fire Beam</title>
+    <short>Fire Beam</short>
+    <desc>This terrifying beam does no physical damage but ignites fires.</desc>
+    <tooltip>Beam weapon that starts fires.</tooltip>
+    <damage>0</damage>
+    <sp>0</sp>
+    <fireChance>8</fireChance>
+    <breachChance>0</breachChance>
+    <cooldown>20</cooldown>
+    <power>2</power>
+    <cost>50</cost>
+    <bp>6</bp>
+    <rarity>3</rarity>
+    <length>140</length>
+    <image>beam_contact</image>
+    <launchSounds>
+      <sound>beam2</sound>
+    </launchSounds>
+    <weaponArt>beam_fire</weaponArt>
+    <iconImage>beam</iconImage>
+  </weaponBlueprint>
+  <weaponBlueprintInherit name="BEAM_FIRE_UPGRADED" base="BEAM_FIRE">
+    <tip>tip_fire_beam_upgraded</tip>
+    <title>Fire Beam+</title>
+    <short>Fire Beam+</short>
+    <cooldown>19</cooldown>
+    <power>1</power>
+    <rarity>0</rarity>
+  </weaponBlueprintInherit>
+
+  <changelog>
+    <entry>Anti-Bio Beam stuns hit crew for 10 seconds in addition to damage</entry>
+    <entry>Anti-Bio Beam cannot be found outside of Slug sectors</entry>
+  </changelog>
+  <weaponBlueprint name="BEAM_BIO">
+    <type>BEAM</type>
+    <tip>tip_crew_beam</tip>
+    <title>Anti-Bio Beam</title>
+    <short>Anti-Bio Beam</short>
+    <desc>This terrifying beam does no physical damage but rips through organic material, dealing heavy damage to crewmembers and paralyzing them.</desc>
+    <tooltip>2 power beam weapon that greatly damages enemy crew.</tooltip>
+    <damage>0</damage>
+    <persDamage>4</persDamage>
+    <sp>0</sp>
+    <fireChance>0</fireChance>
+    <breachChance>0</breachChance>
+    <stun>10</stun>
+    <cooldown>16</cooldown>
+    <color>
+      <r>255</r>
+      <g>110</g>
+      <b>0</b>
+    </color>
+    <speed>13</speed>
+    <power>2</power>
+    <cost>50</cost>
+    <bp>6</bp>
+    <rarity>0</rarity>
+    <length>140</length>
+    <image>beam_contact</image>
+    <launchSounds>
+      <sound>beam2</sound>
+    </launchSounds>
+    <weaponArt>beam_bio</weaponArt>
+    <iconImage>beam</iconImage>
+  </weaponBlueprint>
+  <weaponBlueprintInherit name="BEAM_BIO_UPGRADED" base="BEAM_BIO">
+    <tip>tip_crew_beam_upgraded</tip>
+    <title>Anti-Bio Beam+</title>
+    <short>Anti-Bio Beam+</short>
+    <cooldown>15</cooldown>
+    <power>1</power>
+    <rarity>0</rarity>
+  </weaponBlueprintInherit>
+  <changelog>
+    <entry>Hull Beam removed from the game</entry>
+  </changelog>
+</FTL>

@@ -1,0 +1,448 @@
+<FTL>
+  <hackingDroneFix enabled="true"/>
+  <forceDlc enabled="true"/>
+
+  <ships>
+    <ship name="PLAYER_SHIP_ORCHID" b="true" c="true"/>
+    <ship name="PLAYER_SHIP_LIZARD" b="true" c="true"/>
+    <ship name="PLAYER_SHIP_PAVONIAN" b="true" c="true"/>
+  </ships>
+
+  <crew>
+    <race name="human">
+      <skills>
+        <piloting req="10000000"/>
+        <engines req="10000000"/>
+        <shields req="10000000"/>
+        <weapons req="10000000"/>
+        <repair req="10000000"/>
+        <combat req="10000000"/>
+      </skills>
+    </race>
+
+    <race name="engi">
+      <repairSpeed>2</repairSpeed>
+      <damageMultiplier>0.5</damageMultiplier>
+      <sabotageSpeedMultiplier>0.5</sabotageSpeedMultiplier>
+      <skills>
+        <piloting req="10000000"/>
+        <engines req="10000000"/>
+        <shields req="10000000"/>
+        <weapons req="10000000"/>
+        <repair req="10000000"/>
+        <combat req="10000000"/>
+      </skills>
+      <deathSounds>
+        <deathSound>engiDeath</deathSound>
+      </deathSounds>
+    </race>
+
+    <race name="mantis">
+      <repairSpeed>0.5</repairSpeed>
+      <moveSpeedMultiplier>1.2</moveSpeedMultiplier>
+      <damageMultiplier>1.5</damageMultiplier>
+      <sabotageSpeedMultiplier>1.5</sabotageSpeedMultiplier>
+      <skills>
+        <piloting req="10000000"/>
+        <engines req="10000000"/>
+        <shields req="10000000"/>
+        <weapons req="10000000"/>
+        <repair req="10000000"/>
+        <combat req="10000000"/>
+      </skills>
+      <deathSounds>
+        <deathSound>mantisDeath</deathSound>
+      </deathSounds>
+      <!--      <hitSounds>
+                  <hitSound>mantisSplat1</hitSound>
+                  <hitSound>mantisSplat2</hitSound>
+                  <hitSound>mantisSplat3</hitSound>
+                </hitSounds>-->
+      <shootingSounds>
+        <shootingSound>mantisSpit1</shootingSound>
+        <shootingSound>mantisSpit2</shootingSound>
+        <shootingSound>mantisSpit3</shootingSound>
+      </shootingSounds>
+    </race>
+
+    <race name="rock">
+      <maxHealth>150</maxHealth>
+      <canBurn>false</canBurn>
+      <fireRepairMultiplier>2.4</fireRepairMultiplier>
+      <moveSpeedMultiplier>0.6</moveSpeedMultiplier>
+      <skills>
+        <piloting req="10000000"/>
+        <engines req="10000000"/>
+        <shields req="10000000"/>
+        <weapons req="10000000"/>
+        <repair req="10000000"/>
+        <combat req="10000000"/>
+      </skills>
+      <animBase>rock</animBase>
+      <deathSounds>
+        <deathSound>rockDeath</deathSound>
+      </deathSounds>
+      <!--      <stompSounds>
+                  <stompSound>rockStomp1</stompSound>
+                  <stompSound>rockStomp2</stompSound>
+                </stompSounds>-->
+      <!--      <hitSounds>
+                  <hitSound>rockHit1</hitSound>
+                  <hitSound>rockHit2</hitSound>
+                  <hitSound>rockHit3</hitSound>
+                </hitSounds>-->
+      <repairSounds>
+        <repairSound>rockThud1</repairSound>
+        <repairSound>rockThud2</repairSound>
+        <repairSound>rockThud3</repairSound>
+      </repairSounds>
+      <shootingSounds>
+        <shootingSound>rockThrow1</shootingSound>
+        <shootingSound>rockThrow2</shootingSound>
+        <shootingSound>rockThrow3</shootingSound>
+      </shootingSounds>
+    </race>
+
+    <race name="energy">
+      <maxHealth>70</maxHealth>
+      <bonusPower>1</bonusPower>
+      <skills>
+        <piloting req="10000000"/>
+        <engines req="10000000"/>
+        <shields req="10000000"/>
+        <weapons req="10000000"/>
+        <repair req="10000000"/>
+        <combat req="10000000"/>
+      </skills>
+      <deathSounds>
+        <deathSound>energyDeath</deathSound>
+      </deathSounds>
+      <hasCustomDeathAnimation>true</hasCustomDeathAnimation>
+      <hasDeathExplosion>true</hasDeathExplosion>
+      <deathEffect>
+        <persDamage>1</persDamage>
+        <friendlyFire>false</friendlyFire>
+        <shipFriendlyFire>false</shipFriendlyFire>
+      </deathEffect>
+    </race>
+
+    <race name="slug">
+      <detectsLifeforms>true</detectsLifeforms>
+      <isTelepathic>true</isTelepathic>
+      <skills>
+        <piloting req="10000000"/>
+        <engines req="10000000"/>
+        <shields req="10000000"/>
+        <weapons req="10000000"/>
+        <repair req="10000000"/>
+        <combat req="10000000"/>
+      </skills>
+    </race>
+
+    <race name="crystal">
+      <maxHealth>125</maxHealth>
+      <moveSpeedMultiplier>0.8</moveSpeedMultiplier>
+      <skills>
+        <piloting req="10000000"/>
+        <engines req="10000000"/>
+        <shields req="10000000"/>
+        <weapons req="10000000"/>
+        <repair req="10000000"/>
+        <combat req="10000000"/>
+      </skills>
+      <animBase>rock</animBase>
+      <deathSounds>
+        <deathSound>crystalDeath</deathSound>
+      </deathSounds>
+      <shootingSounds>
+        <shootingSound>rockThrow1</shootingSound>
+        <shootingSound>rockThrow2</shootingSound>
+        <shootingSound>rockThrow3</shootingSound>
+      </shootingSounds>
+      <powerEffect>
+        <cooldown>30</cooldown>
+        <jumpCooldown>full</jumpCooldown>
+        <powerSounds>
+          <powerSound>lockdown1</powerSound>
+          <powerSound>lockdown2</powerSound>
+        </powerSounds>
+        <lockdown>true</lockdown>
+        <buttonText id="button_lockdown"/>
+        <tooltip id="power_ready"/>
+        <cooldownColor r="133" g="231" b="237"/>
+        <effectAnim>explosion_crystal</effectAnim>
+      </powerEffect>
+    </race>
+
+    <race name="anaerobic">
+      <canSuffocate>false</canSuffocate>
+      <isAnaerobic>true</isAnaerobic>
+      <skills>
+        <piloting req="10000000"/>
+        <engines req="10000000"/>
+        <shields req="10000000"/>
+        <weapons req="10000000"/>
+        <repair req="10000000"/>
+        <combat req="10000000"/>
+      </skills>
+      <deathSounds>
+        <deathSound>shrikeDeath</deathSound>
+      </deathSounds>
+      <repairSounds>
+        <repairSound>shrikeRepair</repairSound>
+      </repairSounds>
+    </race>
+
+    <race name="orchid">
+      <fireRepairMultiplier>0.6</fireRepairMultiplier>
+      <fireDamageMultiplier>4.0</fireDamageMultiplier>
+      <oxygenChangeSpeed>0.525</oxygenChangeSpeed>
+      <skills>
+        <piloting req="10000000"/>
+        <engines req="10000000"/>
+        <shields req="10000000"/>
+        <weapons req="10000000"/>
+        <repair req="10000000"/>
+        <combat req="10000000"/>
+      </skills>
+      <deathSounds>
+        <deathSound>orchidDeath</deathSound>
+      </deathSounds>
+      <shootingSounds>
+        <shootingSound>orchidShoot1</shootingSound>
+        <shootingSound>orchidShoot2</shootingSound>
+        <shootingSound>orchidShoot3</shootingSound>
+      </shootingSounds>
+    </race>
+
+    <race name="lizard">
+      <passiveHealAmount>0.5</passiveHealAmount>
+      <passiveHealDelay>4</passiveHealDelay>
+      <skills>
+        <piloting req="10000000"/>
+        <engines req="10000000"/>
+        <shields req="10000000"/>
+        <weapons req="10000000"/>
+        <repair req="10000000"/>
+        <combat req="10000000"/>
+      </skills>
+      <!--<deathSounds>
+        <deathSound>orchidDeath</deathSound>
+      </deathSounds>-->
+    </race>
+
+    <race name="pavonian">
+      <damageTakenMultiplier>2.0</damageTakenMultiplier>
+      <!--stun immunity-->
+      <skills>
+        <piloting req="10000000"/>
+        <engines req="10000000"/>
+        <shields req="10000000"/>
+        <weapons req="10000000"/>
+        <repair req="10000000"/>
+        <combat req="10000000"/>
+      </skills>
+      <!--<deathSounds>
+        <deathSound>orchidDeath</deathSound>
+      </deathSounds>-->
+      <powerEffect>
+        <cooldown>30</cooldown>
+        <jumpCooldown>full</jumpCooldown>
+        <!--<powerSounds>
+          <powerSound>lockdown1</powerSound>
+          <powerSound>lockdown2</powerSound>
+        </powerSounds>-->
+        <stun>5</stun>
+        <friendlyFire>false</friendlyFire>
+        <shipFriendlyFire>false</shipFriendlyFire>
+        <buttonText>STUN</buttonText>
+        <tooltip>Ready: Click to stun all enemies in the room</tooltip>
+        <cooldownColor r="240" g="220" b="120"/>
+        <effectAnim>rainbow_spiral</effectAnim>
+      </powerEffect>
+    </race>
+
+    <race name="ngal">
+      <skills>
+        <piloting req="10000000"/>
+        <engines req="10000000"/>
+        <shields req="10000000"/>
+        <weapons req="10000000"/>
+        <repair req="10000000"/>
+        <combat req="10000000"/>
+      </skills>
+      <!--<deathSounds>
+        <deathSound>orchidDeath</deathSound>
+      </deathSounds>-->
+      <powerEffect>
+        <cooldown>30</cooldown>
+        <jumpCooldown>full</jumpCooldown>
+        <!--<powerSounds>
+          <powerSound>lockdown1</powerSound>
+          <powerSound>lockdown2</powerSound>
+        </powerSounds>-->
+        <buttonText>STEALTH</buttonText>
+        <tooltip>Ready: Click to become invisible and invulnerable</tooltip>
+        <cooldownColor r="20" g="140" b="180"/>
+        <!--<effectAnim>explosion_crystal</effectAnim>-->
+        <temporaryEffect>
+          <duration>5</duration>
+          <cooldownColor r="70" g="190" b="230"/>
+          <!--<finishSounds>
+            <finishSound>mindControlEnd</finishSound>
+          </finishSounds>-->
+          <!--<effectAnim>mindcontrol</effectAnim>-->
+          <invulnerable>true</invulnerable>
+          <!--<animSheet>human_effect</animSheet>-->
+        </temporaryEffect>
+      </powerEffect>
+    </race>
+  </crew>
+
+  <augments>
+    <aug name="ROCK_ARMOR_LOCKED">
+      <function name="ROCK_ARMOR" value="0.15" warning="false"/>
+      <locked/>
+    </aug>
+    <aug name="CRYSTAL_SHARDS_LOCKED">
+      <function name="CRYSTAL_SHARDS" value="0.5" warning="false"/>
+      <locked/>
+    </aug>
+    <aug name="ENERGY_SHIELD_LOCKED">
+      <function name="ENERGY_SHIELD" warning="false"/>
+      <locked/>
+    </aug>
+    <aug name="NANO_MEDBAY_LOCKED">
+      <function name="NANO_MEDBAY" warning="false"/>
+      <locked/>
+    </aug>
+    <aug name="SLUG_GEL_LOCKED">
+      <function name="SLUG_GEL" warning="false"/>
+      <locked/>
+    </aug>
+    <aug name="CREW_STIMS_LOCKED">
+      <function name="CREW_STIMS" value="0.4" warning="false"/>
+      <locked/>
+    </aug>
+    <aug name="DRONE_SPEED_LOCKED">
+      <function name="DRONE_SPEED" value="2" warning="false"/>
+      <locked/>
+    </aug>
+    <aug name="SYSTEM_CASING_LOCKED">
+      <function name="SYSTEM_CASING" value="0.25" warning="false"/>
+      <locked/>
+    </aug>
+    <aug name="SCRAP_COLLECTOR_LOCKED">
+      <function name="SCRAP_COLLECTOR" value="0.15" warning="false"/>
+      <locked/>
+    </aug>
+    <aug name="ADV_SCANNERS_LOCKED">
+      <function name="ADV_SCANNERS" warning="false"/>
+      <locked/>
+    </aug>
+    <aug name="O2_MASKS_LOCKED">
+      <function name="O2_MASKS" value="0.5" warning="false"/>
+      <locked/>
+    </aug>
+    <aug name="FIRE_EXTINGUISHERS_LOCKED">
+      <function name="FIRE_EXTINGUISHERS" value="1.2" warning="false"/>
+      <locked/>
+    </aug>
+    <aug name="FTL_JUMPER_GOOD">
+      <function name="FTL_JUMPER_GOOD" value="1" warning="false"/>
+    </aug>
+  </augments>
+
+  <events>
+    <event name="UPGRADE_FREE_FAKE">
+      <preventQuest/>
+      <checkCargo/>
+      <beaconType id="map_icon_upgrade" global="false">
+        <color r="255" g="255" b="255" a="1.0"/>
+        <undiscoveredTooltip id="map_unvisited_loc"/>
+        <unvisitedTooltip id="map_upgrade_loc"/>
+        <visitedTooltip id="map_nothing_loc"/>
+      </beaconType>
+    </event>
+    <event name="UPGRADE_FREE_FAKE_NEBULA">
+      <preventQuest/>
+      <checkCargo/>
+      <beaconType id="map_icon_upgrade" global="false">
+        <color r="255" g="255" b="255" a="1.0"/>
+        <undiscoveredTooltip id="map_unvisited_loc"/>
+        <unvisitedTooltip id="map_upgrade_loc"/>
+        <visitedTooltip id="map_nothing_loc"/>
+      </beaconType>
+    </event>
+    <event name="UPGRADE_FREE_TRUE">
+      <preventQuest/>
+      <checkCargo/>
+      <beaconType id="map_icon_upgrade" global="false">
+        <color r="255" g="255" b="255" a="1.0"/>
+        <undiscoveredTooltip id="map_unvisited_loc"/>
+        <unvisitedTooltip id="map_upgrade_loc"/>
+        <visitedTooltip id="map_nothing_loc"/>
+      </beaconType>
+    </event>
+    <event name="UPGRADE_FREE_TRUE_NEBULA">
+      <preventQuest/>
+      <checkCargo/>
+      <beaconType id="map_icon_upgrade" global="false">
+        <color r="255" g="255" b="255" a="1.0"/>
+        <undiscoveredTooltip id="map_unvisited_loc"/>
+        <unvisitedTooltip id="map_upgrade_loc"/>
+        <visitedTooltip id="map_nothing_loc"/>
+      </beaconType>
+    </event>
+    <event name="UPGRADE_SCRAP">
+      <preventQuest/>
+      <checkCargo/>
+      <beaconType id="map_icon_upgrade" global="false">
+        <color r="255" g="255" b="255" a="1.0"/>
+        <undiscoveredTooltip id="map_unvisited_loc"/>
+        <unvisitedTooltip id="map_upgrade_loc"/>
+        <visitedTooltip id="map_nothing_loc"/>
+      </beaconType>
+    </event>
+    <event name="UPGRADE_SCRAP_CREW">
+      <preventQuest/>
+      <checkCargo/>
+      <beaconType id="map_icon_upgrade" global="false">
+        <color r="255" g="255" b="255" a="1.0"/>
+        <undiscoveredTooltip id="map_unvisited_loc"/>
+        <unvisitedTooltip id="map_upgrade_loc"/>
+        <visitedTooltip id="map_nothing_loc"/>
+      </beaconType>
+    </event>
+    <event name="UPGRADE_SCRAP_DRONEPARTS">
+      <preventQuest/>
+      <checkCargo/>
+      <beaconType id="map_icon_upgrade" global="false">
+        <color r="255" g="255" b="255" a="1.0"/>
+        <undiscoveredTooltip id="map_unvisited_loc"/>
+        <unvisitedTooltip id="map_upgrade_loc"/>
+        <visitedTooltip id="map_nothing_loc"/>
+      </beaconType>
+    </event>
+    <event name="UPGRADE_SCRAP_FUEL">
+      <preventQuest/>
+      <checkCargo/>
+      <beaconType id="map_icon_upgrade" global="false">
+        <color r="255" g="255" b="255" a="1.0"/>
+        <undiscoveredTooltip id="map_unvisited_loc"/>
+        <unvisitedTooltip id="map_upgrade_loc"/>
+        <visitedTooltip id="map_nothing_loc"/>
+      </beaconType>
+    </event>
+    <event name="UPGRADE_SCRAP_MISSILES">
+      <preventQuest/>
+      <checkCargo/>
+      <beaconType id="map_icon_upgrade" global="false">
+        <color r="255" g="255" b="255" a="1.0"/>
+        <undiscoveredTooltip id="map_unvisited_loc"/>
+        <unvisitedTooltip id="map_upgrade_loc"/>
+        <visitedTooltip id="map_nothing_loc"/>
+      </beaconType>
+    </event>
+  </events>
+</FTL>

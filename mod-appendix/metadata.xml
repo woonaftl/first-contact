@@ -1,0 +1,97 @@
+<metadata>
+  <title>First Contact</title>
+  <threadUrl>none</threadUrl>
+  <author>Woona</author>
+  <version>0.1</version>
+  <description>REQUIRES HYPERSPACE 0.5+ (https://subsetgames.com/forum/viewtopic.php?t=35095)
+
+THIS MOD IS NOT COMPATIBLE WITH ANYTHING (except Hyperspace, and minor cosmetic mods)
+(even if some mod is recommended below, it's not compatible with this one)
+
+CREDITS:
+* SwiftTiger, Winderps: making Hyperspace (https://subsetgames.com/forum/viewtopic.php?t=35095)
+* Vhati: making Slipstream Mod Manager (https://subsetgames.com/forum/viewtopic.php?t=17102)
+* kartoFlane: making Superluminal 2 (https://subsetgames.com/forum/viewtopic.php?t=24901)
+* Laythe: enemy sprites (1 Crystal enemy, 1 Lanius enemy, 1 Zoltan enemy, 1 Orchid enemy) from Multiverse (https://subsetgames.com/forum/viewtopic.php?t=35332)
+* kix: miniships, ship layouts
+* Twinge: balance mod that had some parts included (https://subsetgames.com/forum/viewtopic.php?t=26269)
+* Mike: bugfix mod that had some parts included (https://subsetgames.com/forum/viewtopic.php?t=35599)
+* Snorlaxxo: Orchid recolors
+* AgentTheKat: flat sprites, ideas, feedback
+* SallySpartan: ideas, feedback (also try Eldrich Horrors http://www.subsetgames.com/forum/viewtopic.php?t=35928)
+* bamalf, KBa3u: testing, ideas, feedback (еще попробуйте Arsenal+ https://vk.com/topic-69423402_31433485)
+* Markus: ideas, feedback
+
+FEATURE OVERVIEW:
+* New content: 4 new races!, playable ships, enemy ships, sectors, events, all kinds of equipment
+* Game is rebalanced and became harder overall
+* Enemies switch to other weapons after running out of missiles (but they have fewer missiles)
+* Simple weapon/drone upgrade system
+* No empty beacons!
+
+DETAILED FEATURES:
+1. Weapons
+1.1. A new upgrade system, each weapon that costs 2 power or more can be upgraded, cutting its power cost by 1, and dropping charge time a bit as a bonus, weapons can be upgraded on special upgrade beacons which are marked on the map. Common enemies cannot use upgraded weapons. Upgraded weapons won't be just sold at the store or randomly dropped, but many playable ships start with them.
+1.2. Nerfed some of more powerful weapons, for example, burst laser 2 has its charge time increased to 13, and power cost increased to 3. You have to upgrade it to get the good old one. On the bright side, the enemies can only use the weak version.
+1.3. Rebalanced flak weapons: now all of them have very long charge time, but more projectiles. For example, flak 1 has 18 seconds charge time, but 4 projectiles. Flak weapons synergize well with long-charging beams. This change makes them differ from fast-charging lasers that fire fewer projectiles.
+1.4. Crystal weapons were changed to differentiate them from lasers, too. Every crystal deals 2 damage and causes a hull breach.
+1.5. Many of ion weapons got buffed. Basic ion and Ion charger stayed the same as before, all of the other weapons got stronger.
+1.6. Bombs are rebalanced according to new rules: 1 bomb, 1 power, 1 effect (with some rare exceptions). Many bombs also recharge much faster to fit their boarding support role better. For example, fire bomb costs 1 power and doesn't do anything but start a fire, charges 10 seconds. Small bomb just does 2 system damage, and nothing else.
+1.7. Missile weapons got many buffs. Only Artemis (which can be bought now) and Swarm stayed the same. Many missile launchers have useful secondary effects now. But what about the enemies? Won't they harass me with overpowered missiles and bombs at no cost now?
+
+2. Enemies
+2.1. Each enemy class has a fixed loadout now, they don't just get completely random weapons like before. For example, Rebel Fighter will always have 2 lasers and a missile. But which missile or which laser they get is still random.
+2.2. Enemy strategy regarding missiles changed: they have more weapons than they could possibly power, they will use the missile weapons until they run out of resources, then start using one of conventional weapons which don't use resources. Our Rebel Fighter example will start the battle with 1 laser, 1 missile and then switch to 2 lasers.
+2.3. Every enemy that uses missile weapons has much less missile resources than before. In sector 1 every enemy has just 1. They will fire their only missile and switch to something else without ruining your run. In late game, enemies can have more, especially Rocks. Enemies that use bomb weapons can have more missile resources, too.
+2.4. Since there's a lot less randomness regarding enemy weapon loadouts, there are more enemy classes now. Each with a new hull design, room layout and personality.
+2.5. You can encounter special enemies at some events, for example, Black Raven belonging to Captain Nights.
+2.6. All of Rebel Elites got much stronger than before. They took their time to upgrade ALL of their weapons and drones, so you should think twice before diving.
+2.7. Because of big changes to enemy generation mechanics, easy and normal difficulties became much harder. You still get more scrap rewards on those difficulties, but enemies are much deadlier now.
+
+3. Drones
+3.1. Drones can be upgraded the same way the weapons can. Upgraded drones require 1 less power (no other buffs).
+3.2. New powerful drones to make the drone system more desirable in general, for example, anti-ship ion drone.
+3.3. Most drones were heavily discounted to make them more viable (no drones are more exprensive than before).
+3.4. In addition, drones got indirect buffs through Drone recovery arm and ion weapon buffs. Drones can't be buffed directly not to make them too powerful on enemies.
+
+4. Augmentations
+4.1. Most augmentations in FTL suck. You get them as a random drop, and sell them at the nearest store. This had to be changed.
+4.2. Those augmentations that can be improved by making them a bit stronger, were buffed: Crystal vengeance, Drone reactor booster, FTL Recharge booster, and others.
+4.3. Most augmentations were discounted. They're either cheaper or stayed the same, none got more expensive.
+4.4. Those augmentations that allow interesting strategies like Explosive replicator or are Drone recovery arm easier to find. Those that can only be used for selling like Hacking stun, are harder to find.
+4.5. Starting augmentations can't be sold. In addition, many ships start with upgraded weapons and drones, so selling starting equipment became much less common.
+4.6. Advanced FTL Navigation can be used to travel to any beacon on the sector map (instead of just previously visited beacons).
+
+5. Artillery
+5.1. Artillery always seemed a bit underwhelming. The beam broke the rules of the game a bit by piercing all shields, but was still very low damage. Flak artillery seemed like Flak 2 but way worse.
+5.2. Artillery got MUCH stronger, it should win the battle after first shot. To compensate, it's more expensive to upgrade.
+5.3. Fed A and Fed B have different artillery weapons to make those ships feel different from each other.
+
+6. Races and their preferred strategies
+6.1. To make room for more new fun races, some of the old races got their strategies a bit narrowed down. I made an effort to make a theme for each race - new and old.
+6.2. Engi - anti-ship drones and ion weapons (no internal drones)
+6.3. Mantis - teleporter and bomb weapons
+6.4. Rockmen - heavy hitting missiles and heavy lasers (no piercing weapons, those are saved for Crystals)
+6.5. Zoltan - weak shields, beam weapons and ion weapons
+6.6. Slugs - mind control, anti-bio weapons, breaching weapons (including hull lasers)
+6.7. Crystals - shield-piercing crystal weapons, lockdown
+6.8. Lanius - flak weapons, Lanius didn't really have a strong theme, now they went all-in with flak
+6.9. Orchids - chain weapons
+6.10. Lizards - fire weapons and drones, Lizards prefer to burn enemies alive from the safety of their own ship
+6.11. Pavonians - internal and boarding drones, stunning weapons, small crew, fragile Pavonians prefer to use drones for heavy lifting
+6.12. ? - cloaking, no shields, beams, adopting and expanding upon Stealth ship strategies
+
+7. Balance changes
+7.1. Hacking drone depowering exploit was fixed in Hyperspace. The drone just gets destroyed when depowered.
+7.1. It was a very common strategy to just wait for several minutes on weaker enemies to train your crew. Crew training is disabled now. And there are fewer enemies that can't damage you.
+7.2. Many systems are more expensive to buy or upgrade: artillery, hacking, engines, piloting.
+7.3. Rebel Flagship is a bit harder now: all of its rooms are connected including artillery rooms on all difficulty levels, and Flagship lasers do 2 damage instead of 1.
+
+8. Events
+8.1. We can all agree that hitting an empty beacon is disappointing. So, most of them will be removed. But they have to be replaced with something.
+8.2. Weapon upgrade beacons will serve as a part of this replacement project. You can't get more scrap on these beacons so overall scrap per sector should be around the same.
+8.3. In addition, some new events are added to the game. Many of those are not strictly good events where you can earn scrap or free stuff, but trading events, or negative events.
+
+
+CHANGELOG</description>
+</metadata>

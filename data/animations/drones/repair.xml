@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <animSheet name="repair" w="280" h="280" fw="35" fh="35">people/repair_base.png</animSheet>
+  <animSheet name="repair_death" w="320" h="32" fh="32" fw="32">effects/explosion1_strip10.png</animSheet>
+
+  <anim name="repair_death_right">
+    <sheet>repair_death</sheet>
+    <desc length="10" x="0" y="0"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="repair_death_left">
+    <sheet>repair_death</sheet>
+    <desc length="10" x="0" y="0"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="repair_walk_down">
+    <sheet>repair</sheet>
+    <desc length="4" x="0" y="6"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="repair_walk_right">
+    <sheet>repair</sheet>
+    <desc length="4" x="4" y="6"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="repair_walk_up">
+    <sheet>repair</sheet>
+    <desc length="4" x="0" y="5"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="repair_walk_left">
+    <sheet>repair</sheet>
+    <desc length="4" x="4" y="5"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="repair_fire_down">
+    <sheet>repair</sheet>
+    <desc length="4" x="0" y="4"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="repair_fire_right">
+    <sheet>repair</sheet>
+    <desc length="4" x="4" y="4"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="repair_fire_up">
+    <sheet>repair</sheet>
+    <desc length="4" x="0" y="3"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="repair_fire_left">
+    <sheet>repair</sheet>
+    <desc length="4" x="4" y="3"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="repair_repair">
+    <sheet>repair</sheet>
+    <desc length="8" x="0" y="2"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="repair_power_down">
+    <sheet>repair</sheet>
+    <desc length="7" x="0" y="0"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="repair_power_up">
+    <sheet>repair</sheet>
+    <desc length="7" x="1" y="1"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="repair_portrait">
+    <sheet>repair</sheet>
+    <desc length="1" x="0" y="0"/>
+    <time>1</time>
+  </anim>
+
+
+  <anim name="repair_shoot_down">
+    <sheet>repair</sheet>
+    <desc length="2" x="0" y="7"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="repair_shoot_right">
+    <sheet>repair</sheet>
+    <desc length="2" x="2" y="7"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="repair_shoot_up">
+    <sheet>repair</sheet>
+    <desc length="2" x="4" y="7"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="repair_shoot_left">
+    <sheet>repair</sheet>
+    <desc length="2" x="6" y="7"/>
+    <time>1.0</time>
+  </anim>
+
+</FTL>

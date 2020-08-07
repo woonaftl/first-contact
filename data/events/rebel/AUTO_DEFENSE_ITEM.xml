@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <event name="AUTO_DEFENSE_ITEM" unique="true">
+    <text>An advanced Rebel automated ship remains stationed near a small Rebel space-station. Sensors indicate it's a storage vessel for military goods.</text>
+    <ship load="REBEL_AUTO_ITEM" hostile="false"/>
+    <choice>
+      <text>Attack the automated ship to get to the storage cache.</text>
+      <event>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice>
+      <text>Avoid provoking the ship.</text>
+      <event/>
+    </choice>
+    <choice req="cloaking" hidden="true">
+      <text>(Cloaking) Attempt to cloak and access the cache.</text>
+      <eventList name="AUTO_DEFENSE_ITEM_CLOAK">
+        <event>
+          <text>The ship patrols wide around the area, successfully approaching the station while avoiding detection.</text>
+          <choice hidden="true">
+            <text id="continue"/>
+            <event load="DEFENSE_ITEM_LIST"/>
+          </choice>
+        </event>
+        <event>
+          <text>Before you can get close enough to scan the station, the automated ship detects you and moves in to attack!</text>
+          <ship hostile="true"/>
+        </event>
+      </eventList>
+    </choice>
+  </event>
+
+  <event name="NEBULA_AUTO_DEFENSE_ITEM" unique="true">
+    <text>An advance Rebel automated ship remains stationed near a small Rebel space-station. However, without functioning sensors it is impossible to tell what is inside.</text>
+    <environment type="nebula"/>
+    <ship load="REBEL_AUTO_ITEM" hostile="false"/>
+    <choice>
+      <text>Attack the automated ship to get to the station.</text>
+      <event>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice>
+      <text>Avoid provoking the ship.</text>
+      <event/>
+    </choice>
+    <choice req="cloaking" lvl="1" max_group="0" hidden="true">
+      <text>(Cloaking) Attempt to stealthily access the space station.</text>
+      <event load="NEBULA_AUTO_DEFENSE_ITEM_CLOAK"/>
+    </choice>
+    <choice req="cloaking" lvl="2" max_group="0" hidden="true">
+      <text>(Improved Cloaking) Use your stealth to access the space station.</text>
+      <event>
+        <text>You successfully sneak by the ship and access the station undetected.</text>
+        <choice hidden="true">
+          <text id="continue"/>
+          <event load="DEFENSE_ITEM_LIST"/>
+        </choice>
+      </event>
+    </choice>
+    <choice req="hacking" lvl="1" max_group="1" hidden="false">
+      <text>(Hacking) Try to hack the station to prevent an alert.</text>
+      <event load="NEBULA_AUTO_DEFENSE_ITEM_HACK"/>
+    </choice>
+    <choice req="hacking" lvl="2" max_group="1" hidden="false">
+      <text>(Improved Hacking) Hack the station to prevent an alert.</text>
+      <event>
+        <text>You successfully hack into the station and sever the connection to the automated ship, accessing the station completely undetected.</text>
+        <item_modify>
+          <item type="drones" min="-1" max="-1"/>
+        </item_modify>
+        <choice hidden="true">
+          <text id="continue"/>
+          <event load="DEFENSE_ITEM_LIST"/>
+        </choice>
+      </event>
+    </choice>
+  </event>
+  <eventList name="NEBULA_AUTO_DEFENSE_ITEM_CLOAK">
+    <event>
+      <text>You successfully sneak by the ship and access the station undetected.</text>
+      <choice hidden="true">
+        <text id="continue"/>
+        <event load="DEFENSE_ITEM_LIST"/>
+      </choice>
+    </event>
+    <event>
+      <text>You try to sneak past the automated ship but it quickly turns and attacks!</text>
+      <ship hostile="true"/>
+    </event>
+  </eventList>
+  <eventList name="NEBULA_AUTO_DEFENSE_ITEM_HACK">
+    <event>
+      <text>You successfully hack into the station and sever the connection to the automated ship. You access the station undetected.</text>
+      <item_modify>
+        <item type="drones" min="-1" max="-1"/>
+      </item_modify>
+      <choice hidden="true">
+        <text id="continue"/>
+        <event load="DEFENSE_ITEM_LIST"/>
+      </choice>
+    </event>
+    <event>
+      <text>You send a drone to hack the station but the automated ship notices and turns to attack!</text>
+      <item_modify>
+        <item type="drones" min="-1" max="-1"/>
+      </item_modify>
+      <ship hostile="true"/>
+    </event>
+  </eventList>
+
+  <ship name="REBEL_AUTO_ITEM" auto_blueprint="SHIPS_AUTO">
+    <destroyed>
+      <text>You salvage what you can from the broken ship.</text>
+      <autoReward level="MED">scrap_only</autoReward>
+      <choice hidden="true">
+        <text>Investigate the station.</text>
+        <event load="DEFENSE_ITEM_LIST"/>
+      </choice>
+    </destroyed>
+  </ship>
+
+  <eventList name="DEFENSE_ITEM_LIST">
+    <event>
+      <text>The station was either abandoned or stripped clean. It seems to have lain unused for quite some time. You find nothing useful.</text>
+    </event>
+    <event>
+      <text>The station was apparently designed to outfit Rebel ships with Drone Systems. You find a functioning Schematic.</text>
+      <autoReward level="LOW">drone</autoReward>
+    </event>
+    <event>
+      <text>The station is a storage site for military grade weapons. You find one that can be easily attached to the ship.</text>
+      <autoReward level="LOW">weapon</autoReward>
+    </event>
+    <event>
+      <text>The station is a storage site for various resources. You salvage everything possible.</text>
+      <autoReward level="MED">stuff</autoReward>
+    </event>
+  </eventList>
+</FTL>

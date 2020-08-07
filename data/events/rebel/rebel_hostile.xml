@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="HOSTILE_REBEL">
+    <event load="REBEL"/>
+    <event load="REBEL_AUTO"/>
+    <event load="AUTO_WARNING"/>
+    <event load="SQUAT_WARNING"/>
+    <event load="BOARDERS_REBEL_SHIP"/>
+  </eventList>
+
+  <eventList name="HOSTILE_HAZARD_REBEL">
+    <event load="AUTO_ASTEROID"/>
+    <event load="REBEL_PULSAR"/>
+  </eventList>
+
+  <event name="REBEL">
+    <textList name="REBEL">
+      <text>Your ship is hailed. "We've found you at last. Prepare to die!"</text>
+      <text>A small Rebel ship is docked at a small station. You try to lay low but it spots you. Power up the weapons!</text>
+      <text>A Rebel ship has been patrolling this region. As soon as you arrive it begins its assault.</text>
+      <text>A Rebel ship hails you: "Federation scum! We've waited a long time for this!"</text>
+      <text>You receive a transmission: "Sorry sir, this is nothing personal but we're under orders." The Rebel ship's weapons go hot.</text>
+      <text>By the time you notice the Rebel ship behind the beacon, it's too late to avoid a fight.</text>
+      <text>A Rebel ship hails. "We did not fight a war to let a single Federation ship shatter our dreams of a better galaxy!" He locks weapons.</text>
+      <text>A Rebel ship approaches cautiously. "Personally," says the captain, "I'd have stuck with the Federation. But I'm a soldier, sir, and I'm no use without a war to fight. Raise your shields!"</text>
+      <text>You're hailed by a Rebel ship: "When the rebellion is complete you'll see the safer world we provide. Well, you won't, but you get the point." They arm weapons.</text>
+      <text>A Rebel ship is guarding this beacon. You order a pursuit course and prepare to scratch up one more.</text>
+    </textList>
+    <ship load="REBEL" hostile="true"/>
+  </event>
+
+  <event name="REBEL_AUTO">
+    <textList name="REBEL_AUTO">
+      <text>You discover one of the Rebel's autonomous scouts. The ship's AI wastes no time in engaging your ship.</text>
+      <text>Your ship is hailed: "This is an automated message. Resisting our takeover is pointless. Prepare to die." It appears this Rebel ship is run by an AI.</text>
+      <text>A Rebel autonomous scout is exploring this beacon. You attempt to hide behind a nearby moon, but the ship finds you and begins its assault.</text>
+      <text>The AI of a nearby small Rebel scout immediately identifies you as a threat and engages.</text>
+      <text>A Rebel ship moves in to engage. You attempt to open communications, but realize the futility of that action when you see the ship is run by an AI.</text>
+      <text>This must be one of the Rebels' unmanned scout ships. Looks like there's no way around a fight.</text>
+      <text>Another unmanned ship patrols this area. You prepare the ship for combat.</text>
+      <text>This beacon is being patrolled by a unmanned scout. A fight is unavoidable.</text>
+      <text>A small shuttle appears on the local radar. Turns out it is a Rebel automated scout!</text>
+    </textList>
+    <ship load="REBEL_AUTO" hostile="true"/>
+  </event>
+
+  <event name="AUTO_WARNING" unique="true">
+    <text load="REBEL_AUTO"/>
+    <ship load="REBEL_AUTO_WARNING" hostile="true"/>
+  </event>
+
+  <event name="SQUAT_WARNING" unique="true">
+    <text>You stumble across a forward scout of the Rebel fleet.</text>
+    <ship name="SQUAT_WARNING" auto_blueprint="SHIPS_REBEL" hostile="true">
+      <escape timer="40" min="22" max="22">
+        <text>They are powering up their FTL! If they get away, they will no doubt warn the fleet of your position!</text>
+        <ship hostile="true"/>
+      </escape>
+      <gotaway>
+        <text>The scout jumps away. They are sure to have informed the fleet of your position. You must get to the next Sector as soon as possible!</text>
+        <modifyPursuit amount="1"/>
+      </gotaway>
+      <destroyed>
+        <text>Their ship breaks apart and you are relieved to know that you are still one step ahead of the fleet.</text>
+        <autoReward level="MED">standard</autoReward>
+      </destroyed>
+      <deadCrew>
+        <text>Their ship goes silent and you are relieved to know that you are still one step ahead of the fleet.</text>
+        <autoReward level="MED">standard</autoReward>
+      </deadCrew>
+    </ship>
+  </event>
+
+  <event name="REBEL_PULSAR" unique="false">
+    <textList name="REBEL_PULSAR_TEXT">
+      <text>A Rebel captain appears on the screen. "I thought we had been doomed to backwater assignments. This is my chance to get back in Command's good graces! Charge the weapons!"</text>
+      <text>A small rebel research station overlooks a pulsating star. Before you can react a Rebel ship spots you and moves in to attack.</text>
+      <text>You arrive at an infrequently used beacon close to a pulsar. Before long a Rebel ship happens to jump nearby. Looks like you'll have to fight.</text>
+    </textList>
+    <ship load="REBEL" hostile="true"/>
+    <environment type="pulsar"/>
+  </event>
+
+  <event name="BOARDERS_REBEL_SHIP">
+    <textList name="BOARDERS_REBEL_SHIP" unique="false">
+      <text>You receive a message from a nearby Rebel station, "You have a lot of guts passing through our space, I'll give you that." He turns giving an order, "Kill their crew, I want that ship intact."</text>
+      <text>Your sensors warn of an incoming Rebel ship at the same time as you hear the telltale signs of a teleporter. You hear someone taunt from within the ship, "Ready to die? I sure am ready to get a promotion!"</text>
+      <text>Incoming message, "Hello Captain," says a Rebel in an officer's garb. "How very generous of you to turn yourself in. Prepare to be boarded. Come quietly and we may be lenient."</text>
+      <text>You receive a message on a low-band channel. "You're surrounded, just like the last of your Federation friends. Just die already." The enemy has teleported onto your ship!</text>
+    </textList>
+    <boarders min="2" max="3" class="human"/>
+    <ship load="REBEL" hostile="true"/>
+  </event>
+</FTL>

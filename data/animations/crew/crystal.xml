@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <animSheet name="crystal" w="350" h="455" fw="35" fh="35">people/crystal_base.png</animSheet>
+
+  <anim name="crystal_clone">
+    <sheet>crystal</sheet>
+    <desc length="6" x="0" y="2"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="crystal_death_right">
+    <sheet>crystal</sheet>
+    <desc length="6" x="3" y="0"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="crystal_death_left">
+    <sheet>crystal</sheet>
+    <desc length="6" x="0" y="2"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="crystal_walk_down">
+    <sheet>crystal</sheet>
+    <desc length="4" x="0" y="12"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="crystal_walk_right">
+    <sheet>crystal</sheet>
+    <desc length="4" x="4" y="12"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="crystal_walk_up">
+    <sheet>crystal</sheet>
+    <desc length="4" x="0" y="11"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="crystal_walk_left">
+    <sheet>crystal</sheet>
+    <desc length="4" x="4" y="11"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="crystal_shoot_down">
+    <sheet>crystal</sheet>
+    <desc length="4" x="0" y="10"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="crystal_shoot_right">
+    <sheet>crystal</sheet>
+    <desc length="4" x="4" y="10"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="crystal_shoot_up">
+    <sheet>crystal</sheet>
+    <desc length="4" x="0" y="9"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="crystal_shoot_left">
+    <sheet>crystal</sheet>
+    <desc length="4" x="4" y="9"/>
+    <time>1.0</time>
+  </anim>
+
+
+  <anim name="crystal_fire_down">
+    <sheet>crystal</sheet>
+    <desc length="10" x="0" y="8"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="crystal_fire_right">
+    <sheet>crystal</sheet>
+    <desc length="10" x="0" y="8"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="crystal_fire_up">
+    <sheet>crystal</sheet>
+    <desc length="10" x="0" y="8"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="crystal_fire_left">
+    <sheet>crystal</sheet>
+    <desc length="10" x="0" y="8"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="crystal_repair">
+    <sheet>crystal</sheet>
+    <desc length="8" x="0" y="7"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="crystal_punch_up">
+    <sheet>crystal</sheet>
+    <desc length="6" x="3" y="1"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="crystal_punch_down">
+    <sheet>crystal</sheet>
+    <desc length="6" x="0" y="6"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="crystal_teleport">
+    <sheet>crystal</sheet>
+    <desc length="9" x="0" y="3"/>
+    <time>0.5</time>
+  </anim>
+
+
+  <anim name="crystal_type_right">
+    <sheet>crystal</sheet>
+    <desc length="4" x="0" y="5"/>
+    <time>1</time>
+  </anim>
+  <anim name="crystal_type_left">
+    <sheet>crystal</sheet>
+    <desc length="4" x="4" y="5"/>
+    <time>1</time>
+  </anim>
+  <anim name="crystal_type_up">
+    <sheet>crystal</sheet>
+    <desc length="4" x="0" y="4"/>
+    <time>1</time>
+  </anim>
+  <anim name="crystal_type_down">
+    <sheet>crystal</sheet>
+    <desc length="4" x="4" y="4"/>
+    <time>1</time>
+  </anim>
+
+
+  <anim name="crystal_portrait">
+    <sheet>crystal</sheet>
+    <desc length="1" x="0" y="0"/>
+    <time>1</time>
+  </anim>
+
+  <animSheet name="crystal_1" w="108" h="19" fw="18" fh="19">people/crystal_1.png</animSheet>
+  <animSheet name="crystal_2" w="90" h="19" fw="18" fh="19">people/crystal_2.png</animSheet>
+
+  <anim name="crystal_1">
+    <sheet>crystal_1</sheet>
+    <desc length="6" x="0" y="0"/>
+    <time>0.5</time>
+  </anim>
+
+  <anim name="crystal_2">
+    <sheet>crystal_2</sheet>
+    <desc length="5" x="0" y="0"/>
+    <time>0.5</time>
+  </anim>
+</FTL>

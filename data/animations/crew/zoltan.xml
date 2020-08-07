@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <animSheet name="energy" w="280" h="455" fw="35" fh="35">people/energy_base.png</animSheet>
+
+  <anim name="energy_clone">
+    <sheet>energy</sheet>
+    <desc length="6" x="0" y="1"/>
+    <time>0.5</time>
+  </anim>
+
+
+  <animSheet name="explosion_energy_death" w="640" h="64" fw="64" fh="64">effects/explosion_big1_strip10_green.png</animSheet>
+  <anim name="energy_death_right">
+    <sheet>explosion_energy_death</sheet>
+    <desc length="10" x="0" y="0"/>
+    <time>0.5</time>
+  </anim>
+
+  <anim name="energy_death_left">
+    <sheet>explosion_energy_death</sheet>
+    <desc length="10" x="0" y="0"/>
+    <time>0.5</time>
+  </anim>
+
+  <anim name="energy_walk_down">
+    <sheet>energy</sheet>
+    <desc length="4" x="0" y="12"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="energy_walk_right">
+    <sheet>energy</sheet>
+    <desc length="4" x="4" y="12"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="energy_walk_up">
+    <sheet>energy</sheet>
+    <desc length="4" x="0" y="11"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="energy_walk_left">
+    <sheet>energy</sheet>
+    <desc length="4" x="4" y="11"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="energy_shoot_down">
+    <sheet>energy</sheet>
+    <desc length="3" x="0" y="10"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="energy_shoot_right">
+    <sheet>energy</sheet>
+    <desc length="3" x="3" y="10"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="energy_shoot_up">
+    <sheet>energy</sheet>
+    <desc length="3" x="2" y="0"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="energy_shoot_left">
+    <sheet>energy</sheet>
+    <desc length="3" x="5" y="0"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="energy_fire_down">
+    <sheet>energy</sheet>
+    <desc length="4" x="0" y="9"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="energy_fire_right">
+    <sheet>energy</sheet>
+    <desc length="4" x="4" y="9"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="energy_fire_up">
+    <sheet>energy</sheet>
+    <desc length="4" x="0" y="8"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="energy_fire_left">
+    <sheet>energy</sheet>
+    <desc length="4" x="4" y="8"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="energy_repair">
+    <sheet>energy</sheet>
+    <desc length="8" x="0" y="7"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="energy_punch_up">
+    <sheet>energy</sheet>
+    <desc length="6" x="0" y="5"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="energy_punch_down">
+    <sheet>energy</sheet>
+    <desc length="6" x="0" y="6"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="energy_teleport">
+    <sheet>energy</sheet>
+    <desc length="8" x="0" y="2"/>
+    <time>0.5</time>
+  </anim>
+
+  <anim name="energy_type_right">
+    <sheet>energy</sheet>
+    <desc length="4" x="0" y="4"/>
+    <time>1</time>
+  </anim>
+  <anim name="energy_type_left">
+    <sheet>energy</sheet>
+    <desc length="4" x="4" y="4"/>
+    <time>1</time>
+  </anim>
+  <anim name="energy_type_up">
+    <sheet>energy</sheet>
+    <desc length="4" x="0" y="3"/>
+    <time>1</time>
+  </anim>
+  <anim name="energy_type_down">
+    <sheet>energy</sheet>
+    <desc length="4" x="4" y="3"/>
+    <time>1</time>
+  </anim>
+
+  <anim name="energy_portrait">
+    <sheet>energy</sheet>
+    <desc length="1" x="0" y="0"/>
+    <time>1</time>
+  </anim>
+</FTL>

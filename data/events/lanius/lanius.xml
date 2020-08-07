@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="QUESTS_LANIUS">
+    <event load="FEDERATION_PLANET_SIGNAL"/>
+  </eventList>
+
+  <event name="START_BEACON_LANIUS">
+    <textList name="START_BEACON_LANIUS">
+      <text>This sector has been largely abandoned since a series of battles decimated the local population. An unusual alien race is reportedly scavenging in the area. You'd best be on guard.</text>
+      <text>This sector was the site of many major battles between the Federation and Rebel fleets. Strangely, there's very little evidence of those battles remaining...</text>
+      <text>There have been a number of reports of advanced ships salvaging the wrecks and abandoned mining facilities in this sector. Could it be that the Lanius have resurfaced?</text>
+      <text>The war tore through this civilian sector, and just recently even the few life signs that remained have begun blinking out. Rumours suggest the Lanius are responsible.</text>
+    </textList>
+  </event>
+
+  <event name="STORE_LANIUS">
+    <textList name="STORE_LANIUS">
+      <text>A large transport ship undergoing maintenance hails you. "Greetings, friend. We're getting out of this sector as soon as this Coolant Shaft is fixed and I suggest you do the same. I half expect those damn metal freaks to come and try to melt down our ship at any moment. We're trying to offload some inventory - interested in buying something?"</text>
+      <text>You arrive to discover a number of Lanius ships docked at what appears to be a station. You hasten to leave but are relieved when they message you in your language. "Buy? Sell? Traders." Apparently some merchants emigrated with the scavengers.</text>
+      <text>A trading depot is set up near the beacon. A surprising number of military ships guard the station. You pick up an advertisement on a wide band channel, "Ship parts, repairs, refueling, souvenirs - we got it all. Check out the only store not afraid of scavengers this side of Omacron 6."</text>
+      <text>You arrive at an empty space station, no doubt abandoned due to the Lanius threat. Life signatures are detected at the ship depot and you spot a few crude signs stating "Everything Must Go!"</text>
+      <text>This beacon is bustling with activity. It looks like some merchants decided to capitalize on the fact that dozens of refugee ships are using this location to recharge their FTL drives. You browse their wares.</text>
+      <text>You receive a message from a nearby station, "The end is upon us! The metal demons have come to absorb your very being! But it's not too late to prepare for the worst!" It appears that was an advertisement for a space dock. You scan their products.</text>
+    </textList>
+    <store/>
+  </event>
+
+  <event name="NOTHING_LANIUS">
+    <textList name="NOTHING_LANIUS">
+      <text>The charts indicate this was the location of a small skirmish over a military facility on a nearby moon. Oddly, scans pick up no signs of debris from either the battle or the station. Yet another area sucked dry by the Lanius.</text>
+      <text>Scans show no signs of any ships or settlements nearby. You have no way of knowing if the area was always uninhabited or if it was simply erased by the Lanius.</text>
+      <text>A few refugee ships are preparing for the long journey to another sector. They explain how a number of Lanius military ships surrounded them and began to hack their FTL drives. Fortunately the Lanius moved on after briefly scanning the civilian ships, leaving them more than a little shaken up.</text>
+      <text>You pass a civilian ship that warns of the nearby Lanius. "One of them attacked a civilian transport and started to melt their fracking hull. But then the weirdest thing happened... another metal ship actually fired on its companion until it backed off." Apparently there are disagreements among the Lanius about what should be salvaged.</text>
+      <text>You question a local settlement and they describe a fleet of metal ships wordlessly collecting all of the abandoned metal and debris in the area. When they approached important satellites, the settlements fired a few ASB warning shots. The Lanius moved on despite clearly having the firepower to overwhelm the settlements.</text>
+      <text>You come across a human civilian ship preparing to leave the sector. They message you, "We're getting out of here! There was some cult rambling about the spreading of the disease, Humanitis. They forcefully boarded our ship and tried to open all of our airlocks, shouting, "Be purged!" Is nowhere safe anymore?"</text>
+      <text>The charts indicate this was the location of a small skirmish over a military facility on a nearby moon. Oddly, scans pick up no signs of debris from either the battle or the station. Yet another area sucked dry by the Lanius.</text>
+      <text>Scans show no signs of any ships or settlements nearby. You have no way of knowing if the area was always uninhabited or if it was simply erased by the Lanius.</text>
+    </textList>
+  </event>
+
+  <event name="LANIUS_SURRENDER">
+    <textList name="LANIUS_SURRENDER_TEXT">
+      <text>An image of a silent Lanius captain appears on your monitor. Images of their well-filled cargo hold follow. You come to the conclusion that they are trying to barter for a cease-fire.</text>
+      <text>The Lanius ship hails you. Your translator struggles, spurting out "Prevent death... Merciful... Penitent...". You believe they are surrendering.</text>
+      <text>You receive a hail from the ship followed by a crude translation device spurting, "Stop. Stop. Stop."</text>
+      <text>You receive an image of their captain, silhouetted by the destruction aboard their ship. It bows forward with the metallic appendages about its body doing the same. It appears to be requesting mercy.</text>
+      <text>Your comms system receives a video feed of the enemy ship's crew waving small makeshift white flags. It appears they have taken research about your culture's customs quite literally.</text>
+      <text>You receive a message from the enemy ship that your translator struggles to interpret, "Penitence for metal. Offering intention."</text>
+      <text>You receive a one word message from the enemy ship, "Surrender." You assume they are asking to surrender rather than demanding your surrender.</text>
+    </textList>
+    <choice>
+      <text>Accept their offer.</text>
+      <event>
+        <ship hostile="false"/>
+        <autoReward level="RANDOM">stuff</autoReward>
+      </event>
+    </choice>
+    <choice>
+      <text>We will not accept surrender!</text>
+      <event/>
+    </choice>
+  </event>
+
+  <eventList name="LANIUS_ESCAPE">
+    <event>
+      <text>The Lanius ship begins to prepare their FTL drive for a jump. They appear to no longer wish to fight.</text>
+    </event>
+    <event>
+      <text>Scanners indicate the Lanius ship is preparing to jump. Don't let them escape!</text>
+    </event>
+  </eventList>
+
+  <eventList name="LANIUS_DESTROYED">
+    <event>
+      <text>The ship explodes, leaving behind a collection of useful scrap material.</text>
+      <autoReward level="MED">standard</autoReward>
+    </event>
+    <event>
+      <text>The ship explodes, leaving behind a collection of useful scrap material.</text>
+      <autoReward level="MED">standard</autoReward>
+    </event>
+    <event>
+      <text>The ship explodes, leaving behind a collection of useful scrap material.</text>
+      <autoReward level="MED">standard</autoReward>
+    </event>
+    <event>
+      <text>The ship explodes, revealing their cargo of unprocessed metal. You collect a significant amount of scrap.</text>
+      <autoReward level="HIGH">standard</autoReward>
+    </event>
+  </eventList>
+
+  <eventList name="LANIUS_DEAD_CREW">
+    <event>
+      <text>There are no more life-signs remaining on the ship. You strip it of useful materials.</text>
+      <autoReward level="MED">standard</autoReward>
+    </event>
+    <event>
+      <text>There are no more life-signs remaining on the ship. You strip it of useful materials.</text>
+      <autoReward level="MED">standard</autoReward>
+    </event>
+    <event>
+      <text>There are no more life-signs remaining on the ship. You strip it of useful materials.</text>
+      <autoReward level="MED">standard</autoReward>
+    </event>
+    <event>
+      <text>There are no more life-signs remaining on the ship. You strip it of useful materials.</text>
+      <autoReward level="HIGH">standard</autoReward>
+    </event>
+    <event>
+      <text>There are no more life-signs remaining on the ship. You strip it of useful materials.</text>
+      <autoReward level="HIGH">standard</autoReward>
+    </event>
+    <event>
+      <text>With the Lanius dispatched you are able to take the fuel out of storage. You also take all the scrap you can manage.</text>
+      <autoReward level="HIGH">fuel</autoReward>
+    </event>
+    <event>
+      <text>Now that the Lanius ship has been emptied of hostiles, you search it. Eventually you find a prisoner who offers to join your crew.</text>
+      <crewMember amount="1"/>
+      <autoReward level="LOW">scrap_only</autoReward>
+    </event>
+    <event>
+      <text>You find a drone schematic on their ship. With no crew to stop you, you can install it on your own.</text>
+      <autoReward level="LOW">drone</autoReward>
+    </event>
+  </eventList>
+
+  <ship name="LANIUS_SHIP" auto_blueprint="SHIPS_LANIUS">
+    <surrender chance="0.2" min="3" max="4" load="LANIUS_SURRENDER"/>
+    <escape chance="0.2" min="2" max="4" load="LANIUS_ESCAPE"/>
+    <destroyed load="LANIUS_DESTROYED"/>
+    <gotaway>
+      <text>The Lanius ship has escaped.</text>
+    </gotaway>
+    <deadCrew load="LANIUS_DEAD_CREW"/>
+  </ship>
+
+  <ship name="LANIUS_CIVILIAN" auto_blueprint="SHIPS_LANIUS">
+    <destroyed>
+      <text>The Lanius craft breaks apart. You hasten to contact the civilian ship.</text>
+      <autoReward level="MED">standard</autoReward>
+      <choice hidden="true">
+        <text>Contact the civilian ship.</text>
+        <event load="SAVE_CIVILIAN_LIST"/>
+      </choice>
+    </destroyed>
+    <deadCrew>
+      <text>No more life signs detected on the Lanius ship. You hasten to contact the civilian ship.</text>
+      <autoReward level="HIGH">standard</autoReward>
+      <choice hidden="true">
+        <text>Contact the civilian ship.</text>
+        <event load="SAVE_CIVILIAN_LIST"/>
+      </choice>
+    </deadCrew>
+  </ship>
+</FTL>

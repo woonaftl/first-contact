@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="DISTRESS_BEACON_REBEL">
+    <event load="CIVILIAN_ASTEROIDS_BEACON"/>
+    <event load="REBEL_VS_FEDERATION"/>
+    <event load="ESCORT_BEACON"/>
+    <event load="FRIENDLY_BEACON"/>
+    <event load="TRAP_BEACON"/>
+    <event load="DISTRESS_STATION_FIRE"/>
+  </eventList>
+
+  <eventList name="QUESTS_REBEL">
+    <event load="MERCHANT_REQUEST"/>
+    <event load="FEDERATION_PLANET_SIGNAL"/>
+  </eventList>
+
+  <event name="START_BEACON_REBEL">
+    <textList name="START_BEACON_REBEL">
+      <text>This sector was bustling with activity just a few years ago. Now, more than half of the jump beacons have been destroyed, many settlements have been abandoned and the Rebels patrol constantly.</text>
+      <text>This sector was hit hard by the rebellion. The many alien settlements and stations located here are now watched over by almost an equal number of Rebel bases, heavy-handedly 'keeping the peace'.</text>
+      <text>Once the Federation forces were scattered, the Rebels came down hard on the locals here. Between the 'tax collectors' and military bases, the Rebel presence in this sector is high.</text>
+      <text>At one point this was one of the most commonly traveled sectors. Knowing that, the Rebels have stationed a number of fleets here. Be careful.</text>
+      <text>You will have to be very cautious in this sector. The Rebels have full control and are no doubt looking for you.</text>
+    </textList>
+  </event>
+
+  <event name="STORE_REBEL">
+    <textList name="STORE_REBEL">
+      <text>You discover a re-supply station used by Rebels and civilians alike. You transmit your fake ship identification and for once, they don't seem to recognize your ship. You try to assume the air of a local as you prepare to dock.</text>
+      <text>You arrive at a small space station that is putting out wide-band broadcasts on black-market channels. You doubt they would turn away any business, regardless of allegiances.</text>
+      <text>You receive generic advertisements from a nearby public ship-yard. It seems they are willing to work on any ship, not only those of Rebel hue.</text>
+    </textList>
+    <store/>
+  </event>
+
+  <event name="NOTHING_REBEL">
+    <textList name="NOTHING_REBEL">
+      <text>You enter a system bustling with Rebel activity. Supply freighters and re-supply stations are dwarfed by a few heavy warships. Luckily, no one seems to be paying attention to small cruisers. No ships are scanning or messaging you.</text>
+      <text>You arrive near a small Rebel refueling depot. Your ship is being scanned multiple times so they must recognize you, but there appears to be no combat-ready ships in the vicinity. The only message you receive is a denial to your request to dock at the depot.</text>
+      <text>There is not much of interest nearby. A small sun in the distance with a few orbiting planets in nearby space provide little of interest.</text>
+      <text planet="NONE">There are no other ships near this beacon, however you detect a small communication relay. You tap into it without a problem; there is no encryption. Most of the chatter revolves around troop and fleet movements, not particularly interesting.</text>
+      <text planet="PLANET_POPULATED_SMALL">There is a small planet nearby with scattered settlements. A small Rebel fleet is in orbit with many ships ferrying back and forth. It must be a more recently 'liberated' planet.</text>
+    </textList>
+  </event>
+
+  <ship name="REBEL" auto_blueprint="SHIPS_REBEL">
+    <surrender chance="0.5" min="2" max="3" load="PIRATE_SURRENDER"/>
+    <escape chance="0.5" min="3" max="4" load="PIRATE_ESCAPE"/>
+    <destroyed load="DESTROYED_DEFAULT"/>
+    <deadCrew load="DEAD_CREW_DEFAULT"/>
+  </ship>
+
+  <ship name="REBEL_AUTO" auto_blueprint="SHIPS_AUTO">
+    <destroyed load="DESTROYED_DEFAULT"/>
+    <deadCrew load="DEAD_CREW_DEFAULT"/>
+  </ship>
+
+  <ship name="REBEL_AUTO_WARNING" auto_blueprint="SHIPS_AUTO">
+    <escape timer="40" min="22" max="22">
+      <text>The ship starts to power up its FTL Drive. If it gets away, it will no doubt warn the fleet of your position!</text>
+      <ship hostile="true"/>
+    </escape>
+    <gotaway>
+      <text>The scout jumps away. It will certainly have informed the fleet of your position. You must get to the next sector as soon as possible!</text>
+      <modifyPursuit amount="1"/>
+    </gotaway>
+    <destroyed>
+      <text>The ship breaks apart and you feel relief in the knowledge that you will hopefully still be one step ahead of the fleet.</text>
+      <autoReward level="LOW">standard</autoReward>
+    </destroyed>
+  </ship>
+</FTL>

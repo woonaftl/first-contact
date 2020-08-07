@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <animSheet name="crystal_shard" w="32" h="80" fw="32" fh="80">weapons/crystal_shot1.png</animSheet>
+  <anim name="crystal_shard">
+    <sheet>crystal_shard</sheet>
+    <desc length="1" x="0" y="0"/>
+    <time>1</time>
+  </anim>
+
+  <animSheet name="crystal_shard2" w="32" h="80" fw="32" fh="80">weapons/crystal_shot2.png</animSheet>
+  <anim name="crystal_shard2">
+    <sheet>crystal_shard2</sheet>
+    <desc length="1" x="0" y="0"/>
+    <time>1</time>
+  </anim>
+  <animSheet name="crystal_shard3" w="32" h="80" fw="32" fh="80">weapons/crystal_shot3.png</animSheet>
+  <anim name="crystal_shard3">
+    <sheet>crystal_shard3</sheet>
+    <desc length="1" x="0" y="0"/>
+    <time>1</time>
+  </anim>
+
+  <animSheet name="crystal_burst_1" w="288" h="52" fw="24" fh="52">weapons/crystal_burst_1_strip12.png</animSheet>
+  <weaponAnim name="crystal_burst_1">
+    <sheet>crystal_burst_1</sheet>
+    <desc length="12" x="0" y="0"/>
+    <chargedFrame>5</chargedFrame>
+    <fireFrame>8</fireFrame>
+    <firePoint x="15" y="15"/>
+    <mountPoint x="6" y="36"/>
+  </weaponAnim>
+
+  <animSheet name="crystal_burst_2" w="420" h="61" fw="35" fh="61">weapons/crystal_burst_2_strip12.png</animSheet>
+  <weaponAnim name="crystal_burst_2">
+    <sheet>crystal_burst_2</sheet>
+    <desc length="12" x="0" y="0"/>
+    <chargedFrame>5</chargedFrame>
+    <fireFrame>8</fireFrame>
+    <firePoint x="19" y="14"/>
+    <mountPoint x="6" y="41"/>
+  </weaponAnim>
+
+  <animSheet name="crystal_heavy_1" w="444" h="63" fw="37" fh="63">weapons/crystal_heavy_1_strip12.png</animSheet>
+  <weaponAnim name="crystal_heavy_1">
+    <sheet>crystal_heavy_1</sheet>
+    <desc length="12" x="0" y="0"/>
+    <chargedFrame>5</chargedFrame>
+    <fireFrame>8</fireFrame>
+    <firePoint x="20" y="16"/>
+    <mountPoint x="8" y="45"/>
+  </weaponAnim>
+
+  <animSheet name="crystal_heavy_2" w="564" h="69" fw="47" fh="69">weapons/crystal_heavy_2_strip12.png</animSheet>
+  <weaponAnim name="crystal_heavy_2">
+    <sheet>crystal_heavy_2</sheet>
+    <desc length="12" x="0" y="0"/>
+    <chargedFrame>5</chargedFrame>
+    <fireFrame>8</fireFrame>
+    <firePoint x="21" y="22"/>
+    <mountPoint x="9" y="47"/>
+  </weaponAnim>
+
+  <animSheet name="crystal_charge_2_charge" w="82" h="59" fw="41" fh="59">weapons/crystal_charge_2_charges.png</animSheet>
+  <anim name="crystal_charge_2_charge">
+    <sheet>crystal_charge_2_charge</sheet>
+    <desc length="2" x="0" y="0"/>
+    <time>1.0</time>
+  </anim>
+
+  <animSheet name="crystal_charge_2" w="615" h="59" fw="41" fh="59">weapons/crystal_charge_2_strip15.png</animSheet>
+  <weaponAnim name="crystal_charge_2">
+    <sheet>crystal_charge_2</sheet>
+    <desc length="15" x="0" y="0"/>
+    <chargedFrame>1</chargedFrame>
+    <fireFrame>2</fireFrame>
+    <firePoint x="21" y="10"/>
+    <mountPoint x="10" y="43"/>
+    <boost>crystal_charge_2_charge</boost>
+    <chargeImage>weapons/crystal_charge_2_glow.png</chargeImage>
+  </weaponAnim>
+</FTL>

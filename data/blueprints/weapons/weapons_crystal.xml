@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+
+  <blueprintList name="WEAPONS_CRYSTAL_2">
+    <name>CRYSTAL_HEAVY_1</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_CRYSTAL_3">
+    <name>CRYSTAL_BURST_1</name>
+    <name>CRYSTAL_CHARGE_2</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_CRYSTAL_4">
+    <name>CRYSTAL_BURST_2</name>
+  </blueprintList>
+
+  <blueprintList name="WEAPONS_CRYSTAL_1_UPGRADED">
+    <name>CRYSTAL_HEAVY_1_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_CRYSTAL_2_UPGRADED">
+    <name>CRYSTAL_BURST_1_UPGRADED</name>
+    <name>CRYSTAL_CHARGE_2_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_CRYSTAL_3_UPGRADED">
+    <name>CRYSTAL_BURST_2_UPGRADED</name>
+  </blueprintList>
+
+  <changelog>
+    <entry>Heavy Crystal I charge time 13 to 14</entry>
+    <entry>Heavy Crystal I power usage 1 to 2</entry>
+    <entry>Heavy Crystal I breach chance 0.1 to 1</entry>
+    <entry>Heavy Crystal I stun chance 0.2 to 0</entry>
+    <entry>Heavy Crystal I scrap cost 20 to 50</entry>
+  </changelog>
+  <weaponBlueprint name="CRYSTAL_HEAVY_1">
+    <type>MISSILES</type>
+    <tip>tip_crystal</tip>
+    <title>Crystal Mark I</title>
+    <short>Crystal I</short>
+    <desc>Modified projectile weapon that fires a shield piercing crystal.</desc>
+    <tooltip>Pierces 1 shield; fires 1 crystal that deals 2 damage.</tooltip>
+    <damage>2</damage>
+    <shots>1</shots>
+    <sp>1</sp>
+    <fireChance>0</fireChance>
+    <breachChance>10</breachChance>
+    <stunChance>0</stunChance>
+    <cooldown>14</cooldown>
+    <power>2</power>
+    <speed>50</speed>
+    <cost>50</cost>
+    <bp>2</bp>
+    <rarity>0</rarity>
+    <image>crystal_shard3</image>
+    <launchSounds>
+      <sound>lightLaser1</sound>
+      <sound>lightLaser2</sound>
+      <sound>lightLaser3</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>crystalExplosion</sound>
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>hitShield1</sound>
+      <sound>hitShield2</sound>
+      <sound>hitShield3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <explosion>explosion_crystal</explosion>
+    <weaponArt>crystal_burst_1</weaponArt> <!-- changed -->
+    <iconImage>crystalH</iconImage>
+  </weaponBlueprint>
+  <weaponBlueprintInherit name="CRYSTAL_HEAVY_1_UPGRADED" base="CRYSTAL_HEAVY_1">
+    <tip>tip_crystal_upgraded</tip>
+    <title>Crystal Mark I+</title>
+    <short>Crystal I+</short>
+    <cooldown>13</cooldown>
+    <power>1</power>
+  </weaponBlueprintInherit>
+
+  <changelog>
+    <entry>Burst Crystal I charge time 15 to 16</entry>
+    <entry>Burst Crystal I damage 1 to 2</entry>
+    <entry>Burst Crystal I power usage 2 to 3</entry>
+    <entry>Burst Crystal I breach chance 0.1 to 1</entry>
+    <entry>Burst Crystal I stun chance 0.1 to 0</entry>
+    <entry>Burst Crystal I scrap cost 20 to 65</entry>
+  </changelog>
+  <weaponBlueprint name="CRYSTAL_BURST_1">
+    <type>MISSILES</type>
+    <title>Crystal Mark II</title>
+    <short>Crystal II</short>
+    <tip>tip_crystal</tip>
+    <desc>Modified projectile weapon that fires 2 shield piercing crystals.</desc>
+    <tooltip>Pierces 1 shield; fires 2 crystals that deal 2 damage each.</tooltip>
+    <damage>2</damage>
+    <shots>2</shots>
+    <sp>1</sp>
+    <fireChance>0</fireChance>
+    <breachChance>10</breachChance>
+    <stunChance>0</stunChance>
+    <cooldown>16</cooldown>
+    <power>3</power>
+    <speed>50</speed>
+    <cost>65</cost>
+    <bp>2</bp>
+    <rarity>0</rarity>
+    <image>crystal_shard3</image> <!-- changed -->
+    <launchSounds>
+      <sound>lightLaser1</sound>
+      <sound>lightLaser2</sound>
+      <sound>lightLaser3</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>crystalExplosion</sound> <!-- changed -->
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>hitShield1</sound>
+      <sound>hitShield2</sound>
+      <sound>hitShield3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <explosion>explosion_crystal</explosion> <!-- changed -->
+    <weaponArt>crystal_heavy_1</weaponArt> <!-- changed -->
+    <iconImage>crystal</iconImage>
+  </weaponBlueprint>
+  <weaponBlueprintInherit name="CRYSTAL_BURST_1_UPGRADED" base="CRYSTAL_BURST_1">
+    <tip>tip_crystal_upgraded</tip>
+    <title>Crystal Mark II+</title>
+    <short>Crystal II+</short>
+    <cooldown>15</cooldown>
+    <power>2</power>
+  </weaponBlueprintInherit>
+
+  <changelog>
+    <entry>Burst Crystal II charge time 17 to 18</entry>
+    <entry>Burst Crystal II damage 1 to 2</entry>
+    <entry>Burst Crystal II power usage 3 to 4</entry>
+    <entry>Burst Crystal II breach chance 0.1 to 1</entry>
+    <entry>Burst Crystal II stun chance 0.1 to 0</entry>
+    <entry>Burst Crystal II scrap cost 20 to 50</entry>
+    <entry>Burst Crystal II scrap cost 20 to 80</entry>
+  </changelog>
+  <weaponBlueprint name="CRYSTAL_BURST_2">
+    <type>MISSILES</type>
+    <title>Crystal Mark III</title>
+    <short>Crystal III</short>
+    <tip>tip_crystal</tip>
+    <desc>Modified projectile weapon that fires 3 shield piercing crystals.</desc>
+    <tooltip>Pierces 1 shield; fires 3 crystals that deal 2 damage each.</tooltip>
+    <damage>1</damage>
+    <shots>3</shots>
+    <sp>1</sp>
+    <fireChance>0</fireChance>
+    <breachChance>10</breachChance>
+    <stunChance>0</stunChance>
+    <cooldown>18</cooldown>
+    <power>4</power>
+    <speed>50</speed>
+    <cost>80</cost>
+    <bp>2</bp>
+    <rarity>0</rarity>
+    <image>crystal_shard3</image> <!-- changed -->
+    <launchSounds>
+      <sound>lightLaser1</sound>
+      <sound>lightLaser2</sound>
+      <sound>lightLaser3</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>crystalExplosion</sound> <!-- changed -->
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>hitShield1</sound>
+      <sound>hitShield2</sound>
+      <sound>hitShield3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <explosion>explosion_crystal</explosion> <!-- changed -->
+    <weaponArt>crystal_burst_2</weaponArt>
+    <iconImage>crystal</iconImage>
+  </weaponBlueprint>
+  <weaponBlueprintInherit name="CRYSTAL_BURST_2_UPGRADED" base="CRYSTAL_BURST_2">
+    <tip>tip_crystal_upgraded</tip>
+    <title>Crystal Mark III+</title>
+    <short>Crystal III+</short>
+    <cooldown>17</cooldown>
+    <power>3</power>
+  </weaponBlueprintInherit>
+
+  <changelog>
+    <entry>New Charge Crystal (3 power, 2 charges, pierces 1 shield, 10.5 sec charge time, 2 damage, breach)</entry>
+  </changelog>
+
+  <weaponBlueprint name="CRYSTAL_CHARGE_2">
+    <type>MISSILES</type>
+    <title>Crystal Charger</title>
+    <short>Cr. Ch.</short>
+    <tip>tip_charge</tip>
+    <desc>Modified projectile weapon that fires up to 2 shield piercing crystals.</desc>
+    <tooltip>Pierces 1 shield; fires up to 2 crystals that deal 2 damage each.</tooltip>
+    <damage>2</damage>
+    <shots>1</shots>
+    <sp>1</sp>
+    <fireChance>0</fireChance>
+    <breachChance>10</breachChance>
+    <cooldown>10.5</cooldown>
+    <power>3</power>
+    <cost>50</cost>
+    <bp>2</bp>
+    <rarity>0</rarity>
+    <image>crystal_shard3</image>
+    <chargeLevels>2</chargeLevels>
+    <launchSounds>
+      <sound>lightLaser1</sound>
+      <sound>lightLaser2</sound>
+      <sound>lightLaser3</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>crystalExplosion</sound>
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>hitShield1</sound>
+      <sound>hitShield2</sound>
+      <sound>hitShield3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <explosion>explosion_crystal</explosion>
+    <weaponArt>crystal_charge_2</weaponArt>
+    <iconImage>crystalH</iconImage>
+  </weaponBlueprint>
+
+  <weaponBlueprintInherit name="CRYSTAL_CHARGE_2_UPGRADED" base="CRYSTAL_CHARGE_2">
+    <tip>tip_crystal_upgraded</tip>
+    <title>Crystal Charger+</title>
+    <short>Cr. Ch.+</short>
+    <cooldown>10</cooldown>
+    <power>2</power>
+  </weaponBlueprintInherit>
+
+  <changelog>
+    <entry>Heavy Crystal II removed from the game</entry>
+  </changelog>
+
+</FTL>

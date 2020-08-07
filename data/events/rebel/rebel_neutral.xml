@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="NEUTRAL_REBEL">
+    <event load="AUTO_CIVILIAN"/>
+    <event load="SQUAT_REFUEL_STATION"/>
+    <event load="AUTO_DEFENSE_MAP"/>
+    <event load="AUTO_DEFENSE_ITEM"/>
+    <event load="AUTO_DEFENSE_RADAR"/>
+    <event load="REBEL_TRANSPORT"/>
+    <event load="BROKEN_REBEL_DRONE"/>
+    <event load="ALISON_DEFECTOR"/>
+    <event load="WOONA_REBEL_WRECK_TRACKER"/>
+    <event load="WOONA_AUTO_LURE_HAZARD"/>
+    <event load="WOONA_REBEL_ASB"/>
+  </eventList>
+
+  <event name="AUTO_CIVILIAN" unique="false">
+    <text>You come across a Rebel automated scout ship pursuing a civilian ship, weapons engaged.</text>
+    <choice>
+      <text>Aid the civilian ship.</text>
+      <event>
+        <text>You power up your weapons and engage the automated ship.</text>
+        <ship name="REBEL_AUTO_CIVILIAN" auto_blueprint="SHIPS_AUTO" hostile="true">
+          <destroyed>
+            <text>The ship breaks apart. You hasten to contact the civilian ship.</text>
+            <autoReward level="LOW">standard</autoReward>
+            <choice hidden="true">
+              <text>Contact the civilian ship.</text>
+              <event load="SAVE_CIVILIAN_LIST"/>
+            </choice>
+          </destroyed>
+          <deadCrew>
+            <text>No more life signs detected on the pirate ship. You hasten to contact the civilian ship.</text>
+            <autoReward level="MED">standard</autoReward>
+            <choice hidden="true">
+              <text>Contact the civilian ship.</text>
+              <event load="SAVE_CIVILIAN_LIST"/>
+            </choice>
+          </deadCrew>
+        </ship>
+      </event>
+    </choice>
+    <choice>
+      <text>Stay out of it.</text>
+      <event>
+        <text>The fight brings them out of your immediate scanning range.</text>
+      </event>
+    </choice>
+  </event>
+
+  <event name="SQUAT_REFUEL_STATION" unique="true">
+    <img planet="PLANET_POPULATED_SMALL"/>
+    <text>You detect a Rebel scout on an attack approach to a small refueling outpost. Their weapons are charged, but they're not firing yet.</text>
+    <ship name="SQUAT_REFUEL_STATION" auto_blueprint="SHIPS_REBEL" hostile="false">
+      <destroyed>
+        <text>The ship breaks apart and you quickly salvage what you can.</text>
+        <autoReward level="LOW">standard</autoReward>
+        <choice hidden="true">
+          <text id="continue"/>
+          <event>
+            <text>The outpost hails you, "The pompous bastards expected free service just because they defeated the Federation. Take this for the help."</text>
+            <autoReward level="MED">fuel</autoReward>
+          </event>
+        </choice>
+      </destroyed>
+      <deadCrew>
+        <text>With the crew dead you quickly salvage what you can.</text>
+        <autoReward level="MED">standard</autoReward>
+        <choice hidden="true">
+          <text id="continue"/>
+          <event>
+            <text>The outpost hails you, "The pompous bastards expected free service just because they defeated the Federation. Take this for the help."</text>
+            <autoReward level="MED">fuel</autoReward>
+          </event>
+        </choice>
+      </deadCrew>
+    </ship>
+    <choice>
+      <text>Intervene to defend the outpost.</text>
+      <event>
+        <text>The rebel responds to your threat, "I don't know who you are, but no one defies the Rebel Fleet!" They move in to engage.</text>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice>
+      <text>Avoid the conflict.</text>
+      <event>
+        <text>The Rebel ship fires some warning shots but eventually powers down their weapons. The outpost seems to have given them what they demanded.</text>
+      </event>
+    </choice>
+  </event>
+
+  <event name="AUTO_DEFENSE_MAP" unique="true">
+    <img planet="PLANET_POPULATED"/>
+    <text>You detect a Rebel automated ship nearby. It does not engage and seems to be patrolling around a long-range sensor station.</text>
+    <ship name="REBEL_AUTO_MAP" auto_blueprint="SHIPS_AUTO" hostile="false">
+      <destroyed>
+        <text>You access the recent scans from the unguarded station. Your map has been updated with details of the surrounding area.</text>
+        <reveal_map/>
+        <autoReward level="LOW">scrap_only</autoReward>
+      </destroyed>
+    </ship>
+    <choice>
+      <text>Attack the automated ship to get to the sensor station.</text>
+      <event>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice>
+      <text>Avoid provoking the ship.</text>
+      <event/>
+    </choice>
+    <choice req="sensors" lvl="3" hidden="true">
+      <text>(Sensors) Use your sensors to attempt to access the data.</text>
+      <event load="AUTO_DEFENSE_MAP_SENSORS"/>
+    </choice>
+    <choice req="teleporter" hidden="true">
+      <text>(Teleporter) Beam directly onto the station to try to avoid detection.</text>
+      <event>
+        <text>Once on board, your crew is able to access and download the long-range scanner's archived information. Your map has been updated.</text>
+        <reveal_map/>
+      </event>
+    </choice>
+  </event>
+  <eventList name="AUTO_DEFENSE_MAP_SENSORS">
+    <event>
+      <text>Your improved Sensors are able to remotely access and download the public radar station's local map data.</text>
+      <reveal_map/>
+    </event>
+    <event>
+      <text>The automated ship must be remotely connected to the station; as soon as you attempt to log on, the ship activates and charges you.</text>
+      <ship hostile="true"/>
+    </event>
+  </eventList>
+
+  <event name="AUTO_DEFENSE_RADAR" unique="true">
+    <text>A Rebel automated ship sits dormant near a Rebel forward radar station.</text>
+    <ship name="REBEL_AUTO_RADAR" auto_blueprint="SHIPS_AUTO" hostile="false">
+      <destroyed>
+        <text>You salvage what you can and approach the station. It is used to relay information to the Rebel Fleet. You could attempt to hack it to give the Rebels false information.</text>
+        <autoReward level="MED">scrap_only</autoReward>
+        <choice>
+          <text>Attempt to manually hack into the station.</text>
+          <event load="DEFENSE_RADAR_LIST"/>
+        </choice>
+        <choice>
+          <text>Don't risk it. Leave the station.</text>
+          <event/>
+        </choice>
+        <choice hidden="true" req="hacking">
+          <text>(Hacking) Use a drone to hack into the station.</text>
+          <event>
+            <text>You successfully hack into their system and transmit false information about your location. That should hold off the fleet for at least a little while. You also are able to download data about the surrounding beacons.</text>
+            <reveal_map/>
+            <modifyPursuit amount="-1"/>
+            <item_modify>
+              <item type="drones" min="-1" max="-1"/>
+            </item_modify>
+          </event>
+        </choice>
+      </destroyed>
+    </ship>
+    <choice>
+      <text>Approach the station.</text>
+      <event>
+        <text>The ship powers up and targets you.</text>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice>
+      <text>Keep your distance and wait for the FTL to charge.</text>
+      <event/>
+    </choice>
+    <choice req="COMBAT_DRONE_LIST" hidden="true">
+      <text>(Combat Drone) Send a drone to distract the automated ship.</text>
+      <eventList name="AUTO_DEFENSE_RADAR_COMBAT">
+        <event>
+          <text>Your combat drone attacks the automated ship and then retreats, luring it away. You quickly move up to the radar station to access it.</text>
+          <choice>
+            <text id="continue"/>
+            <event load="DEFENSE_RADAR_LIST"/>
+          </choice>
+          <item_modify>
+            <item type="drones" min="-1" max="-1"/>
+          </item_modify>
+        </event>
+        <event>
+          <text>Your combat drone repeatedly fires at the automated ship. It can't break through its shields, but is at least enough of a distraction to allow you to access the radar station.</text>
+          <choice>
+            <text id="continue"/>
+            <event load="DEFENSE_RADAR_LIST"/>
+          </choice>
+          <item_modify>
+            <item type="drones" min="-1" max="-1"/>
+          </item_modify>
+        </event>
+        <event>
+          <text>Before your drone has a chance to attack, the automated ship activates and shoots it down. It then detects your ship and moves in on your position.</text>
+          <ship hostile="true"/>
+          <item_modify>
+            <item type="drones" min="-1" max="-1"/>
+          </item_modify>
+        </event>
+      </eventList>
+    </choice>
+  </event>
+  <eventList name="DEFENSE_RADAR_LIST">
+    <event>
+      <text>You successfully hack into their system and transmit false information about your location. That should hold off the fleet for at least a little while.</text>
+      <modifyPursuit amount="-1"/>
+    </event>
+    <event>
+      <text>The firewalls prove too difficult to bypass. As you are about to disconnect, you stumble across unprotected information about the surrounding beacons. Your map is updated.</text>
+      <reveal_map/>
+    </event>
+    <event>
+      <text>You are unable to penetrate the computer's defenses. You give up and return to the ship.</text>
+    </event>
+    <event>
+      <text>As you attempt to hack in, you set off a hidden alarm system. It seems that now the Rebels must surely be aware of your position! You hasten back to the ship to jump away.</text>
+      <modifyPursuit amount="1"/>
+    </event>
+  </eventList>
+
+  <event name="REBEL_TRANSPORT" unique="true">
+    <img planet="NONE"/>
+    <text>You spot a small Rebel ship nearby. It seems to have been re-fitted for transport rather than combat. It does not seem to want to engage you and your ship.</text>
+    <choice>
+      <text>Demand the surrender of their goods.</text>
+      <event>
+        <text>You prepare to secure their cargo by force.</text>
+        <ship name="SQUAT_TRANSPORT" auto_blueprint="SHIPS_REBEL_TRANSPORT" hostile="true">
+          <escape timer="40" min="14" max="14">
+            <text>They look like they don't want to fight. They are trying to escape.</text>
+            <ship hostile="true"/>
+          </escape>
+          <destroyed load="REBEL_TRANSPORT_DESTROYED"/>
+          <deadCrew load="REBEL_TRANSPORT_CAPTURED"/>
+        </ship>
+      </event>
+    </choice>
+    <choice>
+      <text>Avoid the ship.</text>
+      <event>
+        <text>They stay outside your weapons range, and eventually jump away.</text>
+      </event>
+    </choice>
+  </event>
+  <eventList name="REBEL_TRANSPORT_DESTROYED">
+    <event>
+      <text>You search the ship and discover that its cargo was new military-grade weaponry! It was somehow undamaged in the fight and can easily be mounted on the ship.</text>
+      <autoReward level="MED">weapon</autoReward>
+    </event>
+    <event count="2">
+      <text>You search the remains of the ship, but only come across blueprints and debris from broken machinery. A shame, but you take what scrap you can salvage.</text>
+      <autoReward level="LOW">standard</autoReward>
+    </event>
+    <event>
+      <text>The ship was transporting weaponry. You find a piece still intact, despite the battle.</text>
+      <autoReward level="LOW">weapon</autoReward>
+    </event>
+    <event count="2">
+      <text>The ship was apparently transporting weaponry; however, nothing seems to have survived the battle.</text>
+      <autoReward level="MED">scrap_only</autoReward>
+    </event>
+    <event>
+      <text>Searching the remains, you find that the cargo was military-grade Drone Schematics! You bring them aboard to install in your ship.</text>
+      <autoReward level="MED">drone</autoReward>
+    </event>
+    <event>
+      <text>The debris implies that the ship was carrying Drone Schematics, but unfortunately nothing remains. You do find functioning Drone Parts, however.</text>
+      <autoReward level="MED">droneparts</autoReward>
+    </event>
+    <event>
+      <text>This ship's cargo was not salvageable. However, they seem to have been surveying the region; they possess detailed maps and data. You download what you can to the ship's map.</text>
+      <reveal_map/>
+      <autoReward level="MED">scrap_only</autoReward>
+    </event>
+    <event>
+      <text>From the bits and pieces you find, you decide that this ship was gathering information. Nothing seems useful.</text>
+      <autoReward level="MED">scrap_only</autoReward>
+    </event>
+    <event>
+      <text>You detect faint life signatures from an intact piece of the hull. They were transporting prisoners, and the sole survivor offers to join your crew, as a first step on his path to get revenge.</text>
+      <crewMember amount="1"/>
+      <autoReward level="LOW">standard</autoReward>
+    </event>
+    <event count="2">
+      <text>The ship appears to have been transporting prisoners. Unfortunately they were all killed in the battle. You salvage what you can.</text>
+      <autoReward level="LOW">standard</autoReward>
+    </event>
+    <event>
+      <text>The ship was carrying military supplies. You pick up anything that looks salvageable from the debris.</text>
+      <autoReward level="MED">standard</autoReward>
+    </event>
+  </eventList>
+  <eventList name="REBEL_TRANSPORT_CAPTURED">
+    <event count="2">
+      <text>With the crew dead, you search the ship. You find military-grade weaponry and take what looks most useful.</text>
+      <autoReward level="MED">weapon</autoReward>
+    </event>
+    <event>
+      <text>The ship refuses to fight, but you still detect life signatures. Apparently this was a prisoner transport. The single survivor offers to join your crew in exchange for their freedom.</text>
+      <crewMember amount="1"/>
+      <autoReward level="HIGH">scrap_only</autoReward>
+    </event>
+    <event count="2">
+      <text>This ship was apparently carrying information about the surrounding beacons. You download what you can to the ship's map, and scrap the rest of the ship.</text>
+      <reveal_map/>
+      <autoReward level="MED">scrap_only</autoReward>
+    </event>
+    <event count="2">
+      <text>Searching the remains you find that the cargo was military-grade Drone Schematics! You bring them aboard to install on your ship.</text>
+      <autoReward level="MED">drone</autoReward>
+    </event>
+  </eventList>
+
+  <event name="BROKEN_REBEL_DRONE" unique="true">
+    <text>You find a Rebel automated scout floating near this beacon. Despite its pristine condition, it appears to be de-activated.</text>
+    <ship load="REBEL_AUTO" hostile="false"/>
+    <choice hidden="true">
+      <text>Attempt to download the ship's data stores.</text>
+      <event load="DOWNLOAD_DRONE_DATA"/>
+    </choice>
+    <choice>
+      <text>Don't risk activating it, and just strip the ship for any useful scrap.</text>
+      <event>
+        <autoReward level="LOW">scrap_only</autoReward>
+      </event>
+    </choice>
+    <choice req="sensors" lvl="3" hidden="true">
+      <text>(Sensors) Remotely scan the ship.</text>
+      <event load="BROKEN_REBEL_DRONE_SENSORS"/>
+    </choice>
+  </event>
+  <eventList name="DOWNLOAD_DRONE_DATA">
+    <event>
+      <text>You are able to pull all of the ship's data about this sector. Your map has been updated.</text>
+      <reveal_map/>
+      <autoReward level="LOW">standard</autoReward>
+    </event>
+    <event>
+      <text>You accidentally reactivate the ship's AI. Its weapons immediately go online; prepare for a fight!</text>
+      <ship load="REBEL_AUTO" hostile="true"/>
+    </event>
+  </eventList>
+  <eventList name="BROKEN_REBEL_DRONE_SENSORS">
+    <event>
+      <text>Your improved Sensors indicate that it's safe to hack into the drone. You upload its map data to your navigation system and strip the ship of useful materials.</text>
+      <reveal_map/>
+      <autoReward level="LOW">standard</autoReward>
+    </event>
+    <event>
+      <text>Your improved Sensors indicate the ship is on standby, ready to activate at a moment's notice. Will you still attempt to access the ship's data?</text>
+      <choice hidden="true">
+        <text>Yes.</text>
+        <event load="DOWNLOAD_DRONE_DATA"/>
+      </choice>
+      <choice>
+        <text>No.</text>
+        <event>
+          <text>You leave the ship alone and prepare to jump.</text>
+        </event>
+      </choice>
+    </event>
+  </eventList>
+
+  <event name="ALISON_DEFECTOR" unique="true">
+    <text>A Rebel ship is patrolling this beacon, and immediately turns to engage. As your crew scramble to battle readiness, sensors detect a short-range teleporter signal. An intruder is on board!</text>
+    <ship load="REBEL" hostile="true"/>
+    <choice>
+      <text id="continue"/>
+      <event>
+        <text>A flushed and panicky rebel soldier has teleported aboard. The rebel, who appears unarmed, repeatedly declares his peaceful intentions. It seems the rebel life has lost its charm.</text>
+        <choice hidden="true">
+          <text>Accept his proposal, and prepare to fight the Rebel ship.</text>
+          <event load="ALISON_DEFECTOR_HELP"/>
+        </choice>
+        <choice>
+          <text>Reject his offer. You can never trust these Rebels.</text>
+          <event load="ALISON_DEFECTOR_REJECT"/>
+        </choice>
+        <choice hidden="true" req="orchid">
+          <text>(Orchid) Allure the human to make sure they don't change their mind.</text>
+          <event>
+            <text>The Rebel defector is stunned by the sight of Orchid. It seems that the Rebel didn't see any aliens but Mantis before. Charmed, the human gets to work as the Rebel ship attacks.</text>
+            <crewMember amount="1" class="human"/>
+          </event>
+        </choice>
+      </event>
+    </choice>
+  </event>
+  <eventList name="ALISON_DEFECTOR_REJECT">
+    <event>
+      <text>Your fearless crew easily overcome the intruder, but the Rebel ship still needs to be dealt with.</text>
+    </event>
+    <event>
+      <text>Attempting to deal with attacks from inside and out is never easy!</text>
+      <boarders min="1" max="1" class="human"/>
+    </event>
+    <event>
+      <text>He offers to lead you to a secret cache of scrap nearby if you let him join your crew.</text>
+      <choice hidden="true">
+        <text>Reluctantly accept his proposal and fight the Rebel ship.</text>
+        <event load="ALISON_DEFECTOR_HELP_2"/>
+      </choice>
+      <choice>
+        <text>Reject him outright and execute him on the spot.</text>
+        <event/>
+      </choice>
+      <choice>
+        <text>Reject his offer again.</text>
+        <event>
+          <boarders min="1" max="1" class="human"/>
+        </event>
+      </choice>
+    </event>
+  </eventList>
+  <eventList name="ALISON_DEFECTOR_HELP">
+    <event>
+      <text>The dishonorable Rebel has deceived you. He damages your engines and steals your flight data before teleporting away. The fleet will be able to track you with ease. If they can't kill you now that is!</text> <!--DLC2-->
+      <damage amount="2"/>
+      <damage amount="1" system="engines"/>
+      <modifyPursuit amount="1"/>
+    </event>
+    <event>
+      <text>Your new crew-member smiles, then reveals a small remote trigger in the palm of his hand. Explosions rocket around the ship as more intruders teleport aboard!</text>
+      <boarders min="2" max="2" class="human"/>
+      <damage amount="3"/>
+    </event>
+    <event>
+      <text>Relieved and light-headed, your new crewmember gets to work as the Rebel ship attacks.</text>
+      <crewMember amount="1" class="human"/>
+    </event>
+    <event>
+      <text>Relieved and light-headed, your new crewmember gets to work as the Rebel ship attacks.</text>
+      <crewMember amount="1" class="human"/>
+    </event>
+    <event>
+      <text>Relieved and light-headed, your new crewmember gets to work as the Rebel ship attacks.</text>
+      <crewMember amount="1" class="human"/>
+    </event>
+    <event>
+      <text>The Rebel makes to take his assigned station, then suddenly turns and eviscerates the nearest crew-member. Red Alert!</text>
+      <boarders min="1" max="1" class="human"/>
+      <removeCrew>
+        <clone>true</clone>
+        <text>The eviscerated crewmember's clone launches out of the clone bay, eager to seek revenge.</text>
+      </removeCrew>
+    </event>
+  </eventList>
+  <eventList name="ALISON_DEFECTOR_HELP_2">
+    <event>
+      <text>The dishonorable Rebel has deceived you. He damages your ship and steals ship information before teleporting away. The fleet will be able to track you with ease. If they can't kill you now, that is!</text> <!--DLC2-->
+      <damage amount="2"/>
+      <damage amount="1" system="engines"/>
+      <modifyPursuit amount="1"/>
+    </event>
+    <event>
+      <text>Your new crew-member smiles, then reveals a small remote trigger in the palm of his hand. Explosions rocket around the ship as more intruders teleport aboard!</text>
+      <boarders min="2" max="2" class="human"/>
+      <damage amount="2"/>
+      <damage amount="1" system="pilot"/>
+    </event>
+    <event>
+      <text>Relieved and light-headed, your new crewmember gets to work as the Rebel ship attacks.</text>
+      <crewMember amount="1" class="human"/>
+      <quest event="ALISON_DEFECTOR_QUEST"/>
+    </event>
+    <event>
+      <text>Relieved and light-headed, your new crewmember gets to work as the Rebel ship attacks.</text>
+      <crewMember amount="1" class="human"/>
+      <quest event="ALISON_DEFECTOR_QUEST"/>
+    </event>
+    <event>
+      <text>Relieved and light-headed, your new crewmember gets to work as the Rebel ship attacks.</text>
+      <crewMember amount="1" class="human"/>
+      <quest event="ALISON_DEFECTOR_QUEST"/>
+    </event>
+    <event>
+      <text>The Rebel makes to take his assigned station, then suddenly turns and eviscerates the nearest crew-member. Red Alert!</text>
+      <boarders min="1" max="1" class="human"/>
+      <removeCrew>
+        <clone>true</clone>
+        <text>The eviscerated crewmember's clone launches out of the clone bay, eager to seek revenge.</text>
+      </removeCrew>
+    </event>
+  </eventList>
+  <eventList name="ALISON_DEFECTOR_QUEST">
+    <event>
+      <text>Arriving at the specified coordinates you find a sizable stash of useful materials.</text>
+      <autoReward level="HIGH">stuff</autoReward>
+    </event>
+    <event>
+      <text>You arrive at the location of the hoard, but discover that it was not quite as large as advertised.</text>
+      <autoReward level="LOW">scrap_only</autoReward>
+    </event>
+  </eventList>
+
+  <changelog>
+    <entry>Added Rebel tracker on ship wreck event</entry>
+  </changelog>
+  <event name="WOONA_REBEL_WRECK_TRACKER" unique="true">
+    <text>You arrive to see the remains of a derelict ship. Most likely the captain felt overconfident and attacked someone out of their league. Most of useful materials are already salvaged, but you manage to find some scrap.</text>
+    <autoReward level="LOW">scrap_only</autoReward>
+    <choice hidden="true">
+      <text id="continue"/>
+      <event>
+        <text>As you finish collecting scrap, the scanners notice a remote tracking device left there by the Rebels. It has already attached itself to your ship and is ready to give away your exact location to Rebel fleet.</text>
+        <choice hidden="true">
+          <text>Send a crewmember to disable the tracking device.</text>
+          <eventList>
+            <event>
+              <text>Using a space suit your engineer leaves the ship and manages to disable the tracking device manually. Sadly, they are hit by piece of space trash on their way back. The suit depressurizes, it is not possible to save them.</text>
+              <removeCrew>
+                <clone>true</clone>
+                <text>Luckily, your clone bay is able to revive your crewmember.</text>
+              </removeCrew>
+            </event>
+            <event>
+              <text>Using a space suit your engineer leaves the ship and manages to disable the tracking device manually. After hours of work in open space they return to the ship in one piece.</text>
+            </event>
+          </eventList>
+        </choice>
+        <choice hidden="true">
+          <text>Don't risk your crew: Charge the FTL drive.</text>
+          <event>
+            <text>You could not risk the lives of your crewmembers trying to defuse the tracking tool manually. Preparing for another FTL jump, you hope to be faster than the Rebels.</text>
+            <modifyPursuit amount="1"/>
+          </event>
+        </choice>
+        <choice req="DRONES_DEFENSE_LIST">
+          <text>(Defense Drone) Use a drone to shoot the tracker down.</text>
+          <event>
+            <text>A drone is deployed and targets the tracking tool precisely. You hope the tracker didn't have the time to send information to the Rebel fleet yet.</text>
+            <item_modify>
+              <item max="-1" min="-1" type="drones"/>
+            </item_modify>
+          </event>
+        </choice>
+        <choice req="anaerobic">
+          <text>(Lanius) Send the Lanius to deal with the tracker.</text>
+          <event>
+            <text>The Lanius is not afraid of open space. You did not see what exactly he did to the tracking tool but it's all clear on the sensors. Time to prepare for the next jump.</text>
+          </event>
+        </choice>
+      </event>
+    </choice>
+  </event>
+
+  <changelog>
+    <entry>Added Automated ship luring to hazard event</entry>
+  </changelog>
+  <event name="WOONA_AUTO_LURE_HAZARD" unique="true">
+    <text>As you jump in, sensors detect an automated Rebel ship outside firing range. It immediately moves away from you, probably aiming to bring reinforcements.</text>
+    <choice hidden="true">
+      <text>Attempt to follow the auto-ship and close the distance.</text>
+      <eventList>
+        <event>
+          <text>In effort to escape, the autonomous Rebel scout tried to lure you closer to a pulsar. But one of the ionizing pulses disabled their engines, and you are able to finally catch them and engage in combat.</text>
+          <ship hostile="true" load="REBEL_AUTO_WARNING"/>
+          <environment type="pulsar"/>
+        </event>
+        <event>
+          <text>The unmanned rebel ship tried to cut the tail in the asteroid field. It backfired when they could not move through a dense area, had to slow down and fight your ship.</text>
+          <ship hostile="true" load="REBEL_AUTO_WARNING"/>
+          <environment type="asteroid"/>
+        </event>
+        <event>
+          <text>The AI controlling the rebel ship, piloted their vessel straight into local system's red giant. After the long chase, you finally catch them, but it is too late. The star is dangerously close, and your ship will overheat.</text>
+          <ship hostile="true" load="REBEL_AUTO_WARNING"/>
+          <environment type="sun"/>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true" lvl="5" req="engines">
+      <text>(Engines) Full thrust! Catch the enemy before they flee.</text>
+      <event>
+        <text>Your speed is unmatched. After a few minutes you reduce the distance enough to fire the weapons at the AI ship.</text>
+        <ship hostile="true" load="REBEL_AUTO_WARNING"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Avoid combat.</text>
+      <event>
+        <text>The auto-ship moves away completely disappearing from radar after a few minutes. There is no doubt that they manage to relay information about your location to Rebel fleet.</text>
+        <modifyPursuit amount="1"/>
+      </event>
+    </choice>
+  </event>
+
+  <changelog>
+    <entry>Added Rebel ASB fight event</entry>
+  </changelog>
+  <event name="WOONA_REBEL_ASB" unique="true">
+    <text planet="PLANET_POPULATED">You arrive at the beacon to locate a small Rebel scout orbiting a heavily fortified planet nearby. Luckily, the Rebels haven't noticed your arrival yet but that can change in a moment.</text>
+    <choice hidden="true">
+      <text>Preemptively attack the Rebel ship.</text>
+      <event>
+        <text>As soon as you lock on your weapons, the Rebel ship notices a threat and retaliates. To make matters worse, another danger is identified by your sensors. The planetary defense system has come online and is going to fire at you in a few moments!</text>
+        <environment target="player" type="PDS"/>
+        <ship hostile="true" load="REBEL"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Charge FTL drive.</text>
+      <event>
+        <text>The Rebel scout does not notice your ship. You are ready to jump to next beacon.</text>
+      </event>
+    </choice>
+  </event>
+</FTL>

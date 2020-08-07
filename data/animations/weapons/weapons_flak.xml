@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <animSheet name="debris_large_strip3" w="96" h="32" fw="32" fh="32">weapons/debris_large_strip3.png</animSheet>
+  <anim name="debris_large">
+    <sheet>debris_large_strip3</sheet>
+    <desc length="3" x="0" y="0"/>
+    <time>1.0</time>
+  </anim>
+
+  <animSheet name="debris_med_strip5" w="120" h="24" fw="24" fh="24">weapons/debris_med_strip5.png</animSheet>
+  <anim name="debris_med">
+    <sheet>debris_med_strip5</sheet>
+    <desc length="5" x="0" y="0"/>
+    <time>1.0</time>
+  </anim>
+
+  <animSheet name="debris_small_strip6" w="96" h="16" fw="16" fh="16">weapons/debris_small_strip6.png</animSheet>
+  <anim name="debris_small">
+    <sheet>debris_small_strip6</sheet>
+    <desc length="6" x="0" y="0"/>
+    <time>1.0</time>
+  </anim>
+
+  <animSheet name="shotgun" w="296" h="51" fw="37" fh="51">weapons/shotgun_strip8.png</animSheet>
+  <weaponAnim name="shotgun">
+    <sheet>shotgun</sheet>
+    <desc length="8" x="0" y="0"/>
+    <chargedFrame>1</chargedFrame>
+    <fireFrame>3</fireFrame>
+    <firePoint x="12" y="22"/>
+    <mountPoint x="3" y="33"/>
+    <chargeImage>weapons/shotgun_glow.png</chargeImage>
+  </weaponAnim>
+
+  <animSheet name="shotgun_2" w="296" h="53" fw="37" fh="53">weapons/shotgun_2_strip8.png</animSheet>
+  <weaponAnim name="shotgun_2">
+    <sheet>shotgun_2</sheet>
+    <desc length="8" x="0" y="0"/>
+    <chargedFrame>1</chargedFrame>
+    <fireFrame>3</fireFrame>
+    <firePoint x="14" y="22"/>
+    <mountPoint x="3" y="33"/>
+    <chargeImage>weapons/shotgun_2_glow.png</chargeImage>
+  </weaponAnim>
+
+  <animSheet name="flak_2" w="224" h="44" fw="28" fh="44">weapons/flak_2_strip8.png</animSheet>
+  <weaponAnim name="flak_2">
+    <sheet>flak_2</sheet>
+    <desc length="8" x="0" y="0"/>
+    <chargedFrame>1</chargedFrame>
+    <fireFrame>3</fireFrame>
+    <firePoint x="11" y="22"/>
+    <mountPoint x="3" y="29"/>
+    <chargeImage>weapons/flak_2_glow.png</chargeImage>
+  </weaponAnim>
+
+  <animSheet name="flak_4" w="296" h="51" fw="37" fh="51">weapons/flak_4_strip8.png</animSheet>
+  <weaponAnim name="flak_4">
+    <sheet>flak_4</sheet>
+    <desc length="8" x="0" y="0"/>
+    <chargedFrame>1</chargedFrame>
+    <fireFrame>3</fireFrame>
+    <firePoint x="16" y="22"/>
+    <mountPoint x="5" y="34"/>
+    <chargeImage>weapons/flak_4_glow.png</chargeImage>
+  </weaponAnim>
+</FTL>

@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <blueprintList name="DRONES_STANDARD">
+    <name>COMBAT_1</name>
+    <name>COMBAT_2</name>
+    <name>COMBAT_BEAM</name>
+    <name>COMBAT_BEAM_2</name>
+    <name>COMBAT_FIRE</name>
+    <name>COMBAT_ION</name>
+  </blueprintList>
+  <blueprintList name="DRONES_STANDARD_UPGRADED">
+    <name>COMBAT_1_UPGRADED</name>
+    <name>COMBAT_2_UPGRADED</name>
+    <name>COMBAT_BEAM_UPGRADED</name>
+    <name>COMBAT_BEAM_2_UPGRADED</name>
+    <name>COMBAT_FIRE_UPGRADED</name>
+    <name>COMBAT_ION_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="DRONES_COMBAT">
+    <name>COMBAT_1</name>
+    <name>COMBAT_2</name>
+    <name>COMBAT_BEAM</name>
+    <name>COMBAT_BEAM_2</name>
+    <name>COMBAT_FIRE</name>
+    <name>COMBAT_ION</name>
+  </blueprintList>
+  <blueprintList name="DRONES_ENGI">
+    <name>COMBAT_1</name>
+    <name>COMBAT_2</name>
+    <name>COMBAT_BEAM</name>
+    <name>COMBAT_BEAM_2</name>
+    <name>COMBAT_FIRE</name>
+    <name>COMBAT_ION</name>
+  </blueprintList>
+  <blueprintList name="DRONES_COMBAT_UPGRADED">
+    <name>COMBAT_1_UPGRADED</name>
+    <name>COMBAT_2_UPGRADED</name>
+    <name>COMBAT_BEAM_UPGRADED</name>
+    <name>COMBAT_BEAM_2_UPGRADED</name>
+    <name>COMBAT_FIRE_UPGRADED</name>
+    <name>COMBAT_ION_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="COMBAT_BEAM_DRONE_LIST">
+    <name>COMBAT_BEAM</name>
+    <name>COMBAT_BEAM_2</name>
+    <name>COMBAT_BEAM_UPGRADED</name>
+    <name>COMBAT_BEAM_2_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="COMBAT_DRONE_LIST">
+    <name>COMBAT_1</name>
+    <name>COMBAT_2</name>
+    <name>COMBAT_BEAM</name>
+    <name>COMBAT_BEAM_2</name>
+    <name>COMBAT_FIRE</name>
+    <name>COMBAT_ION</name>
+    <name>COMBAT_1_UPGRADED</name>
+    <name>COMBAT_2_UPGRADED</name>
+    <name>COMBAT_BEAM_UPGRADED</name>
+    <name>COMBAT_BEAM_2_UPGRADED</name>
+    <name>COMBAT_FIRE_UPGRADED</name>
+    <name>COMBAT_ION_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="COMBAT_FIRE_DRONE_LIST">
+    <name>COMBAT_FIRE</name>
+    <name>COMBAT_FIRE_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="COMBAT_ION_DRONE_LIST">
+    <name>COMBAT_ION</name>
+    <name>COMBAT_ION_UPGRADED</name>
+  </blueprintList>
+
+  <changelog>
+    <entry>Combat I Drone scrap cost 50 to 40</entry>
+  </changelog>
+  <weaponBlueprint NOLOC="1" name="DRONE_LASER">
+    <type>LASER</type>
+    <title>Drone Laser</title>
+    <damage>1</damage>
+    <shots>1</shots>
+    <fireChance>1</fireChance>
+    <breachChance>0</breachChance>
+    <rarity>0</rarity>
+    <image>laser_light1</image>
+    <launchSounds>
+      <sound>lightLaser1</sound>
+      <sound>lightLaser2</sound>
+      <sound>lightLaser3</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>hitHull2</sound>
+      <sound>hitHull3</sound>
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>hitShield1</sound>
+      <sound>hitShield2</sound>
+      <sound>hitShield3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <weaponArt>laser_burst_1</weaponArt>
+  </weaponBlueprint>
+  <droneBlueprint name="COMBAT_1">
+    <type>COMBAT</type>
+    <tip>tip_combat</tip>
+    <title>Combat Drone Mark I</title>
+    <short>Combat I</short>
+    <desc>Powerful drone that continually attacks the enemy ship.</desc>
+    <power>2</power>
+    <cooldown>1000</cooldown>
+    <dodge>0</dodge>
+    <speed>15</speed>
+    <cost>40</cost>
+    <bp>3</bp>
+    <droneImage>drone_combat</droneImage>
+    <weaponBlueprint>DRONE_LASER</weaponBlueprint>
+    <rarity>2</rarity>
+    <iconImage>combat</iconImage>
+  </droneBlueprint>
+  <droneBlueprintInherit name="COMBAT_1_UPGRADED" base="COMBAT_1">
+    <tip>tip_combat_upgraded</tip>
+    <title>Combat Drone Mark I+</title>
+    <short>Combat I+</short>
+    <desc>Powerful drone that continually attacks the enemy ship. This modified schematic requires 1 less power.</desc>
+    <power>1</power>
+    <rarity>0</rarity>
+  </droneBlueprintInherit>
+
+  <changelog>
+    <entry>Combat II Drone scrap cost 75 to 50</entry>
+    <entry>Combat II Drone rarity 5 to 4</entry>
+  </changelog>
+  <droneBlueprint name="COMBAT_2">
+    <type>COMBAT</type>
+    <tip>tip_combat</tip>
+    <title>Combat Drone Mark II</title>
+    <short>Combat II</short>
+    <desc>Powerful drone that continually attacks the enemy ship. Moves and shoots faster than Mark I.</desc>
+    <power>4</power>
+    <cooldown>1000</cooldown>
+    <dodge>0</dodge>
+    <speed>28</speed>
+    <cost>50</cost>
+    <bp>8</bp>
+    <droneImage>drone_combat2</droneImage>
+    <image>weapons/laser_light2_strip4.png</image>
+    <weaponBlueprint>DRONE_LASER</weaponBlueprint>
+    <rarity>4</rarity>
+    <iconImage>combat2</iconImage>
+  </droneBlueprint>
+  <droneBlueprintInherit name="COMBAT_2_UPGRADED" base="COMBAT_2">
+    <tip>tip_combat_upgraded</tip>
+    <title>Combat Drone Mark II+</title>
+    <short>Combat II+</short>
+    <desc>Powerful drone that continually attacks the enemy ship. Moves and shoots faster than Mark I. This modified schematic requires 1 less power.</desc>
+    <power>3</power>
+    <rarity>0</rarity>
+  </droneBlueprintInherit>
+
+  <changelog>
+    <entry>Beam I Drone fire chance 0.1 to 0</entry>
+    <entry>Beam I Drone scrap cost 50 to 40</entry>
+  </changelog>
+  <weaponBlueprint NOLOC="1" name="DRONE_BEAM">
+    <type>BEAM</type>
+    <tip>tip_beams</tip>
+    <title>Drone Beam</title>
+    <damage>1</damage>
+    <sp>0</sp>
+    <fireChance>0</fireChance>
+    <breachChance>0</breachChance>
+    <speed>3</speed>
+    <rarity>0</rarity>
+    <image>beam_contact</image>
+    <length>20</length>
+    <launchSounds>
+      <sound>beam1</sound>
+      <sound>beam1_2</sound>
+    </launchSounds>
+    <weaponArt>beam_1</weaponArt>
+  </weaponBlueprint>
+  <droneBlueprint name="COMBAT_BEAM">
+    <type>COMBAT</type>
+    <tip>tip_combat</tip>
+    <title>Anti-Ship Beam Drone I</title>
+    <short>Beam I</short>
+    <desc>Combat drone that repeatedly attacks with a small beam weapon.</desc>
+    <power>2</power>
+    <cooldown>1000</cooldown>
+    <dodge>0</dodge>
+    <speed>15</speed>
+    <cost>40</cost>
+    <bp>3</bp>
+    <droneImage>drone_beam</droneImage>
+    <weaponBlueprint>DRONE_BEAM</weaponBlueprint>
+    <rarity>3</rarity>
+    <iconImage>beam</iconImage>
+  </droneBlueprint>
+  <droneBlueprintInherit name="COMBAT_BEAM_UPGRADED" base="COMBAT_BEAM">
+    <tip>tip_combat_upgraded</tip>
+    <title>Anti-Ship Beam Drone I+</title>
+    <short>Beam I+</short>
+    <desc>Combat drone that repeatedly attacks with a small beam weapon. This modified schematic requires 1 less power.</desc>
+    <power>1</power>
+    <rarity>0</rarity>
+  </droneBlueprintInherit>
+
+  <changelog>
+    <entry>Beam II Drone fire chance 0.1 to 0</entry>
+    <entry>Beam II Drone speed 11 to 12</entry>
+    <entry>Beam II Drone scrap cost 60 to 50</entry>
+    <entry>Beam II Drone rarity 5 to 4</entry>
+  </changelog>
+  <weaponBlueprint NOLOC="1" name="DRONE_BEAM2">
+    <type>BEAM</type>
+    <title>Mini Beam</title>
+    <damage>1</damage>
+    <sp>0</sp>
+    <fireChance>0</fireChance>
+    <breachChance>0</breachChance>
+    <speed>8</speed>
+    <rarity>0</rarity>
+    <image>beam_contact</image>
+    <length>40</length>
+    <launchSounds>
+      <sound>beam1</sound>
+      <sound>beam1_2</sound>
+    </launchSounds>
+    <weaponArt>beam_1</weaponArt>
+  </weaponBlueprint>
+  <droneBlueprint name="COMBAT_BEAM_2">
+    <type>COMBAT</type>
+    <title>Anti-Ship Beam Drone II</title>
+    <tip>tip_combat</tip>
+    <short>Beam II</short>
+    <desc>Combat drone that repeatedly attacks with a larger beam weapon.</desc>
+    <power>3</power>
+    <cooldown>1000</cooldown>
+    <dodge>0</dodge>
+    <speed>12</speed>
+    <cost>50</cost>
+    <bp>3</bp>
+    <droneImage>drone_beam_2</droneImage>
+    <weaponBlueprint>DRONE_BEAM2</weaponBlueprint>
+    <rarity>4</rarity>
+    <iconImage>beam2</iconImage>
+  </droneBlueprint>
+  <droneBlueprintInherit name="COMBAT_BEAM_2_UPGRADED" base="COMBAT_BEAM_2">
+    <tip>tip_combat_upgraded</tip>
+    <title>Anti-Ship Beam Drone II+</title>
+    <short>Beam II+</short>
+    <desc>Combat drone that repeatedly attacks with a larger beam weapon. This modified schematic requires 1 less power.</desc>
+    <power>2</power>
+    <rarity>0</rarity>
+  </droneBlueprintInherit>
+
+  <changelog>
+    <entry>Anti-Ship Fire Drone fire chance 0.9 to 1</entry>
+  </changelog>
+  <weaponBlueprint NOLOC="1" name="DRONE_FIREBEAM">
+    <type>BEAM</type>
+    <title>Fire Beam</title>
+    <damage>0</damage>
+    <sp>0</sp>
+    <fireChance>10</fireChance>
+    <breachChance>0</breachChance>
+    <speed>2</speed>
+    <rarity>0</rarity>
+    <image>beam_contact</image>
+    <length>10</length>
+    <launchSounds>
+      <sound>beam1</sound>
+      <sound>beam1_2</sound>
+    </launchSounds>
+    <weaponArt>beam_1</weaponArt>
+  </weaponBlueprint>
+  <droneBlueprint name="COMBAT_FIRE">
+    <type>COMBAT</type>
+    <tip>tip_combat</tip>
+    <title>Anti-Ship Fire Drone</title>
+    <short>Fire</short>
+    <desc>Combat drone that repeatedly attacks with a small beam weapon that lights rooms on fire.</desc>
+    <power>3</power>
+    <cooldown>1000</cooldown>
+    <dodge>0</dodge>
+    <speed>12</speed>
+    <cost>50</cost>
+    <bp>3</bp>
+    <droneImage>drone_fire</droneImage>
+    <weaponBlueprint>DRONE_FIREBEAM</weaponBlueprint>
+    <rarity>4</rarity>
+    <iconImage>fire</iconImage>
+  </droneBlueprint>
+  <droneBlueprintInherit name="COMBAT_FIRE_UPGRADED" base="COMBAT_FIRE">
+    <tip>tip_combat_upgraded</tip>
+    <title>Anti-Ship Fire Drone+</title>
+    <short>Fire+</short>
+    <desc>Combat drone that repeatedly attacks with a small beam weapon that lights rooms on fire. This modified schematic requires 1 less power.</desc>
+    <power>2</power>
+    <rarity>0</rarity>
+  </droneBlueprintInherit>
+
+  <changelog>
+    <entry>New Ion Drone (3 power, 12 speed, 50 scrap)</entry>
+  </changelog>
+  <weaponBlueprint name="DRONE_ION" NOLOC="1">
+    <type>LASER</type>
+    <title>Ion Blast</title>
+    <short>Ion Blast</short>
+    <tip>tip_ion</tip>
+    <damage>0</damage>
+    <ion>1</ion>
+    <speed>30</speed>
+    <shots>1</shots>
+    <sp>0</sp>
+    <fireChance>0</fireChance>
+    <breachChance>0</breachChance>
+    <rarity>0</rarity>
+    <image>ion_1_shot</image>
+    <launchSounds>
+      <sound>ionShoot1</sound>
+      <sound>ionShoot2</sound>
+      <sound>ionShoot3</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>ionHit1</sound>
+      <sound>ionHit2</sound>
+      <sound>ionHit3</sound>
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>ionShields1</sound>
+      <sound>ionShields2</sound>
+      <sound>ionShields3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <weaponArt>ion_1</weaponArt>
+  </weaponBlueprint>
+  <droneBlueprint name="COMBAT_ION">
+    <type>COMBAT</type>
+    <tip>tip_combat</tip>
+    <title>Anti-Ship Ion Drone</title>
+    <short>Ion</short>
+    <desc>Combat drone that repeatedly attacks the enemy ship with ion.</desc>
+    <power>3</power>
+    <cooldown>1000</cooldown>
+    <dodge>0</dodge>
+    <speed>12</speed>
+    <cost>50</cost>
+    <bp>3</bp>
+    <droneImage>drone_ion</droneImage>
+    <weaponBlueprint>DRONE_ION</weaponBlueprint>
+    <rarity>4</rarity>
+  </droneBlueprint>
+  <droneBlueprintInherit name="COMBAT_ION_UPGRADED" base="COMBAT_ION">
+    <tip>tip_combat_upgraded</tip>
+    <title>Anti-Ship Ion Drone+</title>
+    <short>Ion+</short>
+    <desc>Combat drone that repeatedly attacks the enemy ship with ion. This modified schematic requires 1 less power.</desc>
+    <power>2</power>
+    <rarity>0</rarity>
+  </droneBlueprintInherit>
+</FTL>

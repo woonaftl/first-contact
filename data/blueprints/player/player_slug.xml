@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <changelog>
+    <entry>Slug A starts with upgraded Anti Bio Beam (buff, stuns in addition to damage now, less power, faster)</entry>
+    <entry>Slug A starts with upgraded Hull Laser II (slower, but more projectiles)</entry>
+  </changelog>
+  <shipBlueprint name="PLAYER_SHIP_JELLY" layout="jelly_cruiser" img="jelly_cruiser">
+    <class>Slug Cruiser</class>
+    <name>Man of War</name>
+    <unlock>One of the slug ships must know something about this advanced cruiser. Perhaps you can "convince" them to tell you.</unlock>
+    <desc>Designed for use inside nebulas, this cruiser lacks sensors and relies instead on the guile and cunning of the Slugs.</desc>
+    <systemList>
+      <battery power="1" room="9" start="false" img="room_battery_10"/>
+      <cloaking power="1" room="2" start="false" img="room_cloaking_6"/>
+      <clonebay power="1" room="3" start="false"/>
+      <doors power="2" room="1" start="true" img="room_doors_6"/>
+      <drones power="2" room="14" start="false" img="room_drones_5"/>
+      <engines power="2" room="6" start="true" img="room_engines_2"/>
+      <hacking power="1" room="12" start="false" img="room_hacking_5"/>
+      <medbay power="1" room="3" start="true"/>
+      <mind power="1" room="0" start="false" img="room_mind_6"/>
+      <oxygen power="1" room="4" start="true" img="room_oxygen_6"/>
+      <pilot power="1" room="8" start="true"/>
+      <sensors power="1" room="11" start="false" img="room_sensors_6"/>
+      <shields power="2" room="13" start="true" img="room_shields_6"/>
+      <teleporter power="1" room="10" start="false"/>
+      <weapons power="3" room="5" start="true" img="room_weapons_6"/>
+    </systemList>
+    <weaponSlots>4</weaponSlots>
+    <droneSlots>2</droneSlots>
+    <weaponList count="3" missiles="0">
+      <weapon name="BEAM_BIO_UPGRADED"/>
+      <weapon name="LASER_HULL_2_UPGRADED"/>
+    </weaponList>
+    <aug name="SLUG_GEL_LOCKED"/>
+    <health amount="30"/>
+    <maxPower amount="8"/>
+    <crewCount amount="2" class="slug"/>
+  </shipBlueprint>
+
+  <changelog>
+    <entry>New Slug B layout roughly based on old Lanius B</entry>
+    <entry>Slug B starts with Taurus Missiles, mind control and teleporter</entry>
+  </changelog>
+  <!--TODO remake -->
+  <shipBlueprint name="PLAYER_SHIP_JELLY_2" layout="jelly_cruiser_red" img="jelly_cruiser">
+    <class>Slug Cruiser</class>
+    <name>?</name>
+    <unlock>Complete 2/3 of the Slug Cruiser Achievements to unlock this ship.</unlock>
+    <desc>While Slugs usually prefer to stay safe on their own ship, with no powerful weapons they have no choice but to board the enemy.</desc>
+    <systemList>
+      <battery power="1" room="4" start="false" img="room_battery_6"/>
+      <cloaking power="1" room="5" start="false" img="room_cloaking_15"/>
+      <clonebay power="1" room="13" start="true" slot="3"/>
+      <doors power="2" room="8" start="true" img="room_doors_15"/>
+      <drones power="2" room="16" start="false" img="room_drones_18"/>
+      <engines power="2" room="3" start="true" img="room_engines_13"/>
+      <hacking power="1" room="17" start="false" img="room_hacking_2"/>
+      <medbay power="1" room="13" start="false" img="room_medbay_3"/>
+      <mind power="1" room="14" start="true" img="room_mind_13"/>
+      <oxygen power="1" room="9" start="true" img="room_oxygen_20"/>
+      <pilot power="1" room="0" start="true" img="room_pilot"/>
+      <sensors power="1" room="11" start="false" img="room_sensors_9"/>
+      <shields power="2" room="7" start="true" img="room_shields_2"/>
+      <teleporter power="1" room="10" start="true"/>
+      <weapons power="1" room="6" start="true" img="room_weapons_4"/>
+    </systemList>
+    <weaponSlots>4</weaponSlots>
+    <droneSlots>2</droneSlots>
+    <weaponList count="1" missiles="15">
+      <weapon name="MISSILES_1"/>
+    </weaponList>
+    <droneList drones="0"/>
+    <aug name="SLUG_GEL_LOCKED"/>
+    <health amount="30"/>
+    <maxPower amount="8"/>
+    <crewCount amount="3" class="slug"/>
+    <shieldImage>jelly_cruiser</shieldImage>
+    <cloakImage>jelly_cruiser</cloakImage>
+    <floorImage>jelly_cruiser_red</floorImage>
+  </shipBlueprint>
+
+  <changelog>
+    <entry>Slug C starts with upgraded Hull Laser Mark I</entry>
+    <entry>Slug C starting weapons power 2 to 1</entry>
+    <entry>Slug C starting reactor power 9 to 8</entry>
+    <entry>Slug C starting crew 3 to 2</entry>
+    <entry>Slug C starting missiles 1 to 0</entry>
+  </changelog>
+  <shipBlueprint name="PLAYER_SHIP_JELLY_3" layout="jelly_cruiser_3" img="jelly_cruiser_3">
+    <class>Slug Cruiser</class>
+    <name>Ariolimax</name>
+    <unlock>Get to Sector 8 with the Slug Cruiser Type B and Advanced Mode enabled to unlock this ship.</unlock>
+    <desc>Slugs are often skilled in the arts of misdirection and manipulation. With Hacking and Mind Control systems, this ship capitalizes on that fact.</desc>
+    <systemList>
+      <battery power="1" room="4" start="false" img="room_battery_10"/>
+      <cloaking power="1" room="1" start="false" img="room_cloaking_3"/>
+      <clonebay power="1" room="15" start="true" slot="1"/>
+      <doors power="2" room="10" start="true" img="room_doors_9"/>
+      <drones power="2" room="13" start="false" img="room_drones_15"/>
+      <engines power="2" room="6" start="true" img="room_engines_2"/>
+      <hacking power="1" room="12" start="true" img="room_hacking_8"/>
+      <medbay power="1" room="15" start="false" img="room_medbay_9"/>
+      <mind power="1" room="0" start="true" img="room_mind_5"/>
+      <oxygen power="1" room="3" start="true" img="room_oxygen_2"/>
+      <pilot power="1" room="8" start="true"/>
+      <sensors power="1" room="5" start="false" img="room_sensors_3"/>
+      <shields power="2" room="7" start="true" img="room_shields_7"/>
+      <teleporter power="1" room="11" start="false"/>
+      <weapons power="1" room="9" start="true" img="room_weapons_5"/>
+    </systemList>
+    <weaponSlots>4</weaponSlots>
+    <droneSlots>2</droneSlots>
+    <weaponList count="1" missiles="0">
+      <weapon name="LASER_HULL_1_UPGRADED"/>
+    </weaponList>
+    <droneList drones="15"/>
+    <aug name="SLUG_GEL_LOCKED"/>
+    <health amount="30"/>
+    <maxPower amount="8"/>
+    <crewCount amount="2" class="slug"/>
+    <shieldImage>jelly_cruiser</shieldImage>
+    <cloakImage>jelly_cruiser</cloakImage>
+    <floorImage>jelly_cruiser</floorImage>
+  </shipBlueprint>
+</FTL>

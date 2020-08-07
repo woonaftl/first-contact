@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="HOSTILE_CRYSTAL">
+    <event load="CRYSTAL_FIGHT" count="3"/>
+    <event load="CRYSTAL_CONVOY"/>
+    <event load="CRYSTAL_REBEL"/>
+    <event load="CRYSTAL_HUNTER"/>
+    <event load="CRYSTAL_AUTO"/>
+  </eventList>
+
+  <event name="CRYSTAL_FIGHT" unique="false">
+    <textList name="CRYSTAL_FIGHT">
+      <text>You arrive near a fleet of crystal ships, civilian or mercantile from the looks of them. You pause to scan one but they react immediately and send an escort to fight you off. Prepare to engage!</text>
+      <text>You arrive at the Beacon and are immediately greeted by an automatic message or warning of some kind. The translator can't seem to discern its purpose but after a few short moments an alarm goes off and a hostile ship jumps in!</text>
+      <text>You receive a message, "Hah. It looks like another worthless alien-filled craft. Prepare to meet your maker!" Weapon locks detected.</text>
+      <text>A Crystalline ship messages you, "I've heard tales that our isolation has finally ended. As a warrior I must demand to test my skills against you!" Before you can respond they move in to attack.</text>
+      <text>You arrive in a busy sector. At first no one pays any mind to your alien ship but soon you're registering a number of scan signatures. You get the feeling you're not wanted here just seconds before registering enemy weapon locks!</text>
+      <text>You jump next to a node busy with traffic, but before long all nearby ships notice you and keep their distance, uncertain of your allegiance. After an awkward standoff, a military ship breaks away from the rest and charges you.</text>
+      <text>A barrage of rasps and clicks is broadcast over the comm; the universal translator understands little, but the words 'aliens', 'allowed' and 'no' come through quite clearly. You'll have to prove your right to be here in combat!</text>
+    </textList>
+    <ship load="CRYSTAL_SHIP" hostile="true"/>
+  </event>
+
+  <event name="CRYSTAL_CONVOY" unique="true">
+    <text>A large convoy of lumbering civilian ships appears to be passing through this region. You show no hostile intentions, but they are taking no chances, immediately sending their escort to attack!</text>
+    <ship name="CRYSTAL_CONVOY" auto_blueprint="SHIPS_CRYSTAL" hostile="true">
+      <surrender chance="0" min="3" max="4">
+        <text>Their ship seems severely damaged and they look to be reconsidering the fight. Should you power down your weapons and explain that you mean no threat?</text>
+        <choice hidden="true">
+          <text>Stop the fight.</text>
+          <event>
+            <text>They accept your explanation and allow you to approach the fleet. It appears they are miners and colonists from a fringe settlement who are fleeing to more protected space after hearing reports of pirate and Rebel attacks.</text>
+            <ship hostile="false"/>
+            <choice hidden="true">
+              <text id="continue"/>
+              <event>
+                <text>They apologize for their hasty response to your presence and spend some time refueling and repairing both ships.</text>
+                <autoReward level="LOW">fuel</autoReward>
+                <damage amount="-8"/>
+              </event>
+            </choice>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>Finish them off.</text>
+          <event>
+            <text>They wanted to pick a fight with you so that's what they'll get.</text>
+          </event>
+        </choice>
+      </surrender>
+      <destroyed>
+        <text>The Crystalline ship shatters and you pick what you can from the debris. The rest of the convoy used the time to put a significant amount of distance between you and them. Nothing left to do but jump.</text>
+        <autoReward level="MED">standard</autoReward>
+      </destroyed>
+      <deadCrew>
+        <text>The crew of the enemy ship has been eliminated. You scrap what you can. The rest of the convoy used the time to put a significant amount of distance between you and them. Nothing left to do but jump.</text>
+        <autoReward level="MED">standard</autoReward>
+      </deadCrew>
+    </ship>
+  </event>
+
+  <event name="CRYSTAL_HUNTER" unique="true">
+    <text>Crystal shards fly past your ship as soon as you jump. You scan to find the assailant and discover a Crystalline ship carrying a number of humans in its cargo bay. It must be hunting the intruding ships!</text>
+    <ship name="CRYSTAL_HUNTER" auto_blueprint="SHIPS_CRYSTAL" hostile="true">
+      <surrender chance="0.5" min="3" max="4">
+        <text>The hunters message you, "We surrender. Take one of these squishy meat sacks that we've captured." He must be referring to the human captives.</text>
+        <choice hidden="true">
+          <text>Accept their surrender.</text>
+          <event>
+            <text>They send one of their prisoners over to your ship. They're a bit shaken up and you suspect that they were once a Rebel, but they seem very glad to be free.</text>
+            <ship hostile="false"/>
+            <crewMember amount="1" class="human"/>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>Finish them off.</text>
+          <event>
+            <text>Who knows how many humans will be saved if you kill them now.</text>
+          </event>
+        </choice>
+      </surrender>
+      <destroyed>
+        <text>The Crystalline ship shatters and you pick what you can from the debris. Who knows how many people you've saved by stopping this ship.</text>
+        <autoReward level="MED">standard</autoReward>
+      </destroyed>
+      <deadCrew>
+        <text>The crew of the enemy ship has been eliminated. You scrap what you can. Who knows how many people you've saved by stopping this ship.</text>
+        <autoReward level="MED">standard</autoReward>
+      </deadCrew>
+    </ship>
+  </event>
+
+  <event name="CRYSTAL_REBEL" unique="false">
+    <text>As soon as you arrive, a Rebel ship jumps in after you; they must be really hot on your tail.</text>
+    <ship load="REBEL" hostile="true"/>
+  </event>
+
+  <event name="CRYSTAL_AUTO" unique="true">
+    <text>The Rebels must have sent their automated scouts to find you. One jumps in and immediately moves to attack.</text>
+    <ship load="REBEL_AUTO" hostile="true"/>
+  </event>
+</FTL>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="HOSTILE_ROCK">
+    <event load="ROCK_SHIP"/>
+    <event load="ROCK_PIRATE"/>
+    <event load="ROCK_BOARDERS_SHIP"/>
+  </eventList>
+
+  <eventList name="HOSTILE_HAZARD_ROCK">
+    <event load="ROCK_FIGHT_ASTEROID"/>
+    <event load="ROCK_PIRATE_ASTEROID"/>
+    <event load="ROCK_PIRATE_SUN"/>
+    <event load="ROCK_BOARDERS_ASTEROID"/>
+  </eventList>
+
+  <event name="ROCK_SHIP">
+    <textList name="ROCK_SHIP">
+      <text>You encounter a Rock vessel and attempt to open trading frequencies, but they take it as an act of cultural transgression and open fire.</text>
+      <text>You jump into the middle of a Rock excavation project on a nearby moon. Unimpressed with your intrusion they move to defend themselves!</text>
+      <text>You intercept chatter from an approaching Rock ship: "Weapons, moving in to engage, arm the tubes." There is no talking to these guys.</text>
+      <text>As you jump in, a vast figure appears on the view-screen. The Rock captain rubs the green, moss-like appendage on his chin and then orders his crew to open fire.</text>
+      <text>It looks quiet, but you realize your computer is being scanned. A hidden Rock vessel hails you: "Why do you fill your computer with lies?! These are not the holy words!" Before you can interject they open fire.</text>
+      <text>You notice a Rock ship performing combat exercises. However, they quickly change their course to engage your ship. They apparently treat unregistered alien ships as handy target practice.</text>
+      <text>A loud 'thud' resounds through the ship after jump completion - you've just shunted a Rock fighter and he's already preparing to fire!</text>
+      <text>You're intercepted by a Rock salvage operation. They don't seem to mind that you're still on board while they junk your ship.</text>
+    </textList>
+    <ship load="ROCK_SHIP" hostile="true"/>
+  </event>
+
+  <event name="ROCK_SHIP_SURRENDER">
+    <textList name="ROCK_SHIP_SURRENDER">
+      <text>The Rock ship hails: "Enough! We were told aliens were a threat to our ways, and you have proved as much. Take this and leave us in peace."</text>
+      <text>Their systems suffering, the Rock ship attempts to make contact: "Alien vessel. Cease your attack. We will pay."</text>
+      <text>The Rock ship moves into a defensive position and transmits a white flag signal. They seem willing to buy their lives.</text>
+    </textList>
+    <choice>
+      <text>Accept their offer.</text>
+      <event>
+        <ship hostile="false"/>
+        <autoReward level="RANDOM">stuff</autoReward>
+      </event>
+    </choice>
+    <choice>
+      <text>We will not accept surrender!</text>
+      <event/>
+    </choice>
+  </event>
+
+  <event name="ROCK_PIRATE">
+    <textList name="ROCK_PIRATE">
+      <text>As a naturally warlike species with few inter-galactic diplomatic ties, the Rock people have garnered quite a reputation as fearsome pirates. You stumble across one of their ships and they promptly live up to type.</text>
+      <text>A Rock ship flies past your windows and you recognize outcast decorations on the hull. These must be pirates!</text>
+      <text>A motley collection of Rock ships are stationed around this beacon - they look to have resorted to a pirate's life. Defensive maneuvers!</text>
+    </textList>
+    <ship load="ROCK_PIRATE" hostile="true"/>
+  </event>
+
+  <event name="ROCK_FIGHT_ASTEROID" unique="false">
+    <textList name="ROCK_FIGHT_ASTEROID">
+      <text>A Rock mining vessel is harvesting the mineral-rich asteroids in this locality, and their scouts take your presence to be a transgression. Battle stations!</text>
+      <text>A rookie Rock cargo ship has taken its orders too literally and took the most direct route to their destination... right through an asteroid field. They're confused and fire wildly as you jump in.</text>
+      <text>The captain of a Rock freighter lost in the asteroid field hails you: "Our co-ordinates led us here, but only death greets us. What must be must be. Death to all." You power up the battle systems and wonder how long they've been stuck here.</text>
+    </textList>
+    <environment type="asteroid"/>
+    <ship load="ROCK_SHIP" hostile="true"/>
+  </event>
+
+  <event name="ROCK_PIRATE_ASTEROID" unique="false">
+    <textList name="ROCK_PIRATE_ASTEROID">
+      <text>Minute fissures in the shields spark and crackle as the ship jumps into the wake of a huge asteroid. More asteroids follow, as does a lost and aggressive Rock pirate ship.</text>
+      <text>You exit the jump surrounded by dirt and rocks. Before long a blast is deflected by your shield, but that was no asteroid... Incoming pirate!</text>
+    </textList>
+    <environment type="asteroid"/>
+    <ship load="ROCK_PIRATE" hostile="true"/>
+  </event>
+
+  <event name="ROCK_PIRATE_SUN" unique="false">
+    <textList name="ROCK_PIRATE_SUN">
+      <text>Unusual solar activity in this region means you need to get out, quick. The Rock pirate nearby apparently thinks otherwise as they move to attack your ship.</text>
+      <text>A Rock ship is silhouetted against a sun in supernova. They hail: "Even out here you follow us! We only wish to be left alone!" Out of panic or anger, they charge their weapons.</text>
+    </textList>
+    <environment type="sun"/>
+    <ship load="ROCK_PIRATE" hostile="true"/>
+  </event>
+
+  <event name="ROCK_BOARDERS_SHIP" unique="false">
+    <textList name="ROCK_BOARDERS_SHIP">
+      <text>You passively scan a small Rock station that is next to the beacon. However they must not have appreciated your curiosity. A Rock ship pulls away from the station and you register an incoming teleporter signal as well!</text>
+      <text>You find a Rock ship docked with a damaged Mantis fighter. Before you have a chance to hail them, the ship moves in to attack you and you register teleporter symbols from the disabled ship. They're using Mantis tech to board you!</text>
+    </textList>
+    <boarders min="1" max="3" class="rock"/>
+    <ship load="ROCK_SHIP" hostile="true"/>
+  </event>
+
+  <event name="ROCK_BOARDERS_ASTEROID" unique="false">
+    <textList name="ROCK_BOARDERS_ASTEROID">
+      <text>You arrive in an asteroid field and immediately begin evasive maneuvers when a loud clunk reverberates through the ship. At first you think the hull has been hit, but the noise came from some Rock intruders teleporting aboard the ship!</text>
+      <text>Your shields are being taxed as they deflect the debris from an asteroid field. As you weave your way between the rocks, you happen upon a Rock pirate stronghold. You register teleport signatures and hear shouts aboard the ship.</text>
+    </textList>
+    <boarders min="1" max="2" class="rock"/>
+    <environment type="asteroid"/>
+    <ship load="ROCK_SHIP" hostile="true"/>
+  </event>
+</FTL>

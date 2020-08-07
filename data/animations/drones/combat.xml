@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <animSheet name="laser_drone" w="200" h="20" fw="50" fh="20">weapons/laser_drone_strip4.png</animSheet>
+  <anim name="laser_drone">
+    <sheet>laser_drone</sheet>
+    <desc length="4" x="0" y="0"/>
+    <time>0.5</time>
+  </anim>
+</FTL>

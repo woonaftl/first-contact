@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <event name="PIRATE_SLAVER" unique="false">
+    <text>An especially well-armed pirate ship approaches you. "Hand over one of your crew-members and the rest of you can go free unharmed."</text>
+    <ship load="PIRATE_SLAVER" hostile="false"/>
+    <choice>
+      <text>Draw straws and send a crew-member over to the slavers.</text>
+      <event>
+        <text>The chosen crew-member leaves without complaint, knowing you had no choice.</text>
+        <removeCrew>
+          <clone>false</clone>
+          <text>You briefly consider cloning a replacement, but decide to respect the Federation laws regarding simultaneous duplicates.</text>
+        </removeCrew>
+      </event>
+    </choice>
+    <choice>
+      <text>We will never surrender one of our crew to slavers!</text>
+      <event>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice req="engines" lvl="6" hidden="true">
+      <text>(Engines) Attempt to out-run the slaver ship.</text>
+      <eventList name="PIRATE_SLAVER_RUN">
+        <event>
+          <text>You quickly fire up your engines and make a break for it. However, it seems to be in vain. They catch up to you effortlessly and power up their weapons.</text>
+          <ship hostile="true"/>
+        </event>
+        <event>
+          <text>You divert all available power to your engines and flee. You caught them off-guard, but they seem to be gaining on you. Luckily you are able to stay out of range long enough to charge the FTL drive.</text>
+        </event>
+        <event>
+          <text>You fire up the engines and try to escape. Their slower ship is unable to keep pace; eventually it gives up and returns to the beacon to await an easier target.</text>
+        </event>
+      </eventList>
+    </choice>
+  </event>
+
+  <event name="FRIENDLY_SLAVER" unique="true">
+    <ship load="PIRATE_SLAVER" hostile="false"/>
+    <text>You recognize the ship as a well-known slave trader. He hails you and offers you "laborers" for cheap.</text>
+    <choice>
+      <text>Buy one slave and free them to join your crew.</text>
+      <event>
+        <item_modify>
+          <item type="scrap" min="-45" max="-25"/>
+        </item_modify>
+        <crewMember amount="1"/>
+      </event>
+    </choice>
+    <choice>
+      <text>Attack the slaver scum.</text>
+      <event>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice>
+      <text>Ignore the slaver and continue on your way.</text>
+      <event/>
+    </choice>
+    <choice req="teleporter" lvl="2" hidden="true">
+      <text>(Teleporter) Use your teleporter to attempt to board the ship and release some of the slaves.</text>
+      <eventList name="FRIENDLY_SLAVER_TELEPORTER">
+        <event>
+          <text>You beam a small team into their holds. They work quickly to free the slaves and teleport back to your ship. One of the captives seems fit for battle and you throw them a weapon in preparation for a fight.</text>
+          <crewMember amount="1"/>
+          <ship hostile="true"/>
+        </event>
+        <event>
+          <text>You teleport an away team into their hold to attempt to free their prisoners. They are able to get to one person before being caught and forced into a corner by the crew. You quickly beam the team and prisoner back to your ship.</text>
+          <crewMember amount="1"/>
+          <ship hostile="true"/>
+        </event>
+        <event>
+          <text>You beam a team onto their ship. However, your estimations of the location of their prisoners was off. By the time they get their bearings the slavers spot them. You beam them back to the ship and prepare for a fight.</text>
+          <ship hostile="true"/>
+        </event>
+      </eventList>
+    </choice>
+  </event>
+
+  <ship name="PIRATE_SLAVER" auto_blueprint="SHIPS_PIRATE">
+    <surrender chance="0.4" min="2" max="4">
+      <text>We surrender! Take one of our slaves as tribute; if you destroy us they'll all die anyway!</text>
+      <choice>
+        <text>Accept their offer.</text>
+        <event>
+          <crewMember amount="1"/>
+          <ship hostile="false"/>
+        </event>
+      </choice>
+      <choice>
+        <text>Surrender is not an option.</text>
+        <event/>
+      </choice>
+    </surrender>
+    <escape chance="0.5" min="2" max="4" load="PIRATE_ESCAPE"/>
+    <destroyed>
+      <text>The slave ship is destroyed. They won't continue their evil trade, but many lives were probably lost on that ship.</text>
+      <autoReward level="MED">standard</autoReward>
+    </destroyed>
+    <deadCrew load="DEAD_CREW_SLAVER"/>
+  </ship>
+  <eventList name="DEAD_CREW_SLAVER">
+    <event>
+      <text>You find a number of slaves in the cargo hold. They look at you questioningly and one asks if they're to be released. You could use more crew but you don't want to force them all to work for you instead...</text>
+      <choice hidden="true">
+        <text>Demand the Mantis joins your crew but release the rest.</text>
+        <event>
+          <text>The Mantis seems fine with the orders, saying "I'm on board if it means we get to kill some Rebels!" You drop the rest off at a nearby station.</text>
+          <crewMember amount="1" class="mantis"/>
+          <autoReward level="MED">standard</autoReward>
+        </event>
+      </choice>
+      <choice hidden="true">
+        <text>Demand the Rockman joins your crew but release the rest.</text>
+        <event>
+          <text>The Rockman remains silent and you worry there might be trouble. However when you ask him to perform a task he acts without complaint. Perhaps he won't be a problem.</text>
+          <crewMember amount="1" class="rock"/>
+          <autoReward level="MED">standard</autoReward>
+        </event>
+      </choice>
+      <choice hidden="true">
+        <text>Demand the Engi joins your crew but release the rest.</text>
+        <event>
+          <text>"Verify primary object is to defeat Rebels, re-establish peace?" You nod and it responds, "Acceptable." You drop the rest off at a nearby station and strip the ship.</text>
+          <crewMember amount="1" class="engi"/>
+          <autoReward level="MED">standard</autoReward>
+        </event>
+      </choice>
+    </event>
+    <event>
+      <text>It appears the slaves did not survive the fighting. You find their burnt bodies in the hold, but before you strip the ship you hear faint noises in the walls. You break off a latch and a slave falls out of a hidden compartment, coughing. Once recomposed the slave offers to join your crew.</text>
+      <crewMember amount="1"/>
+      <autoReward level="HIGH">standard</autoReward>
+    </event>
+    <event count="2">
+      <text>You scan the ship and detect no life signs. It appears the slaves died in the fight. You strip the ship and prepare to jump.</text>
+      <autoReward level="HIGH">standard</autoReward>
+    </event>
+  </eventList>
+</FTL>

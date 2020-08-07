@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <event name="START_BEACON_SLUG">
+    <textList name="START_BEACON_SLUG">
+      <text>The only thing that can render a nebula more dangerous is if it's also home to the Slugs. This particular nebula is just that.</text>
+      <text>This nebula is home to the telepathic Slugs. They'd sell their own slime for a crate of scrap, but they much prefer to just take it.</text>
+      <text>You're told the Slug home world is somewhere in this nebula. You can't see them, but you know they're watching.</text>
+      <text>The Slugs that live in this nebula field are a leisure-centered civilization. Everything in Slug life is done in the pursuit of more currency and more time in which to spend it on extravagant ventures. This, inevitably, leads to much treachery in open space.</text>
+      <text>The Slugs developed on an ocean planet where the ability to telepathically sense another organism was more important than sight. Today they use this ability to navigate unfettered the depths of the nebulas they inhabit.</text>
+    </textList>
+  </event>
+
+  <event name="NOTHING_SLUG">
+    <textList name="NOTHING_SLUG">
+      <text>You arrive at the beacon and are relieved at the sight of open space. Nebulas are terribly claustrophobic.</text>
+      <text>This beacon marks a 'small' gap in the nebula. No colonies or ships in scanning distance.</text>
+      <text>You are relieved to see your sensors blink back on after the jump. No ships detected.</text>
+      <text>The Slugs rely heavily on their telepathic powers and are reluctant to give up that advantage by extending beyond nebulas. It's unlikely you'll encounter any this far from the clouds.</text>
+      <text>You arrive in an area clear of nebula and quickly check to see if the sensors are working. Everything is fine and no ships are detected in the vicinity.</text>
+    </textList>
+  </event>
+
+  <event name="NEBULA_NOTHING_SLUG">
+    <environment type="nebula"/>
+    <textList name="NEBULA_NOTHING_SLUG">
+      <text>When it comes to Slugs, no news is not necessarily good news. However, if they are watching, they don't seem to want to confront you.</text>
+      <text>It's not unusual to feel paranoia in a Slug controlled nebula, but for once, it is unfounded.</text>
+      <text>Either this part of Slug space is deserted, or it's too dense for even Slugs to detect your presence. Time to move.</text>
+      <text>This area of the nebula seems entirely empty until a small Slug transport and its escorts emerges suddenly from through the clouds, only to disappear again in a matter of seconds.</text>
+      <text>You explore around the beacon and are shocked when a rock the size of a small moon suddenly looms ahead of you. Scans reveal the solid-looking rock is just a husk, almost entirely mined out of useful minerals.</text>
+      <text>There are a number of small stations for travellers in the area, lit up by guiding lights and advertisements. Only Slug ships are docked so you decide it's better to avoid a confrontation and steer clear.</text>
+    </textList>
+  </event>
+
+  <event name="NEBULA_STORE_SLUG">
+    <textList name="NEBULA_STORE_SLUG">
+      <text>A huge Slug teleports from nowhere onto the bridge! Before you can open fire, he's spread his wares across the helm and is brandishing things at you.</text>
+      <text>You cautiously approach a Slug colony on a huge asteroid. It's a brave person who sets foot on a Slug planet - it can take weeks to get the mucus out of your clothes - but there's business to be done.</text>
+    </textList>
+    <environment type="nebula"/>
+    <store/>
+  </event>
+
+  <ship name="JELLY" auto_blueprint="SHIPS_JELLY">
+    <surrender chance="0.5" min="3" max="4" load="SLUG_SURRENDER"/>
+    <escape chance="0.5" min="3" max="4" load="PIRATE_ESCAPE"/>
+    <destroyed load="DESTROYED_DEFAULT"/>
+    <deadCrew load="DEAD_CREW_DEFAULT"/>
+  </ship>
+
+  <ship name="JELLY_STATUS" auto_blueprint="SHIPS_JELLY">
+    <destroyed>
+      <text>The Slug ship breaks apart and your systems return to normal. You collect what you can.</text>
+      <autoReward level="MED">standard</autoReward>
+      <status type="clear" target="player" system="clonebay" amount="100"/>
+      <status type="clear" target="player" system="engines" amount="100"/>
+      <status type="clear" target="player" system="hacking" amount="100"/>
+      <status type="clear" target="player" system="medbay" amount="100"/>
+      <status type="clear" target="player" system="oxygen" amount="100"/>
+      <status type="clear" target="player" system="pilot" amount="100"/>
+      <status type="clear" target="player" system="shields" amount="100"/>
+      <status type="clear" target="player" system="weapons" amount="100"/>
+    </destroyed>
+    <deadCrew>
+      <text>With their crew dead, you quickly shut off their hacking module and your systems return to normal. You strip the ship.</text>
+      <autoReward level="HIGH">standard</autoReward>
+      <status type="clear" target="player" system="clonebay" amount="100"/>
+      <status type="clear" target="player" system="engines" amount="100"/>
+      <status type="clear" target="player" system="hacking" amount="100"/>
+      <status type="clear" target="player" system="medbay" amount="100"/>
+      <status type="clear" target="player" system="oxygen" amount="100"/>
+      <status type="clear" target="player" system="pilot" amount="100"/>
+      <status type="clear" target="player" system="shields" amount="100"/>
+      <status type="clear" target="player" system="weapons" amount="100"/>
+    </deadCrew>
+  </ship>
+
+  <event name="SLUG_SURRENDER">
+    <text>"You have besssted us! Will you accept what is in our storeesss in exchange for our livess?"</text>
+    <choice hidden="true">
+      <text>Let them live.</text>
+      <event load="SLUG_SURRENDER_LIST"/>
+    </choice>
+    <choice hidden="true">
+      <text>We will not accept surrender!</text>
+      <event/>
+    </choice>
+  </event>
+
+  <eventList name="SLUG_SURRENDER_LIST">
+    <event>
+      <text>"Here! We have lotsss of fuel! Take it all!"</text>
+      <autoReward level="HIGH">fuel_only</autoReward>
+      <ship hostile="false"/>
+    </event>
+    <event>
+      <text>They transfer a meager amount of material. "There... now keep your word..."</text>
+      <autoReward level="LOW">stuff</autoReward>
+      <ship hostile="false"/>
+    </event>
+    <event>
+      <text>"Take it and leave ussss be."</text>
+      <autoReward level="MED">stuff</autoReward>
+      <ship hostile="false"/>
+    </event>
+  </eventList>
+</FTL>
