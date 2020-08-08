@@ -95,7 +95,7 @@
     <tip>tip_beams</tip>
     <title>Mini Beam</title>
     <short>Mini Beam</short>
-    <desc>Extremely cheap and weak beam weapon.</desc>
+    <desc>Extremely cheap and weak beam weapon.&#10;&#10;Length: 45</desc>
     <tooltip>One damage per room beam weapon.</tooltip>
     <damage>1</damage>
     <sp>0</sp>
@@ -134,7 +134,7 @@
     <tip>tip_beams</tip>
     <title>Pike Beam</title>
     <short>Pike Beam</short>
-    <desc>Can cut across entire ships, assuming there's no shield to stop it.</desc>
+    <desc>Can cut across entire ships, assuming there's no shield to stop it.&#10;&#10;Length: 140</desc>
     <tooltip>Beam weapon with extended line. 1 damage per room.</tooltip>
     <damage>1</damage>
     <sp>0</sp>
@@ -174,7 +174,7 @@
     <tip>tip_beams</tip>
     <title>Halberd Beam</title>
     <short>Halberd Beam</short>
-    <desc>Slow but reliably powerful standard beam weapon.</desc>
+    <desc>Slow but reliably powerful standard beam weapon.&#10;&#10;Length: 45</desc>
     <tooltip>Beam weapon, 2 damage per room.</tooltip>
     <damage>2</damage>
     <sp>0</sp>
@@ -211,7 +211,7 @@
     <tip>tip_beams</tip>
     <title>Scythe Beam</title>
     <short>Scythe Beam</short>
-    <desc>Slow and powerful beam designed to cut across entire ships.</desc>
+    <desc>Slow and powerful beam designed to cut across entire ships.&#10;&#10;Length: 140</desc>
     <tooltip>Beam weapon, 2 damage per room.</tooltip>
     <damage>2</damage>
     <sp>0</sp>
@@ -248,7 +248,7 @@
     <tip>tip_beams</tip>
     <title>Rapier Beam</title>
     <short>Rapier Beam</short>
-    <desc>Slow charging beam that deals massive damage but has limited range.</desc>
+    <desc>Slow charging beam that deals massive damage but has limited range.&#10;&#10;Length: 45</desc>
     <tooltip>Beam that does 3 damage per room.</tooltip>
     <damage>3</damage>
     <sp>0</sp>
@@ -285,7 +285,7 @@
     <title>Glaive Beam</title>
     <short>Glaive Beam</short>
     <tip>tip_beams</tip>
-    <desc>One of the most powerful weapons of war ever created. Known to take out some ships in a single blast.</desc>
+    <desc>One of the most powerful weapons of war ever created. Known to take out some ships in a single blast.&#10;&#10;Length: 140</desc>
     <tooltip>Large beam that does 3 damage per room.</tooltip>
     <damage>3</damage>
     <sp>0</sp>
@@ -319,7 +319,7 @@
     <tip>tip_fire_beam</tip>
     <title>Fire Beam</title>
     <short>Fire Beam</short>
-    <desc>This terrifying beam does no physical damage but ignites fires.</desc>
+    <desc>This terrifying beam does no physical damage but ignites fires.&#10;&#10;Length: 140</desc>
     <tooltip>Beam weapon that starts fires.</tooltip>
     <damage>0</damage>
     <sp>0</sp>
@@ -356,7 +356,7 @@
     <tip>tip_crew_beam</tip>
     <title>Anti-Bio Beam</title>
     <short>Anti-Bio Beam</short>
-    <desc>This terrifying beam does no physical damage but rips through organic material, dealing heavy damage to crewmembers and paralyzing them.</desc>
+    <desc>This terrifying beam does no physical damage but rips through organic material, dealing heavy damage to crewmembers and paralyzing them.&#10;&#10;Length: 140</desc>
     <tooltip>2 power beam weapon that greatly damages enemy crew.</tooltip>
     <damage>0</damage>
     <persDamage>4</persDamage>

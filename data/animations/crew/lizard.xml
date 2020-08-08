@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FTL>
+  <!--TODO fix lizard no legs, lizard repair, lizard punch-->
   <animSheet name="lizard" w="315" h="455" fw="35" fh="35">people/lizard_base.png</animSheet>
   <anim name="lizard_walk_down">
     <sheet>lizard</sheet>

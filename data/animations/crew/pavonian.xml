@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FTL>
-<animSheet name="pavonian" w="315" h="455" fw="35" fh="35">people/pavonian_base.png</animSheet>
+  <animSheet name="pavonian" w="315" h="455" fw="35" fh="35">people/pavonian_base.png</animSheet>
   <anim name="pavonian_walk_down">
     <sheet>pavonian</sheet>
     <desc length="4" x="0" y="12"/>

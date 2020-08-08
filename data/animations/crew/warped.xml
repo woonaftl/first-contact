@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <animSheet name="warped" w="315" h="490" fw="35" fh="35">people/warped_base.png</animSheet>
+  <anim name="warped_walk_up">
+    <sheet>warped</sheet>
+    <desc length="4" x="0" y="13"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="warped_walk_down">
+    <sheet>warped</sheet>
+    <desc length="4" x="4" y="13"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="warped_walk_left">
+    <sheet>warped</sheet>
+    <desc length="4" x="0" y="12"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="warped_walk_right">
+    <sheet>warped</sheet>
+    <desc length="4" x="4" y="12"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="warped_fire_left">
+    <sheet>warped</sheet>
+    <desc length="4" x="0" y="11"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="warped_fire_right">
+    <sheet>warped</sheet>
+    <desc length="4" x="4" y="11"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="warped_fire_up">
+    <sheet>warped</sheet>
+    <desc length="4" x="0" y="10"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="warped_fire_down">
+    <sheet>warped</sheet>
+    <desc length="4" x="4" y="10"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="warped_type_left">
+    <sheet>warped</sheet>
+    <desc length="4" x="0" y="9"/>
+    <time>1</time>
+  </anim>
+  <anim name="warped_type_right">
+    <sheet>warped</sheet>
+    <desc length="4" x="4" y="9"/>
+    <time>1</time>
+  </anim>
+  <anim name="warped_type_up">
+    <sheet>warped</sheet>
+    <desc length="4" x="0" y="8"/>
+    <time>1</time>
+  </anim>
+  <anim name="warped_type_down">
+    <sheet>warped</sheet>
+    <desc length="4" x="4" y="8"/>
+    <time>1</time>
+  </anim>
+  <anim name="warped_shoot_left">
+    <sheet>warped</sheet>
+    <desc length="0" x="6" y="7"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="warped_shoot_right">
+    <sheet>warped</sheet>
+    <desc length="3" x="6" y="7"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="warped_shoot_up">
+    <sheet>warped</sheet>
+    <desc length="0" x="3" y="6"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="warped_shoot_down">
+    <sheet>warped</sheet>
+    <desc length="3" x="0" y="6"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="warped_punch_down">
+    <sheet>warped</sheet>
+    <desc length="8" x="0" y="5"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="warped_punch_up">
+    <sheet>warped</sheet>
+    <desc length="8" x="0" y="4"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="warped_repair">
+    <sheet>warped</sheet>
+    <desc length="9" x="0" y="3"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="warped_teleport">
+    <sheet>warped</sheet>
+    <desc length="9" x="0" y="2"/>
+    <time>0.5</time>
+  </anim>
+  <anim name="warped_death_right">
+    <sheet>warped</sheet>
+    <desc length="9" x="0" y="1"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="warped_portrait">
+    <sheet>warped</sheet>
+    <desc length="1" x="0" y="0"/>
+    <time>1</time>
+  </anim>
+  <anim name="warped_clone">
+    <sheet>warped</sheet>
+    <desc length="6" x="2" y="0"/>
+    <time>1.0</time>
+  </anim>
+
+  <animSheet name="warped_stealth" w="315" h="490" fw="35" fh="35">people/warped_stealth_base.png</animSheet>
+  <anim name="warped_stealth_walk_up">
+    <sheet>warped_stealth</sheet>
+    <desc length="4" x="0" y="13"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="warped_stealth_walk_down">
+    <sheet>warped_stealth</sheet>
+    <desc length="4" x="4" y="13"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="warped_stealth_walk_left">
+    <sheet>warped_stealth</sheet>
+    <desc length="4" x="0" y="12"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="warped_stealth_walk_right">
+    <sheet>warped_stealth</sheet>
+    <desc length="4" x="4" y="12"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="warped_stealth_fire_left">
+    <sheet>warped_stealth</sheet>
+    <desc length="4" x="0" y="11"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="warped_stealth_fire_right">
+    <sheet>warped_stealth</sheet>
+    <desc length="4" x="4" y="11"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="warped_stealth_fire_up">
+    <sheet>warped_stealth</sheet>
+    <desc length="4" x="0" y="10"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="warped_stealth_fire_down">
+    <sheet>warped_stealth</sheet>
+    <desc length="4" x="4" y="10"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="warped_stealth_type_left">
+    <sheet>warped_stealth</sheet>
+    <desc length="4" x="0" y="9"/>
+    <time>1</time>
+  </anim>
+  <anim name="warped_stealth_type_right">
+    <sheet>warped_stealth</sheet>
+    <desc length="4" x="4" y="9"/>
+    <time>1</time>
+  </anim>
+  <anim name="warped_stealth_type_up">
+    <sheet>warped_stealth</sheet>
+    <desc length="4" x="0" y="8"/>
+    <time>1</time>
+  </anim>
+  <anim name="warped_stealth_type_down">
+    <sheet>warped_stealth</sheet>
+    <desc length="4" x="4" y="8"/>
+    <time>1</time>
+  </anim>
+  <anim name="warped_stealth_shoot_left">
+    <sheet>warped_stealth</sheet>
+    <desc length="0" x="6" y="7"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="warped_stealth_shoot_right">
+    <sheet>warped_stealth</sheet>
+    <desc length="3" x="6" y="7"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="warped_stealth_shoot_up">
+    <sheet>warped_stealth</sheet>
+    <desc length="0" x="3" y="6"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="warped_stealth_shoot_down">
+    <sheet>warped_stealth</sheet>
+    <desc length="3" x="0" y="6"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="warped_stealth_punch_down">
+    <sheet>warped_stealth</sheet>
+    <desc length="8" x="0" y="5"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="warped_stealth_punch_up">
+    <sheet>warped_stealth</sheet>
+    <desc length="8" x="0" y="4"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="warped_stealth_repair">
+    <sheet>warped_stealth</sheet>
+    <desc length="9" x="0" y="3"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="warped_stealth_teleport">
+    <sheet>warped_stealth</sheet>
+    <desc length="9" x="0" y="2"/>
+    <time>0.5</time>
+  </anim>
+  <anim name="warped_stealth_death_right">
+    <sheet>warped_stealth</sheet>
+    <desc length="9" x="0" y="1"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="warped_stealth_portrait">
+    <sheet>warped_stealth</sheet>
+    <desc length="1" x="0" y="0"/>
+    <time>1</time>
+  </anim>
+  <anim name="warped_stealth_clone">
+    <sheet>warped_stealth</sheet>
+    <desc length="6" x="2" y="0"/>
+    <time>1.0</time>
+  </anim>
+</FTL>

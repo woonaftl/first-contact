@@ -262,7 +262,7 @@
       </powerEffect>
     </race>
 
-    <race name="ngal">
+    <race name="warped">
       <skills>
         <piloting req="10000000"/>
         <engines req="10000000"/>
@@ -283,17 +283,17 @@
         </powerSounds>-->
         <buttonText>STEALTH</buttonText>
         <tooltip>Ready: Click to become invisible and invulnerable</tooltip>
-        <cooldownColor r="20" g="140" b="180"/>
+        <cooldownColor r="0" g="110" b="155"/>
         <!--<effectAnim>explosion_crystal</effectAnim>-->
         <temporaryEffect>
           <duration>5</duration>
-          <cooldownColor r="70" g="190" b="230"/>
+          <cooldownColor r="100" g="210" b="255"/>
           <!--<finishSounds>
             <finishSound>mindControlEnd</finishSound>
           </finishSounds>-->
           <!--<effectAnim>mindcontrol</effectAnim>-->
           <invulnerable>true</invulnerable>
-          <!--<animSheet>human_effect</animSheet>-->
+          <animSheet>warped_stealth</animSheet>
         </temporaryEffect>
       </powerEffect>
     </race>

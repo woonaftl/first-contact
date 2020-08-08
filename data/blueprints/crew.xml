@@ -265,10 +265,10 @@
     </powerList>
   </crewBlueprint>
 
-  <crewBlueprint name="ngal">
-    <title>Ngal</title>
-    <short>Ngal</short>
-    <desc>Masters of staying unseen, even the mysterious Ngals have not managed to remain neutral in the Galactic War.</desc>
+  <crewBlueprint name="warped">
+    <title>Warped</title>
+    <short>Warped</short>
+    <desc>Masters of staying unseen, even the Warped have not managed to remain neutral in the Galactic War.</desc>
     <cost>60</cost>
     <bp>2</bp>
     <rarity>0</rarity>
