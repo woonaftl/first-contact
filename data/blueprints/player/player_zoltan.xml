@@ -49,7 +49,6 @@
   <changelog>
     <entry>New Zoltan B ship with weak reactor, Halberd Beam and Ion Bomb</entry>
   </changelog>
-  <!--TODO remake-->
   <shipBlueprint name="PLAYER_SHIP_ENERGY_2" layout="energy_cruiser_black" img="energy_cruiser_black">
     <class>Zoltan Cruiser</class>
     <name>?</name>
@@ -91,7 +90,6 @@
   <changelog>
     <entry>New Zoltan C ship roughly based on old Stealth C ship</entry>
   </changelog>
-  <!--TODO remake -->
   <shipBlueprint name="PLAYER_SHIP_ENERGY_3" layout="energy_cruiser_white" img="energy_cruiser_white">
     <class>Zoltan Cruiser</class>
     <name>?</name>

@@ -11,54 +11,21 @@
     <unlock>?</unlock>
     <desc>Constructed by cautious Ngals, this ship is designed to use cloaking technology and speed to get behind enemy lines.</desc>
     <systemList>
-      <pilot power="1" room="0" start="true"/>
-      <doors power="1" room="17" start="true" img="room_doors_9">
-        <slot>
-          <direction>right</direction>
-          <number>1</number>
-        </slot>
-      </doors>
-      <sensors power="1" room="16" start="true" img="room_sensors_3">
-        <slot>
-          <direction>right</direction>
-          <number>1</number>
-        </slot>
-      </sensors>
-      <oxygen power="1" room="2" start="true" img="room_oxygen_2"/>
-      <engines power="4" room="13" start="true" img="room_engines_12">
-        <slot>
-          <direction>up</direction>
-          <number>1</number>
-        </slot>
-      </engines>
-      <shields power="2" room="7" start="false" img="room_shields_5">
-        <slot>
-          <direction>up</direction>
-          <number>0</number>
-        </slot>
-      </shields>
-      <weapons power="2" room="3" start="true" img="room_weapons_8">
-        <slot>
-          <direction>up</direction>
-          <number>1</number>
-        </slot>
-      </weapons>
-      <drones power="2" room="6" start="false" img="room_drones_18"/>
-      <medbay power="1" room="8" start="true" img="room_medbay_4">
-        <slot>
-          <number>0</number>
-        </slot>
-      </medbay>
-      <clonebay power="1" room="8" start="false">
-        <slot>
-          <number>0</number>
-        </slot>
-      </clonebay>
-      <teleporter power="1" room="5" start="false"/>
-      <cloaking power="1" room="12" start="true" img="room_cloaking_7"/>
-      <hacking power="1" room="10" start="false" img="room_hacking_7"/>
-      <battery power="1" room="4" start="false" img="room_battery_20"/>
-      <mind power="1" room="11" start="false" img="room_mind_11"/>
+      <battery power="1" room="3" start="false" img="room_battery_14"/>
+      <cloaking power="1" room="4" start="true" img="room_cloaking_17"/>
+      <clonebay power="1" room="8" start="true" slot="2"/>
+      <doors power="1" room="18" start="true" img="room_doors_9"/>
+      <drones power="2" room="5" start="false" img="room_drones_25"/>
+      <engines power="4" room="9" start="true" img="room_engines_3"/>
+      <hacking power="1" room="6" start="false" img="room_hacking_17"/>
+      <medbay power="1" room="8" start="false" img="room_medbay_7"/>
+      <mind power="1" room="2" start="false" img="room_mind_5"/>
+      <oxygen power="1" room="10" start="true" img="room_oxygen_21"/>
+      <pilot power="1" room="0" start="true" img="room_pilot"/>
+      <sensors power="1" room="19" start="true" img="room_sensors_3"/>
+      <shields power="2" room="15" start="false" img="room_shields_12"/>
+      <teleporter power="1" room="16" start="false"/>
+      <weapons power="2" room="7" start="true" img="room_weapons_12"/>
     </systemList>
     <weaponList count="2" missiles="0">
       <weapon name="BEAM_1_UPGRADED"/>
@@ -71,71 +38,33 @@
     <health amount="30"/>
     <maxPower amount="8"/>
     <crewCount amount="3" class="ngal"/>
-    <shieldImage>ngal_cruiser</shieldImage>
+    <shieldImage>crystal_cruiser</shieldImage>
     <cloakImage>ngal_cruiser</cloakImage>
     <floorImage>ngal_cruiser</floorImage>
   </shipBlueprint>
 
   <!--TODO remake-->
   <shipBlueprint name="PLAYER_SHIP_STEALTH_2" layout="stealth_2" img="stealth_2">
-    <class>Stealth Cruiser</class>
-    <name>DA-SR 12</name>
+    <class>Ngal Cruiser</class>
+    <name>?</name>
     <unlock>Complete 2/3 of the Stealth Cruiser Achievements to unlock this ship.</unlock>
     <desc>Built like a glass cannon, this ship is hard to handle. If its cloaking can keep it safe long enough to charge its weapon, few cruisers can withstand its might.</desc>
     <systemList>
-      <pilot power="1" room="9" start="true" img="room_pilot_2">
-        <slot>
-          <direction>right</direction>
-          <number>1</number>
-        </slot>
-      </pilot>
-      <doors power="1" room="13" start="true" img="room_doors_3">
-        <slot>
-          <direction>right</direction>
-          <number>1</number>
-        </slot>
-      </doors>
-      <sensors power="1" room="6" start="true" img="room_sensors_3">
-        <slot>
-          <direction>right</direction>
-          <number>1</number>
-        </slot>
-      </sensors>
-      <oxygen power="1" room="4" start="true" img="room_oxygen_2"/>
-      <engines power="2" room="5" start="true" img="room_engines_3">
-        <slot>
-          <direction>right</direction>
-          <number>1</number>
-        </slot>
-      </engines>
-      <shields power="2" room="2" start="false" img="room_shields_3">
-        <slot>
-          <direction>left</direction>
-          <number>2</number>
-        </slot>
-      </shields>
-      <weapons power="4" room="12" start="true" img="room_weapons_4">
-        <slot>
-          <direction>up</direction>
-          <number>0</number>
-        </slot>
-      </weapons>
-      <drones power="2" room="1" start="false" img="room_drones_4"/>
-      <medbay power="1" room="0" start="true" img="room_medbay_2">
-        <slot>
-          <number>-2</number>
-        </slot>
-      </medbay>
-      <clonebay power="1" room="0" start="false">
-        <slot>
-          <number>0</number>
-        </slot>
-      </clonebay>
-      <teleporter power="1" room="14" start="false"/>
-      <cloaking power="2" room="11" start="true" img="room_cloaking"/>
-      <hacking power="1" room="8" start="false" img="room_hacking_3"/>
       <battery power="1" room="3" start="false" img="room_battery_3"/>
+      <cloaking power="2" room="11" start="true" img="room_cloaking"/>
+      <clonebay power="1" room="0" start="false"/>
+      <doors power="1" room="13" start="true" img="room_doors_3"/>
+      <drones power="2" room="1" start="false" img="room_drones_4"/>
+      <engines power="2" room="5" start="true" img="room_engines_3"/>
+      <hacking power="1" room="8" start="false" img="room_hacking_3"/>
+      <medbay power="1" room="0" start="true" img="room_medbay_2"/>
       <mind power="1" room="10" start="false" img="room_mind_3"/>
+      <oxygen power="1" room="4" start="true" img="room_oxygen_2"/>
+      <pilot power="1" room="9" start="true" img="room_pilot_2"/>
+      <sensors power="1" room="6" start="true" img="room_sensors_3"/>
+      <shields power="2" room="2" start="false" img="room_shields_3"/>
+      <teleporter power="1" room="14" start="false"/>
+      <weapons power="4" room="12" start="true" img="room_weapons_4"/>
     </systemList>
     <weaponList count="1" missiles="0">
       <weapon name="BEAM_3"/>
@@ -153,54 +82,26 @@
 
   <!--TODO remake-->
   <shipBlueprint name="PLAYER_SHIP_STEALTH_3" layout="stealth_3" img="stealth_3">
-    <class>Stealth Cruiser</class>
-    <name>Simo-H</name>
+    <class>Ngal Cruiser</class>
+    <name>?</name>
     <unlock>Get to Sector 8 with the Stealth Cruiser Type B and Advanced Mode enabled to unlock this ship.</unlock>
-    <desc>This ship was part of an Engi experiment to make a power efficient version of the Zoltan shield. Unfortunately this required the removal of the Cloaking system.</desc>
+    <desc>This ship has no medical ficilities and requires caution and using brief invulnerability to keep its crew alive.</desc>
     <systemList>
-      <pilot power="1" room="8" start="true"/>
-      <doors power="1" room="9" start="true" img="room_doors_2">
-        <slot>
-          <direction>down</direction>
-          <number>0</number>
-        </slot>
-      </doors>
-      <sensors power="1" room="4" start="true" img="room_sensors_2">
-        <slot>
-          <direction>up</direction>
-          <number>0</number>
-        </slot>
-      </sensors>
-      <oxygen power="1" room="1" start="true" img="room_oxygen_2"/>
-      <engines power="1" room="5" start="true" img="room_engines"/>
-      <shields power="2" room="6" start="false" img="room_shields_7">
-        <slot>
-          <direction>up</direction>
-          <number>1</number>
-        </slot>
-      </shields>
-      <weapons power="2" room="3" start="true" img="room_weapons_5">
-        <slot>
-          <direction>right</direction>
-          <number>1</number>
-        </slot>
-      </weapons>
-      <drones power="2" room="11" start="false" img="room_drones_4"/>
-      <medbay power="1" room="0" start="false" img="room_medbay_4">
-        <slot>
-          <number>0</number>
-        </slot>
-      </medbay>
-      <clonebay power="1" room="0" start="true">
-        <slot>
-          <number>0</number>
-        </slot>
-      </clonebay>
-      <teleporter power="1" room="10" start="false"/>
-      <cloaking power="1" room="12" start="true" img="room_cloaking_7"/>
-      <hacking power="1" room="13" start="true" img="room_hacking"/>
       <battery power="1" room="2" start="false" img="room_battery_15"/>
+      <cloaking power="1" room="12" start="true" img="room_cloaking_7"/>
+      <clonebay power="1" room="0" start="false"/>
+      <doors power="1" room="9" start="true" img="room_doors_2"/>
+      <drones power="2" room="11" start="false" img="room_drones_4"/>
+      <engines power="1" room="5" start="true" img="room_engines"/>
+      <hacking power="1" room="13" start="true" img="room_hacking"/>
+      <medbay power="1" room="0" start="false" img="room_medbay_4"/>
       <mind power="1" room="7" start="false" img="room_mind_5"/>
+      <oxygen power="1" room="1" start="true" img="room_oxygen_2"/>
+      <pilot power="1" room="8" start="true"/>
+      <sensors power="1" room="4" start="true" img="room_sensors_2"/>
+      <shields power="2" room="6" start="false" img="room_shields_7"/>
+      <teleporter power="1" room="10" start="false"/>
+      <weapons power="2" room="3" start="true" img="room_weapons_5"/>
     </systemList>
     <weaponList count="1" missiles="0">
       <weapon name="BEAM_1_UPGRADED"/>

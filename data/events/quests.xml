@@ -729,7 +729,7 @@
     <destroyed>
       <text>The explosion rocks the pirate ship and a brilliant light begins to shine from the wreckage. Before you can react the ship is consumed in a massive chain of explosions that send you careening toward a nearby planet. You struggle to put out the fires and your pilot desperately tries to get the controls online before you're dragged down to the surface. Apparently when they said the ship should not be destroyed they had good reason...</text>
       <damage amount="13"/>
-      <damage amount="1" system="random"/>  <!--DLC-->
+      <damage amount="1" system="random"/>
       <damage amount="1" system="room" effect="all"/>
     </destroyed>
     <deadCrew>

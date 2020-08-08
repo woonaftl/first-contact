@@ -32,7 +32,7 @@
 		<velocity min="0.2" max="0.8"/>
 		<direction min="120" max="150"/>
 		<angular min="-1" max="-0.1"/>
-		<glowOffset x="28" y="38"/> <!-- individual setting - only for ipad - not needed -->
+		<glowOffset x="28" y="38"/>
 		<x>0</x>
 		<y>133</y>
 	</gib1>
@@ -40,7 +40,7 @@
 		<velocity min="0" max="0.2"/>
 		<direction min="90" max="180"/>
 		<angular min="-0.4" max="0.4"/>
-		<glowOffset x="25" y="23"/> <!-- individual setting - only for ipad - not needed -->
+		<glowOffset x="25" y="23"/>
 		<x>48</x>
 		<y>107</y>
 	</gib2>
@@ -48,7 +48,7 @@
 		<velocity min="0.3" max="0.6"/>
 		<direction min="240" max="270"/>
 		<angular min="0.2" max="1"/>
-		<glowOffset x="38" y="37"/> <!-- individual setting - only for ipad - not needed -->
+		<glowOffset x="38" y="37"/>
 		<x>190</x>
 		<y>135</y>
 	</gib3>
@@ -56,7 +56,7 @@
 		<velocity min="0.2" max="0.5"/>
 		<direction min="280" max="310"/>
 		<angular min="0.2" max="0.7"/>
-		<glowOffset x="29" y="27"/> <!-- individual setting - only for ipad - not needed -->
+		<glowOffset x="29" y="27"/>
 		<x>104</x>
 		<y>0</y>
 	</gib4>

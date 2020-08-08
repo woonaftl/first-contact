@@ -28,6 +28,13 @@
     <time>0.3</time>
   </anim>
 
+  <animSheet name="ion_stun_shot_large" w="256" h="32" fw="32" fh="32">weapons/ion_stun_shot_large_strip8.png</animSheet>
+  <anim name="ion_stun_shot_large">
+    <sheet>ion_stun_shot_large</sheet>
+    <desc length="8" x="0" y="0"/>
+    <time>0.3</time>
+  </anim>
+
   <animSheet name="ion_1" w="240" h="50" fw="30" fh="50">weapons/ion_1_strip8.png</animSheet>
   <weaponAnim name="ion_1">
     <sheet>ion_1</sheet>

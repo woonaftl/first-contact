@@ -274,7 +274,7 @@
     <entry>Adv. FTL Navigation allows to jump to any beacon in the sector insead of any previously visited beacon.</entry>
   </changelog>
   <augBlueprint name="FTL_JUMPER_GOOD">
-    <title>Adv. FTL Navigation</title>
+    <title>Universal FTL Navigation</title>
     <desc>Allows the ship to jump to any beacon in the sector.</desc>
     <cost>40</cost>
     <bp>5</bp>

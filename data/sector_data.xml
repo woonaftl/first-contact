@@ -182,7 +182,7 @@
 
   <sectorDescription name="ORCHID_SECTOR" minSector="1" unique="false">
     <nameList>
-      <name>Orchid Homeworlds</name>
+      <name>Orchid Controlled Sector</name>
     </nameList>
     <trackList>
       <track>milkyway</track>

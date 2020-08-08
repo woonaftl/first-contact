@@ -259,7 +259,7 @@
       <text>Purchase an unknown weapon for 45 scrap.</text>
       <event load="NEBULA_WEAPONS_TRADER_LIST"/>
     </choice>
-    <choice req="mind" hidden="true"> <!--DLC-->
+    <choice req="mind" hidden="true">
       <text>(Mind Control) Convince him to make it a better deal.</text>
       <event load="NEBULA_WEAPONS_TRADER_LIST2"/>
     </choice>
@@ -289,7 +289,7 @@
       </choice>
     </event>
   </eventList>
-  <eventList name="NEBULA_WEAPONS_TRADER_LIST2"> <!--DLC-->
+  <eventList name="NEBULA_WEAPONS_TRADER_LIST2">
     <event>
       <text>Once "convinced" to help he lowers the price and describes the weapon. However, he eventually comes to his senses and confusedly takes back his discount. He is clearly unsure why he offered it in the first place.</text>
       <choice>

@@ -343,7 +343,7 @@
     <title>Anti-Ship Ion Drone</title>
     <short>Ion</short>
     <desc>Combat drone that repeatedly attacks the enemy ship with ion.</desc>
-    <power>3</power>
+    <power>4</power>
     <cooldown>1000</cooldown>
     <dodge>0</dodge>
     <speed>12</speed>
@@ -358,7 +358,7 @@
     <title>Anti-Ship Ion Drone+</title>
     <short>Ion+</short>
     <desc>Combat drone that repeatedly attacks the enemy ship with ion. This modified schematic requires 1 less power.</desc>
-    <power>2</power>
+    <power>3</power>
     <rarity>0</rarity>
   </droneBlueprintInherit>
 </FTL>

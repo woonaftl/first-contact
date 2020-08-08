@@ -318,7 +318,7 @@
     <cost>60</cost>
     <bp>3</bp>
     <rarity>4</rarity>
-    <image>ion_stun_shot</image>
+    <image>ion_stun_shot_large</image>
     <explosion>explosion_stun_ion</explosion>
     <launchSounds>
       <sound>ionShoot1</sound>

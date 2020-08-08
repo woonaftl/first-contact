@@ -42,7 +42,6 @@
     <entry>New Slug B layout roughly based on old Lanius B</entry>
     <entry>Slug B starts with Taurus Missiles, mind control and teleporter</entry>
   </changelog>
-  <!--TODO remake -->
   <shipBlueprint name="PLAYER_SHIP_JELLY_2" layout="jelly_cruiser_blue" img="jelly_cruiser_blue">
     <class>Slug Cruiser</class>
     <name>?</name>

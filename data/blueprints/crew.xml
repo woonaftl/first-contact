@@ -242,7 +242,7 @@
     <title>Lizard</title>
     <short>Lizard</short>
     <desc>With their massive bodies, fearsome jaws, and inpenetrable scales, Lizards are respected by all races of the Federation.</desc>
-    <cost>50</cost>
+    <cost>60</cost>
     <bp>2</bp>
     <rarity>0</rarity>
     <powerList>
@@ -269,7 +269,7 @@
     <title>Ngal</title>
     <short>Ngal</short>
     <desc>Masters of staying unseen, even the mysterious Ngals have not managed to remain neutral in the Galactic War.</desc>
-    <cost>50</cost>
+    <cost>60</cost>
     <bp>2</bp>
     <rarity>0</rarity>
     <powerList>

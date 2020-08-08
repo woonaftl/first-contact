@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FTL>
+  <changelog>
+    <entry>Oxygen level 2 upgrade cost 25 to 30</entry>
+  </changelog>
   <systemBlueprint name="oxygen">
     <type>oxygen</type>
     <title>Oxygen</title>
@@ -8,11 +11,11 @@
     <maxPower>3</maxPower>
     <rarity>1</rarity>
     <upgradeCost>
-      <level>25</level>
+      <level>30</level>
       <level>50</level>
       <level>75</level>
     </upgradeCost>
-    <cost>0</cost>
+    <cost>60</cost>
   </systemBlueprint>
 
   <systemBlueprint name="teleporter">

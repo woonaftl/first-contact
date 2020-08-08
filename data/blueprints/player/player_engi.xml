@@ -4,6 +4,8 @@
   <changelog>
     <entry>Engi A starts with upgraded Ion Charger II (less power, faster, 4 charges)</entry>
     <entry>Engi A starting weapons power from 3 to 2</entry>
+    <entry>Engi A starting drone control power from 3 to 2</entry>
+    <entry>Engi A starting reactor power from 10 to 9</entry>
   </changelog>
 
   <shipBlueprint name="PLAYER_SHIP_CIRCLE" layout="circle_cruiser" img="circle_cruiser">
@@ -16,7 +18,7 @@
       <cloaking power="1" room="12" start="false" img="room_cloaking_4"/>
       <clonebay power="1" room="7" start="false"/>
       <doors power="1" room="5" start="true" img="room_doors_4"/>
-      <drones power="3" room="0" start="true" img="room_drones_20"/>
+      <drones power="2" room="0" start="true" img="room_drones_20"/>
       <engines power="2" room="2" start="true" img="room_engines_2"/>
       <hacking power="1" room="14" start="false" img="room_hacking_2"/>
       <medbay power="1" room="7" start="true"/>
@@ -38,7 +40,7 @@
     </droneList>
     <aug name="NANO_MEDBAY_LOCKED"/>
     <health amount="30"/>
-    <maxPower amount="10"/>
+    <maxPower amount="9"/>
     <crewCount amount="1" class="human"/>
     <crewCount amount="2" class="engi"/>
   </shipBlueprint>
@@ -59,7 +61,7 @@
       <cloaking power="1" room="3" start="false" img="room_cloaking_14"/>
       <clonebay power="1" room="6" start="false" slot="0"/>
       <doors power="1" room="11" start="true" img="room_doors_9"/>
-      <drones power="2" room="2" start="true" img="room_drones_16"/>
+      <drones power="3" room="2" start="true" img="room_drones_16"/>
       <engines power="1" room="4" start="true" img="room_engines_2"/>
       <hacking power="1" room="14" start="false" img="room_hacking_10"/>
       <medbay power="1" room="6" start="true" img="room_medbay_6"/>
@@ -81,7 +83,7 @@
     </droneList>
     <aug name="NANO_MEDBAY_LOCKED"/>
     <health amount="30"/>
-    <maxPower amount="8"/>
+    <maxPower amount="9"/>
     <crewCount amount="2" class="engi"/>
     <shieldImage>circle_cruiser</shieldImage>
     <cloakImage>circle_cruiser</cloakImage>

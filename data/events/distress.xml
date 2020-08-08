@@ -132,7 +132,7 @@
             <item type="drones" min="-1" max="-1"/>
           </item_modify>
           <damage amount="2"/>
-          <damage amount="1" system="random"/>  <!--DLC-->
+          <damage amount="1" system="random"/>
           <damage amount="1" system="room" effect="fire"/>
         </event>
         <event>
