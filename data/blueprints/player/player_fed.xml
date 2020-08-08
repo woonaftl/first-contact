@@ -78,7 +78,7 @@
   </shipBlueprint>
 
   <changelog>
-    <entry>Fed B has a missile launcher artillery that fires 7 shield-piercing missiles dealing 1 damage each at no resource cost</entry>
+    <entry>Fed B has a missile launcher artillery that fires 5 shield-piercing missiles dealing 2 damage each at no resource cost</entry>
     <entry>Fed B starts with upgraded Burst Laser I (no change)</entry>
     <entry>Fed B starts with Taurus Missiles (buff, guaranteed breach now)</entry>
     <entry>Fed B starts without sensors system (to make use of a Slug crewmember)</entry>
@@ -91,9 +91,9 @@
     <tip>tip_missiles</tip>
     <title>Artillery Missiles</title>
     <short>Artillery</short>
-    <desc>Powers a slow, high-powered missile launcher that fires seven warheads at no resouce cost. More power means faster cooldown.</desc>
-    <tooltip>Artillery: Launcher that automatically fires 7 missiles.</tooltip>
-    <damage>1</damage>
+    <desc>Powers a slow, high-powered missile launcher that fires five warheads at no resouce cost. More power means faster cooldown.</desc>
+    <tooltip>Artillery: Launcher that automatically fires 5 missiles that deal 2 damage each.</tooltip>
+    <damage>2</damage>
     <missiles>0</missiles>
     <!--game does not respond when there are more shots than rooms on enemy ship-->
     <shots>5</shots>
