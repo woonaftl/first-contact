@@ -102,7 +102,7 @@
       <event/>
     </choice>
     <choice req="SCRAP_COLLECTOR" hidden="true">
-      <text>(Lanius Recovery Arm) Attempt to mine the asteroids.</text>
+      <text>(Lanius Metal Melter) Attempt to mine the asteroids.</text>
       <event>
         <text>You carefully extract as much usable material as possible from the nearest asteroids while waiting for the FTL to charge.</text>
         <autoReward level="HIGH">scrap_only</autoReward>
@@ -750,7 +750,7 @@
           <text>You make the colonists teleport the supplies to your ship. It's nothing more than building construction supplies. Oh well, scrap is scrap.</text>
           <autoReward level="LOW">scrap_only</autoReward>
         </event>
-        <event>
+        <event count="3">
           <text>The colonists willingly give up their supplies. But as you make to jump away, an explosion rocks your ship. The cargo was booby trapped!</text>
           <damage amount="2" system="room" effect="random"/>
         </event>

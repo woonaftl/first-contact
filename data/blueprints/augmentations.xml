@@ -199,7 +199,7 @@
     <entry>Scrap Recovery Arm made unavailable in stores or loot (Lanius ships start with it)</entry>
   </changelog>
   <augBlueprint name="SCRAP_COLLECTOR">
-    <title>Lanius Recovery Arm</title>
+    <title>Lanius Metal Melter</title>
     <desc>Allows the ship to collect 15 percent more scrap from any source.</desc>
     <cost>50</cost>
     <bp>8</bp>

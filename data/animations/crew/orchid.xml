@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FTL>
-  <!--TODO fix orchid punch-->
+  <!--TODO fix orchid punch, orchid repair-->
   <animSheet name="orchid" w="350" h="490" fw="35" fh="35">people/orchid_base.png</animSheet>
   <anim name="orchid_portrait">
     <sheet>orchid</sheet>

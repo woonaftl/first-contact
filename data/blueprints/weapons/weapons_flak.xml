@@ -68,6 +68,8 @@
     <name>SHOTGUN_2_UPGRADED</name>
   </blueprintList>
 
+  <!--TODO incinerator - no damage, no piercing, 2 power, 16 charge time, 3 projectiles, 10 fire chance-->
+
   <changelog>
     <entry>Added Basic Flak Gun (1 power, 2 projectiles, 16 sec charge time, 38 radius, 2 rarity, 50 scrap cost). Unavailable in stores or random drops, similarly to Basic Laser, but commonly seen on weaker enemies.</entry>
   </changelog>
