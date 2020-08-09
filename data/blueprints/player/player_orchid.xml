@@ -81,7 +81,7 @@
     <desc>The Vulcan laser needs a long time to spin up, but once it started going, it is able to penetrate most defenses.</desc>
     <systemList>
       <battery power="1" room="1" start="false" img="room_battery_13"/>
-      <cloaking power="1" room="13" start="true" img="room_cloaking_10"/>
+      <cloaking power="1" room="13" start="false" img="room_cloaking_10"/>
       <clonebay power="1" room="14" start="false" slot="3"/>
       <doors power="1" room="9" start="true" img="room_doors"/>
       <drones power="2" room="2" start="false" img="room_drones_22"/>
@@ -91,8 +91,8 @@
       <mind power="1" room="11" start="false" img="room_mind_14"/>
       <oxygen power="1" room="3" start="true" img="room_oxygen_15"/>
       <pilot power="1" room="0" start="true" img="room_pilot_2"/>
-      <sensors power="1" room="10" start="false" img="room_sensors"/>
-      <shields power="2" room="6" start="true" img="room_shields"/>
+      <sensors power="1" room="10" start="true" img="room_sensors"/>
+      <shields power="4" room="6" start="true" img="room_shields"/>
       <teleporter power="1" room="8" start="false"/>
       <weapons power="3" room="7" start="true" img="room_weapons"/>
     </systemList>
@@ -104,7 +104,7 @@
     <droneList drones="0"/>
     <aug name="SYSTEM_CASING_LOCKED"/>
     <health amount="30"/>
-    <maxPower amount="8"/>
+    <maxPower amount="9"/>
     <crewCount amount="2" class="orchid"/>
     <crewCount amount="1" class="engi"/>
     <shieldImage>stealth</shieldImage>

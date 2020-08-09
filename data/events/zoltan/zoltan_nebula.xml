@@ -1,18 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
-  <eventList name="NEBULA_ZOLTAN">
+  <eventList name="NEBULA_ZOLTAN_HOSTILE">
     <event load="NEBULA_ZOLTAN_ROCK"/>
+
+    <event load="NEBULA_AUTO"/>
+    <event load="NEBULA_PIRATE"/>
+    <event load="NEBULA_REBEL"/>
+  </eventList>
+
+  <eventList name="NEBULA_ZOLTAN_HAZARD_HOSTILE">
+    <event load="STORM_AUTO"/>
+    <event load="STORM_REBEL"/>
+  </eventList>
+
+  <eventList name="NEBULA_ZOLTAN_NEUTRAL">
     <event load="NEBULA_ZOLTAN_EYE"/>
 
     <event load="NEBULA_AUTO_DEFENSE_ITEM"/>
     <event load="NEBULA_LOST_SHIP"/>
-    <event load="NEBULA_ROCK_RACIST"/>
     <event load="NEBULA_TRADER"/>
     <event load="NEBULA_WEAPONS_TRADER"/>
-    <event load="STORM_AUTO"/>
-    <event load="STORM_ITEMS"/>
-    <event load="STORM_REBEL"/>
+    <event load="WOONA_DEAL_DEVIL"/>
+    <event load="WOONA_NEBULA_STARVING_MANTIS"/>
+  </eventList>
+
+  <eventList name="NEBULA_ZOLTAN_HAZARD_NEUTRAL">
     <event load="STORM_ZOLTAN_SUPPLY_CHOICE"/>
+
+    <event load="NEBULA_ROCK_RACIST"/>
+    <event load="STORM_ITEMS"/>
     <event load="WOONA_STORM_MONSTER"/>
   </eventList>
 

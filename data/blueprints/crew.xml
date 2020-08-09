@@ -259,7 +259,7 @@
     <bp>2</bp>
     <rarity>0</rarity>
     <powerList>
-      <power>Takes double damage in close combat</power>
+      <power>Takes 1.5x damage in close combat</power>
       <!--<power>Immune to stun</power>-->
       <power>Active: stun enemies for 5 seconds</power>
     </powerList>

@@ -1,21 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
-  <eventList name="NEBULA">
-    <event load="NEBULA_AUTO_DEFENSE_ITEM"/>
-    <event load="NEBULA_LOST_SHIP"/>
-    <event load="NEBULA_MANTIS_CHOICE"/>
-    <event load="NEBULA_PIRATE_SMUGGLE"/>
-    <event load="NEBULA_TRADER"/>
-    <event load="NEBULA_REBEL_CHASE"/>
-    <event load="NEBULA_REBEL_UNDETECTED"/>
-    <event load="NEBULA_ROCK_RACIST"/>
-    <event load="NEBULA_WEAPONS_TRADER"/>
-    <event load="STORM_ITEMS"/>
-    <event load="WOONA_DEAL_DEVIL"/>
-    <event load="WOONA_STORM_MONSTER"/>
-    <event load="WOONA_NEBULA_STARVING_MANTIS"/>
-  </eventList>
-
   <eventList name="NEBULA_NEUTRAL">
     <event load="NEBULA_AUTO_DEFENSE_ITEM"/>
     <event load="NEBULA_LOST_SHIP"/>
@@ -24,12 +8,15 @@
     <event load="NEBULA_TRADER"/>
     <event load="NEBULA_REBEL_CHASE"/>
     <event load="NEBULA_REBEL_UNDETECTED"/>
-    <event load="NEBULA_ROCK_RACIST"/>
     <event load="NEBULA_WEAPONS_TRADER"/>
-    <event load="STORM_ITEMS"/>
     <event load="WOONA_DEAL_DEVIL"/>
-    <event load="WOONA_STORM_MONSTER"/>
     <event load="WOONA_NEBULA_STARVING_MANTIS"/>
+  </eventList>
+
+  <eventList name="NEBULA_HAZARD_NEUTRAL">
+    <event load="NEBULA_ROCK_RACIST"/>
+    <event load="STORM_ITEMS"/>
+    <event load="WOONA_STORM_MONSTER"/>
   </eventList>
 
   <changelog>

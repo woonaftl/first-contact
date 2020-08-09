@@ -41,7 +41,8 @@
     <event name="STORE" min="1" max="1"/>
     <event name="QUESTS" min="1" max="2"/>
     <event name="DISTRESS_BEACON" min="2" max="3"/>
-    <event name="NEBULA" min="3" max="4"/>
+    <event name="NEBULA_NEUTRAL" min="3" max="3"/>
+    <event name="NEBULA_HOSTILE" min="0" max="1"/>
     <event name="HOSTILE" min="7" max="7"/>
     <event name="NEUTRAL" min="7" max="7"/>
   </sectorDescription>
@@ -144,7 +145,10 @@
     <event name="DISTRESS_BEACON_ZOLTAN" min="1" max="1"/>
     <event name="HOSTILE_HAZARD_ZOLTAN" min="1" max="1"/>
     <event name="UPGRADE_LIST_NEBULA" min="1" max="1"/>
-    <event name="NEBULA_ZOLTAN" min="6" max="8"/>
+    <event name="NEBULA_ZOLTAN_HOSTILE" min="0" max="1"/>
+    <event name="NEBULA_ZOLTAN_HAZARD_HOSTILE" min="2" max="2"/>
+    <event name="NEBULA_ZOLTAN_NEUTRAL" min="2" max="2"/>
+    <event name="NEBULA_ZOLTAN_HAZARD_NEUTRAL" min="2" max="3"/>
     <event name="HOSTILE_ZOLTAN" min="3" max="3"/>
     <event name="NEUTRAL_ZOLTAN" min="4" max="4"/>
   </sectorDescription>
@@ -175,7 +179,10 @@
     <event name="DISTRESS_BEACON_ZOLTAN" min="1" max="1"/>
     <event name="HOSTILE_HAZARD_ZOLTAN" min="1" max="1"/>
     <event name="UPGRADE_LIST_NEBULA" min="1" max="1"/>
-    <event name="NEBULA_ZOLTAN" min="6" max="8"/>
+    <event name="NEBULA_ZOLTAN_HOSTILE" min="0" max="1"/>
+    <event name="NEBULA_ZOLTAN_HAZARD_HOSTILE" min="2" max="2"/>
+    <event name="NEBULA_ZOLTAN_NEUTRAL" min="2" max="2"/>
+    <event name="NEBULA_ZOLTAN_HAZARD_NEUTRAL" min="2" max="3"/>
     <event name="HOSTILE_ZOLTAN" min="3" max="3"/>
     <event name="NEUTRAL_ZOLTAN" min="4" max="4"/>
   </sectorDescription>
@@ -237,7 +244,10 @@
     <event name="STORE_REBEL" min="1" max="1"/>
     <event name="QUESTS_REBEL" min="1" max="1"/>
     <event name="DISTRESS_BEACON_REBEL" min="2" max="2"/>
-    <event name="NEBULA_REBEL" min="2" max="5"/>
+    <event name="NEBULA_HAZARD_HOSTILE" min="0" max="1"/>
+    <event name="NEBULA_HOSTILE" min="1" max="1"/>
+    <event name="NEBULA_HAZARD_NEUTRAL" min="0" max="1"/>
+    <event name="NEBULA_NEUTRAL" min="1" max="2"/>
     <event name="HOSTILE_HAZARD_REBEL" min="2" max="2"/>
     <event name="HOSTILE_REBEL" min="9" max="9"/>
     <event name="NEUTRAL_REBEL" min="4" max="4"/>
@@ -264,7 +274,10 @@
     <event name="STORE_REBEL" min="1" max="1"/>
     <event name="QUESTS_REBEL" min="1" max="1"/>
     <event name="DISTRESS_BEACON_REBEL" min="2" max="2"/>
-    <event name="NEBULA_REBEL" min="2" max="5"/>
+    <event name="NEBULA_HAZARD_HOSTILE" min="0" max="1"/>
+    <event name="NEBULA_HOSTILE" min="1" max="1"/>
+    <event name="NEBULA_HAZARD_NEUTRAL" min="0" max="1"/>
+    <event name="NEBULA_NEUTRAL" min="1" max="2"/>
     <event name="HOSTILE_HAZARD_REBEL" min="2" max="2"/>
     <event name="HOSTILE_REBEL" min="9" max="9"/>
     <event name="NEUTRAL_REBEL" min="4" max="4"/>

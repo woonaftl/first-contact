@@ -232,7 +232,7 @@
     </race>
 
     <race name="pavonian">
-      <damageTakenMultiplier>2.0</damageTakenMultiplier>
+      <damageTakenMultiplier>1.5</damageTakenMultiplier>
       <!--stun immunity-->
       <skills>
         <piloting req="10000000"/>

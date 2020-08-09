@@ -1,15 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
-  <eventList name="NEBULA">
-    <event load="NEBULA_AUTO"/>
-    <event load="NEBULA_AUTO_WARNING"/>
-    <event load="NEBULA_MANTIS_FIGHT"/>
-    <event load="NEBULA_PIRATE"/>
-    <event load="NEBULA_REBEL"/>
-    <event load="STORM_AUTO"/>
-    <event load="STORM_REBEL"/>
-  </eventList>
-
   <eventList name="NEBULA_HOSTILE">
     <event load="NEBULA_AUTO"/>
     <event load="NEBULA_AUTO_WARNING"/>
