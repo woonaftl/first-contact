@@ -214,7 +214,7 @@
       </event>
     </choice>
     <choice req="ADV_SCANNERS" hidden="true">
-      <text>(Long-ranged Scanners) Pump extra power into your sensors and try to track them.</text>
+      <text>(Warped Scanners) Pump extra power into your sensors and try to track them.</text>
       <eventList name="NEBULA_LOST_SHIP_LIST2">
         <event>
           <text>Your local radar flickers, periodically showing signs of a large object in the clouds nearby. However it's enough to get coordinates and you find the ship... an empty hull, long since stripped of functioning components.</text>
@@ -363,7 +363,7 @@
       </event>
     </choice>
     <choice req="ADV_SCANNERS" hidden="true">
-      <text>(Long-ranged Scanners) Try to track them as you move to engage.</text>
+      <text>(Warped Scanners) Try to track them as you move to engage.</text>
       <event>
         <text>As soon as they see you they make a run for it. You squeeze what you can out of the malfunctioning sensors and are able to keep track of them long enough to get in firing range.</text>
         <ship hostile="true"/>

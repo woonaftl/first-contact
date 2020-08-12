@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-
-  <!--TODO complete schema, make more strict-->
-  <!--TODO check that the event does not call itself, it causes a crash-->
-
   <xs:element name="FTL">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
@@ -191,10 +187,11 @@
     </xs:complexType>
   </xs:element>
 
+
   <xs:complexType name="eventType">
-    <xs:choice minOccurs="0" maxOccurs="unbounded">
+    <xs:sequence>
       <xs:element name="augment" type="nameType" minOccurs="0" maxOccurs="unbounded"/>
-      <xs:element name="autoReward" minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="autoReward" minOccurs="0">
         <xs:complexType>
           <xs:simpleContent>
             <xs:extension base="autoRewardType">
@@ -203,7 +200,7 @@
           </xs:simpleContent>
         </xs:complexType>
       </xs:element>
-      <xs:element name="boarders" minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="boarders" minOccurs="0">
         <xs:complexType>
           <xs:attribute name="min" type="xs:nonNegativeInteger" use="required"/>
           <xs:attribute name="max" type="xs:nonNegativeInteger" use="required"/>
@@ -282,7 +279,7 @@
         <xs:complexType/>
       </xs:element>
       <xs:element name="drone" type="nameType" minOccurs="0" maxOccurs="unbounded"/>
-      <xs:element name="environment" minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="environment" minOccurs="0">
         <xs:complexType>
           <xs:attribute name="type" type="environmentType" use="required"/>
           <xs:attribute name="target" type="targetType"/>
@@ -295,7 +292,7 @@
           <xs:attribute name="planet" type="xs:string"/>
         </xs:complexType>
       </xs:element>
-      <xs:element name="item_modify" minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="item_modify" minOccurs="0">
         <xs:complexType>
           <xs:sequence>
             <xs:element name="item" maxOccurs="unbounded">
@@ -393,7 +390,7 @@
         </xs:complexType>
       </xs:element>
       <xs:element name="weapon" type="nameType" minOccurs="0" maxOccurs="unbounded"/>
-    </xs:choice>
+    </xs:sequence>
   </xs:complexType>
 
 
@@ -571,5 +568,4 @@
       <xs:enumeration value="player"/>
     </xs:restriction>
   </xs:simpleType>
-
 </xs:schema>

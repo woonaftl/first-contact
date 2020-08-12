@@ -343,7 +343,7 @@
         </event>
       </choice>
       <choice req="ADV_SCANNERS" hidden="true">
-        <text>(Long-Ranged Scanners) Run a second scan pass.</text>
+        <text>(Warped Scanners) Run a second scan pass.</text>
         <event>
           <text>Your improved scanners pick faint signatures of what appears to be a storage space hidden under the rock. You find the access point and discover a weapons cache whose Federation signal emitter has malfunctioned.</text>
           <autoReward level="MED">weapon</autoReward>

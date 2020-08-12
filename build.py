@@ -69,10 +69,7 @@ transform(join("result", "data", "blueprints.xml"),
 transform(join("result", "data", "blueprints.xml"),
           join("tools", "events_upgrade.xslt"),
           join("data", "events", "upgrade.xml"))
-merge("events")
-transform(join("result", "data", "events.xml"),
-          join("tools", "events.xslt"),
-          join("result", "data", "events.xml"))
+
 transform(join("result", "data", "sector_data.xml"),
           join("tools", "sector_data.xslt"),
           join("result", "data", "sector_data.xml"))
@@ -80,8 +77,35 @@ transform(join("result", "data", "rooms.xml"),
           join("tools", "rooms.xslt"),
           join("result", "data", "rooms.xml"))
 
+merge("events")
+transform(join("result", "data", "events.xml"),
+          join("tools", "events", "merge_eventlists.xslt"),
+          join("result", "data", "events.xml"))
+transform(join("result", "data", "events.xml"),
+          join("tools", "events", "nest.xslt"),
+          join("result", "data", "events.xml"))
+transform(join("result", "data", "events.xml"),
+          join("tools", "events", "teleporter_bug.xslt"),
+          join("result", "data", "events.xml"))
+transform(join("result", "data", "events.xml"),
+          join("tools", "events", "engine_disabler.xslt"),
+          join("result", "data", "events.xml"))
+transform(join("result", "data", "events.xml"),
+          join("tools", "events", "missile_recycler.xslt"),
+          join("result", "data", "events.xml"))
+transform(join("result", "data", "events.xml"),
+          join("tools", "events", "count.xslt"),
+          join("result", "data", "events.xml"))
+transform(join("result", "data", "events.xml"),
+          join("tools", "events", "optimize.xslt"),
+          join("result", "data", "events.xml"))
+transform(join("result", "data", "events.xml"),
+          join("tools", "events", "sort.xslt"),
+          join("result", "data", "events.xml"))
+
 schema_events = et.XMLSchema(et.parse(join("schema", "events.xsd")))
-if not schema_events.validate(et.parse(join("result", "data", "events.xml"))):
+events = et.parse(join("result", "data", "events.xml"))
+if not schema_events.validate(events):
     for error in schema_events.error_log:
         print(f"Line {error.line}: {error.message}")
 

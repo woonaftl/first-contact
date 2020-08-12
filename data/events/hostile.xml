@@ -30,7 +30,7 @@
     <entry>Added special ship for dread pirate Tuco</entry>
   </changelog>
   <eventList name="PIRATE">
-    <event count="8">
+    <event count="5">
       <textList name="PIRATE">
         <text>As you jump into the system a pirate advances on your position. They are refusing all hails. Prepare for a fight.</text>
         <text>Soon after arriving in the system you are hailed by a small cruiser. "What good fortune that we happen to run into each other. Nothing personal, but you have some information we need!"</text>
@@ -47,7 +47,7 @@
         <escape chance="0.5" min="2" max="4" load="PIRATE_ESCAPE"/>
         <destroyed load="DESTROYED_DEFAULT"/>
         <gotaway>
-          <text id="ship_PIRATE_gotaway_text"/>
+          <text>The pirate jumped away.</text>
         </gotaway>
         <deadCrew load="DEAD_CREW_DEFAULT"/>
       </ship>

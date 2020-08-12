@@ -182,16 +182,17 @@
   </augBlueprint>
 
   <changelog>
-    <entry>Repair Arm scrap cost 50 to 30</entry>
+    <entry>Repair Arm made exclusive to new race</entry>
+    <entry>Repair Arm scrap reward decrease from 0.15 to 0.1</entry>
   </changelog>
   <augBlueprint name="REPAIR_ARM">
-    <title>Repair Arm</title>
-    <desc>Repairs your hull every time you collect scrap, but reduces scrap collected by 15 percent.</desc>
-    <cost>30</cost>
+    <title>Lizard Repair Mold</title>
+    <desc>The mold living on ship exterior can repair hull at the cost of 10 percent of all scrap collected. Does not decrease scrap rewards if the hull is at excellent condition.</desc>
+    <cost>40</cost>
     <bp>8</bp>
-    <rarity>3</rarity>
+    <rarity>0</rarity>
     <stackable>false</stackable>
-    <value>0.15</value>
+    <value>0.1</value>
   </augBlueprint>
 
   <changelog>
@@ -210,11 +211,11 @@
   <augBlueprintInherit name="SCRAP_COLLECTOR_LOCKED" base="SCRAP_COLLECTOR"/>
 
   <changelog>
-    <entry>Long-Ranged Scanners made unavailable in stores or loot (Stealth ships start with it)</entry>
+    <entry>Long-Ranged Scanners made exclusive to new race</entry>
   </changelog>
   <augBlueprint name="ADV_SCANNERS">
-    <title>Long-Ranged Scanners</title>
-    <desc>Adds additional info about nearby Beacons on the star map.</desc>
+    <title>Warped Scanners</title>
+    <desc>Adds additional info about nearby beacons on the star map.</desc>
     <cost>30</cost>
     <bp>3</bp>
     <rarity>0</rarity>
@@ -350,7 +351,7 @@
 
   <changelog>
     <entry>Fire Suppression scrap cost 65 to 30</entry>
-    <entry>Fire Suppression extinguishing speed increased by 20% (exactly the same speed as humans now)</entry>
+    <entry>Fire Suppression extinguishing speed increased by 80% (exactly the same speed as humans now)</entry>
   </changelog>
   <augBlueprint name="FIRE_EXTINGUISHERS">
     <title>Fire Suppression</title>
@@ -359,7 +360,7 @@
     <bp>8</bp>
     <rarity>3</rarity>
     <stackable>false</stackable>
-    <value>1.2</value>
+    <value>1.8</value>
   </augBlueprint>
   <augBlueprintInherit name="FIRE_EXTINGUISHERS_LOCKED" base="FIRE_EXTINGUISHERS">
     <rarity>0</rarity>
@@ -486,19 +487,27 @@
     <stackable>false</stackable>
   </augBlueprint>
 
-  <!--
-  couldn't get it to work even in one event...
-
   <changelog>
     <entry>New Missile Recycler augmentation (additional 2 missiles for each defeated ship)</entry>
   </changelog>
   <augBlueprint name="MISSILE_RECYCLER">
     <title>Missile Recycler</title>
-    <desc>Additional 2 missiles for each destroyed or captured ship.</desc>
+    <desc>Recycles two additional missiles from each destroyed or captured ship.</desc>
     <cost>30</cost>
     <bp>4</bp>
     <rarity>1</rarity>
     <stackable>false</stackable>
   </augBlueprint>
-  -->
+
+  <changelog>
+    <entry>New Engine Disabler augmentation (limits enemy engines to 1)</entry>
+  </changelog>
+  <augBlueprint name="ENGINE_DISABLER">
+    <title>Engine Disabler</title>
+    <desc>Lowers enemy evasion by limiting engine power to a minimum.</desc>
+    <cost>40</cost>
+    <bp>4</bp>
+    <rarity>2</rarity>
+    <stackable>false</stackable>
+  </augBlueprint>
 </FTL>

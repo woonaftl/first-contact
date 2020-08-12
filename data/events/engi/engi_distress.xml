@@ -263,7 +263,7 @@
       </event>
     </choice>
     <choice hidden="true" req="ADV_SCANNERS">
-      <text>(Long Ranged Scanners) Run another scan.</text>
+      <text>(Warped Scanners) Run another scan.</text>
       <event load="DISTRESS_ENGI_REACTOR_SCAN"/>
     </choice>
   </event>

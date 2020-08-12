@@ -158,7 +158,7 @@
       </eventList>
     </choice>
     <choice hidden="true" req="ADV_SCANNERS">
-      <text>(Long-Ranged Scanners) Run a detailed scan before responding.</text>
+      <text>(Warped Scanners) Run a detailed scan before responding.</text>
       <event load="FUEL_APPROACH_SCAN_LIST"/>
     </choice>
   </event>

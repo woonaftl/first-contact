@@ -332,6 +332,10 @@
       <function name="SYSTEM_CASING" value="0.25" warning="false"/>
       <locked/>
     </aug>
+    <aug name="REPAIR_ARM_LOCKED">
+      <function name="REPAIR_ARM" value="0.1" warning="false"/>
+      <locked/>
+    </aug>
     <aug name="SCRAP_COLLECTOR_LOCKED">
       <function name="SCRAP_COLLECTOR" value="0.15" warning="false"/>
       <locked/>
@@ -342,10 +346,6 @@
     </aug>
     <aug name="O2_MASKS_LOCKED">
       <function name="O2_MASKS" value="0.5" warning="false"/>
-      <locked/>
-    </aug>
-    <aug name="FIRE_EXTINGUISHERS_LOCKED">
-      <function name="FIRE_EXTINGUISHERS" value="1.2" warning="false"/>
       <locked/>
     </aug>
     <aug name="FTL_JUMPER_GOOD">
