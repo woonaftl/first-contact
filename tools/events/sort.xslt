@@ -11,4 +11,6 @@
       </xsl:apply-templates>
     </xsl:copy>
   </xsl:template>
+
+  <xsl:template match="comment()"/>
 </xsl:transform>

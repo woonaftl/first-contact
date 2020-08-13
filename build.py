@@ -70,6 +70,9 @@ transform(join("result", "data", "blueprints.xml"),
           join("tools", "events_upgrade.xslt"),
           join("data", "events", "upgrade.xml"))
 
+transform(join("result", "data", "animations.xml"),
+          join("tools", "animations.xslt"),
+          join("result", "data", "animations.xml"))
 transform(join("result", "data", "sector_data.xml"),
           join("tools", "sector_data.xslt"),
           join("result", "data", "sector_data.xml"))

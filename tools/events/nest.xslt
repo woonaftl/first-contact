@@ -2,8 +2,9 @@
 <xsl:transform xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
   <xsl:output method="xml" omit-xml-declaration="yes" encoding="utf-8" indent="yes"/>
 
-  <xsl:key name="event" match="FTL/event[@name] | FTL/eventList[@name]" use="@name"/>
-  <xsl:key name="ship" match="FTL/ship[@name]" use="@name"/>
+  <xsl:key name="event" match="event[@name] | eventList[@name]" use="@name"/>
+  <xsl:key name="ship" match="ship[@name]" use="@name"/>
+  <xsl:key name="text" match="textList[@name]" use="@name"/>
 
   <xsl:template match="FTL/event[not(@name = document('../../result/data/sector_data.xml')/FTL/sectorDescription/event/@name)]
                                 [not(@name = document('../../result/data/sector_data.xml')/FTL/sectorDescription/startEvent)]
@@ -50,5 +51,19 @@
       </auto_blueprint>
       <xsl:apply-templates select="key('ship', @load)/node()"/>
     </xsl:copy>
+  </xsl:template>
+
+  <xsl:template match="text[@load][not(parent::textList)]">
+    <textList>
+      <xsl:apply-templates select="key('text', @load)/@*[name() != 'name']"/>
+      <xsl:apply-templates select="@*[name() != 'load']"/>
+      <xsl:apply-templates select="key('text', @load)/node()"/>
+    </textList>
+  </xsl:template>
+
+  <xsl:template match="text[@load][parent::textList]">
+      <xsl:apply-templates select="key('text', @load)/@*[name() != 'name']"/>
+      <xsl:apply-templates select="@*[name() != 'load']"/>
+      <xsl:apply-templates select="key('text', @load)/node()"/>
   </xsl:template>
 </xsl:transform>

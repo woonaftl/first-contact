@@ -82,13 +82,14 @@
   </shipBlueprint>
 
   <changelog>
-    <entry>Kestrel C starts with upgraded Burst Laser I (no change)</entry>
-    <entry>Kestrel C starts with upgraded Burst Ion Stunner I (buff)</entry>
+    <entry>Kestrel C was remade</entry>
+    <entry>Kestrel C starts with upgraded Burst Laser III</entry>
   </changelog>
   <shipBlueprint name="PLAYER_SHIP_HARD_3" layout="kestral_3" img="kestral_3">
     <class>Kestrel Cruiser</class>
-    <name>The Swallow</name>
-    <desc>This model was modified by pirates to utilize newly discovered technology. It can clone lost crewmembers and stun enemies.</desc>
+    <!--TODO recolor, layout -->
+    <name>?</name>
+    <desc>?</desc>
     <unlock>Get to Sector 8 with the Kestrel Cruiser Type B and Advanced Mode enabled to unlock this ship.</unlock>
     <systemList>
       <battery power="1" room="8" start="false" img="room_battery_6"/>
@@ -102,23 +103,24 @@
       <mind power="1" room="16" start="false" img="room_mind_1"/>
       <oxygen power="1" room="7" start="true" img="room_oxygen_10"/>
       <pilot power="1" room="11" start="true" img="room_pilot"/>
-      <sensors power="2" room="13" start="true" img="room_sensors"/>
+      <sensors power="1" room="13" start="true" img="room_sensors"/>
       <shields power="2" room="12" start="true" img="room_shields_3"/>
       <teleporter power="1" room="4" start="false"/>
-      <weapons power="2" room="2" start="true" img="room_weapons_2"/>
+      <weapons power="3" room="2" start="true" img="room_weapons_2"/>
     </systemList>
     <weaponSlots>4</weaponSlots>
     <droneSlots>2</droneSlots>
-    <weaponList count="2" missiles="4">
-      <weapon name="LASER_BURST_2_UPGRADED"/>
-      <weapon name="ION_STUN_BURST_UPGRADED"/>
+    <weaponList count="1" missiles="5">
+      <weapon name="LASER_BURST_5_UPGRADED"/>
     </weaponList>
-    <droneList count="0" drones="3">
+    <droneList count="0" drones="0">
     </droneList>
     <health amount="30"/>
     <maxPower amount="7"/>
-    <crewCount amount="1" class="anaerobic"/>
-    <crewCount amount="2" class="human"/>
+    <crewCount amount="1" class="human"/>
+    <crewCount amount="1" class="orchid"/>
+    <crewCount amount="1" class="lizard"/>
+    <crewCount amount="1" class="pavonian"/>
     <shieldImage>kestral</shieldImage>
     <cloakImage>kestral</cloakImage>
     <floorImage>kestral</floorImage>

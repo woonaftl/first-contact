@@ -78,13 +78,10 @@
   </shipBlueprint>
 
   <changelog>
+    <entry>Fed B was remade around missile artillery</entry>
     <entry>Fed B has a missile launcher artillery that fires 5 shield-piercing missiles dealing 2 damage each at no resource cost</entry>
     <entry>Fed B starts with upgraded Burst Laser I (no change)</entry>
     <entry>Fed B starts with Taurus Missiles (buff, guaranteed breach now)</entry>
-    <entry>Fed B starts without sensors system (to make use of a Slug crewmember)</entry>
-    <entry>Fed B starts with an additional Pavonian crewmember</entry>
-    <entry>Fed B starting artillery power 2 to 1</entry>
-    <entry>Fed B starting reactor power 9 to 7</entry>
   </changelog>
   <weaponBlueprint name="ARTILLERY_FED_MISSILES">
     <type>MISSILES</type>
@@ -126,9 +123,10 @@
   </weaponBlueprint>
   <shipBlueprint name="PLAYER_SHIP_FED_2" layout="fed_cruiser_2" img="fed_cruiser_2">
     <class>Federation Cruiser</class>
-    <name>Nisos</name>
+    <name>?</name>
+    <!--TODO recolor, layout-->
     <unlock>Complete 2/3 of the Federation Cruiser Achievements to unlock this ship.</unlock>
-    <desc>This ship starts with additional Artillery power, encouraging heavy reliance on the beam.</desc>
+    <desc>?</desc>
     <systemList>
       <artillery power="1" room="12" weapon="ARTILLERY_FED_MISSILES"/>
       <battery power="1" room="3" start="false" img="room_battery_8"/>
@@ -156,19 +154,18 @@
     <droneList drones="0"/>
     <health amount="30"/>
     <maxPower amount="7"/>
-    <crewCount amount="1" class="slug"/>
+    <crewCount amount="1" class="rock"/>
     <crewCount amount="1" class="energy"/>
     <crewCount amount="1" class="human"/>
-    <crewCount amount="1" class="pavonian"/>
+    <crewCount amount="1" class="lizard"/>
     <shieldImage>fed_cruiser</shieldImage>
     <cloakImage>fed_cruiser</cloakImage>
   </shipBlueprint>
 
   <changelog>
+    <entry>Fed C remade with new weapons, crew and room layout</entry>
     <entry>Fed C flak artillery projectiles 7 to 15</entry>
     <entry>Fed C flak artillery radius 35 to 75</entry>
-    <entry>Fed C shield console moved not to intersect door</entry>
-    <entry>Fed C starting reactor from 7 to 6</entry>
   </changelog>
   <weaponBlueprint name="ARTILLERY_FED_C">
     <type>BURST</type>
@@ -176,8 +173,8 @@
     <drone_targetable>1</drone_targetable>
     <title>Flak Artillery</title>
     <short>Flak A.</short>
-    <desc>Powers a slow, high-powered flak gun that fires eleven projectiles. More power means faster cooldown.</desc>
-    <tooltip>Artillery: Flak gun that automatically fires 11 projectiles.</tooltip>
+    <desc>Powers a slow, high-powered flak gun that fires fifteen projectiles. More power means faster cooldown.</desc>
+    <tooltip>Artillery: Flak gun that automatically fires 15 projectiles.</tooltip>
     <radius>75</radius>
     <damage>1</damage>
     <spin>720</spin>
@@ -218,14 +215,15 @@
   </weaponBlueprint>
   <shipBlueprint name="PLAYER_SHIP_FED_3" layout="fed_cruiser_3" img="fed_cruiser_3">
     <class>Federation Cruiser</class>
-    <name>The Fregatidae</name>
+    <name>?</name>
+    <!--TODO recolor, layout-->
     <unlock>Get to Sector 8 with the Federation Cruiser Type B and Advanced Mode enabled to unlock this ship.</unlock>
-    <desc>With a Flak Artillery weapon and an improved Clonebay, only the most suicidal of infantry chooses to fly on this ship.</desc>
+    <desc>?</desc>
     <systemList>
       <artillery power="1" room="9" weapon="ARTILLERY_FED_C"/>
       <battery power="1" room="7" start="false" img="room_battery_16"/>
       <cloaking power="1" room="4" start="false" img="room_cloaking_3"/>
-      <clonebay power="2" room="1" start="true"/>
+      <clonebay power="1" room="1" start="true"/>
       <doors power="1" room="13" start="true" img="room_doors"/>
       <drones power="2" room="17" start="false" img="room_drones_3"/>
       <engines power="2" room="5" start="true" img="room_engines_8"/>
@@ -236,20 +234,21 @@
       <pilot power="1" room="6" start="true"/>
       <sensors power="1" room="10" start="true"/>
       <shields power="2" room="15" start="true" img="room_shields_14"/>
-      <teleporter power="1" room="8" start="true"/>
-      <weapons power="1" room="11" start="true" img="room_weapons"/>
+      <teleporter power="1" room="8" start="false"/>
+      <weapons power="2" room="11" start="true" img="room_weapons"/>
     </systemList>
     <weaponSlots>4</weaponSlots>
     <droneSlots>2</droneSlots>
-    <weaponList count="0" missiles="5">
+    <weaponList count="1" missiles="0">
+      <weapon name="BEAM_2_LONG_UPGRADED"/>
     </weaponList>
     <droneList drones="0"/>
     <health amount="30"/>
-    <maxPower amount="6"/>
-    <crewCount amount="2" class="energy"/>
+    <maxPower amount="7"/>
+    <crewCount amount="1" class="anaerobic"/>
+    <crewCount amount="1" class="energy"/>
+    <crewCount amount="1" class="anaerobic"/>
     <crewCount amount="1" class="human"/>
-    <crewCount amount="1" class="mantis"/>
-    <aug name="O2_MASKS_LOCKED"/>
     <shieldImage>fed_cruiser</shieldImage>
     <cloakImage>fed_cruiser</cloakImage>
     <floorImage>fed_cruiser</floorImage>

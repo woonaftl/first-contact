@@ -42,17 +42,16 @@
   </shipBlueprint>
 
   <changelog>
-    <entry>Lanius B starts with upgraded Flak Gun I</entry>
-    <entry>Lanius B starts with upgraded Scythe Beam</entry>
-    <entry>Lanius B starts without Mind Control or Teleporter</entry>
-    <entry>Lanius B starts with a crew of just 2 Lanius</entry>
+    <entry>Lanius B was remade with new weapons, systems, crew and a new room layout</entry>
+    <entry>Lanius B starts with 2 Basic Flak Guns</entry>
+    <entry>Lanius B starts with 2 upgraded Heavy Laser I</entry>
   </changelog>
   <!--TODO miniship, gibs-->
   <shipBlueprint name="PLAYER_SHIP_ANAEROBIC_2" layout="anaerobic_cruiser_black" img="anaerobic_cruiser_black">
     <class>Lanius Cruiser</class>
     <name>?</name>
     <unlock>Complete 2/3 of the Lanius Cruiser Achievements to unlock this ship.</unlock>
-    <desc>While Flak weapons are not precise enough to damage critical systems by themselves, they make very powerful loadouts coupled with beams.</desc>
+    <desc>?</desc>
     <systemList>
       <battery power="1" room="10" start="false" img="room_battery_21"/>
       <cloaking power="1" room="2" start="false" img="room_cloaking_15"/>
@@ -68,17 +67,19 @@
       <sensors power="1" room="8" start="true" img="room_sensors"/>
       <shields power="2" room="4" start="true" img="room_shields_16"/>
       <teleporter power="1" room="17" start="false"/>
-      <weapons power="3" room="15" start="true" img="room_weapons"/>
+      <weapons power="4" room="15" start="true" img="room_weapons"/>
     </systemList>
     <weaponSlots>4</weaponSlots>
     <droneSlots>2</droneSlots>
-    <weaponList count="2" missiles="0">
-      <weapon name="SHOTGUN_UPGRADED"/>
-      <weapon name="BEAM_2_LONG_UPGRADED"/>
+    <weaponList count="4" missiles="0">
+      <weapon name="SHOTGUN_BASIC"/>
+      <weapon name="SHOTGUN_BASIC"/>
+      <weapon name="LASER_HEAVY_1_UPGRADED"/>
+      <weapon name="LASER_HEAVY_1_UPGRADED"/>
     </weaponList>
     <droneList drones="0"/>
     <health amount="30"/>
-    <maxPower amount="6"/>
+    <maxPower amount="7"/>
     <crewCount amount="2" class="anaerobic"/>
     <aug name="SCRAP_COLLECTOR_LOCKED"/>
     <shieldImage>anaerobic_cruiser</shieldImage>
