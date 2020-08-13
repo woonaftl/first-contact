@@ -274,9 +274,9 @@
     <entry>Adv. FTL Navigation scrap cost 50 to 40</entry>
     <entry>Adv. FTL Navigation allows to jump to any beacon in the sector insead of any previously visited beacon.</entry>
   </changelog>
-  <augBlueprint name="FTL_JUMPER_GOOD">
+  <augBlueprint name="FTL_JUMPER_UNIVERSAL">
     <title>Universal FTL Navigation</title>
-    <desc>Allows the ship to jump to any beacon in the sector.</desc>
+    <desc>Allows the ship to jump to any beacon in the sector at no additional cost.</desc>
     <cost>40</cost>
     <bp>5</bp>
     <rarity>2</rarity>

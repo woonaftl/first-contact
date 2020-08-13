@@ -60,10 +60,13 @@
       <xsl:for-each select="//ship[*]">
         <xsl:if test="generate-id(.) = generate-id(key('ship', .))">
           <ship>
+            <xsl:attribute name="auto_blueprint">
+              <xsl:value-of select="generate-id(key('ship', auto_blueprint))"/>
+            </xsl:attribute>
             <xsl:attribute name="name">
               <xsl:value-of select="generate-id(key('ship', .))"/>
             </xsl:attribute>
-            <xsl:apply-templates select="@*[name() != 'name'][name() != 'hostile'] | node()"/>
+            <xsl:apply-templates select="@*[name() != 'name'][name() != 'hostile'] | node()[name() != 'auto_blueprint']"/>
           </ship>
         </xsl:if>
       </xsl:for-each>

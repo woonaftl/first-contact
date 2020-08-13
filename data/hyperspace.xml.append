@@ -348,7 +348,7 @@
       <function name="O2_MASKS" value="0.5" warning="false"/>
       <locked/>
     </aug>
-    <aug name="FTL_JUMPER_GOOD">
+    <aug name="FTL_JUMPER_UNIVERSAL">
       <function name="FTL_JUMPER_GOOD" value="1" warning="false"/>
     </aug>
   </augments>

@@ -8,6 +8,75 @@
     <text>Welcome to a new sector! Get to the exit beacon and jump to the next sector before the pursuing Rebels catch you!</text>
   </event>
 
+  <eventList name="NON_HOSTILE">
+    <event load="NEUTRAL"/>
+    <event load="ITEMS"/>
+  </eventList>
+
+  <!-- This event list is hardcoded to fill out a sector if it ran out of all other calls for that sector -->
+  <eventList name="NEUTRAL">
+    <event load="ASTEROID_EXPLORE"/>
+    <event load="AUTO_DEFENSE_ITEM"/>
+    <event load="AUTO_DEFENSE_MAP"/>
+    <event load="AUTO_REFUEL_STATION"/>
+    <event load="BROKEN_REBEL_DRONE"/>
+    <event load="DONOR_PLAGUE"/>
+    <event load="DONOR_PONY"/>
+    <event load="EMPTY_STATION2"/>
+    <event load="FRIENDLY_SLAVER"/>
+    <event load="FUELING_STATION"/>
+    <event load="MERCENARY"/>
+    <event load="PIRATE_BRIBER"/>
+    <event load="PIRATE_CIVILIAN"/>
+    <event load="PIRATE_SALESMAN"/>
+    <event load="PIRATE_STATION_CROPS"/>
+    <event load="REBEL_CHECKPOINT"/>
+    <event load="REBEL_HELPERS"/>
+    <event load="REBEL_TRANSPORT"/>
+    <event load="REFUGEE_NO_DISTRESS"/>
+    <event load="ROGUE_REBEL"/>
+    <event load="STORE_REBELSIDE"/>
+    <event load="TERRAFORMING_SCAN"/>
+    <event load="WRECKAGE_EVENT"/>
+    <event load="FLOATING_CARGO"/>
+  </eventList>
+
+  <eventList name="EXIT_LIST">
+    <event load="NEUTRAL_EXIT"/>
+    <event load="ITEMS"/>
+  </eventList>
+
+  <!-- This event list is hardcoded to fill out a sector if it ran out of all other calls for that sector ... TECHNICALLY it uses the EXIT_LIST above us now-->
+  <eventList name="NEUTRAL_EXIT">
+    <!--Neutral without reveal map events -->
+    <event load="ASTEROID_EXPLORE"/>
+    <event load="AUTO_DEFENSE_ITEM"/>
+    <event load="AUTO_REFUEL_STATION"/>
+    <event load="DONOR_PLAGUE"/>
+    <event load="DONOR_PONY"/>
+    <event load="EMPTY_STATION2"/>
+    <event load="FRIENDLY_SLAVER"/>
+    <event load="FUELING_STATION"/>
+    <event load="PIRATE_BRIBER"/>
+    <event load="PIRATE_CIVILIAN"/>
+    <event load="PIRATE_SALESMAN"/>
+    <event load="PIRATE_STATION_CROPS"/>
+    <event load="REBEL_CHECKPOINT"/>
+    <event load="REBEL_HELPERS"/>
+    <event load="REBEL_TRANSPORT"/>
+    <event load="REFUGEE_NO_DISTRESS"/>
+    <event load="ROGUE_REBEL"/>
+    <event load="STORE_REBELSIDE"/>
+    <event load="TERRAFORMING_SCAN"/>
+    <event load="WRECKAGE_EVENT"/>
+    <event load="FLOATING_CARGO"/>
+  </eventList>
+
+  <eventList name="NEBULA">
+    <event load="NEBULA_NEUTRAL"/>
+    <event load="NEBULA_HOSTILE"/>
+  </eventList>
+
   <event name="STORE">
     <textList name="STORE_TEXT">
       <text>A ship engineer has set up a small shop here.</text>
@@ -70,7 +139,7 @@
     <environment type="nebula"/>
     <store/>
   </event>
-  
+
   <event name="START_BEACON_PIRATE">
     <textList name="START_BEACON_PIRATE">
       <text>A few years ago this region was bustling with trade activity. Now it is overrun with bandits and marauders. You should tread lightly here.</text>
@@ -205,6 +274,169 @@
 
   <event name="FINISH_BEACON_NEBULA">
     <text>This Long-Range Beacon is almost hidden within a nebula. When the FTL Drive is charged you can jump to the next Sector.</text>
+  </event>
+
+  <event name="FLEET_EASY">
+    <fleet>rebel</fleet>
+    <text>The Rebel fleet has found you, and a nearby scout turns to engage. The cruisers in the distance are firing on you!</text>
+    <ship name="LONG_FLEET" auto_blueprint="SHIPS_REBEL_ELITE" hostile="true">
+      <destroyed>
+        <text>There's no time to salvage the enemy ship... You must jump away before the cruisers get in firing range!</text>
+        <item_modify>
+          <item type="fuel" min="1" max="1"/>
+        </item_modify>
+      </destroyed>
+      <deadCrew>
+        <text>There's no time to salvage the enemy ship... You must jump away before the cruisers get in firing range!</text>
+        <item_modify>
+          <item type="fuel" min="1" max="1"/>
+        </item_modify>
+      </deadCrew>
+    </ship>
+    <environment type="PDS" target="player"/>
+  </event>
+
+  <event name="FLEET_EASY_NEBULA">
+    <text>An advanced Rebel hunter easily found your ship. You can't see it through the nebula, but you can assume the fleet is right on top of you. You need to escape quickly.</text>
+    <ship load="LONG_FLEET" hostile="true"/>
+    <environment type="storm"/>
+  </event>
+
+  <event name="FLEET_EASY_DLC">
+    <fleet>rebel</fleet>
+    <text>The Rebel fleet has found you, and a nearby scout turns to engage. The cruisers in the distance are firing on you!</text>
+    <ship load="LONG_FLEET" hostile="true"/>
+    <environment type="PDS" target="player"/>
+  </event>
+
+  <event name="FLEET_EASY_BEACON">
+    <fleet>rebel</fleet>
+    <text>You've found the exit beacon but the Rebels got here first! You must survive long enough to be able to jump to the next sector.</text>
+    <ship load="LONG_FLEET" hostile="true"/>
+  </event>
+
+  <event name="FLEET_EASY_BEACON_DLC">
+    <fleet>rebel</fleet>
+    <text>You've found the exit beacon but the Rebels got here first! You must survive long enough to be able to jump to the next sector.</text>
+    <ship load="LONG_FLEET" hostile="true"/>
+    <environment type="PDS" target="player"/>
+  </event>
+
+  <event name="FLEET_HARD">
+    <fleet>rebel</fleet>
+    <text>The Rebel fleet has found you, and a nearby scout turns to engage. You must flee before their cruisers open fire!</text>
+    <ship load="LONG_FLEET" hostile="true"/>
+  </event>
+
+  <event name="NO_FUEL_FLEET">
+    <text>The Rebel fleet has caught up to you. You detect significant fuel reserves in one of their closer fighters and move in to attack. Maybe you can still pull this off.</text>
+    <ship name="REBEL_FLEET_FUEL" auto_blueprint="SHIPS_REBEL_ELITE" hostile="true">
+      <escape timer="80" min="30" max="30"/>
+      <gotaway>
+        <text>The ship jumps away without a word. You assume they just went to get reinforcements...</text>
+      </gotaway>
+      <destroyed>
+        <text>You manage to retrieve a few precious fuel capsules. You hurry to jump away from the cruiser fire!</text>
+        <item_modify>
+          <item type="fuel" min="2" max="4"/>
+        </item_modify>
+      </destroyed>
+      <deadCrew>
+        <text>You manage to retrieve a few precious fuel capsules. You hurry to jump away from the cruiser fire!</text>
+        <item_modify>
+          <item type="fuel" min="2" max="4"/>
+        </item_modify>
+      </deadCrew>
+    </ship>
+    <fleet>rebel</fleet>
+  </event>
+
+  <event name="NO_FUEL_FLEET_DLC">
+    <text>Your pilot deftly avoids incoming artillery fire from the surrounding fleet while you try to sort out exactly what your plan is... One of the many approaching fighters gets into weapon range and your scanners detect it has surplus fuel. Maybe you can still pull this off.</text>
+    <ship load="REBEL_FLEET_FUEL" hostile="true"/>
+    <fleet>rebel</fleet>
+    <environment type="PDS" target="player"/>
+  </event>
+
+  <event name="FEDERATION_BASE">
+    <text>You arrive near the Federation Base to find the bulk of their fleet skirmishing with Rebel forces. You hang back near the far side of the moon to avoid the conflict. There's not much you can do to help in that battle, and your mission holds the key to turn the tide of the war. You prepare to face the Flagship.</text>
+  </event>
+
+  <event name="LAST_STAND_START">
+    <text>You arrive at an outpost close to the Federation Base. Your access codes get you past initial security and an officer sets up a direct feed to the Federation Base's war room. Admiral Tully speaks first saying, "What is the meaning of this?! Who are you?"</text>
+    <fleet>fed</fleet>
+    <choice>
+      <text>Explain your mission.</text>
+      <event>
+        <text>Your explanation is met with murmurs of cynicism and disbelief among the officers. General Turzil of the Engi Brigade speaks up, "Intel suggests potential counter to Rebel technology. Risk all or save none."</text>
+        <choice hidden="true">
+          <text>Explain the weakness of the enemy fleet, the Rebel flagship.</text>
+          <event>
+            <text>Tully responds, "It's settled. The Rebels will be here in a matter of moments. We will do what we can to hold off their warships but you must succeed in destroying this flagship. Your current outpost can provide some repairs and fuel, and the other repair stations can provide aid as well. Good luck."</text>
+            <item_modify>
+              <item type="fuel" min="10" max="10"/>
+            </item_modify>
+            <damage amount="-10"/>
+          </event>
+        </choice>
+      </event>
+    </choice>
+  </event>
+
+  <changelog>
+    <entry>Rebel Flagship depowers its medbay and oxygen when its crew is dead</entry>
+  </changelog>
+  <event name="BOSS_AUTOMATED">
+    <text>It appears this ship is also equipped with an advanced AI system. Now that the crew is dead, it has taken control!</text>
+    <status type="limit" target="enemy" system="medbay" amount="0"/>
+    <status type="limit" target="enemy" system="oxygen" amount="0"/>
+  </event>
+
+  <event name="BOSS_DESTROYED">
+    <text>Its explosion rocks your ship and you shudder with relief. You did it. The Federation is saved....</text>
+    <status type="clear" target="player" system="sensors" amount="100"/>
+    <choice>
+      <text id="continue"/>
+      <event>
+        <text>Thanks for playing! Keep in mind this is still in beta and we have not created a satisfying conclusion to the game. Head to our forums to give us some feedback and let us know that you beat it. Thanks!</text>
+      </event>
+    </choice>
+  </event>
+
+  <event name="BOSS_ESCAPED">
+    <text>Just as you finally gain the upper hand it finds a way to make an FTL jump. You've got to keep up the assault!</text>
+    <autoReward level="HIGH">standard</autoReward>
+    <status type="clear" target="player" system="sensors" amount="100"/>
+  </event>
+
+  <event name="BOSS_TEXT_1">
+    <text>This is it... The Rebel flagship. If you are able to destroy this monstrosity, the Federation fleet will have a chance of surviving. There's no turning back!</text>
+  </event>
+
+  <event name="BOSS_TEXT_2">
+    <text>You chase down the flagship and discover it is heavily damaged from the previous fight. Scans indicate that it has redirected considerable power to its drones. Get ready for a fight.</text>
+  </event>
+
+  <event name="BOSS_TEXT_3">
+    <text>You're not certain how it's able to keep fighting with the amount of damage it has sustained. It looks like it's transferred power to the teleporter as well as... some kind of super weapon. Be prepared... this is it!</text>
+  </event>
+
+  <event name="BOSS_REPAIR_STATION">
+    <textList name="BOSS_REPAIR_STATION">
+      <text>There is a a mobile ship construction platform stationed at this beacon. After a brief exchange they give you clearance to receive emergency repairs and military supplies.</text>
+      <text>An Engi civilian ship-yard has been converted into a military refueling station. They offer you the chance to patch up your ship and refresh some supplies.</text>
+      <text>Chatter on the comm suggests the nearby Federation base is outfitted with a repair station. When you forward your mission priority they quickly help repair your ship and give you some supplies.</text>
+      <text>A forward construction station is in the process of repairing damaged warships. Your command codes convince them to do a quick patch job on your ship.</text>
+      <text>A trade station was abandoned nearby. Some Federation engineers repurposed their shipyard to perform military repairs. They offer to help fix your ship.</text>
+    </textList>
+    <damage amount="-15"/>
+    <repair/>
+    <item_modify>
+      <item type="missiles" min="4" max="4"/>
+      <item type="fuel" min="5" max="5"/>
+      <item type="drones" min="5" max="5"/>
+      <item type="scrap" min="22" max="44"/>
+    </item_modify>
   </event>
 
   <event name="CHARACTER_TEST">

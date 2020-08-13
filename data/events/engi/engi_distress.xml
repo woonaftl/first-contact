@@ -154,7 +154,7 @@
     </choice>
     <choice hidden="true">
       <text>Give them 40 scrap, 2 missiles and 2 fuel.</text>
-      <event name="DISTRESS_ENGI_REBEL_LIST2">
+      <event>
         <text>They wouldn't get more than a few jumps with that load-out. You provide them with all the munitions and supplies they should need for the journey home. "Generosity magnitude unpredicted. Well-being syntax error [value too high]. Accept this token."</text>
         <item_modify>
           <item type="scrap" min="-40" max="-40"/>

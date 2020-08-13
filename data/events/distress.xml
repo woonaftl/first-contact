@@ -314,8 +314,8 @@
         <text>"Alright... If you're not going that way I guess it can't be helped. We'll just wait for the next ship to come."</text>
       </event>
     </choice>
-    <choice req="FTL_JUMPER_GOOD" hidden="true">
-      <text>(Advanced FTL Navigation) Have your navigation software calculate and upload route instructions to their ship.</text>
+    <choice req="FTL_JUMPER_UNIVERSAL" hidden="true">
+      <text>(Universal FTL Navigation) Have your navigation software calculate and upload route instructions to their ship.</text>
       <event>
         <text>"We're receiving your transmission... Wow, I didn't know that chain-jumping was possible with this class of ship. We'll get back in a single jump! Thank you so much, please accept this."</text>
         <autoReward level="HIGH">standard</autoReward>
