@@ -140,7 +140,7 @@
       <mind power="1" room="6" start="false" img="room_mind_7"/>
       <oxygen power="1" room="8" start="true" img="room_oxygen_9"/>
       <pilot power="1" room="7" start="true" img="room_pilot_3"/>
-      <sensors power="1" room="0" start="false"/>
+      <sensors power="1" room="0" start="true"/>
       <shields power="2" room="14" start="true" img="room_shields_7"/>
       <teleporter power="1" room="5" start="false"/>
       <weapons power="2" room="4" start="true" img="room_weapons_2"/>
