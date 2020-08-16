@@ -130,7 +130,7 @@
     <entry>Drone Reactor Booster speed modifier 1.25 to 3</entry>
   </changelog>
   <augBlueprint name="DRONE_SPEED">
-    <title>Drone Reactor Booster</title>
+    <title>Pavonian Overclocker</title>
     <desc>Your shipboard drones have their movement speed TRIPLED. Whoosh!</desc>
     <cost>30</cost>
     <bp>9</bp>

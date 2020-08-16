@@ -293,7 +293,7 @@
           </finishSounds>-->
           <!--<effectAnim>mindcontrol</effectAnim>-->
           <invulnerable>true</invulnerable>
-          <animSheet>warped_stealth</animSheet>
+          <animSheet baseVisible="false">warped_stealth</animSheet>
         </temporaryEffect>
       </powerEffect>
     </race>

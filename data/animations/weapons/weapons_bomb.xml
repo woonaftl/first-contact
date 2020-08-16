@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FTL>
-  <animSheet name="bomb_1" w="595" h="52" fw="35" fh="52">weapons/bomblauncher_1_strip17.png</animSheet>
-  <animSheet name="bomb_fire" w="595" h="52" fw="35" fh="52">weapons/bomblauncher_fire_strip17.png</animSheet>
-  <animSheet name="bomb_heal" w="595" h="52" fw="35" fh="52">weapons/bomblauncher_heal_strip17.png</animSheet>
-  <animSheet name="bomb_ion" w="595" h="52" fw="35" fh="52">weapons/bomblauncher_ion_strip17.png</animSheet>
-  <animSheet name="bomb_lockdown" w="595" h="52" fw="35" fh="52">weapons/bomblauncher_lockdown_strip17.png</animSheet>
-  <animSheet name="bomb_breach" w="595" h="52" fw="35" fh="52">weapons/bomblauncher_breach_strip17.png</animSheet>
-
-  <weaponAnim name="bomb_1">
-    <sheet>bomb_1</sheet>
+  <animSheet name="bomb_1_launcher" w="595" h="52" fw="35" fh="52">weapons/bomblauncher_1_strip17.png</animSheet>
+  <weaponAnim name="bomb_1_launcher">
+    <sheet>bomb_1_launcher</sheet>
     <desc length="17" x="0" y="0"/>
     <chargedFrame>5</chargedFrame>
     <fireFrame>16</fireFrame>
@@ -18,8 +12,9 @@
     <chargeImage>weapons/bomblauncher_1_glow.png</chargeImage>
   </weaponAnim>
 
-  <weaponAnim name="bomb_fire">
-    <sheet>bomb_fire</sheet>
+  <animSheet name="bomb_fire_launcher" w="595" h="52" fw="35" fh="52">weapons/bomblauncher_fire_strip17.png</animSheet>
+  <weaponAnim name="bomb_fire_launcher">
+    <sheet>bomb_fire_launcher</sheet>
     <desc length="17" x="0" y="0"/>
     <chargedFrame>5</chargedFrame>
     <fireFrame>16</fireFrame>
@@ -29,8 +24,9 @@
     <chargeImage>weapons/bomblauncher_1_glow.png</chargeImage>
   </weaponAnim>
 
-  <weaponAnim name="bomb_heal">
-    <sheet>bomb_heal</sheet>
+  <animSheet name="bomb_heal_launcher" w="595" h="52" fw="35" fh="52">weapons/bomblauncher_heal_strip17.png</animSheet>
+  <weaponAnim name="bomb_heal_launcher">
+    <sheet>bomb_heal_launcher</sheet>
     <desc length="17" x="0" y="0"/>
     <chargedFrame>5</chargedFrame>
     <fireFrame>16</fireFrame>
@@ -40,8 +36,9 @@
     <chargeImage>weapons/bomblauncher_1_glow.png</chargeImage>
   </weaponAnim>
 
-  <weaponAnim name="bomb_ion">
-    <sheet>bomb_ion</sheet>
+  <animSheet name="bomb_ion_launcher" w="595" h="52" fw="35" fh="52">weapons/bomblauncher_ion_strip17.png</animSheet>
+  <weaponAnim name="bomb_ion_launcher">
+    <sheet>bomb_ion_launcher</sheet>
     <desc length="17" x="0" y="0"/>
     <chargedFrame>5</chargedFrame>
     <fireFrame>16</fireFrame>
@@ -51,9 +48,9 @@
     <chargeImage>weapons/bomblauncher_1_glow.png</chargeImage>
   </weaponAnim>
 
-
-  <weaponAnim name="bomb_lockdown">
-    <sheet>bomb_lockdown</sheet>
+  <animSheet name="bomb_lockdown_launcher" w="595" h="52" fw="35" fh="52">weapons/bomblauncher_lockdown_strip17.png</animSheet>
+  <weaponAnim name="bomb_lockdown_launcher">
+    <sheet>bomb_lockdown_launcher</sheet>
     <desc length="17" x="0" y="0"/>
     <chargedFrame>5</chargedFrame>
     <fireFrame>16</fireFrame>
@@ -63,8 +60,9 @@
     <chargeImage>weapons/bomblauncher_1_glow.png</chargeImage>
   </weaponAnim>
 
-  <weaponAnim name="bomb_breach">
-    <sheet>bomb_breach</sheet>
+  <animSheet name="bomb_breach_launcher" w="595" h="52" fw="35" fh="52">weapons/bomblauncher_breach_strip17.png</animSheet>
+  <weaponAnim name="bomb_breach_launcher">
+    <sheet>bomb_breach_launcher</sheet>
     <desc length="17" x="0" y="0"/>
     <chargedFrame>5</chargedFrame>
     <fireFrame>16</fireFrame>
@@ -74,51 +72,51 @@
     <chargeImage>weapons/bomblauncher_1_glow.png</chargeImage>
   </weaponAnim>
 
-  <animSheet name="bomb1" w="315" h="35" fw="35" fh="35">weapons/bomb_1_strip9.png</animSheet>
-  <anim name="bomb1">
-    <sheet>bomb1</sheet>
+  <animSheet name="bomb_1_bomb" w="315" h="35" fw="35" fh="35">weapons/bomb_1_strip9.png</animSheet>
+  <anim name="bomb_1_bomb">
+    <sheet>bomb_1_bomb</sheet>
     <desc length="9" x="0" y="0"/>
     <time>0.35</time>
   </anim>
 
-  <animSheet name="bomb_ion" w="315" h="35" fw="35" fh="35">weapons/bomb_ion_strip9.png</animSheet>
-  <anim name="bomb_ion">
-    <sheet>bomb_ion</sheet>
+  <animSheet name="bomb_ion_bomb" w="315" h="35" fw="35" fh="35">weapons/bomb_ion_strip9.png</animSheet>
+  <anim name="bomb_ion_bomb">
+    <sheet>bomb_ion_bomb</sheet>
     <desc length="9" x="0" y="0"/>
     <time>0.35</time>
   </anim>
 
-  <animSheet name="bomb_lockdown" w="315" h="35" fw="35" fh="35">weapons/bomb_lockdown_strip9.png</animSheet>
-  <anim name="bomb_lockdown">
-    <sheet>bomb_lockdown</sheet>
+  <animSheet name="bomb_lockdown_bomb" w="315" h="35" fw="35" fh="35">weapons/bomb_lockdown_strip9.png</animSheet>
+  <anim name="bomb_lockdown_bomb">
+    <sheet>bomb_lockdown_bomb</sheet>
     <desc length="9" x="0" y="0"/>
     <time>0.35</time>
   </anim>
 
-  <animSheet name="bomb_fire" w="315" h="35" fw="35" fh="35">weapons/bomb_fire_strip9.png</animSheet>
-  <anim name="bomb_fire">
-    <sheet>bomb_fire</sheet>
+  <animSheet name="bomb_fire_bomb" w="315" h="35" fw="35" fh="35">weapons/bomb_fire_strip9.png</animSheet>
+  <anim name="bomb_fire_bomb">
+    <sheet>bomb_fire_bomb</sheet>
     <desc length="9" x="0" y="0"/>
     <time>0.35</time>
   </anim>
 
-  <animSheet name="bomb_heal" w="315" h="35" fw="35" fh="35">weapons/bomb_heal_strip9.png</animSheet>
-  <anim name="bomb_heal">
-    <sheet>bomb_heal</sheet>
+  <animSheet name="bomb_heal_bomb" w="315" h="35" fw="35" fh="35">weapons/bomb_heal_strip9.png</animSheet>
+  <anim name="bomb_heal_bomb">
+    <sheet>bomb_heal_bomb</sheet>
     <desc length="9" x="0" y="0"/>
     <time>0.35</time>
   </anim>
 
-  <animSheet name="bomb_breach" w="315" h="35" fw="35" fh="35">weapons/bomb_breach_strip9.png</animSheet>
-  <anim name="bomb_breach">
-    <sheet>bomb_breach</sheet>
+  <animSheet name="bomb_breach_bomb" w="315" h="35" fw="35" fh="35">weapons/bomb_breach_strip9.png</animSheet>
+  <anim name="bomb_breach_bomb">
+    <sheet>bomb_breach_bomb</sheet>
     <desc length="9" x="0" y="0"/>
     <time>0.35</time>
   </anim>
 
-  <animSheet name="bomb_stun" w="595" h="52" fw="35" fh="52">weapons/bomblauncher_stun_strip17.png</animSheet>
-  <weaponAnim name="bomb_stun">
-    <sheet>bomb_stun</sheet>
+  <animSheet name="bomb_stun_launcher" w="595" h="52" fw="35" fh="52">weapons/bomblauncher_stun_strip17.png</animSheet>
+  <weaponAnim name="bomb_stun_launcher">
+    <sheet>bomb_stun_launcher</sheet>
     <desc length="17" x="0" y="0"/>
     <chargedFrame>5</chargedFrame>
     <fireFrame>16</fireFrame>
@@ -128,16 +126,16 @@
     <chargeImage>weapons/bomblauncher_1_glow.png</chargeImage>
   </weaponAnim>
 
-  <animSheet name="bomb_stun_anim" w="315" h="35" fw="35" fh="35">weapons/bomb_stun_strip9.png</animSheet>
-  <anim name="bomb_stun_anim">
-    <sheet>bomb_stun_anim</sheet>
+  <animSheet name="bomb_stun_bomb" w="315" h="35" fw="35" fh="35">weapons/bomb_stun_strip9.png</animSheet>
+  <anim name="bomb_stun_bomb">
+    <sheet>bomb_stun_bomb</sheet>
     <desc length="9" x="0" y="0"/>
     <time>0.35</time>
   </anim>
 
-  <animSheet name="bomb_repair" w="595" h="52" fw="35" fh="52">weapons/bomblauncher_repair_strip17.png</animSheet>
-  <weaponAnim name="bomb_repair">
-    <sheet>bomb_repair</sheet>
+  <animSheet name="bomb_repair_launcher" w="595" h="52" fw="35" fh="52">weapons/bomblauncher_repair_strip17.png</animSheet>
+  <weaponAnim name="bomb_repair_launcher">
+    <sheet>bomb_repair_launcher</sheet>
     <desc length="17" x="0" y="0"/>
     <chargedFrame>5</chargedFrame>
     <fireFrame>16</fireFrame>
@@ -146,15 +144,15 @@
     <delayChargeAnim>0.98</delayChargeAnim>
     <chargeImage>weapons/bomblauncher_1_glow.png</chargeImage>
   </weaponAnim>
-  <animSheet name="bomb_repair_anim" w="315" h="35" fw="35" fh="35">weapons/bomb_repair_strip9.png</animSheet>
-  <anim name="bomb_repair_anim">
-    <sheet>bomb_repair_anim</sheet>
+
+  <animSheet name="bomb_repair_bomb" w="315" h="35" fw="35" fh="35">weapons/bomb_repair_strip9.png</animSheet>
+  <anim name="bomb_repair_bomb">
+    <sheet>bomb_repair_bomb</sheet>
     <desc length="9" x="0" y="0"/>
     <time>0.35</time>
   </anim>
 
   <animSheet name="bomb_delay_fire_stun_launcher" w="595" h="52" fw="35" fh="52">weapons/bomb_delay_fire_stun_launcher_strip17.png</animSheet>
-
   <weaponAnim name="bomb_delay_fire_stun_launcher">
     <sheet>bomb_delay_fire_stun_launcher</sheet>
     <desc length="17" x="0" y="0"/>
@@ -167,7 +165,6 @@
   </weaponAnim>
 
   <animSheet name="bomb_delay_fire_stun_bomb" w="9275" h="35" fw="35" fh="35">weapons/bomb_delay_fire_stun_bomb_strip265.png</animSheet>
-
   <anim name="bomb_delay_fire_stun_bomb">
     <sheet>bomb_delay_fire_stun_bomb</sheet>
     <desc length="265" x="0" y="0"/>
@@ -175,7 +172,6 @@
   </anim>
 
   <animSheet name="bomb_delay_bio_launcher" w="595" h="52" fw="35" fh="52">weapons/bomb_delay_bio_launcher_strip17.png</animSheet>
-
   <weaponAnim name="bomb_delay_bio_launcher">
     <sheet>bomb_delay_bio_launcher</sheet>
     <desc length="17" x="0" y="0"/>
@@ -188,7 +184,6 @@
   </weaponAnim>
 
   <animSheet name="bomb_delay_bio_bomb" w="9275" h="35" fw="35" fh="35">weapons/bomb_delay_bio_bomb_strip265.png</animSheet>
-
   <anim name="bomb_delay_bio_bomb">
     <sheet>bomb_delay_bio_bomb</sheet>
     <desc length="265" x="0" y="0"/>

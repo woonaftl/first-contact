@@ -49,7 +49,7 @@
     <cost>40</cost>
     <bp>4</bp>
     <rarity>1</rarity>
-    <image>bomb1</image>
+    <image>bomb_1_bomb</image>
     <explosion>explosion_random</explosion>
     <launchSounds>
       <sound>bombTeleport</sound>
@@ -57,7 +57,7 @@
     <hitShipSounds>
       <sound>smallExplosion</sound>
     </hitShipSounds>
-    <weaponArt>bomb_1</weaponArt>
+    <weaponArt>bomb_1_launcher</weaponArt>
     <iconImage>bomb</iconImage>
   </weaponBlueprint>
 
@@ -84,7 +84,7 @@
     <cost>30</cost>
     <bp>4</bp>
     <rarity>1</rarity>
-    <image>bomb_breach</image>
+    <image>bomb_breach_bomb</image>
     <explosion>explosion_random</explosion>
     <launchSounds>
       <sound>bombTeleport</sound>
@@ -92,7 +92,7 @@
     <hitShipSounds>
       <sound>smallExplosion</sound>
     </hitShipSounds>
-    <weaponArt>bomb_breach</weaponArt>
+    <weaponArt>bomb_breach_launcher</weaponArt>
     <iconImage>bomb</iconImage>
   </weaponBlueprint>
 
@@ -123,7 +123,7 @@
     <cost>30</cost>
     <bp>5</bp>
     <rarity>1</rarity>
-    <image>bomb_fire</image>
+    <image>bomb_fire_bomb</image>
     <explosion>explosion_random</explosion>
     <launchSounds>
       <sound>bombTeleport</sound>
@@ -131,7 +131,7 @@
     <hitShipSounds>
       <sound>fireBomb</sound>
     </hitShipSounds>
-    <weaponArt>bomb_fire</weaponArt>
+    <weaponArt>bomb_fire_launcher</weaponArt>
     <iconImage>bomb</iconImage>
   </weaponBlueprint>
 
@@ -162,7 +162,7 @@
     <cost>40</cost>
     <bp>4</bp>
     <rarity>1</rarity>
-    <image>bomb_ion</image>
+    <image>bomb_ion_bomb</image>
     <explosion>explosion_big1_ion</explosion>
     <launchSounds>
       <sound>bombTeleport</sound>
@@ -172,7 +172,7 @@
       <sound>ionHit2</sound>
       <sound>ionHit3</sound>
     </hitShipSounds>
-    <weaponArt>bomb_ion</weaponArt>
+    <weaponArt>bomb_ion_launcher</weaponArt>
     <iconImage>bomb</iconImage>
   </weaponBlueprint>
 
@@ -201,7 +201,7 @@
     <cost>30</cost>
     <bp>4</bp>
     <rarity>5</rarity>
-    <image>bomb_heal</image>
+    <image>bomb_heal_bomb</image>
     <explosion>explosion_big1_heal</explosion>
     <launchSounds>
       <sound>bombTeleport</sound>
@@ -209,7 +209,7 @@
     <hitShipSounds>
       <sound>healBomb</sound>
     </hitShipSounds>
-    <weaponArt>bomb_heal</weaponArt>
+    <weaponArt>bomb_heal_launcher</weaponArt>
     <iconImage>bomb_heal</iconImage>
   </weaponBlueprint>
 
@@ -238,7 +238,7 @@
     <cost>30</cost>
     <bp>4</bp>
     <rarity>0</rarity>
-    <image>bomb_lockdown</image>
+    <image>bomb_lockdown_bomb</image>
     <explosion>explosion_lockdown</explosion>
     <launchSounds>
       <sound>bombTeleport</sound>
@@ -246,7 +246,7 @@
     <hitShipSounds>
       <sound>smallExplosion</sound>
     </hitShipSounds>
-    <weaponArt>bomb_lockdown</weaponArt>
+    <weaponArt>bomb_lockdown_launcher</weaponArt>
     <iconImage>bomb</iconImage>
   </weaponBlueprint>
 
@@ -275,7 +275,7 @@
     <cost>30</cost>
     <bp>4</bp>
     <rarity>4</rarity>
-    <image>bomb_repair_anim</image>
+    <image>bomb_repair_bomb</image>
     <explosion>explosion_repair</explosion>
     <launchSounds>
       <sound>bombTeleport</sound>
@@ -283,7 +283,7 @@
     <hitShipSounds>
       <sound>healBomb</sound>
     </hitShipSounds>
-    <weaponArt>bomb_repair</weaponArt>
+    <weaponArt>bomb_repair_launcher</weaponArt>
     <iconImage>bomb_heal</iconImage>
   </weaponBlueprint>
 
@@ -315,7 +315,7 @@
     <cost>30</cost>
     <bp>4</bp>
     <rarity>2</rarity>
-    <image>bomb_stun_anim</image>
+    <image>bomb_stun_bomb</image>
     <explosion>explosion_big1_ion</explosion>
     <launchSounds>
       <sound>bombTeleport</sound>
@@ -323,7 +323,7 @@
     <hitShipSounds>
       <sound>smallExplosion</sound>
     </hitShipSounds>
-    <weaponArt>bomb_stun</weaponArt>
+    <weaponArt>bomb_stun_launcher</weaponArt>
     <iconImage>bomb</iconImage>
   </weaponBlueprint>
 
@@ -384,6 +384,7 @@
     <bp>4</bp>
     <rarity>0</rarity>
     <image>bomb_delay_bio_bomb</image>
+    <!--TODO custom explosion-->
     <explosion>explosion_random</explosion>
     <launchSounds>
       <sound>bombTeleport</sound>
