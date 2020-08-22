@@ -5,26 +5,13 @@
     <event load="ENGI_VIRUS"/>
     <event load="CONFUSED_MANTIS"/>
     <event load="ALISON_MANTIS_CREW"/>
-    <event load="WOONA_ENGI_CONSTRUCTION_YARD"/>
     <event load="WOONA_ENGI_GREEN_PLANET"/>
     <event load="WOONA_ENGI_STATION_REQUIRES_WORKERS"/>
 
     <event load="ASTEROID_DERELICT_SHIP"/>
     <event load="ZOLTAN_CREW_STUDY"/>
-
-    <event load="MANTIS_FIGHT_CHOICE"/>
     <event load="MANTIS_CIVILIAN"/>
-    <event load="ASTEROID_EXPLORE"/>
-    <event load="REFUGEE_NO_DISTRESS"/>
-    <event load="WRECKAGE_EVENT"/>
-    <event load="FUELING_STATION"/>
   </eventList>
-
-  <changelog>
-    <entry>Removed PIRATE_BRIBER event from Engi sector</entry>
-    <entry>Removed BROKEN_REBEL_DRONE event from Engi sector</entry>
-    <entry>Removed AUTO_DEFENSE_ITEM event from Engi sector</entry>
-  </changelog>
 
   <event name="ENGI_SEX" unique="true">
     <text>What appeared to be a single damaged ship is in fact two ships that have smashed into each other... there is a flurry of comm signals and damage, and it's hard to determine what occurred. The vessels appear to be... Engi? They look locked together by the impact and can't free themselves.</text>
@@ -295,101 +282,6 @@
   </event>
 
   <changelog>
-    <entry>Added Engi Construction Yard event</entry>
-  </changelog>
-  <event name="WOONA_ENGI_CONSTRUCTION_YARD" unique="false">
-    <text>You have arrived near an Engi construction yard. Most Engi maintain their bi-pedal appearance out of habit but here you see a number of Engi hives working together to create massive organic machines adept at building ships. Truly a sight to behold.</text>
-    <!-- uses old empty beacon text -->
-    <choice blue="false" hidden="true" lvl="0" max_group="0" req="shields">
-      <text>Ask for help in your mission.</text>
-      <event>
-        <text>Once the Engi learn that you are Federation, they offer their help. While the construction yard specializes in building ships from scratch, for a small price, the Engi agree to install a new system on your ship.</text>
-        <choice hidden="true">
-          <text id="continue"/>
-          <event>
-            <text>The Engi inform you that the workshop heavily relies on drones for material transportation so it only accepts payment in drone parts.</text>
-            <choice>
-              <text>Agree to install Shields.</text>
-              <event>
-                <text>The system built and optimized for your ship class by the Engi designers is successfully installed.</text>
-                <system lvl="2" name="shields"/>
-                <item_modify>
-                  <item max="-6" min="-10" type="drones"/>
-                </item_modify>
-              </event>
-            </choice>
-            <choice hidden="true">
-              <text>Do not buy anything.</text>
-              <event/>
-            </choice>
-          </event>
-        </choice>
-      </event>
-    </choice>
-    <choice blue="false" hidden="true" lvl="1" max_group="0" req="shields">
-      <text>Ask for help in your mission.</text>
-      <event>
-        <text>Once the Engi learn that you are Federation, they offer their help. While the construction yard specializes in building ships from scratch, for a small price, the Engi agree to install a new system on your ship.</text>
-        <choice blue="false" hidden="true" lvl="0" max_group="0" req="drones">
-          <text id="continue"/>
-          <event>
-            <text>The Engi inform you that the workshop heavily relies on drones for material transportation so it only accepts payment in drone parts.</text>
-            <choice>
-              <text>Agree to install Drone Control.</text>
-              <event>
-                <text>The system built and optimized for your ship class by the Engi designers is successfully installed.</text>
-                <system lvl="2" name="drones"/>
-                <drone name="RANDOM"/>
-                <item_modify>
-                  <item max="-6" min="-10" type="drones"/>
-                </item_modify>
-              </event>
-            </choice>
-            <choice hidden="true">
-              <text>Do not buy anything.</text>
-              <event/>
-            </choice>
-          </event>
-        </choice>
-        <choice blue="false" hidden="true" lvl="1" max_group="0" req="drones">
-          <text id="continue"/>
-          <event>
-            <text>The Engi inform you that the workshop heavily relies on drones for material transportation so it only accepts payment in drone parts.</text>
-            <choice blue="false" lvl="0" max_group="0" req="hacking">
-              <text>Agree to install Hacking.</text>
-              <event>
-                <text>The system built and optimized for your ship class by the Engi designers is successfully installed.</text>
-                <system lvl="1" name="hacking"/>
-                <item_modify>
-                  <item max="-8" min="-12" type="drones"/>
-                </item_modify>
-              </event>
-            </choice>
-            <choice blue="false" lvl="1" max_group="0" req="hacking">
-              <text>Agree to install Cloaking.</text>
-              <event>
-                <text>The system built and optimized for your ship class by the Engi designers is successfully installed.</text>
-                <system lvl="1" name="cloaking"/>
-                <item_modify>
-                  <item max="-10" min="-14" type="drones"/>
-                </item_modify>
-              </event>
-            </choice>
-            <choice hidden="true">
-              <text>Do not buy anything.</text>
-              <event/>
-            </choice>
-          </event>
-        </choice>
-      </event>
-    </choice>
-    <choice hidden="true">
-      <text>Leave the Engi alone.</text>
-      <event/>
-    </choice>
-  </event>
-
-  <changelog>
     <entry>Added Green Planet event to Engi sector</entry>
   </changelog>
   <event name="WOONA_ENGI_GREEN_PLANET" unique="true">
@@ -473,14 +365,14 @@
                     <clone>true</clone>
                     <text>The clone of the lost crewmember is ready on the ship, making a note to themselves to never volunteer to distract giant monsters ever again.</text>
                   </removeCrew>
-                  <autoReward level="LOW">scrap_only</autoReward>
+                  <autoReward level="MED">scrap_only</autoReward>
                 </event>
               </choice>
-              <choice hidden="true" req="mantis">
-                <text>(Mantis) Sneak into the cave.</text>
+              <choice hidden="true" req="warped">
+                <text>(Warped) Sneak into the cave.</text>
                 <event>
-                  <text>The Mantis successfully sneaks into the cave using paths, too tight for other races. The Mantis picks up as much equipment as they can carry, choosing what they think most valuable: food, everything shiny, and everything of red color.</text>
-                  <autoReward level="LOW">scrap_only</autoReward>
+                  <text>The Warped successfully sneaks into the cave using their cloak. Your crewmember picks up as much equipment as they can carry, choosing what they deem most valuable: food and everything shiny.</text>
+                  <autoReward level="MED">scrap_only</autoReward>
                 </event>
               </choice>
               <choice hidden="true" req="BATTLE">
@@ -490,7 +382,7 @@
                   <item_modify>
                     <item max="-1" min="-1" type="drones"/>
                   </item_modify>
-                  <autoReward level="LOW">scrap_only</autoReward>
+                  <autoReward level="MED">scrap_only</autoReward>
                 </event>
               </choice>
               <choice hidden="true" req="BOARDER_LIST">
@@ -500,7 +392,7 @@
                   <item_modify>
                     <item max="-1" min="-1" type="drones"/>
                   </item_modify>
-                  <autoReward level="LOW">scrap_only</autoReward>
+                  <autoReward level="MED">scrap_only</autoReward>
                 </event>
               </choice>
               <choice hidden="true" req="BOARDER_ION_LIST">

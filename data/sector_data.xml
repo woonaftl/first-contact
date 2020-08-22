@@ -6,6 +6,7 @@
     <sector>ZOLTAN_SECTOR</sector>
     <sector>ZOLTAN_HOME</sector>
     <sector>ORCHID_SECTOR</sector>
+    <sector>PAVONIAN_SECTOR</sector>
   </sectorType>
 
   <sectorType name="HOSTILE">
@@ -140,7 +141,7 @@
     <event name="ZOLTAN_CREW_STUDY" min="1" max="1"/>
     <event name="STORE_ZOLTAN" min="2" max="2"/>
     <event name="UPGRADE_LIST_LEGIT" min="1" max="1"/>
-    <event name="ITEMS_ZOLTAN" min="1" max="1"/>
+    <event name="ITEMS_ZOLTAN" min="2" max="2"/>
     <event name="QUESTS_ZOLTAN" min="0" max="1"/>
     <event name="DISTRESS_BEACON_ZOLTAN" min="1" max="1"/>
     <event name="HOSTILE_HAZARD_ZOLTAN" min="1" max="1"/>
@@ -150,7 +151,7 @@
     <event name="NEBULA_ZOLTAN_NEUTRAL" min="2" max="2"/>
     <event name="NEBULA_ZOLTAN_HAZARD_NEUTRAL" min="2" max="3"/>
     <event name="HOSTILE_ZOLTAN" min="3" max="3"/>
-    <event name="NEUTRAL_ZOLTAN" min="4" max="4"/>
+    <event name="NEUTRAL_ZOLTAN" min="3" max="3"/>
   </sectorDescription>
 
   <sectorDescription name="ZOLTAN_HOME" minSector="3" unique="true">
@@ -222,6 +223,32 @@
     <event name="HOSTILE_HAZARD_ORCHID" min="1" max="1"/>
     <event name="NEUTRAL_ORCHID" min="6" max="6"/>
     <event name="HOSTILE_ORCHID" min="4" max="4"/>
+  </sectorDescription>
+
+  <sectorDescription name="PAVONIAN_SECTOR" minSector="1" unique="false">
+    <nameList>
+      <name>Pavonian Controlled Sector</name>
+    </nameList>
+    <trackList>
+      <track>hacking</track>
+      <track>cosmos</track>
+      <track>lostship</track>
+    </trackList>
+    <rarityList>
+      <blueprint name="pavonian" rarity="1"/>
+      <blueprint name="human" rarity="3"/>
+      <blueprint name="orchid" rarity="3"/>
+      <blueprint name="slug" rarity="4"/>
+    </rarityList>
+    <startEvent>START_BEACON_PAVONIAN</startEvent>
+    <event name="STORE_PAVONIAN" min="1" max="2"/>
+    <event name="UPGRADE_LIST_SKETCHY" min="2" max="3"/>
+    <event name="ITEMS_PAVONIAN" min="1" max="1"/>
+    <event name="QUESTS_PAVONIAN" min="1" max="1"/>
+    <event name="DISTRESS_BEACON_PAVONIAN" min="2" max="3"/>
+    <event name="HOSTILE_HAZARD_PAVONIAN" min="1" max="1"/>
+    <event name="NEUTRAL_PAVONIAN" min="11" max="11"/>
+    <event name="HOSTILE_PAVONIAN" min="2" max="2"/>
   </sectorDescription>
 
   <sectorDescription name="REBEL_SECTOR" minSector="1" unique="false">

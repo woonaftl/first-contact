@@ -5,11 +5,7 @@
     <event load="DISTRESS_ENGI_REBEL"/>
     <event load="DISTRESS_ENGI_REACTOR"/>
 
-    <event load="CIVILIAN_ASTEROIDS_BEACON"/>
     <event load="FRIENDLY_BEACON"/>
-    <event load="TRAP_BEACON"/>
-    <event load="DISTRESS_TRAPPED_MINER"/>
-    <event load="DISTRESS_INFESTATION"/>
     <event load="DISTRESS_SATELLITE_DEFENSE"/>
   </eventList>
 

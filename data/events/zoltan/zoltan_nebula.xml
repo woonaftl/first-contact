@@ -2,10 +2,6 @@
 <FTL>
   <eventList name="NEBULA_ZOLTAN_HOSTILE">
     <event load="NEBULA_ZOLTAN_ROCK"/>
-
-    <event load="NEBULA_AUTO"/>
-    <event load="NEBULA_PIRATE"/>
-    <event load="NEBULA_REBEL"/>
   </eventList>
 
   <eventList name="NEBULA_ZOLTAN_HAZARD_HOSTILE">
@@ -15,13 +11,9 @@
 
   <eventList name="NEBULA_ZOLTAN_NEUTRAL">
     <event load="NEBULA_ZOLTAN_EYE"/>
+    <event load="WRECKAGE_EVENT"/>
 
-    <event load="NEBULA_AUTO_DEFENSE_ITEM"/>
     <event load="NEBULA_LOST_SHIP"/>
-    <event load="NEBULA_TRADER"/>
-    <event load="NEBULA_WEAPONS_TRADER"/>
-    <event load="WOONA_DEAL_DEVIL"/>
-    <event load="WOONA_NEBULA_STARVING_MANTIS"/>
   </eventList>
 
   <eventList name="NEBULA_ZOLTAN_HAZARD_NEUTRAL">
@@ -121,6 +113,65 @@
       <event>
         <text>Sometimes discretion is the better part of valor.</text>
       </event>
+    </choice>
+  </event>
+
+  <event name="WRECKAGE_EVENT">
+    <environment type="nebula"/>
+    <textList name="WRECKAGE_TEXT">
+      <text>What at first seems to be a simple nebula is actually filled with a good amount of debris from a brutal exchange between several ships. Wreckage drifts by your screens and tumbles into the depths of the nebula to be lost to sight. It's hard to determine who the combatants were without closer investigation.</text>
+      <text>You have jumped into the aftermath of what seems to have been a brutal exchange between several ships. Wreckage drifts by your screens, and you can still see the remains of the dying ships sparking and breaking apart. It's hard to determine who the combatants were without closer investigation.</text>
+    </textList>
+    <choice req="sensors" lvl="2" max_group="0" hidden="true">
+      <text>(Improved Sensors) Use your Sensors to scan the wreckage.</text>
+      <event>
+        <text>You scan the battlefield, and with the aid of your Sensors, you are able to salvage a moderate amount of material from the wreckage. You prepare to jump.</text>
+        <autoReward level="MED">stuff</autoReward>
+      </event>
+    </choice>
+    <choice req="sensors" lvl="3" max_group="0" hidden="true">
+      <text>(Advanced Sensors) Use your Sensors to scan the wreckage.</text>
+      <eventList name="WRECKAGE_SCANNED">
+        <event>
+          <text>You scan the battlefield, and with the aid of your Sensors, you are able to salvage a good amount of material from the wreckage. Well-stocked, you prepare to jump.</text>
+          <autoReward level="HIGH">stuff</autoReward>
+        </event>
+        <event>
+          <text>You scan the battlefield and find a prototype military vessel in the debris! The crew has been killed, but their working prototype weapon array is still intact! You salvage it and bring it aboard.</text>
+          <autoReward level="LOW">weapon</autoReward>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true">
+      <text>Investigate the battlefield.</text>
+      <eventList name="WRECKAGE_INVESTIGATE">
+        <event count="4">
+          <text>You scan the battlefield, and find little remains. Disappointed, you prepare to jump.</text>
+        </event>
+        <event>
+          <text>You scan the battlefield, and are able to salvage some useful material from the wreckage.</text>
+          <autoReward level="MED">stuff</autoReward>
+        </event>
+        <event>
+          <text>As you approach the wreckage, a Mantis ship screams into the system... either sensing prey - or to finish the job its fellows started.</text>
+          <ship load="MANTIS_FIGHT" hostile="true"/>
+        </event>
+        <event>
+          <text>The wreckage appears to be a battle between Federation fighters and Rebel cruisers. Though outnumbered, it looks like the Federation fought valiantly. As you begin a more detailed scan of the wreckage, Rebel reinforcements arrive in the system and target your ship!</text>
+          <ship load="REBEL" hostile="true"/>
+        </event>
+        <event>
+          <text>As you approach the wreckage, a Zoltan ship makes its arrival. It immediately mistakes you for one of the attackers, declares you as hostile aggressors in violation of Zoltan space, and opens fire!</text>
+          <ship load="ZOLTAN_SHIP" hostile="true"/>
+        </event>
+        <event>
+          <text>As you approach the wreckage, a Slug ship makes its arrival. It hesitates for a moment, as if surprised to see anyone remaining, and then jumps away without a word. You resume scanning the system, wary of any other visitors.</text>
+        </event>
+      </eventList>
+    </choice>
+    <choice>
+      <text>Ignore the wreckage and continue on.</text>
+      <event/>
     </choice>
   </event>
 </FTL>

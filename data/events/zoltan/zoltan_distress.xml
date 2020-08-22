@@ -3,14 +3,7 @@
   <eventList name="DISTRESS_BEACON_ZOLTAN">
     <event load="ZOLTAN_DISTRESS_MANTIS"/>
     <event load="ZOLTAN_DISTRESS_SHELL"/>
-
     <event load="REFUGEE_DISTRESS_ZOLTAN"/>
-
-    <event load="DISTRESS_SATELLITE_DEFENSE"/>
-    <event load="DISTRESS_STATION_FIRE"/>
-    <event load="FRIENDLY_BEACON"/>
-    <event load="TRAP_BEACON"/>
-    <event load="STRANDED_BEACON"/>
   </eventList>
 
   <event name="ZOLTAN_DISTRESS_MANTIS" unique="true">

@@ -7,15 +7,11 @@
     <event load="ROCK_ATHEIST"/>
     <event load="ROCK_STARSHIP_MINE"/>
 
-    <event load="PIRATE_CIVILIAN"/>
-    <event load="MERCENARY"/>
-    <event load="FRIENDLY_SLAVER"/>
     <event load="ASTEROID_DERELICT_SHIP"/>
     <event load="ROCK_SLUG_ARGUMENT"/>
     <event load="WOONA_ROCK_RACIST_STORE"/>
     <event load="WOONA_ROCK_DESOLATE_TRIBE"/>
     <event load="WOONA_ROCK_MISSIONARY"/>
-    <event load="WOONA_ROCK_PULSAR"/>
   </eventList>
 
   <event name="ROCK_LOOTING" unique="true">
@@ -565,34 +561,6 @@
             </event>
           </eventList>
         </choice>
-      </event>
-    </choice>
-  </event>
-
-  <changelog>
-    <entry>Added Rock ship on pulsar event</entry>
-  </changelog>
-  <event name="WOONA_ROCK_PULSAR" unique="true">
-    <text>The beacon is located too close to a pulsating star. Captain of the Rock ship nearby is enraged. "Why are my shields not working again? Let me leave this wretched place!"</text>
-    <environment type="pulsar"/>
-    <ship hostile="false" load="ROCK_SHIP"/>
-    <choice hidden="true">
-      <text>Advise him to turn shields off entirely to prevent them from being ionized.</text>
-      <event>
-        <text>"Are you taking me for a fool? Turn your mouth off!" The rock captain is shaking in rage and orders to attack.</text>
-        <ship hostile="true"/>
-      </event>
-    </choice>
-    <choice hidden="true">
-      <text>Ignore him and charge FTL drive.</text>
-      <event/>
-    </choice>
-    <choice hidden="true" req="ION_ARMOR">
-      <text>(Reverse Ion Field) Offer him a gift.</text>
-      <event>
-        <text>The rock captain is very grateful. He offers you his best weapon and all of his scrap in exchange.</text>
-        <remove name="ION_ARMOR"/>
-        <autoReward level="HIGH">weapon</autoReward>
       </event>
     </choice>
   </event>

@@ -5,15 +5,6 @@
     <event load="ORCHID_FIND_WEAPON"/>
     <event load="ORCHID_FREE_ITEMS"/>
     <event load="ORCHID_FREE_CREW"/>
-
-    <event load="REFUEL_STATION"/>
-    <event load="REPAIR_STATION"/>
-    <event load="SELL_DRONES_STATION"/>
-    <event load="SELL_MISSILES_STATION"/>
-    <event load="TRADER_CIV"/>
-    <event load="TAVERN_HIRE"/>
-    <event load="TRADER_UPGRADES"/>
-    <event load="TRADER_UPGRADES_EXCHANGE"/>
   </eventList>
 
   <event name="ORCHID_FIND_DRONE" unique="false">
@@ -47,7 +38,7 @@
     <choice>
       <text>Offer them a position on your ship.</text>
       <event>
-        <text>The new addition to your crew turns out to be an Orchid youth. They take a combat pose and excrete chemicals that fill your other crewmembers with determination.</text>
+        <text>The new addition to your crew turns out to be an Orchid youth. They take a combat pose and excrete chemicals that fill other crewmembers with determination.</text>
         <crewMember amount="1" class="orchid"/>
       </event>
     </choice>

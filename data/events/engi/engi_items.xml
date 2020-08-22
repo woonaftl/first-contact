@@ -6,8 +6,6 @@
     <event load="ENGI_SURRENDER"/>
 
     <event load="FIND_DRONE"/>
-    <event load="FIND_WEAPON"/>
-    <event load="REFUEL_STATION"/>
   </eventList>
 
   <event name="ENGI_GIFT">

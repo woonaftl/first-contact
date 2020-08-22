@@ -259,6 +259,7 @@
         <tooltip>Ready: Click to stun all enemies in the room</tooltip>
         <cooldownColor r="240" g="220" b="120"/>
         <effectAnim>rainbow_spiral</effectAnim>
+        <animFrame>4</animFrame>
       </powerEffect>
     </race>
 

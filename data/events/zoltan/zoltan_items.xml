@@ -4,13 +4,6 @@
     <event load="ZOLTAN_FREE_AUGMENT"/>
     <event load="ZOLTAN_FREE_MAP"/>
     <event load="ZOLTAN_ODD_MOON"/>
-
-    <event load="FIND_DRONE"/>
-    <event load="FREE_ITEMS"/>
-    <event load="FUEL_FOR_DRONE"/>
-    <event load="REFUEL_STATION"/>
-    <event load="REPAIR_STATION"/>
-    <event load="TRADER_CIV"/>
   </eventList>
 
   <event name="ZOLTAN_FREE_AUGMENT" unique="true">

@@ -37,7 +37,6 @@
     <event load="ROGUE_REBEL"/>
     <event load="STORE_REBELSIDE"/>
     <event load="TERRAFORMING_SCAN"/>
-    <event load="WRECKAGE_EVENT"/>
     <event load="FLOATING_CARGO"/>
   </eventList>
 
@@ -68,7 +67,6 @@
     <event load="ROGUE_REBEL"/>
     <event load="STORE_REBELSIDE"/>
     <event load="TERRAFORMING_SCAN"/>
-    <event load="WRECKAGE_EVENT"/>
     <event load="FLOATING_CARGO"/>
   </eventList>
 

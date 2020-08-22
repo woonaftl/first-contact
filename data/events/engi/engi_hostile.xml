@@ -5,11 +5,8 @@
     <event load="ENGI_REBEL_FIGHT"/>
     <event load="ENGI_PIRATE_FIGHT"/>
 
-    <event load="PIRATE"/>
     <event load="PIRATE_CHOICE"/>
-    <event load="REBEL"/>
     <event load="SQUAT_WARNING"/>
-    <event load="PIRATE_NO_ESCAPE"/>
   </eventList>
 
   <eventList name="HOSTILE_HAZARD_ENGI">

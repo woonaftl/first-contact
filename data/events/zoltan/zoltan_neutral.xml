@@ -5,12 +5,7 @@
     <event load="ZOLTAN_SCIENCE_DOCK"/>
     <event load="ZOLTAN_RIFT_FIGHT"/>
     <event load="ZOLTAN_CREW_SCAN"/>
-
     <event load="REFUGEE_NO_DISTRESS_ZOLTAN"/>
-
-    <event load="FRIENDLY_SLAVER"/>
-    <event load="PIRATE_BRIBER"/>
-    <event load="ASTEROID_EXPLORE"/>
   </eventList>
 
   <event name="ZOLTAN_LIFERAFT" unique="true">

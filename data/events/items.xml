@@ -238,44 +238,46 @@
     </textList>
     <choice>
       <text>Trade.</text>
-      <eventList name="TRADER_LIST">
-        <event>
-          <item_modify>
-            <item type="fuel" min="5" max="6"/>
-            <item type="drones" min="-5" max="-4"/>
-          </item_modify>
-        </event>
-        <event>
-          <item_modify>
-            <item type="missiles" min="8" max="10"/>
-            <item type="fuel" min="-5" max="-4"/>
-          </item_modify>
-        </event>
-        <event>
-          <item_modify>
-            <item type="drones" min="5" max="6"/>
-            <item type="missiles" min="-8" max="-7"/>
-          </item_modify>
-        </event>
-        <event>
-          <item_modify>
-            <item type="missiles" min="8" max="10"/>
-            <item type="drones" min="-5" max="-4"/>
-          </item_modify>
-        </event>
-        <event>
-          <item_modify>
-            <item type="fuel" min="5" max="6"/>
-            <item type="missiles" min="-8" max="-7"/>
-          </item_modify>
-        </event>
-      </eventList>
+      <event load="TRADER_LIST"/>
     </choice>
     <choice>
       <text>Ignore.</text>
       <event/>
     </choice>
   </event>
+
+  <eventList name="TRADER_LIST">
+    <event>
+      <item_modify>
+        <item type="fuel" min="5" max="6"/>
+        <item type="drones" min="-5" max="-4"/>
+      </item_modify>
+    </event>
+    <event>
+      <item_modify>
+        <item type="missiles" min="8" max="10"/>
+        <item type="fuel" min="-5" max="-4"/>
+      </item_modify>
+    </event>
+    <event>
+      <item_modify>
+        <item type="drones" min="5" max="6"/>
+        <item type="missiles" min="-8" max="-7"/>
+      </item_modify>
+    </event>
+    <event>
+      <item_modify>
+        <item type="missiles" min="8" max="10"/>
+        <item type="drones" min="-5" max="-4"/>
+      </item_modify>
+    </event>
+    <event>
+      <item_modify>
+        <item type="fuel" min="5" max="6"/>
+        <item type="missiles" min="-8" max="-7"/>
+      </item_modify>
+    </event>
+  </eventList>
 
   <event name="TAVERN_HIRE" unique="true">
     <textList name="TAVERN_HIRE_TEXT">

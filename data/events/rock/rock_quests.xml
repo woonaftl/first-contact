@@ -2,11 +2,6 @@
 <FTL>
   <eventList name="QUESTS_ROCK">
     <event load="ROCK_QUEST_MARRIAGE_START"/>
-
-    <event load="QUEST_ESCORT"/>
-    <event load="FEDERATION_PLANET_SIGNAL"/>
-    <event load="MERCENARY_WORK_START"/>
-    <event load="QUEST_CREWDEAD_START"/>
   </eventList>
 
   <event name="ROCK_QUEST_MARRIAGE_START" unique="true">

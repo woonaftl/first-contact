@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
   <eventList name="HOSTILE_ZOLTAN">
-    <event load="ZOLTAN_FIGHT" count="2"/>
+    <event load="ZOLTAN_FIGHT"/>
     <event load="ZOLTAN_PIRATE"/>
     <event load="ZOLTAN_MANTIS"/>
     <event load="ZOLTAN_ENGI"/>

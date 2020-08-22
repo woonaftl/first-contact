@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
   <eventList name="DISTRESS_BEACON_ORCHID">
-    <event load="TRAP_BEACON"/>
-    <event load="STRANDED_BEACON"/>
-    <event load="ESCORT_BEACON"/>
-    <event load="DISTRESS_SATELLITE_DEFENSE"/>
-    <event load="DISTRESS_STATION_FIRE"/>
-    <event load="REFUGEE_GHOST"/>
-    <event load="REFUGEE_DISTRESS"/>
-
     <event load="ORCHID_DISTRESS_EMPTY_SHIP"/>
     <event load="ORCHID_DISTRESS_COLONY_FIRE"/>
+
+    <event load="DISTRESS_STATION_FIRE"/>
+    <event load="REFUGEE_DISTRESS"/>
   </eventList>
 
   <event name="ORCHID_DISTRESS_EMPTY_SHIP" unique="true">

@@ -2,10 +2,6 @@
 <FTL>
   <eventList name="QUESTS_ORCHID">
     <event load="ORCHID_ZOLTAN_QUEST_START"/>
-
-    <event load="QUEST_ESCORT"/>
-    <event load="MERCHANT_REQUEST"/>
-    <event load="FEDERATION_PLANET_SIGNAL"/>
   </eventList>
 
   <event name="ORCHID_ZOLTAN_QUEST_START" unique="true">
