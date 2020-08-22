@@ -18,12 +18,6 @@
     <name>MISSILES_CHARGE_HEAVY</name>
   </blueprintList>
 
-  <blueprintList name="WEAPONS_MISSILES_EXPENSIVE">
-    <name>MISSILES_3</name>
-    <name>MISSILE_CHARGEGUN</name>
-    <name>MISSILES_CHARGE_HEAVY</name>
-  </blueprintList>
-
   <blueprintList name="WEAPONS_MISSILES_1">
     <name>MISSILES_2</name>
     <name>MISSILES_1</name>

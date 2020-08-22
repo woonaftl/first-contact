@@ -22,7 +22,7 @@
     <name>ENERGY_INSTIGATOR_PIRATE</name>
   </blueprintList>
 
-  <!--TODO add 2 generic ships-->
+  <!--TODO add 3 generic ships-->
 
   <shipBlueprintSuper name="ZOLTAN_FIGHTER" layout="energy_fighter" img="energy_fighter">
     <class>Energy Fighter</class>
@@ -148,51 +148,6 @@
     <cloakImage>energy_scout</cloakImage>
   </shipBlueprintSuper>
 
-  <shipBlueprintSuper name="ENERGY_RIGGER" layout="energy_rigger" img="energy_rigger">
-    <class>Energy Rigger</class>
-    <class_pirate>Pirate Rigger</class_pirate>
-    <systemList>
-      <pilot power="1" max="3" room="0" room_pirate="0"/>
-      <clonebay power="1" max="3" room="4" room_pirate="8"/>
-      <shields power="2" max="8" room="7" room_pirate="5"/>
-      <engines power="1" max="4" room="2" room_pirate="6"/>
-      <oxygen power="1" max="3" room="6" room_pirate="3"/>
-      <doors power="1" max="3" room="5" room_pirate="7" start="false"/>
-      <drones power="3" max="5" room="3" room_pirate="4"/>
-      <weapons room="1" room_pirate="1"/>
-    </systemList>
-    <weaponList sector="4" missiles="2" system_power="6">
-      <weapon name="WEAPONS_MISSILES_1"/>
-      <weapon name="WEAPONS_ION_3"/>
-      <weapon name="WEAPONS_ION_2"/>
-      <weapon name="WEAPONS_LASER_1"/>
-    </weaponList>
-    <weaponList sector="5" missiles="2" system_power="7">
-      <weapon name="WEAPONS_MISSILES_1"/>
-      <weapon name="WEAPONS_ION_3"/>
-      <weapon name="WEAPONS_ION_3"/>
-      <weapon name="WEAPONS_LASER_1"/>
-    </weaponList>
-    <weaponList sector="6" missiles="2" system_power="8">
-      <weapon name="WEAPONS_MISSILES_2"/>
-      <weapon name="WEAPONS_ION_3"/>
-      <weapon name="WEAPONS_ION_3"/>
-      <weapon name="WEAPONS_LASER_1"/>
-    </weaponList>
-    <weaponList sector="7" missiles="3" system_power="8">
-      <weapon name="WEAPONS_MISSILES_2"/>
-      <weapon name="WEAPONS_ION_3"/>
-      <weapon name="WEAPONS_ION_3"/>
-      <weapon name="WEAPONS_LASER_2"/>
-    </weaponList>
-    <droneList drones="3" load="DRONES_COMBAT"/>
-    <health amount="7"/>
-    <crewCount amount="3" max="6" class="energy"/>
-    <boardingAI>sabotage</boardingAI>
-    <aug name="ENERGY_SHIELD"/>
-    <cloakImage>energy_rigger</cloakImage>
-  </shipBlueprintSuper>
-
   <shipBlueprintSuper name="ENERGY_INSTIGATOR" layout="energy_instigator" img="energy_instigator">
     <class>Energy Instigator</class>
     <class_pirate>Pirate Instigator</class_pirate>
@@ -203,7 +158,7 @@
       <engines power="1" max="5" room="2" room_pirate="7"/>
       <oxygen power="1" max="3" room="7" room_pirate="8"/>
       <doors power="1" max="3" room="5" room_pirate="10" start="false"/>
-      <mind power="1" max="3" room="3" room_pirate="6" start="false"/>
+      <mind power="1" room="3" room_pirate="6" start="false"/>
       <weapons room="1" room_pirate="9"/>
     </systemList>
     <weaponList sector="2" missiles="0" system_power="4">

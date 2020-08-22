@@ -34,7 +34,7 @@
     <name>DRONE_SHIELD</name>
     <name>ANTI_DRONE</name>
   </blueprintList>
-  <blueprintList name="DRONES_ORCHID">
+  <blueprintList name="DRONES_PAVONIAN">
     <name>DEFENSE_1</name>
     <name>DEFENSE_2</name>
     <name>DRONE_SHIELD</name>

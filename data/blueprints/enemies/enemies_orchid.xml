@@ -18,7 +18,6 @@
       <shields power="2" max="8" room="3"/>
       <medbay power="1" max="3" room="6" start="false"/>
       <doors power="1" max="3" room="2"/>
-      <drones power="3" max="6" room="7"/>
     </systemList>
     <weaponList sector="2" missiles="0" system_power="4">
       <weapon name="WEAPONS_CHAIN_2"/>
@@ -43,7 +42,6 @@
       <weapon name="WEAPONS_LASER_1"/>
       <weapon name="WEAPONS_LASER_1"/>
     </weaponList>
-    <droneList drones="5" load="DRONES_ORCHID"/>
     <health amount="10"/>
     <crewCount amount="3" max="6" class="orchid"/>
     <boardingAI>sabotage</boardingAI>
@@ -59,7 +57,6 @@
       <oxygen power="1" room="4"/>
       <shields power="2" max="7" room="5"/>
       <medbay power="1" max="3" room="2" start="false"/>
-      <drones power="2" max="6" room="3"/>
     </systemList>
     <weaponList sector="1" missiles="0" system_power="3">
       <weapon name="WEAPONS_CHAIN_2"/>
@@ -80,7 +77,6 @@
       <weapon name="WEAPONS_ANY_1"/>
       <weapon name="WEAPONS_ANY_1"/>
     </weaponList>
-    <droneList drones="5" load="DRONES_ORCHID"/>
     <health amount="9"/>
     <crewCount amount="3" max="5" class="orchid"/>
     <boardingAI>sabotage</boardingAI>
@@ -97,7 +93,6 @@
       <shields power="2" max="8" room="1"/>
       <clonebay power="1" max="3" room="10" start="false"/>
       <doors power="1" max="3" room="6" start="false"/>
-      <drones power="4" max="8" room="7"/>
     </systemList>
     <weaponList sector="3" missiles="0" system_power="5">
       <weapon name="WEAPONS_LASER_2"/>
@@ -122,7 +117,6 @@
       <weapon name="WEAPONS_ANY_1"/>
       <weapon name="WEAPONS_ANY_1"/>
     </weaponList>
-    <droneList drones="5" load="DRONES_ORCHID"/>
     <health amount="11"/>
     <crewCount amount="4" max="7" class="orchid"/>
     <boardingAI>sabotage</boardingAI>

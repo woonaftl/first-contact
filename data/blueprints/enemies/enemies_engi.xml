@@ -47,7 +47,7 @@
     </weaponList>
     <droneList drones="4" load="DRONES_ENGI"/>
     <health amount="7"/>
-    <crewCount amount="2" max="5" class="engi"/>
+    <crewCount amount="2" max="3" class="engi"/>
     <boardingAI>sabotage</boardingAI>
     <aug name="NANO_MEDBAY"/>
     <cloakImage>circle_scout</cloakImage>
@@ -91,7 +91,7 @@
     </weaponList>
     <droneList drones="4" load="DRONES_ENGI"/>
     <health amount="9"/>
-    <crewCount amount="3" max="6" class="engi"/>
+    <crewCount amount="3" max="4" class="engi"/>
     <boardingAI>sabotage</boardingAI>
     <aug name="NANO_MEDBAY"/>
     <cloakImage>circle_bomber</cloakImage>
@@ -132,7 +132,7 @@
     </weaponList>
     <droneList drones="4" load="DRONES_ENGI"/>
     <health amount="7"/>
-    <crewCount amount="2" max="4" class="engi"/>
+    <crewCount amount="2" max="3" class="engi"/>
     <boardingAI>sabotage</boardingAI>
     <aug name="NANO_MEDBAY"/>
     <cloakImage>engi_explorer</cloakImage>
@@ -177,7 +177,7 @@
     </weaponList>
     <droneList drones="5" load="DRONES_ENGI"/>
     <health amount="11"/>
-    <crewCount amount="4" max="6" class="engi"/>
+    <crewCount amount="3" max="5" class="engi"/>
     <boardingAI>sabotage</boardingAI>
     <aug name="NANO_MEDBAY"/>
     <cloakImage>engi_protector</cloakImage>

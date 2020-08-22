@@ -12,13 +12,6 @@
   <blueprintList name="WEAPONS_ALL_FIRE">
     <name>BOMB_FIRE</name>
   </blueprintList>
-  <blueprintList name="WEAPONS_BOMBS_CHEAP">
-    <name>BOMB_ION</name>
-    <name>BOMB_1</name>
-    <name>BOMB_BREACH_1</name>
-    <name>BOMB_FIRE</name>
-    <name>BOMB_STUN</name>
-  </blueprintList>
   <blueprintList name="WEAPONS_BOMB_DELAY">
     <name>BOMB_DELAY_FIRE_STUN</name>
     <name>BOMB_DELAY_BIO</name>

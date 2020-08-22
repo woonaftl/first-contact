@@ -25,10 +25,12 @@
   </xsl:template>
 
   <xsl:template match="event[@load][not(parent::eventList[@name = document('../../result/data/sector_data.xml')/FTL/sectorDescription/event/@name])]
-                                   [not(@name = document('../../result/data/sector_data.xml')/FTL/sectorDescription/startEvent)]
-                                   [not(@name = /FTL/eventList[@name = document('../../result/data/sector_data.xml')/FTL/sectorDescription/event/@name]/event/@load)]
-                                   [not(@name = document('../../data/events/hardcoded.xml')/FTL/eventList/@name)] |
-                                   destroyed[@load] | deadCrew[@load] | gotaway[@load] | surrender[@load] | escape[@load]">
+                                   [not(parent::eventList[@name = document('../../data/events/hardcoded.xml')/FTL/eventList/@name])]
+                                   [not(@load = document('../../result/data/sector_data.xml')/FTL/sectorDescription/event/@name)]
+                                   [not(@load = document('../../result/data/sector_data.xml')/FTL/sectorDescription/startEvent)]
+                                   [not(@load = /FTL/eventList[@name = document('../../result/data/sector_data.xml')/FTL/sectorDescription/event/@name]/event/@load)]
+                                   [not(@load = document('../../data/events/hardcoded.xml')/FTL/eventList/@name)] |
+                                   destroyed[@lloadoad] | deadCrew[@load] | gotaway[@load] | surrender[@load] | escape[@load]">
     <xsl:variable name="name">
       <xsl:value-of select="name()"/>
       <xsl:if test="name(key('event', @load)) = 'eventList'">

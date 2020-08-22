@@ -55,7 +55,7 @@
       <shields power="2" max="8" room="0"/>
       <engines power="1" max="5" room="9"/>
       <weapons room="1"/>
-      <mind power="1" max="2" room="4" start="false"/>
+      <mind power="1" room="4" start="false"/>
       <teleporter power="1" max="3" room="8"/>
     </systemList>
     <weaponList sector="3" missiles="3" system_power="5">
@@ -92,12 +92,11 @@
     <class>Lanius Collector</class>
     <systemList>
       <pilot power="1" max="2" room="0"/>
-      <clonebay power="1" max="3" room="3"/>
+      <clonebay power="1" max="3" room="3" start="false"/>
       <shields power="2" max="8" room="2"/>
       <engines power="1" max="5" room="4"/>
       <weapons room="1"/>
       <doors power="1" max="3" room="6" start="false"/>
-      <mind power="1" max="2" room="5" start="false"/>
     </systemList>
     <weaponList sector="1" missiles="1" system_power="4">
       <weapon name="WEAPONS_MISSILES_1"/>
