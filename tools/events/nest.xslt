@@ -10,6 +10,7 @@
                                 [not(@name = document('../../result/data/sector_data.xml')/FTL/sectorDescription/startEvent)]
                                 [not(@name = /FTL/eventList[@name = document('../../result/data/sector_data.xml')/FTL/sectorDescription/event/@name]/event/@load)]
                                 [not(@name = document('../../data/events/hardcoded.xml')/FTL/event/@name)]
+                                [not(@name = /FTL/eventList[@name = document('../../data/events/hardcoded.xml')/FTL/eventList/@name]/event/@load)]
                                 [not(@name = //quest/@event)]"/>
   <xsl:template match="FTL/eventList[not(@name = document('../../result/data/sector_data.xml')/FTL/sectorDescription/event/@name)]
                                     [not(@name = document('../../result/data/sector_data.xml')/FTL/sectorDescription/startEvent)]
@@ -29,8 +30,9 @@
                                    [not(@load = document('../../result/data/sector_data.xml')/FTL/sectorDescription/event/@name)]
                                    [not(@load = document('../../result/data/sector_data.xml')/FTL/sectorDescription/startEvent)]
                                    [not(@load = /FTL/eventList[@name = document('../../result/data/sector_data.xml')/FTL/sectorDescription/event/@name]/event/@load)]
-                                   [not(@load = document('../../data/events/hardcoded.xml')/FTL/eventList/@name)] |
-                                   destroyed[@lloadoad] | deadCrew[@load] | gotaway[@load] | surrender[@load] | escape[@load]">
+                                   [not(@load = document('../../data/events/hardcoded.xml')/FTL/eventList/@name)]
+                                   [not(@name = /FTL/eventList[@name = document('../../data/events/hardcoded.xml')/FTL/eventList/@name]/event/@load)] |
+                                   destroyed[@load] | deadCrew[@load] | gotaway[@load] | surrender[@load] | escape[@load]">
     <xsl:variable name="name">
       <xsl:value-of select="name()"/>
       <xsl:if test="name(key('event', @load)) = 'eventList'">
@@ -44,13 +46,25 @@
     </xsl:element>
   </xsl:template>
 
-  <xsl:template match="ship[@load]">
+  <xsl:template match="ship[not(@load)][@auto_blueprint][ancestor::event]">
     <xsl:copy>
-      <xsl:apply-templates select="key('ship', @load)/@*[name() != 'name']"/>
-      <xsl:apply-templates select="@*[name() != 'load'][name() != 'auto_blueprint']"/>
+      <xsl:apply-templates select="@*[name() != 'auto_blueprint']"/>
       <auto_blueprint>
-        <xsl:value-of select="key('ship', @load)/@auto_blueprint"/>
+        <xsl:value-of select="@auto_blueprint"/>
       </auto_blueprint>
+      <xsl:apply-templates select="node()"/>
+    </xsl:copy>
+  </xsl:template>
+
+  <xsl:template match="ship[@load][ancestor::event]">
+    <xsl:copy>
+      <xsl:apply-templates select="key('ship', @load)/@*[name() != 'name'][name() != 'auto_blueprint']"/>
+      <xsl:apply-templates select="@*[name() != 'load'][name() != 'auto_blueprint']"/>
+      <xsl:if test="key('ship', @load)/@auto_blueprint">
+        <auto_blueprint>
+          <xsl:value-of select="key('ship', @load)/@auto_blueprint"/>
+        </auto_blueprint>
+      </xsl:if>
       <xsl:apply-templates select="key('ship', @load)/node()"/>
     </xsl:copy>
   </xsl:template>
@@ -64,8 +78,8 @@
   </xsl:template>
 
   <xsl:template match="text[@load][parent::textList]">
-      <xsl:apply-templates select="key('text', @load)/@*[name() != 'name']"/>
-      <xsl:apply-templates select="@*[name() != 'load']"/>
-      <xsl:apply-templates select="key('text', @load)/node()"/>
+    <xsl:apply-templates select="key('text', @load)/@*[name() != 'name']"/>
+    <xsl:apply-templates select="@*[name() != 'load']"/>
+    <xsl:apply-templates select="key('text', @load)/node()"/>
   </xsl:template>
 </xsl:transform>

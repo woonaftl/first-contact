@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <changelog>
+    <entry>Added Rock missionary event</entry>
+  </changelog>
+  <event name="ROCK_MISSIONARY" unique="true">
+    <text>A rock ship awaits you at the beacon and hails you immediately. "Would you like to talk about our lord and savior, Vrachos the Almighty?"</text>
+    <ship hostile="false" load="ROCK_SHIP"/>
+    <choice hidden="true">
+      <text>What is it? Some kind of a boulder?</text>
+      <event>
+        <text>The rock ship starts charging its weapons in response. "Oh Lord, today we will sacrifice these unbelievers in your name!"</text>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice hidden="true" req="rock">
+      <text>(Rock) Perform the traditional welcoming ritual.</text>
+      <event>
+        <text>The Rock missionary is impressed. "Who could have thought that we, devout believers of Vrachos the Almighty, would meet in this far arm of the galaxy? It truly is Divine Providence! Now, as per tradition of true believers, you have to share what you have done to please God today."</text>
+        <choice hidden="true">
+          <text>I cleansed the galaxy from aliens with holy fire!</text>
+          <eventList>
+            <event>
+              <text>The missionary is outraged. "Our religion is a peaceful one but we won't stay idle when xenophobic fanatics boast that they murder innocents in the name of our Lord!" The Rock ship charges its weapons.</text>
+              <ship hostile="true"/>
+            </event>
+            <event>
+              <text>"Truly, it is our holy duty to contain the ever growing threat of aliens. They threaten our traditional ways of life. They threaten out religion. They threaten God!" I hope this gift will help you continue fighting the righteous war.</text>
+              <autoReward level="low">scrap_only</autoReward>
+              <weapon name="BEAM_FIRE"/>
+            </event>
+          </eventList>
+        </choice>
+        <choice hidden="true">
+          <text>I helped those in need, and saved innocents from space pirates!</text>
+          <eventList>
+            <event>
+              <text>The missionary is irritated. "You misunderstand the teachings of God. Those 'innocents' are nothing more than worthless wimps. The strong always feasts on the weak. Such are the rules of the universe." It seems that the Rocks decided to teach you these rules with their weapons.</text>
+              <ship hostile="true"/>
+            </event>
+            <event>
+              <text>"The most noble deed I have heard of in years! You have done well to follow the teachings of our Lord and save helpless civilians from horrors of war. I hope this humble gift will help you when you need it."</text>
+              <autoReward level="low">scrap_only</autoReward>
+              <augment name="ROCK_ARMOR"/>
+            </event>
+          </eventList>
+        </choice>
+        <choice hidden="true">
+          <text>I prayed for Rebellion to be over and for infinite war to finally end.</text>
+          <eventList>
+            <event>
+              <text>"Our God demands direct action, not silent prayer! Are you waiting for Lord to just give you what you want for nothing in return? Vrachos the Almighty demands sacrifice!" Judging by Rock ship's aggressive maneuvers, you will be that sacrifice.</text>
+              <ship hostile="true"/>
+            </event>
+            <event>
+              <text>"My dearest friend, I will join you in that prayer! Our people are tired of neverending war and destruction. Whole planets are barren, devastated by fighting between Rebels and Federation. I wish you safe journey whenever you go and bestow this humble gift."</text>
+              <autoReward level="low">scrap_only</autoReward>
+              <augment name="FLEET_DISTRACTION"/>
+            </event>
+          </eventList>
+        </choice>
+      </event>
+    </choice>
+  </event>
+</FTL>

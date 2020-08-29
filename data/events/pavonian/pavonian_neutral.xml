@@ -7,7 +7,7 @@
 
   <event name="PAVONIAN_DO_NOT_CARE" unique="true">
     <text>The Pavonian ship at the beacon just stays at the same spot without paying you any attention.</text>
-    <ship hostile="true" load="PAVONIAN_SHIP"/>
+    <ship hostile="false" load="PAVONIAN_SHIP"/>
     <choice>
       <text>Attack the ship.</text>
       <event>
@@ -126,6 +126,10 @@
                 <damage amount="5"/>
               </event>
             </eventList>
+          </choice>
+          <choice>
+            <text>Leave with just a drone.</text>
+            <event/>
           </choice>
         </event>
         <event>

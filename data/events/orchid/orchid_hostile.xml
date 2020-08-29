@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
   <eventList name="HOSTILE_ORCHID">
-    <event load="ORCHID_FIGHT" count="2"/>
+    <event load="ORCHID_FIGHT"/>
     <event load="ORCHID_PIRATE_FIGHT"/>
     <event load="ORCHID_ROCK_FIGHT"/>
     <event load="ORCHID_MANTIS_FIGHT"/>
@@ -11,13 +11,7 @@
     <event load="ORCHID_PIRATE_FRIENDLY_ASB"/>
   </eventList>
 
-  <eventList name="HOSTILE_HAZARD_ORCHID">
-    <event load="PIRATE_ASTEROID"/>
-    <event load="PIRATE_SUN"/>
-    <event load="PIRATE_PULSAR"/>
-  </eventList>
-
-  <event name="ORCHID_FIGHT" unique="false">
+  <event name="ORCHID_FIGHT">
     <textList>
       <text>A hostile Orchid ship awaits you at the beacon. Without a single word, they open fire.</text>
       <text>The Orchids at the beacon behave unusually aggressive. One of the ships moves in your direction with weapons online. Scans indicate that the crew is being consumed by some form of alien plant parasites.</text>
@@ -28,7 +22,7 @@
     <ship hostile="true" load="ORCHID_SHIP"/>
   </event>
 
-  <event name="ORCHID_PIRATE_FIGHT" unique="false">
+  <event name="ORCHID_PIRATE_FIGHT">
     <textList>
       <text>The Orchids put a lot of effort into maintaining security of their homeworlds, but a pirate still managed to slip through their defenses. Prepare for battle!</text>
       <text>The Orchid sectors are considered relatively safe and attract traders and refugees. Those, in turn, attract pirates.</text>
@@ -38,16 +32,16 @@
     <ship hostile="true" load="PIRATE"/>
   </event>
 
-  <event name="ORCHID_ROCK_FIGHT" unique="false">
+  <event name="ORCHID_ROCK_FIGHT">
     <textList>
       <text>Rock ships are often seen in Orchid sectors. Contrary to their xenophobic nature, Rocks are quite fond of Orchids. This particular ship is acting hostile towards you, though.</text>
-      <text>Rocks are often seen as useful by Orchids for theie ability to withstand fire and how easy they are to manipulate. A Rock ship at the beacon sees you as a threat to their floral overlords and attacks!</text>
+      <text>Rocks are often seen as useful by Orchids for their ability to withstand fire and for being manipulated easily. A Rock ship at the beacon sees you as a threat to their floral overlords and attacks!</text>
       <text>Orchid sectors are common destination for wealthier Rock travelers. Having a body overgrown with rare plants is considered fashionable in Rock culture. A Rock ship at the beacon considers you threatening and retaliates.</text>
     </textList>
     <ship hostile="true" load="ROCK_SHIP"/>
   </event>
 
-  <event name="ORCHID_MANTIS_FIGHT" unique="false">
+  <event name="ORCHID_MANTIS_FIGHT">
     <textList>
       <text>The warlike Mantis send their ships all over the galaxy to hunt other ships for loot and glory. Orchid sectors are no exception.</text>
       <text>The Orchids put tremendous effort into pacifying invading Mantis and forming friendly relations with them. But some Mantis will never leave the path of a warrior. The ship at the beacon belongs to those.</text>
@@ -56,7 +50,7 @@
     <ship hostile="true" load="MANTIS_FIGHT"/>
   </event>
 
-  <event name="ORCHID_REBEL_FIGHT" unique="false">
+  <event name="ORCHID_REBEL_FIGHT">
     <textList>
       <text>A Rebel fighter awaits you at the beacon. An image of a human officer appears on the comm screen: "We have come to weed this sector from aliens and Federation sympathizers. Starting with you!"</text>
       <text>An aggressive Rebel ship has chosen a beacon far away from primary Orchid worlds to wait for your potential arrival. As soon as it sees you, it moves closer with weapons armed.</text>
@@ -65,7 +59,7 @@
     <ship hostile="true" load="REBEL"/>
   </event>
 
-  <event name="ORCHID_AUTO_FIGHT" unique="false">
+  <event name="ORCHID_AUTO_FIGHT">
     <textList>
       <text>Learning that many Federation ships are using Orchid homeworlds as a hiding place, the Rebels sent many automated ships to hunt those who oppose the Rebellion. One of those crewless ships is waiting for you at the beacon.</text>
       <text>An automated ship is broadcasting a message: "Plant life outlawed. Only humans allowed in the sector. Glory to Rebellion." It's openly hostile to everyone except Rebels.</text>
@@ -74,7 +68,7 @@
     <ship hostile="true" load="REBEL_AUTO"/>
   </event>
 
-  <event name="ORCHID_CAPTURED_REBEL_FIGHT" unique="false">
+  <event name="ORCHID_CAPTURED_REBEL_FIGHT" unique="true">
     <textList>
       <text>You are surprised to hear the crew of an Orchid ship talk in human language: "Surrender. All nearby worlds are controlled by Rebellion forces. Resistance is futile."</text>
       <text>An Orchid ship behaves unusually aggressively. Scans show that it is captured by humans wearing Rebel uniform.</text>

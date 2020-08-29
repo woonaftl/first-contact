@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="NEBULA_HOSTILE_SLUG">
+    <event load="NEBULA_SLUG_MANTIS_STUCK"/>
+    <event load="NEBULA_SLUG_CHOOSE_DEATH"/>
+    <event load="NEBULA_SLUG_FIGHT"/>
+    <event load="NEBULA_SLUG_MANTIS"/>
+    <event load="NEBULA_SLUG_MEDBAY"/>
+    <event load="NEBULA_SLUG_PIRATE"/>
+    <event load="SLUG_DISTRESS_ROCK"/>
+    <event load="NEBULA_SLUG_DISTRESS_TRAP"/>
+  </eventList>
+
+  <event name="NEBULA_SLUG_FIGHT">
+    <textList name="NEBULA_SLUG_FIGHT">
+      <text>Your sensors are no match for the Slug's telepathic abilities - a ship you never even saw opens fire from astern!</text>
+      <text>The Slug vessel you encounter here has obviously made a big score and is looking to test its new armaments. They picked the wrong ship to attack.</text>
+      <text>A Slug passenger ship hails: "Please, your worthy alien highnessesss, we are unarmed and sseeking asssylum." You approach cautiously, and weapons immediately spring from their hull!</text>
+      <text>A Slug ship - a rogue, you suspect - approaches, but when he sees you're Federation he thinks better of the sneak attack and fires everything he has.</text>
+      <text>Direct attacks are not preferred by the Slugs, but of the three you see at this beacon, one has the brass to make a move on your position!</text>
+    </textList>
+    <ship load="JELLY" hostile="true"/>
+    <environment type="nebula"/>
+  </event>
+
+  <event name="NEBULA_SLUG_MANTIS_STUCK" unique="true">
+    <text>You arrive to see two ships: a heavily damaged Mantis vessel and a Slug cruiser, mostly intact. A Mantis screeches into comm: "Teleporter's out. Kill these aliens first!" Looks like their whole crew is stuck on Slug ship they just captured.</text>
+    <environment type="nebula"/>
+    <ship auto_blueprint="SHIPS_JELLY" hostile="true">
+      <destroyed load="DESTROYED_DEFAULT"/>
+      <deadCrew load="DEAD_CREW_DEFAULT"/>
+      <crew>
+        <crewMember type="mantis" prop="1"/>
+      </crew>
+    </ship>
+  </event>
+
+  <event name="SLUG_DISTRESS_ROCK" unique="true">
+    <text>You arrive to find a Slug ship in the middle of boarding a disabled Rock freighter.</text>
+    <distressBeacon/>
+    <environment type="nebula"/>
+    <choice hidden="true">
+      <text>Engage the Slug ship.</text>
+      <eventList name="SLUG_DISTRESS_ROCK_FIGHT">
+        <event>
+          <text>You charge weapons and the Slugs immediately back down. When you return to the freighter, the Rockmen have already repaired the worst of their damage and jump away without another word.</text>
+        </event>
+        <event>
+          <text>You charge weapons and the Slugs quickly change course to meet your charge.</text>
+          <ship name="JELLY_DISTRESS_ROCK" auto_blueprint="SHIPS_JELLY" hostile="true">
+            <destroyed>
+              <text>With the Slug ship destroyed, you retrieve some scrap and return to the Rock ship.</text>
+              <autoReward level="MED">standard</autoReward>
+              <choice hidden="true">
+                <text id="continue"/>
+                <eventList name="SLUG_DISTRESS_ROCK_RESULT">
+                  <event>
+                    <text>It appears that the Rock ship left during your battle. You doubt they could have been more ungrateful for your assistance.</text>
+                  </event>
+                  <event>
+                    <text>After the battle the Rock ship hails you. Their captain simply says, "Thanks." and jumps away. That's pretty gracious of them, considering the Rockmen's reputation.</text>
+                  </event>
+                  <event>
+                    <text>It appears the Rock ship was long since abandoned. You strip what you can from it.</text>
+                    <autoReward level="MED">standard</autoReward>
+                  </event>
+                </eventList>
+              </choice>
+            </destroyed>
+            <deadCrew>
+              <text>With the Slugs no longer a threat, you strip the ship and return to the Rockmen.</text>
+              <autoReward level="MED">standard</autoReward>
+              <choice hidden="true">
+                <text id="continue"/>
+                <event load="SLUG_DISTRESS_ROCK_RESULT"/>
+              </choice>
+            </deadCrew>
+          </ship>
+        </event>
+      </eventList>
+    </choice>
+    <choice>
+      <text>Ignore them.</text>
+      <eventList name="SLUG_DISTRESS_ROCK_AVOID">
+        <event count="2">
+          <text>You have no desire to provoke the Slugs in their own territory. You leave them alone.</text>
+        </event>
+        <event>
+          <text>After the Slugs board the ship, you are surprised to see the Rock ship spring to life and decimate the other ship. They message you, "Pathetic. You are either a coward or an ally of the Slugs. Either way, you don't deserve to live."</text>
+          <ship load="ROCK_SHIP" hostile="true"/>
+        </event>
+      </eventList>
+    </choice>
+  </event>
+
+  <event name="NEBULA_SLUG_MANTIS" unique="true">
+    <text>The Mantis attack ship here looks to have been hunting Slugs on their home turf - a rare test of honor for the mightiest Mantis crews. Weapons up!</text>
+    <ship load="MANTIS_FIGHT" hostile="true"/>
+    <environment type="nebula"/>
+  </event>
+
+  <event name="NEBULA_SLUG_PIRATE" unique="true">
+    <text>You're surprised to find a ship without Slug markings stranded all the way out here, and move in to provide assistance. When you see the pirate insignia on the hull you quickly reconsider.</text>
+    <ship load="PIRATE" hostile="false"/>
+    <environment type="nebula"/>
+    <choice>
+      <text>Attack!</text>
+      <event>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice>
+      <text>Keep your distance and hope they haven't seen you yet.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <changelog>
+    <entry>Removed NEBULA_SLUG_DOORS event</entry>
+    <entry>Removed NEBULA_SLUG_OXYGEN event</entry>
+  </changelog>
+
+  <event name="NEBULA_SLUG_MEDBAY" unique="true">
+    <text>A Slug ship hails you: "We've detected some worrying radiation coming from your medical unit, perhaps you should take a look?" As he signs off, your system shuts off and their crew teleports aboard from a nearby station. They don't look like engineers.</text>
+    <ship load="JELLY_STATUS" hostile="true"/>
+    <boarders min="2" max="2" class="slug"/>
+    <environment type="nebula"/>
+    <choice hidden="true">
+      <text id="continue"/>
+      <event>
+        <status type="limit" target="player" system="medbay" amount="0"/>
+        <status type="limit" target="player" system="clonebay" amount="0"/>
+      </event>
+    </choice>
+    <choice hidden="true" req="medbay" lvl="2">
+      <text>(Improved Medbay) Try to squeeze some extra power to the system.</text>
+      <event>
+        <text>Fearing the imminent battle you desperately try to get the medbay working again. Its lights flicker back on and you turn to face the intruders.</text>
+        <status type="divide" target="player" system="medbay" amount="2"/>
+      </event>
+    </choice>
+    <choice hidden="true" req="hacking">
+      <text>(Hacking System) Counter the remote hacking.</text>
+      <event>
+        <text>You are able to undo the damage of their remote hacking satellite but it's taking everything your hacking system has. Time to take out the enemy the old fashioned way.</text>
+        <status type="limit" target="player" system="hacking" amount="0"/>
+      </event>
+    </choice>
+  </event>
+
+  <changelog>
+    <entry>Added Slug distress trap event</entry>
+  </changelog>
+  <event name="NEBULA_SLUG_DISTRESS_TRAP" unique="true">
+    <text>Like a spider, waiting for prey in a web, a Slug cruiser was luring victims with a distress signal into a carefully designed trap of tractor beams, electromagnetic pulsars, ion emitters and other devices that you fail to recognize. Your ship is completely disabled, with engines barely working, making escape impossible.</text>
+    <environment type="nebula"/>
+    <distressBeacon/>
+    <ship auto_blueprint="SHIPS_JELLY" hostile="false">
+      <destroyed>
+        <text>The Slug ship breaks apart and your systems return to normal. You collect what you can.</text>
+        <autoReward level="MED">standard</autoReward>
+        <status amount="100" system="engines" target="player" type="clear"/>
+        <status amount="100" system="reactor" target="player" type="clear"/>
+      </destroyed>
+      <deadCrew>
+        <text>With their crew dead, your systems return to normal. You strip the ship.</text>
+        <autoReward level="HIGH">standard</autoReward>
+        <status amount="100" system="engines" target="player" type="clear"/>
+        <status amount="100" system="reactor" target="player" type="clear"/>
+      </deadCrew>
+    </ship>
+    <status amount="1" system="engines" target="player" type="limit"/>
+    <status amount="3" system="reactor" target="player" type="loss"/>
+    <choice hidden="true">
+      <text>Fight.</text>
+      <event>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Plead for mercy.</text>
+      <event>
+        <text>The Slug captain is unmoved. "I underssstand the importance of your mission. Do not fret, I will do everything I can to ensure Federation's victory. After I loot your ship."</text>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+  </event>
+
+  <changelog>
+    <entry>System limiting in NEBULA_SLUG_CHOOSE_DEATH event increased from power divided by 2 to 0 power</entry>
+  </changelog>
+  <event name="NEBULA_SLUG_CHOOSE_DEATH" unique="true">
+    <text>You are immediately hailed by a dangerous looking ship guarding a station. "I'm feeling generouss today. I shall allow you to choose your own death. Which do you like leasst: shields, oxygen, or weaponsss?"</text>
+    <environment type="nebula"/>
+    <choice hidden="true">
+      <text>Shields.</text>
+      <event>
+        <text>"Very good then!" Your shield power suddenly drops and they charge.</text>
+        <ship load="JELLY_STATUS" hostile="true"/>
+        <status type="limit" target="player" system="shields" amount="0"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Oxygen.</text>
+      <event>
+        <text>"A being that would choose sssuffocation? Who am I to judge..." Your life support is sabatoged and they move in to attack.</text>
+        <ship load="JELLY_STATUS" hostile="true"/>
+        <status type="limit" target="player" system="oxygen" amount="0"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Weapons.</text>
+      <event>
+        <text>"Your acceptance of death is almosst admirable... Almosst." Your weapons system registers a hacking module. You hardly have time to respond before they attack.</text>
+        <ship load="JELLY_STATUS" hostile="true"/>
+        <status type="limit" target="player" system="weapons" amount="0"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Offer 35 scrap to leave you alone.</text>
+      <event>
+        <text>"I really am feeling generousss..." They take the scrap and leave.</text>
+        <item_modify>
+          <item type="scrap" min="-35" max="-35"/>
+        </item_modify>
+      </event>
+    </choice>
+    <choice hidden="true" req="hacking">
+      <text>(Hacking System) Counter any hack attempt.</text>
+      <event>
+        <text>"Sssilence won't protect you. I'll make the choice mysself... Wait. Why isn't this working?" You cut transmission and move in to attack.</text>
+        <ship load="JELLY_STATUS" hostile="true"/>
+        <status type="limit" target="player" system="hacking" amount="0"/>
+      </event>
+    </choice>
+  </event>
+</FTL>

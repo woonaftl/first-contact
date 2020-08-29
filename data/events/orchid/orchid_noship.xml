@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="NOSHIP_ORCHID">
+    <event load="ORCHID_FREE_ITEMS"/>
+    <event load="ORCHID_FIND_DRONE"/>
+    <event load="ORCHID_FIND_WEAPON"/>
+    <event load="ORCHID_FREE_CREW"/>
+    <event load="ORCHID_ZOLTAN_QUEST_START"/>
+    <event load="ORCHID_DISTRESS_EMPTY_SHIP"/>
+    <event load="ORCHID_BOTANICAL_GALLERY"/>
+    <event load="ORCHID_DISTRESS_COLONY_FIRE"/>
+  </eventList>
+
+  <event name="ORCHID_FREE_ITEMS">
+    <textList>
+      <text>A friendly Orchid station at the beacon is offering scrap metal for free. Orchids make many of their structures of natural materials so they usually have a lot of spare metal.</text>
+      <text back="BG_DARK" planet="NONE">The beacon is empty, with no ships or stars around. A single container, resembling a giant seed, is drifting through space. There are some useful scrap and resources within.</text>
+      <text back="BG_DARK" planet="NONE">The beacon is located far away from systems populated by Orchids. Some remains of destroyed ships are floating around: aftermath of a battle long ago. You harvest what you can.</text>
+    </textList>
+    <autoReward level="LOW">standard</autoReward>
+  </event>
+
+  <event name="ORCHID_FIND_DRONE" unique="true">
+    <textList>
+      <text>Given how fragile Orchids are, they often resort to using drones to deal with emergencies on their ships. A drone factory, still loyal to Federation, is located at the beacon. Orchid engineers offer one of their creations for free.</text>
+      <text>While the FTL drive charges, you decide to explore the surface of a planet nearby. A depowered drone is hidden within foliage of a giant tree, probably left by pirates. You can find some use for it in your journey.</text>
+    </textList>
+    <autoReward level="LOW">drone</autoReward>
+  </event>
+
+  <event name="ORCHID_FIND_WEAPON" unique="true">
+    <textList>
+      <text>You are surprised to find a secret Federation station deep within Orchid space. Its team went as far as hiding the base using traditional Orchid materials like leaves and bark. Allies at the station offer a weapon to help on your journey.</text>
+      <text>An Orchid colony at the nearby moon agrees to give you a weapon in exchange for some rare plant specimen from your home planet you were lucky to have on hand.</text>
+      <text>As you complete the jump, an Orchid ship explodes nearby for unknown reason. The only things that survive the explosion are some melt metal parts and a single weapon.</text>
+    </textList>
+    <autoReward level="LOW">weapon</autoReward>
+  </event>
+
+  <event name="ORCHID_FREE_CREW" unique="true">
+    <text>You encounter a giant Orchid passenger ship with military escort. One of the passengers contacts you using a makeshift communicator: "Please take me. I can fight. I've stolen a shuttle."</text>
+    <choice>
+      <text>Offer them a position on your ship.</text>
+      <event>
+        <text>The new addition to your crew turns out to be an Orchid youth. They take a combat pose and excrete chemicals that fill other crewmembers with determination.</text>
+        <crewMember amount="1" class="orchid"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Decline.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <event name="ORCHID_ZOLTAN_QUEST_START" unique="true">
+    <text>An unarmed Zoltan ship greets you. "Our vessel is on a diplomatic mission to Orchid worlds. We would like to hire you to go ahead of us and offer a small gift to Orchid council to herald our arrival."</text>
+    <choice hidden="true">
+      <text>Agree to deliver a gift.</text>
+      <event>
+        <text>The Zoltans transfer coordinates of their destination and a box containing a gift to Orchids. The package contains a replica of Zoltan spaceship of unusual shape, radiating light and heat. It's made from high quality metals, resistant to damage, and very pleasant to look at.</text>
+        <quest event="ORCHID_ZOLTAN_QUEST_FINISH"/>
+        <autoReward level="MED">stuff</autoReward>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Decline.</text>
+      <event/>
+    </choice>
+  </event>
+  <event name="ORCHID_ZOLTAN_QUEST_FINISH">
+    <text>You arrive at the coordinates, transferred by Zoltan ship carrying their gift and present it to Orchid council. Even though they are unable to talk themselves, the Orchids perfectly understand any language. They seem satisfied and offer you a small reward.</text>
+    <autoReward level="MED">standard</autoReward>
+  </event>
+
+  <event name="ORCHID_DISTRESS_EMPTY_SHIP" unique="true">
+    <ship hostile="false" load="ORCHID_SHIP"/>
+    <text>A distress signal is coming from an Orchid ship, drifting far away from common interstellar routes. You try to communicate but there is no answer.</text>
+    <distressBeacon/>
+    <choice hidden="true">
+      <text>Board the ship.</text>
+      <eventList>
+        <event>
+          <text>You board the ship to find the aftermath of explosion and fire. You can only guess what was the reason of the accident. Most of equipment is burnt, and there is no one alive, but you still manage to find some useful scrap and resources.</text>
+          <autoReward level="MED">standard</autoReward>
+        </event>
+        <event>
+          <text>The only person alive on the ship is a dehydrated Orchid. The ship ran out of water and life support systems broke down. The whole crew is dead except one resilient Orchid who was reanimated after irrigation.</text>
+          <crewMember amount="1" class="orchid"/>
+        </event>
+        <event>
+          <text>The boarding team went into the ship to look for survivors. After a while, your crew went into uncontrollable rage. They were returned back to the ship as soon as possible, but one of the crewmembers was affected so strongly that went mad upon coming back to the ship.</text>
+          <choice hidden="true" req="orchid">
+            <text>(Orchid) Let the Orchid calm the madman.</text>
+            <event>
+              <text>The Orchid sprays soothing pollen, and the madman gradually comes to their senses. The whole team sighs in relief.</text>
+            </event>
+          </choice>
+          <choice hidden="true" req="CREW_STIMS">
+            <text>(Mantis Pheromones) Treat the madman with pheromones.</text>
+            <event>
+              <text>As soon as a fresh portion of pheromones enters the crewmember's lungs, they get better.</text>
+            </event>
+          </choice>
+          <choice hidden="true">
+            <text id="continue"/>
+            <event>
+              <text>There is no other way but to kill the poor fellow.</text>
+              <crewMember amount="-1" class="traitor"/>
+            </event>
+          </choice>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true">
+      <text>Ignore it.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <event name="ORCHID_BOTANICAL_GALLERY" unique="true">
+    <text>A giant Orchid station is located at the beacon. It's marked as an "Augmented Botanical Gallery" on your star map.</text>
+    <choice hidden="true">
+      <text>Visit the station.</text>
+      <event>
+        <text>The atmosphere of tranquility with a small touch of curiosity fills the main hall. There are all kinds of strange exhibits in the gallery. You wonder which to visit.</text>
+        <choice>
+          <text>Pay an entry fee to visit "Kernel".</text>
+          <event>
+            <text>The exhibit contains a giant sphere, protected from all sides with reinforced metal coating. Giant trees are growing inside. You are a bit disappointed.</text>
+            <item_modify>
+              <item max="-9" min="-12" type="scrap"/>
+            </item_modify>
+            <choice hidden="true">
+              <text id="continue"/>
+              <event>
+                <text>Suddenly, a series of explosions rocks entire station wing. The trees are bursting, releasing giant kernels out. The protective sphere can barely stop the kernels from destroying the station. The Orchids offer some explosive kernels for free: they are looking for every opportunity to get rid of them.</text>
+                <item_modify>
+                  <item max="12" min="9" type="missiles"/>
+                </item_modify>
+              </event>
+            </choice>
+          </event>
+        </choice>
+        <choice>
+          <text>Pay an entry fee to visit "Cat"</text>
+          <event>
+            <text>The exhibit is a tight overgrown labyrinth of trees and vines containing swarms of creatures of various size moving everywhere rapidly, climbing on surfaces and swinging from vines. You feel overwhelmed and scared even though the creatures do not harm you.</text>
+            <item_modify>
+              <item max="-9" min="-12" type="scrap"/>
+            </item_modify>
+            <choice hidden="true">
+              <text id="continue"/>
+              <event>
+                <text>A small creature jumps right into your hands and purrs! You examine it and realize that it's a drone made by Orchids with metal and organic parts tightly intertwined. After leaving the gallery, you aren't allowed to take the drone: it wasn't built for combat. The Orchids offer you another drone instead.</text>
+                <drone name="RANDOM"/>
+              </event>
+            </choice>
+          </event>
+        </choice>
+        <choice>
+          <text>Pay an entry fee to visit "Hemp".</text>
+          <event>
+            <text>The exhibit contains a field of... grass. It looks like usual Earth grass with plain flowers but strangely familiar leaf pattern. Was it really worth it?</text>
+            <item_modify>
+              <item max="-9" min="-12" type="scrap"/>
+            </item_modify>
+            <choice hidden="true">
+              <text id="continue"/>
+              <event>
+                <text>After a few minutes on the meadow you feel your worries go away, a desire to laugh, and an irresistible urge to hug a Mantis nearby. After a while, you and the Mantis who turned out to be another visitor become best friends and they agree to join your crew.</text>
+                <crewMember amount="1" class="mantis"/>
+              </event>
+            </choice>
+          </event>
+        </choice>
+        <choice>
+          <text>Pay an entry fee to visit "Sap".</text>
+          <event>
+            <text>This exhibit is a giant machine which is made entirely from plant matter. The contraption sap of lean white-barked trees and moving the sap into processing part which outputs a liquid advertised as high quality FTL fuel.</text>
+            <item_modify>
+              <item max="-9" min="-12" type="scrap"/>
+            </item_modify>
+            <choice hidden="true">
+              <text id="continue"/>
+              <event>
+                <text>Since you have already paid for entry, the Orchids are offering some of experimental fuel for free.</text>
+                <item_modify>
+                  <item max="7" min="5" type="fuel"/>
+                </item_modify>
+              </event>
+            </choice>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>Leave a gallery without visiting anything.</text>
+          <event/>
+        </choice>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Charge FTL drive.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <event name="ORCHID_DISTRESS_COLONY_FIRE" unique="true">
+    <text>A distress signal is coming from the surface of a planet near the beacon. The wildfire is spreading towards a small Orchid colony which lacks the resources to put fires out, or evacuate in time.</text>
+    <distressBeacon/>
+    <choice hidden="true">
+      <text>Help to evacuate as many civilians as you can.</text>
+      <event>
+        <text>The ecosystem on the Orchid planet is so vulnerable to fire that even your whole crew wasn't enough to save the Orchid colony in time. You succeeded in helping the more resilient individuals but most of the Orchid seeds and saplings were lost to the fire.</text>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>This incident is no concern to us.</text>
+      <event/>
+    </choice>
+    <choice hidden="true" req="FIRE_EXTINGUISHERS">
+      <text>(Fire Suppression) Use the augmentation to save the colony.</text>
+      <event>
+        <text>The Fire Suppression system is deployed in the colony and helps tremendously holding wildfires in key points back while all living Orchids evacuate. One of the Orchids is so impressed by your performance that they ask to join your crew.</text>
+        <crewMember amount="1" class="orchid"/>
+      </event>
+    </choice>
+    <choice hidden="true" req="CREW_STIMS">
+      <text>(Mantis Pheromones) Use the augmentation to speed up evacuation.</text>
+      <event>
+        <text>Affected by pheromones, your crew and Orchid civilians move a lot faster, leaving no one behind. After the colony is evacuated, one of the Orchids is so impressed by your performance that they ask to join your crew.</text>
+        <crewMember amount="1" class="orchid"/>
+      </event>
+    </choice>
+    <choice hidden="true" req="crystal">
+      <text>(Crystal Crew) Block wildfire spreading to win some time.</text>
+      <event>
+        <text>Your crewmember erects giant crystalline walls in mere seconds. The flames are slowed down and all of the colony manages to escape to safety. One of the Orchids is so impressed by your performance that they ask to join your crew.</text>
+        <crewMember amount="1" class="orchid"/>
+      </event>
+    </choice>
+    <choice hidden="true" req="BOMB_LOCK">
+      <text>(Lockdown Bomb) Block wildfire spreading to win some time.</text>
+      <event>
+        <text>The bomb is used to erect giant crystalline walls in mere seconds. The flames are slowed down and all of the colony manages to escape to safety. One of the Orchids is so impressed by your performance that they ask to join your crew.</text>
+        <crewMember amount="1" class="orchid"/>
+        <item_modify>
+          <item max="-2" min="-2" type="missiles"/>
+        </item_modify>
+      </event>
+    </choice>
+    <choice hidden="true" req="DRONE_SPEED">
+      <text>(Pavonian Overclocker) Deploy superior drones to help.</text>
+      <event>
+        <text>The killer drones are reprogrammed and used for help. They carry seeds, saplings, and valuables, put out fires and save the day in the end. One of the Orchids is so impressed by your performance that they ask to join your crew.</text>
+        <crewMember amount="1" class="orchid"/>
+        <item_modify>
+          <item max="-2" min="-2" type="drones"/>
+        </item_modify>
+      </event>
+    </choice>
+  </event>
+</FTL>

@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="NEUTRAL_CIVILIAN">
+    <event load="AUTO_REFUEL_STATION"/>
+    <event load="REFUGEE_DISTRESS"/>
+    <event load="REBEL_VS_FEDERATION"/>
+    <event load="MERCENARY_WORK_START"/>
+    <!--pirate events-->
+    <event load="ASTEROID_EXPLORE"/>
+    <event load="EMPTY_STATION2"/>
+    <event load="FRIENDLY_SLAVER"/>
+    <event load="MERCENARY"/>
+    <event load="PIRATE_BRIBER"/>
+    <!--rebel events-->
+    <event load="AUTO_CIVILIAN"/>
+    <event load="BROKEN_REBEL_DRONE"/>
+    <event load="SQUAT_REFUEL_STATION"/>
+  </eventList>
+
+  <event name="AUTO_REFUEL_STATION" unique="true">
+    <img planet="PLANET_POPULATED_SMALL"/>
+    <text>You detect an automated Rebel scout attacking a small refueling outpost.</text>
+    <ship name="REBEL_AUTO_REFUEL" auto_blueprint="SHIPS_AUTO" hostile="false">
+      <destroyed>
+        <text>The ship breaks apart and you quickly salvage what you can.</text>
+        <autoReward level="LOW">standard</autoReward>
+        <choice hidden="true">
+          <text id="continue"/>
+          <event>
+            <text>The outpost hails you after the scout was destroyed, "Thanks for the help. We've been harassed non-stop by those scouts. Take this on the house."</text>
+            <autoReward level="MED">standard</autoReward>
+          </event>
+        </choice>
+      </destroyed>
+    </ship>
+    <choice>
+      <text>Intervene to defend the outpost.</text>
+      <event>
+        <text>Detecting the higher threat, the automated ship moves in to engage your ship.</text>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice>
+      <text>Avoid the conflict.</text>
+      <event>
+        <text>You steer clear of the conflict. The outpost receives a beating but the ship stops its attack before it's destroyed.</text>
+      </event>
+    </choice>
+  </event>
+
+  <changelog>
+    <entry>Credits to Twinge's balance mod: Added a blue option for Repair Burst for REBEL_VS_FEDERATION_SAVED_LIST event</entry>
+  </changelog>
+  <event name="REBEL_VS_FEDERATION" unique="true">
+    <textList name="REBEL_VS_FEDERATION">
+      <text>Upon arriving at this beacon, you detect a distress call. Local scans reveal that a Federation transport is under attack from a Rebel scout!</text>
+      <text>You immediately notice a Rebel ship chasing what appears to be a civilian transport. However you are detecting chatter on an encrypted Federation channel... That transport is carrying Federation loyalists!</text>
+      <text>Your sensors are picking up a distress call on an encrypted Federation channel. You eventually find a Federation scout being chased by a Rebel fighter!</text>
+    </textList>
+    <img back="BACKGROUND" planet="PLANET_POPULATED"/>
+    <choice>
+      <text>Aid the Federation ship.</text>
+      <event>
+        <text>You power up your weapons and engage the Rebel ship.</text>
+        <ship name="REBEL_VS_FEDERATION" auto_blueprint="SHIPS_REBEL" hostile="true">
+          <destroyed>
+            <text>With the ship destroyed, you quickly collect useful resources.</text>
+            <autoReward level="MED">standard</autoReward>
+            <choice hidden="true">
+              <text>Contact the Federation ship.</text>
+              <event load="REBEL_VS_FEDERATION_SAVED_LIST"/>
+            </choice>
+          </destroyed>
+          <deadCrew>
+            <text>With the crew of the Rebel ship dead, you salvage what you can.</text>
+            <autoReward level="MED">standard</autoReward>
+            <choice hidden="true">
+              <text>Contact the Federation ship.</text>
+              <event load="REBEL_VS_FEDERATION_SAVED_LIST"/>
+            </choice>
+          </deadCrew>
+        </ship>
+      </event>
+    </choice>
+    <choice>
+      <text>Use this chance to escape.</text>
+      <event>
+        <text>The Rebel's preoccupation with the Federation ship allows you to slip away undetected. However you can't help but feel you should have helped them.</text>
+      </event>
+    </choice>
+  </event>
+  <eventList name="REBEL_VS_FEDERATION_SAVED_LIST">
+    <event>
+      <text>"Thank you for saving us. This ship is transporting Federation civilians on the run from the rebellion and we don't have the equipment to fight for ourselves. I don't have much to offer, but I can inform you of a hidden Federation base nearby. Perhaps they can assist you more."</text>
+      <quest event="HIDDEN_FEDERATION_BASE_LIST"/>
+    </event>
+    <event>
+      <text>Their ship looks to be on the verge of destruction and life signs are fading quickly.</text>
+      <choice hidden="true">
+        <text>Quickly try to rescue the crew.</text>
+        <eventList>
+          <event>
+            <text>Despite your efforts, the majority do not survive. The sole survivor offers to join your crew and helps you strip the now derelict ship of useful components.</text>
+            <crewMember amount="1"/>
+            <autoReward level="LOW">standard</autoReward>
+          </event>
+          <event>
+            <text>Despite your efforts, the crew does not survive. You strip the now derelict ship of useful components.</text>
+            <autoReward level="LOW">standard</autoReward>
+          </event>
+        </eventList>
+      </choice>
+      <choice req="NANO_MEDBAY" hidden="true">
+        <text>(Nano Med-bot Dispersal) Pump their ship with Nano Med-bots to aid in the rescue.</text>
+        <event>
+          <text>You drag the injured and dying crew on to your ship. The Med-bots help stabilize their condition, but most perish. The surviving shields operator offers to join your crew and helps you strip their broken ship of scrap.</text>
+          <crewMember shields="1" amount="1"/>
+          <quest event="HIDDEN_FEDERATION_BASE_LIST"/>
+          <autoReward level="LOW">standard</autoReward>
+        </event>
+      </choice>
+      <choice req="teleporter" hidden="true">
+        <text>(Teleporter) Lock on to all remaining life signatures and beam them onto your ship.</text>
+        <event>
+          <text>Your quick reactions allow you to stabilize a few of the seriously wounded crewmembers. An infantryman offers to join your crew and the rest tell you of a hidden Federation base a few jumps from here.</text>
+          <crewMember combat="1" amount="1"/>
+          <quest event="HIDDEN_FEDERATION_BASE_LIST"/>
+          <autoReward level="LOW">standard</autoReward>
+        </event>
+      </choice>
+      <choice req="BOMB_HEAL">
+        <text>(Heal Bomb) Use a healing bomb to keep them alive.</text>
+        <event>
+          <text>You launch a healing bomb into their ship and the Nanobots are able to keep the crew stabilized. Once they come to, you send over some supplies to keep them healty enough to get to friendly territory.</text>
+          <item_modify>
+            <item type="missiles" min="-1" max="-1"/>
+          </item_modify>
+          <choice hidden="true">
+            <text id="continue"/>
+            <event>
+              <text>Now that they're safe an engineer offers to join your crew and the rest tell you of a hidden Federation base a few jumps from here.</text>
+              <crewMember engines="1" amount="1"/>
+              <quest event="HIDDEN_FEDERATION_BASE_LIST"/>
+              <autoReward level="LOW">standard</autoReward>
+            </event>
+          </choice>
+        </event>
+      </choice>
+      <choice req="BOMB_HEAL_SYSTEM">
+        <text>(Repair Burst) Use a repair burst to fix the life support.</text>
+        <event>
+          <text>You launch a repair burst into their ship and the nanobots rapidly stabilize their life support systems. That should keep the ship intact long enough for the crew to reach a proper repair facility.</text>
+          <item_modify>
+            <item type="missiles" min="-1" max="-1"/>
+          </item_modify>
+          <choice hidden="true">
+            <text id="continue"/>
+            <event>
+              <text>Now that they're safe, a weapons specialist offers to join your crew and the others tell you of a hidden Federation base a few jumps away.</text>
+              <crewMember weapons="1" amount="1"/>
+              <quest event="HIDDEN_FEDERATION_BASE_LIST"/>
+              <autoReward level="LOW">scrap_only</autoReward>
+            </event>
+          </choice>
+        </event>
+      </choice>
+    </event>
+    <event>
+      <text>"Thanks, we didn't think there would be Rebel ships all the way out here. They seem to be searching for something. Take some extra supplies as thanks for your aid."</text>
+      <autoReward level="MED">standard</autoReward>
+    </event>
+  </eventList>
+
+  <event name="MERCENARY_WORK_START" unique="true">
+    <text>You are immediately contacted by a settlement, "Hello, travelers. Your ship seems to be outfitted for combat...care to take up a bit of mercenary work?"</text>
+    <choice>
+      <text>Listen to their offer.</text>
+      <eventList name="MERCENARY_WORK_LIST">
+        <event>
+          <text>"A space dock is under assault from the Rebels. Although the dock is... technically... illegal within their laws, it's very important for our trade. We'll pay you in fuel and scrap if you promise to save them."</text>
+          <choice>
+            <text>Agree to rescue the store.</text>
+            <event>
+              <text>They transmit the space dock's coordinates.</text>
+              <quest event="QUEST_STORE_RESCUE"/>
+            </event>
+          </choice>
+          <choice>
+            <text>Decline.</text>
+            <event>
+              <text>They regretfully accept your decision.</text>
+            </event>
+          </choice>
+        </event>
+        <event>
+          <text>"Some of our friends have taken to piracy in the recent chaos of the war. We'd like you to "convince" them of their poor decision by severely damaging their ship. We'll pay you well as long as you don't kill them all."</text>
+          <choice>
+            <text>Accept.</text>
+            <event>
+              <text>"Just be sure not to blow them up!" they say nervously as they direct you to a nearby moon. You find the pirate ship docked there. They immediately respond to your appearance with, "Your money or your life!" They must be new to this.</text>
+              <ship name="SQUAT_PIRATE_MERCENARY" auto_blueprint="SHIPS_PIRATE" hostile="true">
+                <surrender min="3" max="4">
+                  <text>They hail your ship saying, "You win! We're not cut out for this!"</text>
+                  <choice hidden="true">
+                    <text>Let them live and then return to the settlement.</text>
+                    <event>
+                      <ship hostile="false"/>
+                      <text>With the pirates dissuaded from their career path, you return to the settlement. "Thank you, they returned to us before you did. I don't think we'll need this anymore."</text>
+                      <autoReward level="MED">weapon</autoReward>
+                    </event>
+                  </choice>
+                  <choice>
+                    <text>Forget your promise, they die!</text>
+                    <event/>
+                  </choice>
+                </surrender>
+                <destroyed>
+                  <text>With all of the would-be pirates dead, you think it best not to return to the settlement... You prepare to jump.</text>
+                  <autoReward level="LOW">standard</autoReward>
+                </destroyed>
+                <deadCrew>
+                  <text>With all of the would-be pirates dead, you think it best not to return to the settlement... You prepare to jump.</text>
+                  <autoReward level="LOW">standard</autoReward>
+                </deadCrew>
+              </ship>
+            </event>
+          </choice>
+          <choice>
+            <text>Decline.</text>
+            <event>
+              <text>"Fine. I don't know what we'll do about them though..." You prepare to jump away from this sector.</text>
+            </event>
+          </choice>
+        </event>
+      </eventList>
+    </choice>
+    <choice>
+      <text>Decline.</text>
+      <event/>
+    </choice>
+  </event>
+</FTL>

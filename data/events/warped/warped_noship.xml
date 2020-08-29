@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <event name="WARPED_STORM_MONSTER" unique="true">
+    <text>The nebula is particularly thick at this beacon. The sensors have gone offline, as well as half of high-tech equipment on the ship. The ship can hardly move through the dense gases. The best decision would probably be to charge the FTL drive and hope to leave the dangerous area as soon as possible.</text>
+    <environment type="storm"/>
+    <choice hidden="true">
+      <text id="continue"/>
+      <event/>
+    </choice>
+    <choice hidden="true" req="slug">
+      <text>(Slug) Detect life signatures.</text>
+      <event load="WARPED_STORM_MONSTER_DETECTED"/>
+    </choice>
+    <choice hidden="true" req="LIFE_SCANNER">
+      <text>(Lifeform Scanner) Detect life signatures.</text>
+      <event load="WARPED_STORM_MONSTER_DETECTED"/>
+    </choice>
+  </event>
+  <event name="WARPED_STORM_MONSTER_DETECTED">
+    <text>A colossal monster with a size of a planet lies ahead of you. It seems to be dormant, but alive, hidden from everyone by dense nebula.</text>
+    <choice hidden="true">
+      <text>Fire at the monster.</text>
+      <event>
+        <text>It is hard to miss the giant head of the creature in front of your ship. A shot connects and an eye of enormous size opens. Then another. Then a thousand more. A monster just opens it mouth and that's enough to send your ship flying away towards the local star. It was impossible to see anything with your own eyes, but you will never forget this experience.</text>
+        <damage amount="4" effect="breach" system="random"/>
+        <damage amount="3" effect="breach" system="random"/>
+        <damage amount="3" effect="breach" system="room"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Leave immediately.</text>
+      <event/>
+    </choice>
+    <choice hidden="true" req="BEAM_3_LIST">
+      <text>(Glaive Beam) Make a hole in its head.</text>
+      <event>
+        <text>The monster's skin is thick but not enough to resist the sheer power of the Glaive Beam. The brain of the creature was completely destroyed by one lucky shot from tiny starship, leaving planet-sized monster dead in space. There is no reward for this feat, since nobody will believe the story, but you know that you saved the galaxy once again.</text>
+      </event>
+    </choice>
+  </event>
+</FTL>

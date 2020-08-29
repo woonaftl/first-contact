@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
   <eventList name="HOSTILE_CRYSTAL">
-    <event load="CRYSTAL_FIGHT" count="3"/>
+    <event load="CRYSTAL_FIGHT"/>
     <event load="CRYSTAL_CONVOY"/>
     <event load="CRYSTAL_REBEL"/>
     <event load="CRYSTAL_HUNTER"/>
     <event load="CRYSTAL_AUTO"/>
   </eventList>
 
-  <event name="CRYSTAL_FIGHT" unique="false">
+  <event name="CRYSTAL_FIGHT">
     <textList name="CRYSTAL_FIGHT">
       <text>You arrive near a fleet of crystal ships, civilian or mercantile from the looks of them. You pause to scan one but they react immediately and send an escort to fight you off. Prepare to engage!</text>
       <text>You arrive at the Beacon and are immediately greeted by an automatic message or warning of some kind. The translator can't seem to discern its purpose but after a few short moments an alarm goes off and a hostile ship jumps in!</text>
@@ -90,7 +90,7 @@
     </ship>
   </event>
 
-  <event name="CRYSTAL_REBEL" unique="false">
+  <event name="CRYSTAL_REBEL" unique="true">
     <text>As soon as you arrive, a Rebel ship jumps in after you; they must be really hot on your tail.</text>
     <ship load="REBEL" hostile="true"/>
   </event>

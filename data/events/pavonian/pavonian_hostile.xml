@@ -5,11 +5,6 @@
     <event load="PAVONIAN_REBEL_FIGHT"/>
   </eventList>
 
-  <eventList name="HOSTILE_HAZARD_PAVONIAN">
-    <event load="PAVONIAN_PIRATE_ASTEROID"/>
-    <event load="PAVONIAN_PIRATE_SUN"/>
-  </eventList>
-
   <event name="PAVONIAN_PIRATE_FIGHT">
     <textList>
       <text>While Pavonians themselves do not concern themselves with galactic war, their worlds are still far from peaceful. A pirate ship terrorizing civilians in this system, decided to make a move against you.</text>
@@ -21,17 +16,5 @@
   <event name="PAVONIAN_REBEL_FIGHT">
     <text>A Rebel ship is stationed at the beacon. "We are bringing order into this system. All incoming ships are to be inspected. Those who oppose, are to be destroyed." There is no way around a fight.</text>
     <ship load="REBEL" hostile="true"/>
-  </event>
-
-  <event name="PAVONIAN_PIRATE_ASTEROID">
-    <text>As you complete the maneuver, you realize that the beacon is located inside the dense asteroid field. A pirate ship, skillfully dodging asteroids, awaits someone to loot: "These are not rainbow aliens." "Doesn't matter, kill them anyway."</text>
-    <environment type="asteroid"/>
-    <ship load="PIRATE" hostile="true"/>
-  </event>
-
-  <event name="PAVONIAN_PIRATE_SUN">
-    <text>This beacon is located far from common Pavonian systems, right near a supergiant star. A pirate ship, barely able to withstand the radiating energy, attacks!</text>
-    <environment type="sun"/>
-    <ship load="PIRATE" hostile="true"/>
   </event>
 </FTL>

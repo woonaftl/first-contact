@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="HOSTILE_HAZARD_ZOLTAN">
+    <event load="ZOLTAN_ASTEROID"/>
+  </eventList>
+
+  <event name="ZOLTAN_ASTEROID" unique="true">
+    <text>You arrive in an asteroid field and are greeted by a Zoltan guard, "By attempting to access these closed mining fields, you are in violation of the Natural Mineral Protection Act. Your weaponry will be confiscated for processing." You don't have time for this.</text>
+    <environment type="asteroid"/>
+    <ship load="ZOLTAN_SHIP" hostile="true"/>
+  </event>
+</FTL>

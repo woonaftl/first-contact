@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
-  <eventList name="DISTRESS_BEACON_MANTIS">
-    <event load="ESCORT_BEACON"/>
-    <event load="FRIENDLY_BEACON"/>
-    <event load="TRAP_BEACON"/>
-    <event load="DISTRESS_TRAPPED_MINER"/>
-    <event load="DISTRESS_INFESTATION"/>
-    <event load="DISTRESS_SATELLITE_DEFENSE"/>
-    <event load="DISTRESS_STATION_FIRE"/>
-    <event load="DISTRESS_STATION_DISEASE"/>
-  </eventList>
-
   <event name="START_BEACON_MANTIS">
     <text>You've entered a poorly charted area of space that's known to be home to the Mantis. Ensure your hull plating is up to scratch and that you have enough fuel in the tank to make it through.</text>
   </event>

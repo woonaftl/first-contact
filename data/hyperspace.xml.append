@@ -50,6 +50,7 @@
         <repair req="10000000"/>
         <combat req="10000000"/>
       </skills>
+      <animBase>mantis</animBase>
       <deathSounds>
         <deathSound>mantisDeath</deathSound>
       </deathSounds>
@@ -91,7 +92,7 @@
                   <hitSound>rockHit2</hitSound>
                   <hitSound>rockHit3</hitSound>
                 </hitSounds>-->
-      <repairSounds>
+      <repairSounds animSoundFrame="5">
         <repairSound>rockThud1</repairSound>
         <repairSound>rockThud2</repairSound>
         <repairSound>rockThud3</repairSound>
@@ -154,11 +155,25 @@
       <deathSounds>
         <deathSound>crystalDeath</deathSound>
       </deathSounds>
+      <!--      <stompSounds>
+                  <stompSound>rockStomp1</stompSound>
+                  <stompSound>rockStomp2</stompSound>
+                </stompSounds>-->
+      <!--      <hitSounds>
+                  <hitSound>rockHit1</hitSound>
+                  <hitSound>rockHit2</hitSound>
+                  <hitSound>rockHit3</hitSound>
+                </hitSounds>-->
       <shootingSounds>
         <shootingSound>rockThrow1</shootingSound>
         <shootingSound>rockThrow2</shootingSound>
         <shootingSound>rockThrow3</shootingSound>
       </shootingSounds>
+      <repairSounds animSoundFrame="5">
+        <repairSound>rockThud1</repairSound>
+        <repairSound>rockThud2</repairSound>
+        <repairSound>rockThud3</repairSound>
+      </repairSounds>
       <powerEffect>
         <cooldown>30</cooldown>
         <jumpCooldown>full</jumpCooldown>

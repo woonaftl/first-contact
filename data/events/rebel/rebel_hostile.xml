@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
   <eventList name="HOSTILE_REBEL">
+    <event load="ALISON_DEFECTOR"/>
+    <event load="AUTO_WARNING"/>
+    <event load="BOARDERS_REBEL_SHIP"/>
     <event load="REBEL"/>
     <event load="REBEL_AUTO"/>
-    <event load="AUTO_WARNING"/>
     <event load="SQUAT_WARNING"/>
-    <event load="BOARDERS_REBEL_SHIP"/>
   </eventList>
 
-  <eventList name="HOSTILE_HAZARD_REBEL">
-    <event load="AUTO_ASTEROID"/>
-    <event load="REBEL_PULSAR"/>
-  </eventList>
+  <changelog>
+    <entry>Removed AUTO_HACKER event</entry>
+  </changelog>
 
   <event name="REBEL">
     <textList name="REBEL">
@@ -26,6 +26,17 @@
       <text>You're hailed by a Rebel ship: "When the rebellion is complete you'll see the safer world we provide. Well, you won't, but you get the point." They arm weapons.</text>
       <text>A Rebel ship is guarding this beacon. You order a pursuit course and prepare to scratch up one more.</text>
     </textList>
+    <ship load="REBEL" hostile="true"/>
+  </event>
+
+  <event name="BOARDERS_REBEL_SHIP">
+    <textList name="BOARDERS_REBEL_SHIP">
+      <text>You receive a message from a nearby Rebel station, "You have a lot of guts passing through our space, I'll give you that." He turns giving an order, "Kill their crew, I want that ship intact."</text>
+      <text>Your sensors warn of an incoming Rebel ship at the same time as you hear the telltale signs of a teleporter. You hear someone taunt from within the ship, "Ready to die? I sure am ready to get a promotion!"</text>
+      <text>Incoming message, "Hello Captain," says a Rebel in an officer's garb. "How very generous of you to turn yourself in. Prepare to be boarded. Come quietly and we may be lenient."</text>
+      <text>You receive a message on a low-band channel. "You're surrounded, just like the last of your Federation friends. Just die already." The enemy has teleported onto your ship!</text>
+    </textList>
+    <boarders min="2" max="3" class="human"/>
     <ship load="REBEL" hostile="true"/>
   </event>
 
@@ -44,7 +55,7 @@
     <ship load="REBEL_AUTO" hostile="true"/>
   </event>
 
-  <event name="AUTO_WARNING" unique="true">
+  <event name="AUTO_WARNING">
     <text load="REBEL_AUTO"/>
     <ship load="REBEL_AUTO_WARNING" hostile="true"/>
   </event>
@@ -71,24 +82,114 @@
     </ship>
   </event>
 
-  <event name="REBEL_PULSAR" unique="false">
-    <textList name="REBEL_PULSAR_TEXT">
-      <text>A Rebel captain appears on the screen. "I thought we had been doomed to backwater assignments. This is my chance to get back in Command's good graces! Charge the weapons!"</text>
-      <text>A small rebel research station overlooks a pulsating star. Before you can react a Rebel ship spots you and moves in to attack.</text>
-      <text>You arrive at an infrequently used beacon close to a pulsar. Before long a Rebel ship happens to jump nearby. Looks like you'll have to fight.</text>
-    </textList>
+  <event name="ALISON_DEFECTOR" unique="true">
+    <text>A Rebel ship is patrolling this beacon, and immediately turns to engage. As your crew scramble to battle readiness, sensors detect a short-range teleporter signal. An intruder is on board!</text>
     <ship load="REBEL" hostile="true"/>
-    <environment type="pulsar"/>
+    <choice>
+      <text id="continue"/>
+      <event>
+        <text>A flushed and panicky rebel soldier has teleported aboard. The rebel, who appears unarmed, repeatedly declares his peaceful intentions. It seems the rebel life has lost its charm.</text>
+        <choice hidden="true">
+          <text>Accept his proposal, and prepare to fight the Rebel ship.</text>
+          <eventList name="ALISON_DEFECTOR_HELP">
+            <event>
+              <text>The dishonorable Rebel has deceived you. He damages your engines and steals your flight data before teleporting away. The fleet will be able to track you with ease. If they can't kill you now that is!</text>
+              <damage amount="2"/>
+              <damage amount="1" system="engines"/>
+              <modifyPursuit amount="1"/>
+            </event>
+            <event>
+              <text>Your new crew-member smiles, then reveals a small remote trigger in the palm of his hand. Explosions rocket around the ship as more intruders teleport aboard!</text>
+              <boarders min="2" max="2" class="human"/>
+              <damage amount="3"/>
+            </event>
+            <event count="3">
+              <text>Relieved and light-headed, your new crewmember gets to work as the Rebel ship attacks.</text>
+              <crewMember amount="1" class="human"/>
+            </event>
+            <event>
+              <text>The Rebel makes to take his assigned station, then suddenly turns and eviscerates the nearest crew-member. Red Alert!</text>
+              <boarders min="1" max="1" class="human"/>
+              <removeCrew>
+                <clone>true</clone>
+                <text>The eviscerated crewmember's clone launches out of the clone bay, eager to seek revenge.</text>
+              </removeCrew>
+            </event>
+          </eventList>
+        </choice>
+        <choice>
+          <text>Reject his offer. You can never trust these Rebels.</text>
+          <eventList name="ALISON_DEFECTOR_REJECT">
+            <event>
+              <text>Your fearless crew easily overcome the intruder, but the Rebel ship still needs to be dealt with.</text>
+            </event>
+            <event>
+              <text>Attempting to deal with attacks from inside and out is never easy!</text>
+              <boarders min="1" max="1" class="human"/>
+            </event>
+            <event>
+              <text>He offers to lead you to a secret cache of scrap nearby if you let him join your crew.</text>
+              <choice hidden="true">
+                <text>Reluctantly accept his proposal and fight the Rebel ship.</text>
+                <eventList name="ALISON_DEFECTOR_HELP_2">
+                  <event>
+                    <text>The dishonorable Rebel has deceived you. He damages your ship and steals ship information before teleporting away. The fleet will be able to track you with ease. If they can't kill you now, that is!</text>
+                    <damage amount="2"/>
+                    <damage amount="1" system="engines"/>
+                    <modifyPursuit amount="1"/>
+                  </event>
+                  <event>
+                    <text>Your new crew-member smiles, then reveals a small remote trigger in the palm of his hand. Explosions rocket around the ship as more intruders teleport aboard!</text>
+                    <boarders min="2" max="2" class="human"/>
+                    <damage amount="2"/>
+                    <damage amount="1" system="pilot"/>
+                  </event>
+                  <event count="3">
+                    <text>Relieved and light-headed, your new crewmember gets to work as the Rebel ship attacks.</text>
+                    <crewMember amount="1" class="human"/>
+                    <quest event="ALISON_DEFECTOR_QUEST"/>
+                  </event>
+                  <event>
+                    <text>The Rebel makes to take his assigned station, then suddenly turns and eviscerates the nearest crew-member. Red Alert!</text>
+                    <boarders min="1" max="1" class="human"/>
+                    <removeCrew>
+                      <clone>true</clone>
+                      <text>The eviscerated crewmember's clone launches out of the clone bay, eager to seek revenge.</text>
+                    </removeCrew>
+                  </event>
+                </eventList>
+              </choice>
+              <choice>
+                <text>Reject him outright and execute him on the spot.</text>
+                <event/>
+              </choice>
+              <choice>
+                <text>Reject his offer again.</text>
+                <event>
+                  <boarders min="1" max="1" class="human"/>
+                </event>
+              </choice>
+            </event>
+          </eventList>
+        </choice>
+        <choice hidden="true" req="orchid">
+          <text>(Orchid) Allure the human to make sure they don't change their mind.</text>
+          <event>
+            <text>The Rebel defector is stunned by the sight of Orchid. It seems that the Rebel didn't see any aliens but Mantis before. Charmed, the human gets to work as the Rebel ship attacks.</text>
+            <crewMember amount="1" class="human"/>
+          </event>
+        </choice>
+      </event>
+    </choice>
   </event>
-
-  <event name="BOARDERS_REBEL_SHIP">
-    <textList name="BOARDERS_REBEL_SHIP" unique="false">
-      <text>You receive a message from a nearby Rebel station, "You have a lot of guts passing through our space, I'll give you that." He turns giving an order, "Kill their crew, I want that ship intact."</text>
-      <text>Your sensors warn of an incoming Rebel ship at the same time as you hear the telltale signs of a teleporter. You hear someone taunt from within the ship, "Ready to die? I sure am ready to get a promotion!"</text>
-      <text>Incoming message, "Hello Captain," says a Rebel in an officer's garb. "How very generous of you to turn yourself in. Prepare to be boarded. Come quietly and we may be lenient."</text>
-      <text>You receive a message on a low-band channel. "You're surrounded, just like the last of your Federation friends. Just die already." The enemy has teleported onto your ship!</text>
-    </textList>
-    <boarders min="2" max="3" class="human"/>
-    <ship load="REBEL" hostile="true"/>
-  </event>
+  <eventList name="ALISON_DEFECTOR_QUEST">
+    <event>
+      <text>Arriving at the specified coordinates you find a sizable stash of useful materials.</text>
+      <autoReward level="HIGH">stuff</autoReward>
+    </event>
+    <event>
+      <text>You arrive at the location of the hoard, but discover that it was not quite as large as advertised.</text>
+      <autoReward level="LOW">scrap_only</autoReward>
+    </event>
+  </eventList>
 </FTL>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <event name="START_BEACON_PIRATE">
+    <textList name="START_BEACON_PIRATE">
+      <text>A few years ago this region was bustling with trade activity. Now it is overrun with bandits and marauders. You should tread lightly here.</text>
+      <text>This somewhat isolated region was thrown into chaos at the start of the rebellion. Even in peacetime it was always beset by pirates but now it houses a center of operations for countless pirate fleets.</text>
+      <text>If the reports are true, this area has been under the control of pirates for quite some time. Some traders still attempt to trade with the few settlements that remain, but they do so at great risk.</text>
+      <text>A few Federation-friendly planets still exist in this sector, but they are constantly under attack by pirate raids. This is a dangerous sector, so be careful.</text>
+    </textList>
+  </event>
+
+  <event name="STORE_PIRATE">
+    <textList name="STORE_PIRATE">
+      <text>A few small ships are visible on the vidscreen, and you almost activate weapons targeting. However, sensors indicate they are simply honest merchants. The pirates must be making you jumpy. You message them asking about their wares.</text>
+      <text>You detect a hub of activity nearby. A large corporation has set up a trade depot and has a number of well armed ships patrolling. This appears to be a relatively safe place to get repairs.</text>
+      <text>You receive a wide-band automated message, "Welcome to our humble trade depot and shipyard! All are welcome, but try any funny business and our 152 automated turret satellites will tear your ship to shreds!"</text>
+      <text>A well armed transport ship and a squadron of fighters are in orbit nearby. You are wary of their trustworthiness but beggars can't be choosers.</text>
+    </textList>
+    <store/>
+  </event>
+
+  <event name="NOTHING_PIRATE">
+    <textList name="NOTHING_PIRATE">
+      <text>As soon as you arrive, a small ship de-cloaks behind yours. You immediately power up the shields and weapons, but they continue on their trajectory unimpressed. You try to calm your nerves.</text>
+      <text>The only thing within scanning range is an old abandoned mining structure and a resupply station. They appear to have been picked clean by marauders.</text>
+      <text>You arrive to have a small fleet of Engi ships target you with a message, "Piracy results in negative societal impact. Not permitted." You assure them of your honest intentions and they allow you to pass.</text>
+    </textList>
+  </event>
+
+  <ship name="PIRATE" auto_blueprint="SHIPS_PIRATE">
+    <surrender chance="0.5" min="3" max="4" load="PIRATE_SURRENDER"/>
+    <escape chance="0.5" min="2" max="4" load="PIRATE_ESCAPE"/>
+    <destroyed load="DESTROYED_DEFAULT"/>
+    <gotaway>
+      <text>The pirate jumped away.</text>
+    </gotaway>
+    <deadCrew load="DEAD_CREW_DEFAULT"/>
+  </ship>
+  <event name="PIRATE_SURRENDER">
+    <textList name="PIRATE_SURRENDER_TEXT">
+      <text>"Alright, you win! Here's some equipment from our stores, leave us alone!"</text>
+      <text>The ship repeatedly hails you. It looks like they want to surrender.</text>
+      <text>"You are considerably more well-armed than I would have thought. We surrender."</text>
+      <text>They send you a message: "Your ship is surprisingly well equipped! Please take this and let us live."</text>
+      <text>"Please don't kill us. We will give you everything we have!"</text>
+      <text>They offer you some of their cargo if you let them live.</text>
+      <text>They offer to give you some of their goods if you don't destroy their ship.</text>
+      <text>You get a frantic message, "Take everything we have! Just don't kill us."</text>
+      <text>"You have clearly bested us. We merely request our lives."</text>
+      <text>"You have made your point, we are beaten. Take these and leave us to our shame."</text>
+      <text>"Take everything we have and let's both forget this happened."</text>
+    </textList>
+    <choice>
+      <text>Accept their offer.</text>
+      <event>
+        <ship hostile="false"/>
+        <autoReward level="RANDOM">stuff</autoReward>
+      </event>
+    </choice>
+    <choice>
+      <text>We will not accept surrender!</text>
+      <event/>
+    </choice>
+  </event>
+
+  <event name="PIRATE_ESCAPE">
+    <text>The enemy ship appears to be powering up its FTL. It's trying to escape!</text>
+    <ship hostile="true"/>
+  </event>
+</FTL>

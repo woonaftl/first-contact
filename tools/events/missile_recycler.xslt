@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <xsl:transform xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
-  <xsl:output method="xml" omit-xml-declaration="yes" encoding="utf-8" indent="yes"/>
+  <xsl:output method="xml" omit-xml-declaration="no" encoding="utf-8" indent="yes"/>
 
   <xsl:template match="@* | node()" name="identity">
     <xsl:copy>
@@ -65,12 +65,26 @@
     </xsl:copy>
   </xsl:template>
 
-  <xsl:template match="event[descendant::ship/@hostile = 'true']" mode="add">
+  <xsl:template match="event[not(item_modify)][not(autoReward)]" mode="add">
     <xsl:copy>
       <xsl:apply-templates select="@* | node()" mode="done"/>
       <item_modify>
         <item type="missiles" min="2" max="2"/>
       </item_modify>
+    </xsl:copy>
+  </xsl:template>
+
+  <xsl:template match="event[item_modify][autoReward][not(choice)]" mode="add">
+    <xsl:copy>
+      <xsl:apply-templates select="@* | node()" mode="done"/>
+      <choice>
+        <text id="continue"/>
+        <event>
+          <item_modify>
+            <item type="missiles" min="2" max="2"/>
+          </item_modify>
+        </event>
+      </choice>
     </xsl:copy>
   </xsl:template>
 

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <event name="START_BEACON_LIZARD">
+    <text>You arrive at the Lizard sector. While the Lizards don't have the numbers to engage in Galactic wars after their home system was destroyed by a supernova, few races can match Lizard's resilience and aggressiveness.</text>
+  </event>
+</FTL>

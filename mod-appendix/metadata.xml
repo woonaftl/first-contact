@@ -60,7 +60,14 @@ DETAILED FEATURES:
 4.3. Most augmentations were discounted. They're either cheaper or stayed the same, none got more expensive.
 4.4. Those augmentations that allow interesting strategies like Explosive replicator or are Drone recovery arm easier to find. Those that can only be used for selling like Hacking stun, are harder to find.
 4.5. Starting augmentations can't be sold. In addition, many ships start with upgraded weapons and drones, so selling starting equipment became much less common.
-4.6. Advanced FTL Navigation can be used to travel to any beacon on the sector map (instead of just previously visited beacons).
+4.6. Advanced FTL Navigation can be used to travel to any beacon on the sector map (instead of just previously visited beacons) at no additional cost. It's very powerful in combination with early full sector map, useful for diving, and for bad sector layouts, but not that great without these synergies.
+4.7. Drone reactor booster buffed and moved to new race focused on internal drones.
+4.8. Long ranged scanners are unobtainable and unique for race focused on stealth. This is meant to make stealth ship gameplay even more unique.
+4.9. Scrap recovery arm is made unique for Lanius ships that start with them. This is done to make Lanius stand out from other races, and to make enhance their scrap hoarder theme.
+4.10. Repair arm made unobtainable and unique for new race focused on regeneration. This augmentation was often sold, unless the ship was already fully upgraded. Now, you either start with repair arm, can't get rid of it and plan accordingly, or you just never find it.
+4.11. New augmentation: Nanobot Defense System (deals damage to boarders on your ship) - added by Hyperspace.
+4.12. New augmentation: Missile Recycler (additional 2 missiles for each defeated ship) - added to make missiles more viable, as an alternative to Explosive replicator
+4.13. New augmentation: Engine Disabler (limits enemy engines to 1) - added as a weak alternative to pilot hack/mind control
 
 5. Artillery
 5.1. Artillery always seemed a bit underwhelming. The beam broke the rules of the game a bit by piercing all shields, but was still very low damage. Flak artillery seemed like Flak 2 but way worse.
@@ -88,9 +95,13 @@ DETAILED FEATURES:
 7.3. Rebel Flagship is a bit harder now: all of its rooms are connected including artillery rooms on all difficulty levels, and Flagship lasers do 2 damage instead of 1.
 
 8. Events
-8.1. We can all agree that hitting an empty beacon is disappointing. So, most of them will be removed. But they have to be replaced with something.
-8.2. Weapon upgrade beacons will serve as a part of this replacement project. You can't get more scrap on these beacons so overall scrap per sector should be around the same.
-8.3. In addition, some new events are added to the game. Many of those are not strictly good events where you can earn scrap or free stuff, but trading events, or negative events.
+8.1. We can all agree that hitting an empty beacon is a bit disappointing. So, most of them are removed.
+8.2. Boarding events are just as boring as empty beacons. Once you dealt with them a couple times, there is no challenge or variety. Most boarding events are removed, with rare exceptions.
+8.3. Weapon upgrade beacons serve as a partial replacement for empty beacons and boarding events. They're marked on the map, and you cannot gain more scrap from upgrade beacons.
+8.4. Events are more dependant on sector type. Generic events are constained to generic sectors (like sector one). Civilian and uncharted nebula sectors are removed to make room for new and exciting sectors controlled by new races.
+8.5. Some sectors (especially red and nebula) have even stronger theme, for example, Rock sectors have even more hazards, and Mantis sectors have even more boarders.
+8.6. Zoltan sector moved over to nebula, and has a lot of hazards: ion storms and pulsars to make use of Zoltans' special abilities.
+8.7. Many more new events, new blue options for old events, more possible outcomes for old events.
 
 
 CHANGELOG</description>

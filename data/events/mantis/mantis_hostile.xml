@@ -1,22 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
   <eventList name="HOSTILE_MANTIS">
-    <event load="MANTIS_FIGHT" count="2"/>
-    <event load="DONOR_MANTIS_CHASE"/>
-
-    <event load="REBEL"/>
-    <event load="AUTO_WARNING"/>
-    <event load="WOONA_MANTIS_STUCK_SLUG"/>
+    <event load="MANTIS_FIGHT"/>
   </eventList>
 
-  <eventList name="HOSTILE_HAZARD_MANTIS">
-    <event load="MANTIS_SUN_FIGHT"/>
-
-    <event load="AUTO_ASTEROID"/>
-    <event load="REBEL_PULSAR"/>
-  </eventList>
-
-  <event name="MANTIS_FIGHT" unique="false">
+  <event name="MANTIS_FIGHT">
     <textList name="MANTIS_FIGHT">
       <text>A Mantis military ship appears on local radar alongside the remains of a human freighter. Prepare for a hostile encounter!</text>
       <text>A Mantis military scout hails your ship. "Foolish alien! Your kind has stifled our greatness for too long! You will rue the day you backed the Federation!"</text>
@@ -40,103 +28,5 @@
       <text>A youthful-looking Mantis captain hails. "You, prey, must know. Your death, Kaaazthwak's final kill before maturity. Kaaazthwak pay respects." Seems respects in Mantis culture are paid with lasers.</text>
     </textList>
     <ship load="MANTIS_FIGHT" hostile="true"/>
-  </event>
-
-  <event name="MANTIS_SUN_FIGHT" unique="false">
-    <text>Who knows why the Mantis would venture so close to a sun. Perhaps it makes for more of a challenge?</text>
-    <ship load="MANTIS_FIGHT" hostile="true"/>
-    <environment type="sun"/>
-  </event>
-
-  <event name="DONOR_MANTIS_CHASE" unique="true">
-    <text>You are immediately hailed by an impressive looking Mantis ship, "Your ship would make a mighty fine prize. Prepare for battle!"</text>
-    <ship name="DONOR_MANTIS_CHASE1" auto_blueprint="MANTIS_PRIZE_LIST" hostile="true">
-      <escape timer="5" min="5" max="5">
-        <text>You pick up more chatter from the enemy ship, "You know what... Forget this. Prepare for retreat!" Looks like they're preparing to make a hasty get away!</text>
-      </escape>
-      <gotaway>
-        <text>The ship made an emergency FTL jump, but it looks like they didn't mask their signatures. You could easily follow them if you want.</text>
-        <choice hidden="true">
-          <text>After them!</text>
-          <event>
-            <text>You input their coordinates into your map and prepare to follow.</text>
-            <quest event="DONOR_MANTIS_CHASE2"/>
-          </event>
-        </choice>
-        <choice hidden="true">
-          <text>Forget it.</text>
-          <event>
-            <text>They're not worth the trouble. You prepare to leave.</text>
-          </event>
-        </choice>
-      </gotaway>
-      <destroyed>
-        <text>Their ship breaks apart and you move in to scrap the remains.</text>
-        <autoReward level="MED">standard</autoReward>
-      </destroyed>
-      <deadCrew>
-        <text>With no more crew on board you are free to salvage what you can from the remains.</text>
-        <autoReward level="HIGH">standard</autoReward>
-      </deadCrew>
-    </ship>
-  </event>
-  <event name="DONOR_MANTIS_CHASE2">
-    <text>You catch up with the Mantis ship that escaped before, only to see them transferring their crew into an even bigger ship!</text>
-    <ship name="DONOR_MANTIS_CHASE2" auto_blueprint="MANTIS_TROPHY_LIST" hostile="true">
-      <escape timer="12" min="6" max="6">
-        <text>They appear to be trying to get away again. You doubt they'll forget to mask their jump signature this time.</text>
-      </escape>
-      <gotaway>
-        <text>Looks like they got away. At least you're able to scrap their abandoned fighter.</text>
-        <autoReward level="HIGH">standard</autoReward>
-      </gotaway>
-      <surrender min="2" max="2">
-        <text>"Look, you proved your point. We don't want to die... Take this and let us go. Please?"</text>
-        <choice>
-          <text>Let them live.</text>
-          <event>
-            <text>"Thank you. But do you have any idea how much repairing TWO ships will set us back?..." What an odd Mantis. You prepare to leave.</text>
-            <autoReward level="HIGH">weapon</autoReward>
-            <ship hostile="false"/>
-          </event>
-        </choice>
-        <choice>
-          <text>Finish them off.</text>
-          <event>
-            <text>"No! Hurry up, get us out of here! They're crazy!" You cut transmissions.</text>
-          </event>
-        </choice>
-      </surrender>
-      <destroyed>
-        <text>Their ship breaks apart and you salvage the two ships.</text>
-        <weapon name="RANDOM"/>
-        <autoReward level="MED">standard</autoReward>
-      </destroyed>
-      <deadCrew>
-        <text>You find an intact weapon on their now empty ship. You take as much scrap from the ships as possible.</text>
-        <weapon name="RANDOM"/>
-        <autoReward level="HIGH">standard</autoReward>
-      </deadCrew>
-    </ship>
-    <choice hidden="true">
-      <text id="continue"/>
-      <event>
-        <text>"Not YOU again! Do you know how much these repairs are going to cost me? Time to take out the big guns."</text>
-      </event>
-    </choice>
-  </event>
-
-  <changelog>
-    <entry>Added Mantis crew stuck on Slug ship event</entry>
-  </changelog>
-  <event name="WOONA_MANTIS_STUCK_SLUG" unique="true">
-    <text>You arrive to see two ships: a heavily damaged Mantis vessel and a Slug cruiser, mostly intact. A Mantis screeches into comm: "Teleporter's out. Kill these aliens first!" Looks like their whole crew is stuck on Slug ship they just captured.</text>
-    <ship auto_blueprint="SHIPS_JELLY" hostile="true">
-      <destroyed load="DESTROYED_DEFAULT"/>
-      <deadCrew load="DEAD_CREW_DEFAULT"/>
-      <crew>
-        <crewMember prop="1" type="mantis"/>
-      </crew>
-    </ship>
   </event>
 </FTL>

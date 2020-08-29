@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="NEBULA_HOSTILE_PIRATE">
+    <event load="NEBULA_PIRATE"/>
+  </eventList>
+
+  <event name="NEBULA_PIRATE">
+    <textList name="NEBULA_PIRATE">
+      <text>As you drift through the nebula an unmarked vessel descends from the clouds and into your wake. Their weapons come online.</text>
+      <text>A pirate ship pulls out of the ether and hails: "You know what I love about this part of the galaxy? The explorers! You always carry such fine loot." They lock weapons.</text>
+      <text>As you coast through the nebula a pirate ship matches your course and closes the distance. Better to pick your battleground, but beggars can't be choosers.</text>
+      <text>A hostile vessel descends from out of the nebula. Combat stations!</text>
+      <text>You try to read the ID of a ship ahead in the fog, but it's too thick to penetrate. You have your answer when the ship turns, weapons hot!</text>
+    </textList>
+    <ship load="PIRATE" hostile="true"/>
+    <environment type="nebula"/>
+  </event>
+</FTL>

@@ -1,0 +1,905 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="NOSHIP_FILLER">
+    <event load="FUEL_FOR_DRONE"/>
+    <event load="REFUEL_STATION"/>
+    <event load="REPAIR_STATION"/>
+    <event load="SELL_DRONES_STATION"/>
+    <event load="TAVERN_HIRE"/>
+    <event load="TRADER_CIV"/>
+    <event load="TRADER_UPGRADES"/>
+    <event load="TRADER_UPGRADES_EXCHANGE"/>
+    <event load="MERCHANT_REQUEST"/>
+    <event load="QUEST_CREWDEAD_START"/>
+    <event load="QUEST_CONSTRUCTIONYARD"/>
+  </eventList>
+
+  <event name="FUEL_FOR_DRONE">
+    <textList name="FUEL_FOR_DRONE">
+      <text planet="PLANET_POPULATED">A nearby space station hails you. "Greetings! Your arrival is most fortuitous. We recently came across some extra drones. If you have some fuel, perhaps we can make a deal?"</text>
+      <text>A strange vessel approaches. A digital message appears on your view-screen: "This is an automated merchant. Refill this vessel with fuel and it will supply you with drones."</text>
+      <text>You arrive in the sector and are greeted by a science vessel waiting by the beacon. They hail you, "We find ourselves low on fuel and have a proposition."</text>
+    </textList>
+    <choice>
+      <text>Accept the offer.</text>
+      <event>
+        <item_modify>
+          <item type="fuel" min="-8" max="-7"/>
+          <item type="drones" min="7" max="8"/>
+        </item_modify>
+      </event>
+    </choice>
+    <choice>
+      <text>Reject their offer.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <event name="REFUEL_STATION" unique="true">
+    <text>A ship refueling station is stationed at this beacon. We can purchase fuel here.</text>
+    <choice hidden="false">
+      <text>Buy 6 fuel for 12 scrap.</text>
+      <event>
+        <text>"Thank you for your business."</text>
+        <item_modify>
+          <item type="fuel" min="6" max="6"/>
+          <item type="scrap" min="-12" max="-12"/>
+        </item_modify>
+      </event>
+    </choice>
+    <choice hidden="false">
+      <text>Buy 3 fuel for 6 scrap.</text>
+      <event>
+        <text>"Thank you for your business."</text>
+        <item_modify>
+          <item type="fuel" min="3" max="3"/>
+          <item type="scrap" min="-6" max="-6"/>
+        </item_modify>
+      </event>
+    </choice>
+    <choice hidden="false">
+      <text>Buy 1 fuel for 2 scrap.</text>
+      <event>
+        <text>"Thank you for your business."</text>
+        <item_modify>
+          <item type="fuel" min="1" max="1"/>
+          <item type="scrap" min="-2" max="-2"/>
+        </item_modify>
+      </event>
+    </choice>
+    <choice>
+      <text>Ignore the station.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <event name="REPAIR_STATION" unique="true">
+    <text>You see a small station fitted with hundreds of Repair drones. You receive an automated message, "We don't know who you are and we don't care, but this is the right place for some ship repair!"</text>
+    <choice>
+      <text>Repair 20 damage.</text>
+      <event>
+        <text>"Thank you for your business, no refunds!"</text>
+        <item_modify>
+          <item type="scrap" min="-40" max="-40"/>
+        </item_modify>
+        <damage amount="-20"/>
+      </event>
+    </choice>
+    <choice>
+      <text>Repair 10 damage.</text>
+      <event>
+        <text>"Thank you for your business, no refunds!"</text>
+        <item_modify>
+          <item type="scrap" min="-20" max="-20"/>
+        </item_modify>
+        <damage amount="-10"/>
+      </event>
+    </choice>
+    <choice>
+      <text>Repair 5 damage.</text>
+      <event>
+        <text>"Thank you for your business, no refunds!"</text>
+        <item_modify>
+          <item type="scrap" min="-10" max="-10"/>
+        </item_modify>
+        <damage amount="-5"/>
+      </event>
+    </choice>
+    <choice>
+      <text>Ignore the station.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <event name="SELL_DRONES_STATION" unique="true">
+    <text>You see a civilian space station with heavy damage. You receive a message, "We've been hit hard by the war. We need more drone parts to speed up our repairs. We'll buy some from you if you have extra."</text>
+    <choice hidden="true">
+      <text>Sell 3 drone parts for 12 scrap.</text>
+      <event>
+        <text>"Thank you for your business."</text>
+        <item_modify>
+          <item type="drones" min="-3" max="-3"/>
+          <item type="scrap" min="12" max="12"/>
+        </item_modify>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Sell 6 drone parts for 24 scrap.</text>
+      <event>
+        <text>"Thank you for your business."</text>
+        <item_modify>
+          <item type="drones" min="-6" max="-6"/>
+          <item type="scrap" min="24" max="24"/>
+        </item_modify>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Sell 9 drone parts for 36 scrap.</text>
+      <event>
+        <text>"Thank you for your business."</text>
+        <item_modify>
+          <item type="drones" min="-9" max="-9"/>
+          <item type="scrap" min="36" max="36"/>
+        </item_modify>
+      </event>
+    </choice>
+    <choice>
+      <text>Ignore the station.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <event name="TAVERN_HIRE" unique="true">
+    <textList name="TAVERN_HIRE_TEXT">
+      <text>You find a space station set up for travelers. Browsing through its listings, you find a tavern full of mercenaries for hire. You look for potential crewmembers.</text>
+      <text>There are a number of ships stationed around a rest stop. You immediately receive a message saying, "If you're looking for some bodies to fill your ship, you've come to the right place!"</text>
+      <text>This beacon seems to serve as a meeting place for local traffic. It seems you can find crew willing to fight on your ship here... for a price.</text>
+    </textList>
+    <choice>
+      <text>Hire a crewmember.</text>
+      <event>
+        <crewMember amount="1"/>
+        <item_modify>
+          <item type="scrap" min="-45" max="-40"/>
+        </item_modify>
+      </event>
+    </choice>
+    <choice>
+      <text>Hire a crewmember.</text>
+      <event>
+        <crewMember amount="1"/>
+        <item_modify>
+          <item type="scrap" min="-45" max="-40"/>
+        </item_modify>
+      </event>
+    </choice>
+    <choice>
+      <text>Don't hire anyone.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <event name="TRADER_CIV">
+    <textList name="TRADER_CIV">
+      <text planet="PLANET_POPULATED">You arrive at a quiet spaceport and are immediately hailed by another ship at port with a "once in a lifetime deal!"</text>
+      <text planet="PLANET_POPULATED">You jump into a sector filled with civilian activity. Your scan the various advertisement channels while waiting for your FTL to charge, and are intrigued by a grey-market shipwright.</text>
+      <text planet="PLANET_POPULATED">Your ship is flooded with advertisement transmissions from nearby merchants as soon as you arrive at this beacon. You arbitrarily pick one to examine in detail.</text>
+      <text planet="NONE">Despite the barren area, a trader has set up shop at this beacon. He presents his offer.</text>
+      <text>The beacon at first glance seems home to a junk yard. Upon closer inspection, it reveals itself to be a ramshackle market. One trader has a deal that catches your eye.</text>
+      <text planet="NONE">A pawn broker has set up shop at this obscure beacon. He might be offering something worth looking at.</text>
+    </textList>
+    <choice>
+      <text>Trade.</text>
+      <event load="TRADER_LIST"/>
+    </choice>
+    <choice>
+      <text>Ignore.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <eventList name="TRADER_LIST">
+    <event>
+      <item_modify>
+        <item type="fuel" min="5" max="6"/>
+        <item type="drones" min="-5" max="-4"/>
+      </item_modify>
+    </event>
+    <event>
+      <item_modify>
+        <item type="missiles" min="8" max="10"/>
+        <item type="fuel" min="-5" max="-4"/>
+      </item_modify>
+    </event>
+    <event>
+      <item_modify>
+        <item type="drones" min="5" max="6"/>
+        <item type="missiles" min="-8" max="-7"/>
+      </item_modify>
+    </event>
+    <event>
+      <item_modify>
+        <item type="missiles" min="8" max="10"/>
+        <item type="drones" min="-5" max="-4"/>
+      </item_modify>
+    </event>
+    <event>
+      <item_modify>
+        <item type="fuel" min="5" max="6"/>
+        <item type="missiles" min="-8" max="-7"/>
+      </item_modify>
+    </event>
+  </eventList>
+
+  <event name="TRADER_UPGRADES" unique="true">
+    <textList name="TRADER_UPGRADES_TEXT">
+      <text>You are immediately hailed by a mobile docking platform upon arrival, "Welcome to Uncle Joe's Fix-it Shop! Need a tuneup? We got you covered!"</text>
+      <text>There are a number of privately owned ship construction platforms in the area. You find one that has a slot open for some immediate work.</text>
+      <text>You pick up an automated message from a nearby space station. There appears to be a local shipwright that can perform emergency work on military ships.</text>
+      <text>You receive a message from a small refugee convoy, "Hail. We'd like to help you on your mission but don't have much to offer. If you have extra metal perhaps we could work on your ship?"</text>
+    </textList>
+    <choice hidden="true">
+      <text>Inquire about their specialty.</text>
+      <eventList name="TRADER_UPGRADES_LIST">
+        <event>
+          <text>They offer to upgrade your Oxygen system in exchange for some scrap.</text>
+          <choice req="oxygen" max_lvl="1" max_group="0" blue="false">
+            <text>Agree to the exchange.</text>
+            <event>
+              <text>You let their team on board and after a short time they finish their work.</text>
+              <item_modify>
+                <item type="scrap" min="-20" max="-15"/>
+              </item_modify>
+              <upgrade amount="1" system="oxygen"/>
+            </event>
+          </choice>
+          <choice req="oxygen" max_lvl="2" max_group="0" blue="false">
+            <text>Agree to the exchange.</text>
+            <event>
+              <text>You let their team on board and after a short time they finish their work.</text>
+              <item_modify>
+                <item type="scrap" min="-40" max="-25"/>
+              </item_modify>
+              <upgrade amount="1" system="oxygen"/>
+            </event>
+          </choice>
+          <choice hidden="true">
+            <text>Decline.</text>
+            <event>
+              <text>You thank them but prepare to move on.</text>
+            </event>
+          </choice>
+        </event>
+        <event>
+          <text>They offer to upgrade your Piloting subsystem in exchange for some scrap.</text>
+          <choice req="pilot" max_lvl="1" max_group="0" blue="false">
+            <text>Agree to the exchange.</text>
+            <event>
+              <text>You let their team on board and after a short time they finish their work.</text>
+              <item_modify>
+                <item type="scrap" min="-25" max="-20"/>
+              </item_modify>
+              <upgrade amount="1" system="pilot"/>
+            </event>
+          </choice>
+          <choice req="pilot" max_lvl="2" max_group="0" blue="false">
+            <text>Agree to the exchange.</text>
+            <event>
+              <text>You let their team on board and after a short time they finish their work.</text>
+              <item_modify>
+                <item type="scrap" min="-40" max="-25"/>
+              </item_modify>
+              <upgrade amount="1" system="pilot"/>
+            </event>
+          </choice>
+          <choice hidden="true">
+            <text>Decline.</text>
+            <event>
+              <text>You thank them but prepare to move on.</text>
+            </event>
+          </choice>
+        </event>
+        <event>
+          <text>They offer to upgrade your Door subsystem in exchange for some scrap.</text>
+          <choice req="doors" max_lvl="1" max_group="0" blue="false">
+            <text>Agree to the exchange.</text>
+            <event>
+              <text>You let their team on board and after a short time they finish their work.</text>
+              <item_modify>
+                <item type="scrap" min="-30" max="-25"/>
+              </item_modify>
+              <upgrade amount="1" system="doors"/>
+            </event>
+          </choice>
+          <choice req="doors" max_lvl="2" max_group="0" blue="false">
+            <text>Agree to the exchange.</text>
+            <event>
+              <text>You let their team on board and after a short time they finish their work.</text>
+              <item_modify>
+                <item type="scrap" min="-40" max="-25"/>
+              </item_modify>
+              <upgrade amount="1" system="doors"/>
+            </event>
+          </choice>
+          <choice hidden="true">
+            <text>Decline.</text>
+            <event>
+              <text>You thank them but prepare to move on.</text>
+            </event>
+          </choice>
+        </event>
+        <event>
+          <text>They offer to upgrade your Sensors subsystem in exchange for some scrap.</text>
+          <choice req="sensors" max_lvl="1" max_group="0" blue="false">
+            <text>Agree to the exchange.</text>
+            <event>
+              <text>You let their team on board and after a short time they finish their work.</text>
+              <item_modify>
+                <item type="scrap" min="-20" max="-15"/>
+              </item_modify>
+              <upgrade amount="1" system="sensors"/>
+            </event>
+          </choice>
+          <choice req="sensors" max_lvl="2" max_group="0" blue="false">
+            <text>Agree to the exchange.</text>
+            <event>
+              <text>You let their team on board and after a short time they finish their work.</text>
+              <item_modify>
+                <item type="scrap" min="-30" max="-20"/>
+              </item_modify>
+              <upgrade amount="1" system="sensors"/>
+            </event>
+          </choice>
+          <choice hidden="true">
+            <text>Decline.</text>
+            <event>
+              <text>You thank them but prepare to move on.</text>
+            </event>
+          </choice>
+        </event>
+        <event>
+          <text>They offer to upgrade your reactor in exchange for some scrap.</text>
+          <choice req="reactor" max_lvl="4" max_group="0" blue="false">
+            <text>Agree to the exchange.</text>
+            <event>
+              <text>You let their team on board and after a short time they finish their work.</text>
+              <item_modify>
+                <item type="scrap" min="-29" max="-26"/>
+              </item_modify>
+              <upgrade amount="1" system="reactor"/>
+            </event>
+          </choice>
+          <choice req="reactor" max_lvl="9" max_group="0" blue="false">
+            <text>Agree to the exchange.</text>
+            <event>
+              <text>You let their team on board and after a short time they finish their work.</text>
+              <item_modify>
+                <item type="scrap" min="-19" max="-16"/>
+              </item_modify>
+              <upgrade amount="1" system="reactor"/>
+            </event>
+          </choice>
+          <choice req="reactor" max_lvl="14" max_group="0" blue="false">
+            <text>Agree to the exchange.</text>
+            <event>
+              <text>You let their team on board and after a short time they finish their work.</text>
+              <item_modify>
+                <item type="scrap" min="-24" max="-21"/>
+              </item_modify>
+              <upgrade amount="1" system="reactor"/>
+            </event>
+          </choice>
+          <choice req="reactor" max_lvl="19" max_group="0" blue="false">
+            <text>Agree to the exchange.</text>
+            <event>
+              <text>You let their team on board and after a short time they finish their work.</text>
+              <item_modify>
+                <item type="scrap" min="-29" max="-26"/>
+              </item_modify>
+              <upgrade amount="1" system="reactor"/>
+            </event>
+          </choice>
+          <choice req="reactor" max_lvl="24" max_group="0" blue="false">
+            <text>Agree to the exchange.</text>
+            <event>
+              <text>You let their team on board and after a short time they finish their work.</text>
+              <item_modify>
+                <item type="scrap" min="-34" max="-31"/>
+              </item_modify>
+              <upgrade amount="1" system="reactor"/>
+            </event>
+          </choice>
+          <choice hidden="true">
+            <text>Decline.</text>
+            <event>
+              <text>You thank them but prepare to move on.</text>
+            </event>
+          </choice>
+        </event>
+      </eventList>
+    </choice>
+    <choice>
+      <text>Decline.</text>
+      <event>
+        <text>You thank them for their offer but prepare to move on.</text>
+      </event>
+    </choice>
+  </event>
+
+  <event name="TRADER_UPGRADES_EXCHANGE" unique="true">
+    <textList name="TRADER_UPGRADES_EXCHANGE_TEXT">
+      <text>"You look like a military vessel. We're trying to get back to our homes alive. I'm an engineer by trade and could try to improve your reactor if you have any extra supplies."</text>
+      <text>You receive a message from a small convoy. They're looking for some military supplies and are offering to try to improve your reactor in exchange.</text>
+    </textList>
+    <choice req="reactor" max_lvl="24" max_group="0" blue="false">
+      <text>Agree to the trade.</text>
+      <eventList name="TRADER_UPGRADES_EXCHANGE_LIST">
+        <event>
+          <text>You make the exchange and their team comes on board to try to improve your reactor.</text>
+          <item_modify>
+            <item type="missiles" min="-5" max="-3"/>
+            <item type="drones" min="-2" max="-0"/>
+          </item_modify>
+          <upgrade amount="1" system="reactor"/>
+        </event>
+        <event>
+          <text>You make the exchange and their team comes on board to try to improve your reactor.</text>
+          <item_modify>
+            <item type="missiles" min="-2" max="0"/>
+            <item type="drones" min="-3" max="-2"/>
+          </item_modify>
+          <upgrade amount="1" system="reactor"/>
+        </event>
+        <event>
+          <text>You make the exchange and their team comes on board to try to improve your reactor.</text>
+          <item_modify>
+            <item type="missiles" min="-2" max="0"/>
+            <item type="drones" min="-2" max="0"/>
+            <item type="fuel" min="-3" max="-2"/>
+          </item_modify>
+          <upgrade amount="1" system="reactor"/>
+        </event>
+      </eventList>
+    </choice>
+    <choice>
+      <text>Respectfully decline.</text>
+      <event>
+        <text>You decide you need what supplies you have.</text>
+      </event>
+    </choice>
+  </event>
+
+  <event name="MERCHANT_REQUEST" unique="true">
+    <img planet="PLANET_POPULATED_SMALL"/>
+    <text>You arrive at a populated sector. One merchant seems to be mass-broadcasting a request for a mercenary ship to aid him. Shall we respond?</text>
+    <choice hidden="true">
+      <text>Yes.</text>
+      <eventList name="MERCHANT_REQUEST_LIST">
+        <event>
+          <text>"Great, I was worried no one would respond. My usual carrier is days late. I need you to deliver this cargo of drone parts to a small station a few jumps from here. We can't afford to pay another carrier, but they will surely tip you generously."</text>
+          <choice hidden="true">
+            <text>Accept.</text>
+            <event>
+              <text>"Great! I uploaded their location to your star map. I'm running out of options, so I have no choice but to trust you'll do what you have agreed to do."</text>
+              <item_modify>
+                <item type="drones" min="5" max="5"/>
+              </item_modify>
+              <quest event="MERCHANT_DELIVER"/>
+            </event>
+          </choice>
+          <choice>
+            <text>Decline.</text>
+            <event>
+              <text>"Fine, I'll keep looking for someone who wishes to make some easy money..."</text>
+            </event>
+          </choice>
+        </event>
+        <event>
+          <text>"Your ship seems reasonably equipped... A freighter carrying a shipment of my goods is a week late. The fools flew through a pirate-filled sector in their haste and I fear for the cargo's safety. I'm looking for a less incompetent captain to investigate."</text>
+          <choice hidden="true">
+            <text>Accept.</text>
+            <event>
+              <text>"At least you're confident, for what little that's worth. Here is their last known location."</text>
+              <quest event="MERCHANT_INVESTIGATE"/>
+            </event>
+          </choice>
+          <choice>
+            <text>Decline.</text>
+            <event>
+              <text>"At least YOU are willing to admit your incompetence. Thank you for saving me the cost of paying more fools to go to their death."</text>
+            </event>
+          </choice>
+        </event>
+      </eventList>
+    </choice>
+    <choice>
+      <text>No.</text>
+      <event/>
+    </choice>
+  </event>
+  <event name="MERCHANT_DELIVER">
+    <text>You arrive at the location given to you by the merchant. You are supposed to deliver drone parts to a station here.</text>
+    <choice>
+      <text id="continue"/>
+      <eventList name="MERCHANT_DELIVER_LIST">
+        <event>
+          <text>You find the small research station and discover that it's putting out a distress signal. Strangely, there is no response to your hails.</text>
+          <choice hidden="true">
+            <text>Dock with the station and investigate.</text>
+            <event load="STATION_SICK_LIST"/>
+          </choice>
+          <choice>
+            <text>Leave it alone.</text>
+            <event/>
+          </choice>
+          <choice hidden="true" req="BATTLE_LIST">
+            <text>(Anti-Personnel Drone) Use an Anti-Personnel Drone to investigate.</text>
+            <event load="STATION_SICK_DRONE_LIST"/>
+          </choice>
+        </event>
+        <event>
+          <text>You find the station and they respond to your hails immediately, saying, "It took you long enough! We have practically no use for these now... I refuse to pay full price, take this and leave the cargo in our holds."</text>
+          <choice>
+            <text>Accept the paltry payment.</text>
+            <event>
+              <text>You drop the parts off and take your pay.</text>
+              <item_modify>
+                <item type="scrap" min="20" max="30"/>
+                <item type="drones" min="-5" max="-5"/>
+              </item_modify>
+            </event>
+          </choice>
+          <choice hidden="true">
+            <text>Refuse and keep the drone parts.</text>
+            <eventList name="MERCHANT_DELIVER_BLUFF_LIST">
+              <event>
+                <text>"Fine, I was bluffing. I'll pay the full price."</text>
+                <choice>
+                  <text>Accept the new offer.</text>
+                  <event>
+                    <item_modify>
+                      <item type="scrap" min="40" max="55"/>
+                      <item type="drones" min="-5" max="-5"/>
+                    </item_modify>
+                  </event>
+                </choice>
+                <choice>
+                  <text>Leave.</text>
+                  <event/>
+                </choice>
+              </event>
+              <event>
+                <text>The merchant disconnects in a huff.</text>
+              </event>
+            </eventList>
+          </choice>
+          <choice hidden="true" req="mind">
+            <text>(Mind Control) Convince him that he's being 'unfair'.</text>
+            <event>
+              <text>"I'm being unfair. You did the job and the parts are here safe and sound. Here is the agreed upon amount."</text>
+              <choice>
+                <text>Accept the new offer.</text>
+                <event>
+                  <item_modify>
+                    <item type="scrap" min="40" max="55"/>
+                    <item type="drones" min="-5" max="-5"/>
+                  </item_modify>
+                </event>
+              </choice>
+              <choice>
+                <text>Leave.</text>
+                <event/>
+              </choice>
+            </event>
+          </choice>
+          <choice hidden="true" req="weapons" lvl="6">
+            <text>(Weapons) Remain silent but power up your weapons.</text>
+            <event>
+              <text>"You make a good point. You traveled all the way out here to fulfill our request, despite what must have been... a difficult scenario to cause such a delay. Here, we'll even tip you for the inconvenience you must have gone through..."</text>
+              <item_modify>
+                <item type="scrap" min="40" max="55"/>
+                <item type="drones" min="-5" max="-5"/>
+              </item_modify>
+            </event>
+          </choice>
+        </event>
+      </eventList>
+    </choice>
+  </event>
+  <changelog>
+    <entry>Credits to Twinge's balance mod: Decreased the chance of getting free crew in MERCHANT_INVESTIGATE event</entry>
+  </changelog>
+  <event name="MERCHANT_INVESTIGATE">
+    <text>You arrive at the last known location of the merchant's delivery. You begin to scan for the lost ship.</text>
+    <choice hidden="true">
+      <text id="continue"/>
+      <eventList name="MERCHANT_INVESTIGATE_LIST">
+        <event>
+          <text>You find the remains of the ship. It seems to have severe external damage, but you cannot pinpoint a cause. The majority of its cargo seems intact. You manage to discern the ship's intended destination.</text>
+          <autoReward level="MED">standard</autoReward>
+          <choice>
+            <text>Take the cargo and head to its original destination in search of a reward.</text>
+            <event>
+              <quest event="MERCHANT_INVESTIGATE_DELIVER"/>
+            </event>
+          </choice>
+          <choice hidden="true">
+            <text>Take the cargo for yourself.</text>
+            <event load="MERCHANT_INVESTIGATE_CARGO_LIST"/>
+          </choice>
+        </event>
+        <event>
+          <text>You find a severely damaged ship floating among some debris. The crew hails you, "I can't believe that cheap bastard sent someone after us! I thought we would freeze to death. If you help us complete the delivery, we'll share the reward and join your crew."</text>
+          <choice hidden="true">
+            <text>Promise to deliver the cargo and ask if any would be interested in joining your crew.</text>
+            <eventList>
+              <event>
+                <text>They upload the delivery destination once on board. One takes you up on your offer, the rest you drop off at a nearby station.</text>
+                <crewMember amount="1"/>
+                <quest event="MERCHANT_INVESTIGATE_DELIVER"/>
+              </event>
+              <event count="2">
+                <text>They upload the delivery destination once on board. They're no longer interested in adventuring through space, so you drop them off at a nearby station.</text>
+                <quest event="MERCHANT_INVESTIGATE_DELIVER"/>
+              </event>
+            </eventList>
+          </choice>
+          <choice hidden="true">
+            <text>Take the cargo but drop them off at a nearby station.</text>
+            <event load="MERCHANT_INVESTIGATE_CARGO_LIST"/>
+          </choice>
+          <choice req="teleporter" hidden="true">
+            <text>(Teleporter) Beam the cargo aboard and leave them to their fate.</text>
+            <event load="MERCHANT_INVESTIGATE_CARGO_LIST"/>
+          </choice>
+        </event>
+        <event>
+          <text>After a quick scan, you find a ship being chased by a pirate. This must be the missing delivery ship! You move in to rescue them.</text>
+          <ship name="JELLY_PIRATE_MERCHANT" auto_blueprint="SHIPS_PIRATE" hostile="true">
+            <destroyed>
+              <text>You contact the delivery ship, who are grateful for your assistance. They offer you a reward for saving them.</text>
+              <autoReward level="MED">standard</autoReward>
+            </destroyed>
+            <deadCrew>
+              <text>You contact the delivery ship, who are grateful for your assistance. They offer you a reward for saving them.</text>
+              <autoReward level="MED">standard</autoReward>
+            </deadCrew>
+          </ship>
+        </event>
+      </eventList>
+    </choice>
+  </event>
+  <eventList name="MERCHANT_INVESTIGATE_CARGO_LIST">
+    <event>
+      <text>The cargo was some food and medical supplies, nothing that you need right now. You make a note of the delivery destination in case you want to drop off the cargo for the payment.</text>
+      <quest event="MERCHANT_INVESTIGATE_DELIVER"/>
+    </event>
+    <event>
+      <text>You find a prototype weapon inside. You quickly install it on the ship.</text>
+      <weapon name="RANDOM"/>
+    </event>
+    <event>
+      <text>There were general military supplies in the cargo crates. You take what you can use.</text>
+      <autoReward level="HIGH">standard</autoReward>
+    </event>
+  </eventList>
+  <event name="MERCHANT_INVESTIGATE_DELIVER">
+    <text>You find the station that had ordered your cargo. You drop it off and they respond, "Ignoring the fact that this is days late, we really appreciate that you delivered our materials. We realize how dangerous this sector is these days. Take this as payment."</text>
+    <autoReward level="MED">drone</autoReward>
+  </event>
+
+
+  <changelog>
+    <entry>Blue option for Fire weapons, Boarding drone and Fire drone in QUEST_CREWDEAD event</entry>
+  </changelog>
+  <event name="QUEST_CREWDEAD_START" unique="true">
+    <text>You arrive to find a number of ships convening around a station. There is some unencrypted chatter between the ships, you tune in and listen for anything interesting.</text>
+    <choice>
+      <text id="continue"/>
+      <event load="QUEST_CREWDEAD_START_2"/>
+    </choice>
+  </event>
+  <event name="QUEST_CREWDEAD_START_2">
+    <text>Overhearing their conversation, it seems that they need to take possession of an enemy ship intact.</text>
+    <choice hidden="true">
+      <text>Offer your services.</text>
+      <event>
+        <text>They briefly scan your ship and inform you that you are not "properly equipped" for this type of mission.</text>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Leave them alone.</text>
+      <event>
+        <text>If they wanted your help they would surely ask for it. You prepare to leave.</text>
+      </event>
+    </choice>
+    <choice hidden="true" req="teleporter" lvl="1">
+      <text>(Teleporter) Offer to board their ship.</text>
+      <event load="QUEST_CREWDEAD_CONTINUE"/>
+    </choice>
+    <choice hidden="true" req="BOARDER_LIST">
+      <text>(Boarding Drone) Offer to board their ship.</text>
+      <event load="QUEST_CREWDEAD_CONTINUE"/>
+    </choice>
+    <choice hidden="true" req="WEAPONS_BEAM_BIO">
+      <text>(Bio Beam) Offer to 'remove' their crew.</text>
+      <event load="QUEST_CREWDEAD_CONTINUE"/>
+    </choice>
+    <choice hidden="true" req="WEAPONS_ALL_FIRE">
+      <text>(Fire Weapon) Offer to burn the crew out.</text>
+      <event load="QUEST_CREWDEAD_CONTINUE"/>
+    </choice>
+    <choice hidden="true" req="COMBAT_FIRE_DRONE_LIST">
+      <text>(Fire Drone) Offer to burn the crew out.</text>
+      <event load="QUEST_CREWDEAD_CONTINUE"/>
+    </choice>
+  </event>
+  <event name="QUEST_CREWDEAD_CONTINUE">
+    <text>They quickly scan your ship and say, "It appears you could help. A bandit has made off with some very important cargo, though I doubt they have any understanding of what it is they stole. We need you to capture the ship intact.</text>
+    <choice hidden="true">
+      <text>Agree to capture the ship.</text>
+      <event>
+        <text>"Great, we'll relay their coordinates. Remember, do NOT destroy that ship! Remember, we'll be right behind you."</text>
+        <quest event="QUEST_CREWDEAD"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Decline.</text>
+      <event>
+        <text>"We understand. Hopefully we can find a solution to this on our own." You prepare to jump.</text>
+      </event>
+    </choice>
+  </event>
+  <event name="QUEST_CREWDEAD" unique="true">
+    <text>You find the ship that you were asked to capture intact. You're not sure why, but they stressed that it's of great importance that you kill the crew WITHOUT destroying the ship.</text>
+    <ship load="PIRATE_QUEST_CREWDEAD" hostile="true"/>
+  </event>
+  <ship name="PIRATE_QUEST_CREWDEAD" auto_blueprint="SHIPS_PIRATE">
+    <destroyed>
+      <text>The explosion rocks the pirate ship and a brilliant light begins to shine from the wreckage. Before you can react the ship is consumed in a massive chain of explosions that send you careening toward a nearby planet. You struggle to put out the fires and your pilot desperately tries to get the controls online before you're dragged down to the surface. Apparently when they said the ship should not be destroyed they had good reason...</text>
+      <damage amount="13"/>
+      <damage amount="1" system="random"/>
+      <damage amount="1" system="room" effect="all"/>
+    </destroyed>
+    <deadCrew>
+      <text>You secure the ship and wait for the merchants to arrive. Upon arrival they message you, saying "Good job. We would prefer if you did not speak of this to anyone."</text>
+      <autoReward level="HIGH">weapon</autoReward>
+    </deadCrew>
+  </ship>
+
+  <event name="QUEST_CONSTRUCTIONYARD" unique="true">
+    <text>You come across a space station under construction. You receive a message from their command tower, "Greetings. We recently lost contact with a cargo ship that was set to deliver more construction materials. Could you help us figure out what happened to them?"</text>
+    <choice hidden="true">
+      <text>Offer your help.</text>
+      <event>
+        <text>"Great. Thanks for your help. I've marked their last known coordinates and sent over some supplies to help you get there."</text>
+        <item_modify>
+          <item type="missiles" min="0" max="4"/>
+          <item type="drones" min="0" max="2"/>
+          <item type="fuel" min="2" max="4"/>
+        </item_modify>
+        <quest event="QUEST_CONSTRUCTIONYARD_LIST"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Decline.</text>
+      <event>
+        <text>"I understand." Transmission has been cut.</text>
+      </event>
+    </choice>
+    <choice hidden="true" req="anaerobic">
+      <text>(Lanius Crew) Offer to have your crewmember help.</text>
+      <event>
+        <text>"Interesting. So this metal man can help us make some of these unique parts out of scrap? That would be a huge help." Your crewmember checks over the blueprints and quickly converts some of their base metal sheets into the specialized parts.</text>
+        <choice hidden="true">
+          <text id="continue"/>
+          <event>
+            <text>"Amazing! This robot thing could save us a ton of time. Could I buy it off you?"</text>
+            <choice hidden="true">
+              <text>Ask your crew if they agree.</text>
+              <event>
+                <text>Once your Lanius crewmember understands the situation it appears to like the idea of assisting with construction in deep space. Much less dangerous. They offer you some goods in exchange.</text>
+                <autoReward level="HIGH">augment</autoReward>
+                <removeCrew class="anaerobic">
+                  <clone>false</clone>
+                  <text>Your clonebay obviously does not revive your crewmember since they did not die.</text>
+                </removeCrew>
+              </event>
+            </choice>
+            <choice hidden="true">
+              <text>Our crew is not for sale.</text>
+              <event>
+                <text>"A pity. In terms of payment, here's some of the scrap metal we don't need now that we've got necessary parts."</text>
+                <autoReward level="MED">scrap_only</autoReward>
+              </event>
+            </choice>
+          </event>
+        </choice>
+      </event>
+    </choice>
+  </event>
+  <eventList name="QUEST_CONSTRUCTIONYARD_LIST">
+    <event>
+      <text>You find the missing cargo ship docked to a Rebel station. You send a short-band message to them and discover they are being held against their will and forced to 'donate to their supplies for the war effort.'</text>
+      <choice hidden="true">
+        <text>Attack the Rebels to help them escape.</text>
+        <event>
+          <text>You move in to attack the Rebel ship that is threatening them and scanners detect weapon locks from a nearby Anti-Ship Battery. It's about to get hectic!</text>
+          <ship load="QUEST_CONSTRUCTIONYARD_SHIP" hostile="true"/>
+          <environment type="PDS" target="player"/>
+        </event>
+      </choice>
+      <choice>
+        <text>Leave.</text>
+        <event>
+          <text>You apologize but it's not worth the risk to attack a Rebel station.</text>
+        </event>
+      </choice>
+    </event>
+    <event>
+      <text>You find the missing cargo ship docked to an empty space station. However their hold appears to be empty and there are no obvious signs that anyone is inside the ship or station. Everything looks abandoned.</text>
+      <choice hidden="true">
+        <text>Move in to examine the station.</text>
+        <event load="EMPTY_STATION2_LIST"/>
+      </choice>
+      <choice>
+        <text>Stay near the Beacon.</text>
+        <event>
+          <text>You decide it's not worth the time to examine.</text>
+        </event>
+      </choice>
+    </event>
+    <event>
+      <text>You find the missing cargo ship floating near the beacon. "Thank heavens! We've been drifting here after using the last of our fuel to escape a pirate raid."</text>
+      <choice hidden="true">
+        <text>Give them the requested 4 fuel.</text>
+        <event>
+          <text>"Great, thank you. Here's some scrap metal for your troubles. Be careful out there."</text>
+          <autoReward level="MED">scrap_only</autoReward>
+          <item_modify>
+            <item type="fuel" min="-4" max="-4"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice hidden="true">
+        <text>Give them 1 fuel.</text>
+        <event>
+          <text>"Well, I suppose that's better than nothing. Than you. Hopefully we can find a station at the next Beacon."</text>
+          <item_modify>
+            <item type="fuel" min="-1" max="-1"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Do not give them any.</text>
+        <event>
+          <text>"I see..."</text>
+        </event>
+      </choice>
+    </event>
+  </eventList>
+  <ship name="QUEST_CONSTRUCTIONYARD_SHIP" auto_blueprint="SHIPS_REBEL">
+    <destroyed>
+      <text>You quickly salvage what you can from the ship.</text>
+      <autoReward level="MED">standard</autoReward>
+      <choice hidden="true">
+        <text>Contact the cargo ship.</text>
+        <event>
+          <text>Amidst the blasts from the Anti-Ship Battery, the cargo ship escaped from the station. They jettisoned some scrap towards your ship before jumping away.</text>
+          <autoReward level="MED">scrap_only</autoReward>
+        </event>
+      </choice>
+    </destroyed>
+    <deadCrew>
+      <text>You quickly salvage what you can from the ship.</text>
+      <autoReward level="HIGH">standard</autoReward>
+      <choice hidden="true">
+        <text>Contact the cargo ship.</text>
+        <event>
+          <text>Amidst the blasts from the Anti-Ship Battery, the cargo ship escaped from the station. They jettisoned some scrap towards your ship before jumping away.</text>
+          <autoReward level="MED">scrap_only</autoReward>
+        </event>
+      </choice>
+    </deadCrew>
+  </ship>
+</FTL>

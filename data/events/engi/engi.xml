@@ -31,9 +31,25 @@
   </event>
 
   <ship name="ENGI_SHIP" auto_blueprint="SHIPS_CIRCLE">
+    <surrender chance="0.5" min="2" max="2" load="ENGI_SURRENDER"/>
     <destroyed load="DESTROYED_DEFAULT"/>
     <deadCrew load="DEAD_CREW_DEFAULT"/>
   </ship>
+
+  <event name="ENGI_SURRENDER">
+    <text>On the brink of destruction, the Engi ship asks for mercy: "Suggestion. Input: cease fire. Output: Engi resources."</text>
+    <choice>
+      <text>Accept their offer.</text>
+      <event>
+        <ship hostile="false"/>
+        <autoReward level="RANDOM">stuff</autoReward>
+      </event>
+    </choice>
+    <choice>
+      <text>We will not accept surrender!</text>
+      <event/>
+    </choice>
+  </event>
 
   <ship name="ENGI_MANTIS_CONTROLLED" auto_blueprint="SHIPS_CIRCLE">
     <destroyed load="DESTROYED_DEFAULT"/>

@@ -8,12 +8,10 @@
     <event load="CRYSTAL_FED"/>
     <event load="CRYSTAL_FED_DESERTER"/>
     <event load="CRYSTAL_HUMAN_TESTS"/>
-    <event load="CRYSTAL_CHATTY"/>
-    <event load="CRYSTAL_REQUEST"/>
     <event load="CRYSTAL_HELP_DIG"/>
   </eventList>
 
-  <event name="CRYSTAL_REBEL_CRYSTAL" unique="false">
+  <event name="CRYSTAL_REBEL_CRYSTAL" unique="true">
     <text>Crystal shards fly past the screen as soon as you arrive. Checking the scanners, it looks like a crystalline ship is engaged with a Rebel!</text>
     <choice hidden="true">
       <text>Attack the Rebel.</text>
@@ -72,7 +70,7 @@
     </choice>
   </event>
 
-  <event name="CRYSTAL_MANTIS_CRYSTAL" unique="false">
+  <event name="CRYSTAL_MANTIS_CRYSTAL" unique="true">
     <text>You discover a number of civilian ships fleeing the area. Shots are fired and you find the assailant; a Mantis ship is attacking one of the smaller ships!</text>
     <choice hidden="true">
       <text>Attack the Mantis.</text>
@@ -95,6 +93,10 @@
               <event load="CRYSTAL_SAVED"/>
             </choice>
           </deadCrew>
+          <crew>
+            <crewMember type="mantis" prop="0.80"/>
+            <crewMember type="engi" prop="0.20"/>
+          </crew>
         </ship>
       </event>
     </choice>
@@ -106,7 +108,7 @@
     </choice>
   </event>
 
-  <event name="CRYSTAL_PIRATE_CRYSTAL" unique="false">
+  <event name="CRYSTAL_PIRATE_CRYSTAL" unique="true">
     <text>A pirate ship jumps in right after you arrive at the beacon. It must have followed once the Long-Range Beacon was reactivated. It almost charges a small Crystalline transport ship, weapons armed.</text>
     <choice hidden="true">
       <text>Attack the pirate.</text>
@@ -161,7 +163,7 @@
     </event>
   </eventList>
 
-  <event name="CRYSTAL_FED" unique="false">
+  <event name="CRYSTAL_FED" unique="true">
     <text>There appears to be a fight going on nearby. A Crystalline border guard is chasing a small Federation ship!</text>
     <choice hidden="true">
       <text>Save the Federation ship.</text>
@@ -239,11 +241,39 @@
     <text>You arrive near what appears to be a Crystalline research facility. A scientist quickly messages you, "Ah! You're those aliens! Please, I've heard so much about you and I'm really curious about your physiology! Would you let us run a few simple tests?"</text>
     <choice hidden="true">
       <text>Allow them to run tests on a crewmember.</text>
-      <event load="CRYSTAL_HUMAN_TESTS_ACCEPT"/>
+      <eventList name="CRYSTAL_HUMAN_TESTS_ACCEPT">
+        <event>
+          <text>After a short time the scientist returns, "We... must regret... we have made a grave miscalculation. Your bodies are considerably more fragile than we expected and your companion is... broken. We apologize and offer a fine military-grade weapon as consolation."</text>
+          <removeCrew>
+            <clone>true</clone>
+            <text>You accept their apology and decide it's better not to mention that your Clone Bay is in the process of reviving the lost crewmember.</text>
+          </removeCrew>
+          <autoReward level="LOW">weapon</autoReward>
+        </event>
+        <event>
+          <text>Your crewmember is brought on board their station and forced to undergo a few quick scans and tests. "Thank you for this opportunity! We hope to learn much from your kind." They transfer some supplies as payment.</text>
+          <autoReward level="MED">stuff</autoReward>
+        </event>
+        <event>
+          <text>The large Crystalline Beings escort your crew onto the station and gingerly help them into a scanning chamber. After a few seconds, they inform you they have mapped their entire genome and have everything they need. They give you a schematic as compensation.</text>
+          <autoReward level="LOW">drone</autoReward>
+        </event>
+      </eventList>
     </choice>
     <choice hidden="true">
       <text>Refuse.</text>
-      <event load="CRYSTAL_HUMAN_TESTS_REFUSE"/>
+      <eventList name="CRYSTAL_HUMAN_TESTS_REFUSE">
+        <event>
+          <text>"I see. That is a shame. Perhaps the next aliens we meet will have some respect for the advancement of science."</text>
+        </event>
+        <event>
+          <text>"I see. That is a shame. Perhaps the next aliens we meet will have some respect for the advancement of science."</text>
+        </event>
+        <event>
+          <text>"I see. That is a shame. However we must not let this opportunity pass us by. Submit and you will be treated reasonably well!" A military ship docked nearby detaches and charges you.</text>
+          <ship load="CRYSTAL_SHIP_NO_SURRENDER" hostile="true"/>
+        </event>
+      </eventList>
     </choice>
     <choice hidden="true" req="rock">
       <text>(Rock crewmember) Send your Rockman crew.</text>
@@ -260,132 +290,6 @@
       </event>
     </choice>
   </event>
-  <eventList name="CRYSTAL_HUMAN_TESTS_ACCEPT">
-    <event>
-      <text>After a short time the scientist returns, "We... must regret... we have made a grave miscalculation. Your bodies are considerably more fragile than we expected and your companion is... broken. We apologize and offer a fine military-grade weapon as consolation."</text>
-      <removeCrew>
-        <clone>true</clone>
-        <text>You accept their apology and decide it's better not to mention that your Clone Bay is in the process of reviving the lost crewmember.</text>
-      </removeCrew>
-      <autoReward level="LOW">weapon</autoReward>
-    </event>
-    <event>
-      <text>Your crewmember is brought on board their station and forced to undergo a few quick scans and tests. "Thank you for this opportunity! We hope to learn much from your kind." They transfer some supplies as payment.</text>
-      <autoReward level="MED">stuff</autoReward>
-    </event>
-    <event>
-      <text>The large Crystalline Beings escort your crew onto the station and gingerly help them into a scanning chamber. After a few seconds, they inform you they have mapped their entire genome and have everything they need. They give you a schematic as compensation.</text>
-      <autoReward level="LOW">drone</autoReward>
-    </event>
-  </eventList>
-  <eventList name="CRYSTAL_HUMAN_TESTS_REFUSE">
-    <event>
-      <text>"I see. That is a shame. Perhaps the next aliens we meet will have some respect for the advancement of science."</text>
-    </event>
-    <event>
-      <text>"I see. That is a shame. Perhaps the next aliens we meet will have some respect for the advancement of science."</text>
-    </event>
-    <event>
-      <text>"I see. That is a shame. However we must not let this opportunity pass us by. Submit and you will be treated reasonably well!" A military ship docked nearby detaches and charges you.</text>
-      <ship load="CRYSTAL_SHIP_NO_SURRENDER" hostile="true"/>
-    </event>
-  </eventList>
-
-  <event name="CRYSTAL_CHATTY" unique="true">
-    <text>A small civilian vessel messages you, "Wow! You're that alien that opened up the portal, aren't you! Are you busy? Can I ask you a question?"</text>
-    <choice hidden="true">
-      <text>Yes.</text>
-      <event>
-        <text>"What do you eat? What is your culture like? How long do your people live?"</text>
-        <choice hidden="true">
-          <text>Try to answer his questions.</text>
-          <event load="CRYSTAL_CHATTY_LIST"/>
-        </choice>
-        <choice hidden="true">
-          <text>"I don't have time for this."</text>
-          <event>
-            <text>"I see. Oh well. Maybe the next alien I meet will be nicer..." You prepare to jump.</text>
-          </event>
-        </choice>
-      </event>
-    </choice>
-    <choice hidden="true">
-      <text>No.</text>
-      <event>
-        <text>"I see... I guess you're busy."</text>
-      </event>
-    </choice>
-    <choice hidden="true" req="crystal">
-      <text>(Crystal Crew) Have your crew speak to them.</text>
-      <event>
-        <text>"Wow, you're one of us! I didn't know we made an alliance with the aliens. I guess I won't bother you, but here, have some of our extra supplies!"</text>
-        <autoReward level="RANDOM">fuel</autoReward>
-      </event>
-    </choice>
-  </event>
-  <eventList name="CRYSTAL_CHATTY_LIST">
-    <event>
-      <text>You speak at length about nothing particularly interesting. "Wow, thanks. Oh look, another alien ship! I wonder if they're as nice as you." Seeing the Rebel decals you doubt they're friendly. They spot you and move in to attack, while the Crystalline civilian jumps away.</text>
-      <ship load="REBEL" hostile="true"/>
-    </event>
-    <event>
-      <text>You speak at length about nothing particularly interesting. "Wow, thanks! I don't know if this is of any use to you, but we have some supplies we can offer you. Perhaps you can use them on your trip!"</text>
-      <autoReward level="RANDOM">stuff</autoReward>
-    </event>
-    <event>
-      <text>You speak at length about nothing particularly interesting. "Wow, thanks! Perhaps we can fix up a bit of your hull for sating my curiosity. We're pretty handy with repairs."</text>
-      <damage amount="-6"/>
-    </event>
-  </eventList>
-
-  <event name="CRYSTAL_REQUEST" unique="true">
-    <text>The moment you arrive you notice a Crystalline ship in the vicinity keeping its distance. They message you, "The 'Rebels' that are trying to hunt YOU down are creating havoc everywhere they go."</text>
-    <ship load="CRYSTAL_SHIP_NO_SURRENDER" hostile="false"/>
-    <choice hidden="true">
-      <text id="continue"/>
-      <event>
-        <text>"To minimize their impact on our people, we would like you to give them your flight path out of our sector. We would like to remain civil and are willing to pay you in 'scrap' for the increased danger it poses.</text>
-        <choice hidden="true">
-          <text>Give them your flight plans.</text>
-          <event>
-            <text>It was never your intention to lead the Rebels here, and frankly you could do with the scrap. The Crystalline ship immediately jumps off to inform the Rebels, leaving you with a fleet to outrun!</text>
-            <autoReward level="HIGH">scrap_only</autoReward>
-            <modifyPursuit amount="1"/>
-          </event>
-        </choice>
-        <choice hidden="true">
-          <text>Accept the scrap but give them false flight plans.</text>
-          <event load="CRYSTAL_REQUEST_LIST"/>
-        </choice>
-        <choice hidden="true" req="FLEET_DISTRACTION">
-          <text>(Distraction Buoy) Accept the scrap but give them falsified flight plans.</text>
-          <event>
-            <text>Your distraction buoy allows you to create very convincing flight plan. They accept it as true and give you the scrap. The deception may not be the most honorable tactic but staying ahead of the fleet is your highest priority.</text>
-            <autoReward level="HIGH">scrap_only</autoReward>
-            <modifyPursuit amount="-1"/>
-          </event>
-        </choice>
-        <choice hidden="true">
-          <text>Refuse.</text>
-          <event>
-            <text>You apologize for the trouble you've brought them, but explain that you have no choice. They seem to understand, and break the comm link to set about preparing defenses.</text>
-          </event>
-        </choice>
-      </event>
-    </choice>
-  </event>
-  <eventList name="CRYSTAL_REQUEST_LIST">
-    <event>
-      <text>Unable to interpret it themselves, the Crystalline Beings assume your data will mean something to the Rebels. It should see the pursuing fleet taking a leisurely cruise before they get back on track.</text>
-      <autoReward level="HIGH">scrap_only</autoReward>
-      <modifyPursuit amount="-1"/>
-    </event>
-    <event>
-      <text>They take one look at your fake telemetry and realize what you've done. They apparently do not take being lied to well - they immediately attack!</text>
-      <ship hostile="true"/>
-      <boarders min="1" max="2" class="crystal"/>
-    </event>
-  </eventList>
 
   <event name="CRYSTAL_HELP_DIG" unique="true">
     <text>A large Crystalline ship is floating in space here. They hail: "Aliens?! How curious. We request your aid. We have men buried on a nearby planet and we must dig them out."</text>
@@ -441,7 +345,7 @@
                 <text>Another cycle passes while the Rebel fleet draws ever nearer. You contact the captain again. "Alien Captain, your knowledge of our customs has most impressed us. Your crewmember is on their way back to you now, along with a token of our respect."</text>
                 <modifyPursuit amount="1"/>
                 <autoReward level="HIGH">augment</autoReward>
-                <weapon name="CRYSTAL_HEAVY_2"/>
+                <weapon name="RANDOM"/>
               </event>
             </choice>
           </event>

@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="NEUTRAL_FILLER">
+    <event load="FUELING_STATION"/>
+    <event load="TERRAFORMING_SCAN"/>
+    <event load="FEDERATION_PLANET_SIGNAL"/>
+  </eventList>
+
+  <event name="FUELING_STATION" unique="true">
+    <text>A small platform orbits near this beacon - it looks like a fueling station of some sort, and it is cheerily broadcasting reasonable prices in a spectrum of frequencies and languages.</text>
+    <choice hidden="true">
+      <text>Dock with the refueling platform.</text>
+      <eventList name="FUELING_STATION_LIST">
+        <eventList name="FUELING_STATION_NORMAL_LIST">
+          <event>
+            <text>The platform makes an offer.</text>
+            <choice>
+              <text>Accept it.</text>
+              <event>
+                <item_modify>
+                  <item type="fuel" min="5" max="5"/>
+                  <item type="scrap" min="-10" max="-5"/>
+                </item_modify>
+              </event>
+            </choice>
+            <choice>
+              <text>Reject it.</text>
+              <event/>
+            </choice>
+          </event>
+          <event>
+            <text>The automated platform seems to be damaged. You can likely steal as much fuel as remains.</text>
+            <choice hidden="true">
+              <text>Steal it.</text>
+              <event>
+                <text>If you take the fuel at least it won't come into the hands of of the Rebels. You breach the containment and access what remains of the fuel reserves.</text>
+                <item_modify>
+                  <item type="fuel" min="3" max="5"/>
+                </item_modify>
+              </event>
+            </choice>
+            <choice>
+              <text>War doesn't justify abandoning one's values. You leave it alone.</text>
+              <event/>
+            </choice>
+          </event>
+          <event>
+            <text>The platform seems to be malfunctioning and could ignite at any moment.</text>
+            <choice hidden="true">
+              <text>Quickly dock and refuel.</text>
+              <eventList name="FUELING_STATION_BLOW">
+                <event>
+                  <text>You're able to safely refuel and get clear before the station explodes.</text>
+                  <item_modify>
+                    <item type="fuel" min="5" max="5"/>
+                  </item_modify>
+                </event>
+                <event>
+                  <text>Just as you hook up to refuel, the station ignites and explodes. Your own fuel reserve ignites, losing you precious fuel and damaging your ship.</text>
+                  <item_modify steal="true">
+                    <item type="fuel" min="-3" max="-3"/>
+                  </item_modify>
+                  <damage amount="3" system="engines" effect="fire"/>
+                </event>
+              </eventList>
+            </choice>
+            <choice>
+              <text>Give the station a wide berth and carry on.</text>
+              <event>
+                <text>You pull away from the station. After a short time a few silent explosions cause the depressurized tanks to implode.</text>
+              </event>
+            </choice>
+          </event>
+        </eventList>
+        <eventList name="FUELING_STATION_PIRATE_LIST">
+          <event>
+            <text>You dock and signal the fuel station's staff to begin refueling.</text>
+            <choice hidden="true">
+              <text>Wait for them to finish.</text>
+              <event>
+                <text>As you dock with the refueling platform, there is an explosion from your engine room! Warning lights flash in your ship as pirates from the station swarm aboard your vessel!</text>
+                <damage amount="3" system="engines"/>
+                <boarders min="2" max="4" class="random"/>
+              </event>
+            </choice>
+            <choice req="doors" lvl="2" hidden="true">
+              <text>[Blast Doors] Seal your blast doors, one can never be too careful when docked.</text>
+              <event>
+                <text>Pirates hidden on the station are confounded by your security locks, turning an attempted ambush into a fish-in-a-barrel firefight. You take control of the station and take its fuel reserves.</text>
+                <item_modify>
+                  <item type="fuel" min="5" max="5"/>
+                </item_modify>
+              </event>
+            </choice>
+          </event>
+          <event>
+            <text>The refueling station welcomes you into one of its berths, and as you hail them, there is an explosion from your engine room! While assessing the damage, you detect a Pirate Ship closing fast!</text>
+            <ship load="PIRATE" hostile="true"/>
+            <damage amount="3" system="engines"/>
+          </event>
+        </eventList>
+      </eventList>
+    </choice>
+    <choice>
+      <text>Ignore the refueling platform.</text>
+      <eventList name="FUELING_STATION_IGNORE">
+        <event>
+          <text>As you prepare to leave the system, a Pirate ship suddenly appears on scanners - it looks like it was attempting to use the platform as bait!</text>
+          <ship load="PIRATE" hostile="true"/>
+        </event>
+        <event/>
+        <event/>
+      </eventList>
+    </choice>
+  </event>
+
+  <event name="TERRAFORMING_SCAN" unique="true">
+    <text>You receive a hail from a station orbiting a nearby planet. "Captain, we are Federation Terraforming Team C12 and are in need of assistance. Do you have some time?"</text>
+    <choice>
+      <text>You offer your assistance.</text>
+      <event>
+        <text>"Thank you! We need to scan this planet for life before we can begin terraforming, but our sensors can't get the necessary power to scan through this atmosphere. We've got a schedule to keep, any chance you can help?"</text>
+        <choice>
+          <text>Attempt to scan the planet.</text>
+          <eventList name="NORMAL_SCAN_TERRAFORMING">
+            <event>
+              <text>It seems your sensors are no more powerful than the terraformer's. You apologize and continue on your way.</text>
+            </event>
+            <event>
+              <text>You find if you modulate the feedback signal of your sensors to just the right frequency, you're able to get through the atmosphere and perform a complete scan!</text>
+              <choice hidden="true">
+                <text id="continue"/>
+                <event load="HIGH_SCAN_TERRAFORMING"/>
+              </choice>
+            </event>
+          </eventList>
+        </choice>
+        <choice req="sensors" lvl="2" hidden="true">
+          <text>(Advanced Sensors) Set sensors to maximum and scan.</text>
+          <eventList name="HIGH_SCAN_TERRAFORMING">
+            <event>
+              <text>After a complete scan of the planet, you find no life. The team is grateful and ready to get to work. The station scientists have a unique talent for life support units and offer to upgrade your oxygen system as thanks.</text>
+              <upgrade amount="1" system="oxygen"/>
+            </event>
+            <event>
+              <text>A complete scan of the planet reveals no life signs other than a single ship on the surface. The terraformers thank you for your help, and attempt to contact the ship. Just as you're about to jump away, the ship takes off and attacks, it's a pirate!</text>
+              <ship load="PIRATE" hostile="true"/>
+            </event>
+            <event>
+              <text>A complete scan of the planet reveals a simple mold as the only life present. The terraformers claim their terraforming plans are only hindered by intelligent life; they can begin their work.</text>
+              <choice>
+                <text>Tell them to stop. Any life is valuable.</text>
+                <event>
+                  <text>"But our livelihood depends on this job! Who cares about some silly mold? We'll pay you to look the other way!"</text>
+                  <choice>
+                    <text>Accept the bribe and leave.</text>
+                    <event>
+                      <item_modify>
+                        <item type="scrap" min="15" max="25"/>
+                      </item_modify>
+                    </event>
+                  </choice>
+                  <choice>
+                    <text>Offer to pay them to at least delay until the mold can be studied.</text>
+                    <event>
+                      <text>They see reason and accept the offer. The station scientists have a unique talent for life support units and offer to upgrade your oxygen system as an apology for their behaviour.</text>
+                      <upgrade amount="1" system="oxygen"/>
+                      <item_modify>
+                        <item type="scrap" min="-25" max="-15"/>
+                      </item_modify>
+                    </event>
+                  </choice>
+                  <choice>
+                    <text>Power your weapons and demand they leave at once.</text>
+                    <event>
+                      <text>They shut off communications, but you can tell they have begun an evacuation procedure.</text>
+                    </event>
+                  </choice>
+                </event>
+              </choice>
+              <choice>
+                <text>Leave them to their work.</text>
+                <event/>
+              </choice>
+            </event>
+          </eventList>
+        </choice>
+        <choice req="energy" hidden="true">
+          <text>(Zoltan) Send your crewman to overcharge their systems.</text>
+          <event load="HIGH_SCAN_TERRAFORMING"/>
+        </choice>
+      </event>
+    </choice>
+    <choice>
+      <text>You do not have time.</text>
+      <event>
+        <text>"We understand. Best of luck on your mission, sir!"</text>
+        <choice>
+          <text>Prepare to jump away.</text>
+          <event/>
+        </choice>
+      </event>
+    </choice>
+  </event>
+
+  <event name="FEDERATION_PLANET_SIGNAL" unique="true">
+    <text>A Federation encrypted signal is being broadcast from a nearby planet.</text>
+    <choice hidden="true">
+      <text>Send an away party to investigate.</text>
+      <eventList name="FEDERATION_PLANET_SIGNAL_LIST">
+        <event>
+          <text>You find a secret Federation outpost. They are regrettably out of supplies but are eager to tell you of another secret base. They give you the coordinates.</text>
+          <quest event="HIDDEN_FEDERATION_BASE_LIST"/>
+        </event>
+        <event>
+          <text>You find a hidden Federation outpost. They message you, "Quick, we just got word from a sister outpost that they've been discovered by the Rebels and are under attack! If you are still loyal to the Federation, go save them!"</text>
+          <autoReward level="MED">stuff</autoReward>
+          <quest event="FEDERATION_BASE_ASSIST"/>
+        </event>
+        <event>
+          <text>You find a secret Federation outpost... but it appears the Rebels have found it before you; the place is empty and faint bloodstains can be seen in the living quarters. You find the encrypted signal emitter and shut it off before leaving.</text>
+        </event>
+        <event>
+          <text>You find a small cache of supplies that were surely left for any loyal Federation ships in trouble. You take all that you need, leaving some for others to find.</text>
+          <autoReward level="HIGH">standard</autoReward>
+        </event>
+        <event>
+          <text>As you approach the signal you receive a message on a Rebel channel, "I knew we'd catch some Federation fish with this signal. Prepare to be boarded, scum!"</text>
+          <ship load="REBEL" hostile="true"/>
+          <boarders min="2" max="3" class="human"/>
+        </event>
+      </eventList>
+    </choice>
+    <choice>
+      <text>It could be a trap. Let's move on.</text>
+      <event/>
+    </choice>
+  </event>
+  <changelog>
+    <entry>Credits to Twinge's balance mod: Added a Lifeform scanner blue option in HIDDEN_FEDERATION_BASE_LIST event</entry>
+  </changelog>
+  <eventList name="HIDDEN_FEDERATION_BASE_LIST">
+    <event>
+      <text>You find the planet at the indicated coordinates. Your initial scans show the planet to be barren and devoid of life, but you get a prompt reply when you broadcast on Federation frequencies. "Hello! So nice to see friends. We'll bring you up some supplies."</text>
+      <autoReward level="HIGH">drone</autoReward>
+    </event>
+    <event>
+      <text>By following the directions given to you, you find a well-disguised outpost. You are welcomed by a friendly face who offers to assist you in your quest by joining your crew.</text>
+      <autoReward level="LOW">standard</autoReward>
+      <crewMember amount="1"/>
+    </event>
+    <event>
+      <text>After a quick search you discover the hidden Federation space-dock. They offer you some supplies in addition to fully repairing your ship.</text>
+      <autoReward level="MED">standard</autoReward>
+      <damage amount="-35"/>
+    </event>
+    <event>
+      <text>You search near the coordinates given to you, but your search yields no results. Perhaps they were mistaken.</text>
+      <choice>
+        <text>Leave.</text>
+        <event/>
+      </choice>
+      <choice req="sensors" lvl="2" hidden="true" max_group="0">
+        <text>(Improved Sensors) Run a second scan pass.</text>
+        <event>
+          <text>Your Advanced Sensors pick faint signatures of what appears to be a storage space hidden under the rock. You find the access point and discover a supply cache whose Federation signal emitter has malfunctioned.</text>
+          <autoReward level="MED">standard</autoReward>
+        </event>
+      </choice>
+      <choice req="sensors" lvl="3" hidden="true" max_group="0">
+        <text>(Advanced Sensors) Run a second scan pass.</text>
+        <event>
+          <text>Your advanced sensors pick faint signatures of what appears to be a storage space hidden under the rock. You find the access point and discover a weapons cache whose Federation signal emitter has malfunctioned.</text>
+          <autoReward level="MED">weapon</autoReward>
+        </event>
+      </choice>
+      <choice req="ADV_SCANNERS" hidden="true">
+        <text>(Warped Scanners) Run a second scan pass.</text>
+        <event>
+          <text>Your improved scanners pick faint signatures of what appears to be a storage space hidden under the rock. You find the access point and discover a weapons cache whose Federation signal emitter has malfunctioned.</text>
+          <autoReward level="MED">weapon</autoReward>
+        </event>
+      </choice>
+      <choice req="LIFE_SCANNER" hidden="true">
+        <text>(Lifeform Scanner) Scan for signs of life.</text>
+        <event>
+          <text>You pick up a very faint signal. When you go down to investigate, you find a lone Federation marine inside a destroyed building. You discover that she is the only survivor of a vicious raid from a nearby war-band, and she offers to join your cause.</text>
+          <crewMember combat="1" amount="1"/>
+        </event>
+      </choice>
+    </event>
+    <event load="FEDERATION_BASE_ASSIST"/>
+  </eventList>
+  <eventList name="FEDERATION_BASE_ASSIST">
+    <event>
+      <text>You arrive in the sector to see a small outpost being bombarded by an automated drone. This must be the Federation base you were told about!</text>
+      <ship load="AUTO_FEDERATION_BASE" hostile="true"/>
+    </event>
+    <event>
+      <text>You arrive in the sector to see a small outpost being bombarded by an automated drone. This must be the Federation base you were told about!</text>
+      <ship load="AUTO_FEDERATION_BASE2" hostile="true"/>
+    </event>
+    <event>
+      <text>You arrive in the sector to see the Federation outpost under fire from multiple Rebel ships. However, as you approach they get their Anti-Ship Battery online and disable two of the smaller ships. You swoop in to assist, taking down the wing leader.</text>
+      <ship load="REBEL_FEDERATION_PDS" hostile="true"/>
+      <environment type="PDS" target="enemy"/>
+    </event>
+    <event>
+      <text>You arrive in the sector to see a small Federation outpost using their Anti-Ship Battery to fire at an automated drone. Debris from other ships is strewn around the area. It looks like the brunt of the battle is already over. You move in to assist.</text>
+      <ship load="AUTO_FEDERATION_BASE2" hostile="true"/>
+      <environment type="PDS" target="enemy"/>
+    </event>
+  </eventList>
+  <ship name="REBEL_FEDERATION_PDS" auto_blueprint="SHIPS_REBEL_ELITE">
+    <escape chance="0.8" min="4" max="6">
+      <text>After watching their squadron get destroyed, it looks like their leader is prepared to turn tail and run.</text>
+    </escape>
+    <gotaway>
+      <text>The Rebel ship jumped away.</text>
+      <choice hidden="true">
+        <text id="continue"/>
+        <event>
+          <text>With the threat gone, you contact the Federation outpost. They respond, "Our location has been compromised! Take everything you can and please drop our survivors off at the next station." One soldier offers to stay and fight.</text>
+          <crewMember amount="1"/>
+          <autoReward level="MED">scrap</autoReward>
+        </event>
+      </choice>
+    </gotaway>
+    <destroyed>
+      <text>You scrap the wreckage.</text>
+      <autoReward level="LOW">standard</autoReward>
+      <choice hidden="true">
+        <text id="continue"/>
+        <event>
+          <text>With the threat gone, you contact the Federation outpost. They respond, "Our location has been compromised! Take everything you can and please drop our survivors off at the next station." One soldier offers to stay and fight.</text>
+          <crewMember amount="1"/>
+          <autoReward level="MED">scrap</autoReward>
+        </event>
+      </choice>
+    </destroyed>
+    <deadCrew>
+      <text>With the crew dead, you scrap the ship.</text>
+      <autoReward level="MED">standard</autoReward>
+      <choice>
+        <text id="continue"/>
+        <event>
+          <text>With the threat gone, you contact the Federation outpost. They respond, "Our location has been compromised! Take everything you can and please drop our survivors off at the next station." One soldier offers to stay and fight.</text>
+          <crewMember amount="1"/>
+          <autoReward level="MED">scrap</autoReward>
+        </event>
+      </choice>
+    </deadCrew>
+  </ship>
+  <ship name="AUTO_FEDERATION_BASE" auto_blueprint="SHIPS_AUTO">
+    <destroyed>
+      <text>You scrap the wreckage.</text>
+      <autoReward level="LOW">standard</autoReward>
+      <choice hidden="true">
+        <text id="continue"/>
+        <event>
+          <text>With the threat gone, you contact the Federation outpost. They respond, "Our location has been compromised! Take everything you can and please drop our survivors off at the next station." One soldier offers to stay and fight.</text>
+          <crewMember amount="1"/>
+          <autoReward level="LOW">weapon</autoReward>
+        </event>
+      </choice>
+    </destroyed>
+  </ship>
+  <ship name="AUTO_FEDERATION_BASE2" auto_blueprint="SHIPS_AUTO">
+    <destroyed>
+      <text>You scrap the wreckage.</text>
+      <autoReward level="LOW">standard</autoReward>
+      <choice hidden="true">
+        <text id="continue"/>
+        <event>
+          <text>You contact the station once the Rebel ship is destroyed. The lone survivor responds, "This base is no longer safe. Let me join your crew and I'll have the station's drones patch up your ship."</text>
+          <crewMember amount="1"/>
+          <autoReward level="HIGH">standard</autoReward>
+          <damage amount="-7"/>
+        </event>
+      </choice>
+    </destroyed>
+  </ship>
+</FTL>

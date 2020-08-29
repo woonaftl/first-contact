@@ -9,70 +9,85 @@
   </event>
 
   <eventList name="NON_HOSTILE">
-    <event load="NEUTRAL"/>
-    <event load="ITEMS"/>
+    <event load="FUELING_STATION"/>
+    <event load="TERRAFORMING_SCAN"/>
+    <event load="FEDERATION_PLANET_SIGNAL"/>
+    <event load="FUEL_FOR_DRONE"/>
+    <event load="REFUEL_STATION"/>
+    <event load="REPAIR_STATION"/>
+    <event load="SELL_DRONES_STATION"/>
+    <event load="TAVERN_HIRE"/>
+    <event load="TRADER_CIV"/>
+    <event load="TRADER_UPGRADES"/>
+    <event load="TRADER_UPGRADES_EXCHANGE"/>
+    <event load="MERCHANT_REQUEST"/>
+    <event load="QUEST_CREWDEAD_START"/>
+    <event load="QUEST_CONSTRUCTIONYARD"/>
   </eventList>
 
   <!-- This event list is hardcoded to fill out a sector if it ran out of all other calls for that sector -->
   <eventList name="NEUTRAL">
-    <event load="ASTEROID_EXPLORE"/>
-    <event load="AUTO_DEFENSE_ITEM"/>
-    <event load="AUTO_DEFENSE_MAP"/>
-    <event load="AUTO_REFUEL_STATION"/>
-    <event load="BROKEN_REBEL_DRONE"/>
-    <event load="DONOR_PLAGUE"/>
-    <event load="DONOR_PONY"/>
-    <event load="EMPTY_STATION2"/>
-    <event load="FRIENDLY_SLAVER"/>
     <event load="FUELING_STATION"/>
-    <event load="MERCENARY"/>
-    <event load="PIRATE_BRIBER"/>
-    <event load="PIRATE_CIVILIAN"/>
-    <event load="PIRATE_SALESMAN"/>
-    <event load="PIRATE_STATION_CROPS"/>
-    <event load="REBEL_CHECKPOINT"/>
-    <event load="REBEL_HELPERS"/>
-    <event load="REBEL_TRANSPORT"/>
-    <event load="REFUGEE_NO_DISTRESS"/>
-    <event load="ROGUE_REBEL"/>
-    <event load="STORE_REBELSIDE"/>
     <event load="TERRAFORMING_SCAN"/>
-    <event load="FLOATING_CARGO"/>
+    <event load="FEDERATION_PLANET_SIGNAL"/>
+    <event load="FUEL_FOR_DRONE"/>
+    <event load="REFUEL_STATION"/>
+    <event load="REPAIR_STATION"/>
+    <event load="SELL_DRONES_STATION"/>
+    <event load="TAVERN_HIRE"/>
+    <event load="TRADER_CIV"/>
+    <event load="TRADER_UPGRADES"/>
+    <event load="TRADER_UPGRADES_EXCHANGE"/>
+    <event load="MERCHANT_REQUEST"/>
+    <event load="QUEST_CREWDEAD_START"/>
+    <event load="QUEST_CONSTRUCTIONYARD"/>
   </eventList>
 
   <eventList name="EXIT_LIST">
-    <event load="NEUTRAL_EXIT"/>
-    <event load="ITEMS"/>
+    <event load="FUELING_STATION"/>
+    <event load="TERRAFORMING_SCAN"/>
+    <event load="FEDERATION_PLANET_SIGNAL"/>
+    <event load="FUEL_FOR_DRONE"/>
+    <event load="REFUEL_STATION"/>
+    <event load="REPAIR_STATION"/>
+    <event load="SELL_DRONES_STATION"/>
+    <event load="TAVERN_HIRE"/>
+    <event load="TRADER_CIV"/>
+    <event load="TRADER_UPGRADES"/>
+    <event load="TRADER_UPGRADES_EXCHANGE"/>
+    <event load="MERCHANT_REQUEST"/>
+    <event load="QUEST_CREWDEAD_START"/>
+    <event load="QUEST_CONSTRUCTIONYARD"/>
   </eventList>
 
   <!-- This event list is hardcoded to fill out a sector if it ran out of all other calls for that sector ... TECHNICALLY it uses the EXIT_LIST above us now-->
   <eventList name="NEUTRAL_EXIT">
     <!--Neutral without reveal map events -->
-    <event load="ASTEROID_EXPLORE"/>
-    <event load="AUTO_DEFENSE_ITEM"/>
-    <event load="AUTO_REFUEL_STATION"/>
-    <event load="DONOR_PLAGUE"/>
-    <event load="DONOR_PONY"/>
-    <event load="EMPTY_STATION2"/>
-    <event load="FRIENDLY_SLAVER"/>
     <event load="FUELING_STATION"/>
-    <event load="PIRATE_BRIBER"/>
-    <event load="PIRATE_CIVILIAN"/>
-    <event load="PIRATE_SALESMAN"/>
-    <event load="PIRATE_STATION_CROPS"/>
-    <event load="REBEL_CHECKPOINT"/>
-    <event load="REBEL_HELPERS"/>
-    <event load="REBEL_TRANSPORT"/>
-    <event load="REFUGEE_NO_DISTRESS"/>
-    <event load="ROGUE_REBEL"/>
-    <event load="STORE_REBELSIDE"/>
     <event load="TERRAFORMING_SCAN"/>
-    <event load="FLOATING_CARGO"/>
+    <event load="FEDERATION_PLANET_SIGNAL"/>
+    <event load="FUEL_FOR_DRONE"/>
+    <event load="REFUEL_STATION"/>
+    <event load="REPAIR_STATION"/>
+    <event load="SELL_DRONES_STATION"/>
+    <event load="TAVERN_HIRE"/>
+    <event load="TRADER_CIV"/>
+    <event load="TRADER_UPGRADES"/>
+    <event load="TRADER_UPGRADES_EXCHANGE"/>
+    <event load="MERCHANT_REQUEST"/>
+    <event load="QUEST_CREWDEAD_START"/>
+    <event load="QUEST_CONSTRUCTIONYARD"/>
   </eventList>
 
   <eventList name="NEBULA">
-    <event load="NEBULA_NEUTRAL"/>
-    <event load="NEBULA_HOSTILE"/>
+    <event load="NEBULA_AUTO"/>
+    <event load="NEBULA_AUTO_DEFENSE_ITEM"/>
+    <event load="NEBULA_LOST_SHIP"/>
+    <event load="NEBULA_MANTIS_CHOICE"/>
+    <event load="NEBULA_MANTIS_FIGHT"/>
+    <event load="NEBULA_PIRATE"/>
+    <event load="NEBULA_PIRATE_SMUGGLE"/>
+    <event load="NEBULA_REBEL"/>
   </eventList>
 
   <event name="STORE">
@@ -136,34 +151,6 @@
     </textList>
     <environment type="nebula"/>
     <store/>
-  </event>
-
-  <event name="START_BEACON_PIRATE">
-    <textList name="START_BEACON_PIRATE">
-      <text>A few years ago this region was bustling with trade activity. Now it is overrun with bandits and marauders. You should tread lightly here.</text>
-      <text>This somewhat isolated region was thrown into chaos at the start of the rebellion. Even in peacetime it was always beset by pirates but now it houses a center of operations for countless pirate fleets.</text>
-      <text>If the reports are true, this area has been under the control of pirates for quite some time. Some traders still attempt to trade with the few settlements that remain, but they do so at great risk.</text>
-      <text>A few Federation-friendly planets still exist in this sector, but they are constantly under attack by pirate raids. This is a dangerous sector, so be careful.</text>
-    </textList>
-  </event>
-
-  <event name="STORE_PIRATE">
-    <textList name="STORE_PIRATE">
-      <text>A few small ships are visible on the vidscreen, and you almost activate weapons targeting. However, sensors indicate they are simply honest merchants. The pirates must be making you jumpy. You message them asking about their wares.</text>
-      <text>You detect a hub of activity nearby. A large corporation has set up a trade depot and has a number of well armed ships patrolling. This appears to be a relatively safe place to get repairs.</text>
-      <text>You receive a wide-band automated message, "Welcome to our humble trade depot and shipyard! All are welcome, but try any funny business and our 152 automated turret satellites will tear your ship to shreds!"</text>
-      <text>A well armed transport ship and a squadron of fighters are in orbit nearby. You are wary of their trustworthiness but beggars can't be choosers.</text>
-    </textList>
-    <store/>
-  </event>
-
-  <event name="NOTHING_PIRATE">
-    <textList name="NOTHING_PIRATE">
-      <text>As soon as you arrive, a small ship de-cloaks behind yours. You immediately power up the shields and weapons, but they continue on their trajectory unimpressed. You try to calm your nerves.</text>
-      <text>A small pirate ship messages you, "That sure is a shiny ship you got there." You fire a warning shot across their bow and they respond, "Hey! No need for violence! It was just a comment..."</text>
-      <text>The only thing within scanning range is an old abandoned mining structure and a resupply station. They appear to have been picked clean by marauders.</text>
-      <text>You arrive to have a small fleet of Engi ships target you with a message, "Piracy results in negative societal impact. Not permitted." You assure them of your honest intentions and they allow you to pass.</text>
-    </textList>
   </event>
 
   <changelog>
@@ -380,6 +367,11 @@
       </event>
     </choice>
   </event>
+
+  <eventList name="BOSS_WARNING_NODE">
+    <event load="BOSS_FLEETS_REBEL"/>
+    <event load="BOSS_FLEETS_BOTH_FIGHT"/>
+  </eventList>
 
   <changelog>
     <entry>Rebel Flagship depowers its medbay and oxygen when its crew is dead</entry>

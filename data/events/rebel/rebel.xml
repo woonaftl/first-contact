@@ -1,19 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
-  <eventList name="DISTRESS_BEACON_REBEL">
-    <event load="CIVILIAN_ASTEROIDS_BEACON"/>
-    <event load="REBEL_VS_FEDERATION"/>
-    <event load="ESCORT_BEACON"/>
-    <event load="FRIENDLY_BEACON"/>
-    <event load="TRAP_BEACON"/>
-    <event load="DISTRESS_STATION_FIRE"/>
-  </eventList>
-
-  <eventList name="QUESTS_REBEL">
-    <event load="MERCHANT_REQUEST"/>
-    <event load="FEDERATION_PLANET_SIGNAL"/>
-  </eventList>
-
   <event name="START_BEACON_REBEL">
     <textList name="START_BEACON_REBEL">
       <text>This sector was bustling with activity just a few years ago. Now, more than half of the jump beacons have been destroyed, many settlements have been abandoned and the Rebels patrol constantly.</text>

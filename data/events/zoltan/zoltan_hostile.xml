@@ -7,15 +7,8 @@
     <event load="ZOLTAN_ENGI"/>
     <event load="ZOLTAN_BOARDERS"/>
     <event load="ZOLTAN_BOARDERS_MANTIS"/>
-
-    <event load="REBEL"/>
-    <event load="REBEL_AUTO"/>
-  </eventList>
-
-  <eventList name="HOSTILE_HAZARD_ZOLTAN">
-    <event load="ZOLTAN_ASTEROID"/>
-    <event load="AUTO_ASTEROID"/>
-    <event load="REBEL_PULSAR"/>
+    <event load="ZOLTAN_CREW_SCAN"/>
+    <event load="ZOLTAN_RIFT_FIGHT"/>
   </eventList>
 
   <event name="ZOLTAN_FIGHT">
@@ -52,21 +45,165 @@
     <ship load="ENGI_SHIP" hostile="true"/>
   </event>
 
-  <event name="ZOLTAN_ASTEROID" unique="false">
-    <text>You arrive in an asteroid field and are greeted by a Zoltan guard, "By attempting to access these closed mining fields, you are in violation of the Natural Mineral Protection Act. Your weaponry will be confiscated for processing." You don't have time for this.</text>
-    <environment type="asteroid"/>
-    <ship load="ZOLTAN_SHIP" hostile="true"/>
-  </event>
-
   <event name="ZOLTAN_BOARDERS" unique="true">
     <text>There are few more zealous in their customs checks than the Zoltan. A team of border police beam on board. There's just a little confusion over your weapons licences, but things escalate rapidly from heated discussion to gunfire!</text>
     <ship load="ZOLTAN_SHIP" hostile="true"/>
-    <boarders min="3" max="4" class="energy"/>
+    <boarders min="3" max="3" class="energy"/>
   </event>
 
   <event name="ZOLTAN_BOARDERS_MANTIS" unique="true">
     <text>The Mantis outcasts sometimes make the mistake of taking the Zoltan for easy game. A scout moves in to attack while a boarding party beams aboard from a nearby transport!</text>
     <ship load="MANTIS_FIGHT" hostile="true"/>
     <boarders min="2" max="3" class="mantis"/>
+  </event>
+
+  <event name="ZOLTAN_CREW_SCAN" unique="true">
+    <text>You arrive at a Zoltan security checkpoint set up in a perimeter around the beacon. "Travelling vessel, you will submit to crew profiling to identify fugitives of the empire."</text>
+    <choice hidden="true">
+      <text>You don't have time for this nonsense. Attack!</text>
+      <event>
+        <text>Expecting resistance, their Energy Shield is raised and ready for combat.</text>
+        <ship load="ZOLTAN_SHIP" hostile="true"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Submit to profiling.</text>
+      <eventList name="ZOLTAN_CREW_SCAN_LIST">
+        <event>
+          <text>The Zoltan security staff board your ship and scan the crew's faces into a computer. After a few tense moments of uncertainty they allow your ship to pass.</text>
+        </event>
+        <event>
+          <text>The Zoltan security staff board your ship and begin scanning the crew's faces into a computer. Suddenly alarms go off and the Zoltan leap on one of your crew! "This person is wanted on five charges of Utter Villainy! Surrender them to us!"</text>
+          <choice hidden="true">
+            <text>Give up your crewmember.</text>
+            <event>
+              <text>It's a tough call, but Zoltan law holds sway here. Besides, that one always seemed a bit shifty.</text>
+              <removeCrew>
+                <clone>false</clone>
+                <text>Unfortunately your crewmember was taken away unharmed so your Clone Bay was unable to retrieve them.</text>
+              </removeCrew>
+            </event>
+          </choice>
+          <choice hidden="true">
+            <text>Refuse and fight.</text>
+            <event>
+              <text>You're not going to leave anyone behind. You pull away from the station with the enemy guards on board. Unfortunately, they are able to sabotage your weapon system in the chaos. It's time to leave!</text>
+              <ship name="ZOLTAN_CREW_SCAN" auto_blueprint="SHIPS_ZOLTAN" hostile="true">
+                <destroyed>
+                  <text>You scrap what you can and prepare to jump before the other guards arrive.</text>
+                  <autoReward level="LOW">standard</autoReward>
+                  <status type="clear" target="player" system="weapons" amount="100"/>
+                </destroyed>
+                <deadCrew>
+                  <text>You scrap what you can and prepare to jump before the other guards arrive.</text>
+                  <autoReward level="MED">standard</autoReward>
+                  <status type="clear" target="player" system="weapons" amount="100"/>
+                </deadCrew>
+              </ship>
+              <boarders min="2" max="3" class="energy"/>
+              <status type="divide" target="player" system="weapons" amount="2"/>
+            </event>
+          </choice>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true" req="slug">
+      <text>(Slug Crew) Have your Slug talk them into letting you go.</text>
+      <event>
+        <text>You give the guards permission to dock with the ship, but before they come on board your crewmember slowly advances to meet them. As far as you can tell no words were exchanged, but the guards offer you some supplies and say the ship checks out. Best to not ask questions.</text>
+        <autoReward level="MED">fuel_only</autoReward>
+      </event>
+    </choice>
+    <choice hidden="true" req="mind">
+      <text>(Mind Control) Make the guards believe they have already checked your crew today.</text>
+      <event>
+        <text>The captain of the guard appears on the vid screen "Back so soon friend! Well, no need to waste your time further. Here, take these spare fuel canisters and get on with your mission." Your ship is cleared to pass.</text>
+        <autoReward level="MED">fuel_only</autoReward>
+      </event>
+    </choice>
+  </event>
+
+  <event name="ZOLTAN_RIFT_FIGHT" unique="true">
+    <text>You come to a quiet part of Zoltan space and encounter an ancient Zoltan wise man who has managed to harness the power of a spatial rift, but seems to have been driven completely mad by the power. "Choose your doom," he demands. This is all part of a day's work.</text>
+    <choice hidden="true">
+      <text>Mantis.</text>
+      <event>
+        <text>"You like a challenge. So be it!" A wormhole forms and a confused, angry Mantis ship hurtles toward you!</text>
+        <ship name="ZOLTAN_RIFT_MANTIS" auto_blueprint="SHIPS_MANTIS" hostile="true">
+          <destroyed>
+            <text>You salvage the remains and contact the wise man.</text>
+            <autoReward level="LOW">standard</autoReward>
+            <choice hidden="true">
+              <text id="continue"/>
+              <event load="ZOLTAN_RIFT_SUCCESS"/>
+            </choice>
+          </destroyed>
+          <deadCrew>
+            <text>You salvage the ship and contact the wise man.</text>
+            <autoReward level="MED">standard</autoReward>
+            <choice hidden="true">
+              <text id="continue"/>
+              <event load="ZOLTAN_RIFT_SUCCESS"/>
+            </choice>
+          </deadCrew>
+          <crew>
+            <crewMember type="mantis" prop="0.80"/>
+            <crewMember type="engi" prop="0.20"/>
+          </crew>
+        </ship>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Slug.</text>
+      <event>
+        <text>"Do not be fooled, Federation, by a soft underbelly." You detect a wormhole opening up, and seconds later a Slug ship is attacking from the other direction!</text>
+        <ship name="ZOLTAN_RIFT_SLUG" auto_blueprint="SHIPS_JELLY" hostile="true">
+          <destroyed>
+            <text>You salvage the remains and contact the wise man.</text>
+            <autoReward level="LOW">standard</autoReward>
+            <choice hidden="true">
+              <text id="continue"/>
+              <event load="ZOLTAN_RIFT_SUCCESS"/>
+            </choice>
+          </destroyed>
+          <deadCrew>
+            <text>You salvage the ship and contact the wise man.</text>
+            <autoReward level="MED">standard</autoReward>
+            <choice hidden="true">
+              <text id="continue"/>
+              <event load="ZOLTAN_RIFT_SUCCESS"/>
+            </choice>
+          </deadCrew>
+        </ship>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Rockmen.</text>
+      <event>
+        <text>"A hardened foe for a hardened veteran." You detect a wormhole opening up, and a Rock ship appears with guns blazing. It appears they were in combat when they were thrust across space-time.</text>
+        <ship name="ZOLTAN_RIFT_ROCK" auto_blueprint="SHIPS_ROCK" hostile="true">
+          <destroyed>
+            <text>You salvage the remains and contact the wise man.</text>
+            <autoReward level="LOW">standard</autoReward>
+            <choice hidden="true">
+              <text id="continue"/>
+              <event load="ZOLTAN_RIFT_SUCCESS"/>
+            </choice>
+          </destroyed>
+          <deadCrew>
+            <text>You salvage the ship and contact the wise man.</text>
+            <autoReward level="MED">standard</autoReward>
+            <choice hidden="true">
+              <text id="continue"/>
+              <event load="ZOLTAN_RIFT_SUCCESS"/>
+            </choice>
+          </deadCrew>
+        </ship>
+      </event>
+    </choice>
+  </event>
+  <event name="ZOLTAN_RIFT_SUCCESS">
+    <text>When he sees you have emerged victorious, the Zoltan wise man enters a rage. Rifts threaten to tear space apart until, instead, the Zoltan implodes, sending a blast wave of scrap and salvage dragged here from distant worlds in your direction.</text>
+    <autoReward level="HIGH">stuff</autoReward>
   </event>
 </FTL>

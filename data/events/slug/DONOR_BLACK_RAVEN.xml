@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <changelog>
+    <entry>Unique Black Raven ship for DONOR_BLACK_RAVEN event</entry>
+  </changelog>
+  <event name="DONOR_BLACK_RAVEN" unique="true">
+    <text>As you jump in, you immediately see an impressive Slug pirate ship with "The Black Raven" painted on one side. They hail you, "Greetingsss. I am the dreaded pirate, Captain Nights. You mussst be full of fear, no? You have heard of me... no?"</text>
+    <environment type="nebula"/>
+    <ship name="DONOR_BLACK_RAVEN" auto_blueprint="SLUG_BLACK_RAVEN_LIST" hostile="false">
+      <surrender chance="0" min="3" max="4">
+        <text>"I see the rumorsss are true. I yield, we are no match for you. Take this and let us leave in ssshame."</text>
+        <choice>
+          <text>Accept his surrender.</text>
+          <event>
+            <text>He transfers over the goods and starts to repair his ship.</text>
+            <ship hostile="false"/>
+            <autoReward level="HIGH">weapon</autoReward>
+          </event>
+        </choice>
+        <choice>
+          <text>Ignore him and attack.</text>
+          <event>
+            <text>"Wait! There is no need to be...." You cut off the transmission and prepare to fire.</text>
+          </event>
+        </choice>
+      </surrender>
+      <destroyed>
+        <text>"The Black Raven" breaks apart and you salvage the remains.</text>
+        <autoReward level="MED">standard</autoReward>
+      </destroyed>
+      <deadCrew>
+        <text>The once-dreaded pirate Nights has been killed and you proceed to loot his ship.</text>
+        <autoReward level="HIGH">standard</autoReward>
+      </deadCrew>
+    </ship>
+    <choice hidden="true">
+      <text>No.</text>
+      <event>
+        <text>"Well I have heard of you and I must see if you are as dangerousss as they say. I challenge you!"</text>
+        <choice hidden="true">
+          <text>Accept his challenge.</text>
+          <event>
+            <ship hostile="true"/>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>Decline.</text>
+          <event>
+            <text>"I sssee... However you have no choice in the matter!" They move in to attack.</text>
+            <ship hostile="true"/>
+          </event>
+        </choice>
+        <choice hidden="true" req="slug">
+          <text>(Slugman Crew) Engage in a duel of the mind.</text>
+          <eventList name="DONOR_BLACK_RAVEN_SLUG">
+            <event>
+              <text>Your Slug crewman's eyes glaze over as the two telepaths concentrate. You can only wonder what is happening. After a short time your comrade grunts in pain and collapses onto the floor, stunned. Nights responds, "Hah! It'll take more than that to defeat me! Let the real battle begin!"</text>
+              <ship hostile="true"/>
+              <boarders min="1" max="2" class="slug"/>
+            </event>
+            <event>
+              <text>Your Slug crewman's eyes glaze over as the two telepaths concentrate. You are powerless to help, but after a short time your comrade shakes off the daze and appears victorious.</text>
+              <choice hidden="true">
+                <text id="continue"/>
+                <event>
+                  <text>His face contorted with pain, Nights concedes his defeat: "If this is the caliber of subordinatesss you keep, there iss no way we can defeat you. Take thisss and let us leave in shame."</text>
+                  <autoReward level="HIGH">weapon</autoReward>
+                </event>
+              </choice>
+            </event>
+          </eventList>
+        </choice>
+      </event>
+    </choice>
+  </event>
+</FTL>

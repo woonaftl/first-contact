@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="NEBULA_NEUTRAL_PIRATE">
+    <event load="NEBULA_PIRATE_SMUGGLE"/>
+    <event load="NEBULA_WEAPONS_TRADER"/>
+  </eventList>
+
+  <event name="NEBULA_PIRATE_SMUGGLE">
+    <text>A pirate ship arrives shortly after you. Judging from the fact that it is attempting to avoid your ship, you assume that it's a smuggler trying to stay away from beacons.</text>
+    <environment type="nebula"/>
+    <choice>
+      <text>Attack the pirate.</text>
+      <event>
+        <text>You power up your weapons and move in to engage.</text>
+        <ship load="PIRATE_SMUGGLE" hostile="true"/>
+      </event>
+    </choice>
+    <choice>
+      <text>Ignore the ship.</text>
+      <event>
+        <text>It jumps away after a time.</text>
+      </event>
+    </choice>
+    <choice req="weapons" lvl="6" hidden="true">
+      <text>(Weapons) Activate your advanced weapons threateningly.</text>
+      <event>
+        <text>They hail you, "There's no need for aggression... Perhaps this would convince you to look the other way?"</text>
+        <choice>
+          <text>Take their bribe.</text>
+          <event>
+            <autoReward level="MED">fuel</autoReward>
+          </event>
+        </choice>
+        <choice>
+          <text>Ignore their bribe and attack.</text>
+          <event>
+            <ship load="PIRATE_SMUGGLE" hostile="true"/>
+          </event>
+        </choice>
+      </event>
+    </choice>
+  </event>
+  <ship name="PIRATE_SMUGGLE" auto_blueprint="SHIPS_PIRATE">
+    <surrender chance="0.5" min="2" max="4">
+      <text>They hail you, "We realize our ship is no match for yours. If you let us go we can make it worth your while."</text>
+      <choice>
+        <text>Accept their offer.</text>
+        <event>
+          <ship hostile="false"/>
+          <autoReward level="RANDOM">stuff</autoReward>
+        </event>
+      </choice>
+      <choice>
+        <text>Ignore their pleas and attack.</text>
+        <event/>
+      </choice>
+    </surrender>
+    <escape timer="35" min="3" max="4">
+      <text>They look like they don't want to fight. They are trying to escape.</text>
+      <ship hostile="true"/>
+    </escape>
+    <gotaway>
+      <text>The smuggler jumped away with their goods intact.</text>
+    </gotaway>
+    <destroyed load="PIRATE_SMUGGLE_DESTROYED"/>
+    <deadCrew load="PIRATE_SMUGGLE_CAPTURED"/>
+  </ship>
+  <eventList name="PIRATE_SMUGGLE_DESTROYED">
+    <event>
+      <text>You search the ship and discover that its cargo was new military-grade weaponry! It was somehow undamaged in the fight and can easily be mounted on the ship.</text>
+      <autoReward level="MED">weapon</autoReward>
+    </event>
+    <event>
+      <text>You search the remains of the ship, but only come across blueprints and debris from broken machinery. A shame, but you take what scrap you can salvage.</text>
+      <autoReward level="LOW">standard</autoReward>
+    </event>
+    <event>
+      <text>The ship was transporting weaponry. You find a piece still intact, despite the battle.</text>
+      <autoReward level="LOW">weapon</autoReward>
+    </event>
+    <event>
+      <text>The ship was apparently transporting weaponry; however, nothing seems to have survived the battle.</text>
+      <autoReward level="MED">scrap_only</autoReward>
+    </event>
+    <event>
+      <text>Searching the remains, you find that the cargo was military-grade Drone Schematics! You bring them aboard to install in your ship.</text>
+      <autoReward level="MED">drone</autoReward>
+    </event>
+    <event>
+      <text>The debris implies that the ship was carrying Drone Schematics, but unfortunately nothing remains. You do find functioning Drone Parts, however.</text>
+      <autoReward level="MED">droneparts</autoReward>
+    </event>
+    <event>
+      <text>The ship was carrying military supplies. You pick up anything that looks salvageable from the debris.</text>
+      <autoReward level="MED">standard</autoReward>
+    </event>
+  </eventList>
+  <eventList name="PIRATE_SMUGGLE_CAPTURED">
+    <event>
+      <text>With the crew dead, you search the ship. You find military-grade weaponry and take what looks most useful.</text>
+      <autoReward level="MED">weapon</autoReward>
+    </event>
+    <event>
+      <text>Searching the remains you find that the cargo was military-grade Drone Schematics! You bring them aboard to install on your ship.</text>
+      <autoReward level="MED">drone</autoReward>
+    </event>
+  </eventList>
+
+  <event name="NEBULA_WEAPONS_TRADER" unique="true">
+    <text>A black market weapons trader spins you a tale of the dangers of the nebula before pushing his wares.</text>
+    <environment type="nebula"/>
+    <ship load="PIRATE" hostile="false"/>
+    <choice>
+      <text>Ignore the ship.</text>
+      <event/>
+    </choice>
+    <choice>
+      <text>Attack the ship.</text>
+      <event>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Purchase an unknown weapon for 45 scrap.</text>
+      <eventList name="NEBULA_WEAPONS_TRADER_LIST">
+        <event>
+          <text>You transfer the scrap and receive a weapon in return. Lets hope it was worth it.</text>
+          <item_modify>
+            <item type="scrap" min="-45" max="-45"/>
+          </item_modify>
+          <weapon name="RANDOM"/>
+        </event>
+        <event>
+          <text>You transfer over the scrap, but he reneges on the agreement. "I told you this was a dangerous place!"</text>
+          <item_modify>
+            <item type="scrap" min="-45" max="-45"/>
+          </item_modify>
+          <choice>
+            <text>Attack the ship!</text>
+            <event>
+              <ship hostile="true"/>
+            </event>
+          </choice>
+          <choice>
+            <text>Learn a valuable lesson and move on.</text>
+            <event/>
+          </choice>
+        </event>
+      </eventList>
+    </choice>
+    <choice req="mind" hidden="true">
+      <text>(Mind Control) Convince him to make it a better deal.</text>
+      <eventList name="NEBULA_WEAPONS_TRADER_LIST2">
+        <event>
+          <text>Once "convinced" to help he lowers the price and describes the weapon. However, he eventually comes to his senses and confusedly takes back his discount. He is clearly unsure why he offered it in the first place.</text>
+          <choice>
+            <text>Buy the weapon.</text>
+            <event>
+              <text>You purchase the weapon and thank him for his help.</text>
+              <item_modify>
+                <item type="scrap" min="-45" max="-45"/>
+              </item_modify>
+              <weapon name="RANDOM"/>
+            </event>
+          </choice>
+          <choice>
+            <text>Decline.</text>
+            <event>
+              <text>You thank him for his offer and prepare to move on.</text>
+            </event>
+          </choice>
+        </event>
+        <event>
+          <text>Once "convinced" to help, he casually states that his offer was actually a lie and that they planned to attack your ship. By the time he returns to his senses you've already prepared your ship to fight.</text>
+          <ship hostile="true"/>
+        </event>
+      </eventList>
+    </choice>
+  </event>
+</FTL>

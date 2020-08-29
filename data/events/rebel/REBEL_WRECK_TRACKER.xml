@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <changelog>
+    <entry>Added Rebel tracker on ship wreck event</entry>
+  </changelog>
+  <event name="REBEL_WRECK_TRACKER" unique="true">
+    <text>You arrive to see the remains of a derelict ship. Most likely the captain felt overconfident and attacked someone out of their league. Most of useful materials are already salvaged, but you manage to find some scrap.</text>
+    <autoReward level="LOW">scrap_only</autoReward>
+    <choice hidden="true">
+      <text id="continue"/>
+      <event>
+        <text>As you finish collecting scrap, the scanners notice a remote tracking device left there by the Rebels. It has already attached itself to your ship and is ready to give away your exact location to Rebel fleet.</text>
+        <choice hidden="true">
+          <text>Send a crewmember to disable the tracking device.</text>
+          <eventList>
+            <event>
+              <text>Using a space suit your engineer leaves the ship and manages to disable the tracking device manually. Sadly, they are hit by piece of space trash on their way back. The suit depressurizes, it is not possible to save them.</text>
+              <removeCrew>
+                <clone>true</clone>
+                <text>Luckily, your clone bay is able to revive your crewmember.</text>
+              </removeCrew>
+            </event>
+            <event>
+              <text>Using a space suit your engineer leaves the ship and manages to disable the tracking device manually. After hours of work in open space they return to the ship in one piece.</text>
+            </event>
+          </eventList>
+        </choice>
+        <choice hidden="true">
+          <text>Don't risk your crew: Charge the FTL drive.</text>
+          <event>
+            <text>You could not risk the lives of your crewmembers trying to defuse the tracking tool manually. Preparing for another FTL jump, you hope to be faster than the Rebels.</text>
+            <modifyPursuit amount="1"/>
+          </event>
+        </choice>
+        <choice req="DRONES_DEFENSE_LIST">
+          <text>(Defense Drone) Use a drone to shoot the tracker down.</text>
+          <event>
+            <text>A drone is deployed and targets the tracking tool precisely. You hope the tracker didn't have the time to send information to the Rebel fleet yet.</text>
+            <item_modify>
+              <item max="-1" min="-1" type="drones"/>
+            </item_modify>
+          </event>
+        </choice>
+        <choice req="anaerobic">
+          <text>(Lanius) Send the Lanius to deal with the tracker.</text>
+          <event>
+            <text>The Lanius is not afraid of open space. You did not see what exactly he did to the tracking tool but it's all clear on the sensors. Time to prepare for the next jump.</text>
+          </event>
+        </choice>
+      </event>
+    </choice>
+  </event>
+</FTL>

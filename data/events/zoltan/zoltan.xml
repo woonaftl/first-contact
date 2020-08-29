@@ -10,11 +10,16 @@
   </event>
 
   <event name="STORE_ZOLTAN">
-    <textList name="STORE_ZOLTAN">
+    <textList>
       <text>The Zoltan are fascinated by other species, and have set up something of an alien knick-knack shop here. Why not take a look?</text>
       <text>A human ship hails: "My friends! Please, there is nothing I don't have, and there is nothing worth wanting that I can't get. Why not take a look around my shop?"</text>
-      <text>A Mantis crew here has hunkered down in the abdomen of a long-dead space-whale - the only way, presumably, for them to operate their black-market trade without detection. Worth a look?</text>
     </textList>
+    <store/>
+  </event>
+
+  <event name="NEBULA_STORE_ZOLTAN">
+    <text>A Mantis crew here has hunkered down in the abdomen of a long-dead space-whale - the only way, presumably, for them to operate their black-market trade without detection. Worth a look?</text>
+    <environment type="nebula"/>
     <store/>
   </event>
 

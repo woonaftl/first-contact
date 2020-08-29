@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <event name="START_BEACON_WARPED">
+    <text>There is very little known about this nebula. No ship that went to explore its depths, returned to tell the tale. Rumours are that this sector is home to the Warped. Better be very careful.</text>
+  </event>
+
+</FTL>
