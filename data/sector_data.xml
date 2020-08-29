@@ -421,8 +421,7 @@
     <event name="NOSHIP_MANTIS" min="1" max="1"/>
     <event name="HOSTILE_HAZARD_MANTIS" min="1" max="1"/>
     <event name="NEUTRAL_MANTIS" min="4" max="4"/>
-    <event name="HOSTILE_MANTIS" min="4" max="4"/>
-    <event name="MANTIS_FIGHT" min="5" max="5"/>
+    <event name="HOSTILE_MANTIS" min="9" max="9"/>
   </sectorDescription>
 
   <sectorDescription name="MANTIS_SECTOR_2" minSector="1" unique="false">
@@ -453,8 +452,7 @@
     <event name="NOSHIP_MANTIS" min="1" max="1"/>
     <event name="HOSTILE_HAZARD_MANTIS" min="1" max="1"/>
     <event name="NEUTRAL_MANTIS" min="4" max="4"/>
-    <event name="HOSTILE_MANTIS" min="4" max="4"/>
-    <event name="MANTIS_FIGHT" min="6" max="6"/>
+    <event name="HOSTILE_MANTIS" min="10" max="10"/>
   </sectorDescription>
 
   <sectorDescription name="ROCK_SECTOR" minSector="3" unique="true">

@@ -2,6 +2,9 @@
 <FTL>
   <eventList name="HOSTILE_MANTIS">
     <event load="MANTIS_FIGHT"/>
+    <event load="MANTIS_FIGHT_WITH_BOARDERS"/>
+    <event load="MANTIS_BOARDERS_SWARM"/>
+    <event load="MANTIS_WARPED_FIGHT"/>
   </eventList>
 
   <event name="MANTIS_FIGHT">
@@ -28,5 +31,34 @@
       <text>A youthful-looking Mantis captain hails. "You, prey, must know. Your death, Kaaazthwak's final kill before maturity. Kaaazthwak pay respects." Seems respects in Mantis culture are paid with lasers.</text>
     </textList>
     <ship load="MANTIS_FIGHT" hostile="true"/>
+  </event>
+
+  <event name="MANTIS_FIGHT_WITH_BOARDERS">
+    <textList>
+      <text>As the jump is completed, everything plunges into chaos. The Mantis, appearing from nowhere, are swarming your ship. A small hunting vessel is arming ints weapons, ready to strike.</text>
+      <text>The Mantis are screeching. Some - just from the comm, but some are already on board and attacking your crew.</text>
+      <text>Your world, all of a sudden, changes. The Mantis are on board your ship. To make things worse, a Mantis ship approaches.</text>
+      <text>You hear a grating rattle and a soft clicking. You reach for your pistol. The Mantis are boarding and their military vessel is charging its weapons.</text>
+      <text>All alerts trigger (except fire alert) as the Mantis ship is upon you and the intruders are already on board and sabotaging your critical systems.</text>
+    </textList>
+    <boarders min="2" max="3" class="mantis"/>
+    <ship load="MANTIS_FIGHT" hostile="true"/>
+  </event>
+
+  <event name="MANTIS_BOARDERS_SWARM" unique="true">
+    <text>It seems that the entire Mantis hive has teleported on your ship from nearby station. A small military ship is attacking while your ship is filled with screeches and gunshots.</text>
+    <boarders min="4" max="5" class="mantis"/>
+    <ship load="MANTIS_FIGHT" hostile="true"/>
+  </event>
+
+  <event name="MANTIS_WARPED_FIGHT" unique="true">
+    <text>You fancy you see something moving in the shadow of the beacon, but all remains still.</text>
+    <choice>
+      <text id="continue"/>
+      <event>
+        <text>Suddenly, a Warped ship appears out of nowhere and attacks you. It seems they were waiting in ambush to hunt the Mantis, but you disrupted their plan.</text>
+        <ship load="WARPED_SHIP" hostile="true"/>
+      </event>
+    </choice>
   </event>
 </FTL>
