@@ -4,4 +4,9 @@
     <text>There is very little known about this nebula. No ship that went to explore its depths, returned to tell the tale. Rumours are that this sector is home to the Warped. Better be very careful.</text>
   </event>
 
+  <ship name="WARPED_SHIP" auto_blueprint="SHIPS_WARPED">
+    <escape chance="0.2" min="4" max="5" load="PIRATE_ESCAPE"/>
+    <destroyed load="DESTROYED_DEFAULT"/>
+    <deadCrew load="DEAD_CREW_DEFAULT"/>
+  </ship>
 </FTL>

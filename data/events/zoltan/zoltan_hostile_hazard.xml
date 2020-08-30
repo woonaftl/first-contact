@@ -2,11 +2,30 @@
 <FTL>
   <eventList name="HOSTILE_HAZARD_ZOLTAN">
     <event load="ZOLTAN_ASTEROID"/>
+    <event load="ZOLTAN_PULSAR"/>
+    <event load="ZOLTAN_PIRATE_PULSAR"/>
   </eventList>
 
   <event name="ZOLTAN_ASTEROID" unique="true">
     <text>You arrive in an asteroid field and are greeted by a Zoltan guard, "By attempting to access these closed mining fields, you are in violation of the Natural Mineral Protection Act. Your weaponry will be confiscated for processing." You don't have time for this.</text>
     <environment type="asteroid"/>
     <ship load="ZOLTAN_SHIP" hostile="true"/>
+  </event>
+
+  <event name="ZOLTAN_PULSAR">
+    <textList>
+      <text>The Zoltan military ship awaits you at the beacon located near a pulsating star: "Your transgression is illegal. This section of space is off limits." The Zoltan ship attacks you on sight.</text>
+      <text>As you complete the jump, a pulse of electromagnetic energy turns half of your ship's systems offline. An unusually aggressive Zoltan ship was waiting for it and attacks.</text>
+      <text>When fighting Zoltans on their home turf, you feel at a disadvantage. A pulsar shuts your systems down repeatedly while the aggressive Zoltan military ship seems to be immune to it.</text>
+      <text>The FTL beacon is orbiting an active star which is emitting enormous amount of energy enough to shut down most of the critical systems on your ship. A Zoltan security ship approaches: "Please submit your documents. What is the purpose of your visit? The crew will have to go through brain scanning." There is no time for that, you have to leave this dangerous area as soon as possible.</text>
+    </textList>
+    <environment type="pulsar"/>
+    <ship load="ZOLTAN_SHIP" hostile="true"/>
+  </event>
+
+  <event name="ZOLTAN_PIRATE_PULSAR" unique="true">
+    <text>A pirate ship, hiding from Zoltan patrols near a pulsar, approaches. Their shield systems can barely protect them from ionizing pulses but the pirates attack anyway.</text>
+    <environment type="pulsar"/>
+    <ship load="PIRATE" hostile="true"/>
   </event>
 </FTL>

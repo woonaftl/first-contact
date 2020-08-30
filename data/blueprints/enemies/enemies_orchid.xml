@@ -124,7 +124,7 @@
     <cloakImage>orchid_guard</cloakImage>
   </shipBlueprintSuper>
 
-    <shipBlueprintSuper name="ORCHID_SCOUT" img="orchid_scout" layout="orchid_scout">
+  <shipBlueprintSuper name="ORCHID_SCOUT" img="orchid_scout" layout="orchid_scout">
     <class>Orchid Scout</class>
     <systemList>
       <pilot power="1" max="3" room="0"/>
@@ -155,5 +155,6 @@
     <health amount="7"/>
     <crewCount amount="2" max="3" class="orchid"/>
     <boardingAI>sabotage</boardingAI>
+    <cloakImage>orchid_scout</cloakImage>
   </shipBlueprintSuper>
 </FTL>

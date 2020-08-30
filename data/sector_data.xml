@@ -493,7 +493,7 @@
     <event name="HOSTILE_HAZARD_ROCK" min="8" max="8"/>
   </sectorDescription>
 
-   <sectorDescription name="ROCK_SECTOR_2" minSector="1" unique="false">
+  <sectorDescription name="ROCK_SECTOR_2" minSector="1" unique="false">
     <nameList>
       <name>Rock Controlled Sector</name>
     </nameList>
@@ -558,7 +558,7 @@
     <event name="NEUTRAL_LANIUS" min="10" max="10"/>
   </sectorDescription>
 
-   <sectorDescription name="LANIUS_SECTOR_2" minSector="2" unique="false">
+  <sectorDescription name="LANIUS_SECTOR_2" minSector="2" unique="false">
     <nameList>
       <name>Abandoned Sector</name>
     </nameList>
@@ -652,23 +652,24 @@
     <startEvent>START_BEACON_ZOLTAN</startEvent>
     <event name="STORE_ZOLTAN" min="1" max="1"/>
     <event name="NEBULA_STORE_ZOLTAN" min="1" max="1"/>
-    <event name="UPGRADE_LIST_ALL" min="1" max="1"/>
+    <event name="UPGRADE_LIST_LEGIT" min="1" max="1"/>
     <event name="UPGRADE_LIST_NEBULA" min="1" max="1"/>
 
     <event name="ZOLTAN_PEACE_QUEST" min="1" max="1"/>
     <event name="ZOLTAN_CREW_STUDY" min="1" max="1"/>
 
-    <event name="NEBULA_NOSHIP_ZOLTAN" min="2" max="2"/>
-    <event name="NEBULA_NEUTRAL_ZOLTAN" min="3" max="3"/>
+    <event name="NEBULA_HOSTILE_HAZARD_ZOLTAN" min="4" max="4"/>
     <event name="NEBULA_HOSTILE_ZOLTAN" min="1" max="1"/>
+    <event name="NEBULA_NOSHIP_ZOLTAN" min="2" max="2"/>
+    <event name="NEBULA_NEUTRAL_ZOLTAN" min="1" max="1"/>
 
-    <event name="HOSTILE_HAZARD_ZOLTAN" min="1" max="1"/>
-    <event name="NOSHIP_ZOLTAN" min="2" max="2"/>
-    <event name="NEUTRAL_ZOLTAN" min="3" max="3"/>
-    <event name="HOSTILE_ZOLTAN" min="6" max="6"/>
+    <event name="HOSTILE_HAZARD_ZOLTAN" min="3" max="3"/>
+    <event name="NOSHIP_ZOLTAN" min="1" max="1"/>
+    <event name="NEUTRAL_ZOLTAN" min="2" max="2"/>
+    <event name="HOSTILE_ZOLTAN" min="4" max="4"/>
   </sectorDescription>
 
-   <sectorDescription name="ZOLTAN_SECTOR_2" minSector="1" unique="false">
+  <sectorDescription name="ZOLTAN_SECTOR_2" minSector="1" unique="false">
     <nameList>
       <name>Zoltan Controlled Nebula</name>
     </nameList>
@@ -692,14 +693,15 @@
 
     <event name="ZOLTAN_CREW_STUDY" min="1" max="1"/>
 
-    <event name="NEBULA_NOSHIP_ZOLTAN" min="2" max="2"/>
-    <event name="NEBULA_NEUTRAL_ZOLTAN" min="3" max="3"/>
+    <event name="NEBULA_HOSTILE_HAZARD_ZOLTAN" min="4" max="4"/>
     <event name="NEBULA_HOSTILE_ZOLTAN" min="1" max="1"/>
+    <event name="NEBULA_NOSHIP_ZOLTAN" min="2" max="2"/>
+    <event name="NEBULA_NEUTRAL_ZOLTAN" min="1" max="1"/>
 
-    <event name="HOSTILE_HAZARD_ZOLTAN" min="1" max="1"/>
-    <event name="NOSHIP_ZOLTAN" min="2" max="2"/>
+    <event name="HOSTILE_HAZARD_ZOLTAN" min="3" max="3"/>
+    <event name="NOSHIP_ZOLTAN" min="1" max="1"/>
     <event name="NEUTRAL_ZOLTAN" min="3" max="3"/>
-    <event name="HOSTILE_ZOLTAN" min="7" max="7"/>
+    <event name="HOSTILE_ZOLTAN" min="4" max="4"/>
   </sectorDescription>
 
   <sectorDescription name="SLUG_SECTOR" minSector="3" unique="true">
@@ -738,7 +740,7 @@
     <event name="HOSTILE_SLUG" min="1" max="1"/>
   </sectorDescription>
 
-   <sectorDescription name="SLUG_SECTOR_2" minSector="2" unique="false">
+  <sectorDescription name="SLUG_SECTOR_2" minSector="2" unique="false">
     <nameList>
       <name>Slug Controlled Nebula</name>
     </nameList>
@@ -762,7 +764,7 @@
     <event name="NEBULA_STORE_SLUG" min="3" max="3"/>
     <event name="UPGRADE_LIST_NEBULA" min="2" max="2"/>
 
-      <event name="NEBULA_HOSTILE_HAZARD_SLUG" min="1" max="1"/>
+    <event name="NEBULA_HOSTILE_HAZARD_SLUG" min="1" max="1"/>
     <event name="NEBULA_NOSHIP_SLUG" min="3" max="3"/>
     <event name="NEBULA_NEUTRAL_SLUG" min="7" max="7"/>
     <event name="NEBULA_HOSTILE_SLUG" min="6" max="6"/>
@@ -796,7 +798,7 @@
     <event name="WARPED_DEAL_DEVIL" min="1" max="1"/>
   </sectorDescription>
 
-    <sectorDescription name="WARPED_SECTOR_2" minSector="2" unique="false">
+  <sectorDescription name="WARPED_SECTOR_2" minSector="2" unique="false">
     <nameList>
       <name>Warped Controlled Nebula</name>
     </nameList>

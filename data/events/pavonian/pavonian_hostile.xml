@@ -13,7 +13,7 @@
     <ship load="PIRATE" hostile="true"/>
   </event>
 
-  <event name="PAVONIAN_REBEL_FIGHT">
+  <event name="PAVONIAN_REBEL_FIGHT" unique="true">
     <text>A Rebel ship is stationed at the beacon. "We are bringing order into this system. All incoming ships are to be inspected. Those who oppose, are to be destroyed." There is no way around a fight.</text>
     <ship load="REBEL" hostile="true"/>
   </event>
