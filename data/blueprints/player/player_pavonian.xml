@@ -28,7 +28,7 @@
       <weapon name="BOMB_BREACH_1"/>
     </weaponList>
     <droneList count="3" drones="15">
-      <drone name="BOARDER_ION_UPGRADED"/>
+      <!--<drone name="BOARDER_ION_UPGRADED"/>-->
       <!--<drone name="MED_DRONE_UPGRADED"/>-->
       <!--<drone name="BOARDER_LOCKDOWN_UPGRADED"/>-->
     </droneList>
@@ -40,7 +40,7 @@
     <cloakImage>pavonian_cruiser</cloakImage>
   </shipBlueprint>
 
-  <shipBlueprint name="PLAYER_SHIP_PAVONIAN_2" layout="pavonian_cruiser_blue" img="pavonian_cruiser">
+  <shipBlueprint name="PLAYER_SHIP_PAVONIAN_2" layout="pavonian_cruiser_blue" img="pavonian_cruiser_blue">
     <class>Pavonian Cruiser</class>
     <name>?</name>
     <desc>This ship specializes in boarding enemies with a combination of drones and crew, leaving the ship to auto-pilot.</desc>
@@ -79,7 +79,7 @@
     <floorImage>pavonian_cruiser_blue</floorImage>
   </shipBlueprint>
 
-  <shipBlueprint name="PLAYER_SHIP_PAVONIAN_3" layout="pavonian_cruiser_black" img="pavonian_cruiser">
+  <shipBlueprint name="PLAYER_SHIP_PAVONIAN_3" layout="pavonian_cruiser_black" img="pavonian_cruiser_black">
     <class>Pavonian Cruiser</class>
     <name>?</name>
     <desc>Heavily understaffed, this ship relies on drones to keep the ship running and on heavy weapons to disable enemies.</desc>
