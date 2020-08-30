@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="NEBULA_HOSTILE_HAZARD_SLUG">
+    <event load="STORM_SLUG_FIGHT"/>
+  </eventList>
+
+  <event name="STORM_SLUG_FIGHT">
+    <textList name="STORM_SLUG_FIGHT">
+      <text>The ion storm here threatens to deactivate your core systems, a fact made all the worse for the largely unaffected Slug ships circling like space-vultures.</text>
+      <text>The Slug ship that descends into view as you enter the ion storm must have sensed your distress - defensive action!</text>
+      <text>You arrive in the middle of an ion storm. Slugs generally avoid these storms but you find one waiting in ambush. Prepare for a fight!</text>
+      <text>You find yourself stuck in the middle of an ion storm with a Slug ship just a short distance away, refusing all hails. You cautiously try to slip further into the clouds, but they turn suddenly to attack!</text>
+    </textList>
+    <ship load="JELLY" hostile="true"/>
+    <environment type="storm"/>
+  </event>
+</FTL>

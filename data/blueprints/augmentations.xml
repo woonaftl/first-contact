@@ -72,6 +72,7 @@
   </weaponBlueprint>
 
   <augBlueprint name="ENERGY_SHIELD">
+    <!--TODO prevent event boarders-->
     <title>Zoltan Shield</title>
     <desc>An unexplained technology creates this nearly impenetrable shield. Only the energy outburst from an FTL engine is powerful enough to recharge it.</desc>
     <cost>80</cost>

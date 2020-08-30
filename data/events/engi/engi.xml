@@ -20,6 +20,7 @@
     <textList name="NOTHING_ENGI">
       <text>The complex arrangements of ship hulls and FTL drive capacitors floating abandoned in space suggest the Engi were here not too long ago; but no longer.</text>
       <text>Even though each "individual" Engi is made up of trillions of nano-machines, their culture still revolves around traditional social interactions. A nearby station seems to be constructed for entertainment of passing Engi travellers.</text>
+      <text>You have arrived near an Engi construction yard. Most Engi maintain their bi-pedal appearance out of habit but here you see a number of Engi hives working together to create massive organic machines adept at building ships. Truly a sight to behold.</text>
       <text>You see a number of Engi space stations and fleets nearby. Despite looking like piles of junk loosely tied together they are actually a model of efficiency. They just lack a certain aesthetic emphasis in their constructions.</text>
       <text>This system appears quite peaceful. You're not sure how long it'll last between the combined threats of the Rebels and Mantis.</text>
       <text>There are a number of merchant ships passing through the area despite the threat of Mantis invasion. No doubt interested in buying the efficient technology of the Engi.</text>
@@ -29,10 +30,26 @@
     </textList>
   </event>
 
-    <ship name="ENGI_SHIP" auto_blueprint="SHIPS_CIRCLE">
+  <ship name="ENGI_SHIP" auto_blueprint="SHIPS_CIRCLE">
+    <surrender chance="0.5" min="2" max="2" load="ENGI_SURRENDER"/>
     <destroyed load="DESTROYED_DEFAULT"/>
     <deadCrew load="DEAD_CREW_DEFAULT"/>
   </ship>
+
+  <event name="ENGI_SURRENDER">
+    <text>On the brink of destruction, the Engi ship asks for mercy: "Suggestion. Input: cease fire. Output: Engi resources."</text>
+    <choice>
+      <text>Accept their offer.</text>
+      <event>
+        <ship hostile="false"/>
+        <autoReward level="RANDOM">stuff</autoReward>
+      </event>
+    </choice>
+    <choice>
+      <text>We will not accept surrender!</text>
+      <event/>
+    </choice>
+  </event>
 
   <ship name="ENGI_MANTIS_CONTROLLED" auto_blueprint="SHIPS_CIRCLE">
     <destroyed load="DESTROYED_DEFAULT"/>

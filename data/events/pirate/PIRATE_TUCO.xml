@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <changelog>
+    <entry>Added special ship for dread pirate Tuco</entry>
+  </changelog>
+  <event name="PIRATE_TUCO" unique="true">
+    <!-- text taken from PIRATE -->
+    <text>At first it appears you've arrived in an empty system, but a ship appears from behind a planet and hails you: "Haha! I am the dread pirate Tuco, prepare to die!"</text>
+    <img back="BACKGROUND" planet="PLANET_POPULATED"/>
+    <ship auto_blueprint="PIRATE_TUCO_LIST" hostile="true">
+      <surrender chance="0.5" min="3" max="4" load="PIRATE_SURRENDER"/>
+      <escape chance="0.5" min="2" max="4" load="PIRATE_ESCAPE"/>
+      <destroyed load="DESTROYED_DEFAULT"/>
+      <gotaway>
+        <text>The pirate jumped away.</text>
+      </gotaway>
+      <deadCrew load="DEAD_CREW_DEFAULT"/>
+    </ship>
+  </event>
+</FTL>

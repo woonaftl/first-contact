@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="NEBULA_HOSTILE_HAZARD_ZOLTAN">
+    <event load="STORM_ZOLTAN_FIGHT"/>
+    <event load="STORM_ZOLTAN_PIRATE_FIGHT"/>
+  </eventList>
+
+  <event name="STORM_ZOLTAN_FIGHT">
+    <textList>
+      <text>With the sensors offline and reactor barely functional, your ship is not ready for combat in the plasma storm. The Zoltan ship pays little attention to hostile environment and attacks.</text>
+      <text>The beacon is beset by plasma storm, negatively affecting your ship's reactor. A Zoltan patrol ship is able to contact you despite hazardous conditions: "Your transit is unauthorized. This military ship is nowhere on the list." There's no time for talking with them.</text>
+      <text>The plasma storm is raging on the beacon located deep in Zoltan nebula. A small military ship, seemingly unaffected by it, approaches. You are unable to contact them as all of communiaction systems have gone offline. Soon, the Zoltan ship charges its weapons.</text>
+    </textList>
+    <environment type="storm"/>
+    <ship load="ZOLTAN_SHIP" hostile="true"/>
+  </event>
+
+  <event name="STORM_ZOLTAN_PIRATE_FIGHT" unique="true">
+    <text>While you prepared for Zoltan nebula to be hazardous, you did not expect to encounter a plasma storm of this magnitude. A pirate ship attacks, with intention of destroying your ship with no witnesses.</text>
+    <environment type="storm"/>
+    <ship load="PIRATE" hostile="true"/>
+  </event>
+</FTL>

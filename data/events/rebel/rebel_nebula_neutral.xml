@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="NEBULA_NEUTRAL_REBEL">
+    <event load="NEBULA_AUTO_ENDLESS_LOOP"/>
+    <event load="NEBULA_AUTO_DEFENSE_ITEM"/>
+    <event load="NEBULA_REBEL_CHASE"/>
+    <event load="NEBULA_REBEL_UNDETECTED"/>
+  </eventList>
+
+  <changelog>
+    <entry>Added 2 auto ships in endless loop event</entry>
+  </changelog>
+  <event name="NEBULA_AUTO_ENDLESS_LOOP" unique="true">
+    <text>You detect multiple ships running at maximum power nearby, but you can't see anything through this thick nebula.</text>
+    <environment type="nebula"/>
+    <choice>
+      <text>Get closer.</text>
+      <event>
+        <text>You find two automated Rebel scouts. The AI behaves very strange, not reacting to your arrival. Two ships are completely focused on each other.</text>
+        <choice hidden="true">
+          <text>Scan the ships.</text>
+          <event>
+            <text>Upon closer examination, it seems that the automated ships are caught in an endless loop. The first ship detects that the second lacks FTL fuel, then shares it, becoming low on fuel itself. You follow the actions of AI for minutes until you can finally avert your eyes and order the next action.</text>
+            <choice hidden="true">
+              <text>Attack!</text>
+              <event>
+                <text>The ship that currently had FTL fuel immediately jumps away to bring reinforcements. The other ship charges the weapons, readying itself for fight.</text>
+                <modifyPursuit amount="1"/>
+                <ship hostile="true" load="REBEL_AUTO"/>
+              </event>
+            </choice>
+            <choice hidden="true">
+              <text>Leave the ships to themselves.</text>
+              <event/>
+            </choice>
+          </event>
+        </choice>
+      </event>
+    </choice>
+    <choice>
+      <text>Ignore them.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <event name="NEBULA_AUTO_DEFENSE_ITEM" unique="true">
+    <text>An advance Rebel automated ship remains stationed near a small Rebel space-station. However, without functioning sensors it is impossible to tell what is inside.</text>
+    <environment type="nebula"/>
+    <ship load="REBEL_AUTO_ITEM" hostile="false"/>
+    <choice>
+      <text>Attack the automated ship to get to the station.</text>
+      <event>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice>
+      <text>Avoid provoking the ship.</text>
+      <event/>
+    </choice>
+    <choice req="cloaking" lvl="1" max_group="0" hidden="true">
+      <text>(Cloaking) Attempt to stealthily access the space station.</text>
+      <event load="NEBULA_AUTO_DEFENSE_ITEM_CLOAK"/>
+    </choice>
+    <choice req="cloaking" lvl="2" max_group="0" hidden="true">
+      <text>(Improved Cloaking) Use your stealth to access the space station.</text>
+      <event>
+        <text>You successfully sneak by the ship and access the station undetected.</text>
+        <choice hidden="true">
+          <text id="continue"/>
+          <event load="DEFENSE_ITEM_LIST"/>
+        </choice>
+      </event>
+    </choice>
+    <choice req="hacking" lvl="1" max_group="1" hidden="false">
+      <text>(Hacking) Try to hack the station to prevent an alert.</text>
+      <event load="NEBULA_AUTO_DEFENSE_ITEM_HACK"/>
+    </choice>
+    <choice req="hacking" lvl="2" max_group="1" hidden="false">
+      <text>(Improved Hacking) Hack the station to prevent an alert.</text>
+      <event>
+        <text>You successfully hack into the station and sever the connection to the automated ship, accessing the station completely undetected.</text>
+        <item_modify>
+          <item type="drones" min="-1" max="-1"/>
+        </item_modify>
+        <choice hidden="true">
+          <text id="continue"/>
+          <event load="DEFENSE_ITEM_LIST"/>
+        </choice>
+      </event>
+    </choice>
+  </event>
+  <eventList name="NEBULA_AUTO_DEFENSE_ITEM_CLOAK">
+    <event>
+      <text>You successfully sneak by the ship and access the station undetected.</text>
+      <choice hidden="true">
+        <text id="continue"/>
+        <event load="DEFENSE_ITEM_LIST"/>
+      </choice>
+    </event>
+    <event>
+      <text>You try to sneak past the automated ship but it quickly turns and attacks!</text>
+      <ship hostile="true"/>
+    </event>
+  </eventList>
+  <eventList name="NEBULA_AUTO_DEFENSE_ITEM_HACK">
+    <event>
+      <text>You successfully hack into the station and sever the connection to the automated ship. You access the station undetected.</text>
+      <item_modify>
+        <item type="drones" min="-1" max="-1"/>
+      </item_modify>
+      <choice hidden="true">
+        <text id="continue"/>
+        <event load="DEFENSE_ITEM_LIST"/>
+      </choice>
+    </event>
+    <event>
+      <text>You send a drone to hack the station but the automated ship notices and turns to attack!</text>
+      <item_modify>
+        <item type="drones" min="-1" max="-1"/>
+      </item_modify>
+      <ship hostile="true"/>
+    </event>
+  </eventList>
+  <ship name="REBEL_AUTO_ITEM" auto_blueprint="SHIPS_AUTO">
+    <destroyed>
+      <text>You salvage what you can from the broken ship.</text>
+      <autoReward level="MED">scrap_only</autoReward>
+      <choice hidden="true">
+        <text>Investigate the station.</text>
+        <event load="DEFENSE_ITEM_LIST"/>
+      </choice>
+    </destroyed>
+  </ship>
+  <eventList name="DEFENSE_ITEM_LIST">
+    <event>
+      <text>The station was either abandoned or stripped clean. It seems to have lain unused for quite some time. You find nothing useful.</text>
+    </event>
+    <event>
+      <text>The station was apparently designed to outfit Rebel ships with Drone Systems. You find a functioning Schematic.</text>
+      <autoReward level="LOW">drone</autoReward>
+    </event>
+    <event>
+      <text>The station is a storage site for military grade weapons. You find one that can be easily attached to the ship.</text>
+      <autoReward level="LOW">weapon</autoReward>
+    </event>
+    <event>
+      <text>The station is a storage site for various resources. You salvage everything possible.</text>
+      <autoReward level="MED">stuff</autoReward>
+    </event>
+  </eventList>
+
+  <event name="NEBULA_REBEL_CHASE" unique="true">
+    <text>You spot a Rebel ship in the nebula ahead and stay off their radar. Try to engage?</text>
+    <ship load="REBEL" hostile="false"/>
+    <environment type="nebula"/>
+    <choice>
+      <text>Stay hidden.</text>
+      <event>
+        <text>You try and stay out of sight. You doubt they saw you.</text>
+      </event>
+    </choice>
+    <choice>
+      <text>Prepare to chase them!</text>
+      <eventList name="NEBULA_REBEL_CHASE_LIST">
+        <event>
+          <text>You follow their vapour trails and surf onto their six o'clock, weapons hot.</text>
+          <ship hostile="true"/>
+        </event>
+        <event>
+          <text>Without sensors you can't maintain a lock for long. The Rebels slip away.</text>
+        </event>
+        <event>
+          <text>You get disoriented in the nebula and lose your bearings completely. It takes some time to get back to the beacon. It's likely the fleet has had time to advance closer to your position.</text>
+          <modifyPursuit amount="1"/>
+        </event>
+      </eventList>
+    </choice>
+    <choice req="sensors" lvl="3">
+      <text>(Advanced Sensors) Try to track them as you move to engage.</text>
+      <event>
+        <text>As soon as they see you they make a run for it. You squeeze what you can out of the malfunctioning sensors and are able to keep track of them long enough to get in firing range.</text>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice req="ADV_SCANNERS" hidden="true">
+      <text>(Warped Scanners) Try to track them as you move to engage.</text>
+      <event>
+        <text>As soon as they see you they make a run for it. You squeeze what you can out of the malfunctioning sensors and are able to keep track of them long enough to get in firing range.</text>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice req="LIFE_SCANNER" hidden="true">
+      <text>(Lifeform Scanner) Use their life signatures to follow.</text>
+      <event>
+        <text>Your augment's ability to keep track of their life signatures within the nebula proves useful. You catch up to the ship and prepare for a fight.</text>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+  </event>
+
+  <event name="NEBULA_REBEL_UNDETECTED" unique="true">
+    <text>Your ship emerges quite far away from the beacon. You see a Rebel ship waiting nearby, undoubtedly stationed to look for you.</text>
+    <ship load="REBEL" hostile="false"/>
+    <environment type="nebula"/>
+    <choice>
+      <text>Attack the ship.</text>
+      <event>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice>
+      <text>Attempt to remain concealed.</text>
+      <eventList name="NEBULA_REBEL_UNDETECTED_LIST">
+        <event>
+          <text>You immediately slip further into the clouds, but not quickly enough. The Rebel catches sight of you and moves in to engage!</text>
+          <choice>
+            <text>Prepare to fight.</text>
+            <event>
+              <ship hostile="true"/>
+            </event>
+          </choice>
+          <choice req="engines" lvl="4" hidden="true">
+            <text>(Engines) Fully power the engines to out-run them.</text>
+            <event>
+              <text>Your powerful engines allow you to out-distance the ship and eventually lose it within the nebula.</text>
+            </event>
+          </choice>
+        </event>
+        <event>
+          <text>You power down non-essential systems and slip into the cloud. The ship never noticed you.</text>
+        </event>
+        <event>
+          <text>The ship spots you and gives chase. After some quick maneuvering you were able to lose your pursuers in the clouds. You expect they warned the fleet of your position, however.</text>
+          <modifyPursuit amount="1"/>
+        </event>
+      </eventList>
+    </choice>
+    <choice req="cloaking" hidden="true">
+      <text>(Cloaking) Cloak to stay hidden.</text>
+      <event>
+        <text>You use your cloaking system to slip further into the nebula undetected.</text>
+      </event>
+    </choice>
+  </event>
+</FTL>

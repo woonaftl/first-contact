@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <event name="WARPED_DEAL_DEVIL" unique="true">
+    <text>You enter the peaceful section of nebula with no ships in sight. Suddenly, you hear the loud voice inside your head. "I know what you desire. I can fulfill your darkest wishes. The price is simple - I want your soul."</text>
+    <environment type="nebula"/>
+    <choice hidden="true">
+      <text>Learn more.</text>
+      <event>
+        <text>"Oh, you do not need the soul to live. In fact, I lived without it in this nebula for millions of years. Just sign the contract, and your every wish will come true." A piece of paper materializes on the bridge. It's covered in incomprehensible symbols, the only thing you can read is: "Sign here" above the rectangle.</text>
+        <choice hidden="true">
+          <text>Sign.</text>
+          <eventList>
+            <event>
+              <text>As you sign the paper, a weapon appears right in your weapon bay. It's an upgraded Burst Laser Mark II. Reliable and powerful. Exactly what you wanted.</text>
+              <weapon name="LASER_BURST_3_UPGRADED"/>
+              <choice hidden="true">
+                <text id="continue"/>
+                <event load="WARPED_DEAL_DEVIL_PRICE"/>
+              </choice>
+            </event>
+            <event>
+              <text>As you sign the paper, a weapon appears right in your weapon bay. It's a upgraded Halberd Beam. Slow but deadly. Exactly what you wanted.</text>
+              <weapon name="BEAM_2_UPGRADED"/>
+              <choice hidden="true">
+                <text id="continue"/>
+                <event load="WARPED_DEAL_DEVIL_PRICE"/>
+              </choice>
+            </event>
+            <event>
+              <text>As you sign the paper, an augmentation appears on your ship. It's a Weapon Pre-Igniter. You cannot believe your eyes. That's exactly what you wanted.</text>
+              <augment name="WEAPON_PREIGNITE"/>
+              <choice hidden="true">
+                <text id="continue"/>
+                <event load="WARPED_DEAL_DEVIL_PRICE"/>
+              </choice>
+            </event>
+            <event>
+              <text>As you sign the paper, an augmentation appears on your ship. It's Warped Scanners. Useful for avoiding dangers and planning your route. That's exactly what you wanted.</text>
+              <augment name="ADV_SCANNERS"/>
+              <choice hidden="true">
+                <text id="continue"/>
+                <event load="WARPED_DEAL_DEVIL_PRICE"/>
+              </choice>
+            </event>
+          </eventList>
+        </choice>
+        <choice hidden="true">
+          <text>Do not sign.</text>
+          <event/>
+        </choice>
+        <choice req="warped" hidden="true">
+          <text>(Warped) Ask for advice.</text>
+          <event>
+            <text>Your crewmember happens to know this creature personally. "This creature is full of malice and contempt. The deal won't bring you anything good." Your Warped comes up with a better idea: they suggest to sign a deal instead of you.</text>
+            <choice>
+              <text>Agree for Warped to sign the contract.</text>
+              <event>
+                <text>Your Warped crewmember presses their hand on the paper and bursts up in flames. The voice inside your head turns into a chilling scream. You lose consciousness.</text>
+                <crewMember class="warped" amount="-1"/>
+                <choice hidden="true">
+                  <text id="continue"/>
+                  <eventList>
+                    <event>
+                      <text>After you come to senses, you find a new weapon installed in your weapon bay. It's an upgraded Burst Laser Mark II. Reliable and powerful.</text>
+                      <weapon name="LASER_BURST_3_UPGRADED"/>
+                    </event>
+                    <event>
+                      <text>After you come to senses, you find a new weapon installed in your weapon bay. It's a upgraded Halberd Beam. Slow but deadly.</text>
+                      <weapon name="BEAM_2_UPGRADED"/>
+                    </event>
+                    <event>
+                      <text>After you come to senses, you find a new augmentation on your ship. It's a Weapon Pre-Igniter. You cannot believe your eyes.</text>
+                      <augment name="WEAPON_PREIGNITE"/>
+                    </event>
+                    <event>
+                      <text>After you come to senses, you find a new augmentation on your ship. It's Warped Scanners. Useful for avoiding dangers and planning your route. That's exactly what you wanted.</text>
+                      <augment name="ADV_SCANNERS"/>
+                    </event>
+                  </eventList>
+                </choice>
+              </event>
+            </choice>
+            <choice hidden="true">
+              <text>Sign the contract yourself anyway.</text>
+              <event load="WARPED_DEAL_DEVIL_SIGN"/>
+            </choice>
+            <choice hidden="true">
+              <text>Nobody signs the contract. Charge FTL drive.</text>
+              <event/>
+            </choice>
+          </event>
+        </choice>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Resist the temptation.</text>
+      <event/>
+    </choice>
+  </event>
+  <eventList name="WARPED_DEAL_DEVIL_PRICE">
+    <event>
+      <text>You start charging FTL drive, but cannot. It seems that the creature did not want your soul, but they took all fuel reserves instead. Or did they take your soul too?</text>
+      <item_modify>
+        <item max="-99" min="-99" type="fuel"/>
+      </item_modify>
+    </event>
+    <event>
+      <text>You hear shouts and gunshots on the ship. It seems that the creature did not want your soul, but instead they took the souls of your crewmembers. Former friends attack everyone on sight.</text>
+      <crewMember amount="-1" class="traitor"/>
+      <choice>
+        <text id="continue"/>
+        <event>
+          <text>More of your former crewmembers turn hostile.</text>
+          <crewMember amount="-1" class="traitor"/>
+        </event>
+      </choice>
+    </event>
+    <event>
+      <text>A powerful explosion shakes your ship. Looks like the creature did not want your soul. Instead they haunted your ship and try to destroy it from inside.</text>
+      <damage amount="5" effect="fire" system="random"/>
+      <damage amount="5" effect="fire" system="random"/>
+      <damage amount="5" effect="fire" system="room"/>
+      <damage amount="5" effect="fire" system="room"/>
+    </event>
+  </eventList>
+</FTL>

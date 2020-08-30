@@ -9,7 +9,7 @@
       <cloaking power="1" room="14" start="false" img="room_cloaking_16"/>
       <clonebay power="1" room="5" start="false" slot="1"/>
       <doors power="1" room="7" start="true" img="room_doors_9"/>
-      <drones power="3" room="3" start="true" img="room_drones_26"/>
+      <drones power="4" room="3" start="true" img="room_drones_26"/>
       <engines power="1" room="2" start="true" img="room_engines_11"/>
       <hacking power="1" room="15" start="false" img="room_hacking_18"/>
       <medbay power="1" room="5" start="false" img="room_medbay_9"/>
@@ -27,13 +27,14 @@
       <weapon name="LASER_BURST_2_UPGRADED"/>
       <weapon name="BOMB_BREACH_1"/>
     </weaponList>
-    <droneList count="2" drones="15">
+    <droneList count="3" drones="15">
       <drone name="BOARDER_ION_UPGRADED"/>
       <!--<drone name="MED_DRONE_UPGRADED"/>-->
+      <!--<drone name="BOARDER_LOCKDOWN_UPGRADED"/>-->
     </droneList>
     <aug name="DRONE_SPEED_LOCKED"/>
     <health amount="30"/>
-    <maxPower amount="9"/>
+    <maxPower amount="10"/>
     <crewCount amount="2" class="pavonian"/>
     <shieldImage>kestral</shieldImage>
     <cloakImage>pavonian_cruiser</cloakImage>
@@ -78,26 +79,26 @@
     <floorImage>pavonian_cruiser_blue</floorImage>
   </shipBlueprint>
 
-  <shipBlueprint name="PLAYER_SHIP_PAVONIAN_3" layout="pavonian_cruiser" img="pavonian_cruiser">
+  <shipBlueprint name="PLAYER_SHIP_PAVONIAN_3" layout="pavonian_cruiser_black" img="pavonian_cruiser">
     <class>Pavonian Cruiser</class>
     <name>?</name>
     <desc>Heavily understaffed, this ship relies on drones to keep the ship running and on heavy weapons to disable enemies.</desc>
     <systemList>
-      <battery power="1" room="1" start="false" img="room_battery_13"/>
-      <cloaking power="1" room="14" start="false" img="room_cloaking_16"/>
-      <clonebay power="1" room="5" start="false" slot="1"/>
-      <doors power="1" room="7" start="true" img="room_doors_9"/>
-      <drones power="3" room="3" start="true" img="room_drones_26"/>
-      <engines power="1" room="2" start="true" img="room_engines_11"/>
-      <hacking power="1" room="15" start="false" img="room_hacking_18"/>
-      <medbay power="1" room="5" start="true" img="room_medbay_9"/>
-      <mind power="1" room="9" start="false" img="room_mind_6"/>
-      <oxygen power="1" room="4" start="true" img="room_oxygen"/>
+      <battery power="1" room="10" start="false" img="room_battery_6"/>
+      <cloaking power="1" room="22" start="false" img="room_cloaking_7"/>
+      <clonebay power="1" room="8" start="false" slot="1"/>
+      <doors power="1" room="7" start="true" img="room_doors_7"/>
+      <drones power="3" room="3" start="true" img="room_drones_7"/>
+      <engines power="1" room="18" start="true" img="room_engines_9"/>
+      <hacking power="1" room="21" start="false" img="room_hacking_18"/>
+      <medbay power="1" room="8" start="true" img="room_medbay_9"/>
+      <mind power="1" room="9" start="false" img="room_mind_11"/>
+      <oxygen power="1" room="11" start="true" img="room_oxygen_17"/>
       <pilot power="3" room="0" start="true" img="room_pilot_2"/>
-      <sensors power="1" room="6" start="false" img="room_sensors_3"/>
-      <shields power="2" room="19" start="true" img="room_shields_17"/>
-      <teleporter power="1" room="8" start="false"/>
-      <weapons power="3" room="18" start="true" img="room_weapons_13"/>
+      <sensors power="1" room="12" start="false" img="room_sensors_3"/>
+      <shields power="2" room="17" start="true" img="room_shields_4"/>
+      <teleporter power="1" room="16" start="false"/>
+      <weapons power="3" room="4" start="true" img="room_weapons_5"/>
     </systemList>
     <weaponSlots>3</weaponSlots>
     <droneSlots>3</droneSlots>
@@ -116,5 +117,6 @@
     <crewCount amount="1" class="pavonian"/>
     <shieldImage>kestral</shieldImage>
     <cloakImage>pavonian_cruiser</cloakImage>
+    <floorImage>pavonian_cruiser_black</floorImage>
   </shipBlueprint>
 </FTL>

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="NOSHIP_CRYSTAL">
+    <event load="CRYSTAL_CACHE"/>
+    <event load="CRYSTAL_SCRAP_EXCITED"/>
+    <event load="CRYSTAL_CHATTY"/>
+    <event load="CRYSTAL_REQUEST"/>
+  </eventList>
+
+  <event name="CRYSTAL_CACHE" unique="true">
+    <text>Odd radar pings from a huge, orbiting asteroid here reveal a Crystalline cache of some kind. A deep crater has been sealed over with a thick layer of crystal to keep whatever's inside safe - it'd take some serious firepower to break though.</text>
+    <choice hidden="true">
+      <text>Attempt to break through with the weapons you have.</text>
+      <eventList name="CRYSTAL_CACHE_BREAK">
+        <event count="2">
+          <text>You fire everything you have, but the crystal barrier remains strong. After a time you give up and move on.</text>
+        </event>
+        <event>
+          <text>Against all odds, a lucky shot strikes an existing fracture in the crystal, compounding it into a crack that grows until an entire section of the barrier falls away!</text>
+          <choice hidden="true">
+            <text>Investigate the cache.</text>
+            <event load="CRYSTAL_CACHE_LIST"/>
+          </choice>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true" req="WEAPONS_MISSILES_EVENTS">
+      <text>(Missile weapon) Use a missile.</text>
+      <event>
+        <text>A warhead dislodges and shatters a massive shard of crystal, leaving your away team enough space to climb down and take a look.</text>
+        <item_modify>
+          <item type="missiles" min="-1" max="-1"/>
+        </item_modify>
+        <choice hidden="true">
+          <text>Investigate the cache.</text>
+          <event load="CRYSTAL_CACHE_LIST"/>
+        </choice>
+      </event>
+    </choice>
+    <choice hidden="true" req="crystal">
+      <text>(Crystal crewmember) Have your Crystalline Being recalibrate your weapons.</text>
+      <event>
+        <text>Your Crystalline crew-member is able to adjust the detonation frequency of your weapons to resonate with this type of crystal, and the barrier gives little resistance.</text>
+        <choice hidden="true">
+          <text>Investigate the cache.</text>
+          <event load="CRYSTAL_CACHE_LIST"/>
+        </choice>
+      </event>
+    </choice>
+  </event>
+  <eventList name="CRYSTAL_CACHE_LIST">
+    <event count="2">
+      <text>On arriving at the base of the crater, your team discovers a long-forgotten weapons cache. Most of the equipment is out of action, but not all of it!</text>
+      <weapon name="WEAPONS_CRYSTAL"/>
+      <autoReward level="LOW">stuff</autoReward>
+    </event>
+    <event>
+      <text>You send a crewmember down to check out the cache. The comm goes dead, and shortly thereafter massive gravity readings are detected on the asteroid. You must have triggered some kind of singularity booby trap! We've got to leave now before we're pulled in!</text>
+      <choice hidden="true">
+        <text>Pull out now!</text>
+        <event>
+          <text>You push the impulse engines to their limit and are able to break out of the gravity well. Your crewmember, along with the stockpile, is reduced to the size of a tennis ball - but you're left in one piece.</text>
+          <removeCrew>
+            <clone>true</clone>
+            <text>Luckily, your clone bay is able to revive your crewmember.</text>
+          </removeCrew>
+        </event>
+      </choice>
+      <choice hidden="true">
+        <text>Detonate your entire fuel reserves to escape with your crew and the cargo.</text>
+        <event>
+          <text>You swoop into the heart of the distortion and pick up your crewmember and the cargo. You then eject your FTL fuel and ignite it, sending a shock wave that thrusts your ship well beyond the event horizon of the singularity. That was close.</text>
+          <item_modify steal="true">
+            <item type="fuel" min="-100" max="-100"/>
+          </item_modify>
+          <weapon name="RANDOM"/>
+          <autoReward level="LOW">stuff</autoReward>
+        </event>
+      </choice>
+      <choice hidden="true" req="teleporter" lvl="2">
+        <text>(Improved Teleporter) Beam your crewmember back on board.</text>
+        <event>
+          <text>You floor the engines to escape the gravity well while trying to get a teleporter lock on your crewmember despite the massive interference. You're barely able to get them back on board before the entire area is consumed into the singularity.</text>
+        </event>
+      </choice>
+      <choice hidden="true" req="engines" lvl="7">
+        <text>(Advanced Engines) Rescue your crewmember and the cargo.</text>
+        <event>
+          <text>You swoop into the heart of the distortion and pick up your crewmember and the cargo. Your top of the line impulse engines are barely able to get your ship out of the gravity well before the whole ship is consumed. That was close.</text>
+          <weapon name="RANDOM"/>
+          <autoReward level="LOW">stuff</autoReward>
+        </event>
+      </choice>
+    </event>
+  </eventList>
+
+  <event name="CRYSTAL_SCRAP_EXCITED" unique="true">
+    <text>You receive a signal from a private relay on a nearby inhabited planet. "Are you the alien ship they've been talking about?! You are! Please, I am a collector of alien artifacts, I'm sure what is scrap to you is priceless to me."</text>
+    <choice hidden="true">
+      <text>Offer 35 scrap.</text>
+      <event>
+        <text>"My word! Is this... a 25th century Rockman thrust stabilizer?! What do you want for it? Wait, I have a better proposal. I long to see the galaxy. I propose I come with you. What do you say?"</text>
+        <item_modify>
+          <item type="scrap" min="-35" max="-35"/>
+        </item_modify>
+        <choice hidden="true">
+          <text>Accept.</text>
+          <event>
+            <text>"I shan't even gather my belongings - only permit me to leave my family a message." The Crystalline Being joins your crew.</text>
+            <crewMember amount="1" class="crystal"/>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>Request another payment.</text>
+          <eventList name="CRYSTAL_SCRAP_EXCITED_LIST">
+            <event>
+              <text>"Very well, a payment in kind. I have these explosives that emulate our race's innate ability. Perhaps that would interest you."</text>
+              <weapon name="BOMB_LOCK"/>
+            </event>
+            <event>
+              <text>"Very well, a payment in kind. I have an extra ship weapon laying around here somewhere. Perhaps you could make use of it?"</text>
+              <weapon name="RANDOM"/>
+            </event>
+          </eventList>
+        </choice>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Turn him down.</text>
+      <event>
+        <text>Scrap is priceless no matter where you are in the galaxy. You hold onto your goods and prepare to jump.</text>
+      </event>
+    </choice>
+  </event>
+
+  <event name="CRYSTAL_CHATTY" unique="true">
+    <text>A small civilian vessel messages you, "Wow! You're that alien that opened up the portal, aren't you! Are you busy? Can I ask you a question?"</text>
+    <choice hidden="true">
+      <text>Yes.</text>
+      <event>
+        <text>"What do you eat? What is your culture like? How long do your people live?"</text>
+        <choice hidden="true">
+          <text>Try to answer his questions.</text>
+          <eventList name="CRYSTAL_CHATTY_LIST">
+            <event>
+              <text>You speak at length about nothing particularly interesting. "Wow, thanks. Oh look, another alien ship! I wonder if they're as nice as you." Seeing the Rebel decals you doubt they're friendly. They spot you and move in to attack, while the Crystalline civilian jumps away.</text>
+              <ship load="REBEL" hostile="true"/>
+            </event>
+            <event>
+              <text>You speak at length about nothing particularly interesting. "Wow, thanks! I don't know if this is of any use to you, but we have some supplies we can offer you. Perhaps you can use them on your trip!"</text>
+              <autoReward level="RANDOM">stuff</autoReward>
+            </event>
+            <event>
+              <text>You speak at length about nothing particularly interesting. "Wow, thanks! Perhaps we can fix up a bit of your hull for sating my curiosity. We're pretty handy with repairs."</text>
+              <damage amount="-6"/>
+            </event>
+          </eventList>
+        </choice>
+        <choice hidden="true">
+          <text>"I don't have time for this."</text>
+          <event>
+            <text>"I see. Oh well. Maybe the next alien I meet will be nicer..." You prepare to jump.</text>
+          </event>
+        </choice>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>No.</text>
+      <event>
+        <text>"I see... I guess you're busy."</text>
+      </event>
+    </choice>
+    <choice hidden="true" req="crystal">
+      <text>(Crystal Crew) Have your crew speak to them.</text>
+      <event>
+        <text>"Wow, you're one of us! I didn't know we made an alliance with the aliens. I guess I won't bother you, but here, have some of our extra supplies!"</text>
+        <autoReward level="RANDOM">fuel</autoReward>
+      </event>
+    </choice>
+  </event>
+
+  <event name="CRYSTAL_REQUEST" unique="true">
+    <text>The moment you arrive you notice a Crystalline ship in the vicinity keeping its distance. They message you, "The 'Rebels' that are trying to hunt YOU down are creating havoc everywhere they go."</text>
+    <ship load="CRYSTAL_SHIP_NO_SURRENDER" hostile="false"/>
+    <choice hidden="true">
+      <text id="continue"/>
+      <event>
+        <text>"To minimize their impact on our people, we would like you to give them your flight path out of our sector. We would like to remain civil and are willing to pay you in 'scrap' for the increased danger it poses.</text>
+        <choice hidden="true">
+          <text>Give them your flight plans.</text>
+          <event>
+            <text>It was never your intention to lead the Rebels here, and frankly you could do with the scrap. The Crystalline ship immediately jumps off to inform the Rebels, leaving you with a fleet to outrun!</text>
+            <autoReward level="HIGH">scrap_only</autoReward>
+            <modifyPursuit amount="1"/>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>Accept the scrap but give them false flight plans.</text>
+          <eventList name="CRYSTAL_REQUEST_LIST">
+            <event>
+              <text>Unable to interpret it themselves, the Crystalline Beings assume your data will mean something to the Rebels. It should see the pursuing fleet taking a leisurely cruise before they get back on track.</text>
+              <autoReward level="HIGH">scrap_only</autoReward>
+              <modifyPursuit amount="-1"/>
+            </event>
+            <event>
+              <text>They take one look at your fake telemetry and realize what you've done. They apparently do not take being lied to well - they immediately attack!</text>
+              <ship hostile="true"/>
+              <boarders min="1" max="2" class="crystal"/>
+            </event>
+          </eventList>
+        </choice>
+        <choice hidden="true" req="FLEET_DISTRACTION">
+          <text>(Distraction Buoy) Accept the scrap but give them falsified flight plans.</text>
+          <event>
+            <text>Your distraction buoy allows you to create very convincing flight plan. They accept it as true and give you the scrap. The deception may not be the most honorable tactic but staying ahead of the fleet is your highest priority.</text>
+            <autoReward level="HIGH">scrap_only</autoReward>
+            <modifyPursuit amount="-1"/>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>Refuse.</text>
+          <event>
+            <text>You apologize for the trouble you've brought them, but explain that you have no choice. They seem to understand, and break the comm link to set about preparing defenses.</text>
+          </event>
+        </choice>
+      </event>
+    </choice>
+  </event>
+</FTL>

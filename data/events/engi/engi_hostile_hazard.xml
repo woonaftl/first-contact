@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="HOSTILE_HAZARD_ENGI">
+    <event load="ENGI_PIRATE_ASTEROID"/>
+  </eventList>
+
+  <event name="ENGI_PIRATE_ASTEROID">
+    <img planet="NONE" back="BG_DARK"/>
+    <environment type="asteroid"/>
+    <text>You arrive in the middle of a local asteroid belt. Quick scans show the remains of Engi mining equipment and a pirate ship moving towards you at full speed.</text>
+    <ship load="PIRATE" hostile="true"/>
+  </event>
+</FTL>

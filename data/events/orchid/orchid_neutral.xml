@@ -4,15 +4,10 @@
     <event load="ORCHID_UNDER_ATTACK_PIRATE"/>
     <event load="ORCHID_UNARMED_TRADER"/>
     <event load="ORCHID_SLAVES"/>
-    <event load="ORCHID_BOTANICAL_GALLERY"/>
     <event load="ORCHID_SLUG_TAUNT"/>
-
-    <event load="MERCENARY"/>
-    <event load="REFUGEE_NO_DISTRESS"/>
-    <event load="FUELING_STATION"/>
   </eventList>
 
-  <event name="ORCHID_UNDER_ATTACK_PIRATE" unique="false">
+  <event name="ORCHID_UNDER_ATTACK_PIRATE">
     <text>An unarmed Orchid vessel is trying to flee from a ship with the markings of a space pirate that is chasing behind.</text>
     <choice hidden="true">
       <text>Help the Orchid ship.</text>
@@ -133,92 +128,6 @@
     </choice>
     <choice hidden="true">
       <text>Decline and jump away.</text>
-      <event/>
-    </choice>
-  </event>
-
-  <event name="ORCHID_BOTANICAL_GALLERY" unique="true">
-    <text>A giant Orchid station is located at the beacon. It's marked as an "Augmented Botanical Gallery" on your star map.</text>
-    <choice hidden="true">
-      <text>Visit the station.</text>
-      <event>
-        <text>The atmosphere of tranquility with a small touch of curiosity fills the main hall. There are all kinds of strange exhibits in the gallery. You wonder which to visit.</text>
-        <choice>
-          <text>Pay an entry fee to visit "Kernel".</text>
-          <event>
-            <text>The exhibit contains a giant sphere, protected from all sides with reinforced metal coating. Giant trees are growing inside. You are a bit disappointed.</text>
-            <item_modify>
-              <item max="-9" min="-12" type="scrap"/>
-            </item_modify>
-            <choice hidden="true">
-              <text id="continue"/>
-              <event>
-                <text>Suddenly, a series of explosions rocks entire station wing. The trees are bursting, releasing giant kernels out. The protective sphere can barely stop the kernels from destroying the station. The Orchids offer some explosive kernels for free: they are looking for every opportunity to get rid of them.</text>
-                <item_modify>
-                  <item max="12" min="9" type="missiles"/>
-                </item_modify>
-              </event>
-            </choice>
-          </event>
-        </choice>
-        <choice>
-          <text>Pay an entry fee to visit "Cat"</text>
-          <event>
-            <text>The exhibit is a tight overgrown labyrinth of trees and vines containing swarms of creatures of various size moving everywhere rapidly, climbing on surfaces and swinging from vines. You feel overwhelmed and scared even though the creatures do not harm you.</text>
-            <item_modify>
-              <item max="-9" min="-12" type="scrap"/>
-            </item_modify>
-            <choice hidden="true">
-              <text id="continue"/>
-              <event>
-                <text>A small creature jumps right into your hands and purrs! You examine it and realize that it's a drone made by Orchids with metal and organic parts tightly intertwined. After leaving the gallery, you aren't allowed to take the drone: it wasn't built for combat. The Orchids offer you another drone instead.</text>
-                <drone name="RANDOM"/>
-              </event>
-            </choice>
-          </event>
-        </choice>
-        <choice>
-          <text>Pay an entry fee to visit "Hemp".</text>
-          <event>
-            <text>The exhibit contains a field of... grass. It looks like usual Earth grass with plain flowers but strangely familiar leaf pattern. Was it really worth it?</text>
-            <item_modify>
-              <item max="-9" min="-12" type="scrap"/>
-            </item_modify>
-            <choice hidden="true">
-              <text id="continue"/>
-              <event>
-                <text>After a few minutes on the meadow you feel your worries go away, a desire to laugh, and an irresistible urge to hug a Mantis nearby. After a while, you and the Mantis who turned out to be another visitor become best friends and they agree to join your crew.</text>
-                <crewMember amount="1" class="mantis"/>
-              </event>
-            </choice>
-          </event>
-        </choice>
-        <choice>
-          <text>Pay an entry fee to visit "Sap".</text>
-          <event>
-            <text>This exhibit is a giant machine which is made entirely from plant matter. The contraption sap of lean white-barked trees and moving the sap into processing part which outputs a liquid advertised as high quality FTL fuel.</text>
-            <item_modify>
-              <item max="-9" min="-12" type="scrap"/>
-            </item_modify>
-            <choice hidden="true">
-              <text id="continue"/>
-              <event>
-                <text>Since you have already paid for entry, the Orchids are offering some of experimental fuel for free.</text>
-                <item_modify>
-                  <item max="7" min="5" type="fuel"/>
-                </item_modify>
-              </event>
-            </choice>
-          </event>
-        </choice>
-        <choice hidden="true">
-          <text>Leave a gallery without visiting anything.</text>
-          <event/>
-        </choice>
-      </event>
-    </choice>
-    <choice hidden="true">
-      <text>Charge FTL drive.</text>
       <event/>
     </choice>
   </event>

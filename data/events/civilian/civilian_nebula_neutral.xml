@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="NEBULA_NEUTRAL_CIVILIAN">
+    <event load="NEBULA_LOST_SHIP"/>
+    <event load="NEBULA_MANTIS_CHOICE"/>
+    <!--pirate events-->
+    <event load="NEBULA_PIRATE_SMUGGLE"/>
+    <!--rebel events-->
+    <event load="NEBULA_AUTO_DEFENSE_ITEM"/>
+  </eventList>
+
+  <event name="NEBULA_LOST_SHIP" unique="true">
+    <text>A heavily damaged Federation ship is hiding in the nebula at this beacon. Before you have time to make contact with them, they fade into the nebula.</text>
+    <environment type="nebula"/>
+    <choice hidden="true">
+      <text>Attempt to follow and help them.</text>
+      <eventList name="NEBULA_LOST_SHIP_LIST">
+        <event count="2">
+          <text>Your search is hopeless. Your sensors can't pick up anything in the nebula.</text>
+        </event>
+        <event count="2">
+          <text>While searching fruitlessly through the nebula, you stumble upon the Rebel ship which the Federation loyalists were likely hiding from. You prepare for a fight.</text>
+          <ship load="REBEL" hostile="true"/>
+        </event>
+        <event>
+          <text>You get lucky and find them floating not too deep into the nebula. Thrilled to be found by friendlies, they come on board and abandon their wrecked ship.</text>
+          <crewMember amount="1"/>
+        </event>
+      </eventList>
+    </choice>
+    <choice>
+      <text>Keep your position, they can handle themselves.</text>
+      <event/>
+    </choice>
+    <choice req="teleporter" hidden="true">
+      <text>(Teleporter) Lock onto their life-signs with your teleporter.</text>
+      <event>
+        <text>You beam the Federation crew aboard. One gladly joins your crew, the rest wait to be dropped off at the next station.</text>
+        <crewMember amount="1"/>
+      </event>
+    </choice>
+    <choice req="ADV_SCANNERS" hidden="true">
+      <text>(Warped Scanners) Pump extra power into your sensors and try to track them.</text>
+      <eventList name="NEBULA_LOST_SHIP_LIST2">
+        <event>
+          <text>Your local radar flickers, periodically showing signs of a large object in the clouds nearby. However it's enough to get coordinates and you find the ship... an empty hull, long since stripped of functioning components.</text>
+          <autoReward level="MED">scrap_only</autoReward>
+        </event>
+        <event>
+          <text>You follow the faint signatures and find them floating not too far away into the nebula. Thrilled to be found by friendlies, they come on board and abandon their wrecked ship.</text>
+          <crewMember amount="1"/>
+        </event>
+      </eventList>
+    </choice>
+  </event>
+
+  <event name="NEBULA_MANTIS_CHOICE" unique="true">
+    <text>Navigating the fog blind, you practically bump hulls with a Mantis ship. They hail you: "Pah! This transgression will be overlooked. Nebula, very dangerous. Next time, humans all die."</text>
+    <ship load="MANTIS_FIGHT" hostile="false"/>
+    <environment type="nebula"/>
+    <choice>
+      <text>There won't be a next time. Open fire!</text>
+      <event>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice>
+      <text>This place is dangerous enough. Move on.</text>
+      <event/>
+    </choice>
+  </event>
+</FTL>

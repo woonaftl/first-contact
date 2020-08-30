@@ -4,9 +4,10 @@
     <name>ORCHID_DESTROYER</name>
     <name>ORCHID_FIGHTER</name>
     <name>ORCHID_GUARD</name>
+    <name>ORCHID_SCOUT</name>
   </blueprintList>
 
-  <!--TODO add 3-4 generic ships-->
+  <!--TODO add 2-3 generic ships-->
 
   <shipBlueprintSuper name="ORCHID_DESTROYER" img="orchid_destroyer" layout="orchid_destroyer">
     <class>Orchid Destroyer</class>
@@ -121,5 +122,39 @@
     <crewCount amount="4" max="7" class="orchid"/>
     <boardingAI>sabotage</boardingAI>
     <cloakImage>orchid_guard</cloakImage>
+  </shipBlueprintSuper>
+
+  <shipBlueprintSuper name="ORCHID_SCOUT" img="orchid_scout" layout="orchid_scout">
+    <class>Orchid Scout</class>
+    <systemList>
+      <pilot power="1" max="3" room="0"/>
+      <engines power="1" max="4" room="4"/>
+      <weapons room="6"/>
+      <oxygen power="1" room="5"/>
+      <shields power="2" max="7" room="2"/>
+      <medbay power="1" max="3" room="3" start="false"/>
+    </systemList>
+    <weaponList sector="0" missiles="0" system_power="3">
+      <weapon name="WEAPONS_CHAIN_2"/>
+      <weapon name="WEAPONS_LASER_1"/>
+    </weaponList>
+    <weaponList sector="1" missiles="0" system_power="4">
+      <weapon name="WEAPONS_CHAIN_2"/>
+      <weapon name="WEAPONS_LASER_2"/>
+    </weaponList>
+    <weaponList sector="2" missiles="0" system_power="5">
+      <weapon name="WEAPONS_CHAIN_3"/>
+      <weapon name="WEAPONS_LASER_2"/>
+    </weaponList>
+    <weaponList sector="3" missiles="1" system_power="5">
+      <weapon name="WEAPONS_CHAIN_3"/>
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_MISSILES_1"/>
+      <weapon name="WEAPONS_ANY_1"/>
+    </weaponList>
+    <health amount="7"/>
+    <crewCount amount="2" max="3" class="orchid"/>
+    <boardingAI>sabotage</boardingAI>
+    <cloakImage>orchid_scout</cloakImage>
   </shipBlueprintSuper>
 </FTL>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="NEBULA_HOSTILE_HAZARD_REBEL">
+    <event load="STORM_AUTO"/>
+    <event load="STORM_REBEL"/>
+  </eventList>
+
+  <event name="STORM_AUTO" unique="true">
+    <text>You jump into a sector of the nebula beset by a plasma storm. An automated Rebel scout stationed at the beacon moves in to attack.</text>
+    <environment type="storm"/>
+    <choice>
+      <text>Prepare to fight.</text>
+      <event>
+        <ship load="REBEL_AUTO" hostile="true"/>
+      </event>
+    </choice>
+    <choice req="engines" lvl="3" max_group="0" hidden="true">
+      <text>(Engines) Attempt to out-run it.</text>
+      <event load="STORM_AUTO_ESCAPE"/>
+    </choice>
+    <choice req="engines" lvl="6" max_group="0" hidden="true">
+      <text>(Improved Engines) Attempt to out-run it.</text>
+      <event>
+        <text>You successfully lose the ship in the storm.</text>
+      </event>
+    </choice>
+    <choice req="cloaking" hidden="true">
+      <text>(Cloaking) Use your cloaking to escape.</text>
+      <event>
+        <text>By using your advanced cloaking system you easily lose your pursuer in the storm.</text>
+      </event>
+    </choice>
+  </event>
+  <eventList name="STORM_AUTO_ESCAPE">
+    <event>
+      <text>You successfully lose the ship in the storm.</text>
+    </event>
+    <event>
+      <text>Despite your advanced engines you are unable to shake them; you turn and prepare for a fight.</text>
+      <ship load="REBEL_AUTO" hostile="true"/>
+    </event>
+  </eventList>
+
+  <event name="STORM_REBEL" unique="true">
+    <text>You arrive in the middle of a plasma storm. Despite the harsh conditions, a Rebel scout seems to be waiting for you.</text>
+    <ship load="REBEL" hostile="true"/>
+    <environment type="storm"/>
+  </event>
+</FTL>

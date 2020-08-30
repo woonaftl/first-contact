@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="NOSHIP_MANTIS">
+    <event load="MANTIS_FIND_WEAPON"/>
+    <event load="MANTIS_SUN_WRECK"/>
+ </eventList>
+
+  <event name="MANTIS_FIND_WEAPON">
+    <!-- text taken from FIND_WEAPON -->
+    <text>As soon as you arrive a small Mantis ship detaches from a wreck and jumps away. You must have interrupted their salvage operation because you find a weapon ready to be installed!</text>
+    <autoReward level="LOW">weapon</autoReward>
+  </event>
+
+  <changelog>
+    <entry>Added Mantis wreck near sun event</entry>
+  </changelog>
+  <event name="MANTIS_SUN_WRECK" unique="true">
+    <text>The beacon is located dangerously close to a giant star. Sensors detect a wreck of the Mantis vessel nearby. You could get some scrap, but your ship will surely overheat.</text>
+    <environment type="sun"/>
+    <choice hidden="true">
+      <text>Scrap the wreck.</text>
+      <eventList>
+        <event>
+          <text>You approach the wreck. As the heat sensors turn red, and the fire starts in engines, you quickly understand why the Mantis ship was destroyed.</text>
+          <autoReward level="MED">scrap_only</autoReward>
+          <damage amount="3" effect="fire" system="engines"/>
+        </event>
+        <event>
+          <text>You approach the wreck. As the heat sensors turn red, and the fire starts in engines, you quickly understand why the Mantis ship was destroyed.</text>
+          <autoReward level="MED">scrap_only</autoReward>
+          <damage amount="5" effect="fire" system="engines"/>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true" lvl="5" req="engines">
+      <text>(Engines) Quickly scrap the wreck.</text>
+      <event>
+        <text>"Full power to engines!" You manage to scrap the remains of Mantis ship and make the safe distance from the sun just before the ship overheats.</text>
+        <autoReward level="MED">scrap_only</autoReward>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Leave the dangerous area immediately.</text>
+      <event/>
+    </choice>
+  </event>
+</FTL>

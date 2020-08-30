@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="NEUTRAL_PAVONIAN">
+    <event load="PAVONIAN_DO_NOT_CARE"/>
+    <event load="PAVONIAN_DRONE_FACTORY"/>
+  </eventList>
+
+  <event name="PAVONIAN_DO_NOT_CARE" unique="true">
+    <text>The Pavonian ship at the beacon just stays at the same spot without paying you any attention.</text>
+    <ship hostile="false" load="PAVONIAN_SHIP"/>
+    <choice>
+      <text>Attack the ship.</text>
+      <event>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice>
+      <text>Greet the ship.</text>
+      <event>
+        <text>You send a brief greeting message tp Pavonian ship but there is no answer.</text>
+        <choice>
+          <text>Attack the ship.</text>
+          <event>
+            <ship hostile="true"/>
+          </event>
+        </choice>
+        <choice>
+          <text>Ask if they support the Rebels or Federation.</text>
+          <event>
+            <text>You ask about Pavonian allegiance but there is no answer. It seems that they're either neutral or wait for you to uncover your allegiance first.</text>
+            <choice>
+              <text>Attack the ship.</text>
+              <event>
+                <ship hostile="true"/>
+              </event>
+            </choice>
+            <choice>
+              <text>Tell about your mission without going into details.</text>
+              <event>
+                <text>You explained to Pavonian ship how you intend to defeat the Rebellion with one swift strike. The Pavonians pay you no notice.</text>
+                <choice>
+                  <text>Attack the ship.</text>
+                  <event>
+                    <ship hostile="true"/>
+                  </event>
+                </choice>
+                <choice>
+                  <text>Tell the Pavonians about incoming Rebel fleet.</text>
+                  <event>
+                    <text>You explain at length about the Rebel threat and how the Rebels are capturing whole sectors just looking for your ship. The Pavonian ship doesn't seem to care.</text>
+                    <choice>
+                      <text>Attack the ship.</text>
+                      <event>
+                        <ship hostile="true"/>
+                      </event>
+                    </choice>
+                    <choice>
+                      <text>Ask if there is anyone alive on the ship.</text>
+                      <event>
+                        <text>The Pavonian ship finally responds: "Yes. Now could you kindly go away?" The ship arms the weapons. Looks like they won't take no for an answer.</text>
+                        <ship hostile="true"/>
+                      </event>
+                    </choice>
+                    <choice>
+                      <text>Ignore the ship.</text>
+                      <event/>
+                    </choice>
+                  </event>
+                </choice>
+                <choice>
+                  <text>Ignore the ship.</text>
+                  <event/>
+                </choice>
+              </event>
+            </choice>
+            <choice>
+              <text>Ignore the ship.</text>
+              <event/>
+            </choice>
+          </event>
+        </choice>
+        <choice>
+          <text>Ignore the ship.</text>
+          <event/>
+        </choice>
+      </event>
+    </choice>
+    <choice>
+      <text>Ignore the ship.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <event name="PAVONIAN_DRONE_FACTORY" unique="true">
+    <textList>
+      <text>You stumble upon an automated drone factory. Its structure resembles Pavonian designs. Scans show it is unarmed and completely defenseless not counting the drones swarming inside.</text>
+    </textList>
+    <choice hidden="false">
+      <text>Take one of the drones to your ship. You may find some use for it.</text>
+      <eventList>
+        <event>
+          <text>You board the station and steal one of the drones. There are no security systems, so you think about just leaving the factory.</text>
+          <drone name="RANDOM"/>
+          <choice hidden="false">
+            <text>Grab some drone parts, too!</text>
+            <eventList>
+              <event>
+                <text>You take some spare drone parts and make your leave. The station continues working while you undock as if nothing happened. You could loot the whole factory, but you can't risk the Rebel fleet finding you.</text>
+                <item_modify>
+                  <item type="drones" min="5" max="6"/>
+                </item_modify>
+              </event>
+              <event>
+                <text>You take some spare drone parts and make your leave. But while you were occupied, a Pavonian ship has jumped into the system and is rapidly moving towards your ship with hostile intentions.</text>
+                <item_modify>
+                  <item type="drones" min="5" max="6"/>
+                </item_modify>
+                <ship load="PAVONIAN_SHIP" hostile="true"/>
+              </event>
+              <event>
+                <text>As you grab spare drone parts, the alarms go off. An explosion shakes your ship, still docked to the station. The pirate ship, the true owner of the drone factory, has jumped into the system and moves towards your ship with weapons online.</text>
+                <item_modify>
+                  <item type="drones" min="5" max="6"/>
+                </item_modify>
+                <ship load="PIRATE" hostile="true"/>
+                <damage amount="5"/>
+              </event>
+            </eventList>
+          </choice>
+          <choice>
+            <text>Leave with just a drone.</text>
+            <event/>
+          </choice>
+        </event>
+        <event>
+          <text>You board the station and steal one of the drones. But while you were occupied, a Pavonian ship has jumped into the system and is rapidly moving towards your ship with hostile intentions.</text>
+          <drone name="RANDOM"/>
+          <ship load="PAVONIAN_SHIP" hostile="true"/>
+        </event>
+        <event>
+          <text>As you grab the drone schematic, the alarms go off. An explosion shakes your ship, still docked to the station. The pirate ship, the true owner of the drone factory, has jumped into the system and moves towards your ship with weapons online.</text>
+          <drone name="RANDOM"/>
+          <ship load="PIRATE" hostile="true"/>
+          <damage amount="5"/>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true">
+      <text>Leave the factory alone.</text>
+      <event/>
+    </choice>
+  </event>
+
+</FTL>

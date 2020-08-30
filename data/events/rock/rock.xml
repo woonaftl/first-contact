@@ -1,20 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
-  <eventList name="DISTRESS_BEACON_ROCK">
-    <event load="FRIENDLY_BEACON"/>
-    <event load="TRAP_BEACON"/>
-    <event load="STRANDED_BEACON"/>
-    <event load="PIRATE_CIVILIAN_BEACON"/>
-    <event load="CIVILIAN_ASTEROIDS_BEACON"/>
-    <event load="REBEL_VS_FEDERATION"/>
-    <event load="ESCORT_BEACON"/>
-    <event load="DISTRESS_TRAPPED_MINER"/>
-    <event load="DISTRESS_INFESTATION"/>
-    <event load="DISTRESS_SATELLITE_DEFENSE"/>
-    <event load="DISTRESS_STATION_FIRE"/>
-    <event load="DISTRESS_STATION_DISEASE"/>
-  </eventList>
-
   <event name="START_BEACON_ROCK">
     <textList name="START_BEACON_ROCK">
       <text>The Rock people have a particularly aggressive stance toward alien races trespassing in their space. You should tread carefully here.</text>
@@ -51,10 +36,30 @@
   </ship>
 
   <ship name="ROCK_PIRATE" auto_blueprint="SHIPS_ROCK_PIRATE">
+    <surrender chance="0.7" min="3" max="4" load="ROCK_SHIP_SURRENDER"/>
     <destroyed load="DESTROYED_DEFAULT"/>
     <deadCrew load="DEAD_CREW_DEFAULT"/>
     <crew>
       <crewMember type="rock" prop="1"/>
     </crew>
   </ship>
+
+  <event name="ROCK_SHIP_SURRENDER">
+    <textList name="ROCK_SHIP_SURRENDER">
+      <text>The Rock ship hails: "Enough! We were told aliens were a threat to our ways, and you have proved as much. Take this and leave us in peace."</text>
+      <text>Their systems suffering, the Rock ship attempts to make contact: "Alien vessel. Cease your attack. We will pay."</text>
+      <text>The Rock ship moves into a defensive position and transmits a white flag signal. They seem willing to buy their lives.</text>
+    </textList>
+    <choice>
+      <text>Accept their offer.</text>
+      <event>
+        <ship hostile="false"/>
+        <autoReward level="RANDOM">stuff</autoReward>
+      </event>
+    </choice>
+    <choice>
+      <text>We will not accept surrender!</text>
+      <event/>
+    </choice>
+  </event>
 </FTL>

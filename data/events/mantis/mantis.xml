@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
-  <eventList name="DISTRESS_BEACON_MANTIS">
-    <event load="ESCORT_BEACON"/>
-    <event load="FRIENDLY_BEACON"/>
-    <event load="TRAP_BEACON"/>
-    <event load="DISTRESS_TRAPPED_MINER"/>
-    <event load="DISTRESS_INFESTATION"/>
-    <event load="DISTRESS_SATELLITE_DEFENSE"/>
-    <event load="DISTRESS_STATION_FIRE"/>
-    <event load="DISTRESS_STATION_DISEASE"/>
-  </eventList>
-
   <event name="START_BEACON_MANTIS">
     <text>You've entered a poorly charted area of space that's known to be home to the Mantis. Ensure your hull plating is up to scratch and that you have enough fuel in the tank to make it through.</text>
   </event>
@@ -33,7 +22,6 @@
       <text>The only thing this beacon offers is a view of deep space and a brief respite from battles. For some this must be a welcome refuge.</text>
       <text>A nearby Mantis mining operation is clearly using heavy Engi slave labor. You briefly consider the possibility of emancipating the slaves, but the Mantis presence is too formidable. You decide to lay low.</text>
       <text>There aren't so many parts of Mantis space that aren't dotted by the wrecks of battles past, but this is one of them. You take a deep breath and prepare to move on.</text>
-      <text>You fancy you see something moving in the shadow of the beacon, but all remains still.</text>
       <text>There's nothing here but space debris and some uninhabitable planetoids.</text>
     </textList>
   </event>

@@ -95,11 +95,7 @@
     <choice hidden="true">
       <text>Participate in their study.</text>
       <eventList name="ZOLTAN_CREW_STUDY_LIST">
-        <event>
-          <text>Your crew calmly lines up for the Zoltans to take their readings. After a short time, the process is done. They contact you, "Thank you for your participation in our study. Please accept these small cakes made from stiff dough as well as some scrap."</text>
-          <autoReward level="LOW">scrap_only</autoReward>
-        </event>
-        <event>
+        <event count="2">
           <text>Your crew calmly lines up for the Zoltans to take their readings. After a short time, the process is done. They contact you, "Thank you for your participation in our study. Please accept these small cakes made from stiff dough as well as some scrap."</text>
           <autoReward level="LOW">scrap_only</autoReward>
         </event>

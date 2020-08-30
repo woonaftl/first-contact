@@ -4,16 +4,9 @@
     <event load="LANIUS_FIGHT"/>
     <event load="LANIUS_REBEL_FIGHT"/>
     <event load="LANIUS_PIRATE_FIGHT"/>
-    <event load="LANIUS_HARVESTER"/>
-
-    <event load="REBEL"/>
-    <event load="REBEL_AUTO"/>
-  </eventList>
-
-  <eventList name="HOSTILE_HAZARD_LANIUS">
-    <event load="LANIUS_FIGHT_ASTEROID"/>
-    <event load="LANIUS_FIGHT_PULSAR"/>
+    <event load="LANIUS_DISTRESS_TRAP"/>
     <event load="LANIUS_NOBOARDERS_PDS"/>
+    <event load="LANIUS_KNOCK_KNOCK"/>
   </eventList>
 
   <event name="LANIUS_FIGHT">
@@ -55,19 +48,13 @@
     <ship load="PIRATE" hostile="true"/>
   </event>
 
-  <event name="LANIUS_FIGHT_ASTEROID" unique="false">
-    <text>This beacon appears to have been set up within an asteroid field to access a mining settlement. However, half of the settlement has been disassembled by a number of Lanius scavengers. Their military escort moves in to scare you off.</text>
+  <event name="LANIUS_DISTRESS_TRAP" unique="true">
+    <text>You are too late - whatever once was emitting the distress signal from this system drew a Lanius ship as well as your own. Having consumed the original target, the Lanius turn their attention to your vessel.</text>
     <ship load="LANIUS_SHIP" hostile="true"/>
-    <environment type="asteroid"/>
+    <distressBeacon/>
   </event>
 
-  <event name="LANIUS_FIGHT_PULSAR" unique="false">
-    <text>There appears to be some sort of research station near a pulsar, although it's hard to tell since a portion of it has been melted. The Lanius ship that has been working at it moves in to intercept you, totally oblivious to the threat of EM pulses.</text>
-    <ship load="LANIUS_SHIP" hostile="true"/>
-    <environment type="pulsar"/>
-  </event>
-
-  <event name="LANIUS_NOBOARDERS_PDS" unique="false">
+  <event name="LANIUS_NOBOARDERS_PDS" unique="true">
     <text planet="PLANET_POPULATED">Upon arrival you are immediately surrounded by chaos: a planet's Anti-Ship Battery is firing on a number of Lanius ships; one of the combat ships mistakenly believes your ship has arrived to assist the planetary defenses. Combat positions!</text>
     <environment type="PDS" target="enemy"/>
     <ship load="LANIUS_BOARDERS_PDS" hostile="true"/>
@@ -100,75 +87,28 @@
     </deadCrew>
   </ship>
 
-  <event name="LANIUS_HARVESTER" unique="true">
-    <text>Your scans have picked up a Lanius vessel in this system: it appears to be navigating a rich debris field, harvesting the minerals.</text>
+  <changelog>
+    <entry>New event: Lanius knock-knock</entry>
+  </changelog>
+  <event name="LANIUS_KNOCK_KNOCK" unique="true">
+    <text>Something is outside your ship! Knock-knock.</text>
     <choice hidden="true">
-      <text>Attempt to harvest some for yourself.</text>
+      <text>Who is there?</text>
       <event>
-        <text>As you attempt to navigate the debris, you come too close to the Lanius ship - and they proceed to try to harvest you!</text>
-        <ship load="LANIUS_HARVESTER_SHIP" hostile="true"/>
-      </event>
-    </choice>
-    <choice req="pilot" lvl="2" hidden="true" max_group="0">
-      <text>[Improved Piloting] Engage the auto-pilot and safely harvest the debris.</text>
-      <event>
-        <text>With help from the computer, you are able to keep a comfortable distance between you and the Lanius ship, and you are able to gather resources from the debris field without conflict.</text>
-        <autoReward level="MED">standard</autoReward>
-      </event>
-    </choice>
-    <choice req="pilot" lvl="3" hidden="true" max_group="0">
-      <text>[Advanced Piloting] Engage the auto-pilot and safely harvest the debris.</text>
-      <event>
-        <text>With help from the computer, you are able to keep a comfortable distance between you and the Lanius ship, and you gather a considerable amount of resources from the debris field without conflict.</text>
-        <autoReward level="HIGH">standard</autoReward>
-      </event>
-    </choice>
-    <choice hidden="true">
-      <text>Attack the vessel.</text>
-      <event>
-        <text>You go on the offensive and power up your weapons - with any luck, you'll soon have the mineral field all to yourself.</text>
-        <ship load="LANIUS_HARVESTER_SHIP" hostile="true"/>
-      </event>
-    </choice>
-    <choice hidden="true">
-      <text>Ignore the vessel.</text>
-      <event>
-        <text>You charge up your drive and prepare to make the next jump. No sense in antagonizing the Lanius if you don't need to.</text>
+        <text>Lanius.</text>
+        <choice hidden="true">
+          <text>Lanius who?</text>
+          <event>
+            <text>Lanius phyxiate you.</text>
+            <ship load="LANIUS_SHIP" hostile="true"/>
+            <boarders breach="true" min="1" max="1" class="anaerobic"/>
+            <choice>
+              <text>Ugh...</text>
+              <event/>
+            </choice>
+          </event>
+        </choice>
       </event>
     </choice>
   </event>
-  <ship name="LANIUS_HARVESTER_SHIP" auto_blueprint="SHIPS_LANIUS">
-    <destroyed>
-      <text>The ship explodes, leaving behind a collection of useful scrap material.</text>
-      <autoReward level="MED">standard</autoReward>
-      <choice hidden="true">
-        <text>Investigate the debris.</text>
-        <event load="LANIUS_HARVESTER_SHIP_LIST"/>
-      </choice>
-    </destroyed>
-    <deadCrew>
-      <text>There are no more life-signs remaining on the ship. You strip it of useful materials.</text>
-      <autoReward level="MED">standard</autoReward>
-      <choice hidden="true">
-        <text>Investigate the debris.</text>
-        <event load="LANIUS_HARVESTER_SHIP_LIST"/>
-      </choice>
-    </deadCrew>
-  </ship>
-  <eventList name="LANIUS_HARVESTER_SHIP_LIST">
-    <event>
-      <text>The competitor gone, you investigate the debris, but it looks as if the Lanius harvested much of it before you arrived.</text>
-      <item_modify>
-        <item type="scrap" min="8" max="10"/>
-      </item_modify>
-    </event>
-    <event>
-      <text>The competitor gone, you proceed to investigate the field and scavenge what you can.</text>
-      <autoReward level="LOW">standard</autoReward>
-    </event>
-    <event>
-      <text>It looks like you interrupted the Lanius before they had a chance to scavenge much from the debris, and you make off with a good haul.</text>
-      <autoReward level="MED">standard</autoReward>
-    </event>
-  </eventList>
 </FTL>

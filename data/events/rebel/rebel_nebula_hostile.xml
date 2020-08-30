@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="NEBULA_HOSTILE_REBEL">
+    <event load="NEBULA_REBEL"/>
+    <event load="NEBULA_AUTO"/>
+    <event load="NEBULA_AUTO_WARNING"/>
+  </eventList>
+
+  <event name="NEBULA_REBEL">
+    <textList name="NEBULA_REBEL_LIST">
+      <text>You cross paths with an advance scout of the Rebel fleet searching this section of the nebula for your ship.</text>
+      <text>A ship bearing Rebel colors can be seen waiting near the beacon. They must have been waiting for you, since they engage immediately.</text>
+      <text>The Rebels must have anticipated you would try to lose them within the nebula. A scout is waiting for you at the beacon.</text>
+      <text>It looks like you will be unable to avoid the Rebels by traveling through the nebula. A Rebel ship is waiting for you near the beacon.</text>
+      <text>Shortly after you arrive, a Rebel ship jumps nearby. There looks to be no escape. Prepare for a fight!</text>
+      <text>Newton-knows what brings this Rebel ship so far out; its captain hails, but does a double take when he identifies your ship. They open fire.</text>
+      <text>A Rebel ship hails, but you don't take chances in conditions like this. You block the frequency and prepare to engage.</text>
+    </textList>
+    <ship load="REBEL" hostile="true"/>
+    <environment type="nebula"/>
+  </event>
+
+  <event name="NEBULA_AUTO">
+    <textList name="NEBULA_AUTO_LIST">
+      <text>You cross paths with an advance scout of the Rebel fleet searching this section of the nebula for your ship.</text>
+      <text>You jump into a calmer part of the nebula. However, your relief fades as a Rebel scout jumps to the beacon and moves in to attack.</text>
+      <text>The tangled wrecks of many ships wait in dormancy here. You see lights flicker on what looks like debris. A Rebel scout bursts out of the wreckage!</text>
+      <text>This drone isn't looking for you. Perhaps it's scouting ahead for the Rebel expansion or maybe they're seeking to use this nebula for cover. Regardless, it identifies you as hostile.</text>
+      <text>It's worrying that the Rebels have penetrated so deep into uncharted space, even if it is only an unmanned craft. It arms its weapons; you should do the same.</text>
+    </textList>
+    <ship load="REBEL_AUTO" hostile="true"/>
+    <environment type="nebula"/>
+  </event>
+
+  <event name="NEBULA_AUTO_WARNING" unique="true">
+    <text>It appears that an automated Rebel scout was positioned within the nebula to warn of your passing.</text>
+    <ship load="REBEL_AUTO_WARNING" hostile="true"/>
+    <environment type="nebula"/>
+  </event>
+</FTL>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="HOSTILE_PAVONIAN">
+    <event load="PAVONIAN_PIRATE_FIGHT"/>
+    <event load="PAVONIAN_REBEL_FIGHT"/>
+  </eventList>
+
+  <event name="PAVONIAN_PIRATE_FIGHT">
+    <textList>
+      <text>While Pavonians themselves do not concern themselves with galactic war, their worlds are still far from peaceful. A pirate ship terrorizing civilians in this system, decided to make a move against you.</text>
+      <text>The Pavonian space can be dangerous as pirates are allowed to roam and loot ships with impunity. One of those pirates is moving towards you with weapons armed.</text>
+    </textList>
+    <ship load="PIRATE" hostile="true"/>
+  </event>
+
+  <event name="PAVONIAN_REBEL_FIGHT" unique="true">
+    <text>A Rebel ship is stationed at the beacon. "We are bringing order into this system. All incoming ships are to be inspected. Those who oppose, are to be destroyed." There is no way around a fight.</text>
+    <ship load="REBEL" hostile="true"/>
+  </event>
+</FTL>

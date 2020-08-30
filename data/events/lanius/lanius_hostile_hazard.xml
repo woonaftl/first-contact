@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="HOSTILE_HAZARD_LANIUS">
+    <event load="LANIUS_FIGHT_ASTEROID"/>
+    <event load="LANIUS_FIGHT_PULSAR"/>
+  </eventList>
+
+  <event name="LANIUS_FIGHT_ASTEROID" unique="true">
+    <text>This beacon appears to have been set up within an asteroid field to access a mining settlement. However, half of the settlement has been disassembled by a number of Lanius scavengers. Their military escort moves in to scare you off.</text>
+    <ship load="LANIUS_SHIP" hostile="true"/>
+    <environment type="asteroid"/>
+  </event>
+
+  <event name="LANIUS_FIGHT_PULSAR" unique="true">
+    <text>There appears to be some sort of research station near a pulsar, although it's hard to tell since a portion of it has been melted. The Lanius ship that has been working at it moves in to intercept you, totally oblivious to the threat of EM pulses.</text>
+    <ship load="LANIUS_SHIP" hostile="true"/>
+    <environment type="pulsar"/>
+  </event>
+</FTL>

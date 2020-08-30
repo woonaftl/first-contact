@@ -27,9 +27,14 @@ def merge(name):
 
 def transform(input_file, xslt_file, output_file):
     xslt_transform = et.XSLT(et.parse(xslt_file, parser))
-    result = xslt_transform(et.parse(input_file, parser))
-    with open(output_file, "wb") as result_file:
-        result_file.write(et.tostring(result, pretty_print=True))
+    try:
+        result = xslt_transform(et.parse(input_file, parser))
+        with open(output_file, "wb") as result_file:
+            result_file.write(et.tostring(result, pretty_print=True))
+    except et.XSLTApplyError:
+        for xslt_error in xslt_transform.error_log:
+            print(xslt_error.message, xslt_error.line)
+        raise
 
 
 clear_files = ("autoBlueprints.xml", "bosses.xml", "dlcAnimations.xml", "dlcBlueprints.xml",
@@ -81,6 +86,17 @@ transform(join("result", "data", "rooms.xml"),
           join("result", "data", "rooms.xml"))
 
 merge("events")
+# TODO check name collisions
+transform(join("result", "data", "events.xml"),
+          join("tools", "events", "text.xslt"),
+          join("result", "data", "events.xml"))
+transform(join("result", "data", "events.xml"),
+          join("tools", "text_events.xslt"),
+          join("result", "data", "text_events.xml"))
+transform(join("result", "data", "events.xml"),
+          join("tools", "events", "text_delete.xslt"),
+          join("result", "data", "events.xml"))
+
 transform(join("result", "data", "events.xml"),
           join("tools", "events", "merge_eventlists.xslt"),
           join("result", "data", "events.xml"))
@@ -106,6 +122,7 @@ transform(join("result", "data", "events.xml"),
           join("tools", "events", "sort.xslt"),
           join("result", "data", "events.xml"))
 
+# TODO validate no events with choice but no text
 schema_events = et.XMLSchema(et.parse(join("schema", "events.xsd")))
 events = et.parse(join("result", "data", "events.xml"))
 if not schema_events.validate(events):

@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
-  <changelog>
-    <entry>Added 2 auto ships in endless loop event</entry>
-  </changelog>
   <event name="ROCK_SLUG_ARGUMENT_NEBULA" unique="true">
     <text>You detect multiple ships running at maximum power nearby, but you can't see anything through this thick nebula.</text>
     <choice>
       <text>Get closer.</text>
-      <eventList>
-        <event load="ROCK_SLUG_ARGUMENT"/>
-        <event load="WOONA_AUTO_ENDLESS_LOOP"/>
-      </eventList>
+      <event load="ROCK_SLUG_ARGUMENT"/>
     </choice>
     <choice>
       <text>Ignore them.</text>
@@ -115,26 +109,4 @@
       </choice>
     </deadCrew>
   </ship>
-
-  <event name="WOONA_AUTO_ENDLESS_LOOP">
-    <text>You find two automated Rebel scouts. The AI behaves very strange, not reacting to your arrival. Two ships are completely focused on each other.</text>
-    <choice hidden="true">
-      <text>Scan the ships.</text>
-      <event>
-        <text>Upon closer examination, it seems that the automated ships are caught in an endless loop. The first ship detects that the second lacks FTL fuel, then shares it, becoming low on fuel itself. You follow the actions of AI for minutes until you can finally avert your eyes and order the next action.</text>
-        <choice hidden="true">
-          <text>Attack!</text>
-          <event>
-            <text>The ship that currently had FTL fuel immediately jumps away to bring reinforcements. The other ship charges the weapons, readying itself for fight.</text>
-            <modifyPursuit amount="1"/>
-            <ship hostile="true" load="REBEL_AUTO"/>
-          </event>
-        </choice>
-        <choice hidden="true">
-          <text>Leave the ships to themselves.</text>
-          <event/>
-        </choice>
-      </event>
-    </choice>
-  </event>
 </FTL>

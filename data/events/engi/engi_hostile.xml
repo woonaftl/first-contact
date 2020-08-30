@@ -4,18 +4,8 @@
     <event load="ENGI_MANTIS_FIGHT"/>
     <event load="ENGI_REBEL_FIGHT"/>
     <event load="ENGI_PIRATE_FIGHT"/>
-
-    <event load="PIRATE"/>
-    <event load="PIRATE_CHOICE"/>
-    <event load="REBEL"/>
-    <event load="SQUAT_WARNING"/>
-    <event load="PIRATE_NO_ESCAPE"/>
-  </eventList>
-
-  <eventList name="HOSTILE_HAZARD_ENGI">
-    <event load="PIRATE_ASTEROID"/>
-    <event load="PIRATE_SUN"/>
-    <event load="PIRATE_PULSAR"/>
+    <event load="DISTRESS_ENGI_REBEL"/>
+    <event load="ENGI_VIRUS"/>
   </eventList>
 
   <event name="ENGI_MANTIS_FIGHT">
@@ -29,12 +19,221 @@
   </event>
 
   <event name="ENGI_REBEL_FIGHT">
-    <text>The rebel fighter here would seem to suggest elements of the rebel fleet are already making incursions on Engi space. You move to engage.</text>
+    <text>The Rebel fighter here would seem to suggest elements of the rebel fleet are already making incursions on Engi space. You move to engage.</text>
     <ship load="REBEL" hostile="true"/>
   </event>
 
   <event name="ENGI_PIRATE_FIGHT">
     <text>There must have been rich pickings for pirates around here up until war broke out. The pirate you encounter here looks worn down, but hungry. You'll have to fight!</text>
     <ship load="PIRATE" hostile="true"/>
+  </event>
+
+  <event name="DISTRESS_ENGI_REBEL" unique="true">
+    <text>The distress signal originates from a small Engi ship under attack by a rebel fighter - but when the Rebels see Federation markings they turn to attack!</text>
+    <distressBeacon/>
+    <ship name="DISTRESS_ENGI_REBEL" auto_blueprint="SHIPS_REBEL" hostile="true">
+      <destroyed>
+        <text>The Rebels destroyed, you pick the bones of their ship and wait for the small Engi ship to catch up.</text>
+        <autoReward level="LOW">standard</autoReward>
+        <choice hidden="true">
+          <text id="continue"/>
+          <event load="DISTRESS_ENGI_REBEL_RESULT"/>
+        </choice>
+      </destroyed>
+      <deadCrew>
+        <text>The Rebels destroyed, you pick the bones of their ship and wait for the small Engi ship to catch up.</text>
+        <autoReward level="MED">standard</autoReward>
+        <choice hidden="true">
+          <text id="continue"/>
+          <event load="DISTRESS_ENGI_REBEL_RESULT"/>
+        </choice>
+      </deadCrew>
+    </ship>
+  </event>
+  <event name="DISTRESS_ENGI_REBEL_RESULT">
+    <text>The Engi vessel turns out to be very poorly equipped - barely a runabout, really. They're trying to outrun the Rebels, and need all the help they can get.</text>
+    <choice hidden="true">
+      <text>Give them 25 scrap.</text>
+      <eventList name="DISTRESS_ENGI_REBEL_LIST1">
+        <event>
+          <text>The words they use are "Need = fulfilled", but you take it for gratitude. They take the next jump in their long journey home.</text>
+          <item_modify>
+            <item type="scrap" min="-25" max="-25"/>
+          </item_modify>
+        </event>
+        <event>
+          <text>The Engi are grateful. They don't have any supplies or weapons to spare, but they do send over a self-teleporting med-bot disperser they hope they won't need.</text>
+          <weapon name="BOMB_HEAL"/>
+          <item_modify>
+            <item type="scrap" min="-25" max="-25"/>
+          </item_modify>
+        </event>
+        <event>
+          <text>The Engi are grateful. They don't have much by way of supplies but they do offer a drone schematic for your use.</text>
+          <drone name="RANDOM"/>
+          <item_modify>
+            <item type="scrap" min="-25" max="-25"/>
+          </item_modify>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true">
+      <text>Give them 40 scrap, 2 missiles and 2 fuel.</text>
+      <event>
+        <text>They wouldn't get more than a few jumps with that load-out. You provide them with all the munitions and supplies they should need for the journey home. "Generosity magnitude unpredicted. Well-being syntax error [value too high]. Accept this token."</text>
+        <item_modify>
+          <item type="scrap" min="-40" max="-40"/>
+          <item type="fuel" min="-2" max="-2"/>
+          <item type="missiles" min="-2" max="-2"/>
+        </item_modify>
+        <augment name="NANO_MEDBAY"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Give them nothing.</text>
+      <event>
+        <text>Engi can't feel fear, so they bear you no ill will when you explain you're unwilling to help. They set off on their journey and you do the same.</text>
+      </event>
+    </choice>
+  </event>
+
+  <changelog>
+    <entry>ENGI_VIRUS event reward changed from Drone Reactor Booster to Engi Med-bot Dispersal</entry>
+  </changelog>
+  <event name="ENGI_VIRUS" unique="true">
+    <text>The Engi are awaiting you at the beacon, with their weapons on-line! They explain a computer virus that is wanted for hostile acts against the Engi (multiple counts of binary scrambling, nano-dissolution, and variable interference) is aboard your vessel.</text>
+    <choice>
+      <text id="continue"/>
+      <event>
+        <text>They insist they must destroy your ship to prevent the virus from escaping!</text>
+        <choice hidden="true">
+          <text>Hold on! Let us try to purge the system code!</text>
+          <event>
+            <text>Wiping your engine core and shields proves useless... eventually you trap the virus in the weapons systems to purge it, but before you do, the Engi grow restless and attack!</text>
+            <status type="divide" target="player" system="shields" amount="2"/>
+            <status type="divide" target="player" system="engines" amount="2"/>
+            <ship load="ENGI_VIRUS_SHIP" hostile="true"/>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>Attack the Engi vessel!</text>
+          <event>
+            <text>The Engi be damned, no one threatens your ship. You prepare for a fight!</text>
+            <ship load="ENGI_VIRUS_SHIP" hostile="true"/>
+          </event>
+        </choice>
+        <choice req="hacking" lvl="1" max_group="0" hidden="true">
+          <text>[Hacking System] Isolate and quarantine the virus.</text>
+          <event>
+            <text>It takes some time, and the virus is slippery, but you eventually confine it to a useless sub-system prison where it frantically begins calculating insults at you. You eject the system from the ship and then silence the little binary criminal with your weapons.</text>
+            <choice hidden="true">
+              <text id="continue"/>
+              <event>
+                <text>The Engi thank you for deleting the virus, and jump away. They offer a unique ship augmentation as a reward.</text>
+                <autoReward level="LOW">standard</autoReward>
+                <augment name="NANO_MEDBAY"/>
+              </event>
+            </choice>
+          </event>
+        </choice>
+        <choice req="hacking" lvl="2" max_group="0" hidden="true">
+          <text>[Improved Hacking] Reprogram the virus.</text>
+          <event>
+            <text>You proceed to interface with the virus and optimize its repair and benevolence routines.</text>
+            <choice hidden="true">
+              <text id="continue"/>
+              <event>
+                <text>After a few minutes, the virus "sees the light" and integrates itself in a positive manner with the computer society on your ship, repairing your hull and attempting to optimize your reactor.</text>
+                <damage amount="-15"/>
+                <upgrade amount="1" system="reactor"/>
+                <choice hidden="true">
+                  <text id="continue"/>
+                  <event>
+                    <text>The Engi thank you for deleting the virus, and jump away. They offer a unique ship augmentation as a reward.</text>
+                    <augment name="NANO_MEDBAY"/>
+                  </event>
+                </choice>
+              </event>
+            </choice>
+          </event>
+        </choice>
+        <choice req="hacking" lvl="3" max_group="0" hidden="true">
+          <text>[Advanced Hacking] Reprogram the virus.</text>
+          <event>
+            <text>You proceed to interface with the virus and optimize its repair and benevolence routines.</text>
+            <choice hidden="true">
+              <text id="continue"/>
+              <event>
+                <text>After a few minutes, the virus "sees the light" and integrates itself in a positive manner with the computer society on your ship, repairing your hull and attempting to optimize your reactor.</text>
+                <damage amount="-30"/>
+                <upgrade amount="1" system="reactor"/>
+                <choice hidden="true">
+                  <text id="continue"/>
+                  <event>
+                    <text>The Engi thank you for deleting the virus, and jump away. They offer a unique ship augmentation as a reward.</text>
+                    <augment name="NANO_MEDBAY"/>
+                  </event>
+                </choice>
+              </event>
+            </choice>
+          </event>
+        </choice>
+        <choice req="anaerobic" hidden="true">
+          <text>[Lanius Crew] Your Lanius crewmember gestures frantically.</text>
+          <event>
+            <text>Oddly enough, the Lanius seems aware of which computer the virus is present in, and proceeds to... digest the terminal. There is a burst of O2, and the Engi ship powers down its weapons, no longer sensing the virus on board. The Engi send some parts over to repair your damaged computer, along with a unique ship augmentation as a reward for terminating the virus.</text>
+            <autoReward level="MEDIUM">scrap_only</autoReward>
+            <augment name="NANO_MEDBAY"/>
+          </event>
+        </choice>
+        <choice req="engi" hidden="true">
+          <text>[Engi Crew] Have your Engi crewmember negotiate with the Engi ship.</text>
+          <event>
+            <text>As the Engi attempts to contact the vessel and negotiate, your Engi crewmember suddenly dissolves into nanites - the virus has murdered again! Detecting activity on board your ship, the Engi vessel opens fire!</text>
+            <ship load="ENGI_VIRUS_SHIP_ALT" hostile="true"/>
+            <removeCrew class="engi">
+              <clone>false</clone>
+              <text>The virus appears to have disrupted your clone bay's capability to revive the lost crewmember!</text>
+            </removeCrew>
+          </event>
+        </choice>
+      </event>
+    </choice>
+  </event>
+  <ship name="ENGI_VIRUS_SHIP" auto_blueprint="SHIPS_CIRCLE">
+    <destroyed>
+      <text>With the ship destroyed, you detect that the virus has abandoned your ship and disappeared somewhere within the systems of the wreckage. It will likely infect whatever Engi ship passes next, but your mission is too vital to risk re-infection by stopping it.</text>
+      <autoReward level="MEDIUM">standard</autoReward>
+      <status type="clear" target="player" system="engines" amount="100"/>
+      <status type="clear" target="player" system="shields" amount="100"/>
+    </destroyed>
+    <deadCrew>
+      <text>With the Engi crew dead, you detect that the virus has abandoned your ship and disappeared somewhere within the systems of Engi vessel. It will likely infect whatever Engi ship passes next, but your mission is too vital to risk re-infection by stopping it.</text>
+      <autoReward level="MEDIUM">standard</autoReward>
+      <status type="clear" target="player" system="engines" amount="100"/>
+      <status type="clear" target="player" system="shields" amount="100"/>
+    </deadCrew>
+  </ship>
+  <ship name="ENGI_VIRUS_SHIP_ALT" auto_blueprint="SHIPS_CIRCLE">
+    <destroyed>
+      <text>With the ship destroyed, you scrap it and prepare to jump away.</text>
+      <autoReward level="MEDIUM">standard</autoReward>
+      <choice hidden="true">
+        <text id="continue"/>
+        <event load="ENGI_VIRUS_REBORN"/>
+      </choice>
+    </destroyed>
+    <deadCrew>
+      <text>With all the Engi dead, you take what you can and prepare to jump away.</text>
+      <autoReward level="MEDIUM">standard</autoReward>
+      <choice hidden="true">
+        <text id="continue"/>
+        <event load="ENGI_VIRUS_REBORN"/>
+      </choice>
+    </deadCrew>
+  </ship>
+  <event name="ENGI_VIRUS_REBORN">
+    <text>To your surprise your Engi crewmember reforms. It looks as if the virus reconstituted, repurposed, and reprogrammed the Engi host and wants to travel with you... and it seems to have learned a great deal from its time on your ship.</text>
+    <crewMember amount="1" class="engi" all_skills="2">Virus</crewMember>
   </event>
 </FTL>

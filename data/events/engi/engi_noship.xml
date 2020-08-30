@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="NOSHIP_ENGI">
+    <event load="ENGI_FIND_DRONE"/>
+    <event load="ENGI_GIFT"/>
+    <event load="ENGI_FLEET_DELAY"/>
+    <event load="CONFUSED_MANTIS"/>
+    <event load="ENGI_STATION_REQUIRES_WORKERS"/>
+  </eventList>
+
+  <event name="ENGI_GIFT">
+    <textList name="ENGI_GIFT">
+      <text>An Engi vessel hails you. "Identity: Federation? Outlier probability. Implies... revival. Implies... hope. Assistance suggested." They offer some supplies.</text>
+      <text>You cross paths with an Engi cargo vessel hurrying home before the Mantis fleets attempt to take over this sector. They're happy to offload some of their cargo to get home faster.</text>
+      <text>You make contact with an isolated Engi science station who are staying put despite the likelihood of Mantis invasion. They suggest you trial some experimental technology.</text>
+      <text>This was the site of a recent battle. Either a show of Mantis force, or the Engi here weren't disposed to go peacefully. You pick through the pieces.</text>
+    </textList>
+    <autoReward level="RANDOM">stuff</autoReward>
+  </event>
+
+  <event name="ENGI_FIND_DRONE" unique="true">
+    <!--text taken from FIND_DRONE event -->
+    <text>A small Engi research vessel is trying to fend off a Mantis ship. You move in to engage, but after a quick scan of your ship the Mantis ship retreats. The Engi offer you a drone schematic as thanks for your timely arrival.</text>
+    <autoReward level="LOW">drone</autoReward>
+  </event>
+
+  <event name="ENGI_FLEET_DELAY" unique="true">
+    <text>You notice an Engi colony hiding on the other side of a nearby moon. It turns out they're excavating an equipment cache from the Federation-Mantis War, and they suggest it might be used to lure the pursuing rebel fleet.</text>
+    <choice>
+      <text>Booby trap the cache.</text>
+      <event>
+        <text>You transfer down some missile warheads and the Engi rig them to blow before setting a distress signal to attract the fleet's attention.</text>
+        <item_modify>
+          <item type="missiles" min="-2" max="-2"/>
+        </item_modify>
+        <modifyPursuit amount="-2"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Secure the cache.</text>
+      <event>
+        <text>You have the Engi complete their excavations and bring the supplies on-board.</text>
+        <autoReward level="LOW">drone</autoReward>
+      </event>
+    </choice>
+  </event>
+
+  <event name="CONFUSED_MANTIS" unique="true">
+    <text>As soon as you jump into the system, you receive a hail from a nearby civilian Engi vessel. Their Captain appears on your screen: "Strange bug. Can you assist in debugging?"</text>
+    <choice>
+      <text>Listen to their problem.</text>
+      <event>
+        <text>"Found malfunctioning Mantis. Believes it is human. Will receive input only from human. Danger Evaluation: Extremely High. Provide assistance."</text>
+        <choice>
+          <text>Send a shuttle with an away team to help.</text>
+          <eventList name="CONFUSED_MANTIS_DEFAULT">
+            <event>
+              <text>After an hour of convincing, the Mantis finally calms down and introduces himself as Robert Smith. He explains he's from a nearby human colony and would appreciate being returned there.</text>
+              <choice>
+                <text id="continue"/>
+                <event load="CONFUSED_MANTIS_HOME"/>
+              </choice>
+            </event>
+            <event>
+              <text>The cornered and frightened Mantis attacks as soon as you approach. One of your crew is eviscerated before the rest are able to stop him. The Engi apologize for your loss.</text>
+              <removeCrew>
+                <clone>true</clone>
+                <text>Your crew's clone is waiting when you return to the ship.</text>
+              </removeCrew>
+            </event>
+            <event>
+              <text>The cornered and frightened Mantis attacks as soon as you approach. You're able to subdue him and leave him at a Mantis colony in a neighboring system. They don't seem pleased or grateful at his return.</text>
+            </event>
+          </eventList>
+        </choice>
+        <choice>
+          <text>Leave them, a cornered Mantis is too dangerous.</text>
+          <event/>
+        </choice>
+        <choice req="human" hidden="true">
+          <text>(Human Crew) Send your human crewmember to communicate with the Mantis.</text>
+          <event>
+            <text>The Mantis is grateful to see 'another human', and introduces himself as Robert Smith. He explains he's from a nearby human colony and would appreciate being returned there.</text>
+            <choice>
+              <text>Return him home.</text>
+              <event load="CONFUSED_MANTIS_HOME"/>
+            </choice>
+          </event>
+        </choice>
+        <choice req="mantis" hidden="true">
+          <text>(Mantis Crew) Send your Mantis crewmember to communicate with the Mantis.</text>
+          <event>
+            <text>The Mantis is terrified at the sight of your crewmember. He immediately attacks his Engi rescuers, and your crewmember is forced to kill him. The Engi are grateful for your help and offer a small reward.</text>
+            <autoReward level="LOW">standard</autoReward>
+          </event>
+        </choice>
+        <choice req="mind" lvl="1" hidden="true">
+          <text>(Mind Control) Use your Mind control System to calm him down.</text>
+          <event>
+            <text>The Mantis calms down and communicates thanks to the Engi and yourself for helping. He requests to be dropped off at a nearby planet, at the human colony where he was raised. They are grateful for his return and offer a reward.</text>
+            <autoReward level="MED">standard</autoReward>
+          </event>
+        </choice>
+      </event>
+    </choice>
+    <choice>
+      <text>Explain that you can't do any programming and leave.</text>
+      <event/>
+    </choice>
+  </event>
+  <event name="CONFUSED_MANTIS_HOME">
+    <text>The colony is a mining operation that specializes in FTL fuel. Robert's family, the head engineers, are excited to see him, and are very grateful for his return. Apparently he ran away to 'join the Federation' like his older brother, but was never accepted onto a ship.</text>
+    <choice hidden="true">
+      <text>Offer him a position on your ship.</text>
+      <event>
+        <text>He graciously accepts, having always wanted to serve in the Federation.</text>
+        <crewMember amount="1" class="mantis">Robert Smith</crewMember>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Ask if they can take a look at your engines.</text>
+      <event>
+        <text>They are happy to take a look, and are able to offer some suggestions for improvements.</text>
+        <upgrade amount="1" system="engines"/>
+      </event>
+    </choice>
+  </event>
+
+  <changelog>
+    <entry>Added Engi station requires workers event</entry>
+  </changelog>
+  <event name="ENGI_STATION_REQUIRES_WORKERS" unique="true">
+    <text>You jump in to find a big industrial Engi station broadcasting a message. "Assistance required. Insufficient workforce. Station security compromised." You could send a part of your crew to find out if they need any help.</text>
+    <choice hidden="true">
+      <text>Send one crewmember to the station.</text>
+      <event>
+        <text>Your crewmember leaves in a small one-man shuttle for the Engi station. The remaining crew is looking forward to seeing them again.</text>
+        <removeCrew>
+          <clone>false</clone>
+          <text>As your crewman is still alive and helping on the Engi station, it would be against Federation regulation to create a clone to continue with you on your journey.</text>
+        </removeCrew>
+        <choice hidden="true">
+          <text id="continue"/>
+          <eventList>
+            <event>
+              <text>After hours of wait, an Engi worker arrives to your ship and requests a permission to work for the Federation. "Subordinate left. Substitution arrived." It seems that your former crewmember could not return.</text>
+              <crewMember amount="1" class="engi" repair="2"/>
+            </event>
+            <event>
+              <text>You wait for your crewmember to return. After several hours you receive a message. "I am staying here. The pay is better, social benefits, and stable oxygen production." The Engi station compensates your loss with resources.</text>
+              <autoReward level="MED">stuff</autoReward>
+            </event>
+          </eventList>
+        </choice>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Ignore them.</text>
+      <event/>
+    </choice>
+  </event>
+</FTL>

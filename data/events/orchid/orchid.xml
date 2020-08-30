@@ -4,7 +4,7 @@
     <text>On your way to escape the Rebel fleet, you jump into the Orchid sector. Even though they're named by humans after Earth plants, they have little in common with them.</text>
   </event>
 
-  <event name="STORE_ORCHID" unique="false">
+  <event name="STORE_ORCHID">
     <textList>
       <text>This beacon is an Orchid trade hub. Even though most of their equipment is made of plant matter, Orchids find some use for scrap metal as well, and are willing to trade it.</text>
       <text>A giant Orchid trade station with military escort is located at the beacon. As you dock and enter the station, you can't help but notice how calm and silent it is inside.</text>

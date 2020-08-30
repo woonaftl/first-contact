@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="NOSHIP_REBEL">
+    <event load="REBEL_FREE_ITEMS"/>
+    <event load="HELP_MINERS"/>
+  </eventList>
+
+  <event name="REBEL_FREE_ITEMS">
+    <!-- text taken from FREE_ITEMS -->
+    <text>You receive a message from a nearby station, "A Federation cruiser jumping into Rebel territory? Quite the bold move." You quickly move to arm the weapons but he continues, "Lucky for you we're not all in support of the Rebellion. Perhaps these supplies will help you get to friendlier space alive."</text>
+    <autoReward level="LOW">standard</autoReward>
+  </event>
+
+  <event name="HELP_MINERS" unique="true">
+    <text>You come across an asteroid mining colony. They message you immediately, saying, "Greetings. Our supplies of mining explosives have run out ever since the Rebels blockaded this system. Do you have any extra explosives?"</text>
+    <choice hidden="true" req="WEAPONS_MISSILES_EVENTS">
+      <text>(Missile Weapon) Offer to solve their problem by launching a missile.</text>
+      <event>
+        <text>"While I appreciate your enthusiasm, we have certain protocols for the use of explosives around the workplace. Launching a military grade weapon into our mines isn't exactly what I would call, 'union-friendly'."</text>
+        <choice hidden="true">
+          <text>Give them the requested 5 missiles.</text>
+          <event load="HELP_MINERS_1"/>
+        </choice>
+        <choice hidden="true">
+          <text>Give them 15 missiles.</text>
+          <event load="HELP_MINERS_2"/>
+        </choice>
+        <choice hidden="true">
+          <text>Decline.</text>
+          <event>
+            <text>"I understand. Good luck out there. We'll try to make do with what we have."</text>
+          </event>
+        </choice>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Give them the requested 5 missiles.</text>
+      <eventList name="HELP_MINERS_1">
+        <event>
+          <text>They thank you for your generosity and offer some scrap in exchange.</text>
+          <item_modify>
+            <item type="scrap" min="15" max="25"/>
+            <item type="missiles" min="-5" max="-5"/>
+          </item_modify>
+        </event>
+        <event>
+          <text>They thank you and offer to have their engineers repair some of your ship's hull.</text>
+          <damage amount="-10"/>
+          <item_modify>
+            <item type="missiles" min="-5" max="-5"/>
+          </item_modify>
+        </event>
+        <event>
+          <text>They thank you and offer to have their engineers try to upgrade your reactor.</text>
+          <upgrade amount="1" system="reactor"/>
+          <item_modify>
+            <item type="missiles" min="-5" max="-5"/>
+          </item_modify>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true">
+      <text>Give them 15 missiles.</text>
+      <eventList name="HELP_MINERS_2">
+        <event>
+          <text>"Wow. This will help our efforts considerably. Let me see what I can scrounge up to offer you." They deliver some scrap and have their team try to repair part of your hull.</text>
+          <damage amount="-5"/>
+          <item_modify>
+            <item type="scrap" min="30" max="40"/>
+            <item type="missiles" min="-15" max="-15"/>
+          </item_modify>
+        </event>
+        <event>
+          <text>"Wow. This will help our efforts considerably." They offer to have their engineers fix up your ship and upgrade your reactor.</text>
+          <damage amount="-15"/>
+          <upgrade amount="1" system="reactor"/>
+          <item_modify>
+            <item type="missiles" min="-15" max="-15"/>
+          </item_modify>
+        </event>
+        <event>
+          <text>"Wow. This will help our efforts considerably. What could I offer for your troubles..." After some time they deliver a ship Augment for installation on your ship.</text>
+          <augment name="RANDOM"/>
+          <item_modify>
+            <item type="missiles" min="-15" max="-15"/>
+          </item_modify>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true">
+      <text>Decline.</text>
+      <event>
+        <text>"I understand. Good luck out there. We'll try to make do with what we have."</text>
+      </event>
+    </choice>
+  </event>
+</FTL>
