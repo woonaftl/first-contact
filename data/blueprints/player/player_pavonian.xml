@@ -2,7 +2,7 @@
 <FTL>
   <shipBlueprint name="PLAYER_SHIP_PAVONIAN" layout="pavonian_cruiser" img="pavonian_cruiser">
     <class>Pavonian Cruiser</class>
-    <name>?</name>
+    <name>Iris</name>
     <desc>Always looking to offset their fragility, Pavonians find new unconventional uses to drones.</desc>
     <systemList>
       <battery power="1" room="1" start="false" img="room_battery_13"/>
@@ -81,7 +81,7 @@
 
   <shipBlueprint name="PLAYER_SHIP_PAVONIAN_3" layout="pavonian_cruiser_black" img="pavonian_cruiser_black">
     <class>Pavonian Cruiser</class>
-    <name>?</name>
+    <name>Kouda</name>
     <desc>Heavily understaffed, this ship relies on drones to keep the ship running and on heavy weapons to disable enemies.</desc>
     <systemList>
       <battery power="1" room="10" start="false" img="room_battery_6"/>

@@ -7,7 +7,7 @@
     <text>You arrive at a green planet with great plains and rolling waterfalls. It would be of little interest to the Engi nearby.</text>
     <img planet="PLANET_GREEN"/>
     <choice hidden="true">
-      <text>Send the shuttle.</text>
+      <text>Send the shuttle to the planet.</text>
       <eventList>
         <event>
           <!-- metal-eating animals -->
@@ -28,14 +28,16 @@
           <choice blue="false" hidden="true" lvl="1" max_group="0" req="engi">
             <text id="continue"/>
             <event>
-              <text>As soon as the animals saw an Engi, they charged. The herd moved so fast, your team did not have enough time to react. The animals ate the Engi and galloped away, uninterested in attacking anyone alse.</text>
+              <text>As soon as the animals saw an Engi, they charged. The herd moved so fast, your team did not have enough time to react. The animals ate the Engi and galloped away, uninterested in attacking anyone else.</text>
               <removeCrew class="engi">
                 <clone>true</clone>
                 <text>You are sure that the eaten crewmember is already being cloned back on the ship.</text>
               </removeCrew>
               <choice hidden="true">
-                <text>The exploration team did not find anything useful on the planet and returned with empty hands, understanding why Engi had so little interest in settling there.</text>
-                <event/>
+                <text id="continue"/>
+                <event>
+                  <text>The exploration team did not find anything useful on the planet and returned with empty hands, understanding why Engi had so little interest in settling there.</text>
+                </event>
               </choice>
             </event>
           </choice>

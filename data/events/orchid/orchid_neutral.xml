@@ -84,7 +84,7 @@
   </event>
 
   <event name="ORCHID_SLAVES" unique="true">
-    <text>A rogue ship awaits you at the beacon. "Laborers for cheap! Can be used as oxygen emitters, cannon fodder, gifts to tribal chiefs, firewood, or healthy food."</text>
+    <text>A rogue ship awaits you at the beacon. "Laborers for cheap! Can be used as oxygen emitters, cannon fodder, firewood, or healthy food."</text>
     <ship auto_blueprint="SHIPS_PIRATE" hostile="false">
       <surrender chance="0.2" max="4" min="2">
         <text>The slavers surrender. "You can take one of these for free! Use them for whatever purpose you want. Just let us go."</text>
