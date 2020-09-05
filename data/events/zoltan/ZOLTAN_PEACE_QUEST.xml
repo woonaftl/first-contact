@@ -89,7 +89,7 @@
     <choice hidden="true">
       <text>Attempt to hail them.</text>
       <event>
-        <text>They open communications: "I can't imagine there's anything you could say that will save you. The rebellion must destroy those that are still loyal to the obsolete Federation."</text>
+        <text>They open communications: "I can't imagine there's anything you could say that will save you. The Rebellion must destroy those that are still loyal to the obsolete Federation."</text>
         <choice hidden="true">
           <text>"Perhaps there could be a reconciliation of our ideals without war?"</text>
           <event>

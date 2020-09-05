@@ -6,9 +6,10 @@
       <xsl:apply-templates select="@*">
         <xsl:sort select="name()"/>
       </xsl:apply-templates>
-      <xsl:apply-templates select="node()">
+      <xsl:apply-templates select="node()[not(name() = 'choice')]">
         <xsl:sort select="name()"/>
       </xsl:apply-templates>
+      <xsl:apply-templates select="choice"/>
     </xsl:copy>
   </xsl:template>
 

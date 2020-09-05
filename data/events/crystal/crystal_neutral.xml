@@ -109,7 +109,7 @@
   </event>
 
   <event name="CRYSTAL_PIRATE_CRYSTAL" unique="true">
-    <text>A pirate ship jumps in right after you arrive at the beacon. It must have followed once the Long-Range Beacon was reactivated. It almost charges a small Crystalline transport ship, weapons armed.</text>
+    <text>A pirate ship jumps in right after you arrive at the beacon. It must have followed once the Long-Range beacon was reactivated. It almost charges a small Crystalline transport ship, weapons armed.</text>
     <choice hidden="true">
       <text>Attack the pirate.</text>
       <event>

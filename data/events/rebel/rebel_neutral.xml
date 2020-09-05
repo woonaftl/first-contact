@@ -226,12 +226,12 @@
           <environment type="pulsar"/>
         </event>
         <event>
-          <text>The unmanned rebel ship tried to cut the tail in the asteroid field. It backfired when they could not move through a dense area, had to slow down and fight your ship.</text>
+          <text>The unmanned Rebel ship tried to cut the tail in the asteroid field. It backfired when they could not move through a dense area, had to slow down and fight your ship.</text>
           <ship hostile="true" load="REBEL_AUTO_WARNING"/>
           <environment type="asteroid"/>
         </event>
         <event>
-          <text>The AI controlling the rebel ship, piloted their vessel straight into local system's red giant. After the long chase, you finally catch them, but it is too late. The star is dangerously close, and your ship will overheat.</text>
+          <text>The AI controlling the Rebel ship, piloted their vessel straight into local system's red giant. After the long chase, you finally catch them, but it is too late. The star is dangerously close, and your ship will overheat.</text>
           <ship hostile="true" load="REBEL_AUTO_WARNING"/>
           <environment type="sun"/>
         </event>
@@ -303,10 +303,10 @@
 
   <event name="REBEL_CHECKPOINT">
     <textList name="REBEL_CHECKPOINT_TEXT">
-      <text>It looks like this Beacon is home to a Rebel checkpoint. They're stopping and searching any ship that passes through. Civilians are being harassed, and Federation members are detained. The Rebels haven't noticed you yet.</text>
+      <text>It looks like this beacon is home to a Rebel checkpoint. They're stopping and searching any ship that passes through. Civilians are being harassed, and Federation members are detained. The Rebels haven't noticed you yet.</text>
       <text>Another Rebel checkpoint is monitoring this location. A number of civilian ships are awaiting inspection, any of them could be Federation loyalists. The Rebels haven't noticed you yet.</text>
-      <text>A Rebel space station and single fighter is monitoring this Beacon for Federation activity. A number of civilian ships are docked, awaiting inspection by the Rebels and possible detainment if they are Federation loyalists. The Rebels haven't noticed you yet.</text>
-      <text>A rather large fleet of civilian ships are held up at this Beacon. It appears to be a Rebel checkpoint; everyone is being inspected for possible ties to the Federation. No one has noticed you yet.</text>
+      <text>A Rebel space station and single fighter is monitoring this beacon for Federation activity. A number of civilian ships are docked, awaiting inspection by the Rebels and possible detainment if they are Federation loyalists. The Rebels haven't noticed you yet.</text>
+      <text>A rather large fleet of civilian ships are held up at this beacon. It appears to be a Rebel checkpoint; everyone is being inspected for possible ties to the Federation. No one has noticed you yet.</text>
     </textList>
     <choice>
       <text>Fend for yourself, attack and escape.</text>
@@ -626,7 +626,7 @@
     <choice>
       <text>Intervene to defend the outpost.</text>
       <event>
-        <text>The rebel responds to your threat, "I don't know who you are, but no one defies the Rebel Fleet!" They move in to engage.</text>
+        <text>The Rebel responds to your threat, "I don't know who you are, but no one defies the Rebel Fleet!" They move in to engage.</text>
         <ship hostile="true"/>
       </event>
     </choice>

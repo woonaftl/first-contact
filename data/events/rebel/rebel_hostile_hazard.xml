@@ -22,7 +22,7 @@
   <event name="REBEL_PULSAR">
     <textList name="REBEL_PULSAR_TEXT">
       <text>A Rebel captain appears on the screen. "I thought we had been doomed to backwater assignments. This is my chance to get back in Command's good graces! Charge the weapons!"</text>
-      <text>A small rebel research station overlooks a pulsating star. Before you can react a Rebel ship spots you and moves in to attack.</text>
+      <text>A small Rebel research station overlooks a pulsating star. Before you can react a Rebel ship spots you and moves in to attack.</text>
       <text>You arrive at an infrequently used beacon close to a pulsar. Before long a Rebel ship happens to jump nearby. Looks like you'll have to fight.</text>
     </textList>
     <ship load="REBEL" hostile="true"/>

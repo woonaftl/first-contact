@@ -6,12 +6,6 @@
     <name>BOARDER</name>
     <name>BOARDER_ION</name>
   </blueprintList>
-  <blueprintList name="DRONES_PAVONIAN">
-    <name>REPAIR</name>
-    <name>BATTLE</name>
-    <name>BOARDER</name>
-    <name>BOARDER_ION</name>
-  </blueprintList>
   <blueprintList name="DRONES_STANDARD_UPGRADED">
     <name>REPAIR</name>
     <name>BATTLE_UPGRADED</name>

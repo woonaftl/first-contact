@@ -9,7 +9,7 @@
     <textList name="BOSS_SCOUT">
       <text>Although this sector is still under Federation control, a small scout has slipped by the fleet. You move in to engage.</text>  <!--image- Fleet background-->
       <text>Long range scanners show this system is empty of any capital ships. Clearly it is not of strategic value. Wait... FTL signatures show a Rebel scout just jumped nearby!</text> <!--image-no fleets-->
-      <text>Sensors indicate that the Rebels are setting up a forward Jump Beacon behind the nearby planet's moon. More importantly, a number of ships are passing by; prepare for a fight!</text> <!-- image- no fleet, empty planet-->
+      <text>Sensors indicate that the Rebels are setting up a forward jump beacon behind the nearby planet's moon. More importantly, a number of ships are passing by; prepare for a fight!</text> <!-- image- no fleet, empty planet-->
       <text>Federation ships are scarce in this region of space despite a number of civilian space stations. You see a small bomber squadron engaged with some Federation scouts and quickly move in to assist.</text>
       <text>As soon as you arrive at the beacon, a Rebel scout turns to engage. Power up the weapons!</text>
       <text>You scan the area, finding signatures for only a small trade vessel. However, as it approaches you see the silhouette of a Rebel scout! You run the scanners again and discover their registration is fake. You move in to attack.</text>

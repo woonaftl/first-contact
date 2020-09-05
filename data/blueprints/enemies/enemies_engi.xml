@@ -28,24 +28,24 @@
       <drones power="2" max="8" room="0"/>
     </systemList>
     <weaponList sector="0" missiles="0" system_power="2">
-      <weapon name="WEAPONS_ANY_1"/>
-      <weapon name="WEAPONS_ANY_1"/>
+      <weapon name="WEAPONS_ION_1"/>
+      <weapon name="WEAPONS_LASER_1"/>
     </weaponList>
     <weaponList sector="1" missiles="0" system_power="3">
-      <weapon name="WEAPONS_ANY_2"/>
-      <weapon name="WEAPONS_ANY_1"/>
+      <weapon name="WEAPONS_ION_2"/>
+      <weapon name="WEAPONS_LASER_1"/>
     </weaponList>
     <weaponList sector="2" missiles="0" system_power="4">
-      <weapon name="WEAPONS_ANY_2"/>
-      <weapon name="WEAPONS_ANY_1"/>
+      <weapon name="WEAPONS_ION_2"/>
       <weapon name="WEAPONS_LASER_1"/>
+      <weapon name="WEAPONS_ANY_1"/>
     </weaponList>
     <weaponList sector="3" missiles="0" system_power="5">
-      <weapon name="WEAPONS_ANY_2"/>
-      <weapon name="WEAPONS_ANY_2"/>
-      <weapon name="WEAPONS_LASER_1"/>
+      <weapon name="WEAPONS_ION_2"/>
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_ANY_1"/>
     </weaponList>
-    <droneList drones="4" load="DRONES_ENGI"/>
+    <droneList drones="4" load="DRONES_DEFENSE"/>
     <health amount="7"/>
     <crewCount amount="2" max="3" class="engi"/>
     <boardingAI>sabotage</boardingAI>
@@ -67,29 +67,29 @@
     </systemList>
     <weaponList sector="2" missiles="2" system_power="4">
       <weapon name="WEAPONS_BOMB"/>
-      <weapon name="WEAPONS_ANY_2"/>
+      <weapon name="WEAPONS_ION_2"/>
       <weapon name="WEAPONS_ANY_1"/>
       <weapon name="WEAPONS_LASER_1"/>
     </weaponList>
     <weaponList sector="3" missiles="2" system_power="5">
       <weapon name="WEAPONS_BOMB"/>
-      <weapon name="WEAPONS_ANY_2"/>
+      <weapon name="WEAPONS_ION_2"/>
       <weapon name="WEAPONS_ANY_2"/>
       <weapon name="WEAPONS_LASER_1"/>
     </weaponList>
     <weaponList sector="4" missiles="2" system_power="6">
       <weapon name="WEAPONS_BOMB"/>
-      <weapon name="WEAPONS_ANY_3"/>
+      <weapon name="WEAPONS_ION_3"/>
       <weapon name="WEAPONS_ANY_2"/>
       <weapon name="WEAPONS_LASER_1"/>
     </weaponList>
     <weaponList sector="5" missiles="2" system_power="7">
       <weapon name="WEAPONS_BOMB"/>
-      <weapon name="WEAPONS_ANY_3"/>
+      <weapon name="WEAPONS_ION_3"/>
       <weapon name="WEAPONS_ANY_3"/>
       <weapon name="WEAPONS_LASER_1"/>
     </weaponList>
-    <droneList drones="4" load="DRONES_ENGI"/>
+    <droneList drones="4" load="DRONES_DEFENSE"/>
     <health amount="9"/>
     <crewCount amount="3" max="4" class="engi"/>
     <boardingAI>sabotage</boardingAI>
@@ -110,27 +110,27 @@
       <drones power="2" max="8" room="7"/>
     </systemList>
     <weaponList sector="0" missiles="0" system_power="2">
-      <weapon name="WEAPONS_LASER_1"/>
+      <weapon name="WEAPONS_ION_1"/>
       <weapon name="WEAPONS_LASER_1"/>
     </weaponList>
     <weaponList sector="1" missiles="0" system_power="3">
-      <weapon name="WEAPONS_LASER_1"/>
+      <weapon name="WEAPONS_ION_1"/>
       <weapon name="WEAPONS_LASER_1"/>
       <weapon name="WEAPONS_LASER_1"/>
     </weaponList>
     <weaponList sector="2" missiles="0" system_power="4">
-      <weapon name="WEAPONS_LASER_1"/>
+      <weapon name="WEAPONS_ION_1"/>
       <weapon name="WEAPONS_LASER_1"/>
       <weapon name="WEAPONS_LASER_1"/>
       <weapon name="WEAPONS_LASER_1"/>
     </weaponList>
     <weaponList sector="3" missiles="0" system_power="5">
-      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_ION_2"/>
       <weapon name="WEAPONS_LASER_1"/>
       <weapon name="WEAPONS_LASER_1"/>
       <weapon name="WEAPONS_LASER_1"/>
     </weaponList>
-    <droneList drones="4" load="DRONES_ENGI"/>
+    <droneList drones="4" load="DRONES_DEFENSE"/>
     <health amount="7"/>
     <crewCount amount="2" max="3" class="engi"/>
     <boardingAI>sabotage</boardingAI>
@@ -153,29 +153,29 @@
     </systemList>
     <weaponList sector="4" missiles="0" system_power="6">
       <weapon name="WEAPONS_ION_3"/>
+      <weapon name="WEAPONS_ION_1"/>
       <weapon name="WEAPONS_ANY_1"/>
-      <weapon name="WEAPONS_ANY_1"/>
-      <weapon name="WEAPONS_ANY_1"/>
+      <weapon name="WEAPONS_LASER_1"/>
     </weaponList>
     <weaponList sector="5" missiles="0" system_power="7">
       <weapon name="WEAPONS_ION_3"/>
-      <weapon name="WEAPONS_ANY_2"/>
+      <weapon name="WEAPONS_ION_2"/>
       <weapon name="WEAPONS_ANY_1"/>
-      <weapon name="WEAPONS_ANY_1"/>
+      <weapon name="WEAPONS_LASER_1"/>
     </weaponList>
     <weaponList sector="6" missiles="0" system_power="8">
       <weapon name="WEAPONS_ION_3"/>
+      <weapon name="WEAPONS_ION_2"/>
       <weapon name="WEAPONS_ANY_2"/>
-      <weapon name="WEAPONS_ANY_2"/>
-      <weapon name="WEAPONS_ANY_1"/>
+      <weapon name="WEAPONS_LASER_1"/>
     </weaponList>
     <weaponList sector="7" missiles="0" system_power="8">
       <weapon name="WEAPONS_ION_3"/>
+      <weapon name="WEAPONS_ION_2"/>
       <weapon name="WEAPONS_ANY_2"/>
-      <weapon name="WEAPONS_ANY_2"/>
-      <weapon name="WEAPONS_ANY_1"/>
+      <weapon name="WEAPONS_LASER_1"/>
     </weaponList>
-    <droneList drones="5" load="DRONES_ENGI"/>
+    <droneList drones="5" load="DRONES_DEFENSE"/>
     <health amount="11"/>
     <crewCount amount="3" max="5" class="engi"/>
     <boardingAI>sabotage</boardingAI>

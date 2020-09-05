@@ -44,9 +44,6 @@
         <text>The last pirate life-signs blink out and the Zoltan returns to his bridge. "Egalitarianism is a cornerstone of successful cohabitation. Please, enjoy the fruits of your labor."</text>
         <autoReward level="HIGH">augment</autoReward>
       </deadCrew>
-      <crew>
-        <crewMember type="random" prop="1"/>
-      </crew>
     </ship>
     <choice hidden="true">
       <text>Engage the pirates.</text>

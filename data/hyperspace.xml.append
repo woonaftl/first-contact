@@ -3,9 +3,88 @@
   <forceDlc enabled="true"/>
 
   <ships>
-    <ship name="PLAYER_SHIP_ORCHID" b="true" c="true"/>
-    <ship name="PLAYER_SHIP_LIZARD" b="true" c="true"/>
     <ship name="PLAYER_SHIP_PAVONIAN" b="true" c="true"/>
+    <!--<customShip name="MANTIS_SCOUT_0">
+      <crew>
+        <mantis room="1"/>
+        <engi room="7"/>
+        <mantis room="4"/>
+      </crew>
+    </customShip>
+    <customShip name="MANTIS_INTERCEPTOR_0">
+      <crew>
+        <mantis room="0"/>
+        <engi room="4"/>
+        <mantis room="6"/>
+      </crew>
+    </customShip>
+    <customShip name="MANTIS_SCOUT_PIRATE_0">
+      <crew>
+        <random room="1"/>
+        <random room="7"/>
+        <random room="4"/>
+      </crew>
+    </customShip>
+    <customShip name="MANTIS_INTERCEPTOR_PIRATE_0">
+      <crew>
+        <random room="0"/>
+        <random room="4"/>
+        <random room="6"/>
+      </crew>
+    </customShip>-->
+    <customShip name="PLAYER_SHIP_MANTIS">
+      <crew>
+        <mantis room="7"/>
+        <engi room="10"/>
+        <mantis room="1"/>
+        <mantis room="1"/>
+      </crew>
+    </customShip>
+    <customShip name="PLAYER_SHIP_MANTIS_2">
+      <crew>
+        <engi room="0"/>
+        <mantis room="6"/>
+        <mantis room="6"/>
+      </crew>
+    </customShip>
+    <customShip name="PLAYER_SHIP_MANTIS_3">
+      <crew>
+        <engi room="7"/>
+        <mantis room="15"/>
+        <anaerobic room="12"/>
+      </crew>
+    </customShip>
+    <customShip name="PLAYER_SHIP_ENERGY_2">
+      <crew>
+        <energy room="8"/>
+        <energy room="0"/>
+        <energy room="2"/>
+        <energy room="2"/>
+      </crew>
+    </customShip>
+    <customShip name="PLAYER_SHIP_JELLY_2">
+      <crew>
+        <slug room="0"/>
+        <slug room="10"/>
+        <slug room="10"/>
+      </crew>
+    </customShip>
+    <customShip name="PLAYER_SHIP_CRYSTAL_2">
+      <crew>
+        <crystal room="15"/>
+        <crystal room="3"/>
+        <crystal room="3"/>
+      </crew>
+    </customShip>
+    <customShip name="PLAYER_SHIP_ANAEROBIC_2">
+      <crew>
+        <anaerobic room="0"/>
+        <anaerobic room="17"/>
+        <anaerobic room="17"/>
+      </crew>
+    </customShip>
+    <!--<ship name="PLAYER_SHIP_ORCHID" b="true" c="true"/>-->
+    <!--<ship name="PLAYER_SHIP_LIZARD" b="true" c="true"/>-->
   </ships>
 
   <crew>
@@ -247,8 +326,7 @@
     </race>
 
     <race name="pavonian">
-      <damageTakenMultiplier>1.5</damageTakenMultiplier>
-      <!--stun immunity-->
+      <damageTakenMultiplier>2.0</damageTakenMultiplier>
       <skills>
         <piloting req="10000000"/>
         <engines req="10000000"/>
@@ -263,18 +341,22 @@
       <powerEffect>
         <cooldown>30</cooldown>
         <jumpCooldown>full</jumpCooldown>
+        <req>
+          <aiDisabled/>
+        </req>
         <!--<powerSounds>
           <powerSound>lockdown1</powerSound>
           <powerSound>lockdown2</powerSound>
         </powerSounds>-->
-        <stun>5</stun>
-        <friendlyFire>false</friendlyFire>
-        <shipFriendlyFire>false</shipFriendlyFire>
-        <buttonText>STUN</buttonText>
-        <tooltip>Ready: Click to stun all enemies in the room</tooltip>
+        <sysDamage>-8</sysDamage>
+        <friendlyFire>true</friendlyFire>
+        <shipFriendlyFire>true</shipFriendlyFire>
+        <buttonText>REPAIR</buttonText>
+        <tooltip>Ready: Click to repair a system at a health cost</tooltip>
         <cooldownColor r="240" g="220" b="120"/>
         <effectAnim>rainbow_spiral</effectAnim>
-        <animFrame>4</animFrame>
+        <animFrame>2</animFrame>
+        <selfHealth>-75.0</selfHealth>
       </powerEffect>
     </race>
 
@@ -302,7 +384,7 @@
         <cooldownColor r="0" g="110" b="155"/>
         <!--<effectAnim>explosion_crystal</effectAnim>-->
         <temporaryEffect>
-          <duration>5</duration>
+          <duration>10</duration>
           <cooldownColor r="100" g="210" b="255"/>
           <!--<finishSounds>
             <finishSound>mindControlEnd</finishSound>
@@ -310,6 +392,32 @@
           <!--<effectAnim>mindcontrol</effectAnim>-->
           <invulnerable>true</invulnerable>
           <animSheet baseVisible="false">warped_stealth</animSheet>
+        </temporaryEffect>
+      </powerEffect>
+    </race>
+
+    <race name="cyborglice">
+      <damageTakenMultiplier>0.5</damageTakenMultiplier>
+      <skills>
+        <piloting req="10000000"/>
+        <engines req="10000000"/>
+        <shields req="10000000"/>
+        <weapons req="10000000"/>
+        <repair req="10000000"/>
+        <combat req="10000000"/>
+      </skills>
+      <powerEffect>
+        <cooldown>0</cooldown>
+        <cooldownColor r="0" g="0" b="0"/>
+        <buttonText>DISABLED</buttonText>
+        <activateWhenReady>true</activateWhenReady>
+        <req>
+          <maxHealth>25</maxHealth>
+        </req>
+        <temporaryEffect>
+          <duration>1</duration>
+          <cooldownColor r="0" g="0" b="0"/>
+          <controllable>false</controllable>
         </temporaryEffect>
       </powerEffect>
     </race>
@@ -366,6 +474,9 @@
     </aug>
     <aug name="FTL_JUMPER_UNIVERSAL">
       <function name="FTL_JUMPER_GOOD" value="1" warning="false"/>
+    </aug>
+    <aug name="GREENHOUSE_LOCKED">
+      <locked/>
     </aug>
   </augments>
 

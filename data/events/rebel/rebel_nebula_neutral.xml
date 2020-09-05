@@ -182,13 +182,6 @@
         <ship hostile="true"/>
       </event>
     </choice>
-    <choice req="ADV_SCANNERS" hidden="true">
-      <text>(Warped Scanners) Try to track them as you move to engage.</text>
-      <event>
-        <text>As soon as they see you they make a run for it. You squeeze what you can out of the malfunctioning sensors and are able to keep track of them long enough to get in firing range.</text>
-        <ship hostile="true"/>
-      </event>
-    </choice>
     <choice req="LIFE_SCANNER" hidden="true">
       <text>(Lifeform Scanner) Use their life signatures to follow.</text>
       <event>

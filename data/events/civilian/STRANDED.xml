@@ -211,7 +211,7 @@
       </event>
     </choice>
     <choice hidden="true">
-      <text>Share supplies with a Slug, hoping to get a reward.</text>
+      <text>Share some junk with a Slug, hoping to get a reward. Nothing that would be useful to you, of course.</text>
       <event>
         <text>The Slug offers some FTL fuel as a payment and starts going through the latest issue of the magazine without paying you any attention. Time to leave.</text>
         <choice>
@@ -234,7 +234,7 @@
       </event>
     </choice>
     <choice hidden="true">
-      <text>Share supplies with a Slug, hoping to get a reward.</text>
+      <text>Share some junk with a Slug, hoping to get a reward. Nothing that would be useful to you, of course.</text>
       <event>
         <text>The Slug offers some FTL fuel as a payment and starts going through the latest issue of the magazine without paying you any attention. Time to leave.</text>
         <choice>

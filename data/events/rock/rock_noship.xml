@@ -31,7 +31,7 @@
             </event>
           </eventList>
         </choice>
-        <choice hidden="true" req="WEAPONS_MISSILES">
+        <choice req="WEAPONS_MISSILES">
           <text>(Missile Weapon) Attempt a controlled detonation using a missile.</text>
           <event>
             <text>After drawing straws, a crewmember goes out to fix a modified warhead to the mine. You detonate the missile in a way that dislodges the mine. It blows up shortly after. The ship takes some damage in the blasts, but you're still sailing.</text>
@@ -40,17 +40,25 @@
             <item_modify>
               <item type="missiles" min="-1" max="-1"/>
             </item_modify>
-            <autoReward level="LOW">scrap_only</autoReward>
+            <choice>
+              <text id="continue"/>
+              <event><autoReward level="LOW">scrap_only</autoReward></event>
+            </choice>
           </event>
         </choice>
-        <choice hidden="true" req="COMBAT_BEAM_DRONE_LIST">
+        <choice req="COMBAT_BEAM_DRONE_LIST">
           <text>(Beam Drone) Use a drone to cut away the mine with a precision beam.</text>
           <event>
             <text>Carefully guided from the bridge, your beam drone removes the mine's grappling arms and sends it drifting off into space, where you shoot at it until it detonates at a safe distance.</text>
             <item_modify>
               <item type="drones" min="-1" max="-1"/>
             </item_modify>
-            <autoReward level="LOW">scrap_only</autoReward>
+            <choice>
+              <text id="continue"/>
+              <event>
+                <autoReward level="LOW">scrap_only</autoReward>
+              </event>
+            </choice>
           </event>
         </choice>
       </event>

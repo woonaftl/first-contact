@@ -1,52 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FTL>
-  <changelog>
-    <entry>Lanius A starts with 2 upgraded Flak Guns II</entry>
-    <entry>Lanius B starts without hacking</entry>
-    <entry>Lanius B starts with a crew of 3 Lanius</entry>
-  </changelog>
   <shipBlueprint name="PLAYER_SHIP_ANAEROBIC" layout="anaerobic_cruiser" img="anaerobic_cruiser">
     <class>Lanius Cruiser</class>
     <name>?</name>
     <unlock>Entice the Lanius with a valuable fleet. Unlock 4 ships in addition to the Kestrel Cruiser to unlock this ship.</unlock>
-    <desc>The Flak guns used by the Lanius lack precision, but no number of shields are able to stop them.</desc>
+    <desc>?</desc>
     <systemList>
       <battery power="1" room="10" start="false" img="room_battery_10"/>
       <cloaking power="1" room="6" start="false" img="room_cloaking_4"/>
-      <clonebay power="1" room="0" start="false" slot="0"/>
+      <clonebay power="1" room="0" start="true" slot="0"/>
       <doors power="1" room="15" start="true" img="room_doors_2"/>
       <drones power="2" room="11" start="false" img="room_drones_9"/>
       <engines power="1" room="7" start="true" img="room_engines_7"/>
-      <hacking power="1" room="3" start="false" img="room_hacking_5"/>
-      <medbay power="1" room="0" start="true" img="room_medbay_4"/>
+      <hacking power="1" room="3" start="true" img="room_hacking_5"/>
+      <medbay power="1" room="0" start="false" img="room_medbay_4"/>
       <mind power="1" room="13" start="false" img="room_mind_6"/>
       <oxygen power="1" room="2" start="true" img="room_oxygen_2"/>
       <pilot power="1" room="8" start="true" img="room_pilot_4"/>
       <sensors power="1" room="14" start="true" img="room_sensors"/>
       <shields power="2" room="5" start="true" img="room_shields_10"/>
       <teleporter power="1" room="1" start="false"/>
-      <weapons power="4" room="9" start="true" img="room_weapons_9"/>
+      <weapons power="2" room="9" start="true" img="room_weapons_9"/>
     </systemList>
     <weaponSlots>4</weaponSlots>
     <droneSlots>2</droneSlots>
     <weaponList count="2" missiles="0">
-      <weapon name="SHOTGUN_2_UPGRADED"/>
-      <weapon name="SHOTGUN_2_UPGRADED"/>
+      <weapon name="ION_STUN_BURST_UPGRADED"/>
+      <weapon name="LASER_BURST_2_UPGRADED"/>
     </weaponList>
-    <droneList drones="0"/>
+    <droneList drones="12"/>
     <health amount="30"/>
-    <maxPower amount="7"/>
+    <maxPower amount="6"/>
     <crewCount amount="3" class="anaerobic"/>
     <aug name="SCRAP_COLLECTOR_LOCKED"/>
     <cloakImage>anaerobic_cruiser</cloakImage>
   </shipBlueprint>
 
-  <changelog>
-    <entry>Lanius B was remade with new weapons, systems, crew and a new room layout</entry>
-    <entry>Lanius B starts with 2 Basic Flak Guns</entry>
-    <entry>Lanius B starts with 2 upgraded Heavy Laser I</entry>
-  </changelog>
-  <!--TODO miniship, gibs-->
   <shipBlueprint name="PLAYER_SHIP_ANAEROBIC_2" layout="anaerobic_cruiser_black" img="anaerobic_cruiser_black">
     <class>Lanius Cruiser</class>
     <name>?</name>
@@ -55,32 +44,28 @@
     <systemList>
       <battery power="1" room="10" start="false" img="room_battery_21"/>
       <cloaking power="1" room="2" start="false" img="room_cloaking_15"/>
-      <clonebay power="1" room="6" start="true" slot="1"/>
+      <clonebay power="1" room="15" start="false" slot="2"/>
       <doors power="1" room="9" start="true" img="room_doors"/>
       <drones power="2" room="16" start="false" img="room_drones_23"/>
       <engines power="1" room="14" start="true" img="room_engines_13"/>
-      <hacking power="1" room="3" start="false" img="room_hacking_7"/>
-      <medbay power="1" room="6" start="false" img="room_medbay"/>
+      <hacking power="1" room="3" start="true" img="room_hacking_7"/>
+      <medbay power="1" room="15" start="true" img="room_medbay_7"/>
       <mind power="1" room="11" start="false" img="room_mind_12"/>
       <oxygen power="1" room="1" start="true" img="room_oxygen_21"/>
       <pilot power="1" room="0" start="true" img="room_pilot_2"/>
       <sensors power="1" room="8" start="true" img="room_sensors"/>
-      <shields power="2" room="4" start="true" img="room_shields_16"/>
-      <teleporter power="1" room="17" start="false"/>
-      <weapons power="4" room="15" start="true" img="room_weapons"/>
+      <shields power="2" room="6" start="true" img="room_shields_8"/>
+      <teleporter power="1" room="17" start="true"/>
+      <weapons power="1" room="4" start="true" img="room_weapons_5"/>
     </systemList>
     <weaponSlots>4</weaponSlots>
     <droneSlots>2</droneSlots>
-    <weaponList count="4" missiles="0">
-      <weapon name="SHOTGUN_BASIC"/>
-      <weapon name="SHOTGUN_BASIC"/>
-      <weapon name="LASER_HEAVY_1_UPGRADED"/>
-      <weapon name="LASER_HEAVY_1_UPGRADED"/>
+    <weaponList count="1" missiles="15">
+      <weapon name="MISSILES_1"/>
     </weaponList>
-    <droneList drones="0"/>
+    <droneList drones="12"/>
     <health amount="30"/>
-    <maxPower amount="7"/>
-    <crewCount amount="2" class="anaerobic"/>
+    <maxPower amount="6"/>
     <aug name="SCRAP_COLLECTOR_LOCKED"/>
     <shieldImage>anaerobic_cruiser</shieldImage>
     <cloakImage>anaerobic_cruiser</cloakImage>

@@ -46,7 +46,6 @@
     <xsl:copy>
       <xsl:apply-templates select="@*"/>
       <xsl:attribute name="blue">false</xsl:attribute>
-      <xsl:attribute name="hidden">true</xsl:attribute>
       <xsl:attribute name="req">ENGINE_DISABLER</xsl:attribute>
       <xsl:attribute name="lvl">0</xsl:attribute>
       <xsl:attribute name="max_group">
@@ -57,7 +56,6 @@
     <xsl:copy>
       <xsl:apply-templates select="@*"/>
       <xsl:attribute name="blue">false</xsl:attribute>
-      <xsl:attribute name="hidden">true</xsl:attribute>
       <xsl:attribute name="req">ENGINE_DISABLER</xsl:attribute>
       <xsl:attribute name="max_group">
         <xsl:value-of select="position()"/>

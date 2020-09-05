@@ -28,18 +28,6 @@
     <name>DEFENSE_1_UPGRADED</name>
     <name>DEFENSE_2_UPGRADED</name>
   </blueprintList>
-  <blueprintList name="DRONES_ENGI">
-    <name>DEFENSE_1</name>
-    <name>DEFENSE_2</name>
-    <name>DRONE_SHIELD</name>
-    <name>ANTI_DRONE</name>
-  </blueprintList>
-  <blueprintList name="DRONES_PAVONIAN">
-    <name>DEFENSE_1</name>
-    <name>DEFENSE_2</name>
-    <name>DRONE_SHIELD</name>
-    <name>ANTI_DRONE</name>
-  </blueprintList>
   <blueprintList name="SHIP_REPAIR_LIST">
     <name>SHIP_REPAIR</name>
     <name>SHIP_REPAIR_UPGRADED</name>

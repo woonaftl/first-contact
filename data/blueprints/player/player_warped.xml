@@ -91,7 +91,7 @@
       <doors power="1" room="9" start="true" img="room_doors_2"/>
       <drones power="2" room="11" start="false" img="room_drones_4"/>
       <engines power="1" room="5" start="true" img="room_engines"/>
-      <hacking power="1" room="13" start="true" img="room_hacking"/>
+      <hacking power="1" room="13" start="false" img="room_hacking"/>
       <medbay power="1" room="0" start="false" img="room_medbay_4"/>
       <mind power="1" room="7" start="false" img="room_mind_5"/>
       <oxygen power="1" room="1" start="true" img="room_oxygen_2"/>
@@ -99,17 +99,18 @@
       <sensors power="1" room="4" start="true" img="room_sensors_2"/>
       <shields power="2" room="6" start="false" img="room_shields_7"/>
       <teleporter power="1" room="10" start="false"/>
-      <weapons power="2" room="3" start="true" img="room_weapons_5"/>
+      <weapons power="4" room="3" start="true" img="room_weapons_5"/>
     </systemList>
-    <weaponList count="1" missiles="0">
-      <weapon name="BEAM_1_UPGRADED"/>
+    <weaponList count="2" missiles="0">
+      <weapon name="LASER_HULL_2_UPGRADED"/>
+      <weapon name="LASER_HULL_2_UPGRADED"/>
     </weaponList>
     <weaponSlots>3</weaponSlots>
     <droneSlots>2</droneSlots>
     <aug name="ADV_SCANNERS_LOCKED"/>
     <droneList count="0" drones="0"/>
     <health amount="30"/>
-    <maxPower amount="5"/>
+    <maxPower amount="6"/>
     <crewCount amount="2" class="warped"/>
     <shieldImage>crystal_cruiser</shieldImage>
     <cloakImage>warped_cruiser</cloakImage>

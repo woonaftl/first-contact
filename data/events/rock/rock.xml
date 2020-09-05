@@ -39,9 +39,6 @@
     <surrender chance="0.7" min="3" max="4" load="ROCK_SHIP_SURRENDER"/>
     <destroyed load="DESTROYED_DEFAULT"/>
     <deadCrew load="DEAD_CREW_DEFAULT"/>
-    <crew>
-      <crewMember type="rock" prop="1"/>
-    </crew>
   </ship>
 
   <event name="ROCK_SHIP_SURRENDER">

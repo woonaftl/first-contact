@@ -62,7 +62,7 @@
       <teleporter power="1" room="1" start="false"/>
       <weapons power="2" room="15" start="true" img="room_weapons_2"/>
     </systemList>
-    <weaponSlots>4</weaponSlots>
+    <weaponSlots>3</weaponSlots>
     <droneSlots>2</droneSlots>
     <weaponList count="1" missiles="5">
       <weapon name="LASER_BURST_3_UPGRADED"/>
@@ -145,7 +145,7 @@
       <teleporter power="1" room="5" start="false"/>
       <weapons power="2" room="4" start="true" img="room_weapons_2"/>
     </systemList>
-    <weaponSlots>4</weaponSlots>
+    <weaponSlots>3</weaponSlots>
     <droneSlots>2</droneSlots>
     <weaponList count="4" missiles="9">
       <weapon name="LASER_BURST_2_UPGRADED"/>
@@ -157,7 +157,7 @@
     <crewCount amount="1" class="rock"/>
     <crewCount amount="1" class="energy"/>
     <crewCount amount="1" class="human"/>
-    <crewCount amount="1" class="lizard"/>
+    <crewCount amount="1" class="pavonian"/>
     <shieldImage>fed_cruiser</shieldImage>
     <cloakImage>fed_cruiser</cloakImage>
   </shipBlueprint>
@@ -237,7 +237,7 @@
       <teleporter power="1" room="8" start="false"/>
       <weapons power="2" room="11" start="true" img="room_weapons"/>
     </systemList>
-    <weaponSlots>4</weaponSlots>
+    <weaponSlots>3</weaponSlots>
     <droneSlots>2</droneSlots>
     <weaponList count="1" missiles="0">
       <weapon name="BEAM_2_LONG_UPGRADED"/>
@@ -245,9 +245,9 @@
     <droneList drones="0"/>
     <health amount="30"/>
     <maxPower amount="7"/>
-    <crewCount amount="1" class="anaerobic"/>
+    <crewCount amount="1" class="lizard"/>
     <crewCount amount="1" class="energy"/>
-    <crewCount amount="1" class="anaerobic"/>
+    <crewCount amount="1" class="lizard"/>
     <crewCount amount="1" class="human"/>
     <shieldImage>fed_cruiser</shieldImage>
     <cloakImage>fed_cruiser</cloakImage>

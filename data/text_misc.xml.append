@@ -3,6 +3,8 @@
   <text name="map_icon_upgrade">UPGRADE</text>
   <text name="map_upgrade_loc">Unvisited. Equipment upgrade available.</text>
 
+  <text name="name_Ruwen">Ruwen</text>
+
   <text name="tip_beams_upgraded">Tip: For every shield bar on the enemy, a beam's damage is reduced by one. For example, a three damage beam against two shield bars will cause one damage in every room it hits.\n\nTip: This weapon is upgraded. It cannot be upgraded again. Upgraded weapons require 1 less power and charge faster than stock weapons.</text>
   <text name="tip_boarding_upgraded">Tip: Boarding Drones require 1 drone part to deploy for each new enemy. They will board the enemy ship and attack as long as they are powered.\n\nTip: This drone is upgraded. It cannot be upgraded again. Upgraded drones require 1 less power than stock drones.</text>
   <text name="tip_bombs_upgraded">Tip: Bombs teleport past shields and defense drones to land directly on the ship. Like missiles, they cost one missile to launch. They never damage hull, but can be effective at disrupting crew and systems. You can even launch them at boarders on your own ship.\n\nTip: This weapon is upgraded. It cannot be upgraded again. Upgraded weapons require 1 less power and charge faster than stock weapons.</text>

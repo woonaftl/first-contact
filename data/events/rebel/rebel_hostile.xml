@@ -23,7 +23,7 @@
       <text>By the time you notice the Rebel ship behind the beacon, it's too late to avoid a fight.</text>
       <text>A Rebel ship hails. "We did not fight a war to let a single Federation ship shatter our dreams of a better galaxy!" He locks weapons.</text>
       <text>A Rebel ship approaches cautiously. "Personally," says the captain, "I'd have stuck with the Federation. But I'm a soldier, sir, and I'm no use without a war to fight. Raise your shields!"</text>
-      <text>You're hailed by a Rebel ship: "When the rebellion is complete you'll see the safer world we provide. Well, you won't, but you get the point." They arm weapons.</text>
+      <text>You're hailed by a Rebel ship: "When the Rebellion is complete you'll see the safer world we provide. Well, you won't, but you get the point." They arm weapons.</text>
       <text>A Rebel ship is guarding this beacon. You order a pursuit course and prepare to scratch up one more.</text>
     </textList>
     <ship load="REBEL" hostile="true"/>
@@ -88,7 +88,7 @@
     <choice>
       <text id="continue"/>
       <event>
-        <text>A flushed and panicky rebel soldier has teleported aboard. The rebel, who appears unarmed, repeatedly declares his peaceful intentions. It seems the rebel life has lost its charm.</text>
+        <text>A flushed and panicky Rebel soldier has teleported aboard. The Rebel, who appears unarmed, repeatedly declares his peaceful intentions. It seems the rebel life has lost its charm.</text>
         <choice hidden="true">
           <text>Accept his proposal, and prepare to fight the Rebel ship.</text>
           <eventList name="ALISON_DEFECTOR_HELP">

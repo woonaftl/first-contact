@@ -39,18 +39,12 @@
         <crewMember amount="1"/>
       </event>
     </choice>
-    <choice req="ADV_SCANNERS" hidden="true">
-      <text>(Warped Scanners) Pump extra power into your sensors and try to track them.</text>
-      <eventList name="NEBULA_LOST_SHIP_LIST2">
-        <event>
-          <text>Your local radar flickers, periodically showing signs of a large object in the clouds nearby. However it's enough to get coordinates and you find the ship... an empty hull, long since stripped of functioning components.</text>
-          <autoReward level="MED">scrap_only</autoReward>
-        </event>
-        <event>
-          <text>You follow the faint signatures and find them floating not too far away into the nebula. Thrilled to be found by friendlies, they come on board and abandon their wrecked ship.</text>
-          <crewMember amount="1"/>
-        </event>
-      </eventList>
+    <choice req="LIFE_SCANNER" hidden="true">
+      <text>(Lifeform Scanner) Lock onto their life-signs and try to track them.</text>
+      <event>
+        <text>You follow the faint life signatures and find them floating not too far away into the nebula. Thrilled to be found by friendlies, they come on board and abandon their wrecked ship.</text>
+        <crewMember amount="1"/>
+      </event>
     </choice>
   </event>
 

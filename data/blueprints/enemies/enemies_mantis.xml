@@ -19,6 +19,7 @@
 
   <!--TODO add 2 generic ships-->
 
+  <!--TODO all enemies with a teleporter start with some crew inside it-->
   <blueprintList name="MANTIS_PRIZE_LIST">
     <name>MANTIS_PRIZE</name>
   </blueprintList>

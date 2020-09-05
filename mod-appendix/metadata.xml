@@ -76,23 +76,22 @@ DETAILED FEATURES:
 
 6. Races and their preferred strategies
 6.1. To make room for more new fun races, some of the old races got their strategies a bit narrowed down. I made an effort to make a theme for each race - new and old.
-6.2. Engi - anti-ship drones and ion weapons (no internal drones)
+6.2. Engi - defensive drones
 6.3. Mantis - teleporter and bomb weapons
 6.4. Rockmen - heavy hitting missiles and heavy lasers (no piercing weapons, those are saved for Crystals)
 6.5. Zoltan - weak shields, beam weapons and ion weapons
-6.6. Slugs - mind control, anti-bio weapons, breaching weapons (including hull lasers)
+6.6. Slugs - mind control, anti-bio weapons, breaching weapons
 6.7. Crystals - shield-piercing crystal weapons, lockdown
 6.8. Lanius - flak weapons, Lanius didn't really have a strong theme, now they went all-in with flak
-6.9. Orchids - chain weapons
-6.10. Lizards - fire weapons and drones, Lizards prefer to burn enemies alive from the safety of their own ship
-6.11. Pavonians - internal and boarding drones, stunning weapons, small crew, fragile Pavonians prefer to use drones for heavy lifting
-6.12. Warped - cloaking, no shields, beams, adopting and expanding upon Stealth ship strategies
+6.9. Lizards - fire weapons and drones, Lizards prefer to burn enemies from the safety of their own ship
+6.10. Pavonians - chain weapons, able to keep the chain effect safe with use of special ability
+6.11. Warped - cloaking, no shields, adopting and expanding upon Stealth ship strategies
 
 7. Balance changes
 7.1. Hacking drone depowering exploit was fixed in Hyperspace. The drone just gets destroyed when depowered.
-7.1. It was a very common strategy to just wait for several minutes on weaker enemies to train your crew. Crew training is disabled now. And there are fewer enemies that can't damage you.
-7.2. Many systems are more expensive to buy or upgrade: artillery, hacking, engines, piloting.
-7.3. Rebel Flagship is a bit harder now: all of its rooms are connected including artillery rooms on all difficulty levels, and Flagship lasers do 2 damage instead of 1.
+7.2. It was a very common strategy to just wait for several minutes on weaker enemies to train your crew. Crew training is disabled now. And there are fewer enemies that can't damage you.
+7.3. Many systems are more expensive to buy or upgrade: artillery, hacking, engines, piloting.
+7.4. Rebel Flagship is a bit harder now: all of its rooms are connected including artillery rooms on all difficulty levels, and Flagship lasers do 2 damage instead of 1.
 
 8. Events
 8.1. We can all agree that hitting an empty beacon is a bit disappointing. So, most of them are removed.

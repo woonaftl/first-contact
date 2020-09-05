@@ -103,7 +103,7 @@
 
   <event name="NOTHING">
     <textList name="NOTHING">
-      <text planet="NONE" back="BG_DARK">Your jump leads you to nothing but empty space. This Jump Beacon serves no purpose other than as a connection.</text>
+      <text planet="NONE" back="BG_DARK">Your jump leads you to nothing but empty space. This jump beacon serves no purpose other than as a connection.</text>
       <text planet="NONE">You jump into an unremarkable system. No life signs detected within scanning range.</text>
       <text>Your scans reveal a mining base on a nearby planet long since abandoned. No life signs detected.</text>
       <text planet="PLANET_POPULATED_SMALL">Your scans reveal an ore refinery and several factories, all standing still and empty. No life signs detected.</text>
@@ -250,7 +250,7 @@
   </event>
 
   <event name="FINISH_BEACON">
-    <text>You've arrived at the Long-Range Beacon. When the FTL Drive is charged you can jump to the next Sector.</text>
+    <text>You've arrived at the Long-Range beacon. When the FTL Drive is charged you can jump to the next Sector.</text>
     <choice hidden="true">
       <text id="continue"/>
       <event load="EXIT_LIST"/>
@@ -258,7 +258,7 @@
   </event>
 
   <event name="FINISH_BEACON_NEBULA">
-    <text>This Long-Range Beacon is almost hidden within a nebula. When the FTL Drive is charged you can jump to the next Sector.</text>
+    <text>This Long-Range beacon is almost hidden within a nebula. When the FTL Drive is charged you can jump to the next Sector.</text>
   </event>
 
   <event name="FLEET_EASY">

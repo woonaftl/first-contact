@@ -91,7 +91,7 @@
   </event>
   <eventList name="REBEL_VS_FEDERATION_SAVED_LIST">
     <event>
-      <text>"Thank you for saving us. This ship is transporting Federation civilians on the run from the rebellion and we don't have the equipment to fight for ourselves. I don't have much to offer, but I can inform you of a hidden Federation base nearby. Perhaps they can assist you more."</text>
+      <text>"Thank you for saving us. This ship is transporting Federation civilians on the run from the Rebellion and we don't have the equipment to fight for ourselves. I don't have much to offer, but I can inform you of a hidden Federation base nearby. Perhaps they can assist you more."</text>
       <quest event="HIDDEN_FEDERATION_BASE_LIST"/>
     </event>
     <event>

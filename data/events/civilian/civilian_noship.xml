@@ -190,18 +190,23 @@
         </event>
       </eventList>
     </choice>
-    <choice req="DRONES_DEFENSE_LIST" hidden="true">
+    <choice req="DRONES_DEFENSE_LIST">
       <text>(Defense Drone) Use a Defense Drone to protect their ship.</text>
       <eventList name="CIVILIAN_ASTEROIDS_BEACON_LIST2">
         <event>
           <text>Your drone succeeds in keeping their ship from breaking apart while they fix it, however you take some damage while attempting to leave the asteroid field. They offer you some military supplies as thanks for saving them.</text>
-          <autoReward level="MED">weapon</autoReward>
           <item_modify>
             <item type="drones" min="-1" max="-1"/>
           </item_modify>
           <damage amount="2"/>
           <damage amount="1" system="random"/>
           <damage amount="1" system="room" effect="fire"/>
+          <choice>
+            <text id="continue"/>
+            <event>
+              <autoReward level="MED">weapon</autoReward>
+            </event>
+          </choice>
         </event>
         <event>
           <text>The drone keeps the ship stable enough to allow them to escape the asteroid field. They message you with map coordinates, "You're that Federation ship the Rebels are after, aren't you? I can't offer much but I heard there was a Federation loyalist base nearby. Maybe they can help you?"</text>
@@ -212,7 +217,7 @@
         </event>
       </eventList>
     </choice>
-    <choice req="REPAIR" hidden="true">
+    <choice req="REPAIR">
       <text>(Repair Drone) Send a Repair Drone to fix their Shields.</text>
       <event load="CIVILIAN_ASTEROIDS_BEACON_LIST2"/>
     </choice>
@@ -347,20 +352,30 @@
       <text>(Anti-Personnel Drone) Send your battle drone in to help.</text>
       <event>
         <text>You pull up alongside the station and release the drone through the airlock. Within a short time the majority of the creatures are dead, with only a little collateral damage. They express their most sincere gratitude.</text>
-        <autoReward level="HIGH">stuff</autoReward>
         <item_modify>
           <item type="drones" min="-1" max="-1"/>
         </item_modify>
+        <choice>
+          <text id="continue"/>
+          <event>
+            <autoReward level="HIGH">stuff</autoReward>
+          </event>
+        </choice>
       </event>
     </choice>
     <choice hidden="true" req="BOARDER_LIST">
       <text>(Boarding Drone) Launch a Boarding drone into the station.</text>
       <event>
         <text>You launch the drone and it crashes through their hull, leaving a huge breach. You watch as the drone tears through the creatures while debris and dead bodies fly out of the breach. The owners of the station are less than effusive when they thank you, and offer only a meager payment. Maybe it's a good time to leave...</text>
-        <autoReward level="HIGH">stuff</autoReward>
         <item_modify>
           <item type="drones" min="-1" max="-1"/>
         </item_modify>
+        <choice>
+          <text id="continue"/>
+          <event>
+            <autoReward level="HIGH">stuff</autoReward>
+          </event>
+        </choice>
       </event>
     </choice>
     <choice hidden="true" req="WEAPONS_BEAM_BIO">
@@ -505,9 +520,12 @@
         </choice>
       </event>
     </choice>
-    <choice hidden="true" req="REPAIR">
+    <choice req="REPAIR">
       <text>(Repair Drone) Send your Repair drone into the fire.</text>
       <event>
+        <item_modify>
+          <item type="drones" min="1" max="1"/>
+        </item_modify>
         <text>You send the Repair drone in and it methodically puts out the fires. Once it has made some progress, the rest of your crew helps to secure the station.</text>
         <choice hidden="true">
           <text>Contact the survivors.</text>
@@ -780,13 +798,13 @@
   </event>
 
   <event name="QUEST_MANTIS_INVASION_START" unique="true">
-    <text>You receive a request, "All of our military ships have been destroyed or damaged during the rebellion. However, there have been reports of a Mantis war camp only a few jumps from us. Can you help?"</text>
+    <text>You receive a request, "All of our military ships have been destroyed or damaged during the Rebellion. However, there have been reports of a Mantis war camp only a few jumps from us. Can you help?"</text>
     <choice hidden="true">
       <text>Pledge to do what you can.</text>
       <event>
         <text>"Thank you! If you can just give us a count on their numbers perhaps we can get the Rebels to help."</text>
         <quest event="QUEST_MANTIS_INVASION"/>
-        <autoReward level="MED">scrap_only</autoReward>
+        <autoReward level="LOW">scrap_only</autoReward>
       </event>
     </choice>
     <choice>

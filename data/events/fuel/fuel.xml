@@ -157,10 +157,6 @@
         </event>
       </eventList>
     </choice>
-    <choice hidden="true" req="ADV_SCANNERS">
-      <text>(Warped Scanners) Run a detailed scan before responding.</text>
-      <event load="FUEL_APPROACH_SCAN_LIST"/>
-    </choice>
   </event>
   <changelog>
     <entry>Credits to Twinge's balance mod: enemy in FUEL_APPROACH event drops fuel</entry>

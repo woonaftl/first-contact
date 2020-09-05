@@ -3,7 +3,7 @@
   <shipBlueprint name="PLAYER_SHIP_ORCHID" layout="orchid_cruiser" img="orchid_cruiser">
     <class>Orchid Cruiser</class>
     <name>Juglan</name>
-    <desc>Orchids make good use of chain weapons, which become stronger as the battle goes on.</desc>
+    <desc>?</desc>
     <systemList>
       <battery power="1" room="11" start="false" img="room_battery_18"/>
       <cloaking power="1" room="2" start="false" img="room_cloaking_5"/>
@@ -19,20 +19,16 @@
       <sensors power="1" room="7" start="true"/>
       <shields power="2" room="3" start="true" img="room_shields_3"/>
       <teleporter power="1" room="5" start="false"/>
-      <weapons power="2" room="10" start="true" img="room_weapons_5"/>
+      <weapons power="3" room="10" start="true" img="room_weapons_5"/>
     </systemList>
     <weaponSlots>4</weaponSlots>
     <droneSlots>2</droneSlots>
-    <weaponList count="2" missiles="0">
-      <weapon name="LASER_CHAINGUN_UPGRADED"/>
-      <weapon name="ION_CHAINGUN_UPGRADED"/>
-    </weaponList>
+    <weaponList count="0" missiles="0"/>
     <droneList drones="0"/>
-    <aug name="SYSTEM_CASING_LOCKED"/>
+    <aug name="GREENHOUSE_LOCKED"/>
     <health amount="30"/>
-    <maxPower amount="6"/>
-    <crewCount amount="1" class="anaerobic"/>
-    <crewCount amount="2" class="orchid"/>
+    <maxPower amount="7"/>
+    <crewCount amount="3" class="orchid"/>
     <shieldImage>stealth</shieldImage>
     <cloakImage>orchid_cruiser</cloakImage>
   </shipBlueprint>
@@ -40,7 +36,7 @@
   <shipBlueprint name="PLAYER_SHIP_ORCHID_2" layout="orchid_cruiser_autumn" img="orchid_cruiser_autumn">
     <class>Orchid Cruiser</class>
     <name>Autumn</name>
-    <desc>The Chain Eraser can deal massive damage to hull and systems winning a battle with one precise shot.</desc>
+    <desc>?</desc>
     <systemList>
       <battery power="1" room="17" start="false" img="room_battery_19"/>
       <cloaking power="1" room="11" start="false" img="room_cloaking_12"/>
@@ -56,20 +52,16 @@
       <sensors power="1" room="8" start="true" img="room_sensors_7"/>
       <shields power="2" room="6" start="true" img="room_shields_3"/>
       <teleporter power="1" room="3" start="false"/>
-      <weapons power="3" room="1" start="true" img="room_weapons_9"/>
+      <weapons power="2" room="1" start="true" img="room_weapons_9"/>
     </systemList>
     <weaponSlots>4</weaponSlots>
     <droneSlots>2</droneSlots>
-    <weaponList count="2" missiles="0">
-      <weapon name="CHAIN_ERASER_UPGRADED"/>
-      <weapon name="LASER_BURST_1"/>
-    </weaponList>
+    <weaponList count="0" missiles="0"/>
     <droneList drones="0"/>
+    <aug name="GREENHOUSE_LOCKED"/>
     <health amount="30"/>
-    <maxPower amount="7"/>
-    <aug name="SYSTEM_CASING_LOCKED"/>
-    <crewCount amount="1" class="rock"/>
-    <crewCount amount="2" class="orchid"/>
+    <maxPower amount="6"/>
+    <crewCount amount="3" class="orchid"/>
     <shieldImage>stealth</shieldImage>
     <cloakImage>orchid_cruiser</cloakImage>
   </shipBlueprint>
@@ -78,7 +70,7 @@
     <class>Orchid Cruiser</class>
     <name>The Last Straw</name>
     <!-- named by AgentTheKat -->
-    <desc>The Vulcan laser needs a long time to spin up, but once it started going, it is able to penetrate most defenses.</desc>
+    <desc>?</desc>
     <systemList>
       <battery power="1" room="1" start="false" img="room_battery_13"/>
       <cloaking power="1" room="13" start="false" img="room_cloaking_10"/>
@@ -92,21 +84,18 @@
       <oxygen power="1" room="3" start="true" img="room_oxygen_15"/>
       <pilot power="1" room="0" start="true" img="room_pilot_2"/>
       <sensors power="1" room="10" start="true" img="room_sensors"/>
-      <shields power="4" room="6" start="true" img="room_shields"/>
+      <shields power="2" room="6" start="true" img="room_shields"/>
       <teleporter power="1" room="8" start="false"/>
-      <weapons power="3" room="7" start="true" img="room_weapons"/>
+      <weapons power="2" room="7" start="true" img="room_weapons"/>
     </systemList>
     <weaponSlots>4</weaponSlots>
     <droneSlots>2</droneSlots>
-    <weaponList count="1" missiles="0">
-      <weapon name="LASER_CHAINGUN_2_UPGRADED"/>
-    </weaponList>
+    <weaponList count="0" missiles="0"/>
     <droneList drones="0"/>
-    <aug name="SYSTEM_CASING_LOCKED"/>
+    <aug name="GREENHOUSE_LOCKED"/>
     <health amount="30"/>
-    <maxPower amount="9"/>
-    <crewCount amount="2" class="orchid"/>
-    <crewCount amount="1" class="engi"/>
+    <maxPower amount="8"/>
+    <crewCount amount="3" class="orchid"/>
     <shieldImage>stealth</shieldImage>
     <cloakImage>orchid_cruiser_strawberry</cloakImage>
   </shipBlueprint>

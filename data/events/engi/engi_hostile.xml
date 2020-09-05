@@ -19,7 +19,7 @@
   </event>
 
   <event name="ENGI_REBEL_FIGHT">
-    <text>The Rebel fighter here would seem to suggest elements of the rebel fleet are already making incursions on Engi space. You move to engage.</text>
+    <text>The Rebel fighter here would seem to suggest elements of the Rebel fleet are already making incursions on Engi space. You move to engage.</text>
     <ship load="REBEL" hostile="true"/>
   </event>
 
@@ -29,7 +29,7 @@
   </event>
 
   <event name="DISTRESS_ENGI_REBEL" unique="true">
-    <text>The distress signal originates from a small Engi ship under attack by a rebel fighter - but when the Rebels see Federation markings they turn to attack!</text>
+    <text>The distress signal originates from a small Engi ship under attack by a Rebel fighter - but when the Rebels see Federation markings they turn to attack!</text>
     <distressBeacon/>
     <ship name="DISTRESS_ENGI_REBEL" auto_blueprint="SHIPS_REBEL" hostile="true">
       <destroyed>

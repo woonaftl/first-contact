@@ -131,11 +131,11 @@
     <entry>Drone Reactor Booster speed modifier 1.25 to 3</entry>
   </changelog>
   <augBlueprint name="DRONE_SPEED">
-    <title>Pavonian Overclocker</title>
+    <title>Drone Reactor Booster</title>
     <desc>Your shipboard drones have their movement speed TRIPLED. Whoosh!</desc>
     <cost>30</cost>
     <bp>9</bp>
-    <rarity>0</rarity>
+    <rarity>4</rarity>
     <value>2</value>
     <stackable>false</stackable>
   </augBlueprint>
@@ -146,7 +146,7 @@
     <entry>System Casing proc chance 0.15 to 0.25</entry>
   </changelog>
   <augBlueprint name="SYSTEM_CASING">
-    <title>Orchid System Casing</title>
+    <title>Pavonian System Casing</title>
     <desc>All ship systems have additional plating that provides a 25 percent chance to negate damage when hit (hull will still be damaged)</desc>
     <cost>40</cost>
     <bp>15</bp>
@@ -215,7 +215,7 @@
     <entry>Long-Ranged Scanners made exclusive to new race</entry>
   </changelog>
   <augBlueprint name="ADV_SCANNERS">
-    <title>Warped Scanners</title>
+    <title>Warp Forecast</title>
     <desc>Adds additional info about nearby beacons on the star map.</desc>
     <cost>30</cost>
     <bp>3</bp>
@@ -352,7 +352,7 @@
 
   <changelog>
     <entry>Fire Suppression scrap cost 65 to 30</entry>
-    <entry>Fire Suppression extinguishing speed increased by 80% (exactly the same speed as humans now)</entry>
+    <entry>Fire Suppression extinguishing speed increased by 80% (1.5x speed of human)</entry>
   </changelog>
   <augBlueprint name="FIRE_EXTINGUISHERS">
     <title>Fire Suppression</title>
@@ -363,9 +363,6 @@
     <stackable>false</stackable>
     <value>1.8</value>
   </augBlueprint>
-  <augBlueprintInherit name="FIRE_EXTINGUISHERS_LOCKED" base="FIRE_EXTINGUISHERS">
-    <rarity>0</rarity>
-  </augBlueprintInherit>
 
   <changelog>
     <entry>Distraction Buoys scrap cost 55 to 40</entry>
@@ -511,4 +508,20 @@
     <rarity>2</rarity>
     <stackable>false</stackable>
   </augBlueprint>
+
+  <blueprintList name="GREENHOUSE_LIST">
+    <name>GREENHOUSE</name>
+    <name>GREENHOUSE_LOCKED</name>
+  </blueprintList>
+  <augBlueprint name="GREENHOUSE">
+    <title>Orchid Greenhouse</title>
+    <desc>At the start of each sector, replenishes your crew with one newly grown Orchid.</desc>
+    <cost>40</cost>
+    <bp>4</bp>
+    <rarity>0</rarity>
+    <stackable>false</stackable>
+  </augBlueprint>
+  <augBlueprintInherit name="GREENHOUSE_LOCKED" base="GREENHOUSE">
+    <rarity>0</rarity>
+  </augBlueprintInherit>
 </FTL>

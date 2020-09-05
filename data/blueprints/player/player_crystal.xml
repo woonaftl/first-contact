@@ -77,7 +77,6 @@
     <droneList drones="0"/>
     <health amount="30"/>
     <maxPower amount="6"/>
-    <crewCount amount="3" class="crystal"/>
     <shieldImage>crystal_cruiser</shieldImage>
     <cloakImage>crystal_cruiser</cloakImage>
     <aug name="CRYSTAL_SHARDS_LOCKED"/>

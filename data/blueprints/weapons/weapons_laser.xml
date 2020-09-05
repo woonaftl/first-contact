@@ -341,7 +341,6 @@
     <power>1</power>
     <cost>30</cost>
     <rarity>0</rarity>
-    <speed>75</speed>
     <image>laser_hull_projectile</image>
     <launchSounds>
       <sound>heavyLaser1</sound>
@@ -365,6 +364,7 @@
 
   <changelog>
     <entry>Hull Laser I breach chance 0.2 to 0.3 (consistency)</entry>
+    <entry>Hull Laser I projectile speed 75 to 60 (same as normal laser to make Defense Drone II better)</entry>
   </changelog>
   <weaponBlueprint name="LASER_HULL_1">
     <type>LASER</type>
@@ -383,7 +383,6 @@
     <power>2</power>
     <cost>55</cost>
     <rarity>2</rarity>
-    <speed>75</speed>
     <image>laser_hull_projectile</image>
     <launchSounds>
       <sound>heavyLaser1</sound>
@@ -415,8 +414,8 @@
 
   <changelog>
     <entry>Hull Laser II fire chance 0.1 to 0 (consistency)</entry>
-    <entry>Hull Laser II slower projectile to match Hull Laser I</entry>
-  </changelog>
+    <entry>Hull Laser I projectile speed 75 to 60 (same as normal laser to make Defense Drone II better)</entry>
+ </changelog>
   <weaponBlueprint name="LASER_HULL_2">
     <type>LASER</type>
     <title>Hull Smasher Laser Mark II</title>
@@ -436,7 +435,6 @@
     <bp>7</bp>
     <rarity>3</rarity>
     <image>laser_hull_projectile</image>
-    <speed>75</speed>
     <launchSounds>
       <sound>heavyLaser1</sound>
       <sound>heavyLaser2</sound>

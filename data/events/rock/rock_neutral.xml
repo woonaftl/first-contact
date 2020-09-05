@@ -109,14 +109,19 @@
         <text>There's quite enough action here already - prepare for light speed.</text>
       </event>
     </choice>
-    <choice hidden="true" req="REPAIR">
+    <choice req="REPAIR">
       <text>(Repair Drone) Repair the Rock ship.</text>
       <event>
         <text>While the two Mantis fight you approach the Rock ship and send a repair drone through one of the many breaches. It fixes the ship up enough to make at least a single jump. You're surprised when, instead, they embark on a kamikaze run on the two Mantis, which results in the obliteration of all three!</text>
-        <autoReward level="HIGH">standard</autoReward>
         <item_modify>
           <item type="drones" min="-1" max="-1"/>
         </item_modify>
+        <choice>
+          <text id="continue"/>
+          <event>
+            <autoReward level="HIGH">standard</autoReward>
+          </event>
+        </choice>
       </event>
     </choice>
     <choice hidden="true" req="SHIP_REPAIR_LIST">

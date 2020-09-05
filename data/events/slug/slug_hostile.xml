@@ -30,8 +30,8 @@
   <event name="SLUG_REBEL">
     <textList name="SLUG_REBEL">
       <text>As you arrive at the beacon, a hostile ship immediately registers on your scanners. You didn't expect to see Rebels extending their reach into Slug territory. Charge the weapons!</text>
-      <text>You jump into empty space and are relieved to see your sensors blink back to life. However, you are less pleased to see them immediately register a rebel ship on an approach vector!</text>
-      <text>You receive a message from a nearby ship, "Looks like our intelligence was correct! Sneaking through the clouds with the Slugs... No one can hide from the rebellion!"</text>
+      <text>You jump into empty space and are relieved to see your sensors blink back to life. However, you are less pleased to see them immediately register a Rebel ship on an approach vector!</text>
+      <text>You receive a message from a nearby ship, "Looks like our intelligence was correct! Sneaking through the clouds with the Slugs... No one can hide from the Rebellion!"</text>
     </textList>
     <ship load="REBEL" hostile="true"/>
   </event>

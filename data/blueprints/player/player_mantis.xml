@@ -35,9 +35,6 @@
     <aug name="CREW_STIMS_LOCKED"/>
     <health amount="30"/>
     <maxPower amount="7"/>
-    <crewCount amount="1" class="mantis"/>
-    <crewCount amount="1" class="engi"/>
-    <crewCount amount="2" class="mantis"/>
   </shipBlueprint>
 
   <changelog>
@@ -49,7 +46,7 @@
     <class>Mantis Cruiser</class>
     <name>?</name>
     <unlock>Complete 2/3 of the Mantis Cruiser Achievements to unlock this ship.</unlock>
-    <desc>This boarding ship has no medical facilities and must manage its explosives carefully to keep the crew alive.</desc>
+    <desc>?</desc>
     <systemList>
       <battery power="1" room="2" start="false" img="room_battery_13"/>
       <cloaking power="1" room="14" start="false" img="room_cloaking_2"/>
@@ -58,27 +55,24 @@
       <drones power="2" room="12" start="false" img="room_drones_5"/>
       <engines power="2" room="9" start="true" img="room_engines"/>
       <hacking power="1" room="7" start="false" img="room_hacking_15"/>
-      <medbay power="1" room="3" start="false" img="room_medbay_7"/>
+      <medbay power="1" room="3" start="true" img="room_medbay_7"/>
       <mind power="1" room="1" start="false" img="room_mind_7"/>
       <oxygen power="1" room="10" start="true" img="room_oxygen_10"/>
       <pilot power="1" room="0" start="true" img="room_pilot"/>
       <sensors power="1" room="16" start="false" img="room_sensors_9"/>
-      <shields power="2" room="13" start="true" img="room_shields_5"/>
+      <shields power="4" room="13" start="true" img="room_shields_5"/>
       <teleporter power="1" room="6" start="true"/>
-      <weapons power="2" room="4" start="true" img="room_weapons_5"/>
+      <weapons power="1" room="4" start="true" img="room_weapons_5"/>
     </systemList>
-    <weaponList count="2" missiles="25">
-      <weapon name="BOMB_HEAL"/>
-      <weapon name="MISSILES_2"/>
+    <weaponList count="1" missiles="16">
+      <weapon name="BOMB_ION"/>
     </weaponList>
     <droneList count="0" drones="0"/>
     <weaponSlots>3</weaponSlots>
     <droneSlots>2</droneSlots>
     <aug name="CREW_STIMS_LOCKED"/>
     <health amount="30"/>
-    <maxPower amount="8"/>
-    <crewCount amount="1" class="lizard"/>
-    <crewCount amount="2" class="mantis"/>
+    <maxPower amount="9"/>
     <shieldImage>mantis_cruiser</shieldImage>
     <cloakImage>mantis_cruiser</cloakImage>
     <floorImage>mantis_cruiser_brown</floorImage>
@@ -120,9 +114,6 @@
     <aug name="CREW_STIMS_LOCKED"/>
     <health amount="30"/>
     <maxPower amount="8"/>
-    <crewCount amount="1" class="engi"/>
-    <crewCount amount="1" class="mantis"/>
-    <crewCount amount="1" class="anaerobic"/>
     <shieldImage>mantis_cruiser</shieldImage>
     <cloakImage>mantis_cruiser</cloakImage>
     <floorImage>mantis_cruiser</floorImage>

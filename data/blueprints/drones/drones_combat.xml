@@ -24,14 +24,6 @@
     <name>COMBAT_FIRE</name>
     <name>COMBAT_ION</name>
   </blueprintList>
-  <blueprintList name="DRONES_ENGI">
-    <name>COMBAT_1</name>
-    <name>COMBAT_2</name>
-    <name>COMBAT_BEAM</name>
-    <name>COMBAT_BEAM_2</name>
-    <name>COMBAT_FIRE</name>
-    <name>COMBAT_ION</name>
-  </blueprintList>
   <blueprintList name="DRONES_COMBAT_UPGRADED">
     <name>COMBAT_1_UPGRADED</name>
     <name>COMBAT_2_UPGRADED</name>

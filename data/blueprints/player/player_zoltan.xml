@@ -46,9 +46,6 @@
     <floorImage>energy_cruiser_2</floorImage>
   </shipBlueprint>
 
-  <changelog>
-    <entry>New Zoltan B ship with weak reactor, Halberd Beam and Ion Bomb</entry>
-  </changelog>
   <shipBlueprint name="PLAYER_SHIP_ENERGY_2" layout="energy_cruiser_black" img="energy_cruiser_black">
     <class>Zoltan Cruiser</class>
     <name>?</name>
@@ -73,34 +70,30 @@
     </systemList>
     <weaponSlots>4</weaponSlots>
     <droneSlots>2</droneSlots>
-    <weaponList count="2" missiles="12">
-      <weapon name="BEAM_2"/>
-      <weapon name="BOMB_ION"/>
+    <weaponList count="2" missiles="0">
+      <weapon name="BEAM_3_SHORT_UPGRADED"/>
+      <weapon name="ION_CHARGEGUN_UPGRADED"/>
     </weaponList>
     <droneList drones="0"/>
     <health amount="30"/>
     <maxPower amount="1"/>
-    <crewCount amount="4" class="energy"/>
     <aug name="ENERGY_SHIELD_LOCKED"/>
     <shieldImage>energy_cruiser</shieldImage>
     <cloakImage>energy_cruiser</cloakImage>
     <floorImage>energy_cruiser_black</floorImage>
   </shipBlueprint>
 
-  <changelog>
-    <entry>New Zoltan C ship roughly based on old Stealth C ship</entry>
-  </changelog>
   <shipBlueprint name="PLAYER_SHIP_ENERGY_3" layout="energy_cruiser_white" img="energy_cruiser_white">
     <class>Zoltan Cruiser</class>
     <name>?</name>
     <unlock>Get to Sector 8 with the Zoltan Cruiser Type B and Advanced Mode enabled to unlock this ship.</unlock>
-    <desc>This ship was a part of an experiment to make a version of the Zoltan shield that replenishes in combat.</desc>
+    <desc>?</desc>
     <systemList>
       <battery power="1" room="3" start="false" img="room_battery_10"/>
       <cloaking power="1" room="6" start="false" img="room_cloaking_2"/>
       <clonebay power="1" room="1" start="false" slot="1"/>
       <doors power="1" room="4" start="true" img="room_doors_7"/>
-      <drones power="3" room="10" start="true" img="room_drones_24"/>
+      <drones power="2" room="10" start="false" img="room_drones_24"/>
       <engines power="2" room="11" start="true" img="room_engines_13"/>
       <hacking power="1" room="9" start="false" img="room_hacking_3"/>
       <medbay power="1" room="1" start="true" img="room_medbay"/>
@@ -110,21 +103,19 @@
       <sensors power="1" room="7" start="true" img="room_sensors_2"/>
       <shields power="1" room="8" start="true" img="room_shields_17"/>
       <teleporter power="1" room="2" start="false"/>
-      <weapons power="2" room="12" start="true" img="room_weapons_4"/>
+      <weapons power="4" room="12" start="true" img="room_weapons_4"/>
     </systemList>
     <weaponSlots>4</weaponSlots>
     <droneSlots>2</droneSlots>
     <weaponList count="2" missiles="0">
-      <weapon name="BEAM_1_UPGRADED"/>
-      <weapon name="ION_CHARGEGUN_UPGRADED"/>
+      <weapon name="BEAM_2_UPGRADED"/>
+      <weapon name="ION_4_UPGRADED"/>
     </weaponList>
-    <droneList count="2" drones="16">
-      <drone name="DRONE_SHIELD_UPGRADED"/>
-      <drone name="ANTI_DRONE"/>
-    </droneList>
+    <droneList drones="0"/>
     <health amount="30"/>
     <maxPower amount="5"/>
     <crewCount amount="3" class="energy"/>
+    <aug name="ENERGY_SHIELD_LOCKED"/>
     <shieldImage>energy_cruiser</shieldImage>
     <cloakImage>energy_cruiser</cloakImage>
     <floorImage>energy_cruiser_white</floorImage>

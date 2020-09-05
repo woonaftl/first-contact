@@ -7,7 +7,7 @@
   <shipBlueprint name="PLAYER_SHIP_JELLY" layout="jelly_cruiser" img="jelly_cruiser">
     <class>Slug Cruiser</class>
     <name>Man of War</name>
-    <unlock>One of the slug ships must know something about this advanced cruiser. Perhaps you can "convince" them to tell you.</unlock>
+    <unlock>One of the Slug ships must know something about this advanced cruiser. Perhaps you can "convince" them to tell you.</unlock>
     <desc>Designed for use inside nebulas, this cruiser lacks sensors and relies instead on the guile and cunning of the Slugs.</desc>
     <systemList>
       <battery power="1" room="9" start="false" img="room_battery_10"/>
@@ -40,7 +40,7 @@
 
   <changelog>
     <entry>New Slug B layout roughly based on old Lanius B</entry>
-    <entry>Slug B starts with Taurus Missiles, mind control and teleporter</entry>
+    <entry>Slug B starts with Artemis Missiles, mind control and teleporter</entry>
   </changelog>
   <shipBlueprint name="PLAYER_SHIP_JELLY_2" layout="jelly_cruiser_blue" img="jelly_cruiser_blue">
     <class>Slug Cruiser</class>
@@ -67,13 +67,12 @@
     <weaponSlots>4</weaponSlots>
     <droneSlots>2</droneSlots>
     <weaponList count="1" missiles="15">
-      <weapon name="MISSILES_1"/>
+      <weapon name="MISSILES_2"/>
     </weaponList>
     <droneList drones="0"/>
     <aug name="SLUG_GEL_LOCKED"/>
     <health amount="30"/>
     <maxPower amount="8"/>
-    <crewCount amount="3" class="slug"/>
     <shieldImage>jelly_cruiser</shieldImage>
     <cloakImage>jelly_cruiser</cloakImage>
     <floorImage>jelly_cruiser_blue</floorImage>

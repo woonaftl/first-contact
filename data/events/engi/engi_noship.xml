@@ -25,7 +25,7 @@
   </event>
 
   <event name="ENGI_FLEET_DELAY" unique="true">
-    <text>You notice an Engi colony hiding on the other side of a nearby moon. It turns out they're excavating an equipment cache from the Federation-Mantis War, and they suggest it might be used to lure the pursuing rebel fleet.</text>
+    <text>You notice an Engi colony hiding on the other side of a nearby moon. It turns out they're excavating an equipment cache from the Federation-Mantis War, and they suggest it might be used to lure the pursuing Rebel fleet.</text>
     <choice>
       <text>Booby trap the cache.</text>
       <event>

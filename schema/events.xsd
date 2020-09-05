@@ -208,46 +208,6 @@
           <xs:attribute name="breach" type="xs:boolean" default="false"/>
         </xs:complexType>
       </xs:element>
-      <xs:element name="choice" minOccurs="0" maxOccurs="unbounded">
-        <xs:complexType>
-          <xs:all>
-            <xs:element name="text">
-              <xs:complexType>
-                <xs:simpleContent>
-                  <xs:extension base="stringOrIdType">
-                    <xs:attribute name="load" type="xs:string"/>
-                  </xs:extension>
-                </xs:simpleContent>
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="event" minOccurs="0">
-              <xs:complexType>
-                <xs:complexContent>
-                  <xs:extension base="eventType">
-                    <xs:attribute name="load" type="xs:string"/>
-                    <xs:attribute name="name" type="xs:string">
-                      <xs:annotation>
-                        <xs:documentation>Even though it works, it's recommended to use 'load' for consistency.</xs:documentation>
-                      </xs:annotation>
-                    </xs:attribute>
-                  </xs:extension>
-                </xs:complexContent>
-              </xs:complexType>
-            </xs:element>
-          </xs:all>
-          <xs:attribute name="hidden" type="xs:boolean" default="false"/>
-          <xs:attribute name="req" type="xs:string"/>
-          <xs:attribute name="lvl" type="xs:nonNegativeInteger"/>
-          <xs:attribute name="min_level" type="xs:nonNegativeInteger"/>
-          <xs:attribute name="max_lvl" type="xs:nonNegativeInteger"/>
-          <xs:attribute name="max_group" type="xs:nonNegativeInteger"/>
-          <xs:attribute name="blue" type="xs:boolean">
-            <xs:annotation>
-              <xs:documentation>By default, the text is blue if there is a 'req' attribute. This attribute overrides it.</xs:documentation>
-            </xs:annotation>
-          </xs:attribute>
-        </xs:complexType>
-      </xs:element>
       <xs:element name="crewMember" minOccurs="0" maxOccurs="unbounded">
         <xs:complexType>
           <xs:simpleContent>
@@ -390,6 +350,46 @@
         </xs:complexType>
       </xs:element>
       <xs:element name="weapon" type="nameType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="choice" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="text">
+              <xs:complexType>
+                <xs:simpleContent>
+                  <xs:extension base="stringOrIdType">
+                    <xs:attribute name="load" type="xs:string"/>
+                  </xs:extension>
+                </xs:simpleContent>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="event" minOccurs="0">
+              <xs:complexType>
+                <xs:complexContent>
+                  <xs:extension base="eventType">
+                    <xs:attribute name="load" type="xs:string"/>
+                    <xs:attribute name="name" type="xs:string">
+                      <xs:annotation>
+                        <xs:documentation>Even though it works, it's recommended to use 'load' for consistency.</xs:documentation>
+                      </xs:annotation>
+                    </xs:attribute>
+                  </xs:extension>
+                </xs:complexContent>
+              </xs:complexType>
+            </xs:element>
+          </xs:all>
+          <xs:attribute name="hidden" type="xs:boolean" default="false"/>
+          <xs:attribute name="req" type="xs:string"/>
+          <xs:attribute name="lvl" type="xs:nonNegativeInteger"/>
+          <xs:attribute name="min_level" type="xs:nonNegativeInteger"/>
+          <xs:attribute name="max_lvl" type="xs:nonNegativeInteger"/>
+          <xs:attribute name="max_group" type="xs:nonNegativeInteger"/>
+          <xs:attribute name="blue" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>By default, the text is blue if there is a 'req' attribute. This attribute overrides it.</xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+        </xs:complexType>
+      </xs:element>
     </xs:sequence>
   </xs:complexType>
 

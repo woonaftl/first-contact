@@ -241,12 +241,12 @@
   <crewBlueprint name="lizard">
     <title>Lizard</title>
     <short>Lizard</short>
-    <desc>With their massive bodies, fearsome jaws, and inpenetrable scales, Lizards are respected by all races of the Federation.</desc>
-    <cost>60</cost>
+    <desc>The Lizards are respected in the Federation for their ability to withstand hardship and come out alive after any disaster.</desc>
+    <cost>50</cost>
     <bp>2</bp>
     <rarity>0</rarity>
     <powerList>
-      <power>Slowly regenerates when not in danger</power>
+      <power>Regenerates health when not in danger</power>
     </powerList>
   </crewBlueprint>
 
@@ -254,14 +254,13 @@
     <!--named by SallySpartan -->
     <title>Pavonian</title>
     <short>Pavonian</short>
-    <desc>Proud Pavonians are fragile creatures, and prefer to resolve conflicts indirectly.</desc>
-    <cost>50</cost>
+    <desc>Proud Pavonians are fragile creatures, but willing to sacrifice themselves to save their comrades.</desc>
+    <cost>60</cost>
     <bp>2</bp>
     <rarity>0</rarity>
     <powerList>
-      <power>Takes 1.5x damage in close combat</power>
-      <!--<power>Immune to stun</power>-->
-      <power>Active: stun enemies for 5 seconds</power>
+      <power>Takes double damage in close combat</power>
+      <power>Active: fully repair system losing 75 health</power>
     </powerList>
   </crewBlueprint>
 
@@ -273,7 +272,20 @@
     <bp>2</bp>
     <rarity>0</rarity>
     <powerList>
-      <power>Active: become invisible and invulnerable for 5 seconds</power>
+      <power>Active: become invisible and invulnerable for 10 seconds</power>
+    </powerList>
+  </crewBlueprint>
+
+    <crewBlueprint name="cyborglice">
+    <title>?</title>
+    <short>?</short>
+    <desc>?</desc>
+    <cost>60</cost>
+    <bp>2</bp>
+    <rarity>0</rarity>
+    <powerList>
+      <power>Take half damage in close combat</power>
+      <power>Auto-piloted on low health</power>
     </powerList>
   </crewBlueprint>
 </FTL>

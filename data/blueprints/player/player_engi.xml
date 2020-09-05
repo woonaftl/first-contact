@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FTL>
-
-  <changelog>
-    <entry>Engi A starts with upgraded Ion Charger II (less power, faster, 4 charges)</entry>
-    <entry>Engi A starting weapons power from 3 to 2</entry>
-    <entry>Engi A starting drone control power from 3 to 2</entry>
-    <entry>Engi A starting reactor power from 10 to 9</entry>
-  </changelog>
-
   <shipBlueprint name="PLAYER_SHIP_CIRCLE" layout="circle_cruiser" img="circle_cruiser">
     <class>Engi Cruiser</class>
-    <name>The Torus</name>
+    <name>Vortex</name>
     <unlock>To unlock this Engi ship you'll need to get to the 5th sector with any layout of the Kestrel.</unlock>
-    <desc>Although it may look like a pile of junk loosely held together, this well designed ship relies on drones and ion weaponry.</desc>
+    <desc>?</desc>
     <systemList>
       <battery power="1" room="1" start="false" img="room_battery_6"/>
       <cloaking power="1" room="12" start="false" img="room_cloaking_4"/>
@@ -28,107 +20,100 @@
       <sensors power="1" room="4" start="true" img="room_sensors_4"/>
       <shields power="2" room="3" start="true" img="room_shields_4"/>
       <teleporter power="1" room="9" start="false"/>
-      <weapons power="2" room="11" start="true"/>
+      <weapons power="3" room="11" start="true"/>
     </systemList>
     <weaponSlots>3</weaponSlots>
     <droneSlots>3</droneSlots>
-    <weaponList count="1" missiles="0">
-      <weapon name="ION_4_UPGRADED"/>
+    <weaponList count="2" missiles="0">
+      <weapon name="LASER_HEAVY_1_UPGRADED"/>
+      <weapon name="ION_STUN_HEAVY_UPGRADED"/>
     </weaponList>
     <droneList count="1" drones="15">
-      <drone name="COMBAT_1"/>
+     <drone name="DEFENSE_1_UPGRADED"/>
     </droneList>
     <aug name="NANO_MEDBAY_LOCKED"/>
     <health amount="30"/>
-    <maxPower amount="9"/>
-    <crewCount amount="1" class="human"/>
+    <maxPower amount="10"/>
     <crewCount amount="2" class="engi"/>
   </shipBlueprint>
 
-  <changelog>
-    <entry>Engi B has a new layout</entry>
-    <entry>Engi B starts with upgraded Laser Charger Mark II</entry>
-    <entry>Engi B starts with upgraded Ion Drone</entry>
-    <entry>Engi B starts with 2 Engi crewmembers</entry>
-  </changelog>
   <shipBlueprint name="PLAYER_SHIP_CIRCLE_2" layout="circle_cruiser_blue" img="circle_cruiser_blue">
     <class>Engi Cruiser</class>
     <name>Nabla</name>
     <unlock>Complete 2/3 of the Engi Cruiser Achievements to unlock this ship.</unlock>
-    <desc>The Engi were quick to merge latest breakthroughs in ion and drone technology into the ultimate weapon: the Ion Drone.</desc>
+    <desc>?</desc>
     <systemList>
       <battery power="1" room="10" start="false" img="room_battery_7"/>
       <cloaking power="1" room="3" start="false" img="room_cloaking_14"/>
       <clonebay power="1" room="6" start="false" slot="0"/>
       <doors power="1" room="11" start="true" img="room_doors_9"/>
-      <drones power="3" room="2" start="true" img="room_drones_16"/>
-      <engines power="1" room="4" start="true" img="room_engines_2"/>
+      <drones power="2" room="2" start="true" img="room_drones_16"/>
+      <engines power="2" room="4" start="true" img="room_engines_2"/>
       <hacking power="1" room="14" start="false" img="room_hacking_10"/>
       <medbay power="1" room="6" start="true" img="room_medbay_6"/>
       <mind power="1" room="5" start="false" img="room_mind_6"/>
       <oxygen power="1" room="8" start="true" img="room_oxygen_2"/>
       <pilot power="1" room="0" start="true" img="room_pilot_5"/>
       <sensors power="1" room="13" start="true" img="room_sensors_7"/>
-      <shields power="2" room="9" start="true" img="room_shields_15"/>
+      <shields power="1" room="9" start="true" img="room_shields_15"/>
       <teleporter power="1" room="12" start="false"/>
-      <weapons power="2" room="7" start="true" img="room_weapons_3"/>
+      <weapons power="3" room="7" start="true" img="room_weapons_3"/>
     </systemList>
     <weaponSlots>3</weaponSlots>
     <droneSlots>3</droneSlots>
-    <weaponList count="1" missiles="0">
-      <weapon name="LASER_CHARGEGUN_2_UPGRADED"/>
+    <weaponList count="3" missiles="0">
+      <weapon name="LASER_BURST_2_UPGRADED"/>
+      <weapon name="ION_1"/>
+      <weapon name="ION_1"/>
     </weaponList>
-    <droneList count="1" drones="15">
-      <drone name="COMBAT_ION_UPGRADED"/>
-    </droneList>
+    <droneList count="2" drones="28">
+       <drone name="DEFENSE_2_UPGRADED"/>
+       <drone name="SHIP_REPAIR_UPGRADED"/>
+   </droneList>
     <aug name="NANO_MEDBAY_LOCKED"/>
     <health amount="30"/>
-    <maxPower amount="9"/>
-    <crewCount amount="2" class="engi"/>
+    <maxPower amount="8"/>
+    <crewCount amount="3" class="engi"/>
     <shieldImage>circle_cruiser</shieldImage>
     <cloakImage>circle_cruiser</cloakImage>
     <floorImage>circle_cruiser_blue</floorImage>
   </shipBlueprint>
 
-  <changelog>
-    <entry>Engi C starts with upgraded Burst Laser I (no change)</entry>
-    <entry>Engi C starts with Medbay instead of Clonebay</entry>
-    <entry>Engi C starts with Engi Med-bot Dispersal instead of Defense Scrambler</entry>
-  </changelog>
   <shipBlueprint name="PLAYER_SHIP_CIRCLE_3" layout="circle_cruiser_3" img="circle_cruiser_3">
     <class>Engi Cruiser</class>
-    <name>Tetragon</name>
+    <name>?</name>
     <unlock>Get to Sector 8 with the Engi Cruiser Type B and Advanced Mode enabled to unlock this ship.</unlock>
-    <desc>The Engi were quick to adapt to the sudden surge of hacking technology - this ship is the result of their research.</desc>
+    <desc>?</desc>
     <systemList>
       <battery power="1" room="2" start="false" img="room_battery_17"/>
       <cloaking power="1" room="1" start="false" img="room_cloaking_4"/>
       <clonebay power="1" room="11" start="false"/>
       <doors power="1" room="16" start="true" img="room_doors_12"/>
-      <drones power="2" room="7" start="true" img="room_drones_9"/>
-      <engines power="2" room="10" start="true" img="room_engines_2"/>
-      <hacking power="1" room="5" start="true" img="room_hacking_5"/>
+      <drones power="3" room="7" start="true" img="room_drones_9"/>
+      <engines power="2" room="10" start="true" img="room_engines_8"/>
+      <hacking power="1" room="5" start="false" img="room_hacking_5"/>
       <medbay power="1" room="11" start="true" img="room_medbay_9"/>
       <mind power="1" room="3" start="false" img="room_mind_12"/>
       <oxygen power="1" room="0" start="true" img="room_oxygen_7"/>
       <pilot power="1" room="14" start="true"/>
       <sensors power="1" room="13" start="true" img="room_sensors_2"/>
-      <shields power="2" room="8" start="true" img="room_shields_4"/>
+      <shields power="1" room="8" start="true" img="room_shields_4"/>
       <teleporter power="1" room="4" start="false"/>
-      <weapons power="1" room="6" start="true" img="room_weapons_7"/>
+      <weapons power="2" room="6" start="true" img="room_weapons_7"/>
     </systemList>
     <weaponSlots>3</weaponSlots>
     <droneSlots>3</droneSlots>
-    <weaponList count="1" missiles="0">
-      <weapon name="LASER_BURST_2_UPGRADED"/>
+    <weaponList count="2" missiles="0">
+      <weapon name="BEAM_1_UPGRADED"/>
+      <weapon name="ION_CHARGEGUN_UPGRADED"/>
     </weaponList>
-    <droneList count="1" drones="25">
-      <drone name="COMBAT_BEAM"/>
+    <droneList count="2" drones="25">
+      <drone name="DRONE_SHIELD_UPGRADED"/>
+      <drone name="ANTI_DRONE"/>
     </droneList>
     <health amount="30"/>
-    <maxPower amount="9"/>
-    <crewCount amount="1" class="anaerobic"/>
-    <crewCount amount="2" class="engi"/>
+    <maxPower amount="8"/>
+    <crewCount amount="3" class="engi"/>
     <aug name="NANO_MEDBAY_LOCKED"/>
     <shieldImage>circle_cruiser</shieldImage>
     <cloakImage>circle_cruiser</cloakImage>

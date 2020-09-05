@@ -157,7 +157,7 @@
               <text id="continue"/>
               <event>
                 <text>It speaks slowly, "Greetings. I appear to be in your debt. My people isolated themselves a long time ago, but perhaps it's time to re-establish a connection. There's a hidden wormhole near the Rock home-worlds. Perhaps you can take me there so I can properly repay you?"</text>
-                <crewMember amount="1" class="crystal">Ruwen</crewMember>
+                <crewMember amount="1" class="crystal" id="name_Ruwen"/>
               </event>
             </choice>
           </event>

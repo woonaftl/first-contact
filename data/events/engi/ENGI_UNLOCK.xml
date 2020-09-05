@@ -125,7 +125,7 @@
     <ship load="MANTIS_ENGI_UNLOCK_3" hostile="true"/>
   </event>
   <event name="ENGI_UNLOCK_4">
-    <text>The Engi emerge victorious from their battles with only minor losses. They message you, "Project X-ME56 commissioned by Federation military research division. Advanced stealth cruiser. Project finished during rebellion. Unable to reconnect with Federation military command."</text>
+    <text>The Engi emerge victorious from their battles with only minor losses. They message you, "Project X-ME56 commissioned by Federation military research division. Advanced stealth cruiser. Project finished during Rebellion. Unable to reconnect with Federation military command."</text>
     <choice>
       <text>Ask about the Mantis ships.</text>
       <event>
