@@ -551,17 +551,6 @@ Tip: Upgraded weapons require 1 less power and charge faster, than stock weapons
         </choice>
       </event>
     </choice>
-    <choice req="BOARDER_ION" hidden="true">
-      <text>Risk it: ask to upgrade Ion Intruder Drone.</text>
-      <event>
-        <text>The pirates have taken your drone to their station to install necessary modifications.</text>
-        <remove name="BOARDER_ION"/>
-        <choice hidden="true">
-          <text id="continue"/>
-          <event load="UPGRADE_FREE_FAKE_DRONE_LIST"/>
-        </choice>
-      </event>
-    </choice>
     <choice hidden="true">
       <text>Leave.</text>
       <event/>
@@ -1100,17 +1089,6 @@ Tip: Upgraded weapons require 1 less power and charge faster, than stock weapons
         </choice>
       </event>
     </choice>
-    <choice req="BOARDER_ION" hidden="true">
-      <text>Risk it: ask to upgrade Ion Intruder Drone.</text>
-      <event>
-        <text>The pirates have taken your drone to their station to install necessary modifications.</text>
-        <remove name="BOARDER_ION"/>
-        <choice hidden="true">
-          <text id="continue"/>
-          <event load="UPGRADE_FREE_FAKE_DRONE_LIST"/>
-        </choice>
-      </event>
-    </choice>
     <choice hidden="true">
       <text>Leave.</text>
       <event/>
@@ -1124,6 +1102,18 @@ Tip: Upgraded weapons require 1 less power and charge faster, than stock weapons
       <text>After hours of working on your weapon, the pirates bring it back. As you open the casing, you realize that it's the different weapon. The delivery workers are long gone and the station does not respond.</text>
       <weapon name="RANDOM"/>
     </event>
+    <event>
+      <text>The pirates have spent a lot of time working on upgrading your weapon, but bring nothing but bring nothing but a hulk of scrap as a result. At least, they allowed you to keep it.</text>
+      <item_modify>
+        <item type="scrap" min="15" max="20"/>
+      </item_modify>
+    </event>
+    <event>
+      <text>As you open the casing which was meant to contain your upgraded weapon, you find nothing but some ammunition inside. You shouldn't have trusted those pirates!</text>
+      <item_modify>
+        <item type="missiles" min="4" max="6"/>
+      </item_modify>
+    </event>
   </eventList>
   <eventList name="UPGRADE_FREE_FAKE_DRONE_LIST">
     <event>
@@ -1132,6 +1122,18 @@ Tip: Upgraded weapons require 1 less power and charge faster, than stock weapons
     <event>
       <text>After hours of working on your drone, the pirates bring it back. As you open the casing, you realize that it's the different drone. The delivery workers are long gone and the station does not respond.</text>
       <drone name="RANDOM"/>
+    </event>
+    <event>
+      <text>The pirates have spent a lot of time working on upgrading your drone schematic, but bring nothing but bring nothing but a hulk of scrap as a result. At least, they allowed you to keep it.</text>
+      <item_modify>
+        <item type="scrap" min="15" max="20"/>
+      </item_modify>
+    </event>
+    <event>
+      <text>As you open the casing which was meant to contain your upgraded drone, you find nothing but some drone parts inside. You shouldn't have trusted those pirates!</text>
+      <item_modify>
+        <item type="drones" min="3" max="5"/>
+      </item_modify>
     </event>
   </eventList>
   <event name="UPGRADE_FREE_TRUE" unique="false">
@@ -1708,18 +1710,6 @@ Tip: Upgraded weapons require 1 less power and charge faster, than stock weapons
         <text>While pirates looked sketchy at first, they installed some newest modifications to your drone making it charge faster and use less power.</text>
         <remove name="BOARDER"/>
         <drone name="BOARDER_UPGRADED"/>
-        <choice hidden="true">
-          <text id="continue"/>
-          <event load="UPGRADE_FREE_TRUE_DRONE_LIST"/>
-        </choice>
-      </event>
-    </choice>
-    <choice req="BOARDER_ION" hidden="true">
-      <text>Risk it: ask to upgrade Ion Intruder Drone.</text>
-      <event>
-        <text>While pirates looked sketchy at first, they installed some newest modifications to your drone making it charge faster and use less power.</text>
-        <remove name="BOARDER_ION"/>
-        <drone name="BOARDER_ION_UPGRADED"/>
         <choice hidden="true">
           <text id="continue"/>
           <event load="UPGRADE_FREE_TRUE_DRONE_LIST"/>
@@ -2312,18 +2302,6 @@ Tip: Upgraded weapons require 1 less power and charge faster, than stock weapons
         </choice>
       </event>
     </choice>
-    <choice req="BOARDER_ION" hidden="true">
-      <text>Risk it: ask to upgrade Ion Intruder Drone.</text>
-      <event>
-        <text>While pirates looked sketchy at first, they installed some newest modifications to your drone making it charge faster and use less power.</text>
-        <remove name="BOARDER_ION"/>
-        <drone name="BOARDER_ION_UPGRADED"/>
-        <choice hidden="true">
-          <text id="continue"/>
-          <event load="UPGRADE_FREE_TRUE_DRONE_LIST"/>
-        </choice>
-      </event>
-    </choice>
     <choice hidden="true">
       <text>Leave.</text>
       <event/>
@@ -2335,7 +2313,7 @@ Tip: Upgraded weapons require 1 less power and charge faster, than stock weapons
     </event>
     <event>
       <text>The pirates did not ask anything for their service, but, as they left, they emptied your hold without any of your crew noticing.</text>
-      <item_modify>
+      <item_modify steal="true">
         <item type="scrap" min="-999" max="-999"/>
       </item_modify>
     </event>
@@ -2344,10 +2322,30 @@ Tip: Upgraded weapons require 1 less power and charge faster, than stock weapons
       <modifyPursuit amount="2"/>
     </event>
     <event>
-      <text>After upgrading your weapon, the pirates decided that they would like to take over your ship.</text>
-      <damage amount="5" system="weapons" effect="fire"/>
-      <boarders min="3" max="4" class="random"/>
-      <ship load="PIRATE" hostile="true"/>
+      <text>After upgrading your weapon, the pirates decided that they would like to take over your ship. You are boarded, while the anti-ship battery is firing from the pirate station.</text>
+      <damage amount="8" system="weapons" effect="fire"/>
+      <boarders min="4" max="5" class="random"/>
+      <environment type="PDS" target="player"/>
+      <ship auto_blueprint="SHIPS_PIRATE" hostile="true">
+        <destroyed>
+          <text>There's no time to salvage the enemy ship. The anti-ship battery keeps firing at you.</text>
+        </destroyed>
+        <deadCrew>
+          <text>There's no time to salvage the enemy ship. The anti-ship battery keeps firing at you.</text>
+        </deadCrew>
+      </ship>
+    </event>
+    <event>
+      <text>While the pirates did upgrade your weapon, after they did their job, a Rebel Elite with weapons online has entered the system. The pirate station seems to be working with Rebels since it fires at you with anti-ship battery.</text>
+      <environment type="PDS" target="player"/>
+      <ship auto_blueprint="SHIPS_REBEL_ELITE" hostile="true">
+        <destroyed>
+          <text>There's no time to salvage the enemy ship. The anti-ship battery keeps firing at you.</text>
+        </destroyed>
+        <deadCrew>
+          <text>There's no time to salvage the enemy ship. The anti-ship battery keeps firing at you.</text>
+        </deadCrew>
+      </ship>
     </event>
   </eventList>
   <eventList name="UPGRADE_FREE_TRUE_DRONE_LIST">
@@ -2356,7 +2354,7 @@ Tip: Upgraded weapons require 1 less power and charge faster, than stock weapons
     </event>
     <event>
       <text>The pirates did not ask anything for their service, but, as they left, they emptied your hold without any of your crew noticing.</text>
-      <item_modify>
+      <item_modify steal="true">
         <item type="scrap" min="-999" max="-999"/>
       </item_modify>
     </event>
@@ -2365,10 +2363,30 @@ Tip: Upgraded weapons require 1 less power and charge faster, than stock weapons
       <modifyPursuit amount="2"/>
     </event>
     <event>
-      <text>After upgrading your drone, the pirates decided that they would like to take over your ship.</text>
-      <damage amount="5" system="drones" effect="fire"/>
-      <boarders min="3" max="4" class="random"/>
-      <ship load="PIRATE" hostile="true"/>
+      <text>After upgrading your drone, the pirates decided that they would like to take over your ship. You are boarded, while the anti-ship battery is firing from the pirate station.</text>
+      <damage amount="8" system="drones" effect="fire"/>
+      <boarders min="4" max="5" class="random"/>
+      <environment type="PDS" target="player"/>
+      <ship auto_blueprint="SHIPS_PIRATE" hostile="true">
+        <destroyed>
+          <text>There's no time to salvage the enemy ship. The anti-ship battery keeps firing at you.</text>
+        </destroyed>
+        <deadCrew>
+          <text>There's no time to salvage the enemy ship. The anti-ship battery keeps firing at you.</text>
+        </deadCrew>
+      </ship>
+    </event>
+    <event>
+      <text>While the pirates did upgrade your drone, after they did their job, a Rebel Elite with weapons online has entered the system. The pirate station seems to be working with Rebels since it fires at you with anti-ship battery.</text>
+      <environment type="PDS" target="player"/>
+      <ship auto_blueprint="SHIPS_REBEL_ELITE" hostile="true">
+        <destroyed>
+          <text>There's no time to salvage the enemy ship. The anti-ship battery keeps firing at you.</text>
+        </destroyed>
+        <deadCrew>
+          <text>There's no time to salvage the enemy ship. The anti-ship battery keeps firing at you.</text>
+        </deadCrew>
+      </ship>
     </event>
   </eventList>
   <event name="UPGRADE_SCRAP" unique="false">
@@ -2901,17 +2919,6 @@ Tip: Upgraded weapons require 1 less power and charge faster, than stock weapons
         </item_modify>
         <remove name="BOARDER"/>
         <drone name="BOARDER_UPGRADED"/>
-      </event>
-    </choice>
-    <choice req="BOARDER_ION">
-      <text>Upgrade Ion Intruder Drone.</text>
-      <event>
-        <text>The engineers at the factory upgraded your weapon. It uses less power now, and charges faster.</text>
-        <item_modify>
-          <item type="scrap" min="-65" max="-50"/>
-        </item_modify>
-        <remove name="BOARDER_ION"/>
-        <drone name="BOARDER_ION_UPGRADED"/>
       </event>
     </choice>
     <choice hidden="true">
@@ -3643,21 +3650,6 @@ Tip: Upgraded weapons require 1 less power and charge faster, than stock weapons
         <drone name="BOARDER_UPGRADED"/>
       </event>
     </choice>
-    <choice req="BOARDER_ION">
-      <text>Upgrade Ion Intruder Drone.</text>
-      <event>
-        <text>Your drone is upgraded at the scientific station. It uses less power now.</text>
-        <item_modify>
-          <item type="scrap" min="-30" max="-20"/>
-        </item_modify>
-        <removeCrew>
-          <clone>false</clone>
-          <text>Since your lost crewmember is still alive, you cannot clone them.</text>
-        </removeCrew>
-        <remove name="BOARDER_ION"/>
-        <drone name="BOARDER_ION_UPGRADED"/>
-      </event>
-    </choice>
     <choice hidden="true">
       <text>Leave.</text>
       <event/>
@@ -4241,18 +4233,6 @@ Tip: Upgraded weapons require 1 less power and charge faster, than stock weapons
         </item_modify>
         <remove name="BOARDER"/>
         <drone name="BOARDER_UPGRADED"/>
-      </event>
-    </choice>
-    <choice req="BOARDER_ION">
-      <text>Upgrade Ion Intruder Drone.</text>
-      <event>
-        <text>Your drone is upgraded at the automated station. It uses less power now.</text>
-        <item_modify>
-          <item type="scrap" min="-35" max="-25"/>
-          <item type="drones" min="-8" max="-5"/>
-        </item_modify>
-        <remove name="BOARDER_ION"/>
-        <drone name="BOARDER_ION_UPGRADED"/>
       </event>
     </choice>
     <choice hidden="true">
@@ -4840,18 +4820,6 @@ Tip: Upgraded weapons require 1 less power and charge faster, than stock weapons
         <drone name="BOARDER_UPGRADED"/>
       </event>
     </choice>
-    <choice req="BOARDER_ION">
-      <text>Upgrade Ion Intruder Drone.</text>
-      <event>
-        <text>Your drone is upgraded. It uses less power now. The friendly ship jumps away.</text>
-        <item_modify>
-          <item type="scrap" min="-35" max="-25"/>
-          <item type="fuel" min="-8" max="-5"/>
-        </item_modify>
-        <remove name="BOARDER_ION"/>
-        <drone name="BOARDER_ION_UPGRADED"/>
-      </event>
-    </choice>
     <choice hidden="true">
       <text>Leave.</text>
       <event/>
@@ -5435,18 +5403,6 @@ Tip: Upgraded weapons require 1 less power and charge faster, than stock weapons
         </item_modify>
         <remove name="BOARDER"/>
         <drone name="BOARDER_UPGRADED"/>
-      </event>
-    </choice>
-    <choice req="BOARDER_ION">
-      <text>Upgrade Ion Intruder Drone.</text>
-      <event>
-        <text>Your drone is upgraded. It uses less power now.</text>
-        <item_modify>
-          <item type="scrap" min="-35" max="-25"/>
-          <item type="missiles" min="-14" max="-9"/>
-        </item_modify>
-        <remove name="BOARDER_ION"/>
-        <drone name="BOARDER_ION_UPGRADED"/>
       </event>
     </choice>
     <choice hidden="true">

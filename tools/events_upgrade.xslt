@@ -56,7 +56,7 @@
             </event>
           </choice>
         </xsl:for-each>
-        <xsl:for-each select="droneBlueprint[not(contains(@name, 'UPGRADED'))][power &gt; 1]">
+        <xsl:for-each select="droneBlueprint[not(contains(@name, 'UPGRADED'))][not(contains(@name, 'BOARDER_ION'))][power &gt; 1]">
           <choice req="{@name}" hidden="true">
             <text>
               <xsl:text>Risk it: ask to upgrade&#32;</xsl:text>
@@ -101,7 +101,7 @@
             </event>
           </choice>
         </xsl:for-each>
-        <xsl:for-each select="droneBlueprint[not(contains(@name, 'UPGRADED'))][power &gt; 1]">
+        <xsl:for-each select="droneBlueprint[not(contains(@name, 'UPGRADED'))][not(contains(@name, 'BOARDER_ION'))][power &gt; 1]">
           <choice req="{@name}" hidden="true">
             <text>
               <xsl:text>Risk it: ask to upgrade&#32;</xsl:text>
@@ -131,6 +131,18 @@
           <text>After hours of working on your weapon, the pirates bring it back. As you open the casing, you realize that it's the different weapon. The delivery workers are long gone and the station does not respond.</text>
           <weapon name="RANDOM"/>
         </event>
+        <event>
+          <text>The pirates have spent a lot of time working on upgrading your weapon, but bring nothing but bring nothing but a hulk of scrap as a result. At least, they allowed you to keep it.</text>
+          <item_modify>
+            <item type="scrap" min="15" max="20"/>
+          </item_modify>
+        </event>
+        <event>
+          <text>As you open the casing which was meant to contain your upgraded weapon, you find nothing but some ammunition inside. You shouldn't have trusted those pirates!</text>
+          <item_modify>
+            <item type="missiles" min="4" max="6"/>
+          </item_modify>
+        </event>
       </eventList>
       <eventList name="UPGRADE_FREE_FAKE_DRONE_LIST">
         <event>
@@ -139,6 +151,18 @@
         <event>
           <text>After hours of working on your drone, the pirates bring it back. As you open the casing, you realize that it's the different drone. The delivery workers are long gone and the station does not respond.</text>
           <drone name="RANDOM"/>
+        </event>
+        <event>
+          <text>The pirates have spent a lot of time working on upgrading your drone schematic, but bring nothing but bring nothing but a hulk of scrap as a result. At least, they allowed you to keep it.</text>
+          <item_modify>
+            <item type="scrap" min="15" max="20"/>
+          </item_modify>
+        </event>
+        <event>
+          <text>As you open the casing which was meant to contain your upgraded drone, you find nothing but some drone parts inside. You shouldn't have trusted those pirates!</text>
+          <item_modify>
+            <item type="drones" min="3" max="5"/>
+          </item_modify>
         </event>
       </eventList>
 
@@ -165,7 +189,7 @@
             </event>
           </choice>
         </xsl:for-each>
-        <xsl:for-each select="droneBlueprint[not(contains(@name, 'UPGRADED'))][power &gt; 1]">
+        <xsl:for-each select="droneBlueprint[not(contains(@name, 'UPGRADED'))][not(contains(@name, 'BOARDER_ION'))][power &gt; 1]">
           <choice req="{@name}" hidden="true">
             <text>
               <xsl:text>Risk it: ask to upgrade&#32;</xsl:text>
@@ -212,7 +236,7 @@
             </event>
           </choice>
         </xsl:for-each>
-        <xsl:for-each select="droneBlueprint[not(contains(@name, 'UPGRADED'))][power &gt; 1]">
+        <xsl:for-each select="droneBlueprint[not(contains(@name, 'UPGRADED'))][not(contains(@name, 'BOARDER_ION'))][power &gt; 1]">
           <choice req="{@name}" hidden="true">
             <text>
               <xsl:text>Risk it: ask to upgrade&#32;</xsl:text>
@@ -241,7 +265,7 @@
         </event>
         <event>
           <text>The pirates did not ask anything for their service, but, as they left, they emptied your hold without any of your crew noticing.</text>
-          <item_modify>
+          <item_modify steal="true">
             <item type="scrap" min="-999" max="-999"/>
           </item_modify>
         </event>
@@ -250,10 +274,30 @@
           <modifyPursuit amount="2"/>
         </event>
         <event>
-          <text>After upgrading your weapon, the pirates decided that they would like to take over your ship.</text>
-          <damage amount="5" system="weapons" effect="fire"/>
-          <boarders min="3" max="4" class="random"/>
-          <ship load="PIRATE" hostile="true"/>
+          <text>After upgrading your weapon, the pirates decided that they would like to take over your ship. You are boarded, while the anti-ship battery is firing from the pirate station.</text>
+          <damage amount="8" system="weapons" effect="fire"/>
+          <boarders min="4" max="5" class="random"/>
+          <environment type="PDS" target="player"/>
+          <ship auto_blueprint="SHIPS_PIRATE" hostile="true">
+            <destroyed>
+              <text>There's no time to salvage the enemy ship. The anti-ship battery keeps firing at you.</text>
+            </destroyed>
+            <deadCrew>
+              <text>There's no time to salvage the enemy ship. The anti-ship battery keeps firing at you.</text>
+            </deadCrew>
+          </ship>
+        </event>
+        <event>
+          <text>While the pirates did upgrade your weapon, after they did their job, a Rebel Elite with weapons online has entered the system. The pirate station seems to be working with Rebels since it fires at you with anti-ship battery.</text>
+          <environment type="PDS" target="player"/>
+          <ship auto_blueprint="SHIPS_REBEL_ELITE" hostile="true">
+            <destroyed>
+              <text>There's no time to salvage the enemy ship. The anti-ship battery keeps firing at you.</text>
+            </destroyed>
+            <deadCrew>
+              <text>There's no time to salvage the enemy ship. The anti-ship battery keeps firing at you.</text>
+            </deadCrew>
+          </ship>
         </event>
       </eventList>
       <eventList name="UPGRADE_FREE_TRUE_DRONE_LIST">
@@ -262,7 +306,7 @@
         </event>
         <event>
           <text>The pirates did not ask anything for their service, but, as they left, they emptied your hold without any of your crew noticing.</text>
-          <item_modify>
+          <item_modify steal="true">
             <item type="scrap" min="-999" max="-999"/>
           </item_modify>
         </event>
@@ -271,10 +315,30 @@
           <modifyPursuit amount="2"/>
         </event>
         <event>
-          <text>After upgrading your drone, the pirates decided that they would like to take over your ship.</text>
-          <damage amount="5" system="drones" effect="fire"/>
-          <boarders min="3" max="4" class="random"/>
-          <ship load="PIRATE" hostile="true"/>
+          <text>After upgrading your drone, the pirates decided that they would like to take over your ship. You are boarded, while the anti-ship battery is firing from the pirate station.</text>
+          <damage amount="8" system="drones" effect="fire"/>
+          <boarders min="4" max="5" class="random"/>
+          <environment type="PDS" target="player"/>
+          <ship auto_blueprint="SHIPS_PIRATE" hostile="true">
+            <destroyed>
+              <text>There's no time to salvage the enemy ship. The anti-ship battery keeps firing at you.</text>
+            </destroyed>
+            <deadCrew>
+              <text>There's no time to salvage the enemy ship. The anti-ship battery keeps firing at you.</text>
+            </deadCrew>
+          </ship>
+        </event>
+        <event>
+          <text>While the pirates did upgrade your drone, after they did their job, a Rebel Elite with weapons online has entered the system. The pirate station seems to be working with Rebels since it fires at you with anti-ship battery.</text>
+          <environment type="PDS" target="player"/>
+          <ship auto_blueprint="SHIPS_REBEL_ELITE" hostile="true">
+            <destroyed>
+              <text>There's no time to salvage the enemy ship. The anti-ship battery keeps firing at you.</text>
+            </destroyed>
+            <deadCrew>
+              <text>There's no time to salvage the enemy ship. The anti-ship battery keeps firing at you.</text>
+            </deadCrew>
+          </ship>
         </event>
       </eventList>
 
@@ -300,7 +364,7 @@
             </event>
           </choice>
         </xsl:for-each>
-        <xsl:for-each select="droneBlueprint[not(contains(@name, 'UPGRADED'))][power &gt; 1]">
+        <xsl:for-each select="droneBlueprint[not(contains(@name, 'UPGRADED'))][not(contains(@name, 'BOARDER_ION'))][power &gt; 1]">
           <choice req="{@name}">
             <text>
               <xsl:text>Upgrade&#32;</xsl:text>
@@ -349,7 +413,7 @@
             </event>
           </choice>
         </xsl:for-each>
-        <xsl:for-each select="droneBlueprint[not(contains(@name, 'UPGRADED'))][power &gt; 1]">
+        <xsl:for-each select="droneBlueprint[not(contains(@name, 'UPGRADED'))][not(contains(@name, 'BOARDER_ION'))][power &gt; 1]">
           <choice req="{@name}">
             <text>
               <xsl:text>Upgrade&#32;</xsl:text>
@@ -399,7 +463,7 @@
             </event>
           </choice>
         </xsl:for-each>
-        <xsl:for-each select="droneBlueprint[not(contains(@name, 'UPGRADED'))][power &gt; 1]">
+        <xsl:for-each select="droneBlueprint[not(contains(@name, 'UPGRADED'))][not(contains(@name, 'BOARDER_ION'))][power &gt; 1]">
           <choice req="{@name}">
             <text>
               <xsl:text>Upgrade&#32;</xsl:text>
@@ -446,7 +510,7 @@
             </event>
           </choice>
         </xsl:for-each>
-        <xsl:for-each select="droneBlueprint[not(contains(@name, 'UPGRADED'))][power &gt; 1]">
+        <xsl:for-each select="droneBlueprint[not(contains(@name, 'UPGRADED'))][not(contains(@name, 'BOARDER_ION'))][power &gt; 1]">
           <choice req="{@name}">
             <text>
               <xsl:text>Upgrade&#32;</xsl:text>
@@ -493,7 +557,7 @@
             </event>
           </choice>
         </xsl:for-each>
-        <xsl:for-each select="droneBlueprint[not(contains(@name, 'UPGRADED'))][power &gt; 1]">
+        <xsl:for-each select="droneBlueprint[not(contains(@name, 'UPGRADED'))][not(contains(@name, 'BOARDER_ION'))][power &gt; 1]">
           <choice req="{@name}">
             <text>
               <xsl:text>Upgrade&#32;</xsl:text>

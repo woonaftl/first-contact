@@ -267,4 +267,7 @@
   <roomLayout name="weapons_13">
     <computerGlow x="8" y="0" slot="0" dir="UP"/>
   </roomLayout>
+  <roomLayout name="weapons_14">
+    <computerGlow x="8" y="53" slot="2" dir="DOWN"/>
+  </roomLayout>
 </FTL>

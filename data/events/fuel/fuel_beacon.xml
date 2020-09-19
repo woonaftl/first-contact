@@ -1,20 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
-  <eventList name="NO_FUEL_DISTRESS">
-    <event load="FUEL_NOTHING_DISTRESS" count="2"/>
-    <event load="FUEL_SELLER_DISTRESS"/>
-    <event load="FUEL_TRADER_DISTRESS"/>
-    <event load="FUEL_ON_SLUG_OVERPRICED"/>
-    <event load="FUEL_ON_SLUG_CHUCKLE"/>
-    <event load="FUEL_ON_MANTIS_ATTACK"/>
-    <event load="FUEL_ON_REBEL_WARNING"/>
-    <event load="FUEL_ON_REBEL_ATTACK"/>
-    <event load="NO_FUEL_REFUGEE"/>
-
-    <event load="FUEL_EXPLORE"/>
-    <event load="FUEL_APPROACH"/>
-  </eventList>
-
   <event name="FUEL_NOTHING_DISTRESS">
     <textList name="FUEL_NOTHING_DISTRESS_LIST">
       <text>You contemplate that it is fortunate the ship's life support system does not rely on FTL fuel cells.</text>

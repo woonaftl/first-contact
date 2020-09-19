@@ -362,7 +362,7 @@
                 </xs:simpleContent>
               </xs:complexType>
             </xs:element>
-            <xs:element name="event" minOccurs="0">
+            <xs:element name="event">
               <xs:complexType>
                 <xs:complexContent>
                   <xs:extension base="eventType">

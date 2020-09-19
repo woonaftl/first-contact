@@ -386,7 +386,7 @@
   <changelog>
     <entry>Added Slug sneaky thief event</entry>
   </changelog>
-  <event name="SLUG_SNEAKY_THIEF">
+  <event name="SLUG_SNEAKY_THIEF" unique="true">
     <environment type="nebula"/>
     <text>The beacon you arrived at is located in a dense nebula cloud. With sensors offline, you feel vulnerable but no attack comes.</text>
     <choice hidden="true">

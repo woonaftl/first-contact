@@ -43,10 +43,6 @@
       <text>The survivors send a message, "Thanks for the support, I don't know how much longer we could have held on. Take some supplies, we probably won't need them at this point."</text>
       <autoReward level="MED">stuff</autoReward>
     </event>
-    <event>
-      <text>You receive a message on encrypted Federation channels. It says, "Thanks for helping us, Captain. We're in the process of setting up another emergency repairs station. Transmitting coordinates now."</text>
-      <quest event="BOSS_REPAIR_STATION"/>
-    </event>
   </eventList>
   <ship name="BOSS_SCOUT_RESCUE" auto_blueprint="SHIPS_REBEL">
     <escape chance="0.5" min="4" max="8" load="PIRATE_ESCAPE"/>

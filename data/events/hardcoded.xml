@@ -429,6 +429,31 @@
     </item_modify>
   </event>
 
+  <eventList name="NO_FUEL_DISTRESS">
+    <event load="FUEL_NOTHING_DISTRESS" count="2"/>
+    <event load="FUEL_SELLER_DISTRESS"/>
+    <event load="FUEL_TRADER_DISTRESS"/>
+    <event load="FUEL_ON_SLUG_OVERPRICED"/>
+    <event load="FUEL_ON_SLUG_CHUCKLE"/>
+    <event load="FUEL_ON_MANTIS_ATTACK"/>
+    <event load="FUEL_ON_REBEL_WARNING"/>
+    <event load="FUEL_ON_REBEL_ATTACK"/>
+    <event load="NO_FUEL_REFUGEE"/>
+    <event load="FUEL_EXPLORE"/>
+    <event load="FUEL_APPROACH"/>
+  </eventList>
+
+  <eventList name="NO_FUEL">
+    <event load="FUEL_FLEET_DELAY"/>
+    <event load="FUEL_NOTHING" count="4"/>
+    <event load="FUEL_TRADER"/>
+    <event load="FUEL_OFF_ENGI_DUBIOUS"/>
+    <event load="FUEL_OFF_ROCK_WRECK"/>
+    <event load="NO_FUEL_REFUGEE_FRIENDLY"/>
+    <event load="FUEL_EXPLORE"/>
+    <event load="FUEL_APPROACH"/>
+  </eventList>
+
   <event name="CHARACTER_TEST">
     <text>`abcdefghijklmno °±²³´µ¶·¸¹º»¼½ ¾¿ÀÁÂÃÄÅÆÇ ÈÉÊËÌÍÎÏ ÐÑÒÓÔÕ Ö×ØÙÚÛ ÜÝÞßàá âãäåæç èéêëìí îïðñòóô õö÷øùúûüýþ ÿŒœŠšŸƒ</text>
   </event>

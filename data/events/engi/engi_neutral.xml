@@ -32,7 +32,7 @@
         </event>
       </eventList>
     </choice>
-    <choice hidden="true">
+    <choice>
       <text>Accept their offer of surrender.</text>
       <event>
         <text>The Engi obediently transfer over the goods and get on their way. Money for nothing.</text>

@@ -1,17 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
-  <eventList name="NO_FUEL">
-    <event load="FUEL_FLEET_DELAY"/>
-    <event load="FUEL_NOTHING" count="4"/>
-    <event load="FUEL_TRADER"/>
-    <event load="FUEL_OFF_ENGI_DUBIOUS"/>
-    <event load="FUEL_OFF_ROCK_WRECK"/>
-    <event load="NO_FUEL_REFUGEE_FRIENDLY"/>
-
-    <event load="FUEL_EXPLORE"/>
-    <event load="FUEL_APPROACH"/>
-  </eventList>
-
   <event name="FUEL_FLEET_DELAY">
     <textList name="FUEL_FLEET_DELAY_LIST">
       <text>As you are keeping a low profile, you're certain that the Rebel fleet is having a hard time tracking your ship.</text>

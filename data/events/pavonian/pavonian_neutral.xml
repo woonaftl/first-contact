@@ -17,7 +17,7 @@
     <choice>
       <text>Greet the ship.</text>
       <event>
-        <text>You send a brief greeting message tp Pavonian ship but there is no answer.</text>
+        <text>You send a brief greeting message to Pavonian ship but there is no answer.</text>
         <choice>
           <text>Attack the ship.</text>
           <event>

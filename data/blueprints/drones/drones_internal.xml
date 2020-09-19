@@ -10,11 +10,24 @@
     <name>REPAIR</name>
     <name>BATTLE_UPGRADED</name>
     <name>BOARDER_UPGRADED</name>
-    <name>BOARDER_ION_UPGRADED</name>
+    <!--<name>BOARDER_ION_UPGRADED</name>-->
   </blueprintList>
   <blueprintList name="DRONES_INTERNAL">
     <name>REPAIR</name>
     <name>BATTLE</name>
+  </blueprintList>
+  <blueprintList name="DRONES_INTERNAL_1">
+    <name>REPAIR</name>
+  </blueprintList>
+  <blueprintList name="DRONES_INTERNAL_2">
+    <name>BATTLE</name>
+  </blueprintList>
+  <blueprintList name="DRONES_INTERNAL_1_UPGRADED">
+    <name>REPAIR</name>
+    <name>BATTLE_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="DRONES_INTERNAL_2_UPGRADED">
+    <name>BATTLE_UPGRADED</name>
   </blueprintList>
   <blueprintList name="DRONES_INTERNAL_UPGRADED">
     <name>REPAIR</name>
@@ -32,7 +45,7 @@
     <name>BOARDER</name>
     <name>BOARDER_UPGRADED</name>
     <name>BOARDER_ION</name>
-    <name>BOARDER_ION_UPGRADED</name>
+    <!--<name>BOARDER_ION_UPGRADED</name>-->
   </blueprintList>
   <blueprintList name="BOARDER_LIST">
     <name>BOARDER</name>
@@ -40,7 +53,7 @@
   </blueprintList>
   <blueprintList name="BOARDER_ION_LIST">
     <name>BOARDER_ION</name>
-    <name>BOARDER_ION_UPGRADED</name>
+    <!--<name>BOARDER_ION_UPGRADED</name>-->
   </blueprintList>
 
   <!--TODO Fire Intruder if possible, 3 power, immune to fire-->
@@ -131,7 +144,7 @@
     <entry>Ion Intuder scrap cost 65 to 40</entry>
   </changelog>
   <droneBlueprint name="BOARDER_ION">
-    <type>BOARDER_ION</type>
+    <type>BOARDER</type>
     <tip>tip_boarding</tip>
     <title>Ion Intruder Drone</title>
     <short>I. Intruder</short>
@@ -142,12 +155,12 @@
     <rarity>0</rarity>
     <iconImage>ionD</iconImage>
   </droneBlueprint>
-  <droneBlueprintInherit name="BOARDER_ION_UPGRADED" base="BOARDER_ION">
+  <!--<droneBlueprintInherit name="BOARDER_ION_UPGRADED" base="BOARDER_ION">
     <tip>tip_boarding_upgraded</tip>
     <title>Ion Intruder Drone+</title>
     <short>I. Intruder+</short>
     <desc>Breaches through the enemy hull and randomly ionizes systems. This modified schematic requires 1 less power.</desc>
     <power>2</power>
     <rarity>0</rarity>
-  </droneBlueprintInherit>
+  </droneBlueprintInherit>-->
 </FTL>

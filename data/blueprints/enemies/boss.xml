@@ -144,7 +144,7 @@
   <changelog>
     <entry>All of Rebel Flagship rooms are connected including weapon rooms on all difficulty levels.</entry>
   </changelog>
-
+<!--TODO console images in rooms are broken-->
   <shipBlueprint img="boss_1" layout="boss_1" name="BOSS_1_EASY_DLC">
     <class>Rebel Flagship</class>
     <systemList>

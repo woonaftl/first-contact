@@ -61,25 +61,24 @@
       <shields power="2" max="8" room="5"/>
       <medbay power="1" max="3" room="8" start="false"/>
     </systemList>
-    <weaponList sector="2" missiles="0" system_power="5">
+    <weaponList sector="2" missiles="0" system_power="4">
+      <weapon name="WEAPONS_CHAIN_2"/>
+      <weapon name="WEAPONS_LASER_2"/>
+    </weaponList>
+    <weaponList sector="3" missiles="0" system_power="5">
       <weapon name="WEAPONS_CHAIN_2"/>
       <weapon name="WEAPONS_CHAIN_2"/>
       <weapon name="WEAPONS_LASER_1"/>
     </weaponList>
-    <weaponList sector="3" missiles="0" system_power="6">
+    <weaponList sector="4" missiles="0" system_power="6">
       <weapon name="WEAPONS_CHAIN_2"/>
       <weapon name="WEAPONS_CHAIN_2"/>
       <weapon name="WEAPONS_LASER_2"/>
     </weaponList>
-    <weaponList sector="4" missiles="0" system_power="7">
+    <weaponList sector="5" missiles="0" system_power="7">
       <weapon name="WEAPONS_CHAIN_2"/>
       <weapon name="WEAPONS_CHAIN_2"/>
       <weapon name="WEAPONS_LASER_3"/>
-    </weaponList>
-    <weaponList sector="5" missiles="0" system_power="8">
-      <weapon name="WEAPONS_CHAIN_2"/>
-      <weapon name="WEAPONS_CHAIN_2"/>
-      <weapon name="WEAPONS_LASER_4"/>
     </weaponList>
     <health amount="9"/>
     <crewCount amount="3" max="4" class="pavonian"/>
@@ -105,12 +104,12 @@
       <weapon name="WEAPONS_CHAIN_2"/>
       <weapon name="WEAPONS_LASER_2"/>
     </weaponList>
-    <weaponList sector="2" missiles="0" system_power="5">
+    <weaponList sector="2" missiles="0" system_power="4">
       <weapon name="WEAPONS_CHAIN_2"/>
-      <weapon name="WEAPONS_LASER_3"/>
+      <weapon name="WEAPONS_LASER_2"/>
     </weaponList>
-    <weaponList sector="3" missiles="0" system_power="6">
-      <weapon name="WEAPONS_CHAIN_3"/>
+    <weaponList sector="3" missiles="0" system_power="5">
+      <weapon name="WEAPONS_CHAIN_2"/>
       <weapon name="WEAPONS_LASER_3"/>
     </weaponList>
     <health amount="7"/>

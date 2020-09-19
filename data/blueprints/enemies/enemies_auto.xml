@@ -43,8 +43,8 @@
       <weapon name="WEAPONS_LASER_2"/>
       <weapon name="WEAPONS_ANY_2"/>
     </weaponList>
-    <weaponList sector="3" missiles="0" system_power="5">
-      <weapon name="WEAPONS_LASER_3"/>
+    <weaponList sector="3" missiles="0" system_power="4">
+      <weapon name="WEAPONS_LASER_2"/>
       <weapon name="WEAPONS_ANY_2"/>
     </weaponList>
     <health amount="6"/>
@@ -52,37 +52,48 @@
     <cloakImage>auto_basic</cloakImage>
   </shipBlueprintSuper>
 
-  <shipBlueprintSuper name="AUTO_ASSAULT" layout="auto_assault" img="auto_assault">
+  <shipBlueprintSuperNew name="AUTO_ASSAULT" layout="auto_assault" img="auto_assault">
     <class>Auto-Assault</class>
     <systemList>
       <pilot power="1" max="3" room="2"/>
       <shields power="2" max="8" room="3"/>
       <engines power="1" max="5" room="4"/>
       <weapons room="1"/>
-      <drones power="2" room="0" max="6"/>
+      <drones room="0"/>
     </systemList>
-    <weaponList sector="2" missiles="0" system_power="2">
-      <weapon name="WEAPONS_ION_1"/>
-      <weapon name="WEAPONS_LASER_1"/>
-    </weaponList>
-    <weaponList sector="3" missiles="0" system_power="3">
-      <weapon name="WEAPONS_ION_2"/>
-      <weapon name="WEAPONS_LASER_1"/>
-    </weaponList>
-    <weaponList sector="4" missiles="0" system_power="4">
-      <weapon name="WEAPONS_ION_3"/>
-      <weapon name="WEAPONS_LASER_1"/>
-    </weaponList>
-    <weaponList sector="5" missiles="0" system_power="5">
-      <weapon name="WEAPONS_ION_3"/>
-      <weapon name="WEAPONS_LASER_1"/>
-      <weapon name="WEAPONS_LASER_1"/>
-    </weaponList>
-    <droneList drones="5" load="DRONES_COMBAT"/>
+    <sector id="2">
+      <weaponList missiles="0" system_power="2">
+        <weapon name="WEAPONS_ION_1"/>
+        <weapon name="WEAPONS_LASER_1"/>
+      </weaponList>
+      <droneList drones="5" system_power="4" load="DRONES_COMBAT"/>
+    </sector>
+    <sector id="3">
+      <weaponList missiles="0" system_power="3">
+        <weapon name="WEAPONS_ION_2"/>
+        <weapon name="WEAPONS_LASER_1"/>
+      </weaponList>
+      <droneList drones="5" system_power="4" load="DRONES_COMBAT"/>
+    </sector>
+    <sector id="4">
+      <weaponList missiles="0" system_power="3">
+        <weapon name="WEAPONS_ION_2"/>
+        <weapon name="WEAPONS_LASER_1"/>
+      </weaponList>
+      <droneList drones="5" system_power="5" load="DRONES_COMBAT"/>
+    </sector>
+    <sector id="5">
+      <weaponList missiles="0" system_power="4">
+        <weapon name="WEAPONS_ION_2"/>
+        <weapon name="WEAPONS_LASER_1"/>
+        <weapon name="WEAPONS_LASER_1"/>
+      </weaponList>
+      <droneList drones="5" system_power="6" load="DRONES_COMBAT"/>
+    </sector>
     <health amount="8"/>
     <crewCount amount="0" max="0" class="human"/>
     <cloakImage>auto_assault</cloakImage>
-  </shipBlueprintSuper>
+  </shipBlueprintSuperNew>
 
   <shipBlueprintSuper name="AUTO_EXPLORER" layout="auto_explorer" img="auto_explorer">
     <class>Auto-Explorer</class>
@@ -93,14 +104,14 @@
       <shields power="2" max="6" room="4"/>
       <hacking power="1" max="1" room="2" start="false"/>
     </systemList>
-    <weaponList sector="0" missiles="1" system_power="2">
-      <weapon name="WEAPONS_MISSILES_1"/>
-      <weapon name="WEAPONS_ANY_1"/>
-      <weapon name="WEAPONS_LASER_1"/>
-    </weaponList>
-    <weaponList sector="1" missiles="1" system_power="3">
+    <weaponList sector="0" missiles="1" system_power="3">
       <weapon name="WEAPONS_MISSILES_1"/>
       <weapon name="WEAPONS_ANY_2"/>
+      <weapon name="WEAPONS_LASER_1"/>
+    </weaponList>
+    <weaponList sector="1" missiles="1" system_power="4">
+      <weapon name="WEAPONS_MISSILES_1"/>
+      <weapon name="WEAPONS_ANY_3"/>
       <weapon name="WEAPONS_LASER_1"/>
     </weaponList>
     <weaponList sector="2" missiles="1" system_power="4">
@@ -128,13 +139,13 @@
       <weapons room="2"/>
       <shields power="2" max="6" room="3"/>
     </systemList>
-    <weaponList sector="0" missiles="0" system_power="2">
-      <weapon name="WEAPONS_LASER_1"/>
-      <weapon name="WEAPONS_ANY_1"/>
-    </weaponList>
-    <weaponList sector="1" missiles="0" system_power="3">
+    <weaponList sector="0" missiles="0" system_power="3">
       <weapon name="WEAPONS_LASER_2"/>
       <weapon name="WEAPONS_ANY_1"/>
+    </weaponList>
+    <weaponList sector="1" missiles="0" system_power="4">
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_ANY_2"/>
     </weaponList>
     <weaponList sector="2" missiles="0" system_power="4">
       <weapon name="WEAPONS_LASER_2"/>
@@ -174,42 +185,53 @@
     <cloakImage>auto_fuel</cloakImage>
   </shipBlueprintSuper>
 
-  <shipBlueprintSuper name="AUTO_HUNTER" layout="auto_hunter" img="auto_hunter">
+  <shipBlueprintSuperNew name="AUTO_HUNTER" layout="auto_hunter" img="auto_hunter">
     <class>Auto-Hunter</class>
     <systemList>
       <pilot power="1" max="3" room="0"/>
       <engines power="1" max="6" room="1"/>
       <weapons room="2"/>
       <shields power="2" max="8" room="3"/>
-      <drones power="3" max="6" room="4"/>
+      <drones room="4"/>
       <cloaking power="1" max="2" room="5" start="false"/>
     </systemList>
-    <weaponList sector="4" missiles="0" system_power="5">
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_ANY_1"/>
-    </weaponList>
-    <weaponList sector="5" missiles="0" system_power="6">
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_ANY_2"/>
-    </weaponList>
-    <weaponList sector="6" missiles="0" system_power="7">
-      <weapon name="WEAPONS_LASER_3"/>
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_ANY_2"/>
-    </weaponList>
-    <weaponList sector="7" missiles="0" system_power="8">
-      <weapon name="WEAPONS_LASER_3"/>
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_ANY_2"/>
-      <weapon name="WEAPONS_ANY_1"/>
-    </weaponList>
-    <droneList drones="5" load="DRONES_BOARDER"/>
+    <sector id="4">
+      <weaponList missiles="0" system_power="3">
+        <weapon name="WEAPONS_LASER_1"/>
+        <weapon name="WEAPONS_LASER_1"/>
+        <weapon name="WEAPONS_ANY_1"/>
+      </weaponList>
+      <droneList drones="5" system_power="5" load="DRONES_COMBAT"/>
+    </sector>
+    <sector id="5">
+      <weaponList missiles="0" system_power="4">
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_LASER_1"/>
+        <weapon name="WEAPONS_ANY_1"/>
+      </weaponList>
+      <droneList drones="5" system_power="6" load="DRONES_COMBAT"/>
+    </sector>
+    <sector id="6">
+      <weaponList missiles="0" system_power="4">
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_LASER_1"/>
+        <weapon name="WEAPONS_ANY_1"/>
+      </weaponList>
+      <droneList drones="5" system_power="7" load="DRONES_COMBAT"/>
+    </sector>
+    <sector id="7">
+      <weaponList missiles="0" system_power="5">
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_LASER_1"/>
+        <weapon name="WEAPONS_ANY_1"/>
+        <weapon name="WEAPONS_ANY_1"/>
+      </weaponList>
+      <droneList drones="5" system_power="8" load="DRONES_COMBAT"/>
+    </sector>
     <health amount="8"/>
     <crewCount amount="0" max="0" class="human"/>
     <cloakImage>auto_hunter</cloakImage>
-  </shipBlueprintSuper>
+  </shipBlueprintSuperNew>
 
   <shipBlueprintSuper name="AUTO_INVADER" layout="auto_invader" img="auto_invader">
     <class>Auto-Invader</class>
@@ -220,12 +242,13 @@
       <shields power="2" max="6" room="3"/>
       <hacking power="1" max="2" room="5" start="false"/>
     </systemList>
-    <weaponList sector="0" missiles="0" system_power="2">
-      <weapon name="WEAPONS_ION_1"/>
+    <weaponList sector="0" missiles="0" system_power="3">
+      <weapon name="WEAPONS_ION_2"/>
       <weapon name="WEAPONS_LASER_1"/>
     </weaponList>
-    <weaponList sector="1" missiles="0" system_power="3">
+    <weaponList sector="1" missiles="0" system_power="4">
       <weapon name="WEAPONS_ION_2"/>
+      <weapon name="WEAPONS_LASER_1"/>
       <weapon name="WEAPONS_LASER_1"/>
     </weaponList>
     <weaponList sector="2" missiles="0" system_power="4">
@@ -244,41 +267,51 @@
     <cloakImage>auto_invader</cloakImage>
   </shipBlueprintSuper>
 
-  <shipBlueprintSuper name="AUTO_DEFENDER" layout="auto_defender" img="auto_defender">
+  <shipBlueprintSuperNew name="AUTO_DEFENDER" layout="auto_defender" img="auto_defender">
     <class>Auto-Defender</class>
     <systemList>
       <pilot power="1" max="3" room="0"/>
       <engines power="1" max="8" room="1"/>
       <weapons room="2"/>
       <shields power="2" max="8" room="5"/>
-      <cloaking power="1" max="3" room="4" start="false"/>
-      <drones power="2" max="8" room="3"/>
+      <cloaking power="1" max="2" room="4" start="false"/>
+      <drones room="3"/>
     </systemList>
-    <weaponList sector="4" missiles="0" system_power="5">
-      <weapon name="WEAPONS_ION_2"/>
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_ION_1"/>
-    </weaponList>
-    <weaponList sector="5" missiles="0" system_power="6">
-      <weapon name="WEAPONS_ION_2"/>
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_ION_2"/>
-    </weaponList>
-    <weaponList sector="6" missiles="0" system_power="7">
-      <weapon name="WEAPONS_ION_3"/>
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_ION_2"/>
-    </weaponList>
-    <weaponList sector="7" missiles="0" system_power="8">
-      <weapon name="WEAPONS_ION_3"/>
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_ION_2"/>
-      <weapon name="WEAPONS_ANY_1"/>
-    </weaponList>
-    <droneList drones="5" load="DRONES_COMBAT"/>
+    <sector id="4">
+      <weaponList missiles="0" system_power="3">
+        <weapon name="WEAPONS_ION_1"/>
+        <weapon name="WEAPONS_LASER_1"/>
+        <weapon name="WEAPONS_ION_1"/>
+      </weaponList>
+      <droneList drones="5" system_power="5" load="DRONES_COMBAT"/>
+    </sector>
+    <sector id="5">
+      <weaponList missiles="0" system_power="4">
+        <weapon name="WEAPONS_ION_2"/>
+        <weapon name="WEAPONS_LASER_1"/>
+        <weapon name="WEAPONS_ION_1"/>
+      </weaponList>
+      <droneList drones="5" system_power="6" load="DRONES_COMBAT"/>
+    </sector>
+    <sector id="6">
+      <weaponList missiles="0" system_power="4">
+        <weapon name="WEAPONS_ION_2"/>
+        <weapon name="WEAPONS_LASER_1"/>
+        <weapon name="WEAPONS_ION_1"/>
+      </weaponList>
+      <droneList drones="5" system_power="7" load="DRONES_COMBAT"/>
+    </sector>
+    <sector id="7">
+      <weaponList missiles="0" system_power="5">
+        <weapon name="WEAPONS_ION_2"/>
+        <weapon name="WEAPONS_LASER_1"/>
+        <weapon name="WEAPONS_ION_1"/>
+        <weapon name="WEAPONS_ANY_1"/>
+      </weaponList>
+      <droneList drones="5" system_power="8" load="DRONES_COMBAT"/>
+    </sector>
     <health amount="7"/>
     <crewCount amount="0" max="0" class="human"/>
     <cloakImage>auto_defender</cloakImage>
-  </shipBlueprintSuper>
-
+  </shipBlueprintSuperNew>
 </FTL>

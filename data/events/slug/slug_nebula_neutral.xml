@@ -486,7 +486,7 @@
     <event>
       <text>The Slugs have done an excellent job. But they took remote control over your life support system with them. As soon as they leave, they charge the weapons. Their intentions are clear.</text>
       <status amount="0" system="oxygen" target="player" type="limit"/>
-      <ship hostile="true" load="JELLY_STATUS_OXYGEN"/>
+      <ship hostile="true" load="JELLY_STATUS"/>
     </event>
   </eventList>
   <ship auto_blueprint="SHIPS_JELLY" name="SLUG_UPGRADE_OXYGEN_SHIP">

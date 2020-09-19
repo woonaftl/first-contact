@@ -46,7 +46,7 @@
   </event>
 
   <event name="CONFUSED_MANTIS" unique="true">
-    <text>As soon as you jump into the system, you receive a hail from a nearby civilian Engi vessel. Their Captain appears on your screen: "Strange bug. Can you assist in debugging?"</text>
+    <text>As soon as you jump into the system, you receive a hail from a nearby civilian Engi vessel. Their captain appears on your screen: "Strange bug. Can you assist in debugging?"</text>
     <choice>
       <text>Listen to their problem.</text>
       <event>

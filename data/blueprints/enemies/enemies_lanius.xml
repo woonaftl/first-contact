@@ -24,10 +24,9 @@
       <weapon name="WEAPONS_LASER_2"/>
       <weapon name="WEAPONS_PROJ_2"/>
     </weaponList>
-    <weaponList sector="2" missiles="0" system_power="5">
+    <weaponList sector="2" missiles="0" system_power="4">
       <weapon name="WEAPONS_LASER_2"/>
       <weapon name="WEAPONS_PROJ_2"/>
-      <weapon name="WEAPONS_SIMPLE_1"/>
     </weaponList>
     <weaponList sector="3" missiles="0" system_power="5">
       <weapon name="WEAPONS_LASER_2"/>
@@ -64,22 +63,22 @@
       <weapon name="WEAPONS_PROJ_2"/>
       <weapon name="WEAPONS_SIMPLE_1"/>
     </weaponList>
-    <weaponList sector="4" missiles="3" system_power="5">
-      <weapon name="WEAPONS_BOMB"/>
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_PROJ_2"/>
-      <weapon name="WEAPONS_SIMPLE_1"/>
-    </weaponList>
-    <weaponList sector="5" missiles="3" system_power="6">
+    <weaponList sector="4" missiles="3" system_power="6">
       <weapon name="WEAPONS_BOMB"/>
       <weapon name="WEAPONS_LASER_3"/>
       <weapon name="WEAPONS_PROJ_2"/>
       <weapon name="WEAPONS_SIMPLE_1"/>
     </weaponList>
-    <weaponList sector="6" missiles="3" system_power="7">
+    <weaponList sector="5" missiles="3" system_power="7">
       <weapon name="WEAPONS_BOMB"/>
       <weapon name="WEAPONS_LASER_3"/>
       <weapon name="WEAPONS_PROJ_3"/>
+      <weapon name="WEAPONS_SIMPLE_1"/>
+    </weaponList>
+    <weaponList sector="6" missiles="3" system_power="8">
+      <weapon name="WEAPONS_BOMB"/>
+      <weapon name="WEAPONS_LASER_3"/>
+      <weapon name="WEAPONS_PROJ_4"/>
       <weapon name="WEAPONS_SIMPLE_1"/>
     </weaponList>
     <health amount="9"/>
@@ -100,23 +99,23 @@
     </systemList>
     <weaponList sector="1" missiles="1" system_power="4">
       <weapon name="WEAPONS_MISSILES_1"/>
+      <weapon name="WEAPONS_LASER_2"/>
       <weapon name="WEAPONS_LASER_1"/>
-      <weapon name="WEAPONS_LASER_2"/>
       <weapon name="WEAPONS_PROJ_1"/>
     </weaponList>
-    <weaponList sector="2" missiles="1" system_power="5">
+    <weaponList sector="2" missiles="1" system_power="4">
+      <weapon name="WEAPONS_MISSILES_1"/>
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_LASER_1"/>
+      <weapon name="WEAPONS_PROJ_1"/>
+    </weaponList>
+    <weaponList sector="3" missiles="1" system_power="5">
       <weapon name="WEAPONS_MISSILES_1"/>
       <weapon name="WEAPONS_LASER_2"/>
       <weapon name="WEAPONS_LASER_2"/>
       <weapon name="WEAPONS_PROJ_1"/>
     </weaponList>
-    <weaponList sector="3" missiles="2" system_power="5">
-      <weapon name="WEAPONS_MISSILES_1"/>
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_PROJ_1"/>
-    </weaponList>
-    <weaponList sector="4" missiles="2" system_power="6">
+    <weaponList sector="4" missiles="1" system_power="6">
       <weapon name="WEAPONS_MISSILES_2"/>
       <weapon name="WEAPONS_LASER_2"/>
       <weapon name="WEAPONS_LASER_2"/>
@@ -139,24 +138,24 @@
       <doors power="1" max="3" room="6" start="false"/>
       <hacking power="1" max="2" room="4"/>
     </systemList>
-    <weaponList sector="2" missiles="0" system_power="5">
-      <weapon name="WEAPONS_LASER_3"/>
+    <weaponList sector="2" missiles="0" system_power="4">
+      <weapon name="WEAPONS_LASER_2"/>
       <weapon name="WEAPONS_BEAM_2"/>
     </weaponList>
-    <weaponList sector="3" missiles="0" system_power="6">
-      <weapon name="WEAPONS_LASER_3"/>
+    <weaponList sector="3" missiles="0" system_power="5">
+      <weapon name="WEAPONS_LASER_2"/>
       <weapon name="WEAPONS_BEAM_2"/>
       <weapon name="WEAPONS_PROJ_1"/>
     </weaponList>
-    <weaponList sector="4" missiles="0" system_power="7">
-      <weapon name="WEAPONS_LASER_3"/>
+    <weaponList sector="4" missiles="0" system_power="6">
+      <weapon name="WEAPONS_LASER_2"/>
       <weapon name="WEAPONS_BEAM_2"/>
       <weapon name="WEAPONS_PROJ_2"/>
     </weaponList>
-    <weaponList sector="5" missiles="0" system_power="8">
+    <weaponList sector="5" missiles="0" system_power="7">
       <weapon name="WEAPONS_LASER_3"/>
       <weapon name="WEAPONS_BEAM_2"/>
-      <weapon name="WEAPONS_PROJ_3"/>
+      <weapon name="WEAPONS_PROJ_2"/>
     </weaponList>
     <droneList drones="4"/>
     <health amount="8"/>
@@ -176,29 +175,29 @@
       <doors power="1" max="3" room="6" start="false"/>
       <hacking power="1" max="3" room="7"/>
     </systemList>
-    <weaponList sector="3" missiles="1" system_power="6">
+    <weaponList sector="3" missiles="1" system_power="5">
+      <weapon name="WEAPONS_MISSILES_1"/>
+      <weapon name="WEAPONS_PROJ_2"/>
+      <weapon name="WEAPONS_PROJ_2"/>
+      <weapon name="WEAPONS_LASER_1"/>
+    </weaponList>
+    <weaponList sector="4" missiles="1" system_power="6">
       <weapon name="WEAPONS_MISSILES_2"/>
       <weapon name="WEAPONS_PROJ_2"/>
       <weapon name="WEAPONS_PROJ_2"/>
       <weapon name="WEAPONS_LASER_2"/>
     </weaponList>
-    <weaponList sector="4" missiles="1" system_power="7">
+    <weaponList sector="5" missiles="1" system_power="7">
       <weapon name="WEAPONS_MISSILES_2"/>
       <weapon name="WEAPONS_PROJ_3"/>
       <weapon name="WEAPONS_PROJ_2"/>
       <weapon name="WEAPONS_LASER_2"/>
-    </weaponList>
-    <weaponList sector="5" missiles="2" system_power="8">
-      <weapon name="WEAPONS_MISSILES_2"/>
-      <weapon name="WEAPONS_PROJ_3"/>
-      <weapon name="WEAPONS_PROJ_2"/>
-      <weapon name="WEAPONS_LASER_3"/>
     </weaponList>
     <weaponList sector="6" missiles="2" system_power="8">
       <weapon name="WEAPONS_MISSILES_2"/>
       <weapon name="WEAPONS_PROJ_3"/>
-      <weapon name="WEAPONS_PROJ_2"/>
-      <weapon name="WEAPONS_LASER_3"/>
+      <weapon name="WEAPONS_PROJ_3"/>
+      <weapon name="WEAPONS_LASER_2"/>
     </weaponList>
     <health amount="9"/>
     <crewCount amount="3" max="5" class="anaerobic"/>
@@ -220,8 +219,8 @@
       <weapon name="WEAPONS_PROJ_1"/>
       <weapon name="WEAPONS_LASER_1"/>
     </weaponList>
-    <weaponList sector="2" missiles="0" system_power="5">
-      <weapon name="WEAPONS_LASER_3"/>
+    <weaponList sector="2" missiles="0" system_power="4">
+      <weapon name="WEAPONS_LASER_2"/>
       <weapon name="WEAPONS_PROJ_1"/>
       <weapon name="WEAPONS_SIMPLE_1"/>
     </weaponList>

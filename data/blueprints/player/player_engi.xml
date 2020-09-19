@@ -44,18 +44,18 @@
     <desc>?</desc>
     <systemList>
       <battery power="1" room="10" start="false" img="room_battery_7"/>
-      <cloaking power="1" room="3" start="false" img="room_cloaking_14"/>
+      <cloaking power="1" room="3" start="false" img="room_cloaking_12"/>
       <clonebay power="1" room="6" start="false" slot="0"/>
       <doors power="1" room="11" start="true" img="room_doors_9"/>
       <drones power="2" room="2" start="true" img="room_drones_16"/>
       <engines power="2" room="4" start="true" img="room_engines_2"/>
-      <hacking power="1" room="14" start="false" img="room_hacking_10"/>
+      <hacking power="1" room="1" start="false" img="room_hacking_4"/>
       <medbay power="1" room="6" start="true" img="room_medbay_6"/>
       <mind power="1" room="5" start="false" img="room_mind_6"/>
       <oxygen power="1" room="8" start="true" img="room_oxygen_2"/>
       <pilot power="1" room="0" start="true" img="room_pilot_5"/>
       <sensors power="1" room="13" start="true" img="room_sensors_7"/>
-      <shields power="1" room="9" start="true" img="room_shields_15"/>
+      <shields power="2" room="9" start="false" img="room_shields_15"/>
       <teleporter power="1" room="12" start="false"/>
       <weapons power="3" room="7" start="true" img="room_weapons_3"/>
     </systemList>
@@ -97,7 +97,7 @@
       <oxygen power="1" room="0" start="true" img="room_oxygen_7"/>
       <pilot power="1" room="14" start="true"/>
       <sensors power="1" room="13" start="true" img="room_sensors_2"/>
-      <shields power="1" room="8" start="true" img="room_shields_4"/>
+      <shields power="2" room="8" start="false" img="room_shields_4"/>
       <teleporter power="1" room="4" start="false"/>
       <weapons power="2" room="6" start="true" img="room_weapons_7"/>
     </systemList>
@@ -105,7 +105,7 @@
     <droneSlots>3</droneSlots>
     <weaponList count="2" missiles="0">
       <weapon name="BEAM_1_UPGRADED"/>
-      <weapon name="ION_CHARGEGUN_UPGRADED"/>
+      <weapon name="LASER_CHARGEGUN_UPGRADED"/>
     </weaponList>
     <droneList count="2" drones="25">
       <drone name="DRONE_SHIELD_UPGRADED"/>

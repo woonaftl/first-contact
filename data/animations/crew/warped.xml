@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FTL>
-  <!--TODO make bigger-->
   <animSheet name="warped" w="315" h="490" fw="35" fh="35">people/warped_base.png</animSheet>
   <anim name="warped_walk_up">
     <sheet>warped</sheet>

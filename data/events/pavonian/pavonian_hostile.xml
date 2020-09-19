@@ -3,6 +3,7 @@
   <eventList name="HOSTILE_PAVONIAN">
     <event load="PAVONIAN_PIRATE_FIGHT"/>
     <event load="PAVONIAN_REBEL_FIGHT"/>
+    <event load="PAVONIAN_MANTIS_FIGHT"/>
   </eventList>
 
   <event name="PAVONIAN_PIRATE_FIGHT">
@@ -16,5 +17,10 @@
   <event name="PAVONIAN_REBEL_FIGHT" unique="true">
     <text>A Rebel ship is stationed at the beacon. "We are bringing order into this system. All incoming ships are to be inspected. Those who oppose, are to be destroyed." There is no way around a fight.</text>
     <ship load="REBEL" hostile="true"/>
+  </event>
+
+  <event name="PAVONIAN_MANTIS_FIGHT" unique="true">
+    <text>Mantis warships are comparatively rare in Pavonian space since Pavonians do not survive for long as slaves. Mantis prefer to kill Pavonians, and take their colorful plumage as loot. One of these humter ships is attacking you.</text>
+    <ship load="MANTIS_FIGHT" hostile="true"/>
   </event>
 </FTL>

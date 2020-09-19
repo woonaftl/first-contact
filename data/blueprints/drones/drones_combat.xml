@@ -293,7 +293,7 @@
   </droneBlueprintInherit>
 
   <changelog>
-    <entry>New Ion Drone (3 power, 12 speed, 50 scrap)</entry>
+    <entry>New Ion Drone (4 power, 12 speed, 50 scrap)</entry>
   </changelog>
   <weaponBlueprint name="DRONE_ION" NOLOC="1">
     <type>LASER</type>

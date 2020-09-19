@@ -4,18 +4,16 @@
     <event load="PAVONIAN_GIFT"/>
     <event load="PAVONIAN_FIND_DRONE"/>
     <event load="PAVONIAN_SUPERVOLCANO"/>
+    <event load="PAVONIAN_OUT_OF_FUEL"/>
   </eventList>
-
   <event name="PAVONIAN_GIFT">
     <text>The Pavonian vessel contacts you and offers some supplies for free. A rainbow-colored face appears on the comm: "I sense positive vibes around your ship."</text>
     <autoReward level="RANDOM">stuff</autoReward>
   </event>
-
   <event name="PAVONIAN_FIND_DRONE" unique="true">
     <text>While many races use slaves for hard physical work, the Pavonians prefer drones. A Pavonian colony, sympathetic to Federation, offers to install a drone useful in combat on your ship for free.</text>
     <autoReward level="LOW">drone</autoReward>
   </event>
-
   <event name="PAVONIAN_SUPERVOLCANO" unique="true">
     <text>The distress signal is coming from a small Pavonian colony on a surface of a nearby moon. Scans show that the colony is located near a supervolcano, so you make a guess that distress signal is related to that.</text>
     <distressBeacon/>
@@ -56,7 +54,7 @@
           </choice>
         </event>
         <event>
-          <text>As you land, one of the Pavonian colonists greets you. "The things is getting a little wonky here. The drones have become a bit sick and do not do their jobs anymore." It's difficult to understand what the Pavonian means exaclty. Then, a combat drone attacks you from air and kills the Pavonian. Now, everything is clear.</text>
+          <text>As you land, one of the Pavonian colonists greets you. "Things are getting a little wonky here. The drones have become a bit sick and do not do their jobs anymore." It's difficult to understand what the Pavonian means exaclty. Then, a combat drone attacks you from air and kills the Pavonian. Now, everything is clear.</text>
           <choice hidden="true">
             <text>Help the Pavonians by defeating the drone uprising.</text>
             <event>
@@ -69,6 +67,10 @@
             <event>
               <text>If the drones attacked their masters, there probably was a valid reason for that. You enter the colony with guns blazing, killing every Pavonian on sight. The drones have no means to express their gratitude but at least they don't attack you. You loot the colony.</text>
               <autoReward level="LOW">standard</autoReward>
+              <choice>
+                <text>Are we the baddies?</text>
+                <event/>
+              </choice>
             </event>
           </choice>
           <choice hidden="true">
@@ -84,5 +86,64 @@
       <text>Leave them to their fate.</text>
       <event/>
     </choice>
+  </event>
+  <event name="PAVONIAN_OUT_OF_FUEL" unique="true">
+    <text>A distress signal is being sent by a lonely Pavonian ship drifting in space. As soon as they saw you entering the system, one of the Pavoians contacts you: "I have a bad feeling about this. Our ship needs to be elsewhere but there is no way we could jump. Any ideas?"</text>
+    <distressBeacon/>
+    <choice>
+      <text>Offer to share some fuel.</text>
+      <event>
+        <text>"Oh, that's exactly what we needed for another jump. I'm afraid we have nothing to offer you now, but if you follow us, we can share some stuff." The Pavonians jump away, and you get ready to follow them.</text>
+        <item_modify>
+          <item type="fuel" min="-4" max="-3"/>
+        </item_modify>
+        <quest event="PAVONIAN_REWARD_QUEST"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Ignore the ship.</text>
+      <event/>
+    </choice>
+  </event>
+  <event name="PAVONIAN_REWARD_QUEST">
+    <text>You jump to coordinates left by a Pavonian ship you helped previously. A small Pavonian fleet greets you: "Oh, those are the people who helped you?". One of the Pavonian ships moves towards you and offloads a little bit of scrap to help on your journey.</text>
+    <autoReward level="LOW">scrap_only</autoReward>
+    <choice hidden="true">
+      <text id="continue"/>
+      <eventList>
+        <event>
+          <text>Another Pavonian ship offers you some ammunition: "We understand that you going off to war, and we hope that these supplies will help you survive".</text>
+          <item_modify>
+            <item type="missiles" min="8" max="11"/>
+          </item_modify>
+          <choice hidden="true">
+            <text id="continue"/>
+            <event load="PAVONIAN_REWARD_QUEST_LAST"/>
+          </choice>
+        </event>
+        <event>
+          <text>Another Pavonian ship offers you some drone parts: "We have picked up some drone parts at the resupplying station recently and can share if you need them".</text>
+          <item_modify>
+            <item type="drones" min="5" max="6"/>
+          </item_modify>
+          <choice hidden="true">
+            <text id="continue"/>
+            <event load="PAVONIAN_REWARD_QUEST_LAST"/>
+          </choice>
+        </event>
+        <event>
+          <text>Another Pavonian ship offers you a weapon: "I'm sure that you will use it only when absolutely necessary and never brandish this weapon against innocents.".</text>
+          <weapon name="WEAPONS_CHAIN"/>
+          <choice hidden="true">
+            <text id="continue"/>
+            <event load="PAVONIAN_REWARD_QUEST_LAST"/>
+          </choice>
+        </event>
+      </eventList>
+    </choice>
+  </event>
+  <event name="PAVONIAN_REWARD_QUEST_LAST">
+    <text>The last Pavonian ship has nothing to give you. But as you prepare to leave, one of the Pavonians materializes on your bridge, ready to serve the Federation.</text>
+    <crewMember amount="1" class="pavonian"/>
   </event>
 </FTL>

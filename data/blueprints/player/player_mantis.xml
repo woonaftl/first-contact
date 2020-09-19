@@ -64,8 +64,9 @@
       <teleporter power="1" room="6" start="true"/>
       <weapons power="1" room="4" start="true" img="room_weapons_5"/>
     </systemList>
-    <weaponList count="1" missiles="16">
+    <weaponList count="2" missiles="25">
       <weapon name="BOMB_ION"/>
+      <weapon name="BOMB_HEAL_SYSTEM"/>
     </weaponList>
     <droneList count="0" drones="0"/>
     <weaponSlots>3</weaponSlots>

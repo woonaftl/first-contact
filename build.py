@@ -68,6 +68,9 @@ for clear_file in clear_files:
 
 merge("animations")
 merge("blueprints")
+# TODO validate all rooms referred in shipBlueprints actually exist - can cause a crash
+# TODO validate no room is referred by 2 different systems
+# TODO validate door links somehow
 transform(join("result", "data", "blueprints.xml"),
           join("tools", "blueprints.xslt"),
           join("result", "data", "blueprints.xml"))
@@ -105,6 +108,9 @@ transform(join("result", "data", "events.xml"),
           join("result", "data", "events.xml"))
 transform(join("result", "data", "events.xml"),
           join("tools", "events", "teleporter_bug.xslt"),
+          join("result", "data", "events.xml"))
+transform(join("result", "data", "events.xml"),
+          join("tools", "events", "storm_bug.xslt"),
           join("result", "data", "events.xml"))
 transform(join("result", "data", "events.xml"),
           join("tools", "events", "engine_disabler.xslt"),

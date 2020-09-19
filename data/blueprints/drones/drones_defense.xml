@@ -15,11 +15,31 @@
   <blueprintList name="DRONES_DEFENSE">
     <name>DEFENSE_1</name>
     <name>DEFENSE_2</name>
+    <name>DRONE_SHIELD</name>
     <name>ANTI_DRONE</name>
+  </blueprintList>
+  <blueprintList name="DRONES_DEFENSE_1">
+    <name>ANTI_DRONE</name>
+  </blueprintList>
+  <blueprintList name="DRONES_DEFENSE_2">
+    <name>DEFENSE_1</name>
+  </blueprintList>
+  <blueprintList name="DRONES_DEFENSE_3">
+    <name>DEFENSE_2</name>
+    <name>DRONE_SHIELD</name>
+  </blueprintList>
+  <blueprintList name="DRONES_DEFENSE_1_UPGRADED">
+    <name>ANTI_DRONE</name>
+    <name>DEFENSE_1_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="DRONES_DEFENSE_2_UPGRADED">
+    <name>DEFENSE_2_UPGRADED</name>
+    <name>DRONE_SHIELD_UPGRADED</name>
   </blueprintList>
   <blueprintList name="DRONES_DEFENSE_UPGRADED">
     <name>DEFENSE_1_UPGRADED</name>
     <name>DEFENSE_2_UPGRADED</name>
+    <name>DRONE_SHIELD_UPGRADED</name>
     <name>ANTI_DRONE</name>
   </blueprintList>
   <blueprintList name="DRONES_DEFENSE_LIST">

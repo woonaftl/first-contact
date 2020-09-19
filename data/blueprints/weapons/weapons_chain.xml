@@ -5,6 +5,12 @@
     <name>ION_CHAINGUN_UPGRADED</name>
   </blueprintList>
 
+  <blueprintList name="WEAPONS_CHAIN">
+    <name>ION_CHAINGUN</name>
+    <name>LASER_CHAINGUN</name>
+    <name>CHAIN_ERASER</name>
+    <name>LASER_CHAINGUN_2</name>
+  </blueprintList>
   <blueprintList name="WEAPONS_CHAIN_2">
     <name>ION_CHAINGUN</name>
     <name>LASER_CHAINGUN</name>

@@ -21,26 +21,24 @@
       <doors power="1" max="3" room="2"/>
     </systemList>
     <weaponList sector="2" missiles="0" system_power="4">
-      <weapon name="WEAPONS_CHAIN_2"/>
-      <weapon name="WEAPONS_LASER_1"/>
-      <weapon name="WEAPONS_LASER_1"/>
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_LASER_2"/>
     </weaponList>
     <weaponList sector="3" missiles="0" system_power="5">
-      <weapon name="WEAPONS_CHAIN_2"/>
-      <weapon name="WEAPONS_ANY_1"/>
-      <weapon name="WEAPONS_LASER_1"/>
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_LASER_2"/>
       <weapon name="WEAPONS_LASER_1"/>
     </weaponList>
     <weaponList sector="4" missiles="0" system_power="6">
-      <weapon name="WEAPONS_CHAIN_3"/>
-      <weapon name="WEAPONS_ANY_1"/>
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_LASER_2"/>
       <weapon name="WEAPONS_LASER_1"/>
       <weapon name="WEAPONS_LASER_1"/>
     </weaponList>
     <weaponList sector="5" missiles="0" system_power="7">
-      <weapon name="WEAPONS_CHAIN_3"/>
-      <weapon name="WEAPONS_ANY_2"/>
-      <weapon name="WEAPONS_LASER_1"/>
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_LASER_2"/>
       <weapon name="WEAPONS_LASER_1"/>
     </weaponList>
     <health amount="10"/>
@@ -59,22 +57,22 @@
       <shields power="2" max="7" room="5"/>
       <medbay power="1" max="3" room="2" start="false"/>
     </systemList>
-    <weaponList sector="1" missiles="0" system_power="3">
-      <weapon name="WEAPONS_CHAIN_2"/>
-      <weapon name="WEAPONS_ANY_1"/>
+    <weaponList sector="1" missiles="0" system_power="4">
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_ANY_2"/>
     </weaponList>
     <weaponList sector="2" missiles="0" system_power="4">
-      <weapon name="WEAPONS_CHAIN_3"/>
-      <weapon name="WEAPONS_ANY_1"/>
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_ANY_2"/>
     </weaponList>
     <weaponList sector="3" missiles="0" system_power="5">
-      <weapon name="WEAPONS_CHAIN_3"/>
-      <weapon name="WEAPONS_ANY_1"/>
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_ANY_2"/>
       <weapon name="WEAPONS_ANY_1"/>
     </weaponList>
     <weaponList sector="4" missiles="0" system_power="6">
-      <weapon name="WEAPONS_CHAIN_3"/>
-      <weapon name="WEAPONS_ANY_1"/>
+      <weapon name="WEAPONS_LASER_2"/>
+      <weapon name="WEAPONS_ANY_2"/>
       <weapon name="WEAPONS_ANY_1"/>
       <weapon name="WEAPONS_ANY_1"/>
     </weaponList>
@@ -97,24 +95,24 @@
     </systemList>
     <weaponList sector="3" missiles="0" system_power="5">
       <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_CHAIN_2"/>
+      <weapon name="WEAPONS_ANY_2"/>
       <weapon name="WEAPONS_ANY_1"/>
     </weaponList>
     <weaponList sector="4" missiles="0" system_power="6">
       <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_CHAIN_2"/>
+      <weapon name="WEAPONS_ANY_2"/>
       <weapon name="WEAPONS_ANY_1"/>
       <weapon name="WEAPONS_ANY_1"/>
     </weaponList>
     <weaponList sector="5" missiles="0" system_power="7">
       <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_CHAIN_3"/>
+      <weapon name="WEAPONS_ANY_3"/>
       <weapon name="WEAPONS_ANY_1"/>
       <weapon name="WEAPONS_ANY_1"/>
     </weaponList>
     <weaponList sector="6" missiles="0" system_power="8">
       <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_CHAIN_4"/>
+      <weapon name="WEAPONS_ANY_4"/>
       <weapon name="WEAPONS_ANY_1"/>
       <weapon name="WEAPONS_ANY_1"/>
     </weaponList>
@@ -135,21 +133,21 @@
       <medbay power="1" max="3" room="3" start="false"/>
     </systemList>
     <weaponList sector="0" missiles="0" system_power="3">
-      <weapon name="WEAPONS_CHAIN_2"/>
+      <weapon name="WEAPONS_ANY_2"/>
       <weapon name="WEAPONS_LASER_1"/>
     </weaponList>
     <weaponList sector="1" missiles="0" system_power="4">
-      <weapon name="WEAPONS_CHAIN_2"/>
+      <weapon name="WEAPONS_ANY_2"/>
       <weapon name="WEAPONS_LASER_2"/>
     </weaponList>
-    <weaponList sector="2" missiles="0" system_power="5">
-      <weapon name="WEAPONS_CHAIN_3"/>
+    <weaponList sector="2" missiles="0" system_power="4">
+      <weapon name="WEAPONS_ANY_2"/>
       <weapon name="WEAPONS_LASER_2"/>
     </weaponList>
     <weaponList sector="3" missiles="1" system_power="5">
-      <weapon name="WEAPONS_CHAIN_3"/>
-      <weapon name="WEAPONS_LASER_2"/>
       <weapon name="WEAPONS_MISSILES_1"/>
+      <weapon name="WEAPONS_ANY_2"/>
+      <weapon name="WEAPONS_LASER_2"/>
       <weapon name="WEAPONS_ANY_1"/>
     </weaponList>
     <health amount="7"/>

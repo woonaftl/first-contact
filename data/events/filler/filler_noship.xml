@@ -426,48 +426,89 @@
     </choice>
   </event>
 
-  <event name="TRADER_UPGRADES_EXCHANGE" unique="true">
-    <textList name="TRADER_UPGRADES_EXCHANGE_TEXT">
+  <eventList name="TRADER_UPGRADES_EXCHANGE" unique="true">
+    <event>
       <text>"You look like a military vessel. We're trying to get back to our homes alive. I'm an engineer by trade and could try to improve your reactor if you have any extra supplies."</text>
+      <choice req="reactor" max_lvl="0" max_group="0" blue="false">
+        <text>Agree to the trade.</text>
+        <event>
+          <text>You make the exchange and their team comes on board to try to improve your reactor.</text>
+          <item_modify>
+            <item type="fuel" min="-5" max="-4"/>
+          </item_modify>
+          <upgrade amount="1" system="reactor"/>
+        </event>
+      </choice>
+      <choice req="reactor" max_lvl="24" max_group="0" blue="false">
+        <text>Agree to the trade.</text>
+        <event>
+          <text>You make the exchange and their team comes on board to try to improve your reactor.</text>
+          <item_modify>
+            <item type="fuel" min="-5" max="-4"/>
+          </item_modify>
+          <upgrade amount="1" system="reactor"/>
+        </event>
+      </choice>
+      <choice req="reactor" max_lvl="25" max_group="0" blue="false">
+        <text>Give some supplies to them for free.</text>
+        <event>
+          <text>You send the supplies. The civilians are very grateful.</text>
+          <item_modify>
+            <item type="fuel" min="-5" max="-4"/>
+          </item_modify>
+          <upgrade amount="1" system="reactor"/>
+        </event>
+      </choice>
+      <choice>
+        <text>Respectfully decline.</text>
+        <event>
+          <text>You decide you need what supplies you have.</text>
+        </event>
+      </choice>
+    </event>
+    <event>
       <text>You receive a message from a small convoy. They're looking for some military supplies and are offering to try to improve your reactor in exchange.</text>
-    </textList>
-    <choice req="reactor" max_lvl="24" max_group="0" blue="false">
-      <text>Agree to the trade.</text>
-      <eventList name="TRADER_UPGRADES_EXCHANGE_LIST">
+      <choice req="reactor" max_lvl="0" max_group="0" blue="false">
+        <text>Agree to the trade.</text>
         <event>
           <text>You make the exchange and their team comes on board to try to improve your reactor.</text>
           <item_modify>
-            <item type="missiles" min="-5" max="-3"/>
-            <item type="drones" min="-2" max="-0"/>
-          </item_modify>
-          <upgrade amount="1" system="reactor"/>
-        </event>
-        <event>
-          <text>You make the exchange and their team comes on board to try to improve your reactor.</text>
-          <item_modify>
-            <item type="missiles" min="-2" max="0"/>
-            <item type="drones" min="-3" max="-2"/>
-          </item_modify>
-          <upgrade amount="1" system="reactor"/>
-        </event>
-        <event>
-          <text>You make the exchange and their team comes on board to try to improve your reactor.</text>
-          <item_modify>
-            <item type="missiles" min="-2" max="0"/>
+            <item type="missiles" min="-9" max="-7"/>
             <item type="drones" min="-2" max="0"/>
-            <item type="fuel" min="-3" max="-2"/>
           </item_modify>
           <upgrade amount="1" system="reactor"/>
         </event>
-      </eventList>
-    </choice>
-    <choice>
-      <text>Respectfully decline.</text>
-      <event>
-        <text>You decide you need what supplies you have.</text>
-      </event>
-    </choice>
-  </event>
+      </choice>
+      <choice req="reactor" max_lvl="24" max_group="0" blue="false">
+        <text>Agree to the trade.</text>
+        <event>
+          <text>You make the exchange and their team comes on board to try to improve your reactor.</text>
+          <item_modify>
+            <item type="missiles" min="-9" max="-7"/>
+            <item type="drones" min="-2" max="0"/>
+          </item_modify>
+          <upgrade amount="1" system="reactor"/>
+        </event>
+      </choice>
+      <choice req="reactor" max_lvl="25" max_group="0" blue="false">
+        <text>Give some supplies to them for free.</text>
+        <event>
+          <text>You send the supplies. The civilians are very grateful.</text>
+          <item_modify>
+            <item type="missiles" min="-9" max="-7"/>
+            <item type="drones" min="-2" max="0"/>
+          </item_modify>
+          <upgrade amount="1" system="reactor"/>
+        </event>
+      </choice>
+      <choice>
+        <text>Respectfully decline.</text>
+        <event>
+          <text>You decide you need what supplies you have.</text>
+        </event>
+      </choice>
+    </event>
+  </eventList>
 
   <event name="MERCHANT_REQUEST" unique="true">
     <img planet="PLANET_POPULATED_SMALL"/>

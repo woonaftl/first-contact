@@ -113,15 +113,14 @@
 
   <changelog>
     <entry>Mantis Pheromones scrap cost 50 to 30</entry>
-    <entry>Mantis Pheromones speed modifier 1.25 to 1.4</entry>
   </changelog>
   <augBlueprint name="CREW_STIMS">
     <title>Mantis Pheromones</title>
-    <desc>Your crew's movement speed is increased by 40 percent.</desc>
+    <desc>Your crew's movement speed is increased by 25 percent.</desc>
     <cost>30</cost>
     <bp>9</bp>
     <rarity>0</rarity>
-    <value>0.4</value>
+    <value>0.25</value>
     <stackable>false</stackable>
   </augBlueprint>
   <augBlueprintInherit name="CREW_STIMS_LOCKED" base="CREW_STIMS"/>

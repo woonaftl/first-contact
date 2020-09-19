@@ -41,7 +41,7 @@
     <name>REBEL_ARTILLERY_MISSILE</name>
   </blueprintList>
 
-  <shipBlueprintSuper name="REBEL_FAT" layout="rebel_squat" img="rebel_squat">
+  <shipBlueprintSuperNew name="REBEL_FAT" layout="rebel_squat" img="rebel_squat">
     <class>Rebel Rigger</class>
     <class_pirate>Pirate Rigger</class_pirate>
     <systemList>
@@ -50,32 +50,43 @@
       <shields power="2" max="8" room="4" room_pirate="2"/>
       <engines power="1" max="4" room="7" room_pirate="7"/>
       <weapons room="6" room_pirate="4"/>
-      <drones power="2" max="8" room="1" room_pirate="5"/>
+      <drones room="1" room_pirate="5"/>
       <medbay power="1" max="3" room="3" room_pirate="6" start="false"/>
       <doors power="1" max="3" room="5" room_pirate="3" start="false"/>
     </systemList>
-    <weaponList sector="1" missiles="0" system_power="3">
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_LASER_1"/>
-    </weaponList>
-    <weaponList sector="2" missiles="0" system_power="4">
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_LASER_2"/>
-    </weaponList>
-    <weaponList sector="3" missiles="0" system_power="5">
-      <weapon name="WEAPONS_LASER_3"/>
-      <weapon name="WEAPONS_LASER_2"/>
-    </weaponList>
-    <weaponList sector="4" missiles="0" system_power="6">
-      <weapon name="WEAPONS_LASER_3"/>
-      <weapon name="WEAPONS_LASER_3"/>
-    </weaponList>
-    <droneList drones="4" load="DRONES_STANDARD"/>
+    <sector id="1">
+      <weaponList missiles="0" system_power="2">
+        <weapon name="WEAPONS_LASER_1"/>
+        <weapon name="WEAPONS_LASER_1"/>
+      </weaponList>
+      <droneList drones="4" system_power="3" load="DRONES_COMBAT"/>
+    </sector>
+    <sector id="2">
+      <weaponList missiles="0" system_power="2">
+        <weapon name="WEAPONS_LASER_1"/>
+        <weapon name="WEAPONS_LASER_1"/>
+      </weaponList>
+      <droneList drones="4" system_power="4" load="DRONES_COMBAT"/>
+    </sector>
+    <sector id="3">
+      <weaponList missiles="0" system_power="3">
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_LASER_1"/>
+      </weaponList>
+      <droneList drones="5" system_power="4" load="DRONES_COMBAT"/>
+    </sector>
+    <sector id="4">
+      <weaponList missiles="0" system_power="3">
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_LASER_1"/>
+      </weaponList>
+      <droneList drones="5" system_power="5" load="DRONES_COMBAT"/>
+    </sector>
     <health amount="9"/>
     <crewCount amount="3" max="5" class="human"/>
     <boardingAI>sabotage</boardingAI>
     <cloakImage>rebel_squat</cloakImage>
-  </shipBlueprintSuper>
+  </shipBlueprintSuperNew>
 
   <shipBlueprintSuper name="REBEL_SKINNY" layout="rebel_long" img="rebel_long">
     <class>Rebel Fighter</class>
@@ -100,15 +111,15 @@
       <weapon name="WEAPONS_LASER_3"/>
       <weapon name="WEAPONS_LASER_1"/>
     </weaponList>
-    <weaponList sector="2" missiles="1" system_power="5">
+    <weaponList sector="2" missiles="1" system_power="4">
+      <weapon name="WEAPONS_MISSILES_1"/>
+      <weapon name="WEAPONS_LASER_3"/>
+      <weapon name="WEAPONS_LASER_1"/>
+    </weaponList>
+    <weaponList sector="3" missiles="1" system_power="5">
       <weapon name="WEAPONS_MISSILES_2"/>
       <weapon name="WEAPONS_LASER_3"/>
       <weapon name="WEAPONS_LASER_2"/>
-    </weaponList>
-    <weaponList sector="3" missiles="1" system_power="6">
-      <weapon name="WEAPONS_MISSILES_2"/>
-      <weapon name="WEAPONS_LASER_3"/>
-      <weapon name="WEAPONS_LASER_3"/>
     </weaponList>
     <health amount="10"/>
     <crewCount amount="3" max="6" class="human"/>
@@ -117,7 +128,7 @@
     <cloakImage>rebel_long</cloakImage>
   </shipBlueprintSuper>
 
-  <shipBlueprintSuper name="REBEL_BATTLESHIP" layout="rebel_battleship" img="rebel_battleship">
+  <shipBlueprintSuperNew name="REBEL_BATTLESHIP" layout="rebel_battleship" img="rebel_battleship">
     <class>Rebel Battleship</class>
     <class_elite>Elite Battleship</class_elite>
     <systemList>
@@ -129,40 +140,51 @@
       <medbay power="1" max="3" room="2" room_elite="9"/>
       <doors power="1" max="3" room="6" room_elite="10" start="false"/>
       <teleporter power="1" max="3" room="1" room_elite="12" start="false"/>
-      <drones power="2" max="8" room="10" room_elite="7"/>
+      <drones room="10" room_elite="7"/>
     </systemList>
-    <weaponList sector="4" missiles="1" system_power="7">
-      <weapon name="WEAPONS_MISSILES_1"/>
-      <weapon name="WEAPONS_LASER_3"/>
-      <weapon name="WEAPONS_LASER_3"/>
-      <weapon name="WEAPONS_LASER_1"/>
-    </weaponList>
-    <weaponList sector="5" missiles="2" system_power="7">
-      <weapon name="WEAPONS_MISSILES_1"/>
-      <weapon name="WEAPONS_LASER_3"/>
-      <weapon name="WEAPONS_LASER_3"/>
-      <weapon name="WEAPONS_LASER_1"/>
-    </weaponList>
-    <weaponList sector="6" missiles="2" system_power="8">
-      <weapon name="WEAPONS_MISSILES_2"/>
-      <weapon name="WEAPONS_LASER_3"/>
-      <weapon name="WEAPONS_LASER_3"/>
-      <weapon name="WEAPONS_LASER_2"/>
-    </weaponList>
-    <weaponList sector="7" missiles="2" system_power="8">
-      <weapon name="WEAPONS_MISSILES_2"/>
-      <weapon name="WEAPONS_LASER_3"/>
-      <weapon name="WEAPONS_LASER_3"/>
-      <weapon name="WEAPONS_LASER_2"/>
-    </weaponList>
-    <droneList drones="5" load="DRONES_COMBAT"/>
+    <sector id="4">
+      <weaponList sector="4" missiles="1" system_power="4">
+        <weapon name="WEAPONS_MISSILES_1"/>
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_LASER_1"/>
+        <weapon name="WEAPONS_LASER_1"/>
+      </weaponList>
+      <droneList drones="5" system_power="4" load="DRONES_COMBAT"/>
+    </sector>
+    <sector id="5">
+      <weaponList missiles="1" system_power="5">
+        <weapon name="WEAPONS_MISSILES_1"/>
+        <weapon name="WEAPONS_LASER_3"/>
+        <weapon name="WEAPONS_LASER_1"/>
+        <weapon name="WEAPONS_LASER_1"/>
+      </weaponList>
+      <droneList drones="5" system_power="5" load="DRONES_COMBAT"/>
+    </sector>
+    <sector id="6">
+      <weaponList missiles="2" system_power="5">
+        <weapon name="WEAPONS_MISSILES_1"/>
+        <weapon name="WEAPONS_LASER_3"/>
+        <weapon name="WEAPONS_LASER_1"/>
+        <weapon name="WEAPONS_LASER_1"/>
+      </weaponList>
+      <droneList drones="5" system_power="6" load="DRONES_COMBAT"/>
+    </sector>
+    <sector id="7">
+      <weaponList missiles="2" system_power="6">
+        <weapon name="WEAPONS_MISSILES_2"/>
+        <weapon name="WEAPONS_LASER_3"/>
+        <weapon name="WEAPONS_LASER_1"/>
+        <weapon name="WEAPONS_LASER_2"/>
+      </weaponList>
+      <droneList drones="5" system_power="7" load="DRONES_COMBAT"/>
+    </sector>
     <health amount="13"/>
     <crewCount amount="4" max="8" class="human"/>
     <crewCount_elite amount="6" max="8" class="human"/>
     <boardingAI>sabotage</boardingAI>
     <cloakImage>rebel_battleship</cloakImage>
     <cloakImage_elite>rebel_battleship_elite</cloakImage_elite>
-  </shipBlueprintSuper>
+  </shipBlueprintSuperNew>
 
   <shipBlueprintSuper name="REBEL_BOMBER" layout="rebel_bomber" img="rebel_bomber">
     <class>Rebel Bomber</class>
@@ -174,7 +196,7 @@
       <engines power="1" max="4" room="6" room_elite="1"/>
       <weapons room="7" room_elite="3"/>
       <teleporter power="2" max="3" room="1" room_elite="8"/>
-      <medbay power="2" room="5" room_elite="7"/>
+      <medbay power="2" max="3" room="5" room_elite="7"/>
       <doors power="1" max="3" room="8" room_elite="4" start="false"/>
     </systemList>
     <weaponList sector="4" missiles="3" system_power="6">
@@ -183,21 +205,21 @@
       <weapon name="WEAPONS_HEAVY_2"/>
       <weapon name="WEAPONS_LASER_1"/>
     </weaponList>
-    <weaponList sector="5" missiles="4" system_power="6">
-      <weapon name="WEAPONS_BOMB"/>
-      <weapon name="WEAPONS_LASER_3"/>
-      <weapon name="WEAPONS_HEAVY_2"/>
-      <weapon name="WEAPONS_LASER_1"/>
-    </weaponList>
-    <weaponList sector="6" missiles="4" system_power="7">
+    <weaponList sector="5" missiles="4" system_power="7">
       <weapon name="WEAPONS_BOMB"/>
       <weapon name="WEAPONS_LASER_3"/>
       <weapon name="WEAPONS_HEAVY_3"/>
       <weapon name="WEAPONS_LASER_1"/>
     </weaponList>
-    <weaponList sector="7" missiles="4" system_power="7">
+    <weaponList sector="6" missiles="5" system_power="8">
       <weapon name="WEAPONS_BOMB"/>
-      <weapon name="WEAPONS_LASER_3"/>
+      <weapon name="WEAPONS_LASER_4"/>
+      <weapon name="WEAPONS_HEAVY_3"/>
+      <weapon name="WEAPONS_LASER_1"/>
+    </weaponList>
+    <weaponList sector="7" missiles="6" system_power="8">
+      <weapon name="WEAPONS_BOMB"/>
+      <weapon name="WEAPONS_LASER_4"/>
       <weapon name="WEAPONS_HEAVY_3"/>
       <weapon name="WEAPONS_LASER_1"/>
     </weaponList>
@@ -232,12 +254,12 @@
       <weapon name="WEAPONS_SIMPLE_2"/>
       <weapon name="WEAPONS_PROJ_2"/>
     </weaponList>
-    <weaponList sector="2" missiles="1" system_power="5">
+    <weaponList sector="2" missiles="1" system_power="4">
       <weapon name="WEAPONS_MISSILES_2"/>
-      <weapon name="WEAPONS_SIMPLE_3"/>
+      <weapon name="WEAPONS_SIMPLE_2"/>
       <weapon name="WEAPONS_PROJ_2"/>
     </weaponList>
-    <weaponList sector="3" missiles="2" system_power="5">
+    <weaponList sector="3" missiles="1" system_power="5">
       <weapon name="WEAPONS_MISSILES_2"/>
       <weapon name="WEAPONS_SIMPLE_3"/>
       <weapon name="WEAPONS_PROJ_2"/>
@@ -250,7 +272,7 @@
     <cloakImage_elite>rebel_interceptor_elite</cloakImage_elite>
   </shipBlueprintSuper>
 
-  <shipBlueprintSuper name="REBEL_PREDATOR" layout="rebel_predator" img="rebel_predator">
+  <shipBlueprintSuperNew name="REBEL_PREDATOR" layout="rebel_predator" img="rebel_predator">
     <class>Rebel Predator</class>
     <class_elite>Elite Predator</class_elite>
     <systemList>
@@ -262,33 +284,59 @@
       <clonebay power="1" max="3" room="3" room_elite="5"/>
       <doors power="1" max="3" room="8" room_elite="10" start="false"/>
       <cloaking power="1" max="2" room="7" room_elite="1" start="false"/>
-      <drones power="2" max="6" room="4" room_elite="3"/>
+      <drones room="4" room_elite="3"/>
     </systemList>
-    <weaponList sector="4" missiles="0" system_power="6">
-      <weapon name="WEAPONS_SIMPLE_3"/>
-      <weapon name="WEAPONS_PROJ_3"/>
-    </weaponList>
-    <weaponList sector="5" missiles="0" system_power="6">
-      <weapon name="WEAPONS_SIMPLE_3"/>
-      <weapon name="WEAPONS_PROJ_3"/>
-    </weaponList>
-    <weaponList sector="6" missiles="0" system_power="7">
-      <weapon name="WEAPONS_SIMPLE_3"/>
-      <weapon name="WEAPONS_PROJ_2"/>
-      <weapon name="WEAPONS_PROJ_2"/>
-    </weaponList>
-    <weaponList sector="7" missiles="0" system_power="8">
-      <weapon name="WEAPONS_SIMPLE_3"/>
-      <weapon name="WEAPONS_PROJ_3"/>
-      <weapon name="WEAPONS_PROJ_2"/>
-    </weaponList>
-    <droneList drones="5" load="DRONES_INTERNAL"/>
+    <sector id="4">
+      <weaponList missiles="0" system_power="6">
+        <weapon name="WEAPONS_SIMPLE_3"/>
+        <weapon name="WEAPONS_PROJ_3"/>
+      </weaponList>
+      <droneList drones="5" system_power="3">
+        <drone name="DRONES_INTERNAL_2"/>
+        <drone name="DRONES_INTERNAL_1"/>
+      </droneList>
+    </sector>
+    <sector id="5">
+      <weaponList missiles="0" system_power="7">
+        <weapon name="WEAPONS_SIMPLE_3"/>
+        <weapon name="WEAPONS_PROJ_2"/>
+        <weapon name="WEAPONS_PROJ_2"/>
+      </weaponList>
+      <droneList drones="5" system_power="3">
+        <drone name="DRONES_INTERNAL_2"/>
+        <drone name="DRONES_INTERNAL_1"/>
+      </droneList>
+    </sector>
+    <sector id="6">
+      <weaponList missiles="0" system_power="8">
+        <weapon name="WEAPONS_SIMPLE_3"/>
+        <weapon name="WEAPONS_PROJ_3"/>
+        <weapon name="WEAPONS_PROJ_2"/>
+      </weaponList>
+      <droneList drones="5" system_power="4">
+        <drone name="DRONES_INTERNAL_2"/>
+        <drone name="DRONES_INTERNAL_1"/>
+        <drone name="DRONES_INTERNAL_1"/>
+      </droneList>
+    </sector>
+    <sector id="7">
+      <weaponList missiles="0" system_power="8">
+        <weapon name="WEAPONS_SIMPLE_3"/>
+        <weapon name="WEAPONS_PROJ_3"/>
+        <weapon name="WEAPONS_PROJ_2"/>
+      </weaponList>
+      <droneList drones="5" system_power="4">
+        <drone name="DRONES_INTERNAL_2"/>
+        <drone name="DRONES_INTERNAL_1"/>
+        <drone name="DRONES_INTERNAL_1"/>
+      </droneList>
+    </sector>
     <health amount="10"/>
     <crewCount amount="4" max="7" class="human"/>
     <boardingAI>sabotage</boardingAI>
     <cloakImage>rebel_predator</cloakImage>
     <cloakImage_elite>rebel_predator_elite</cloakImage_elite>
-  </shipBlueprintSuper>
+  </shipBlueprintSuperNew>
 
   <shipBlueprintSuper name="REBEL_TRANSPORT" layout="rebel_transport" img="rebel_transport">
     <class>Rebel Transport</class>
@@ -310,8 +358,8 @@
       <weapon name="WEAPONS_LASER_1"/>
       <weapon name="WEAPONS_PROJ_1"/>
     </weaponList>
-    <weaponList sector="2" missiles="0" system_power="5">
-      <weapon name="WEAPONS_LASER_3"/>
+    <weaponList sector="2" missiles="0" system_power="4">
+      <weapon name="WEAPONS_LASER_2"/>
       <weapon name="WEAPONS_LASER_1"/>
       <weapon name="WEAPONS_PROJ_1"/>
     </weaponList>

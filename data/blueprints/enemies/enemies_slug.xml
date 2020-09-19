@@ -39,16 +39,16 @@
       <pilot power="1" max="3" room="0" room_pirate="4"/>
       <shields power="2" max="8" room="3" room_pirate="5"/>
       <engines power="1" max="8" room="4" room_pirate="3"/>
-      <mind power="1" max="2" room="2" room_pirate="2"/>
+      <mind power="1" room="2" room_pirate="2"/>
       <weapons room="5" room_pirate="0"/>
     </systemList>
     <weaponList sector="0" missiles="0" system_power="3">
       <weapon name="WEAPONS_ANY_2"/>
       <weapon name="WEAPONS_LASER_1"/>
     </weaponList>
-    <weaponList sector="1" missiles="0" system_power="3">
+    <weaponList sector="1" missiles="0" system_power="4">
       <weapon name="WEAPONS_ANY_2"/>
-      <weapon name="WEAPONS_LASER_1"/>
+      <weapon name="WEAPONS_LASER_2"/>
     </weaponList>
     <weaponList sector="2" missiles="0" system_power="4">
       <weapon name="WEAPONS_ANY_2"/>
@@ -78,27 +78,27 @@
       <weapons room="1" room_pirate="5"/>
     </systemList>
     <weaponList sector="1" missiles="1" system_power="4">
-      <weapon name="WEAPONS_MISSILES_2"/>
-      <weapon name="WEAPONS_PROJ_1"/>
+      <weapon name="WEAPONS_MISSILES_1"/>
+      <weapon name="WEAPONS_PROJ_2"/>
       <weapon name="WEAPONS_ANY_1"/>
-      <weapon name="WEAPONS_ANY_2"/>
+      <weapon name="WEAPONS_ANY_1"/>
     </weaponList>
-    <weaponList sector="2" missiles="1" system_power="5">
+    <weaponList sector="2" missiles="1" system_power="4">
+      <weapon name="WEAPONS_MISSILES_1"/>
+      <weapon name="WEAPONS_PROJ_2"/>
+      <weapon name="WEAPONS_ANY_1"/>
+      <weapon name="WEAPONS_ANY_1"/>
+    </weaponList>
+    <weaponList sector="3" missiles="1" system_power="5">
       <weapon name="WEAPONS_MISSILES_2"/>
       <weapon name="WEAPONS_PROJ_2"/>
       <weapon name="WEAPONS_ANY_1"/>
       <weapon name="WEAPONS_ANY_2"/>
     </weaponList>
-    <weaponList sector="3" missiles="2" system_power="5">
+    <weaponList sector="4" missiles="1" system_power="6">
       <weapon name="WEAPONS_MISSILES_2"/>
       <weapon name="WEAPONS_PROJ_2"/>
-      <weapon name="WEAPONS_ANY_1"/>
       <weapon name="WEAPONS_ANY_2"/>
-    </weaponList>
-    <weaponList sector="4" missiles="2" system_power="6">
-      <weapon name="WEAPONS_MISSILES_2"/>
-      <weapon name="WEAPONS_PROJ_3"/>
-      <weapon name="WEAPONS_ANY_1"/>
       <weapon name="WEAPONS_ANY_2"/>
     </weaponList>
     <health amount="10"/>
@@ -121,20 +121,20 @@
       <weapons room="1" room_pirate="4"/>
       <cloaking power="1" max="1" room="2" room_pirate="2" start="false"/>
     </systemList>
-    <weaponList sector="3" missiles="0" system_power="6">
+    <weaponList sector="3" missiles="0" system_power="5">
+      <weapon name="WEAPONS_BEAM_3"/>
+      <weapon name="WEAPONS_SIMPLE_1"/>
+      <weapon name="WEAPONS_SIMPLE_1"/>
+    </weaponList>
+    <weaponList sector="4" missiles="0" system_power="6">
       <weapon name="WEAPONS_BEAM_3"/>
       <weapon name="WEAPONS_SIMPLE_2"/>
       <weapon name="WEAPONS_SIMPLE_1"/>
     </weaponList>
-    <weaponList sector="4" missiles="0" system_power="7">
-      <weapon name="WEAPONS_BEAM_3"/>
-      <weapon name="WEAPONS_SIMPLE_2"/>
-      <weapon name="WEAPONS_SIMPLE_2"/>
-    </weaponList>
-    <weaponList sector="5" missiles="0" system_power="8">
+    <weaponList sector="5" missiles="0" system_power="7">
       <weapon name="WEAPONS_BEAM_4"/>
       <weapon name="WEAPONS_SIMPLE_2"/>
-      <weapon name="WEAPONS_SIMPLE_2"/>
+      <weapon name="WEAPONS_SIMPLE_1"/>
     </weaponList>
     <weaponList sector="6" missiles="0" system_power="8">
       <weapon name="WEAPONS_BEAM_4"/>
@@ -162,19 +162,19 @@
       <doors power="1" max="3" room="4" room_pirate="2" start="false"/>
       <mind power="1" max="2" room="2" room_pirate="6"/>
     </systemList>
-    <weaponList sector="2" missiles="3" system_power="5">
+    <weaponList sector="2" missiles="2" system_power="4">
+      <weapon name="WEAPONS_BOMB"/>
+      <weapon name="WEAPONS_PROJ_2"/>
+      <weapon name="WEAPONS_ANY_1"/>
+      <weapon name="WEAPONS_ANY_1"/>
+    </weaponList>
+    <weaponList sector="3" missiles="3" system_power="5">
       <weapon name="WEAPONS_BOMB"/>
       <weapon name="WEAPONS_PROJ_2"/>
       <weapon name="WEAPONS_ANY_2"/>
       <weapon name="WEAPONS_ANY_1"/>
     </weaponList>
-    <weaponList sector="3" missiles="3" system_power="6">
-      <weapon name="WEAPONS_BOMB"/>
-      <weapon name="WEAPONS_PROJ_3"/>
-      <weapon name="WEAPONS_ANY_2"/>
-      <weapon name="WEAPONS_ANY_1"/>
-    </weaponList>
-    <weaponList sector="4" missiles="5" system_power="6">
+    <weaponList sector="4" missiles="4" system_power="6">
       <weapon name="WEAPONS_BOMB"/>
       <weapon name="WEAPONS_PROJ_3"/>
       <weapon name="WEAPONS_ANY_2"/>
@@ -205,44 +205,43 @@
       <oxygen power="1" max="3" room="6"/>
       <cloaking power="1" max="2" room="7"/>
     </systemList>
-    <weaponList sector="0" missiles="1" system_power="4">
+    <weaponList sector="0" missiles="1" system_power="3">
+      <weapon name="WEAPONS_MISSILES_1"/>
+      <weapon name="WEAPONS_ANY_2"/>
+      <weapon name="WEAPONS_ANY_1"/>
+    </weaponList>
+    <weaponList sector="1" missiles="1" system_power="4">
       <weapon name="WEAPONS_MISSILES_1"/>
       <weapon name="WEAPONS_ANY_3"/>
       <weapon name="WEAPONS_ANY_1"/>
     </weaponList>
-    <weaponList sector="1" missiles="2" system_power="4">
+    <weaponList sector="2" missiles="1" system_power="4">
       <weapon name="WEAPONS_MISSILES_1"/>
       <weapon name="WEAPONS_ANY_3"/>
       <weapon name="WEAPONS_ANY_1"/>
     </weaponList>
-    <weaponList sector="2" missiles="2" system_power="5">
+    <weaponList sector="3" missiles="1" system_power="5">
       <weapon name="WEAPONS_MISSILES_1"/>
       <weapon name="WEAPONS_ANY_4"/>
       <weapon name="WEAPONS_ANY_1"/>
     </weaponList>
-    <weaponList sector="3" missiles="2" system_power="6">
+    <weaponList sector="4" missiles="1" system_power="6">
       <weapon name="WEAPONS_MISSILES_2"/>
       <weapon name="WEAPONS_ANY_4"/>
       <weapon name="WEAPONS_ANY_2"/>
     </weaponList>
-    <weaponList sector="4" missiles="2" system_power="7">
+    <weaponList sector="5" missiles="2" system_power="7">
       <weapon name="WEAPONS_MISSILES_3"/>
       <weapon name="WEAPONS_ANY_4"/>
       <weapon name="WEAPONS_ANY_3"/>
     </weaponList>
-    <weaponList sector="5" missiles="2" system_power="8">
-      <weapon name="WEAPONS_MISSILES_3"/>
-      <weapon name="WEAPONS_ANY_4"/>
-      <weapon name="WEAPONS_PROJ_1"/>
-      <weapon name="WEAPONS_ANY_3"/>
-    </weaponList>
-    <weaponList sector="6" missiles="3" system_power="8">
+    <weaponList sector="6" missiles="2" system_power="8">
       <weapon name="WEAPONS_MISSILES_3"/>
       <weapon name="WEAPONS_ANY_4"/>
       <weapon name="WEAPONS_PROJ_1"/>
       <weapon name="WEAPONS_ANY_3"/>
     </weaponList>
-    <weaponList sector="7" missiles="4" system_power="8">
+    <weaponList sector="7" missiles="2" system_power="8">
       <weapon name="WEAPONS_MISSILES_3"/>
       <weapon name="WEAPONS_ANY_4"/>
       <weapon name="WEAPONS_PROJ_1"/>
@@ -268,25 +267,25 @@
       <hacking power="1" max="3" room="4" room_pirate="2"/>
       <mind power="1" max="3" room="2" room_pirate="5"/>
     </systemList>
-    <weaponList sector="4" missiles="2" system_power="6">
+    <weaponList sector="4" missiles="1" system_power="6">
       <weapon name="WEAPONS_MISSILES_2"/>
       <weapon name="WEAPONS_ANY_4"/>
       <weapon name="WEAPONS_PROJ_1"/>
       <weapon name="WEAPONS_ANY_1"/>
     </weaponList>
-    <weaponList sector="5" missiles="2" system_power="7">
+    <weaponList sector="5" missiles="1" system_power="7">
       <weapon name="WEAPONS_MISSILES_2"/>
       <weapon name="WEAPONS_ANY_4"/>
       <weapon name="WEAPONS_PROJ_1"/>
       <weapon name="WEAPONS_ANY_2"/>
     </weaponList>
-    <weaponList sector="6" missiles="3" system_power="7">
+    <weaponList sector="6" missiles="2" system_power="8">
       <weapon name="WEAPONS_MISSILES_2"/>
       <weapon name="WEAPONS_ANY_4"/>
-      <weapon name="WEAPONS_PROJ_1"/>
+      <weapon name="WEAPONS_PROJ_2"/>
       <weapon name="WEAPONS_ANY_2"/>
     </weaponList>
-    <weaponList sector="7" missiles="3" system_power="8">
+    <weaponList sector="7" missiles="2" system_power="8">
       <weapon name="WEAPONS_MISSILES_2"/>
       <weapon name="WEAPONS_ANY_4"/>
       <weapon name="WEAPONS_PROJ_2"/>
@@ -313,8 +312,8 @@
       <mind power="2" max="3" room="7" room_pirate="5"/>
       <cloaking power="1" max="2" room="8" room_pirate="6" start="false"/>
     </systemList>
-    <weaponList sector="4" missiles="0" system_power="7">
-      <weapon name="WEAPONS_LASER_4"/>
+    <weaponList sector="4" missiles="0" system_power="6">
+      <weapon name="WEAPONS_LASER_3"/>
       <weapon name="WEAPONS_LASER_3"/>
     </weaponList>
     <weaponList sector="5" missiles="0" system_power="7">
@@ -353,8 +352,8 @@
       <weapon name="WEAPONS_ANY_3"/>
       <weapon name="WEAPONS_PROJ_1"/>
     </weaponList>
-    <weaponList sector="2" missiles="0" system_power="5">
-      <weapon name="WEAPONS_ANY_4"/>
+    <weaponList sector="2" missiles="0" system_power="4">
+      <weapon name="WEAPONS_ANY_3"/>
       <weapon name="WEAPONS_PROJ_1"/>
     </weaponList>
     <weaponList sector="3" missiles="0" system_power="5">
@@ -380,16 +379,16 @@
       <pilot power="1" max="3" room="0"/>
       <shields power="2" max="8" room="3"/>
       <engines power="1" max="8" room="4"/>
-      <mind power="1" max="2" room="2"/>
+      <mind power="1" room="2"/>
       <weapons room="5"/>
     </systemList>
     <weaponList sector="0" missiles="0" system_power="3">
       <weapon name="WEAPONS_ANY_2"/>
       <weapon name="WEAPONS_LASER_1"/>
     </weaponList>
-    <weaponList sector="1" missiles="0" system_power="3">
+    <weaponList sector="1" missiles="0" system_power="4">
       <weapon name="WEAPONS_ANY_2"/>
-      <weapon name="WEAPONS_LASER_1"/>
+      <weapon name="WEAPONS_LASER_2"/>
     </weaponList>
     <weaponList sector="2" missiles="0" system_power="4">
       <weapon name="WEAPONS_ANY_2"/>
@@ -444,23 +443,23 @@
       <weapon name="WEAPONS_SIMPLE_1"/>
       <weapon name="WEAPONS_SIMPLE_1"/>
     </weaponList>
-    <weaponList sector="2" missiles="0" system_power="5">
+    <weaponList sector="2" missiles="0" system_power="4">
+      <weapon name="WEAPONS_BEAM_2"/>
+      <weapon name="WEAPONS_SIMPLE_1"/>
+      <weapon name="WEAPONS_SIMPLE_1"/>
+    </weaponList>
+    <weaponList sector="3" missiles="0" system_power="5">
       <weapon name="WEAPONS_BEAM_3"/>
       <weapon name="WEAPONS_SIMPLE_1"/>
       <weapon name="WEAPONS_SIMPLE_1"/>
     </weaponList>
-    <weaponList sector="3" missiles="0" system_power="6">
+    <weaponList sector="4" missiles="0" system_power="6">
       <weapon name="WEAPONS_BEAM_3"/>
       <weapon name="WEAPONS_SIMPLE_2"/>
       <weapon name="WEAPONS_SIMPLE_1"/>
     </weaponList>
-    <weaponList sector="4" missiles="0" system_power="7">
+    <weaponList sector="5" missiles="0" system_power="7">
       <weapon name="WEAPONS_BEAM_3"/>
-      <weapon name="WEAPONS_SIMPLE_2"/>
-      <weapon name="WEAPONS_SIMPLE_2"/>
-    </weaponList>
-    <weaponList sector="5" missiles="0" system_power="8">
-      <weapon name="WEAPONS_BEAM_4"/>
       <weapon name="WEAPONS_SIMPLE_2"/>
       <weapon name="WEAPONS_SIMPLE_2"/>
     </weaponList>

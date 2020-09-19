@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <FTL>
   <hackingDroneFix enabled="true"/>
   <forceDlc enabled="true"/>
@@ -42,7 +43,7 @@
     </customShip>
     <customShip name="PLAYER_SHIP_MANTIS_2">
       <crew>
-        <engi room="0"/>
+        <mantis room="0"/>
         <mantis room="6"/>
         <mantis room="6"/>
       </crew>
@@ -52,14 +53,6 @@
         <engi room="7"/>
         <mantis room="15"/>
         <anaerobic room="12"/>
-      </crew>
-    </customShip>
-    <customShip name="PLAYER_SHIP_ENERGY_2">
-      <crew>
-        <energy room="8"/>
-        <energy room="0"/>
-        <energy room="2"/>
-        <energy room="2"/>
       </crew>
     </customShip>
     <customShip name="PLAYER_SHIP_JELLY_2">
@@ -445,7 +438,7 @@
       <locked/>
     </aug>
     <aug name="CREW_STIMS_LOCKED">
-      <function name="CREW_STIMS" value="0.4" warning="false"/>
+      <function name="CREW_STIMS" value="0.25" warning="false"/>
       <locked/>
     </aug>
     <aug name="DRONE_SPEED_LOCKED">
