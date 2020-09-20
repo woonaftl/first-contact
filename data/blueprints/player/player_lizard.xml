@@ -1,4 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FTL>
-
+  <shipBlueprint name="PLAYER_SHIP_LIZARD" layout="lizard_cruiser" img="lizard_cruiser">
+    <class>Lizard Cruiser</class>
+    <name>?</name>
+    <desc>?</desc>
+    <systemList>
+      <battery power="1" room="13" start="false" img="room_battery_14"/>
+      <cloaking power="1" room="6" start="false" img="room_cloaking_2"/>
+      <clonebay power="1" room="5" start="false" slot="1"/>
+      <doors power="1" room="16" start="true" img="room_doors_8"/>
+      <drones power="2" room="4" start="false" img="room_drones_21"/>
+      <engines power="2" room="14" start="true" img="room_engines"/>
+      <hacking power="1" room="12" start="false" img="room_hacking_18"/>
+      <medbay power="1" room="5" start="false" img="room_medbay"/>
+      <mind power="1" room="8" start="false" img="room_mind_14"/>
+      <oxygen power="1" room="3" start="true" img="room_oxygen_2"/>
+      <pilot power="1" room="0" start="true" img="room_pilot_5"/>
+      <sensors power="1" room="17" start="true" img="room_sensors_4"/>
+      <shields power="2" room="18" start="true" img="room_shields_4"/>
+      <teleporter power="1" room="11" start="true"/>
+      <weapons power="2" room="19" start="true" img="room_weapons_5"/>
+    </systemList>
+    <weaponSlots>4</weaponSlots>
+    <droneSlots>2</droneSlots>
+    <weaponList count="2" missiles="25">
+      <weapon name="BOMB_HEAL"/>
+      <weapon name="MISSILES_2"/>
+    </weaponList>
+    <aug name="REPAIR_ARM_LOCKED"/>
+    <health amount="30"/>
+    <maxPower amount="8"/>
+    <shieldImage>anaerobic_cruiser</shieldImage>
+    <cloakImage>lizard_cruiser</cloakImage>
+  </shipBlueprint>
 </FTL>

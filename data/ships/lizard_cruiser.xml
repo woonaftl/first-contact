@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <img x="-70" y="-66" w="615" h="483"/>
+  <offsets>
+    <floor x="64" y="60"/>
+    <cloak x="0" y="0"/>
+  </offsets>
+  <weaponMounts>
+    <mount x="397" y="149" rotate="true" mirror="true" gib="-1" slide="up"/>
+    <mount x="398" y="333" rotate="true" mirror="false" gib="-1" slide="down"/>
+    <mount x="225" y="35" rotate="true" mirror="true" gib="-1" slide="up"/>
+    <mount x="226" y="448" rotate="true" mirror="false" gib="-1" slide="down"/>
+  </weaponMounts>
+  <explosion/>
+</FTL>

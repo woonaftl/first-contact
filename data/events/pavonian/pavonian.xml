@@ -23,6 +23,7 @@
     <textList>
       <text>The Pavonian captain appears on the screen begging for mercy: "It was a misunderstanding. Please cease fire. I promise to do the same. Nobody has to die here."</text>
       <text>The Pavonian ship has stopped firing: "Please be merciful. We will never trouble you ever again. Accept our gift, it's all we have."</text>
+      <text>"Chill out, pal! Let's just forget about this. Here is some scrap if you need it." The Pavonians have turned their weapons off and are begging you to spare their lives.</text>
     </textList>
     <choice>
       <text>Accept their offer.</text>

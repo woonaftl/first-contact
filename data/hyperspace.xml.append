@@ -4,7 +4,9 @@
   <forceDlc enabled="true"/>
 
   <ships>
+    <ship name="PLAYER_SHIP_ORCHID" b="true" c="true"/>
     <ship name="PLAYER_SHIP_PAVONIAN" b="true" c="true"/>
+    <ship name="PLAYER_SHIP_LIZARD" b="false" c="false"/>
     <!--<customShip name="MANTIS_SCOUT_0">
       <crew>
         <mantis room="1"/>
@@ -76,8 +78,13 @@
         <anaerobic room="17"/>
       </crew>
     </customShip>
-    <!--<ship name="PLAYER_SHIP_ORCHID" b="true" c="true"/>-->
-    <!--<ship name="PLAYER_SHIP_LIZARD" b="true" c="true"/>-->
+    <customShip name="PLAYER_SHIP_LIZARD">
+      <crew>
+        <lizard room="0"/>
+        <lizard room="11"/>
+        <lizard room="11"/>
+      </crew>
+    </customShip>
   </ships>
 
   <crew>
