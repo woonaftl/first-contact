@@ -40,9 +40,10 @@
     <desc>Should Never See This Description.</desc>
     <tooltip>Should Never See This Description.</tooltip>
     <damage>2</damage>
+    <!--TODO still 1 damage-->
     <missiles>0</missiles>
     <shots>1</shots>
-    <sp>5</sp>
+    <sp>1</sp>
     <fireChance>0</fireChance>
     <breachChance>10</breachChance>
     <stunChance>0</stunChance>
@@ -194,6 +195,7 @@
     <stackable>false</stackable>
     <value>0.1</value>
   </augBlueprint>
+  <augBlueprintInherit name="REPAIR_ARM_LOCKED" base="REPAIR_ARM"/>
 
   <changelog>
     <entry>Scrap Recovery Arm bonus 0.1 to 0.15</entry>
