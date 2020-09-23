@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
-  <img x="-35" y="-42" w="440" h="325"/>
+  <img x="-36" y="-40" w="440" h="325"/>
   <offsets>
-    <floor x="29" y="36"/>
+    <floor x="30" y="34"/>
     <cloak x="-10" y="-10"/>
   </offsets>
   <weaponMounts>

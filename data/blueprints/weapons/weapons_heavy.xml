@@ -20,16 +20,6 @@
     <name>LASER_HEAVY_CHARGE_3</name>
   </blueprintList>
 
-  <blueprintList name="WEAPONS_PROJ_2">
-    <name>LASER_HEAVY_1</name>
-  </blueprintList>
-  <blueprintList name="WEAPONS_PROJ_3">
-    <name>LASER_HEAVY_2</name>
-  </blueprintList>
-  <blueprintList name="WEAPONS_PROJ_4">
-    <name>LASER_HEAVY_CHARGE_3</name>
-  </blueprintList>
-
   <blueprintList name="WEAPONS_HEAVY_1_UPGRADED">
     <name>LASER_HEAVY_1_UPGRADED</name>
   </blueprintList>
@@ -47,16 +37,6 @@
     <name>LASER_HEAVY_2_UPGRADED</name>
   </blueprintList>
   <blueprintList name="WEAPONS_ANY_3_UPGRADED">
-    <name>LASER_HEAVY_CHARGE_3_UPGRADED</name>
-  </blueprintList>
-
-  <blueprintList name="WEAPONS_PROJ_1_UPGRADED">
-    <name>LASER_HEAVY_1_UPGRADED</name>
-  </blueprintList>
-  <blueprintList name="WEAPONS_PROJ_2_UPGRADED">
-    <name>LASER_HEAVY_2_UPGRADED</name>
-  </blueprintList>
-  <blueprintList name="WEAPONS_PROJ_3_UPGRADED">
     <name>LASER_HEAVY_CHARGE_3_UPGRADED</name>
   </blueprintList>
 

@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FTL>
-  <changelog>
-    <entry>Mantis A starts with Small Bomb (nerf, the bomb is weaker now)</entry>
-    <entry>Mantis A starts with Basic Laser (no change)</entry>
-  </changelog>
   <shipBlueprint name="PLAYER_SHIP_MANTIS" layout="mantis_cruiser" img="mantis_cruiser">
     <class>Mantis Cruiser</class>
     <name>The Gila Monster</name>
@@ -19,30 +15,25 @@
       <hacking power="1" room="15" start="false" img="room_hacking_11"/>
       <medbay power="1" room="2" start="true"/>
       <mind power="1" room="12" start="false" img="room_mind_4"/>
-      <oxygen power="1" room="4" start="true" img="room_oxygen_3"/>
+      <oxygen power="1" room="1" start="true" img="room_oxygen_18"/>
       <pilot power="1" room="7" start="true" img="room_pilot_4"/>
-      <sensors power="1" room="17" start="false"/>
+      <sensors power="1" room="17" start="true"/>
       <shields power="2" room="16" start="true"/>
-      <teleporter power="1" room="1" start="true"/>
+      <teleporter power="1" room="4" start="true"/>
       <weapons power="1" room="13" start="true" img="room_weapons_3"/>
     </systemList>
+    <weaponSlots>3</weaponSlots>
+    <droneSlots>2</droneSlots>
     <weaponList count="2" missiles="16">
       <weapon name="BOMB_1"/>
       <weapon name="LASER_BURST_1"/>
     </weaponList>
-    <weaponSlots>3</weaponSlots>
-    <droneSlots>2</droneSlots>
     <aug name="CREW_STIMS_LOCKED"/>
     <health amount="30"/>
     <maxPower amount="7"/>
   </shipBlueprint>
 
-  <changelog>
-    <entry>New Mantis B layout roughly based on old Slug B but with big teleporter</entry>
-    <entry>Mantis B starts with Healing Burst</entry>
-    <entry>Mantis B starts with Artemis Missiles</entry>
-  </changelog>
-  <shipBlueprint name="PLAYER_SHIP_MANTIS_2" layout="mantis_cruiser_brown" img="mantis_cruiser_brown">
+  <shipBlueprint name="PLAYER_SHIP_MANTIS_2" layout="mantis_cruiser_brown" img="mantis_cruiser_2">
     <class>Mantis Cruiser</class>
     <name>?</name>
     <unlock>Complete 2/3 of the Mantis Cruiser Achievements to unlock this ship.</unlock>
@@ -59,64 +50,58 @@
       <mind power="1" room="1" start="false" img="room_mind_7"/>
       <oxygen power="1" room="10" start="true" img="room_oxygen_10"/>
       <pilot power="1" room="0" start="true" img="room_pilot"/>
-      <sensors power="1" room="16" start="false" img="room_sensors_9"/>
-      <shields power="4" room="13" start="true" img="room_shields_5"/>
+      <sensors power="1" room="16" start="true" img="room_sensors_9"/>
+      <shields power="2" room="13" start="true" img="room_shields_5"/>
       <teleporter power="1" room="6" start="true"/>
-      <weapons power="1" room="4" start="true" img="room_weapons_5"/>
+      <weapons power="2" room="4" start="true" img="room_weapons_5"/>
     </systemList>
-    <weaponList count="2" missiles="25">
+    <weaponSlots>3</weaponSlots>
+    <droneSlots>2</droneSlots>
+    <weaponList count="2" missiles="18">
       <weapon name="BOMB_ION"/>
-      <weapon name="BOMB_HEAL_SYSTEM"/>
+      <weapon name="LASER_HEAVY_1_UPGRADED"/>
     </weaponList>
-    <droneList count="0" drones="0"/>
-    <weaponSlots>3</weaponSlots>
-    <droneSlots>2</droneSlots>
-    <aug name="CREW_STIMS_LOCKED"/>
-    <health amount="30"/>
-    <maxPower amount="9"/>
-    <shieldImage>mantis_cruiser</shieldImage>
-    <cloakImage>mantis_cruiser</cloakImage>
-    <floorImage>mantis_cruiser_brown</floorImage>
-  </shipBlueprint>
-
-  <changelog>
-    <entry>Mantis C starts with Stun Bomb (nerf?, bomb is faster, but doesn't do ion damage)</entry>
-    <entry>Mantis C starts with Lockdown Bomb (buff, it's faster now)</entry>
-    <entry>Mantis C starts without Sensors system</entry>
-  </changelog>
-  <shipBlueprint name="PLAYER_SHIP_MANTIS_3" layout="mantis_cruiser_3" img="mantis_cruiser_3">
-    <class>Mantis Cruiser</class>
-    <name>The Theseus</name>
-    <unlock>Get to Sector 8 with the Mantis Cruiser Type B and Advanced Mode enabled to unlock this ship.</unlock>
-    <desc>With a large teleporter and weapons designed to impede enemy crew, this ship is deadly in the hands of a capable boarding party.</desc>
-    <systemList>
-      <battery power="1" room="11" start="false" img="room_battery_8"/>
-      <cloaking power="1" room="13" start="false" img="room_cloaking_10"/>
-      <clonebay power="2" room="3" start="true"/>
-      <doors power="1" room="9" start="true" img="room_doors_7"/>
-      <drones power="2" room="16" start="false" img="room_drones_11"/>
-      <engines power="2" room="0" start="true" img="room_engines_2"/>
-      <hacking power="1" room="2" start="false" img="room_hacking_13"/>
-      <medbay power="1" room="3" start="false"/>
-      <mind power="1" room="8" start="false" img="room_mind_4"/>
-      <oxygen power="1" room="5" start="true" img="room_oxygen_12"/>
-      <pilot power="1" room="7" start="true" img="room_pilot_4"/>
-      <sensors power="1" room="10" start="false"/>
-      <shields power="2" room="6" start="true" img="room_shields_3"/>
-      <teleporter power="1" room="15" start="true"/>
-      <weapons power="2" room="12" start="true" img="room_weapons_9"/>
-    </systemList>
-    <weaponList count="2" missiles="20">
-      <weapon name="BOMB_LOCK"/>
-      <weapon name="BOMB_STUN"/>
-    </weaponList>
-    <weaponSlots>3</weaponSlots>
-    <droneSlots>2</droneSlots>
     <aug name="CREW_STIMS_LOCKED"/>
     <health amount="30"/>
     <maxPower amount="8"/>
     <shieldImage>mantis_cruiser</shieldImage>
     <cloakImage>mantis_cruiser</cloakImage>
-    <floorImage>mantis_cruiser</floorImage>
+    <floorImage>mantis_cruiser_brown</floorImage>
+  </shipBlueprint>
+
+  <shipBlueprint name="PLAYER_SHIP_MANTIS_3" layout="mantis_cruiser_green" img="mantis_cruiser_3">
+    <class>Mantis Cruiser</class>
+    <name>?</name>
+    <unlock>Get to Sector 8 with the Mantis Cruiser Type B and Advanced Mode enabled to unlock this ship.</unlock>
+    <desc>?</desc>
+    <systemList>
+      <battery power="1" room="15" start="false" img="room_battery_7"/>
+      <cloaking power="1" room="10" start="false" img="room_cloaking_7"/>
+      <clonebay power="2" room="14" start="true" slot="0"/>
+      <doors power="1" room="7" start="true" img="room_doors"/>
+      <drones power="2" room="9" start="false" img="room_drones_18"/>
+      <engines power="2" room="17" start="true" img="room_engines_11"/>
+      <hacking power="1" room="2" start="false" img="room_hacking_6"/>
+      <medbay power="1" room="14" start="false" img="room_medbay_4"/>
+      <mind power="1" room="1" start="false" img="room_mind_18"/>
+      <oxygen power="1" room="16" start="true" img="room_oxygen_11"/>
+      <pilot power="1" room="0" start="true" img="room_pilot_2"/>
+      <sensors power="1" room="8" start="true" img="room_sensors"/>
+      <shields power="2" room="5" start="true" img="room_shields"/>
+      <teleporter power="1" room="13" start="true"/>
+      <weapons power="1" room="6" start="true" img="room_weapons_13"/>
+    </systemList>
+    <weaponList count="1" missiles="15">
+      <weapon name="BOMB_HEAL_SYSTEM"/>
+    </weaponList>
+    <weaponSlots>3</weaponSlots>
+    <droneSlots>2</droneSlots>
+    <aug name="CREW_STIMS_LOCKED"/>
+    <aug name="ZOLTAN_BYPASS"/>
+    <health amount="30"/>
+    <maxPower amount="6"/>
+    <shieldImage>mantis_cruiser</shieldImage>
+    <cloakImage>mantis_cruiser</cloakImage>
+    <floorImage>mantis_cruiser_green</floorImage>
   </shipBlueprint>
 </FTL>

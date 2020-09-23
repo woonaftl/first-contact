@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FTL>
-  <shipBlueprint name="PLAYER_SHIP_CIRCLE" layout="circle_cruiser" img="circle_cruiser">
+  <shipBlueprint name="PLAYER_SHIP_CIRCLE" layout="circle_cruiser_2" img="circle_cruiser">
     <class>Engi Cruiser</class>
     <name>Vortex</name>
     <unlock>To unlock this Engi ship you'll need to get to the 5th sector with any layout of the Kestrel.</unlock>
     <desc>?</desc>
     <systemList>
-      <battery power="1" room="1" start="false" img="room_battery_6"/>
-      <cloaking power="1" room="12" start="false" img="room_cloaking_4"/>
-      <clonebay power="1" room="7" start="false"/>
-      <doors power="1" room="5" start="true" img="room_doors_4"/>
-      <drones power="2" room="0" start="true" img="room_drones_20"/>
-      <engines power="2" room="2" start="true" img="room_engines_2"/>
-      <hacking power="1" room="14" start="false" img="room_hacking_2"/>
-      <medbay power="1" room="7" start="true"/>
-      <mind power="1" room="6" start="false" img="room_mind_6"/>
-      <oxygen power="1" room="15" start="true" img="room_oxygen_4"/>
-      <pilot power="1" room="8" start="true"/>
-      <sensors power="1" room="4" start="true" img="room_sensors_4"/>
-      <shields power="2" room="3" start="true" img="room_shields_4"/>
-      <teleporter power="1" room="9" start="false"/>
-      <weapons power="3" room="11" start="true"/>
+      <battery power="1" room="10" start="false" img="room_battery_7"/>
+      <cloaking power="1" room="12" start="false" img="room_cloaking_7"/>
+      <clonebay power="1" room="6" start="false" slot="0"/>
+      <doors power="1" room="8" start="true" img="room_doors"/>
+      <drones power="2" room="7" start="true" img="room_drones_19"/>
+      <engines power="2" room="0" start="true" img="room_engines_2"/>
+      <hacking power="1" room="9" start="false" img="room_hacking_4"/>
+      <medbay power="1" room="6" start="true" img="room_medbay_6"/>
+      <mind power="1" room="4" start="false" img="room_mind_6"/>
+      <oxygen power="1" room="5" start="true" img="room_oxygen_6"/>
+      <pilot power="1" room="13" start="true" img="room_pilot"/>
+      <sensors power="1" room="2" start="true" img="room_sensors"/>
+      <shields power="2" room="11" start="true" img="room_shields_11"/>
+      <teleporter power="1" room="3" start="false"/>
+      <weapons power="3" room="1" start="true" img="room_weapons_8"/>
     </systemList>
     <weaponSlots>3</weaponSlots>
     <droneSlots>3</droneSlots>
@@ -34,7 +34,10 @@
     <aug name="NANO_MEDBAY_LOCKED"/>
     <health amount="30"/>
     <maxPower amount="10"/>
-    <crewCount amount="2" class="engi"/>
+    <crewCount amount="1" class="human"/>
+    <crewCount amount="1" class="engi"/>
+    <cloakImage>circle_cruiser</cloakImage>
+    <floorImage>circle_cruiser_2</floorImage>
   </shipBlueprint>
 
   <shipBlueprint name="PLAYER_SHIP_CIRCLE_2" layout="circle_cruiser_blue" img="circle_cruiser_blue">
@@ -79,27 +82,27 @@
     <floorImage>circle_cruiser_blue</floorImage>
   </shipBlueprint>
 
-  <shipBlueprint name="PLAYER_SHIP_CIRCLE_3" layout="circle_cruiser_3" img="circle_cruiser_3">
+  <shipBlueprint name="PLAYER_SHIP_CIRCLE_3" layout="circle_cruiser_brown" img="circle_cruiser_3">
     <class>Engi Cruiser</class>
     <name>?</name>
     <unlock>Get to Sector 8 with the Engi Cruiser Type B and Advanced Mode enabled to unlock this ship.</unlock>
     <desc>?</desc>
     <systemList>
-      <battery power="1" room="2" start="false" img="room_battery_17"/>
-      <cloaking power="1" room="1" start="false" img="room_cloaking_4"/>
-      <clonebay power="1" room="11" start="false"/>
-      <doors power="1" room="16" start="true" img="room_doors_12"/>
-      <drones power="3" room="7" start="true" img="room_drones_9"/>
-      <engines power="2" room="10" start="true" img="room_engines_8"/>
-      <hacking power="1" room="5" start="false" img="room_hacking_5"/>
-      <medbay power="1" room="11" start="true" img="room_medbay_9"/>
-      <mind power="1" room="3" start="false" img="room_mind_12"/>
-      <oxygen power="1" room="0" start="true" img="room_oxygen_7"/>
-      <pilot power="1" room="14" start="true"/>
-      <sensors power="1" room="13" start="true" img="room_sensors_2"/>
-      <shields power="2" room="8" start="false" img="room_shields_4"/>
-      <teleporter power="1" room="4" start="false"/>
-      <weapons power="2" room="6" start="true" img="room_weapons_7"/>
+      <battery power="1" room="11" start="false" img="room_battery_17"/>
+      <cloaking power="1" room="4" start="false" img="room_cloaking_18"/>
+      <clonebay power="1" room="6" start="false" slot="1"/>
+      <doors power="1" room="5" start="true" img="room_doors"/>
+      <drones power="3" room="1" start="true" img="room_drones"/>
+      <engines power="2" room="7" start="true" img="room_engines_13"/>
+      <hacking power="1" room="3" start="false" img="room_hacking_2"/>
+      <medbay power="1" room="6" start="true" img="room_medbay"/>
+      <mind power="1" room="13" start="false" img="room_mind_12"/>
+      <oxygen power="1" room="8" start="true" img="room_oxygen_6"/>
+      <pilot power="1" room="0" start="true" img="room_pilot_2"/>
+      <sensors power="1" room="12" start="true" img="room_sensors_5"/>
+      <shields power="2" room="15" start="false" img="room_shields_15"/>
+      <teleporter power="1" room="2" start="false"/>
+      <weapons power="2" room="9" start="true" img="room_weapons_8"/>
     </systemList>
     <weaponSlots>3</weaponSlots>
     <droneSlots>3</droneSlots>
@@ -107,7 +110,7 @@
       <weapon name="BEAM_1_UPGRADED"/>
       <weapon name="LASER_CHARGEGUN_UPGRADED"/>
     </weaponList>
-    <droneList count="2" drones="25">
+    <droneList count="2" drones="28">
       <drone name="DRONE_SHIELD_UPGRADED"/>
       <drone name="ANTI_DRONE"/>
     </droneList>
@@ -117,6 +120,6 @@
     <aug name="NANO_MEDBAY_LOCKED"/>
     <shieldImage>circle_cruiser</shieldImage>
     <cloakImage>circle_cruiser</cloakImage>
-    <floorImage>tetragon</floorImage>
+    <floorImage>circle_cruiser_brown</floorImage>
   </shipBlueprint>
 </FTL>

@@ -11,6 +11,7 @@
     <name>CHAIN_ERASER</name>
     <name>LASER_CHAINGUN_2</name>
   </blueprintList>
+
   <blueprintList name="WEAPONS_CHAIN_2">
     <name>ION_CHAINGUN</name>
     <name>LASER_CHAINGUN</name>
@@ -25,15 +26,16 @@
   <blueprintList name="WEAPONS_LASER_2">
     <name>LASER_CHAINGUN</name>
   </blueprintList>
+
   <blueprintList name="WEAPONS_ION_2">
     <name>ION_CHAINGUN</name>
+  </blueprintList>
+
+  <blueprintList name="WEAPONS_CORE_2">
     <name>LASER_CHAINGUN</name>
   </blueprintList>
+
   <blueprintList name="WEAPONS_ANY_2">
-    <name>ION_CHAINGUN</name>
-    <name>LASER_CHAINGUN</name>
-  </blueprintList>
-  <blueprintList name="WEAPONS_PROJ_2">
     <name>ION_CHAINGUN</name>
     <name>LASER_CHAINGUN</name>
   </blueprintList>
@@ -47,15 +49,23 @@
   <blueprintList name="WEAPONS_LASER_1_UPGRADED">
     <name>LASER_CHAINGUN_UPGRADED</name>
   </blueprintList>
+
   <blueprintList name="WEAPONS_ION_1_UPGRADED">
     <name>ION_CHAINGUN_UPGRADED</name>
   </blueprintList>
+
   <blueprintList name="WEAPONS_ANY_1_UPGRADED">
     <name>ION_CHAINGUN_UPGRADED</name>
     <name>LASER_CHAINGUN_UPGRADED</name>
   </blueprintList>
-  <blueprintList name="WEAPONS_PROJ_1_UPGRADED">
-    <name>ION_CHAINGUN_UPGRADED</name>
+  <blueprintList name="WEAPONS_ANY_2_UPGRADED">
+    <name>CHAIN_ERASER_UPGRADED</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_ANY_3_UPGRADED">
+    <name>LASER_CHAINGUN_2_UPGRADED</name>
+  </blueprintList>
+
+  <blueprintList name="WEAPONS_CORE_1_UPGRADED">
     <name>LASER_CHAINGUN_UPGRADED</name>
   </blueprintList>
 

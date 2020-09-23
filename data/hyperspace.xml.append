@@ -37,24 +37,26 @@
     </customShip>-->
     <customShip name="PLAYER_SHIP_MANTIS">
       <crew>
-        <mantis room="7"/>
-        <engi room="10"/>
-        <mantis room="1"/>
-        <mantis room="1"/>
+        <engi room="7"/>
+        <mantis room="4"/>
+        <mantis room="4"/>
+        <mantis room="4"/>
       </crew>
     </customShip>
     <customShip name="PLAYER_SHIP_MANTIS_2">
       <crew>
-        <mantis room="0"/>
+        <rock room="0"/>
+        <mantis room="6"/>
         <mantis room="6"/>
         <mantis room="6"/>
       </crew>
     </customShip>
     <customShip name="PLAYER_SHIP_MANTIS_3">
       <crew>
-        <engi room="7"/>
-        <mantis room="15"/>
-        <anaerobic room="12"/>
+        <energy room="0"/>
+        <energy room="17"/>
+        <mantis room="13"/>
+        <mantis room="13"/>
       </crew>
     </customShip>
     <customShip name="PLAYER_SHIP_JELLY_2">
@@ -67,8 +69,8 @@
     <customShip name="PLAYER_SHIP_CRYSTAL_2">
       <crew>
         <crystal room="15"/>
-        <crystal room="3"/>
-        <crystal room="3"/>
+        <crystal room="8"/>
+        <crystal room="8"/>
       </crew>
     </customShip>
     <customShip name="PLAYER_SHIP_ANAEROBIC_2">
@@ -88,7 +90,7 @@
   </ships>
 
   <crew>
-    <race name="human">
+    <!--<race name="human">
       <skills>
         <piloting req="10000000"/>
         <engines req="10000000"/>
@@ -97,20 +99,20 @@
         <repair req="10000000"/>
         <combat req="10000000"/>
       </skills>
-    </race>
+    </race>-->
 
     <race name="engi">
       <repairSpeed>2</repairSpeed>
       <damageMultiplier>0.5</damageMultiplier>
       <sabotageSpeedMultiplier>0.5</sabotageSpeedMultiplier>
-      <skills>
+      <!--<skills>
         <piloting req="10000000"/>
         <engines req="10000000"/>
         <shields req="10000000"/>
         <weapons req="10000000"/>
         <repair req="10000000"/>
         <combat req="10000000"/>
-      </skills>
+      </skills>-->
       <deathSounds>
         <deathSound>engiDeath</deathSound>
       </deathSounds>
@@ -121,14 +123,14 @@
       <moveSpeedMultiplier>1.2</moveSpeedMultiplier>
       <damageMultiplier>1.5</damageMultiplier>
       <sabotageSpeedMultiplier>1.5</sabotageSpeedMultiplier>
-      <skills>
+      <!--<skills>
         <piloting req="10000000"/>
         <engines req="10000000"/>
         <shields req="10000000"/>
         <weapons req="10000000"/>
         <repair req="10000000"/>
         <combat req="10000000"/>
-      </skills>
+      </skills>-->
       <animBase>mantis</animBase>
       <deathSounds>
         <deathSound>mantisDeath</deathSound>
@@ -150,14 +152,14 @@
       <canBurn>false</canBurn>
       <fireRepairMultiplier>2.4</fireRepairMultiplier>
       <moveSpeedMultiplier>0.6</moveSpeedMultiplier>
-      <skills>
+      <!--<skills>
         <piloting req="10000000"/>
         <engines req="10000000"/>
         <shields req="10000000"/>
         <weapons req="10000000"/>
         <repair req="10000000"/>
         <combat req="10000000"/>
-      </skills>
+      </skills>-->
       <animBase>rock</animBase>
       <deathSounds>
         <deathSound>rockDeath</deathSound>
@@ -183,7 +185,7 @@
       </shootingSounds>
     </race>
 
-    <race name="energy">
+    <!--<race name="energy">
       <maxHealth>70</maxHealth>
       <bonusPower>1</bonusPower>
       <skills>
@@ -204,9 +206,9 @@
         <friendlyFire>false</friendlyFire>
         <shipFriendlyFire>false</shipFriendlyFire>
       </deathEffect>
-    </race>
+    </race>-->
 
-    <race name="slug">
+    <!--<race name="slug">
       <detectsLifeforms>true</detectsLifeforms>
       <isTelepathic>true</isTelepathic>
       <skills>
@@ -217,19 +219,19 @@
         <repair req="10000000"/>
         <combat req="10000000"/>
       </skills>
-    </race>
+    </race>-->
 
     <race name="crystal">
       <maxHealth>125</maxHealth>
       <moveSpeedMultiplier>0.8</moveSpeedMultiplier>
-      <skills>
+      <!--<skills>
         <piloting req="10000000"/>
         <engines req="10000000"/>
         <shields req="10000000"/>
         <weapons req="10000000"/>
         <repair req="10000000"/>
         <combat req="10000000"/>
-      </skills>
+      </skills>-->
       <animBase>rock</animBase>
       <deathSounds>
         <deathSound>crystalDeath</deathSound>
@@ -271,14 +273,14 @@
     <race name="anaerobic">
       <canSuffocate>false</canSuffocate>
       <isAnaerobic>true</isAnaerobic>
-      <skills>
+      <!--<skills>
         <piloting req="10000000"/>
         <engines req="10000000"/>
         <shields req="10000000"/>
         <weapons req="10000000"/>
         <repair req="10000000"/>
         <combat req="10000000"/>
-      </skills>
+      </skills>-->
       <deathSounds>
         <deathSound>shrikeDeath</deathSound>
       </deathSounds>
@@ -291,14 +293,14 @@
       <fireRepairMultiplier>0.6</fireRepairMultiplier>
       <fireDamageMultiplier>4.0</fireDamageMultiplier>
       <oxygenChangeSpeed>0.525</oxygenChangeSpeed>
-      <skills>
+      <!--<skills>
         <piloting req="10000000"/>
         <engines req="10000000"/>
         <shields req="10000000"/>
         <weapons req="10000000"/>
         <repair req="10000000"/>
         <combat req="10000000"/>
-      </skills>
+      </skills>-->
       <deathSounds>
         <deathSound>orchidDeath</deathSound>
       </deathSounds>
@@ -312,14 +314,14 @@
     <race name="lizard">
       <passiveHealAmount>0.5</passiveHealAmount>
       <passiveHealDelay>4</passiveHealDelay>
-      <skills>
+      <!--<skills>
         <piloting req="10000000"/>
         <engines req="10000000"/>
         <shields req="10000000"/>
         <weapons req="10000000"/>
         <repair req="10000000"/>
         <combat req="10000000"/>
-      </skills>
+      </skills>-->
       <!--<deathSounds>
         <deathSound>orchidDeath</deathSound>
       </deathSounds>-->
@@ -327,14 +329,14 @@
 
     <race name="pavonian">
       <damageTakenMultiplier>2.0</damageTakenMultiplier>
-      <skills>
+      <!--<skills>
         <piloting req="10000000"/>
         <engines req="10000000"/>
         <shields req="10000000"/>
         <weapons req="10000000"/>
         <repair req="10000000"/>
         <combat req="10000000"/>
-      </skills>
+      </skills>-->
       <!--<deathSounds>
         <deathSound>orchidDeath</deathSound>
       </deathSounds>-->
@@ -361,14 +363,14 @@
     </race>
 
     <race name="warped">
-      <skills>
+      <!--<skills>
         <piloting req="10000000"/>
         <engines req="10000000"/>
         <shields req="10000000"/>
         <weapons req="10000000"/>
         <repair req="10000000"/>
         <combat req="10000000"/>
-      </skills>
+      </skills>-->
       <!--<deathSounds>
         <deathSound>orchidDeath</deathSound>
       </deathSounds>-->
@@ -398,14 +400,14 @@
 
     <race name="cyborglice">
       <damageTakenMultiplier>0.5</damageTakenMultiplier>
-      <skills>
+      <!--<skills>
         <piloting req="10000000"/>
         <engines req="10000000"/>
         <shields req="10000000"/>
         <weapons req="10000000"/>
         <repair req="10000000"/>
         <combat req="10000000"/>
-      </skills>
+      </skills>-->
       <powerEffect>
         <cooldown>0</cooldown>
         <cooldownColor r="0" g="0" b="0"/>

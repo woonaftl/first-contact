@@ -13,7 +13,6 @@
     <upgradeCost>
       <level>30</level>
       <level>50</level>
-      <level>75</level>
     </upgradeCost>
     <cost>60</cost>
   </systemBlueprint>
@@ -30,7 +29,6 @@
       <level>60</level>
     </upgradeCost>
     <cost>90</cost>
-    <locked>1</locked>
   </systemBlueprint>
 
   <systemBlueprint name="cloaking">
@@ -45,7 +43,6 @@
       <level>50</level>
     </upgradeCost>
     <cost>150</cost>
-    <locked>1</locked>
   </systemBlueprint>
 
   <changelog>
@@ -79,6 +76,12 @@
     <cost>50</cost>
   </systemBlueprint>
 
+  <changelog>
+    <entry>Shields level 3 upgrade cost 20 to 30</entry>
+    <entry>Shields level 4 upgrade cost 30 to 40</entry>
+    <entry>Shields level 5 upgrade cost 40 to 50</entry>
+    <entry>Shields level 6 upgrade cost 60 to 70</entry>
+  </changelog>
   <systemBlueprint name="shields">
     <type>shields</type>
     <title>Shields</title>
@@ -88,13 +91,12 @@
     <rarity>1</rarity>
     <upgradeCost>
       <level>100</level>
-      <level>20</level>
       <level>30</level>
       <level>40</level>
-      <level>60</level>
+      <level>50</level>
+      <level>70</level>
       <level>80</level>
       <level>100</level>
-      <level>120</level>
     </upgradeCost>
     <cost>125</cost>
   </systemBlueprint>
@@ -123,6 +125,7 @@
     <entry>Engines level 2 upgrade cost 10 to 25</entry>
     <entry>Engines level 3 upgrade cost 15 to 30</entry>
     <entry>Engines level 4 upgrade cost 30 to 35</entry>
+    <entry>Engines level 8 upgrade cost 120 to 100</entry>
   </changelog>
   <systemBlueprint name="engines">
     <type>engines</type>
@@ -138,8 +141,7 @@
       <level>40</level>
       <level>60</level>
       <level>80</level>
-      <level>120</level>
-      <level>150</level>
+      <level>100</level>
     </upgradeCost>
     <cost>1</cost>
   </systemBlueprint>
@@ -159,7 +161,6 @@
       <level>75</level>
       <level>90</level>
       <level>100</level>
-      <level>120</level>
     </upgradeCost>
     <cost>20</cost>
   </systemBlueprint>
@@ -179,7 +180,6 @@
       <level>60</level>
       <level>80</level>
       <level>100</level>
-      <level>120</level>
     </upgradeCost>
     <cost>60</cost>
   </systemBlueprint>
@@ -228,6 +228,7 @@
 
   <changelog>
     <entry>Hacking system initial cost 80 to 100</entry>
+    <entry>Hacking level 2 upgrade cost 35 to 40</entry>
   </changelog>
   <systemBlueprint name="hacking">
     <type>hacking</type>
@@ -237,7 +238,7 @@
     <maxPower>3</maxPower>
     <rarity>1</rarity>
     <upgradeCost>
-      <level>35</level>
+      <level>40</level>
       <level>60</level>
     </upgradeCost>
     <cost>100</cost>
@@ -245,16 +246,19 @@
 
   <changelog>
     <entry>Backup Battery system initial cost 35 to 50</entry>
+    <entry>Backup Battery level 2 upgrade cost 50 to 35</entry>
+    <entry>Backup Battery can be upgraded to level 3 for 45 scrap</entry>
   </changelog>
   <systemBlueprint name="battery">
     <type>battery</type>
     <title>Backup Battery</title>
     <desc>Provides a 30 second power boost to your Reactor. Upgrading increases the boost amount.</desc>
     <startPower>1</startPower>
-    <maxPower>2</maxPower>
+    <maxPower>3</maxPower>
     <rarity>1</rarity>
     <upgradeCost>
-      <level>50</level>
+      <level>35</level>
+      <level>45</level>
     </upgradeCost>
     <cost>50</cost>
   </systemBlueprint>

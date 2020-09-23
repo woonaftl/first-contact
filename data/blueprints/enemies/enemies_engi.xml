@@ -29,8 +29,8 @@
     </systemList>
     <sector id="0">
       <weaponList missiles="0" system_power="3">
-        <weapon name="WEAPONS_ION_2"/>
-        <weapon name="WEAPONS_LASER_1"/>
+        <weapon name="WEAPONS_ION_1"/>
+        <weapon name="WEAPONS_LASER_2"/>
       </weaponList>
       <droneList drones="4" system_power="2">
         <drone name="DRONES_DEFENSE_2"/>
@@ -38,8 +38,8 @@
     </sector>
     <sector id="1">
       <weaponList missiles="0" system_power="4">
-        <weapon name="WEAPONS_ION_2"/>
-        <weapon name="WEAPONS_LASER_1"/>
+        <weapon name="WEAPONS_ION_1"/>
+        <weapon name="WEAPONS_LASER_2"/>
         <weapon name="WEAPONS_ANY_1"/>
       </weaponList>
       <droneList drones="4" system_power="3">
@@ -48,8 +48,8 @@
     </sector>
     <sector id="2">
       <weaponList missiles="0" system_power="4">
-        <weapon name="WEAPONS_ION_2"/>
-        <weapon name="WEAPONS_LASER_1"/>
+        <weapon name="WEAPONS_ION_1"/>
+        <weapon name="WEAPONS_LASER_2"/>
         <weapon name="WEAPONS_ANY_1"/>
       </weaponList>
       <droneList drones="4" system_power="3">
@@ -89,8 +89,8 @@
     <sector id="2">
       <weaponList missiles="2" system_power="4">
         <weapon name="WEAPONS_BOMB"/>
-        <weapon name="WEAPONS_ION_2"/>
-        <weapon name="WEAPONS_ANY_1"/>
+        <weapon name="WEAPONS_ION_1"/>
+        <weapon name="WEAPONS_LASER_2"/>
         <weapon name="WEAPONS_LASER_1"/>
       </weaponList>
       <droneList drones="4" system_power="3">
@@ -100,8 +100,8 @@
     <sector id="3">
       <weaponList missiles="2" system_power="5">
         <weapon name="WEAPONS_BOMB"/>
-        <weapon name="WEAPONS_ION_2"/>
-        <weapon name="WEAPONS_ANY_2"/>
+        <weapon name="WEAPONS_ION_1"/>
+        <weapon name="WEAPONS_LASER_3"/>
         <weapon name="WEAPONS_LASER_1"/>
       </weaponList>
       <droneList drones="4" system_power="4">
@@ -112,8 +112,8 @@
     <sector id="4">
       <weaponList missiles="2" system_power="6">
         <weapon name="WEAPONS_BOMB"/>
-        <weapon name="WEAPONS_ION_3"/>
-        <weapon name="WEAPONS_ANY_2"/>
+        <weapon name="WEAPONS_ION_2"/>
+        <weapon name="WEAPONS_LASER_3"/>
         <weapon name="WEAPONS_LASER_1"/>
       </weaponList>
       <droneList drones="5" system_power="4">
@@ -125,7 +125,7 @@
       <weaponList missiles="2" system_power="7">
         <weapon name="WEAPONS_BOMB"/>
         <weapon name="WEAPONS_ION_3"/>
-        <weapon name="WEAPONS_ANY_3"/>
+        <weapon name="WEAPONS_LASER_3"/>
         <weapon name="WEAPONS_LASER_1"/>
       </weaponList>
       <droneList drones="5" system_power="5">
@@ -218,9 +218,9 @@
     </systemList>
     <sector id="4">
       <weaponList missiles="0" system_power="6">
-        <weapon name="WEAPONS_ION_3"/>
+        <weapon name="WEAPONS_ION_2"/>
         <weapon name="WEAPONS_ION_1"/>
-        <weapon name="WEAPONS_LASER_1"/>
+        <weapon name="WEAPONS_LASER_2"/>
         <weapon name="WEAPONS_LASER_1"/>
       </weaponList>
       <droneList drones="5" system_power="4">
@@ -230,9 +230,9 @@
     </sector>
     <sector id="5">
       <weaponList missiles="0" system_power="7">
-        <weapon name="WEAPONS_ION_3"/>
         <weapon name="WEAPONS_ION_2"/>
-        <weapon name="WEAPONS_LASER_1"/>
+        <weapon name="WEAPONS_ION_2"/>
+        <weapon name="WEAPONS_LASER_2"/>
         <weapon name="WEAPONS_LASER_1"/>
       </weaponList>
       <droneList drones="5" system_power="5">
@@ -242,10 +242,10 @@
     </sector>
     <sector id="6">
       <weaponList missiles="0" system_power="8">
-        <weapon name="WEAPONS_ION_3"/>
+        <weapon name="WEAPONS_ION_2"/>
         <weapon name="WEAPONS_ION_2"/>
         <weapon name="WEAPONS_LASER_2"/>
-        <weapon name="WEAPONS_LASER_1"/>
+        <weapon name="WEAPONS_LASER_2"/>
       </weaponList>
       <droneList drones="6" system_power="6">
         <drone name="DRONES_DEFENSE_3"/>
@@ -255,10 +255,10 @@
     </sector>
     <sector id="7">
       <weaponList missiles="0" system_power="8">
-        <weapon name="WEAPONS_ION_3"/>
+        <weapon name="WEAPONS_ION_2"/>
         <weapon name="WEAPONS_ION_2"/>
         <weapon name="WEAPONS_LASER_2"/>
-        <weapon name="WEAPONS_LASER_1"/>
+        <weapon name="WEAPONS_LASER_2"/>
       </weaponList>
       <droneList drones="6" system_power="6">
         <drone name="DRONES_DEFENSE_3"/>

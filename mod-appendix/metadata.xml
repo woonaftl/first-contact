@@ -51,7 +51,7 @@ DETAILED FEATURES:
 3. Drones
 3.1. Drones can be upgraded the same way the weapons can. Upgraded drones require 1 less power (no other buffs).
 3.2. New powerful drones to make the drone system more desirable in general, for example, anti-ship ion drone.
-3.3. Most drones were heavily discounted to make them more viable (no drones are more exprensive than before).
+3.3. Most drones were heavily discounted to make them more viable (no drones are more expensive than before).
 3.4. In addition, drones got indirect buffs through Drone recovery arm and ion weapon buffs. Drones can't be buffed directly not to make them too powerful on enemies.
 
 4. Augmentations
@@ -61,7 +61,7 @@ DETAILED FEATURES:
 4.4. Those augmentations that allow interesting strategies like Explosive replicator or are Drone recovery arm easier to find. Those that can only be used for selling like Hacking stun, are harder to find.
 4.5. Starting augmentations can't be sold. In addition, many ships start with upgraded weapons and drones, so selling starting equipment became much less common.
 4.6. Advanced FTL Navigation can be used to travel to any beacon on the sector map (instead of just previously visited beacons) at no additional cost. It's very powerful in combination with early full sector map, useful for diving, and for bad sector layouts, but not that great without these synergies.
-4.7. Drone reactor booster buffed and moved to new race focused on internal drones.
+4.7. Drone reactor booster buffed and made obtainable.
 4.8. Long ranged scanners are unobtainable and unique for race focused on stealth. This is meant to make stealth ship gameplay even more unique.
 4.9. Scrap recovery arm is made unique for Lanius ships that start with them. This is done to make Lanius stand out from other races, and to make enhance their scrap hoarder theme.
 4.10. Repair arm made unobtainable and unique for new race focused on regeneration. This augmentation was often sold, unless the ship was already fully upgraded. Now, you either start with repair arm, can't get rid of it and plan accordingly, or you just never find it.
@@ -79,25 +79,25 @@ DETAILED FEATURES:
 6.2. Engi - defensive drones (combat and internal drones are used by other races)
 6.3. Mantis - teleporter and bomb weapons
 6.4. Rockmen - heavy hitting missiles and heavy lasers (no piercing weapons, those are saved for Crystals)
-6.5. Zoltan - 0 shields and 0 reactor, strong beam weapons and ion weapons
-6.6. Slugs - mind control, anti-bio weapons
+6.5. Zoltan - 0 shields to make use of energy shields, 0 reactor to make use of innate power, strong beam and ion weaponry
+6.6. Slugs - mind control, anti-bio weapons, to make use of lifeform detection
 6.7. Crystals - shield-piercing crystal weapons, lockdown
 6.8. Lanius - hacking, Lanius didn't really have a strong theme, now they went all-in with hacking
-6.9. And some new races
 
-7. Balance changes
+7. Other balance changes
 7.1. Hacking drone depowering exploit was fixed in Hyperspace. The drone just gets destroyed when depowered.
-7.2. It was a very common strategy to just wait for several minutes on weaker enemies to train your crew. Crew training is disabled now. And there are fewer enemies that can't damage you.
-7.3. Many systems are more expensive to buy or upgrade: artillery, hacking, engines, piloting.
-7.4. Rebel Flagship is a bit harder now: all of its rooms are connected including artillery rooms on all difficulty levels, and Flagship lasers do 2 damage instead of 1.
+7.2. It was a very common strategy to just wait for several minutes on weaker enemies to train your crew. To combat this without changing how training works, there should be fewer enemies that cannot damage you.
+7.3. Many systems are more expensive to buy or upgrade: artillery, hacking, shields, engines, piloting.
+7.4. Backup battery can be upgraded up to level 3 to provide a better alternative to reactor upgrades.
+7.5. Rebel Flagship is a bit harder now: all of its rooms are connected including artillery rooms on all difficulty levels, and Flagship lasers do 2 damage instead of 1.
 
 8. Events
 8.1. We can all agree that hitting an empty beacon is a bit disappointing. So, most of them are removed.
 8.2. Boarding events are just as boring as empty beacons. Once you dealt with them a couple times, there is no challenge or variety. Most boarding events are removed, with rare exceptions.
 8.3. Weapon upgrade beacons serve as a partial replacement for empty beacons and boarding events. They're marked on the map, and you cannot gain more scrap from upgrade beacons.
 8.4. Events are more dependant on sector type. Generic events are constained to generic sectors (like sector one). Civilian and uncharted nebula sectors are removed to make room for new and exciting sectors controlled by new races.
-8.5. Some sectors (especially red and nebula) have even stronger theme, for example, Rock sectors have even more hazards, and Mantis sectors have even more boarders.
-8.6. Zoltan sector moved over to nebula, and has a lot of hazards: ion storms and pulsars to make use of Zoltans' special abilities.
+8.5. Some sectors have even stronger theme, for example, Rock sectors have even more hazards, and Mantis sectors have even more boarders.
+8.6. Zoltan sectors have a lot of hazards: ion storms and pulsars to make use of Zoltans' special abilities.
 8.7. Many more new events, new blue options for old events, more possible outcomes for old events.
 
 

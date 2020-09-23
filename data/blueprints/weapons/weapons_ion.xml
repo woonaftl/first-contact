@@ -37,18 +37,6 @@
     <name>ION_4</name>
   </blueprintList>
 
-  <blueprintList name="WEAPONS_PROJ_1">
-    <name>ION_1</name>
-  </blueprintList>
-  <blueprintList name="WEAPONS_PROJ_2">
-    <name>ION_STUN_BURST</name>
-    <name>ION_CHARGEGUN</name>
-  </blueprintList>
-  <blueprintList name="WEAPONS_PROJ_3">
-    <name>ION_STUN_HEAVY</name>
-    <name>ION_4</name>
-  </blueprintList>
-
   <blueprintList name="WEAPONS_ION_1_UPGRADED">
     <name>ION_STUN_BURST_UPGRADED</name>
     <name>ION_CHARGEGUN_UPGRADED</name>
@@ -63,15 +51,6 @@
     <name>ION_CHARGEGUN_UPGRADED</name>
   </blueprintList>
   <blueprintList name="WEAPONS_ANY_2_UPGRADED">
-    <name>ION_STUN_HEAVY_UPGRADED</name>
-    <name>ION_4_UPGRADED</name>
-  </blueprintList>
-
-  <blueprintList name="WEAPONS_PROJ_1_UPGRADED">
-    <name>ION_STUN_BURST_UPGRADED</name>
-    <name>ION_CHARGEGUN_UPGRADED</name>
-  </blueprintList>
-  <blueprintList name="WEAPONS_PROJ_2_UPGRADED">
     <name>ION_STUN_HEAVY_UPGRADED</name>
     <name>ION_4_UPGRADED</name>
   </blueprintList>

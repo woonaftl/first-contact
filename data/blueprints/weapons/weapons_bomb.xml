@@ -6,6 +6,12 @@
     <name>BOMB_FIRE</name>
     <name>BOMB_ION</name>
   </blueprintList>
+  <blueprintList name="WEAPONS_BOMB_UPGRADED">
+    <name>BOMB_1</name>
+    <name>BOMB_BREACH_1</name>
+    <name>BOMB_FIRE</name>
+    <name>BOMB_ION</name>
+  </blueprintList>
   <blueprintList name="WEAPONS_ION">
     <name>BOMB_ION</name>
   </blueprintList>

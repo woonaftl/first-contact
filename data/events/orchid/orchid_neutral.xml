@@ -21,14 +21,14 @@
               <text>Contact the Orchid ship.</text>
               <eventList name="ORCHID_SAVED_LIST">
                 <event>
-                  <text>The Orchid ship has taken heavy damage before you came to help. The only surviving Orchid offers to join your crew.</text>
-                  <crewMember amount="1" class="orchid"/>
+                  <text>The Orchid ship has taken heavy damage before you came to help. Its crew is dead, but you are able to recover a functioning drone from the wreck.</text>
+                  <autoReward level="LOW">drone</autoReward>
                 </event>
-                <event>
+                <event count="2">
                   <text>The Orchid ship offers you some resources as a reward for saving them.</text>
                   <autoReward level="LOW">standard</autoReward>
                 </event>
-                <event>
+                <event count="2">
                   <text>As you fought the pirate, the Orchid ship charged the FTL-drive and jumped away.</text>
                 </event>
               </eventList>
@@ -105,11 +105,17 @@
         <text>The slave ship is destroyed. They won't continue their evil trade, but many lives were probably lost on that ship.</text>
         <autoReward level="MED">standard</autoReward>
       </destroyed>
-      <deadCrew>
-        <text>With all of the overlords dead, one of enslaved Orchids accepts an offer to join your crew.</text>
-        <crewMember amount="1" class="orchid"/>
-        <autoReward level="MED">standard</autoReward>
-      </deadCrew>
+      <deadCrewList>
+        <event count="2">
+          <text>The slavers are dead together with the Orchid slaves. You loot the ship.</text>
+          <autoReward level="MED">standard</autoReward>
+        </event>
+        <event>
+          <text>With all of the overlords dead, one of enslaved Orchids accepts an offer to join your crew.</text>
+          <crewMember amount="1" class="orchid"/>
+          <autoReward level="MED">standard</autoReward>
+        </event>
+      </deadCrewList>
     </ship>
     <choice hidden="true">
       <text>Save the enslaved Orchids!</text>

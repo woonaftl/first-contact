@@ -34,26 +34,27 @@
       <weapons room="4" room_pirate="5"/>
     </systemList>
     <weaponList sector="1" missiles="0" system_power="4">
+      <weapon name="WEAPONS_CORE_2"/>
       <weapon name="WEAPONS_ION_1"/>
-      <weapon name="WEAPONS_BEAM_2"/>
-      <weapon name="WEAPONS_ION_1"/>
+      <weapon name="WEAPONS_CORE_1"/>
     </weaponList>
-    <weaponList sector="2" missiles="0" system_power="4">
+    <weaponList sector="2" missiles="1" system_power="4">
+      <weapon name="WEAPONS_MISSILES_1"/>
+      <weapon name="WEAPONS_CORE_2"/>
       <weapon name="WEAPONS_ION_1"/>
-      <weapon name="WEAPONS_BEAM_2"/>
-      <weapon name="WEAPONS_ION_1"/>
+      <weapon name="WEAPONS_CORE_1"/>
     </weaponList>
     <weaponList sector="3" missiles="1" system_power="5">
       <weapon name="WEAPONS_MISSILES_1"/>
-      <weapon name="WEAPONS_ION_1"/>
-      <weapon name="WEAPONS_BEAM_3"/>
-      <weapon name="WEAPONS_ION_1"/>
+      <weapon name="WEAPONS_CORE_2"/>
+      <weapon name="WEAPONS_ION_2"/>
+      <weapon name="WEAPONS_CORE_1"/>
     </weaponList>
     <weaponList sector="4" missiles="1" system_power="6">
       <weapon name="WEAPONS_MISSILES_1"/>
-      <weapon name="WEAPONS_ION_2"/>
-      <weapon name="WEAPONS_BEAM_3"/>
-      <weapon name="WEAPONS_ION_1"/>
+      <weapon name="WEAPONS_CORE_2"/>
+      <weapon name="WEAPONS_ION_3"/>
+      <weapon name="WEAPONS_CORE_1"/>
     </weaponList>
     <health amount="7"/>
     <crewCount amount="2" max="3" class="energy"/>
@@ -117,22 +118,22 @@
       <weapons room="2" room_pirate="4"/>
     </systemList>
     <weaponList sector="0" missiles="0" system_power="3">
-      <weapon name="WEAPONS_ION_2"/>
-      <weapon name="WEAPONS_LASER_1"/>
+      <weapon name="WEAPONS_ION_1"/>
+      <weapon name="WEAPONS_LASER_2"/>
     </weaponList>
     <weaponList sector="1" missiles="0" system_power="4">
-      <weapon name="WEAPONS_ION_2"/>
-      <weapon name="WEAPONS_LASER_1"/>
+      <weapon name="WEAPONS_ION_1"/>
+      <weapon name="WEAPONS_LASER_2"/>
       <weapon name="WEAPONS_LASER_1"/>
     </weaponList>
     <weaponList sector="2" missiles="0" system_power="4">
-      <weapon name="WEAPONS_ION_2"/>
-      <weapon name="WEAPONS_LASER_1"/>
+      <weapon name="WEAPONS_ION_1"/>
+      <weapon name="WEAPONS_LASER_2"/>
       <weapon name="WEAPONS_LASER_1"/>
     </weaponList>
     <weaponList sector="3" missiles="0" system_power="5">
-      <weapon name="WEAPONS_ION_3"/>
-      <weapon name="WEAPONS_LASER_1"/>
+      <weapon name="WEAPONS_ION_2"/>
+      <weapon name="WEAPONS_LASER_2"/>
       <weapon name="WEAPONS_LASER_1"/>
     </weaponList>
     <health amount="5"/>
@@ -158,22 +159,22 @@
     <weaponList sector="2" missiles="0" system_power="4">
       <weapon name="WEAPONS_BEAM_2"/>
       <weapon name="WEAPONS_ION_1"/>
-      <weapon name="WEAPONS_SIMPLE_1"/>
+      <weapon name="WEAPONS_CORE_1"/>
     </weaponList>
     <weaponList sector="3" missiles="0" system_power="5">
       <weapon name="WEAPONS_BEAM_2"/>
       <weapon name="WEAPONS_ION_1"/>
-      <weapon name="WEAPONS_SIMPLE_2"/>
+      <weapon name="WEAPONS_CORE_2"/>
     </weaponList>
     <weaponList sector="4" missiles="0" system_power="6">
       <weapon name="WEAPONS_BEAM_3"/>
       <weapon name="WEAPONS_ION_1"/>
-      <weapon name="WEAPONS_SIMPLE_2"/>
+      <weapon name="WEAPONS_CORE_2"/>
     </weaponList>
     <weaponList sector="5" missiles="0" system_power="7">
       <weapon name="WEAPONS_BEAM_4"/>
       <weapon name="WEAPONS_ION_1"/>
-      <weapon name="WEAPONS_SIMPLE_2"/>
+      <weapon name="WEAPONS_CORE_2"/>
     </weaponList>
     <health amount="6"/>
     <crewCount amount="3" max="5" class="energy"/>

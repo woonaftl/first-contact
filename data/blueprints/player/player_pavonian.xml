@@ -27,7 +27,6 @@
       <weapon name="LASER_CHAINGUN_UPGRADED"/>
       <weapon name="ION_CHAINGUN_UPGRADED"/>
     </weaponList>
-    <droneList drones="0"/>
     <aug name="SYSTEM_CASING_LOCKED"/>
     <health amount="30"/>
     <maxPower amount="7"/>
@@ -63,7 +62,6 @@
       <weapon name="CHAIN_ERASER_UPGRADED"/>
       <weapon name="LASER_BURST_2_UPGRADED"/>
     </weaponList>
-    <droneList drones="0"/>
     <health amount="30"/>
     <maxPower amount="8"/>
     <aug name="SYSTEM_CASING_LOCKED"/>
@@ -91,22 +89,21 @@
       <oxygen power="1" room="11" start="true" img="room_oxygen_17"/>
       <pilot power="1" room="0" start="true" img="room_pilot_2"/>
       <sensors power="1" room="12" start="true" img="room_sensors_3"/>
-      <shields power="4" room="17" start="true" img="room_shields_4"/>
+      <shields power="2" room="17" start="true" img="room_shields_4"/>
       <teleporter power="1" room="16" start="false"/>
-      <weapons power="3" room="4" start="true" img="room_weapons_5"/>
+      <weapons power="4" room="4" start="true" img="room_weapons_5"/>
     </systemList>
     <weaponSlots>4</weaponSlots>
     <droneSlots>2</droneSlots>
-    <weaponList count="1" missiles="0">
+    <weaponList count="2" missiles="0">
       <weapon name="LASER_CHAINGUN_2_UPGRADED"/>
+      <weapon name="LASER_BURST_1"/>
     </weaponList>
-    <droneList drones="0"/>
     <aug name="SYSTEM_CASING_LOCKED"/>
     <health amount="30"/>
     <maxPower amount="9"/>
-    <crewCount amount="1" class="pavonian"/>
-    <crewCount amount="1" class="orchid"/>
-    <crewCount amount="1" class="pavonian"/>
+    <crewCount amount="2" class="human"/>
+    <crewCount amount="2" class="pavonian"/>
     <shieldImage>kestral</shieldImage>
     <cloakImage>pavonian_cruiser</cloakImage>
     <floorImage>pavonian_cruiser_black</floorImage>

@@ -3,6 +3,7 @@
   <eventList name="NEUTRAL_PAVONIAN">
     <event load="PAVONIAN_DO_NOT_CARE"/>
     <event load="PAVONIAN_DRONE_FACTORY"/>
+    <event load="PAVONIAN_TWO_MANTIS"/>
   </eventList>
 
   <event name="PAVONIAN_DO_NOT_CARE" unique="true">
@@ -151,4 +152,73 @@
     </choice>
   </event>
 
+  <event name="PAVONIAN_TWO_MANTIS" unique="true">
+    <text>You arrive at the beacon and witness an ongoing battle between two Mantis ships. A lonely Pavonian ship is drifting through space, just far enough from the fight not to catch a stray shot.</text>
+    <choice hidden="true">
+      <text>Attack one of the Mantis ships.</text>
+      <event name="PAVONIAN_TWO_MANTIS_FIGHT">
+        <text>Just as you decided to make a move against one of the Mantis ships, its opponent exploded. The remaining Mantis ship moves into combat position, locking weapons on your ship.</text>
+        <ship auto_blueprint="SHIPS_MANTIS" hostile="true">
+          <destroyed>
+            <text>With both Mantis ships destroyed, you harvest useful scrap material from the remains. You contact the Pavonians expecting a reward for helping them.</text>
+            <autoReward level="MED">standard</autoReward>
+            <choice hidden="true">
+              <text id="continue"/>
+              <event>
+                <text>The Pavonians pay you no notice. They didn't even consider themselves in danger.</text>
+              </event>
+            </choice>
+          </destroyed>
+          <deadCrew>
+            <text>With one of the Mantis ships destroyed, and another disabled, you loot the ships. You contact the Pavonians expecting a reward for helping them.</text>
+            <autoReward level="HIGH">standard</autoReward>
+            <choice hidden="true">
+              <text id="continue"/>
+              <event>
+                <text>The Pavonians pay you no notice. They didn't even consider themselves in danger.</text>
+              </event>
+            </choice>
+          </deadCrew>
+          <crew>
+            <crewMember type="mantis" prop="0.80"/>
+            <crewMember type="engi" prop="0.20"/>
+          </crew>
+        </ship>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Warn the Pavonians about possible danger.</text>
+      <event>
+        <text>You explain that after destroying its opponent, the winning Mantis ship might go after the Pavonians. "Oh..." The Pavonian ship jumps away.</text>
+        <choice hidden="true">
+          <text>Attack one of the Mantis ships.</text>
+          <event name="PAVONIAN_TWO_MANTIS_FIGHT">
+            <text>Just as you decided to make a move against one of the Mantis ships, its opponent exploded. The remaining Mantis ship moves into combat position, locking weapons on your ship.</text>
+            <ship auto_blueprint="SHIPS_MANTIS" hostile="true">
+              <destroyed>
+                <text>With both Mantis ships destroyed, you harvest useful scrap material from the remains.</text>
+                <autoReward level="MED">standard</autoReward>
+              </destroyed>
+              <deadCrew>
+                <text>With one of the Mantis ships destroyed, and another disabled, you loot the ships.</text>
+                <autoReward level="HIGH">standard</autoReward>
+              </deadCrew>
+              <crew>
+                <crewMember type="mantis" prop="0.80"/>
+                <crewMember type="engi" prop="0.20"/>
+              </crew>
+            </ship>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>Ignore the battle and jump away.</text>
+          <event/>
+        </choice>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Ignore the battle and jump away.</text>
+      <event/>
+    </choice>
+  </event>
 </FTL>

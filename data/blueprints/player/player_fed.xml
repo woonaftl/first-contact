@@ -45,7 +45,7 @@
     <unlock>There have been rumors of advanced ship construction in the Rebel Stronghold...</unlock>
     <desc>This ship features the latest in Federation technology: an advanced beam weapon that pierces through shields.</desc>
     <systemList>
-      <artillery power="1" room="6" weapon="ARTILLERY_FED"/>
+      <artillery power="1" room="6" start="true" weapon="ARTILLERY_FED"/>
       <battery power="1" room="14" start="false" img="room_battery_3"/>
       <cloaking power="1" room="12" start="false" img="room_cloaking_8"/>
       <clonebay power="1" room="10" start="false"/>
@@ -67,8 +67,6 @@
     <weaponList count="1" missiles="5">
       <weapon name="LASER_BURST_3_UPGRADED"/>
     </weaponList>
-    <droneList drones="2"/>
-    <droneList count="0" drones="0"/>
     <health amount="30"/>
     <maxPower amount="8"/>
     <crewCount amount="1" class="rock"/>
@@ -78,22 +76,19 @@
   </shipBlueprint>
 
   <changelog>
-    <entry>Fed B was remade around missile artillery</entry>
-    <entry>Fed B has a missile launcher artillery that fires 5 shield-piercing missiles dealing 2 damage each at no resource cost</entry>
-    <entry>Fed B starts with upgraded Burst Laser I (no change)</entry>
-    <entry>Fed B starts with Taurus Missiles (buff, guaranteed breach now)</entry>
+    <entry>Fed B remade around missile artillery</entry>
   </changelog>
   <weaponBlueprint name="ARTILLERY_FED_MISSILES">
     <type>MISSILES</type>
     <tip>tip_missiles</tip>
     <title>Artillery Missiles</title>
     <short>Artillery</short>
-    <desc>Powers a slow, high-powered missile launcher that fires five warheads at no resouce cost. More power means faster cooldown.</desc>
-    <tooltip>Artillery: Launcher that automatically fires 5 missiles that deal 2 damage each.</tooltip>
+    <desc>Powers a slow, high-powered missile launcher that fires five warheads at no resource cost. More power means faster cooldown.</desc>
+    <tooltip>Artillery: Launcher that automatically fires 4 missiles that deal 2 damage each.</tooltip>
     <damage>2</damage>
     <missiles>0</missiles>
     <!--game does not respond when there are more shots than rooms on enemy ship-->
-    <shots>5</shots>
+    <shots>4</shots>
     <sp>5</sp>
     <fireChance>1</fireChance>
     <breachChance>1</breachChance>
@@ -124,26 +119,25 @@
   <shipBlueprint name="PLAYER_SHIP_FED_2" layout="fed_cruiser_2" img="fed_cruiser_2">
     <class>Federation Cruiser</class>
     <name>?</name>
-    <!--TODO recolor, layout-->
     <unlock>Complete 2/3 of the Federation Cruiser Achievements to unlock this ship.</unlock>
     <desc>?</desc>
     <systemList>
-      <artillery power="1" room="12" weapon="ARTILLERY_FED_MISSILES"/>
-      <battery power="1" room="3" start="false" img="room_battery_8"/>
-      <cloaking power="1" room="11" start="false" img="room_cloaking_9"/>
-      <clonebay power="1" room="10" start="false" slot="0"/>
-      <doors power="1" room="17" start="true" img="room_doors_2"/>
-      <drones power="2" room="2" start="false" img="room_drones_11"/>
-      <engines power="2" room="15" start="true" img="room_engines_2"/>
-      <hacking power="1" room="13" start="false" img="room_hacking_2"/>
-      <medbay power="1" room="10" start="true" img="room_medbay_5"/>
-      <mind power="1" room="6" start="false" img="room_mind_7"/>
-      <oxygen power="1" room="8" start="true" img="room_oxygen_9"/>
-      <pilot power="1" room="7" start="true" img="room_pilot_3"/>
-      <sensors power="1" room="0" start="true"/>
-      <shields power="2" room="14" start="true" img="room_shields_7"/>
-      <teleporter power="1" room="5" start="false"/>
-      <weapons power="2" room="4" start="true" img="room_weapons_2"/>
+      <artillery power="1" room="19" start="true" weapon="ARTILLERY_FED_MISSILES"/>
+      <battery power="1" room="17" start="false" img="room_battery_14"/>
+      <cloaking power="1" room="16" start="false" img="room_cloaking_3"/>
+      <clonebay power="1" room="2" start="false" slot="0"/>
+      <doors power="1" room="4" start="true" img="room_doors_14"/>
+      <drones power="2" room="14" start="false" img="room_drones_18"/>
+      <engines power="2" room="1" start="true" img="room_engines_15"/>
+      <hacking power="1" room="15" start="false" img="room_hacking_2"/>
+      <medbay power="1" room="2" start="true" img="room_medbay_4"/>
+      <mind power="1" room="8" start="false" img="room_mind_3"/>
+      <oxygen power="1" room="10" start="true" img="room_oxygen"/>
+      <pilot power="1" room="0" start="true" img="room_pilot_2"/>
+      <sensors power="1" room="6" start="true" img="room_sensors_9"/>
+      <shields power="2" room="9" start="true" img="room_shields_12"/>
+      <teleporter power="1" room="7" start="false"/>
+      <weapons power="2" room="20" start="true" img="room_weapons_4"/>
     </systemList>
     <weaponSlots>3</weaponSlots>
     <droneSlots>2</droneSlots>
@@ -151,7 +145,6 @@
       <weapon name="LASER_BURST_2_UPGRADED"/>
       <weapon name="MISSILES_1"/>
     </weaponList>
-    <droneList drones="0"/>
     <health amount="30"/>
     <maxPower amount="7"/>
     <crewCount amount="1" class="rock"/>
@@ -160,6 +153,7 @@
     <crewCount amount="1" class="pavonian"/>
     <shieldImage>fed_cruiser</shieldImage>
     <cloakImage>fed_cruiser</cloakImage>
+    <floorImage>fed_cruiser_2</floorImage>
   </shipBlueprint>
 
   <changelog>
@@ -216,33 +210,31 @@
   <shipBlueprint name="PLAYER_SHIP_FED_3" layout="fed_cruiser_3" img="fed_cruiser_3">
     <class>Federation Cruiser</class>
     <name>?</name>
-    <!--TODO recolor, layout-->
     <unlock>Get to Sector 8 with the Federation Cruiser Type B and Advanced Mode enabled to unlock this ship.</unlock>
     <desc>?</desc>
     <systemList>
-      <artillery power="1" room="9" weapon="ARTILLERY_FED_C"/>
-      <battery power="1" room="7" start="false" img="room_battery_16"/>
-      <cloaking power="1" room="4" start="false" img="room_cloaking_3"/>
-      <clonebay power="1" room="1" start="true"/>
-      <doors power="1" room="13" start="true" img="room_doors"/>
-      <drones power="2" room="17" start="false" img="room_drones_3"/>
-      <engines power="2" room="5" start="true" img="room_engines_8"/>
-      <hacking power="1" room="2" start="false" img="room_hacking_9"/>
-      <medbay power="1" room="1" start="false"/>
-      <mind power="1" room="16" start="false" img="room_mind_3"/>
-      <oxygen power="1" room="12" start="true" img="room_oxygen_2"/>
-      <pilot power="1" room="6" start="true"/>
-      <sensors power="1" room="10" start="false"/>
-      <shields power="2" room="15" start="true" img="room_shields_14"/>
-      <teleporter power="1" room="8" start="false"/>
-      <weapons power="2" room="11" start="true" img="room_weapons"/>
+      <artillery power="1" room="13" start="true" weapon="ARTILLERY_FED_C"/>
+      <battery power="1" room="12" start="false" img="room_battery_22"/>
+      <cloaking power="1" room="5" start="false" img="room_cloaking"/>
+      <clonebay power="1" room="1" start="true" slot="1"/>
+      <doors power="1" room="17" start="true" img="room_doors_9"/>
+      <drones power="2" room="6" start="false" img="room_drones_5"/>
+      <engines power="2" room="7" start="true" img="room_engines_14"/>
+      <hacking power="1" room="3" start="false" img="room_hacking_2"/>
+      <medbay power="1" room="1" start="false" img="room_medbay"/>
+      <mind power="1" room="16" start="false" img="room_mind_17"/>
+      <oxygen power="1" room="9" start="true" img="room_oxygen_9"/>
+      <pilot power="1" room="0" start="true" img="room_pilot_2"/>
+      <sensors power="1" room="4" start="false" img="room_sensors_2"/>
+      <shields power="2" room="8" start="true" img="room_shields_5"/>
+      <teleporter power="1" room="10" start="false"/>
+      <weapons power="2" room="14" start="true" img="room_weapons_16"/>
     </systemList>
     <weaponSlots>3</weaponSlots>
     <droneSlots>2</droneSlots>
     <weaponList count="1" missiles="0">
       <weapon name="BEAM_2_LONG_UPGRADED"/>
     </weaponList>
-    <droneList drones="0"/>
     <health amount="30"/>
     <maxPower amount="7"/>
     <crewCount amount="1" class="slug"/>
@@ -251,6 +243,6 @@
     <crewCount amount="1" class="human"/>
     <shieldImage>fed_cruiser</shieldImage>
     <cloakImage>fed_cruiser</cloakImage>
-    <floorImage>fed_cruiser</floorImage>
+    <floorImage>fed_cruiser_3</floorImage>
   </shipBlueprint>
 </FTL>

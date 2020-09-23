@@ -20,23 +20,13 @@
     <name>SHOTGUN_2</name>
   </blueprintList>
 
-  <blueprintList name="WEAPONS_PROJ_1">
+  <blueprintList name="WEAPONS_CORE_1">
     <name>SHOTGUN_BASIC</name>
   </blueprintList>
-  <blueprintList name="WEAPONS_PROJ_2">
+  <blueprintList name="WEAPONS_CORE_2">
     <name>SHOTGUN</name>
   </blueprintList>
-  <blueprintList name="WEAPONS_PROJ_3">
-    <name>SHOTGUN_2</name>
-  </blueprintList>
-
-  <blueprintList name="WEAPONS_SIMPLE_1">
-    <name>SHOTGUN_BASIC</name>
-  </blueprintList>
-  <blueprintList name="WEAPONS_SIMPLE_2">
-    <name>SHOTGUN</name>
-  </blueprintList>
-  <blueprintList name="WEAPONS_SIMPLE_3">
+  <blueprintList name="WEAPONS_CORE_3">
     <name>SHOTGUN_2</name>
   </blueprintList>
 
@@ -54,17 +44,10 @@
     <name>SHOTGUN_2_UPGRADED</name>
   </blueprintList>
 
-  <blueprintList name="WEAPONS_PROJ_1_UPGRADED">
+  <blueprintList name="WEAPONS_CORE_1_UPGRADED">
     <name>SHOTGUN_UPGRADED</name>
   </blueprintList>
-  <blueprintList name="WEAPONS_PROJ_2_UPGRADED">
-    <name>SHOTGUN_2_UPGRADED</name>
-  </blueprintList>
-
-  <blueprintList name="WEAPONS_SIMPLE_1_UPGRADED">
-    <name>SHOTGUN_UPGRADED</name>
-  </blueprintList>
-  <blueprintList name="WEAPONS_SIMPLE_2_UPGRADED">
+  <blueprintList name="WEAPONS_CORE_2_UPGRADED">
     <name>SHOTGUN_2_UPGRADED</name>
   </blueprintList>
 

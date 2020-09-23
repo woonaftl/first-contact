@@ -36,39 +36,21 @@
     <name>LASER_BURST_5</name>
   </blueprintList>
 
-  <blueprintList name="WEAPONS_PROJ_1">
+  <blueprintList name="WEAPONS_CORE_1">
     <name>LASER_BURST_1</name>
     <name>LASER_HULL_BASIC</name>
   </blueprintList>
-  <blueprintList name="WEAPONS_PROJ_2">
+  <blueprintList name="WEAPONS_CORE_2">
     <name>LASER_BURST_2</name>
     <name>LASER_CHARGEGUN</name>
     <name>LASER_HULL_1</name>
   </blueprintList>
-  <blueprintList name="WEAPONS_PROJ_3">
+  <blueprintList name="WEAPONS_CORE_3">
     <name>LASER_BURST_3</name>
     <name>LASER_CHARGEGUN_2</name>
     <name>LASER_HULL_2</name>
   </blueprintList>
-  <blueprintList name="WEAPONS_PROJ_4">
-    <name>LASER_BURST_5</name>
-  </blueprintList>
-
-  <blueprintList name="WEAPONS_SIMPLE_1">
-    <name>LASER_BURST_1</name>
-    <name>LASER_HULL_BASIC</name>
-  </blueprintList>
-  <blueprintList name="WEAPONS_SIMPLE_2">
-    <name>LASER_BURST_2</name>
-    <name>LASER_CHARGEGUN</name>
-    <name>LASER_HULL_1</name>
-  </blueprintList>
-  <blueprintList name="WEAPONS_SIMPLE_3">
-    <name>LASER_BURST_3</name>
-    <name>LASER_CHARGEGUN_2</name>
-    <name>LASER_HULL_2</name>
-  </blueprintList>
-  <blueprintList name="WEAPONS_SIMPLE_4">
+  <blueprintList name="WEAPONS_CORE_4">
     <name>LASER_BURST_5</name>
   </blueprintList>
 
@@ -100,31 +82,17 @@
     <name>LASER_BURST_5_UPGRADED</name>
   </blueprintList>
 
-  <blueprintList name="WEAPONS_PROJ_1_UPGRADED">
+  <blueprintList name="WEAPONS_CORE_1_UPGRADED">
     <name>LASER_BURST_2_UPGRADED</name>
     <name>LASER_CHARGEGUN_UPGRADED</name>
     <name>LASER_HULL_1_UPGRADED</name>
   </blueprintList>
-  <blueprintList name="WEAPONS_PROJ_2_UPGRADED">
+  <blueprintList name="WEAPONS_CORE_2_UPGRADED">
     <name>LASER_BURST_3_UPGRADED</name>
     <name>LASER_CHARGEGUN_2_UPGRADED</name>
     <name>LASER_HULL_2_UPGRADED</name>
   </blueprintList>
-  <blueprintList name="WEAPONS_PROJ_3_UPGRADED">
-    <name>LASER_BURST_5_UPGRADED</name>
-  </blueprintList>
-
-  <blueprintList name="WEAPONS_SIMPLE_1_UPGRADED">
-    <name>LASER_BURST_2_UPGRADED</name>
-    <name>LASER_CHARGEGUN_UPGRADED</name>
-    <name>LASER_HULL_1_UPGRADED</name>
-  </blueprintList>
-  <blueprintList name="WEAPONS_SIMPLE_2_UPGRADED">
-    <name>LASER_BURST_3_UPGRADED</name>
-    <name>LASER_CHARGEGUN_2_UPGRADED</name>
-    <name>LASER_HULL_2_UPGRADED</name>
-  </blueprintList>
-  <blueprintList name="WEAPONS_SIMPLE_3_UPGRADED">
+  <blueprintList name="WEAPONS_CORE_3_UPGRADED">
     <name>LASER_BURST_5_UPGRADED</name>
   </blueprintList>
 
