@@ -398,6 +398,42 @@
       </powerEffect>
     </race>
 
+    <race name="strider">
+      <!--<skills>
+        <piloting req="10000000"/>
+        <engines req="10000000"/>
+        <shields req="10000000"/>
+        <weapons req="10000000"/>
+        <repair req="10000000"/>
+        <combat req="10000000"/>
+      </skills>-->
+      <!--<deathSounds>
+        <deathSound>orchidDeath</deathSound>
+      </deathSounds>-->
+      <powerEffect>
+        <cooldown>30</cooldown>
+        <jumpCooldown>full</jumpCooldown>
+        <!--<powerSounds>
+          <powerSound>lockdown1</powerSound>
+          <powerSound>lockdown2</powerSound>
+        </powerSounds>-->
+        <buttonText>STEALTH</buttonText>
+        <tooltip>Ready: Click to become invisible and invulnerable</tooltip>
+        <cooldownColor r="0" g="110" b="155"/>
+        <!--<effectAnim>explosion_crystal</effectAnim>-->
+        <temporaryEffect>
+          <duration>10</duration>
+          <cooldownColor r="100" g="210" b="255"/>
+          <!--<finishSounds>
+            <finishSound>mindControlEnd</finishSound>
+          </finishSounds>-->
+          <!--<effectAnim>mindcontrol</effectAnim>-->
+          <invulnerable>true</invulnerable>
+          <animSheet baseVisible="false">strider_stealth</animSheet>
+        </temporaryEffect>
+      </powerEffect>
+    </race>
+
     <race name="cyborglice">
       <damageTakenMultiplier>0.5</damageTakenMultiplier>
       <!--<skills>

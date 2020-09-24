@@ -276,7 +276,19 @@
     </powerList>
   </crewBlueprint>
 
-    <crewBlueprint name="cyborglice">
+  <crewBlueprint name="strider">
+    <title>Strider</title>
+    <short>Strider</short>
+    <desc>Masters of staying unseen, even the Striders have not managed to remain neutral in the Galactic War.</desc>
+    <cost>60</cost>
+    <bp>2</bp>
+    <rarity>0</rarity>
+    <powerList>
+      <power>Active: become invisible and invulnerable for 10 seconds</power>
+    </powerList>
+  </crewBlueprint>
+
+  <crewBlueprint name="cyborglice">
     <title>?</title>
     <short>?</short>
     <desc>?</desc>

@@ -4,6 +4,9 @@
     <event load="PAVONIAN_DO_NOT_CARE"/>
     <event load="PAVONIAN_DRONE_FACTORY"/>
     <event load="PAVONIAN_TWO_MANTIS"/>
+    <event load="PAVONIAN_LANIUS"/>
+    <event load="PAVONIAN_WASTE"/>
+    <event load="PAVONIAN_BEGGAR"/>
   </eventList>
 
   <event name="PAVONIAN_DO_NOT_CARE" unique="true">
@@ -218,6 +221,106 @@
     </choice>
     <choice hidden="true">
       <text>Ignore the battle and jump away.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <event name="PAVONIAN_LANIUS" unique="true">
+    <text>A Lanius ship, rare guest outside of few sectors, is absorbing the wreck of some ship that's too late to identify. The Pavonian vessels are moving in the distance, without paying attention to either you or the Lanius.</text>
+    <choice hidden="true">
+      <text>Attack the Lanius, someone has to stop them.</text>
+      <event>
+        <text>Acknowledging you as a threat, the Lanius ship stops collecting scrap metal and locks its weapons on your ship.</text>
+        <ship load="LANIUS_SHIP" hostile="true"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Leave the Lanius alone.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <event name="PAVONIAN_WASTE" unique="true">
+    <text>A lonely Pavonian ship awaits you at the beacon. It completely ignores you, drifting through space. Suddenly, its airlocks open, and a huge pile of waste is ejected. It is flying right at your ship!</text>
+    <choice hidden="true">
+      <text>Evasive maneuvers!</text>
+      <event>
+        <text>Your pilot tried their best, but the pile of waste still manages to hit your ship. No serious damage was done to the hull, but the Pavonians must still pay for that.</text>
+        <choice hidden="true">
+          <text>Confront the Pavonian ship.</text>
+          <event load="PAVONIAN_WASTE_CONFRONT"/>
+        </choice>
+      </event>
+    </choice>
+    <choice hidden="true" req="engines" lvl="4">
+      <text>(Improved Engines) Full thrust!</text>
+      <event>
+        <text>The pile of waste misses your cruiser. But just dumping your waste into space is gross and unacceptable.</text>
+        <choice hidden="true">
+          <text>Confront the Pavonian ship.</text>
+          <event load="PAVONIAN_WASTE_CONFRONT"/>
+        </choice>
+        <choice hidden="true">
+          <text>Collect the waste, there could be something useful there.</text>
+          <eventList>
+            <event>
+              <text>To your surprise, you managed to find a functioning weapon and some scrap in the pile of junk.</text>
+              <autoReward level="LOW">weapon</autoReward>
+            </event>
+            <event>
+              <text>To your disappointment, all of the waste turned out to be biological. No scrap metal was found.</text>
+              <choice hidden="true">
+                <text>Confront the Pavonian ship.</text>
+                <event load="PAVONIAN_WASTE_CONFRONT"/>
+              </choice>
+              <choice hidden="true" req="WEAPONS_FLAK">
+                <text>(Flak Gun) Load the waste as ammunition and launch it into Pavonian ship.</text>
+                <event>
+                  <text>The Pavonians were not expecting THAT. A chunk of their ship's hull has fallen off, and they turn towards you, arming their weapons.</text>
+                  <ship hostile="true" load="PAVONIAN_SHIP"/>
+                </event>
+              </choice>
+            </event>
+          </eventList>
+        </choice>
+      </event>
+    </choice>
+  </event>
+  <event name="PAVONIAN_WASTE_CONFRONT">
+    <text>There are no words "illegal", "outlawed" or "consequence" in Pavonian language, and they struggle to understand that they did something wrong. They don't even apologize and completely ignore your demands to pay for the damage their waste has done to your ship and, most importantly, your feelings.</text>
+    <ship hostile="false" load="PAVONIAN_SHIP"/>
+    <choice hidden="true">
+      <text>Attack the ship.</text>
+      <event>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Let the Pavonians go this time.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <event name="PAVONIAN_BEGGAR" unique="true">
+    <text>The only ship at the beacon is controlled by Pavonians. Their negotiator appears on the comm: "Scrap. We need it. Please give us some scrap."</text>
+    <choice>
+      <text>Send them some scrap.</text>
+      <event>
+        <text>The Pavonians look pleased. "Thank you so much, mystery benefactor. We don't have anything to pay you with, but please follow us. You won't be disappointed." The Pavonian ship jumps away.</text>
+        <item_modify>
+          <item type="scrap" min="-14" max="-9"/>
+        </item_modify>
+        <quest event="PAVONIAN_REWARD_QUEST"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Attack the extorters.</text>
+      <event>
+        <ship hostile="true" load="PAVONIAN_SHIP"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Ignore the ship.</text>
       <event/>
     </choice>
   </event>

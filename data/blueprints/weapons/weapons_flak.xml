@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FTL>
+  <blueprintList name="WEAPONS_FLAK">
+    <name>SHOTGUN_BASIC</name>
+    <name>SHOTGUN</name>
+    <name>SHOTGUN_2</name>
+    <name>SHOTGUN_UPGRADED</name>
+    <name>SHOTGUN_2_UPGRADED</name>
+  </blueprintList>
+
   <blueprintList name="WEAPONS_FLAK_1">
     <name>SHOTGUN_BASIC</name>
   </blueprintList>

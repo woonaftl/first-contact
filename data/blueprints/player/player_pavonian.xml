@@ -35,7 +35,7 @@
     <cloakImage>pavonian_cruiser</cloakImage>
   </shipBlueprint>
 
-  <shipBlueprint name="PLAYER_SHIP_PAVONIAN_2" layout="pavonian_cruiser_colorful" img="pavonian_cruiser_colorful">
+  <shipBlueprint name="PLAYER_SHIP_PAVONIAN_2" layout="pavonian_cruiser_colorful" img="pavonian_cruiser">
     <class>Pavonian Cruiser</class>
     <name>?</name>
     <desc>The Chain Eraser can deal massive damage to hull and systems winning a battle with one precise shot.</desc>

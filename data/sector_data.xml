@@ -59,8 +59,8 @@
     <event name="NEBULA_HOSTILE_CIVILIAN" min="1" max="1"/>
 
     <event name="NEUTRAL_CIVILIAN" min="6" max="6"/>
-    <event name="HOSTILE_CIVILIAN" min="5" max="5"/>
-    <event name="NOSHIP_CIVILIAN" min="8" max="8"/>
+    <event name="HOSTILE_CIVILIAN" min="4" max="4"/>
+    <event name="NOSHIP_CIVILIAN" min="7" max="7"/>
   </sectorDescription>
 
   <sectorDescription name="FINAL" minSector="7" unique="true">
@@ -73,8 +73,8 @@
     <startEvent>BOSS_NEUTRAL</startEvent>
     <event name="STORE" min="1" max="1"/>
     <event name="BOSS_REPAIR_STATION" min="3" max="3"/>
-    <event name="BOSS_HOSTILE" min="10" max="10"/>
-    <event name="BOSS_NEUTRAL" min="10" max="10"/>
+    <event name="BOSS_HOSTILE" min="9" max="9"/>
+    <event name="BOSS_NEUTRAL" min="9" max="9"/>
   </sectorDescription>
 
   <sectorDescription name="CRYSTAL_HOME" minSector="0" unique="true">
@@ -100,7 +100,7 @@
     <event name="UPGRADE_LIST_ALL" min="1" max="1"/>
     <event name="NOSHIP_CRYSTAL" min="3" max="3"/>
     <event name="NEUTRAL_CRYSTAL" min="7" max="7"/>
-    <event name="HOSTILE_CRYSTAL" min="11" max="11"/>
+    <event name="HOSTILE_CRYSTAL" min="9" max="9"/>
   </sectorDescription>
 
   <sectorDescription name="ENGI_SECTOR" minSector="1" unique="true">
@@ -134,8 +134,8 @@
     <event name="DISTRESS_ENGI_REACTOR" min="1" max="1"/>
 
     <event name="NEUTRAL_ENGI" min="3" max="3"/>
-    <event name="HOSTILE_ENGI" min="5" max="5"/>
-    <event name="NOSHIP_ENGI" min="5" max="5"/>
+    <event name="HOSTILE_ENGI" min="4" max="4"/>
+    <event name="NOSHIP_ENGI" min="4" max="4"/>
     <event name="HOSTILE_HAZARD_ENGI" min="1" max="1"/>
   </sectorDescription>
 
@@ -169,8 +169,8 @@
     <event name="DISTRESS_ENGI_REACTOR" min="1" max="1"/>
 
     <event name="NEUTRAL_ENGI" min="3" max="3"/>
-    <event name="HOSTILE_ENGI" min="5" max="5"/>
-    <event name="NOSHIP_ENGI" min="5" max="5"/>
+    <event name="HOSTILE_ENGI" min="4" max="4"/>
+    <event name="NOSHIP_ENGI" min="4" max="4"/>
     <event name="HOSTILE_HAZARD_ENGI" min="1" max="1"/>
   </sectorDescription>
 
@@ -199,8 +199,8 @@
 
     <event name="NOSHIP_LANIUS" min="3" max="3"/>
     <event name="HOSTILE_HAZARD_LANIUS" min="1" max="1"/>
-    <event name="HOSTILE_LANIUS" min="7" max="7"/>
-    <event name="NEUTRAL_LANIUS" min="10" max="10"/>
+    <event name="HOSTILE_LANIUS" min="6" max="6"/>
+    <event name="NEUTRAL_LANIUS" min="9" max="9"/>
   </sectorDescription>
 
   <sectorDescription name="LANIUS_SECTOR_2" minSector="1" unique="false">
@@ -228,54 +228,54 @@
 
     <event name="NOSHIP_LANIUS" min="3" max="3"/>
     <event name="HOSTILE_HAZARD_LANIUS" min="1" max="1"/>
-    <event name="HOSTILE_LANIUS" min="7" max="7"/>
-    <event name="NEUTRAL_LANIUS" min="10" max="10"/>
+    <event name="HOSTILE_LANIUS" min="6" max="6"/>
+    <event name="NEUTRAL_LANIUS" min="9" max="9"/>
   </sectorDescription>
-<!--
-  <sectorDescription name="LIZARD_SECTOR" minSector="1" unique="true">
-    <nameList>
-      <name>Lizard Homeworlds</name>
-    </nameList>
-    <trackList>
-      <track>cosmos</track>
-      <track>debris</track>
-      <track>milkyway</track>
-    </trackList>
-    <rarityList>
-      <blueprint name="lizard" rarity="1"/>
-      <blueprint name="mantis" rarity="3"/>
-      <blueprint name="human" rarity="3"/>
-      <blueprint name="engi" rarity="3"/>
-    </rarityList>
-    <startEvent>START_BEACON_LIZARD</startEvent>
-    <event name="STORE" min="2" max="2"/>
-    <event name="UPGRADE_LIST_ALL" min="2" max="2"/>
+  <!--
+    <sectorDescription name="LIZARD_SECTOR" minSector="1" unique="true">
+      <nameList>
+        <name>Lizard Homeworlds</name>
+      </nameList>
+      <trackList>
+        <track>cosmos</track>
+        <track>debris</track>
+        <track>milkyway</track>
+      </trackList>
+      <rarityList>
+        <blueprint name="lizard" rarity="1"/>
+        <blueprint name="mantis" rarity="3"/>
+        <blueprint name="human" rarity="3"/>
+        <blueprint name="engi" rarity="3"/>
+      </rarityList>
+      <startEvent>START_BEACON_LIZARD</startEvent>
+      <event name="STORE" min="2" max="2"/>
+      <event name="UPGRADE_LIST_ALL" min="2" max="2"/>
 
-    <event name="ASTEROID_DERELICT_SHIP" min="1" max="1"/>
-  </sectorDescription>
+      <event name="ASTEROID_DERELICT_SHIP" min="1" max="1"/>
+    </sectorDescription>
 
-  <sectorDescription name="LIZARD_SECTOR_2" minSector="1" unique="false">
-    <nameList>
-      <name>Lizard Controlled Sector</name>
-    </nameList>
-    <trackList>
-      <track>cosmos</track>
-      <track>debris</track>
-      <track>milkyway</track>
-    </trackList>
-    <rarityList>
-      <blueprint name="lizard" rarity="1"/>
-      <blueprint name="mantis" rarity="3"/>
-      <blueprint name="human" rarity="3"/>
-      <blueprint name="engi" rarity="3"/>
-    </rarityList>
-    <startEvent>START_BEACON_LIZARD</startEvent>
-    <event name="STORE" min="2" max="2"/>
-    <event name="UPGRADE_LIST_ALL" min="2" max="2"/>
+    <sectorDescription name="LIZARD_SECTOR_2" minSector="1" unique="false">
+      <nameList>
+        <name>Lizard Controlled Sector</name>
+      </nameList>
+      <trackList>
+        <track>cosmos</track>
+        <track>debris</track>
+        <track>milkyway</track>
+      </trackList>
+      <rarityList>
+        <blueprint name="lizard" rarity="1"/>
+        <blueprint name="mantis" rarity="3"/>
+        <blueprint name="human" rarity="3"/>
+        <blueprint name="engi" rarity="3"/>
+      </rarityList>
+      <startEvent>START_BEACON_LIZARD</startEvent>
+      <event name="STORE" min="2" max="2"/>
+      <event name="UPGRADE_LIST_ALL" min="2" max="2"/>
 
-    <event name="ASTEROID_DERELICT_SHIP" min="1" max="1"/>
-  </sectorDescription>
--->
+      <event name="ASTEROID_DERELICT_SHIP" min="1" max="1"/>
+    </sectorDescription>
+  -->
   <sectorDescription name="MANTIS_SECTOR" minSector="2" unique="true">
     <nameList>
       <name>Mantis Homeworlds</name>
@@ -304,8 +304,8 @@
 
     <event name="NOSHIP_MANTIS" min="1" max="1"/>
     <event name="HOSTILE_HAZARD_MANTIS" min="1" max="1"/>
-    <event name="NEUTRAL_MANTIS" min="4" max="4"/>
-    <event name="HOSTILE_MANTIS" min="9" max="9"/>
+    <event name="NEUTRAL_MANTIS" min="3" max="3"/>
+    <event name="HOSTILE_MANTIS" min="8" max="8"/>
   </sectorDescription>
 
   <sectorDescription name="MANTIS_SECTOR_2" minSector="1" unique="false">
@@ -335,8 +335,8 @@
 
     <event name="NOSHIP_MANTIS" min="1" max="1"/>
     <event name="HOSTILE_HAZARD_MANTIS" min="1" max="1"/>
-    <event name="NEUTRAL_MANTIS" min="4" max="4"/>
-    <event name="HOSTILE_MANTIS" min="10" max="10"/>
+    <event name="NEUTRAL_MANTIS" min="3" max="3"/>
+    <event name="HOSTILE_MANTIS" min="9" max="9"/>
   </sectorDescription>
 
   <sectorDescription name="ORCHID_SECTOR" minSector="1" unique="true">
@@ -362,9 +362,9 @@
 
     <event name="ASTEROID_DERELICT_SHIP" min="1" max="1"/>
 
-    <event name="NOSHIP_ORCHID" min="5" max="5"/>
+    <event name="NOSHIP_ORCHID" min="4" max="4"/>
     <event name="NEUTRAL_ORCHID" min="6" max="6"/>
-    <event name="HOSTILE_ORCHID" min="5" max="5"/>
+    <event name="HOSTILE_ORCHID" min="4" max="4"/>
     <event name="ORCHID_FIGHT" min="2" max="2"/>
   </sectorDescription>
 
@@ -391,9 +391,9 @@
 
     <event name="ASTEROID_DERELICT_SHIP" min="1" max="1"/>
 
-    <event name="NOSHIP_ORCHID" min="5" max="5"/>
+    <event name="NOSHIP_ORCHID" min="4" max="4"/>
     <event name="NEUTRAL_ORCHID" min="6" max="6"/>
-    <event name="HOSTILE_ORCHID" min="5" max="5"/>
+    <event name="HOSTILE_ORCHID" min="4" max="4"/>
     <event name="ORCHID_FIGHT" min="2" max="2"/>
   </sectorDescription>
 
@@ -419,8 +419,8 @@
     <event name="ASTEROID_DERELICT_SHIP" min="1" max="1"/>
 
     <event name="HOSTILE_HAZARD_PAVONIAN" min="1" max="1"/>
-    <event name="HOSTILE_PAVONIAN" min="3" max="3"/>
-    <event name="NEUTRAL_PAVONIAN" min="3" max="3"/>
+    <event name="HOSTILE_PAVONIAN" min="6" max="6"/>
+    <event name="NEUTRAL_PAVONIAN" min="6" max="6"/>
     <event name="NOSHIP_PAVONIAN" min="4" max="4"/>
   </sectorDescription>
 
@@ -446,8 +446,8 @@
     <event name="ASTEROID_DERELICT_SHIP" min="1" max="1"/>
 
     <event name="HOSTILE_HAZARD_PAVONIAN" min="1" max="1"/>
-    <event name="HOSTILE_PAVONIAN" min="3" max="3"/>
-    <event name="NEUTRAL_PAVONIAN" min="3" max="3"/>
+    <event name="HOSTILE_PAVONIAN" min="6" max="6"/>
+    <event name="NEUTRAL_PAVONIAN" min="6" max="6"/>
     <event name="NOSHIP_PAVONIAN" min="4" max="4"/>
   </sectorDescription>
 
@@ -472,8 +472,8 @@
     <event name="NEBULA_NEUTRAL_PIRATE" min="1" max="1"/>
 
     <event name="HOSTILE_HAZARD_PIRATE" min="2" max="2"/>
-    <event name="HOSTILE_PIRATE" min="6" max="6"/>
-    <event name="NEUTRAL_PIRATE" min="5" max="5"/>
+    <event name="HOSTILE_PIRATE" min="5" max="5"/>
+    <event name="NEUTRAL_PIRATE" min="4" max="4"/>
     <event name="NOSHIP_PIRATE" min="3" max="3"/>
   </sectorDescription>
 
@@ -497,8 +497,8 @@
     <event name="NEBULA_NEUTRAL_PIRATE" min="1" max="1"/>
 
     <event name="HOSTILE_HAZARD_PIRATE" min="2" max="2"/>
-    <event name="HOSTILE_PIRATE" min="7" max="7"/>
-    <event name="NEUTRAL_PIRATE" min="5" max="5"/>
+    <event name="HOSTILE_PIRATE" min="6" max="6"/>
+    <event name="NEUTRAL_PIRATE" min="4" max="4"/>
     <event name="NOSHIP_PIRATE" min="3" max="3"/>
   </sectorDescription>
 
@@ -530,8 +530,8 @@
     <event name="NEBULA_NEUTRAL_REBEL" min="1" max="1"/>
 
     <event name="HOSTILE_HAZARD_REBEL" min="1" max="1"/>
-    <event name="HOSTILE_REBEL" min="7" max="7"/>
-    <event name="NEUTRAL_REBEL" min="8" max="8"/>
+    <event name="HOSTILE_REBEL" min="6" max="6"/>
+    <event name="NEUTRAL_REBEL" min="7" max="7"/>
     <event name="NOSHIP_REBEL" min="1" max="1"/>
   </sectorDescription>
 
@@ -562,8 +562,8 @@
     <event name="NEBULA_NEUTRAL_REBEL" min="1" max="1"/>
 
     <event name="HOSTILE_HAZARD_REBEL" min="1" max="1"/>
-    <event name="HOSTILE_REBEL" min="7" max="7"/>
-    <event name="NEUTRAL_REBEL" min="9" max="9"/>
+    <event name="HOSTILE_REBEL" min="6" max="6"/>
+    <event name="NEUTRAL_REBEL" min="8" max="8"/>
     <event name="NOSHIP_REBEL" min="1" max="1"/>
   </sectorDescription>
 
@@ -600,9 +600,9 @@
     <event name="ROCK_MISSIONARY" min="1" max="1"/>
 
     <event name="NOSHIP_ROCK" min="1" max="1"/>
-    <event name="NEUTRAL_ROCK" min="4" max="4"/>
+    <event name="NEUTRAL_ROCK" min="3" max="3"/>
     <event name="HOSTILE_ROCK" min="3" max="3"/>
-    <event name="HOSTILE_HAZARD_ROCK" min="8" max="8"/>
+    <event name="HOSTILE_HAZARD_ROCK" min="7" max="7"/>
   </sectorDescription>
 
   <sectorDescription name="ROCK_SECTOR_2" minSector="2" unique="false">
@@ -636,9 +636,9 @@
     <event name="ROCK_MISSIONARY" min="1" max="1"/>
 
     <event name="NOSHIP_ROCK" min="1" max="1"/>
-    <event name="NEUTRAL_ROCK" min="5" max="5"/>
+    <event name="NEUTRAL_ROCK" min="4" max="4"/>
     <event name="HOSTILE_ROCK" min="3" max="3"/>
-    <event name="HOSTILE_HAZARD_ROCK" min="9" max="9"/>
+    <event name="HOSTILE_HAZARD_ROCK" min="8" max="8"/>
   </sectorDescription>
 
   <sectorDescription name="SLUG_SECTOR" minSector="2" unique="true">
@@ -669,9 +669,9 @@
     <event name="DONOR_BLACK_RAVEN" min="1" max="1"/>
 
     <event name="NEBULA_HOSTILE_HAZARD_SLUG" min="1" max="1"/>
-    <event name="NEBULA_NOSHIP_SLUG" min="3" max="3"/>
+    <event name="NEBULA_NOSHIP_SLUG" min="2" max="2"/>
     <event name="NEBULA_NEUTRAL_SLUG" min="6" max="6"/>
-    <event name="NEBULA_HOSTILE_SLUG" min="4" max="4"/>
+    <event name="NEBULA_HOSTILE_SLUG" min="3" max="3"/>
 
     <event name="NEUTRAL_SLUG" min="1" max="1"/>
     <event name="HOSTILE_SLUG" min="2" max="2"/>
@@ -702,64 +702,64 @@
     <event name="UPGRADE_LIST_NEBULA" min="2" max="2"/>
 
     <event name="NEBULA_HOSTILE_HAZARD_SLUG" min="1" max="1"/>
-    <event name="NEBULA_NOSHIP_SLUG" min="3" max="3"/>
+    <event name="NEBULA_NOSHIP_SLUG" min="2" max="2"/>
     <event name="NEBULA_NEUTRAL_SLUG" min="7" max="7"/>
-    <event name="NEBULA_HOSTILE_SLUG" min="5" max="5"/>
+    <event name="NEBULA_HOSTILE_SLUG" min="4" max="4"/>
 
     <event name="NEUTRAL_SLUG" min="1" max="1"/>
     <event name="HOSTILE_SLUG" min="2" max="2"/>
   </sectorDescription>
-<!--
-  <sectorDescription name="WARPED_SECTOR" minSector="3" unique="true">
-    <nameList>
-      <name>Warped Home Nebula</name>
-    </nameList>
-    <trackList>
-      <track>void</track>
-      <track>deepspace</track>
-      <track>wasteland</track>
-      <track>debris</track>
-    </trackList>
-    <rarityList>
-      <blueprint name="warped" rarity="1"/>
-      <blueprint name="human" rarity="0"/>
-      <blueprint name="engi" rarity="0"/>
-      <blueprint name="mantis" rarity="5"/>
-      <blueprint name="rock" rarity="0"/>
-      <blueprint name="slug" rarity="4"/>
-    </rarityList>
-    <startEvent>START_BEACON_WARPED</startEvent>
-    <event name="STORE" min="1" max="1"/>
-    <event name="UPGRADE_LIST_NEBULA" min="1" max="1"/>
+  <!--
+    <sectorDescription name="WARPED_SECTOR" minSector="3" unique="true">
+      <nameList>
+        <name>Warped Home Nebula</name>
+      </nameList>
+      <trackList>
+        <track>void</track>
+        <track>deepspace</track>
+        <track>wasteland</track>
+        <track>debris</track>
+      </trackList>
+      <rarityList>
+        <blueprint name="warped" rarity="1"/>
+        <blueprint name="human" rarity="0"/>
+        <blueprint name="engi" rarity="0"/>
+        <blueprint name="mantis" rarity="5"/>
+        <blueprint name="rock" rarity="0"/>
+        <blueprint name="slug" rarity="4"/>
+      </rarityList>
+      <startEvent>START_BEACON_WARPED</startEvent>
+      <event name="STORE" min="1" max="1"/>
+      <event name="UPGRADE_LIST_NEBULA" min="1" max="1"/>
 
-    <event name="WARPED_DEAL_DEVIL" min="1" max="1"/>
-  </sectorDescription>
+      <event name="WARPED_DEAL_DEVIL" min="1" max="1"/>
+    </sectorDescription>
 
-  <sectorDescription name="WARPED_SECTOR_2" minSector="2" unique="false">
-    <nameList>
-      <name>Warped Controlled Nebula</name>
-    </nameList>
-    <trackList>
-      <track>void</track>
-      <track>deepspace</track>
-      <track>wasteland</track>
-      <track>debris</track>
-    </trackList>
-    <rarityList>
-      <blueprint name="warped" rarity="1"/>
-      <blueprint name="human" rarity="0"/>
-      <blueprint name="engi" rarity="0"/>
-      <blueprint name="mantis" rarity="5"/>
-      <blueprint name="rock" rarity="0"/>
-      <blueprint name="slug" rarity="4"/>
-    </rarityList>
-    <startEvent>START_BEACON_WARPED</startEvent>
-    <event name="STORE" min="1" max="1"/>
-    <event name="UPGRADE_LIST_NEBULA" min="1" max="1"/>
+    <sectorDescription name="WARPED_SECTOR_2" minSector="2" unique="false">
+      <nameList>
+        <name>Warped Controlled Nebula</name>
+      </nameList>
+      <trackList>
+        <track>void</track>
+        <track>deepspace</track>
+        <track>wasteland</track>
+        <track>debris</track>
+      </trackList>
+      <rarityList>
+        <blueprint name="warped" rarity="1"/>
+        <blueprint name="human" rarity="0"/>
+        <blueprint name="engi" rarity="0"/>
+        <blueprint name="mantis" rarity="5"/>
+        <blueprint name="rock" rarity="0"/>
+        <blueprint name="slug" rarity="4"/>
+      </rarityList>
+      <startEvent>START_BEACON_WARPED</startEvent>
+      <event name="STORE" min="1" max="1"/>
+      <event name="UPGRADE_LIST_NEBULA" min="1" max="1"/>
 
-    <event name="WARPED_DEAL_DEVIL" min="1" max="1"/>
-  </sectorDescription>
--->
+      <event name="WARPED_DEAL_DEVIL" min="1" max="1"/>
+    </sectorDescription>
+  -->
   <sectorDescription name="ZOLTAN_SECTOR" minSector="2" unique="true">
     <nameList>
       <name>Zoltan Homeworlds</name>
@@ -790,10 +790,10 @@
     <event name="NEBULA_NOSHIP_ZOLTAN" min="2" max="2"/>
     <event name="NEBULA_NEUTRAL_ZOLTAN" min="1" max="1"/>
 
-    <event name="HOSTILE_HAZARD_ZOLTAN" min="2" max="2"/>
+    <event name="HOSTILE_HAZARD_ZOLTAN" min="1" max="1"/>
     <event name="NOSHIP_ZOLTAN" min="1" max="1"/>
     <event name="NEUTRAL_ZOLTAN" min="4" max="4"/>
-    <event name="HOSTILE_ZOLTAN" min="5" max="5"/>
+    <event name="HOSTILE_ZOLTAN" min="4" max="4"/>
   </sectorDescription>
 
   <sectorDescription name="ZOLTAN_SECTOR_2" minSector="1" unique="false">
@@ -820,14 +820,14 @@
 
     <event name="ZOLTAN_CREW_STUDY" min="1" max="1"/>
 
-    <event name="NEBULA_HOSTILE_HAZARD_ZOLTAN" min="4" max="4"/>
+    <event name="NEBULA_HOSTILE_HAZARD_ZOLTAN" min="2" max="2"/>
     <event name="NEBULA_HOSTILE_ZOLTAN" min="1" max="1"/>
     <event name="NEBULA_NOSHIP_ZOLTAN" min="2" max="2"/>
     <event name="NEBULA_NEUTRAL_ZOLTAN" min="1" max="1"/>
 
-    <event name="HOSTILE_HAZARD_ZOLTAN" min="3" max="3"/>
+    <event name="HOSTILE_HAZARD_ZOLTAN" min="1" max="1"/>
     <event name="NOSHIP_ZOLTAN" min="1" max="1"/>
-    <event name="NEUTRAL_ZOLTAN" min="3" max="3"/>
+    <event name="NEUTRAL_ZOLTAN" min="5" max="5"/>
     <event name="HOSTILE_ZOLTAN" min="4" max="4"/>
   </sectorDescription>
 </FTL>

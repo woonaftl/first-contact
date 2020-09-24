@@ -19,7 +19,7 @@
       <sensors power="1" room="7" start="true"/>
       <shields power="2" room="3" start="true" img="room_shields_3"/>
       <teleporter power="1" room="5" start="false"/>
-      <weapons power="3" room="10" start="true" img="room_weapons_5"/>
+      <weapons power="1" room="10" start="true" img="room_weapons_5"/>
     </systemList>
     <weaponSlots>4</weaponSlots>
     <droneSlots>2</droneSlots>
@@ -27,7 +27,7 @@
     <droneList drones="0"/>
     <aug name="GREENHOUSE_LOCKED"/>
     <health amount="30"/>
-    <maxPower amount="7"/>
+    <maxPower amount="6"/>
     <crewCount amount="3" class="orchid"/>
     <shieldImage>stealth</shieldImage>
     <cloakImage>orchid_cruiser</cloakImage>
@@ -52,7 +52,7 @@
       <sensors power="1" room="8" start="true" img="room_sensors_7"/>
       <shields power="2" room="6" start="true" img="room_shields_3"/>
       <teleporter power="1" room="3" start="false"/>
-      <weapons power="2" room="1" start="true" img="room_weapons_9"/>
+      <weapons power="1" room="1" start="true" img="room_weapons_9"/>
     </systemList>
     <weaponSlots>4</weaponSlots>
     <droneSlots>2</droneSlots>
@@ -86,7 +86,7 @@
       <sensors power="1" room="10" start="true" img="room_sensors"/>
       <shields power="2" room="6" start="true" img="room_shields"/>
       <teleporter power="1" room="8" start="false"/>
-      <weapons power="2" room="7" start="true" img="room_weapons"/>
+      <weapons power="1" room="7" start="true" img="room_weapons"/>
     </systemList>
     <weaponSlots>4</weaponSlots>
     <droneSlots>2</droneSlots>
@@ -94,7 +94,7 @@
     <droneList drones="0"/>
     <aug name="GREENHOUSE_LOCKED"/>
     <health amount="30"/>
-    <maxPower amount="8"/>
+    <maxPower amount="6"/>
     <crewCount amount="3" class="orchid"/>
     <shieldImage>stealth</shieldImage>
     <cloakImage>orchid_cruiser_strawberry</cloakImage>

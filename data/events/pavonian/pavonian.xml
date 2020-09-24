@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
   <event name="START_BEACON_PAVONIAN">
-    <text>This sector is marked as Pavonian on your star map. Valuing their personal freedom above everything else, Pavonian ships and colonies rarely engage in politics and do very little to control their sector.</text>
+    <textList>
+      <text>This sector is marked as Pavonian on your star map. Valuing their personal freedom above everything else, Pavonian ships and colonies rarely engage in politics and do very little to control their sector.</text>
+      <text>Having no rules or regulations, the Pavonian sectors could be dangerous even though the Pavonians themselves are rarely a threat. You prepare for the worst.</text>
+      <text>Even though the Pavonians have a strong sense of community, their disregard of rules makes the Pavonians worlds chaotic, unpredictable and occasionally dangerous.</text>
+    </textList>
   </event>
 
   <event name="STORE_PAVONIAN">

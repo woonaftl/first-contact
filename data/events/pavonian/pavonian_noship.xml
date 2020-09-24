@@ -62,7 +62,7 @@
               <crewMember amount="1" class="pavonian"/>
             </event>
           </choice>
-          <choice hidden="true">
+          <choice hidden="true" blue="false" req="pavonian" max_lvl="0">
             <text>Help the drones by killing the Pavonians for them.</text>
             <event>
               <text>If the drones attacked their masters, there probably was a valid reason for that. You enter the colony with guns blazing, killing every Pavonian on sight. The drones have no means to express their gratitude but at least they don't attack you. You loot the colony.</text>
@@ -104,46 +104,5 @@
       <text>Ignore the ship.</text>
       <event/>
     </choice>
-  </event>
-  <event name="PAVONIAN_REWARD_QUEST">
-    <text>You jump to coordinates left by a Pavonian ship you helped previously. A small Pavonian fleet greets you: "Oh, those are the people who helped you?". One of the Pavonian ships moves towards you and offloads a little bit of scrap to help on your journey.</text>
-    <autoReward level="LOW">scrap_only</autoReward>
-    <choice hidden="true">
-      <text id="continue"/>
-      <eventList>
-        <event>
-          <text>Another Pavonian ship offers you some ammunition: "We understand that you going off to war, and we hope that these supplies will help you survive".</text>
-          <item_modify>
-            <item type="missiles" min="8" max="11"/>
-          </item_modify>
-          <choice hidden="true">
-            <text id="continue"/>
-            <event load="PAVONIAN_REWARD_QUEST_LAST"/>
-          </choice>
-        </event>
-        <event>
-          <text>Another Pavonian ship offers you some drone parts: "We have picked up some drone parts at the resupplying station recently and can share if you need them".</text>
-          <item_modify>
-            <item type="drones" min="5" max="6"/>
-          </item_modify>
-          <choice hidden="true">
-            <text id="continue"/>
-            <event load="PAVONIAN_REWARD_QUEST_LAST"/>
-          </choice>
-        </event>
-        <event>
-          <text>Another Pavonian ship offers you a weapon: "I'm sure that you will use it only when absolutely necessary and never brandish this weapon against innocents.".</text>
-          <weapon name="WEAPONS_CHAIN"/>
-          <choice hidden="true">
-            <text id="continue"/>
-            <event load="PAVONIAN_REWARD_QUEST_LAST"/>
-          </choice>
-        </event>
-      </eventList>
-    </choice>
-  </event>
-  <event name="PAVONIAN_REWARD_QUEST_LAST">
-    <text>The last Pavonian ship has nothing to give you. But as you prepare to leave, one of the Pavonians materializes on your bridge, ready to serve the Federation.</text>
-    <crewMember amount="1" class="pavonian"/>
   </event>
 </FTL>
