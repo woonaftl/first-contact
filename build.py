@@ -113,6 +113,9 @@ transform(join("result", "data", "events.xml"),
           join("tools", "events", "storm_bug.xslt"),
           join("result", "data", "events.xml"))
 transform(join("result", "data", "events.xml"),
+          join("tools", "events", "battery3_bug.xslt"),
+          join("result", "data", "events.xml"))
+transform(join("result", "data", "events.xml"),
           join("tools", "events", "engine_disabler.xslt"),
           join("result", "data", "events.xml"))
 transform(join("result", "data", "events.xml"),
@@ -120,6 +123,9 @@ transform(join("result", "data", "events.xml"),
           join("result", "data", "events.xml"))
 transform(join("result", "data", "events.xml"),
           join("tools", "events", "greenhouse.xslt"),
+          join("result", "data", "events.xml"))
+transform(join("result", "data", "events.xml"),
+          join("tools", "events", "fix_events_without_text.xslt"),
           join("result", "data", "events.xml"))
 transform(join("result", "data", "events.xml"),
           join("tools", "events", "count.xslt"),
@@ -132,7 +138,6 @@ transform(join("result", "data", "events.xml"),
           join("result", "data", "events.xml"))
 
 # TODO validate autoReward vs item_modify conflicts
-# TODO validate no events with choice but no text
 schema_events = et.XMLSchema(et.parse(join("schema", "events.xsd")))
 events = et.parse(join("result", "data", "events.xml"))
 if not schema_events.validate(events):

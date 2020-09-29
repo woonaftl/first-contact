@@ -8,11 +8,12 @@
   <event name="NEBULA_PIRATE_SMUGGLE">
     <text>A pirate ship arrives shortly after you. Judging from the fact that it is attempting to avoid your ship, you assume that it's a smuggler trying to stay away from beacons.</text>
     <environment type="nebula"/>
+    <ship load="PIRATE_SMUGGLE" hostile="false"/>
     <choice>
       <text>Attack the pirate.</text>
       <event>
         <text>You power up your weapons and move in to engage.</text>
-        <ship load="PIRATE_SMUGGLE" hostile="true"/>
+        <ship hostile="true"/>
       </event>
     </choice>
     <choice>

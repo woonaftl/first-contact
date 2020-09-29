@@ -308,10 +308,11 @@
       <text>A Rebel space station and single fighter is monitoring this beacon for Federation activity. A number of civilian ships are docked, awaiting inspection by the Rebels and possible detainment if they are Federation loyalists. The Rebels haven't noticed you yet.</text>
       <text>A rather large fleet of civilian ships are held up at this beacon. It appears to be a Rebel checkpoint; everyone is being inspected for possible ties to the Federation. No one has noticed you yet.</text>
     </textList>
+    <ship load="REBEL" hostile="false"/>
     <choice>
       <text>Fend for yourself, attack and escape.</text>
       <event>
-        <ship load="REBEL" hostile="true"/>
+        <ship hostile="true"/>
       </event>
     </choice>
     <choice>
@@ -342,7 +343,7 @@
             </event>
             <event>
               <text>One of the civilian ships contacts you and reveals they are Federation loyalists. An eavesdropping Rebel swoops in, destroys the ship, and turns to attack you!</text>
-              <ship load="REBEL" hostile="true"/>
+              <ship hostile="true"/>
             </event>
           </eventList>
         </choice>
@@ -388,10 +389,11 @@
       <text>Civilian colonists loyal to the Rebel cause are present on a nearby planet. It looks like they are currently receiving a supply shipment. Could be useful.</text>
       <text>Because of the war, thousands of colonists have had their supply lines disrupted and have found themselves in dire straits. It seems in this system, the Rebels are sympathetic and are distributing what little supplies they can spare.</text>
     </textList>
+    <ship load="REBEL_HELPERS_SHIP" hostile="false"/>
     <choice>
       <text>Attack the Rebels.</text>
       <event>
-        <ship load="REBEL_HELPERS_SHIP" hostile="true"/>
+        <ship hostile="true"/>
       </event>
     </choice>
     <choice hidden="true">

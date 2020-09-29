@@ -123,7 +123,7 @@
       <blueprint name="pavonian" rarity="5"/>
     </rarityList>
     <startEvent>START_BEACON_ENGI</startEvent>
-    <event name="STORE_ENGI" min="3" max="3"/>
+    <event name="STORE_ENGI" min="2" max="2"/>
     <event name="UPGRADE_LIST_LEGIT" min="2" max="2"/>
 
     <!--<event name="ENGI_UNLOCK_1" min="1" max="1"/>-->
@@ -134,7 +134,7 @@
     <event name="DISTRESS_ENGI_REACTOR" min="1" max="1"/>
 
     <event name="NEUTRAL_ENGI" min="3" max="3"/>
-    <event name="HOSTILE_ENGI" min="4" max="4"/>
+    <event name="HOSTILE_ENGI" min="5" max="5"/>
     <event name="NOSHIP_ENGI" min="4" max="4"/>
     <event name="HOSTILE_HAZARD_ENGI" min="1" max="1"/>
   </sectorDescription>
@@ -159,7 +159,7 @@
       <blueprint name="pavonian" rarity="5"/>
     </rarityList>
     <startEvent>START_BEACON_ENGI</startEvent>
-    <event name="STORE_ENGI" min="3" max="3"/>
+    <event name="STORE_ENGI" min="2" max="2"/>
     <event name="UPGRADE_LIST_LEGIT" min="2" max="2"/>
 
     <event name="ZOLTAN_CREW_STUDY" min="1" max="1"/>
@@ -169,7 +169,7 @@
     <event name="DISTRESS_ENGI_REACTOR" min="1" max="1"/>
 
     <event name="NEUTRAL_ENGI" min="3" max="3"/>
-    <event name="HOSTILE_ENGI" min="4" max="4"/>
+    <event name="HOSTILE_ENGI" min="5" max="5"/>
     <event name="NOSHIP_ENGI" min="4" max="4"/>
     <event name="HOSTILE_HAZARD_ENGI" min="1" max="1"/>
   </sectorDescription>
@@ -357,14 +357,14 @@
       <blueprint name="pavonian" rarity="5"/>
     </rarityList>
     <startEvent>START_BEACON_ORCHID</startEvent>
-    <event name="STORE_ORCHID" min="3" max="3"/>
+    <event name="STORE_ORCHID" min="2" max="2"/>
     <event name="UPGRADE_LIST_LEGIT" min="2" max="2"/>
 
     <event name="ASTEROID_DERELICT_SHIP" min="1" max="1"/>
 
-    <event name="NOSHIP_ORCHID" min="4" max="4"/>
-    <event name="NEUTRAL_ORCHID" min="6" max="6"/>
-    <event name="HOSTILE_ORCHID" min="4" max="4"/>
+    <event name="NOSHIP_ORCHID" min="5" max="5"/>
+    <event name="NEUTRAL_ORCHID" min="4" max="4"/>
+    <event name="HOSTILE_ORCHID" min="6" max="6"/>
     <event name="ORCHID_FIGHT" min="2" max="2"/>
   </sectorDescription>
 
@@ -386,14 +386,14 @@
       <blueprint name="pavonian" rarity="5"/>
     </rarityList>
     <startEvent>START_BEACON_ORCHID</startEvent>
-    <event name="STORE_ORCHID" min="3" max="3"/>
+    <event name="STORE_ORCHID" min="2" max="2"/>
     <event name="UPGRADE_LIST_LEGIT" min="2" max="2"/>
 
     <event name="ASTEROID_DERELICT_SHIP" min="1" max="1"/>
 
-    <event name="NOSHIP_ORCHID" min="4" max="4"/>
-    <event name="NEUTRAL_ORCHID" min="6" max="6"/>
-    <event name="HOSTILE_ORCHID" min="4" max="4"/>
+    <event name="NOSHIP_ORCHID" min="5" max="5"/>
+    <event name="NEUTRAL_ORCHID" min="4" max="4"/>
+    <event name="HOSTILE_ORCHID" min="6" max="6"/>
     <event name="ORCHID_FIGHT" min="2" max="2"/>
   </sectorDescription>
 
@@ -662,7 +662,7 @@
       <blueprint name="BOMB_DELAY_BIO" rarity="3"/>
     </rarityList>
     <startEvent>START_BEACON_SLUG</startEvent>
-    <event name="NEBULA_STORE_SLUG" min="3" max="3"/>
+    <event name="NEBULA_STORE_SLUG" min="2" max="2"/>
     <event name="UPGRADE_LIST_NEBULA" min="2" max="2"/>
 
     <event name="NEBULA_SLUG_FIGHT_UNLOCK" min="1" max="1"/>
@@ -671,7 +671,7 @@
     <event name="NEBULA_HOSTILE_HAZARD_SLUG" min="1" max="1"/>
     <event name="NEBULA_NOSHIP_SLUG" min="2" max="2"/>
     <event name="NEBULA_NEUTRAL_SLUG" min="6" max="6"/>
-    <event name="NEBULA_HOSTILE_SLUG" min="3" max="3"/>
+    <event name="NEBULA_HOSTILE_SLUG" min="4" max="4"/>
 
     <event name="NEUTRAL_SLUG" min="1" max="1"/>
     <event name="HOSTILE_SLUG" min="2" max="2"/>
@@ -698,13 +698,13 @@
       <blueprint name="BOMB_DELAY_BIO" rarity="3"/>
     </rarityList>
     <startEvent>START_BEACON_SLUG</startEvent>
-    <event name="NEBULA_STORE_SLUG" min="3" max="3"/>
+    <event name="NEBULA_STORE_SLUG" min="2" max="2"/>
     <event name="UPGRADE_LIST_NEBULA" min="2" max="2"/>
 
     <event name="NEBULA_HOSTILE_HAZARD_SLUG" min="1" max="1"/>
     <event name="NEBULA_NOSHIP_SLUG" min="2" max="2"/>
     <event name="NEBULA_NEUTRAL_SLUG" min="7" max="7"/>
-    <event name="NEBULA_HOSTILE_SLUG" min="4" max="4"/>
+    <event name="NEBULA_HOSTILE_SLUG" min="5" max="5"/>
 
     <event name="NEUTRAL_SLUG" min="1" max="1"/>
     <event name="HOSTILE_SLUG" min="2" max="2"/>

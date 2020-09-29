@@ -382,6 +382,7 @@
         <choice hidden="true">
           <text>Attack them.</text>
           <event>
+            <text>The Slugs clearly do not want to fight. They try to escape.</text>
             <ship hostile="true" load="SLUG_UPGRADE_OXYGEN_SHIP"/>
           </event>
         </choice>
@@ -412,6 +413,7 @@
         <choice hidden="true">
           <text>Attack them.</text>
           <event>
+            <text>The Slugs clearly do not want to fight. They try to escape.</text>
             <ship hostile="true" load="SLUG_UPGRADE_OXYGEN_SHIP"/>
           </event>
         </choice>
@@ -442,6 +444,7 @@
         <choice hidden="true">
           <text>Attack them.</text>
           <event>
+            <text>The Slugs clearly do not want to fight. They try to escape.</text>
             <ship hostile="true" load="SLUG_UPGRADE_OXYGEN_SHIP"/>
           </event>
         </choice>
@@ -491,7 +494,7 @@
   </eventList>
   <ship auto_blueprint="SHIPS_JELLY" name="SLUG_UPGRADE_OXYGEN_SHIP">
     <escape max="22" min="22" timer="35">
-      <text>The Slugs clearly do not want to fight. They try to escape.</text>
+      <!--<text>The Slugs clearly do not want to fight. They try to escape.</text>-->
       <ship hostile="true"/>
     </escape>
     <gotaway>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FTL>
-  <animSheet name="strider" w="420" h="525" fw="35" fh="35">people/strider_base.png</animSheet>
+  <animSheet name="strider" w="350" h="525" fw="35" fh="35">people/strider_base.png</animSheet>
   <anim name="strider_walk_up">
     <sheet>strider</sheet>
     <desc length="10" x="0" y="14"/>
@@ -9,13 +9,13 @@
 
   <anim name="strider_walk_right">
     <sheet>strider</sheet>
-    <desc length="12" x="0" y="13"/>
+    <desc length="10" x="0" y="13"/>
     <time>1.0</time>
   </anim>
 
   <anim name="strider_walk_left">
     <sheet>strider</sheet>
-    <desc length="12" x="0" y="12"/>
+    <desc length="10" x="0" y="12"/>
     <time>1.0</time>
   </anim>
 

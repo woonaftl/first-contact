@@ -154,6 +154,161 @@
           </xs:complexType>
         </xs:element>
 
+        <xs:element name="shipBlueprintSuperNew" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="class"> <!-- not strict enough -->
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="id" type="xs:string"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="class_elite" minOccurs="0"> <!-- not strict enough -->
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="id" type="xs:string"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="class_pirate" minOccurs="0"> <!-- not strict enough -->
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="id" type="xs:string"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="systemList">
+                <xs:complexType>
+                  <xs:all>
+                    <xs:element name="weapons" minOccurs="0">
+                      <xs:complexType>
+                        <xs:attribute name="room" type="xs:nonNegativeInteger"/>
+                        <xs:attribute name="room_elite" type="xs:nonNegativeInteger"/>
+                        <xs:attribute name="room_pirate" type="xs:nonNegativeInteger"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="pilot" type="systemTypeSuper" minOccurs="0"/>
+                    <xs:element name="doors" type="systemTypeSuper" minOccurs="0"/>
+                    <xs:element name="artillery" minOccurs="0">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute name="power" type="xs:nonNegativeInteger" use="required"/>
+                            <xs:attribute name="max" type="xs:nonNegativeInteger"/>
+                            <xs:attribute name="room" type="xs:nonNegativeInteger" use="required"/>
+                            <xs:attribute name="room_elite" type="xs:nonNegativeInteger"/>
+                            <xs:attribute name="room_pirate" type="xs:nonNegativeInteger"/>
+                            <xs:attribute name="weapon" type="xs:string" use="required"/>
+                            <xs:attribute name="start" type="xs:boolean" default="true"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="oxygen" type="systemTypeSuper" minOccurs="0"/>
+                    <xs:element name="medbay" type="systemTypeSuper" minOccurs="0"/>
+                    <xs:element name="clonebay" type="systemTypeSuper" minOccurs="0"/>
+                    <xs:element name="teleporter" type="systemTypeSuper" minOccurs="0"/>
+                    <xs:element name="drones" minOccurs="0">
+                      <xs:complexType>
+                        <xs:attribute name="room" type="xs:nonNegativeInteger"/>
+                        <xs:attribute name="room_elite" type="xs:nonNegativeInteger"/>
+                        <xs:attribute name="room_pirate" type="xs:nonNegativeInteger"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="shields" type="systemTypeSuper" minOccurs="0"/>
+                    <xs:element name="engines" type="systemTypeSuper" minOccurs="0"/>
+                    <xs:element name="cloaking" type="systemTypeSuper" minOccurs="0"/>
+                    <xs:element name="hacking" type="systemTypeSuper" minOccurs="0"/>
+                    <xs:element name="sensors" type="systemTypeSuper" minOccurs="0"/>
+                    <xs:element name="mind" type="systemTypeSuper" minOccurs="0"/>
+                    <xs:element name="battery" type="systemTypeSuper" minOccurs="0"/>
+                  </xs:all>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="sector" minOccurs="0" maxOccurs="8">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="weaponList" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="weapon" minOccurs="0" maxOccurs="8">
+                            <xs:complexType>
+                              <xs:attribute name="name" type="xs:string"/>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="missiles" type="xs:nonNegativeInteger"/>
+                        <xs:attribute name="system_power" type="xs:nonNegativeInteger"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="droneList" minOccurs="0"> <!-- not strict enough -->
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="drone" minOccurs="0" maxOccurs="8">
+                            <xs:complexType>
+                              <xs:attribute name="name" type="xs:string"/>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="drones" type="xs:nonNegativeInteger"/>
+                        <xs:attribute name="system_power" type="xs:nonNegativeInteger"/>
+                        <xs:attribute name="count" type="xs:nonNegativeInteger"/>
+                        <xs:attribute name="load" type="xs:string"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="id" type="xs:nonNegativeInteger"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="health">
+                <xs:complexType>
+                  <xs:attribute name="amount" type="xs:nonNegativeInteger" use="required"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="crewCount">
+                <xs:complexType>
+                  <xs:attribute name="amount" type="xs:nonNegativeInteger" use="required"/>
+                  <xs:attribute name="max" type="xs:nonNegativeInteger" use="required"/>
+                  <xs:attribute name="class" type="xs:string" use="required"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="crewCount_elite" minOccurs="0">
+                <xs:complexType>
+                  <xs:attribute name="amount" type="xs:nonNegativeInteger" use="required"/>
+                  <xs:attribute name="max" type="xs:nonNegativeInteger" use="required"/>
+                  <xs:attribute name="class" type="xs:string" use="required"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="boardingAI" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="sabotage"/>
+                    <xs:enumeration value="invasion"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="aug" minOccurs="0" maxOccurs="3">
+                <xs:complexType>
+                  <xs:attribute name="name" type="xs:string"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="cloakImage" type="xs:string" minOccurs="0"/>
+              <xs:element name="cloakImage_pirate" type="xs:string" minOccurs="0"/>
+              <xs:element name="cloakImage_elite" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string" use="required"/>
+            <xs:attribute name="layout" type="xs:string" use="required"/>
+            <xs:attribute name="img" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+
         <xs:element name="shipBlueprint" minOccurs="0" maxOccurs="unbounded">
           <xs:complexType>
             <xs:sequence>

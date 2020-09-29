@@ -152,7 +152,7 @@
     <entry>Added Slug distress trap event</entry>
   </changelog>
   <event name="NEBULA_SLUG_DISTRESS_TRAP" unique="true">
-    <text>Like a spider, waiting for prey in a web, a Slug cruiser was luring victims with a distress signal into a carefully designed trap of tractor beams, electromagnetic pulsars, ion emitters and other devices that you fail to recognize. Your ship is completely disabled, with engines barely working, making escape impossible.</text>
+    <text>Like a spider, waiting for prey in a web, a Slug cruiser was luring victims with a distress signal into a carefully designed trap of tractor beams, electromagnetic pulsars, ion emitters and other devices that you fail to recognize.</text>
     <environment type="nebula"/>
     <distressBeacon/>
     <ship auto_blueprint="SHIPS_JELLY" hostile="false">
@@ -169,19 +169,91 @@
         <status amount="100" system="reactor" target="player" type="clear"/>
       </deadCrew>
     </ship>
-    <status amount="1" system="engines" target="player" type="limit"/>
-    <status amount="3" system="reactor" target="player" type="loss"/>
-    <choice hidden="true">
-      <text>Fight.</text>
+    <choice hidden="true" req="reactor" lvl="0" max_group="0" blue="false">
+      <text id="continue"/>
       <event>
-        <ship hostile="true"/>
+        <text>Your ship is completely disabled, with engines barely working, making escape impossible.</text>
+        <status amount="1" system="engines" target="player" type="limit"/>
+        <choice hidden="true">
+          <text>Fight.</text>
+          <event>
+            <text>The Slugs do not hold back, unleashing all of their arsenal upon you.</text>
+            <ship hostile="true"/>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>Plead for mercy.</text>
+          <event>
+            <text>The Slug captain is unmoved. "I underssstand the importance of your mission. Do not fret, I will do everything I can to ensure Federation's victory. After I loot your ship."</text>
+            <ship hostile="true"/>
+          </event>
+        </choice>
       </event>
     </choice>
-    <choice hidden="true">
-      <text>Plead for mercy.</text>
+    <choice hidden="true" req="reactor" lvl="1" max_group="0" blue="false">
+      <text id="continue"/>
       <event>
-        <text>The Slug captain is unmoved. "I underssstand the importance of your mission. Do not fret, I will do everything I can to ensure Federation's victory. After I loot your ship."</text>
-        <ship hostile="true"/>
+        <text>Your ship is completely disabled, with engines barely working, making escape impossible.</text>
+        <status amount="1" system="engines" target="player" type="limit"/>
+        <status amount="1" system="reactor" target="player" type="loss"/>
+        <choice hidden="true">
+          <text>Fight.</text>
+          <event>
+            <text>The Slugs do not hold back, unleashing all of their arsenal upon you.</text>
+            <ship hostile="true"/>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>Plead for mercy.</text>
+          <event>
+            <text>The Slug captain is unmoved. "I underssstand the importance of your mission. Do not fret, I will do everything I can to ensure Federation's victory. After I loot your ship."</text>
+            <ship hostile="true"/>
+          </event>
+        </choice>
+      </event>
+    </choice>
+    <choice hidden="true" req="reactor" lvl="2" max_group="0" blue="false">
+      <text id="continue"/>
+      <event>
+        <text>Your ship is completely disabled, with engines barely working, making escape impossible.</text>
+        <status amount="1" system="engines" target="player" type="limit"/>
+        <status amount="2" system="reactor" target="player" type="loss"/>
+        <choice hidden="true">
+          <text>Fight.</text>
+          <event>
+            <text>The Slugs do not hold back, unleashing all of their arsenal upon you.</text>
+            <ship hostile="true"/>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>Plead for mercy.</text>
+          <event>
+            <text>The Slug captain is unmoved. "I underssstand the importance of your mission. Do not fret, I will do everything I can to ensure Federation's victory. After I loot your ship."</text>
+            <ship hostile="true"/>
+          </event>
+        </choice>
+      </event>
+    </choice>
+    <choice hidden="true" req="reactor" lvl="3" max_group="0" blue="false">
+      <text id="continue"/>
+      <event>
+        <text>Your ship is completely disabled, with engines barely working, making escape impossible.</text>
+        <status amount="1" system="engines" target="player" type="limit"/>
+        <status amount="3" system="reactor" target="player" type="loss"/>
+        <choice hidden="true">
+          <text>Fight.</text>
+          <event>
+            <text>The Slugs do not hold back, unleashing all of their arsenal upon you.</text>
+            <ship hostile="true"/>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>Plead for mercy.</text>
+          <event>
+            <text>The Slug captain is unmoved. "I underssstand the importance of your mission. Do not fret, I will do everything I can to ensure Federation's victory. After I loot your ship."</text>
+            <ship hostile="true"/>
+          </event>
+        </choice>
       </event>
     </choice>
   </event>

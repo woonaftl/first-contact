@@ -159,7 +159,7 @@
     <text>You arrive at the beacon and witness an ongoing battle between two Mantis ships. A lonely Pavonian ship is drifting through space, just far enough from the fight not to catch a stray shot.</text>
     <choice hidden="true">
       <text>Attack one of the Mantis ships.</text>
-      <event name="PAVONIAN_TWO_MANTIS_FIGHT">
+      <event>
         <text>Just as you decided to make a move against one of the Mantis ships, its opponent exploded. The remaining Mantis ship moves into combat position, locking weapons on your ship.</text>
         <ship auto_blueprint="SHIPS_MANTIS" hostile="true">
           <destroyed>
@@ -195,7 +195,7 @@
         <text>You explain that after destroying its opponent, the winning Mantis ship might go after the Pavonians. "Oh..." The Pavonian ship jumps away.</text>
         <choice hidden="true">
           <text>Attack one of the Mantis ships.</text>
-          <event name="PAVONIAN_TWO_MANTIS_FIGHT">
+          <event>
             <text>Just as you decided to make a move against one of the Mantis ships, its opponent exploded. The remaining Mantis ship moves into combat position, locking weapons on your ship.</text>
             <ship auto_blueprint="SHIPS_MANTIS" hostile="true">
               <destroyed>
@@ -303,6 +303,7 @@
 
   <event name="PAVONIAN_BEGGAR" unique="true">
     <text>The only ship at the beacon is controlled by Pavonians. Their negotiator appears on the comm: "Scrap. We need it. Please give us some scrap."</text>
+    <ship load="PAVONIAN_SHIP" hostile="false"/>
     <choice>
       <text>Send them some scrap.</text>
       <event>
@@ -316,7 +317,7 @@
     <choice hidden="true">
       <text>Attack the extorters.</text>
       <event>
-        <ship hostile="true" load="PAVONIAN_SHIP"/>
+        <ship hostile="true"/>
       </event>
     </choice>
     <choice hidden="true">

@@ -142,10 +142,11 @@
         </event>
         <event>
           <text>Sensors are picking up armed crew and considerably more weaponry than is legal for a craft of this size. This is surely a trap.</text>
+          <ship load="PIRATE_FUEL" hostile="false"/>
           <choice>
             <text>Power up weapons and prepare for a fight.</text>
             <event>
-              <ship load="PIRATE_FUEL" hostile="true"/>
+              <ship hostile="true"/>
             </event>
           </choice>
           <choice req="cloaking" hidden="true">

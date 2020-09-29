@@ -7,7 +7,7 @@
     <event load="ORCHID_SLUG_TAUNT"/>
   </eventList>
 
-  <event name="ORCHID_UNDER_ATTACK_PIRATE">
+  <event name="ORCHID_UNDER_ATTACK_PIRATE" unique="true">
     <text>An unarmed Orchid vessel is trying to flee from a ship with the markings of a space pirate that is chasing behind.</text>
     <choice hidden="true">
       <text>Help the Orchid ship.</text>

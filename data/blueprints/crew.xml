@@ -17,8 +17,8 @@
     <bp>2</bp>
     <rarity>1</rarity>
     <powerList>
-      <power>No special powers</power>
-    </powerList>
+		  <power>Skills improve 10% faster</power>
+	  </powerList>
     <colorList>
       <layer>
         <color a="0.7" b="255" g="140" r="140"/>
@@ -255,7 +255,7 @@
     <title>Pavonian</title>
     <short>Pavonian</short>
     <desc>Proud Pavonians are fragile creatures, but willing to sacrifice themselves to save their comrades.</desc>
-    <cost>60</cost>
+    <cost>50</cost>
     <bp>2</bp>
     <rarity>0</rarity>
     <powerList>
@@ -297,7 +297,7 @@
     <rarity>0</rarity>
     <powerList>
       <power>Take half damage in close combat</power>
-      <power>Auto-piloted on low health</power>
+      <power>Become auto-piloted on low health</power>
     </powerList>
   </crewBlueprint>
 </FTL>

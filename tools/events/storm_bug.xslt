@@ -8,31 +8,7 @@
     </xsl:copy>
   </xsl:template>
 
-  <xsl:template match="@* | node()" mode="found">
-    <xsl:copy>
-      <xsl:apply-templates select="@* | node()"/>
-    </xsl:copy>
-  </xsl:template>
-
-  <xsl:template match="event[environment/@type = 'storm'][ship][not(choice)]">
-    <xsl:copy>
-      <xsl:apply-templates select="@* | node()"/>
-      <choice hidden="true">
-        <text id="continue"/>
-        <event>
-          <status type="divide" target="enemy" system="reactor" amount="2"/>
-        </event>
-      </choice>
-    </xsl:copy>
-  </xsl:template>
-
-  <xsl:template match="event[environment/@type = 'storm'][ship][choice]">
-    <xsl:copy>
-      <xsl:apply-templates select="@* | node()" mode="found"/>
-    </xsl:copy>
-  </xsl:template>
-
-  <xsl:template match="event" mode="found">
+  <xsl:template match="event[ship/@hostile = 'true'][ancestor-or-self::event/environment/@type = 'storm']">
     <xsl:copy>
       <xsl:apply-templates select="@* | node()"/>
       <status type="divide" target="enemy" system="reactor" amount="2"/>

@@ -18,12 +18,12 @@
     <ship load="MANTIS_FIGHT" hostile="true"/>
   </event>
 
-  <event name="ENGI_REBEL_FIGHT">
+  <event name="ENGI_REBEL_FIGHT" unique="true">
     <text>The Rebel fighter here would seem to suggest elements of the Rebel fleet are already making incursions on Engi space. You move to engage.</text>
     <ship load="REBEL" hostile="true"/>
   </event>
 
-  <event name="ENGI_PIRATE_FIGHT">
+  <event name="ENGI_PIRATE_FIGHT" unique="true">
     <text>There must have been rich pickings for pirates around here up until war broke out. The pirate you encounter here looks worn down, but hungry. You'll have to fight!</text>
     <ship load="PIRATE" hostile="true"/>
   </event>

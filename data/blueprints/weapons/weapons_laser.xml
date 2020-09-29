@@ -245,7 +245,7 @@
   <weaponBlueprint name="LASER_BURST_5">
     <type>LASER</type>
     <title>Burst Laser Mark III</title>
-    <short>Burst Laser III</short>
+    <short>BL III</short>
     <tip>tip_laser</tip>
     <desc>Powerful burst laser that fires off an impressive barrage.</desc>
     <tooltip>Fires 5 lasers, 1 damage per shot.</tooltip>
@@ -283,7 +283,7 @@
   <weaponBlueprintInherit name="LASER_BURST_5_UPGRADED" base="LASER_BURST_5">
     <tip>tip_laser_upgraded</tip>
     <title>Burst Laser Mark III+</title>
-    <short>Burst Laser III+</short>
+    <short>BL III+</short>
     <cooldown>16</cooldown>
     <power>3</power>
     <rarity>0</rarity>

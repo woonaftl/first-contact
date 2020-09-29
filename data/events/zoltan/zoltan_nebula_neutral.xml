@@ -103,6 +103,7 @@
     <choice>
       <text>Repugnant?! Arm the weapons!</text>
       <event>
+        <text>The Rock captain clenches his jaw and prepares to fight without another word. Their ship is partially disabled but still able to withstand some damage.</text>
         <ship hostile="true"/>
       </event>
     </choice>

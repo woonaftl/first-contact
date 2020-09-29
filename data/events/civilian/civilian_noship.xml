@@ -479,8 +479,8 @@
     <choice blue="false" hidden="true" lvl="1" max_group="0" req="orchid">
       <text>Send your crew in a shuttle to help put out the fire.</text>
       <event>
-        <text>You send your crew into the station. One of the Orchids breaks away from the main group and catches fire. You quickly try to dock and retrieve your crew but not before an unfortunate soul is lost in the inferno. Sending orchids to put out a fire does not seem like a bright idea in hindsight.</text>
-        <removeCrew>
+        <text>You send your crew into the station. One of the Orchids breaks away from the main group and catches fire. You quickly try to dock and retrieve your crew but not before an unfortunate soul is lost in the inferno. Sending Orchids to put out a fire does not seem like a bright idea in hindsight.</text>
+        <removeCrew class="orchid">
           <clone>true</clone>
           <text>With a new-found respect for flames, your crewmember's clone stumbles out of the Clone Bay.</text>
         </removeCrew>
@@ -770,23 +770,24 @@
   </event>
   <event name="QUEST_STORE_RESCUE">
     <text>Once you arrive at the beacon you detect a Rebel scout assaulting a compound on a nearby desolate moon.</text>
+    <ship name="SQUAT_STORE_RESCUE" auto_blueprint="SHIPS_REBEL" hostile="false">
+      <destroyed>
+        <text>The outpost hails you, "Thank you! I don't know what we did to anger the Rebels, but they were ready to kill us. I'll show you our goods and patch up your hull."</text>
+        <autoReward level="MED">scrap_only</autoReward>
+        <damage amount="-5"/>
+        <store/>
+      </destroyed>
+      <deadCrew>
+        <text>The outpost hails you, "Thank you! I don't know what we did to anger the Rebels, but they were ready to kill us. I'll show you our goods and patch up your hull.</text>
+        <autoReward level="MED">scrap_only</autoReward>
+        <damage amount="-5"/>
+        <store/>
+      </deadCrew>
+    </ship>
     <choice>
       <text>Engage the Rebel and rescue the space dock.</text>
       <event>
-        <ship name="SQUAT_STORE_RESCUE" auto_blueprint="SHIPS_REBEL" hostile="true">
-          <destroyed>
-            <text>The outpost hails you, "Thank you! I don't know what we did to anger the Rebels, but they were ready to kill us. I'll show you our goods and patch up your hull."</text>
-            <autoReward level="MED">scrap_only</autoReward>
-            <damage amount="-5"/>
-            <store/>
-          </destroyed>
-          <deadCrew>
-            <text>The outpost hails you, "Thank you! I don't know what we did to anger the Rebels, but they were ready to kill us. I'll show you our goods and patch up your hull.</text>
-            <autoReward level="MED">scrap_only</autoReward>
-            <damage amount="-5"/>
-            <store/>
-          </deadCrew>
-        </ship>
+        <ship hostile="true"/>
       </event>
     </choice>
     <choice>

@@ -433,6 +433,7 @@
 
   <event name="PIRATE_SALESMAN" unique="true">
     <text>A ship with conspicuous pirate markings is orbiting a nearby moon, broadcasting a simple message claiming to have equipment available for sale.</text>
+    <ship load="PIRATE" hostile="false"/>
     <choice>
       <text>Hail the ship.</text>
       <event load="CONTACT_PIRATE_SALESMAN"/>
@@ -440,7 +441,7 @@
     <choice>
       <text>Attack him before he can attack!</text>
       <event>
-        <ship load="PIRATE" hostile="true"/>
+        <ship hostile="true"/>
       </event>
     </choice>
     <choice>

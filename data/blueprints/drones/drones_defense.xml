@@ -53,6 +53,9 @@
     <name>SHIP_REPAIR_UPGRADED</name>
   </blueprintList>
 
+  <changelog>
+    <entry>Defense Drone Mark I projectile speed 60 to 150</entry>
+  </changelog>
   <weaponBlueprint NOLOC="1" name="DRONE_LASER_DEFENSE">
     <type>LASER</type>
     <title>Drone Laser</title>
@@ -95,7 +98,7 @@
     <cost>50</cost>
     <bp>2</bp>
     <droneImage>drone_defense</droneImage>
-    <weaponBlueprint>DRONE_LASER_DEFENSE</weaponBlueprint>
+    <weaponBlueprint>DRONE_LASER_2</weaponBlueprint>
     <iconImage>defense</iconImage>
     <rarity>1</rarity>
   </droneBlueprint>
@@ -109,7 +112,9 @@
   </droneBlueprintInherit>
 
   <changelog>
-    <entry>Defense II Drone scrap cost 70 to 60</entry>
+    <entry>Defense Drone Mark II scrap cost 70 to 60</entry>
+    <entry>Defense Drone Mark II recharge time 8.8 to 8 seconds</entry>
+    <entry>Defense Drone Mark II projectile speed 120 to 150</entry>
   </changelog>
   <weaponBlueprint NOLOC="1" name="DRONE_LASER_2">
     <type>LASER</type>
@@ -119,7 +124,7 @@
     <fireChance>0</fireChance>
     <breachChance>0</breachChance>
     <rarity>0</rarity>
-    <speed>120</speed>
+    <speed>150</speed>
     <image>laser_light2</image>
     <launchSounds>
       <sound>lightLaser1</sound>
@@ -148,7 +153,7 @@
     <short>Defense II</short>
     <desc>It fires faster than Mark I and can also shoot down incoming lasers.</desc>
     <power>3</power>
-    <cooldown>880</cooldown>
+    <cooldown>800</cooldown>
     <dodge>0</dodge>
     <speed>7</speed>
     <cost>60</cost>
@@ -166,6 +171,8 @@
     <power>2</power>
     <rarity>0</rarity>
   </droneBlueprintInherit>
+
+  <!--TODO replace Anti-Drone with Defense Drone Mark III - 4 power, can target all things that mark II and anti-drone can-->
 
   <changelog>
     <entry>Hull Repair Drone power usage 2 to 3</entry>
@@ -201,6 +208,9 @@
   <changelog>
     <entry>Anti-Drone scrap cost 35 to 30</entry>
     <entry>Anti-Drone rarity 1 to 3</entry>
+    <entry>Anti-Drone recharge time 7 to 4 seconds</entry>
+    <entry>Anti-Drone projectile speed 90 to 150</entry>
+    <entry>Anti-Drone projectile deals damage instead of ion (can't be countered by depowering a drone)</entry>
   </changelog>
   <weaponBlueprint NOLOC="1" name="ANTI_DRONE_ION">
     <type>LASER</type>
@@ -236,21 +246,22 @@
     <iconImage>ion</iconImage>
   </weaponBlueprint>
   <droneBlueprint name="ANTI_DRONE">
+  <!-- TODO new art without ion if changes are actually good -->
     <type>DEFENSE</type>
     <tip>tip_defense</tip>
     <target>DRONES</target>
     <level>1</level>
     <title>Anti-Combat Drone</title>
     <short>Anti-Drone</short>
-    <desc>Stuns combat drones attacking your ship.</desc>
+    <desc>Destroys combat drones attacking your ship.</desc>
     <power>1</power>
-    <cooldown>7000</cooldown>
+    <cooldown>4000</cooldown>
     <dodge>0</dodge>
     <speed>5</speed>
     <cost>30</cost>
     <bp>2</bp>
     <droneImage>drone_anti</droneImage>
-    <weaponBlueprint>ANTI_DRONE_ION</weaponBlueprint>
+    <weaponBlueprint>DRONE_LASER_2</weaponBlueprint>
     <rarity>3</rarity>
     <iconImage>antiD</iconImage>
   </droneBlueprint>

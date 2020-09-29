@@ -35,13 +35,13 @@
   </eventList>
 
   <eventList name="DESTROYED_DEFAULT">
-    <event count="4">
+    <event count="3">
       <text>The ship explodes, leaving behind a substantial collection of useful scrap material.</text>
       <autoReward level="MED">standard</autoReward>
     </event>
     <event>
       <text>The ship explodes, leaving behind a substantial collection of useful scrap material.</text>
-      <autoReward level="LOW">standard</autoReward>
+      <autoReward level="MED">scrap_only</autoReward>
     </event>
   </eventList>
 </FTL>

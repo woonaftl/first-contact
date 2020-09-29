@@ -8,10 +8,12 @@
   <event name="STORM_AUTO" unique="true">
     <text>You jump into a sector of the nebula beset by a plasma storm. An automated Rebel scout stationed at the beacon moves in to attack.</text>
     <environment type="storm"/>
+    <ship load="REBEL_AUTO" hostile="false"/>
     <choice>
       <text>Prepare to fight.</text>
       <event>
-        <ship load="REBEL_AUTO" hostile="true"/>
+        <text>The Rebel automated scout is partially disabled by a plasma storm but it still registers you as a threat and powers its weapons.</text>
+        <ship hostile="true"/>
       </event>
     </choice>
     <choice req="engines" lvl="3" max_group="0" hidden="true">

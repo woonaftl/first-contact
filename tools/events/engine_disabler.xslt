@@ -14,6 +14,12 @@
     </xsl:copy>
   </xsl:template>
 
+  <xsl:template match="ship" mode="found">
+    <xsl:copy>
+      <xsl:apply-templates select="@* | node()" mode="done"/>
+    </xsl:copy>
+  </xsl:template>
+
   <xsl:template match="@* | node()" mode="done">
     <xsl:copy>
       <xsl:apply-templates select="@* | node()" mode="done"/>

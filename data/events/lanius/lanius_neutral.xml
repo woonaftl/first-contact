@@ -664,10 +664,11 @@
   <event name="LANIUS_SLUG_DISTRESS" unique="true">
     <text>The distress signal from this system is coming from a Slug vessel under attack by the Lanius! The Slugs beg for assistance as the Lanius tear into their hull plating.</text>
     <distressBeacon/>
+    <ship load="LANIUS_SLUG_DISTRESS_SHIP" hostile="false"/>
     <choice>
       <text>Attack the Lanius ship.</text>
       <event>
-        <ship load="LANIUS_SLUG_DISTRESS_SHIP" hostile="true"/>
+        <ship hostile="true"/>
       </event>
     </choice>
     <choice>

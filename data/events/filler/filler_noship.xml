@@ -359,6 +359,16 @@
         </event>
         <event>
           <text>They offer to upgrade your reactor in exchange for some scrap.</text>
+          <choice req="reactor" lvl="0" max_group="0" blue="false">
+            <text>Agree to the exchange.</text>
+            <event>
+              <text>You let their team on board and after a short time they finish their work.</text>
+              <item_modify>
+                <item type="scrap" min="-29" max="-26"/>
+              </item_modify>
+              <upgrade amount="1" system="reactor"/>
+            </event>
+          </choice>
           <choice req="reactor" max_lvl="4" max_group="0" blue="false">
             <text>Agree to the exchange.</text>
             <event>
@@ -409,6 +419,10 @@
               <upgrade amount="1" system="reactor"/>
             </event>
           </choice>
+          <choice req="reactor" max_lvl="25" max_group="0" blue="false">
+            <text>Decline. Your reactor is maxed.</text>
+            <event/>
+          </choice>
           <choice hidden="true">
             <text>Decline.</text>
             <event>
@@ -429,7 +443,7 @@
   <eventList name="TRADER_UPGRADES_EXCHANGE" unique="true">
     <event>
       <text>"You look like a military vessel. We're trying to get back to our homes alive. I'm an engineer by trade and could try to improve your reactor if you have any extra supplies."</text>
-      <choice req="reactor" max_lvl="0" max_group="0" blue="false">
+      <choice req="reactor" lvl="0" max_group="0" blue="false">
         <text>Agree to the trade.</text>
         <event>
           <text>You make the exchange and their team comes on board to try to improve your reactor.</text>
@@ -450,7 +464,7 @@
         </event>
       </choice>
       <choice req="reactor" max_lvl="25" max_group="0" blue="false">
-        <text>Give some supplies to them for free.</text>
+        <text>Give them some supplies for free.</text>
         <event>
           <text>You send the supplies. The civilians are very grateful.</text>
           <item_modify>
@@ -468,7 +482,7 @@
     </event>
     <event>
       <text>You receive a message from a small convoy. They're looking for some military supplies and are offering to try to improve your reactor in exchange.</text>
-      <choice req="reactor" max_lvl="0" max_group="0" blue="false">
+      <choice req="reactor" lvl="0" max_group="0" blue="false">
         <text>Agree to the trade.</text>
         <event>
           <text>You make the exchange and their team comes on board to try to improve your reactor.</text>
@@ -491,7 +505,7 @@
         </event>
       </choice>
       <choice req="reactor" max_lvl="25" max_group="0" blue="false">
-        <text>Give some supplies to them for free.</text>
+        <text>Give them some supplies for free.</text>
         <event>
           <text>You send the supplies. The civilians are very grateful.</text>
           <item_modify>
