@@ -89,10 +89,10 @@
                   <autoReward level="MED">scrap_only</autoReward>
                 </event>
               </choice>
-              <choice hidden="true" req="warped">
-                <text>(Warped) Sneak into the cave.</text>
+              <choice hidden="true" req="strider">
+                <text>(Strider) Sneak into the cave.</text>
                 <event>
-                  <text>The Warped successfully sneaks into the cave using their cloak. Your crewmember picks up as much equipment as they can carry, choosing what they deem most valuable: food and everything shiny.</text>
+                  <text>The Strider successfully sneaks into the cave using their cloak. Your crewmember picks up as much equipment as they can carry, choosing what they deem most valuable: food and everything shiny.</text>
                   <autoReward level="MED">scrap_only</autoReward>
                 </event>
               </choice>

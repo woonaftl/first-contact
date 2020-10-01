@@ -54,7 +54,7 @@
                     <event>
                       <text>"Thank you. If you could do me one more courtesssy... please die quietly." You suddenly hear gunshots aboard the ship. He must have been stalling for time while they boarded your ship!</text>
                       <ship load="JELLY" hostile="true"/>
-                      <boarders min="2" max="2" class="slug"/>
+                      <boarders min="2" max="3" class="slug"/>
                     </event>
                   </eventList>
                 </choice>

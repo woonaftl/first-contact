@@ -4,9 +4,9 @@
   <forceDlc enabled="true"/>
 
   <ships>
-    <ship name="PLAYER_SHIP_ORCHID" b="true" c="true"/>
     <ship name="PLAYER_SHIP_PAVONIAN" b="true" c="true"/>
     <ship name="PLAYER_SHIP_LIZARD" b="false" c="false"/>
+    <ship name="PLAYER_SHIP_ORCHID" b="false" c="false"/>
     <!--
     <customShip name="MANTIS_SCOUT_0">
       <crew>
@@ -123,8 +123,8 @@
       <skills>
         <piloting req="13"/>
         <engines req="13"/>
-        <shields req="47"/>
-        <weapons req="47"/>
+        <shields req="50"/>
+        <weapons req="58"/>
         <repair req="16"/>
         <combat req="7"/>
       </skills>
@@ -357,6 +357,7 @@
       <deathSounds>
         <deathSound>orchidDeath</deathSound>
       </deathSounds>-->
+      <animBase>rock</animBase>
       <powerEffect>
         <cooldown>30</cooldown>
         <jumpCooldown>full</jumpCooldown>

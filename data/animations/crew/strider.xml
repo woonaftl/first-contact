@@ -1,111 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FTL>
-  <animSheet name="strider" w="350" h="525" fw="35" fh="35">people/strider_base.png</animSheet>
-  <anim name="strider_walk_up">
-    <sheet>strider</sheet>
-    <desc length="10" x="0" y="14"/>
-    <time>1.0</time>
-  </anim>
-
-  <anim name="strider_walk_right">
-    <sheet>strider</sheet>
-    <desc length="10" x="0" y="13"/>
-    <time>1.0</time>
-  </anim>
-
-  <anim name="strider_walk_left">
-    <sheet>strider</sheet>
-    <desc length="10" x="0" y="12"/>
-    <time>1.0</time>
-  </anim>
+  <animSheet name="strider" w="315" h="700" fw="35" fh="35">people/strider_base.png</animSheet>
 
   <anim name="strider_walk_down">
     <sheet>strider</sheet>
-    <desc length="10" x="0" y="11"/>
+    <desc length="5" x="0" y="19"/>
     <time>1.0</time>
   </anim>
-
-  <anim name="strider_clone">
+  <anim name="strider_walk_left">
     <sheet>strider</sheet>
-    <desc length="6" x="0" y="2"/>
-    <time>0.75</time>
-  </anim>
-
-  <anim name="strider_death_right">
-    <sheet>strider</sheet>
-    <desc length="5" x="3" y="0"/>
-    <time>0.75</time>
-  </anim>
-
-  <anim name="strider_death_left">
-    <sheet>strider</sheet>
-    <desc length="5" x="0" y="2"/>
-    <time>0.75</time>
-  </anim>
-
-  <anim name="strider_shoot_down">
-    <sheet>strider</sheet>
-    <desc length="3" x="0" y="10"/>
+    <desc length="5" x="0" y="18"/>
     <time>1.0</time>
   </anim>
-
-  <anim name="strider_shoot_right">
+  <anim name="strider_walk_right">
     <sheet>strider</sheet>
-    <desc length="3" x="3" y="10"/>
+    <desc length="5" x="0" y="17"/>
     <time>1.0</time>
   </anim>
-
-  <anim name="strider_shoot_up">
+  <anim name="strider_walk_up">
     <sheet>strider</sheet>
-    <desc length="3" x="6" y="10"/>
-    <time>1.0</time>
-  </anim>
-
-  <anim name="strider_shoot_left">
-    <sheet>strider</sheet>
-    <desc length="3" x="0" y="1"/>
-    <time>1.0</time>
-  </anim>
-
-  <anim name="strider_fire_down">
-    <sheet>strider</sheet>
-    <desc length="4" x="0" y="9"/>
-    <time>1.0</time>
-  </anim>
-
-  <anim name="strider_fire_right">
-    <sheet>strider</sheet>
-    <desc length="4" x="4" y="9"/>
-    <time>1.0</time>
-  </anim>
-
-  <anim name="strider_fire_up">
-    <sheet>strider</sheet>
-    <desc length="4" x="0" y="8"/>
-    <time>1.0</time>
-  </anim>
-
-  <anim name="strider_fire_left">
-    <sheet>strider</sheet>
-    <desc length="4" x="4" y="8"/>
+    <desc length="5" x="0" y="16"/>
     <time>1.0</time>
   </anim>
 
   <anim name="strider_repair">
     <sheet>strider</sheet>
-    <desc length="9" x="0" y="7"/>
+    <desc length="9" x="0" y="15"/>
     <time>1.0</time>
   </anim>
 
-  <anim name="strider_punch_up">
+  <anim name="strider_type_down">
     <sheet>strider</sheet>
-    <desc length="6" x="3" y="1"/>
+    <desc length="4" x="0" y="14"/>
+    <time>0.75</time>
+  </anim>
+  <anim name="strider_type_left">
+    <sheet>strider</sheet>
+    <desc length="4" x="0" y="13"/>
+    <time>0.75</time>
+  </anim>
+  <anim name="strider_type_right">
+    <sheet>strider</sheet>
+    <desc length="4" x="0" y="12"/>
+    <time>0.75</time>
+  </anim>
+  <anim name="strider_type_up">
+    <sheet>strider</sheet>
+    <desc length="4" x="0" y="11"/>
+    <time>0.75</time>
+  </anim>
+
+  <anim name="strider_fire_down">
+    <sheet>strider</sheet>
+    <desc length="6" x="0" y="10"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="strider_fire_right">
+    <sheet>strider</sheet>
+    <desc length="6" x="0" y="10"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="strider_fire_up">
+    <sheet>strider</sheet>
+    <desc length="6" x="0" y="10"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="strider_fire_left">
+    <sheet>strider</sheet>
+    <desc length="6" x="0" y="10"/>
     <time>1.0</time>
   </anim>
 
   <anim name="strider_punch_down">
     <sheet>strider</sheet>
-    <desc length="6" x="0" y="6"/>
+    <desc length="6" x="0" y="9"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="strider_punch_up">
+    <sheet>strider</sheet>
+    <desc length="6" x="0" y="8"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="strider_shoot_down">
+    <sheet>strider</sheet>
+    <desc length="5" x="0" y="7"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="strider_shoot_left">
+    <sheet>strider</sheet>
+    <desc length="5" x="0" y="6"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="strider_shoot_right">
+    <sheet>strider</sheet>
+    <desc length="5" x="0" y="5"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="strider_shoot_up">
+    <sheet>strider</sheet>
+    <desc length="5" x="0" y="4"/>
     <time>1.0</time>
   </anim>
 
@@ -115,24 +109,15 @@
     <time>0.5</time>
   </anim>
 
-  <anim name="strider_type_right">
+  <anim name="strider_death_right">
     <sheet>strider</sheet>
-    <desc length="4" x="0" y="5"/>
+    <desc length="4" x="0" y="2"/>
     <time>0.75</time>
   </anim>
-  <anim name="strider_type_left">
+
+  <anim name="strider_clone">
     <sheet>strider</sheet>
-    <desc length="4" x="4" y="5"/>
-    <time>0.75</time>
-  </anim>
-  <anim name="strider_type_up">
-    <sheet>strider</sheet>
-    <desc length="4" x="0" y="4"/>
-    <time>0.75</time>
-  </anim>
-  <anim name="strider_type_down">
-    <sheet>strider</sheet>
-    <desc length="4" x="4" y="4"/>
+    <desc length="6" x="0" y="1"/>
     <time>0.75</time>
   </anim>
 
@@ -140,5 +125,10 @@
     <sheet>strider</sheet>
     <desc length="1" x="0" y="0"/>
     <time>1</time>
+  </anim>
+  <anim name="strider_crewLaser">
+    <sheet>strider</sheet>
+    <desc length="1" x="1" y="0"/>
+    <time>0.5</time>
   </anim>
 </FTL>

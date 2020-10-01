@@ -102,9 +102,8 @@
   </systemBlueprint>
 
   <changelog>
-    <entry>Artillery level 2 upgrade cost 30 to 50</entry>
-    <entry>Artillery level 3 upgrade cost 50 to 100</entry>
-    <entry>Artillery level 4 upgrade cost 80 to 150</entry>
+    <entry>Artillery level 3 upgrade cost 50 to 60</entry>
+    <entry>Artillery level 4 upgrade cost 80 to 120</entry>
   </changelog>
   <systemBlueprint NOLOC="1" name="artillery">
     <type>artillery</type>
@@ -114,9 +113,9 @@
     <maxPower>4</maxPower>
     <rarity>0</rarity>
     <upgradeCost>
-      <level>50</level>
-      <level>100</level>
-      <level>150</level>
+      <level>30</level>
+      <level>60</level>
+      <level>120</level>
     </upgradeCost>
     <cost>150</cost>
   </systemBlueprint>

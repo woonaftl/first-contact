@@ -4,7 +4,7 @@
     <event load="MANTIS_FIGHT"/>
     <event load="MANTIS_FIGHT_WITH_BOARDERS"/>
     <event load="MANTIS_BOARDERS_SWARM"/>
-    <event load="MANTIS_WARPED_FIGHT"/>
+    <event load="MANTIS_STRIDER_FIGHT"/>
   </eventList>
 
   <event name="MANTIS_FIGHT">
@@ -51,13 +51,13 @@
     <ship load="MANTIS_FIGHT" hostile="true"/>
   </event>
 
-  <event name="MANTIS_WARPED_FIGHT" unique="true">
+  <event name="MANTIS_STRIDER_FIGHT" unique="true">
     <text>You fancy you see something moving in the shadow of the beacon, but all remains still.</text>
     <choice>
       <text id="continue"/>
       <event>
-        <text>Suddenly, a Warped ship appears out of nowhere and attacks you. It seems they were waiting in ambush to hunt the Mantis, but you disrupted their plan.</text>
-        <ship load="WARPED_SHIP" hostile="true"/>
+        <text>Suddenly, a Strider ship appears out of nowhere and attacks you. It seems they were waiting in ambush to hunt the Mantis, but you disrupted their plan.</text>
+        <ship load="STRIDER_SHIP" hostile="true"/>
       </event>
     </choice>
   </event>

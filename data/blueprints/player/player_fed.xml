@@ -20,7 +20,7 @@
     <type>BEAM</type>
     <title>Artillery Beam</title>
     <short>Artillery</short>
-    <desc>Powers a slow, high-powered beam does four damage per room hit. More power means faster cooldown.</desc>
+    <desc>Powers a slow, high-powered beam that does four damage per room hit. More power means faster cooldown.</desc>
     <tooltip>Artillery: Beam that automatically fires and deals 4 damage per room</tooltip>
     <damage>4</damage>
     <sp>5</sp>

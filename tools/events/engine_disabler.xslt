@@ -34,16 +34,14 @@
 
   <xsl:template match="event[ship/@hostile = 'true'][not(choice)][not(status[@target = 'enemy'][@system = 'engines'])]">
     <xsl:copy>
-      <xsl:apply-templates select="@* | node()[not(name() = 'ship')]" mode="done"/>
+      <xsl:apply-templates select="@* | node()" mode="done"/>
       <xsl:call-template name="new"/>
-      <xsl:apply-templates select="ship" mode="done"/>
     </xsl:copy>
   </xsl:template>
 
   <xsl:template match="event[ship][choice][descendant::ship/@hostile = 'true']">
     <xsl:copy>
-      <xsl:apply-templates select="@* | node()[not(name() = 'ship')]" mode="found"/>
-      <xsl:apply-templates select="ship" mode="done"/>
+      <xsl:apply-templates select="@* | node()" mode="found"/>
     </xsl:copy>
   </xsl:template>
 

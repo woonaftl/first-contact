@@ -18,17 +18,18 @@
       <pilot power="1" room="0" start="true" img="room_pilot_2"/>
       <sensors power="1" room="7" start="true"/>
       <shields power="2" room="3" start="true" img="room_shields_3"/>
-      <teleporter power="1" room="5" start="false"/>
+      <teleporter power="1" room="5" start="true"/>
       <weapons power="1" room="10" start="true" img="room_weapons_5"/>
     </systemList>
     <weaponSlots>4</weaponSlots>
     <droneSlots>2</droneSlots>
-    <weaponList count="0" missiles="0"/>
-    <droneList drones="0"/>
+    <weaponList count="1" missiles="18">
+      <weapon name="MISSILES_2"/>
+    </weaponList>
     <aug name="GREENHOUSE_LOCKED"/>
     <health amount="30"/>
     <maxPower amount="6"/>
-    <crewCount amount="3" class="orchid"/>
+    <crewCount amount="4" class="orchid"/>
     <shieldImage>stealth</shieldImage>
     <cloakImage>orchid_cruiser</cloakImage>
   </shipBlueprint>
@@ -57,7 +58,6 @@
     <weaponSlots>4</weaponSlots>
     <droneSlots>2</droneSlots>
     <weaponList count="0" missiles="0"/>
-    <droneList drones="0"/>
     <aug name="GREENHOUSE_LOCKED"/>
     <health amount="30"/>
     <maxPower amount="6"/>
@@ -91,7 +91,6 @@
     <weaponSlots>4</weaponSlots>
     <droneSlots>2</droneSlots>
     <weaponList count="0" missiles="0"/>
-    <droneList drones="0"/>
     <aug name="GREENHOUSE_LOCKED"/>
     <health amount="30"/>
     <maxPower amount="6"/>
