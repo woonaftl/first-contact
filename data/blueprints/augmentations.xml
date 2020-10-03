@@ -516,7 +516,7 @@
   </blueprintList>
   <augBlueprint name="GREENHOUSE">
     <title>Orchid Greenhouse</title>
-    <desc>At the start of each sector, replenishes your crew with one newly grown Orchid.</desc>
+    <desc>After a long-range FTL jump (at the start of each sector), replenishes your crew with one newly grown Orchid.</desc>
     <cost>40</cost>
     <bp>4</bp>
     <rarity>0</rarity>
