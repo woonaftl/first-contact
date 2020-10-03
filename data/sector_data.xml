@@ -32,8 +32,8 @@
     <sector>CYBORG_SECTOR_2</sector>-->
     <sector>SLUG_SECTOR</sector>
     <sector>SLUG_SECTOR_2</sector>
-    <!--<sector>WARPED_SECTOR</sector>
-    <sector>WARPED_SECTOR_2</sector>-->
+    <!--<sector>LEPTOD_SECTOR</sector>
+    <sector>LEPTOD_SECTOR_2</sector>-->
   </sectorType>
 
   <sectorType name="UNKNOWN">
@@ -232,6 +232,56 @@
     <event name="NEUTRAL_LANIUS" min="9" max="9"/>
   </sectorDescription>
   <!--
+    <sectorDescription name="LEPTOD_SECTOR" minSector="3" unique="true">
+      <nameList>
+        <name>LEPTOD Home Nebula</name>
+      </nameList>
+      <trackList>
+        <track>void</track>
+        <track>deepspace</track>
+        <track>wasteland</track>
+        <track>debris</track>
+      </trackList>
+      <rarityList>
+        <blueprint name="LEPTOD" rarity="1"/>
+        <blueprint name="human" rarity="0"/>
+        <blueprint name="engi" rarity="0"/>
+        <blueprint name="mantis" rarity="5"/>
+        <blueprint name="rock" rarity="0"/>
+        <blueprint name="slug" rarity="4"/>
+      </rarityList>
+      <startEvent>START_BEACON_LEPTOD</startEvent>
+      <event name="STORE" min="1" max="1"/>
+      <event name="UPGRADE_LIST_NEBULA" min="1" max="1"/>
+
+      <event name="LEPTOD_DEAL_DEVIL" min="1" max="1"/>
+    </sectorDescription>
+
+    <sectorDescription name="LEPTOD_SECTOR_2" minSector="2" unique="false">
+      <nameList>
+        <name>LEPTOD Controlled Nebula</name>
+      </nameList>
+      <trackList>
+        <track>void</track>
+        <track>deepspace</track>
+        <track>wasteland</track>
+        <track>debris</track>
+      </trackList>
+      <rarityList>
+        <blueprint name="LEPTOD" rarity="1"/>
+        <blueprint name="human" rarity="0"/>
+        <blueprint name="engi" rarity="0"/>
+        <blueprint name="mantis" rarity="5"/>
+        <blueprint name="rock" rarity="0"/>
+        <blueprint name="slug" rarity="4"/>
+      </rarityList>
+      <startEvent>START_BEACON_LEPTOD</startEvent>
+      <event name="STORE" min="1" max="1"/>
+      <event name="UPGRADE_LIST_NEBULA" min="1" max="1"/>
+
+      <event name="LEPTOD_DEAL_DEVIL" min="1" max="1"/>
+    </sectorDescription>
+
     <sectorDescription name="LIZARD_SECTOR" minSector="1" unique="true">
       <nameList>
         <name>Lizard Homeworlds</name>
@@ -709,57 +759,7 @@
     <event name="NEUTRAL_SLUG" min="1" max="1"/>
     <event name="HOSTILE_SLUG" min="2" max="2"/>
   </sectorDescription>
-  <!--
-    <sectorDescription name="WARPED_SECTOR" minSector="3" unique="true">
-      <nameList>
-        <name>Warped Home Nebula</name>
-      </nameList>
-      <trackList>
-        <track>void</track>
-        <track>deepspace</track>
-        <track>wasteland</track>
-        <track>debris</track>
-      </trackList>
-      <rarityList>
-        <blueprint name="warped" rarity="1"/>
-        <blueprint name="human" rarity="0"/>
-        <blueprint name="engi" rarity="0"/>
-        <blueprint name="mantis" rarity="5"/>
-        <blueprint name="rock" rarity="0"/>
-        <blueprint name="slug" rarity="4"/>
-      </rarityList>
-      <startEvent>START_BEACON_WARPED</startEvent>
-      <event name="STORE" min="1" max="1"/>
-      <event name="UPGRADE_LIST_NEBULA" min="1" max="1"/>
 
-      <event name="WARPED_DEAL_DEVIL" min="1" max="1"/>
-    </sectorDescription>
-
-    <sectorDescription name="WARPED_SECTOR_2" minSector="2" unique="false">
-      <nameList>
-        <name>Warped Controlled Nebula</name>
-      </nameList>
-      <trackList>
-        <track>void</track>
-        <track>deepspace</track>
-        <track>wasteland</track>
-        <track>debris</track>
-      </trackList>
-      <rarityList>
-        <blueprint name="warped" rarity="1"/>
-        <blueprint name="human" rarity="0"/>
-        <blueprint name="engi" rarity="0"/>
-        <blueprint name="mantis" rarity="5"/>
-        <blueprint name="rock" rarity="0"/>
-        <blueprint name="slug" rarity="4"/>
-      </rarityList>
-      <startEvent>START_BEACON_WARPED</startEvent>
-      <event name="STORE" min="1" max="1"/>
-      <event name="UPGRADE_LIST_NEBULA" min="1" max="1"/>
-
-      <event name="WARPED_DEAL_DEVIL" min="1" max="1"/>
-    </sectorDescription>
-  -->
   <sectorDescription name="ZOLTAN_SECTOR" minSector="2" unique="true">
     <nameList>
       <name>Zoltan Homeworlds</name>

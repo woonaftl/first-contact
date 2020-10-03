@@ -52,7 +52,7 @@
       <event/>
     </choice>
     <choice req="SCRAP_COLLECTOR" hidden="true">
-      <text>(Lanius Metal Melter) Attempt to mine the asteroids.</text>
+      <text>(Lanius Metal Extractor) Attempt to mine the asteroids.</text>
       <event>
         <text>You carefully extract as much usable material as possible from the nearest asteroids while waiting for the FTL to charge.</text>
         <autoReward level="HIGH">scrap_only</autoReward>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <animSheet name="leptod" w="315" h="700" fw="35" fh="35">people/leptod_base.png</animSheet>
+
+  <anim name="leptod_walk_down">
+    <sheet>leptod</sheet>
+    <desc length="5" x="0" y="19"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="leptod_walk_left">
+    <sheet>leptod</sheet>
+    <desc length="5" x="0" y="18"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="leptod_walk_right">
+    <sheet>leptod</sheet>
+    <desc length="5" x="0" y="17"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="leptod_walk_up">
+    <sheet>leptod</sheet>
+    <desc length="5" x="0" y="16"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="leptod_repair">
+    <sheet>leptod</sheet>
+    <desc length="9" x="0" y="15"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="leptod_type_down">
+    <sheet>leptod</sheet>
+    <desc length="4" x="0" y="14"/>
+    <time>0.75</time>
+  </anim>
+  <anim name="leptod_type_left">
+    <sheet>leptod</sheet>
+    <desc length="4" x="0" y="13"/>
+    <time>0.75</time>
+  </anim>
+  <anim name="leptod_type_right">
+    <sheet>leptod</sheet>
+    <desc length="4" x="0" y="12"/>
+    <time>0.75</time>
+  </anim>
+  <anim name="leptod_type_up">
+    <sheet>leptod</sheet>
+    <desc length="4" x="0" y="11"/>
+    <time>0.75</time>
+  </anim>
+
+  <anim name="leptod_fire_down">
+    <sheet>leptod</sheet>
+    <desc length="6" x="0" y="10"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="leptod_fire_left">
+    <sheet>leptod</sheet>
+    <desc length="6" x="0" y="10"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="leptod_fire_right">
+    <sheet>leptod</sheet>
+    <desc length="6" x="0" y="10"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="leptod_fire_up">
+    <sheet>leptod</sheet>
+    <desc length="6" x="0" y="10"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="leptod_punch_down">
+    <sheet>leptod</sheet>
+    <desc length="6" x="0" y="9"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="leptod_punch_up">
+    <sheet>leptod</sheet>
+    <desc length="6" x="0" y="8"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="leptod_shoot_down">
+    <sheet>leptod</sheet>
+    <desc length="5" x="0" y="7"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="leptod_shoot_left">
+    <sheet>leptod</sheet>
+    <desc length="5" x="0" y="6"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="leptod_shoot_right">
+    <sheet>leptod</sheet>
+    <desc length="5" x="0" y="5"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="leptod_shoot_up">
+    <sheet>leptod</sheet>
+    <desc length="5" x="0" y="4"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="leptod_teleport">
+    <sheet>leptod</sheet>
+    <desc length="9" x="0" y="3"/>
+    <time>0.5</time>
+  </anim>
+
+  <anim name="leptod_death_right">
+    <sheet>leptod</sheet>
+    <desc length="4" x="0" y="2"/>
+    <time>0.75</time>
+  </anim>
+
+  <anim name="leptod_clone">
+    <sheet>leptod</sheet>
+    <desc length="6" x="0" y="1"/>
+    <time>0.75</time>
+  </anim>
+
+  <anim name="leptod_portrait">
+    <sheet>leptod</sheet>
+    <desc length="1" x="0" y="0"/>
+    <time>1</time>
+  </anim>
+  <anim name="leptod_crewLaser">
+    <sheet>leptod</sheet>
+    <desc length="1" x="1" y="0"/>
+    <time>0.5</time>
+  </anim>
+</FTL>

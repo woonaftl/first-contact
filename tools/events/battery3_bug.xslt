@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <xsl:transform xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
   <xsl:output method="xml" omit-xml-declaration="no" encoding="utf-8" indent="yes"/>
+<!-- fix bug where the game crashes if player's reactor is limited and player has above 30 power, for example when activating lvl3 battery -->
 
   <xsl:template match="@* | node()" name="identity">
     <xsl:copy>

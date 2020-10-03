@@ -273,6 +273,7 @@
       <fireRepairMultiplier>0.6</fireRepairMultiplier>
       <fireDamageMultiplier>4.0</fireDamageMultiplier>
       <oxygenChangeSpeed>0.525</oxygenChangeSpeed>
+      <animBase>mantis</animBase>
       <deathSounds>
         <deathSound>orchidDeath</deathSound>
       </deathSounds>
@@ -284,7 +285,7 @@
     </race>
 
     <race name="lizard">
-      <passiveHealAmount>0.5</passiveHealAmount>
+      <passiveHealAmount>0.65</passiveHealAmount>
       <passiveHealDelay>4</passiveHealDelay>
       <!--
       <deathSounds>
@@ -309,50 +310,18 @@
           <powerSound>lockdown1</powerSound>
           <powerSound>lockdown2</powerSound>
         </powerSounds>-->
-        <sysDamage>-8</sysDamage>
+        <sysDamage>-1</sysDamage>
         <friendlyFire>true</friendlyFire>
         <shipFriendlyFire>true</shipFriendlyFire>
         <buttonText>REPAIR</buttonText>
-        <tooltip>Ready: Click to repair a system at a health cost</tooltip>
+        <tooltip>Ready: Click to repair a system</tooltip>
         <cooldownColor r="240" g="220" b="120"/>
         <effectAnim>rainbow_spiral</effectAnim>
         <animFrame>2</animFrame>
-        <selfHealth>-75.0</selfHealth>
       </powerEffect>
     </race>
 
-    <race name="warped">
-      <!--
-      <deathSounds>
-        <deathSound>orchidDeath</deathSound>
-      </deathSounds>-->
-      <powerEffect>
-        <cooldown>30</cooldown>
-        <jumpCooldown>full</jumpCooldown>
-        <!--
-        <powerSounds>
-          <powerSound>lockdown1</powerSound>
-          <powerSound>lockdown2</powerSound>
-        </powerSounds>-->
-        <buttonText>STEALTH</buttonText>
-        <tooltip>Ready: Click to become invisible and invulnerable</tooltip>
-        <cooldownColor r="0" g="110" b="155"/>
-        <!--<effectAnim>explosion_crystal</effectAnim>-->
-        <temporaryEffect>
-          <duration>10</duration>
-          <cooldownColor r="100" g="210" b="255"/>
-          <!--
-          <finishSounds>
-            <finishSound>mindControlEnd</finishSound>
-          </finishSounds>-->
-          <!--<effectAnim>mindcontrol</effectAnim>-->
-          <invulnerable>true</invulnerable>
-          <animSheet baseVisible="false">warped_stealth</animSheet>
-        </temporaryEffect>
-      </powerEffect>
-    </race>
-
-    <race name="strider">
+    <race name="leptod">
       <!--
       <deathSounds>
         <deathSound>orchidDeath</deathSound>
@@ -379,7 +348,7 @@
           </finishSounds>-->
           <!--<effectAnim>mindcontrol</effectAnim>-->
           <invulnerable>true</invulnerable>
-          <animSheet baseVisible="false">strider_stealth</animSheet>
+          <animSheet baseVisible="false">leptod_stealth</animSheet>
         </temporaryEffect>
       </powerEffect>
     </race>

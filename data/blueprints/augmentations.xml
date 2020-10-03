@@ -202,7 +202,7 @@
     <entry>Scrap Recovery Arm made unavailable in stores or loot (Lanius ships start with it)</entry>
   </changelog>
   <augBlueprint name="SCRAP_COLLECTOR">
-    <title>Lanius Metal Melter</title>
+    <title>Lanius Metal Extractor</title>
     <desc>Allows the ship to collect 15 percent more scrap from any source.</desc>
     <cost>50</cost>
     <bp>8</bp>
@@ -216,7 +216,7 @@
     <entry>Long-Ranged Scanners made exclusive to new race</entry>
   </changelog>
   <augBlueprint name="ADV_SCANNERS">
-    <title>Long-Ranged Scanners</title>
+    <title>Leptod Pelengator</title>
     <desc>Adds additional info about nearby beacons on the star map.</desc>
     <cost>30</cost>
     <bp>3</bp>

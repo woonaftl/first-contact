@@ -1,119 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FTL>
-  <animSheet name="lizard" w="315" h="455" fw="35" fh="35">people/lizard_base.png</animSheet>
+  <animSheet name="lizard" w="315" h="805" fw="35" fh="35">people/lizard_base.png</animSheet>
+  
   <anim name="lizard_walk_down">
     <sheet>lizard</sheet>
-    <desc length="4" x="0" y="12"/>
-    <time>1.0</time>
-  </anim>
-  <anim name="lizard_walk_up">
-    <sheet>lizard</sheet>
-    <desc length="4" x="4" y="12"/>
+    <desc length="4" x="0" y="22"/>
     <time>1.0</time>
   </anim>
   <anim name="lizard_walk_left">
     <sheet>lizard</sheet>
-    <desc length="4" x="0" y="11"/>
+    <desc length="4" x="0" y="21"/>
     <time>1.0</time>
   </anim>
   <anim name="lizard_walk_right">
     <sheet>lizard</sheet>
-    <desc length="4" x="4" y="11"/>
+    <desc length="4" x="0" y="20"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="lizard_walk_up">
+    <sheet>lizard</sheet>
+    <desc length="4" x="0" y="19"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="lizard_repair">
+    <sheet>lizard</sheet>
+    <desc length="9" x="0" y="18"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="lizard_type_down">
+    <sheet>lizard</sheet>
+    <desc length="4" x="0" y="17"/>
+    <time>0.75</time>
+  </anim>
+  <anim name="lizard_type_left">
+    <sheet>lizard</sheet>
+    <desc length="4" x="0" y="16"/>
+    <time>0.75</time>
+  </anim>
+  <anim name="lizard_type_right">
+    <sheet>lizard</sheet>
+    <desc length="4" x="0" y="15"/>
+    <time>0.75</time>
+  </anim>
+  <anim name="lizard_type_up">
+    <sheet>lizard</sheet>
+    <desc length="4" x="0" y="14"/>
+    <time>0.75</time>
+  </anim>
+
+  <anim name="lizard_fire_down">
+    <sheet>lizard</sheet>
+    <desc length="4" x="0" y="13"/>
     <time>1.0</time>
   </anim>
   <anim name="lizard_fire_left">
     <sheet>lizard</sheet>
-    <desc length="4" x="0" y="10"/>
+    <desc length="4" x="0" y="12"/>
     <time>1.0</time>
   </anim>
   <anim name="lizard_fire_right">
     <sheet>lizard</sheet>
-    <desc length="4" x="4" y="10"/>
-    <time>1.0</time>
-  </anim>
-  <anim name="lizard_fire_down">
-    <sheet>lizard</sheet>
-    <desc length="4" x="0" y="9"/>
+    <desc length="4" x="0" y="11"/>
     <time>1.0</time>
   </anim>
   <anim name="lizard_fire_up">
     <sheet>lizard</sheet>
-    <desc length="4" x="4" y="9"/>
+    <desc length="4" x="0" y="10"/>
     <time>1.0</time>
   </anim>
-  <anim name="lizard_type_left">
-    <sheet>lizard</sheet>
-    <desc length="4" x="0" y="8"/>
-    <time>1</time>
-  </anim>
-  <anim name="lizard_type_right">
-    <sheet>lizard</sheet>
-    <desc length="4" x="4" y="8"/>
-    <time>1</time>
-  </anim>
-  <anim name="lizard_type_down">
-    <sheet>lizard</sheet>
-    <desc length="4" x="0" y="7"/>
-    <time>1</time>
-  </anim>
-  <anim name="lizard_type_up">
-    <sheet>lizard</sheet>
-    <desc length="4" x="4" y="7"/>
-    <time>1</time>
-  </anim>
-  <anim name="lizard_shoot_down">
-    <sheet>lizard</sheet>
-    <desc length="3" x="0" y="6"/>
-    <time>1.0</time>
-  </anim>
-  <anim name="lizard_shoot_up">
-    <sheet>lizard</sheet>
-    <desc length="3" x="3" y="6"/>
-    <time>1.0</time>
-  </anim>
-  <anim name="lizard_shoot_left">
-    <sheet>lizard</sheet>
-    <desc length="3" x="6" y="6"/>
-    <time>1.0</time>
-  </anim>
-  <anim name="lizard_shoot_right">
-    <sheet>lizard</sheet>
-    <desc length="3" x="6" y="5"/>
-    <time>1.0</time>
-  </anim>
+
   <anim name="lizard_punch_down">
     <sheet>lizard</sheet>
-    <desc length="6" x="0" y="5"/>
+    <desc length="6" x="0" y="9"/>
     <time>1.0</time>
   </anim>
   <anim name="lizard_punch_up">
     <sheet>lizard</sheet>
-    <desc length="6" x="0" y="4"/>
+    <desc length="6" x="0" y="8"/>
     <time>1.0</time>
   </anim>
-  <anim name="lizard_repair">
+
+  <anim name="lizard_shoot_down">
     <sheet>lizard</sheet>
-    <desc length="9" x="0" y="3"/>
+    <desc length="3" x="0" y="7"/>
     <time>1.0</time>
   </anim>
+  <anim name="lizard_shoot_left">
+    <sheet>lizard</sheet>
+    <desc length="3" x="0" y="6"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="lizard_shoot_right">
+    <sheet>lizard</sheet>
+    <desc length="3" x="0" y="5"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="lizard_shoot_up">
+    <sheet>lizard</sheet>
+    <desc length="3" x="0" y="4"/>
+    <time>1.0</time>
+  </anim>
+
   <anim name="lizard_teleport">
     <sheet>lizard</sheet>
-    <desc length="9" x="0" y="2"/>
+    <desc length="9" x="0" y="3"/>
     <time>0.5</time>
   </anim>
+
+  <anim name="lizard_death_right">
+    <sheet>lizard</sheet>
+    <desc length="4" x="0" y="2"/>
+    <time>0.75</time>
+  </anim>
+
   <anim name="lizard_clone">
     <sheet>lizard</sheet>
-    <desc length="6" x="0" y="1"/>
-    <time>1.0</time>
+    <desc length="7" x="0" y="1"/>
+    <time>0.75</time>
   </anim>
+
   <anim name="lizard_portrait">
     <sheet>lizard</sheet>
     <desc length="1" x="0" y="0"/>
     <time>1</time>
-  </anim>
-  <anim name="lizard_death_right">
-    <sheet>lizard</sheet>
-    <desc length="4" x="2" y="0"/>
-    <time>1.0</time>
   </anim>
 </FTL>
