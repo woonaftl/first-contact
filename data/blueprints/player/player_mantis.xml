@@ -53,17 +53,17 @@
       <sensors power="1" room="16" start="true" img="room_sensors_9"/>
       <shields power="2" room="13" start="true" img="room_shields_5"/>
       <teleporter power="1" room="6" start="true"/>
-      <weapons power="2" room="4" start="true" img="room_weapons_5"/>
+      <weapons power="1" room="4" start="true" img="room_weapons_5"/>
     </systemList>
     <weaponSlots>3</weaponSlots>
     <droneSlots>2</droneSlots>
-    <weaponList count="2" missiles="18">
+    <weaponList count="2" missiles="16">
       <weapon name="BOMB_ION"/>
       <weapon name="LASER_HEAVY_1_UPGRADED"/>
     </weaponList>
     <aug name="CREW_STIMS_LOCKED"/>
     <health amount="30"/>
-    <maxPower amount="8"/>
+    <maxPower amount="7"/>
     <shieldImage>mantis_cruiser</shieldImage>
     <cloakImage>mantis_cruiser</cloakImage>
     <floorImage>mantis_cruiser_brown</floorImage>
@@ -91,7 +91,7 @@
       <teleporter power="1" room="13" start="true"/>
       <weapons power="1" room="6" start="true" img="room_weapons_13"/>
     </systemList>
-    <weaponList count="1" missiles="15">
+    <weaponList count="1" missiles="12">
       <weapon name="BOMB_HEAL_SYSTEM"/>
     </weaponList>
     <weaponSlots>3</weaponSlots>
