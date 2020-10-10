@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <event name="NEBULA_ROCK_RACIST" unique="true">
+    <text>A Rock armoured transport nearby looks to have lost its bearings, but when you hail they grow suspicious: "Whatever life-form you are, we find you repugnant. We seek no aid. Leave. Now."</text>
+    <ship load="ROCK_SHIP" hostile="false"/>
+    <environment type="storm"/>
+    <choice>
+      <text>Leave.</text>
+      <event/>
+    </choice>
+    <choice>
+      <text>Repugnant?! Arm the weapons!</text>
+      <event>
+        <text>The Rock captain clenches his jaw and prepares to fight without another word. Their ship is partially disabled but still able to withstand some damage.</text>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice hidden="true" req="rock">
+      <text>(Rock crewmember) Offer to lead them out of the nebula.</text>
+      <event>
+        <text>The Rock grudgingly transfer control of their helm to you and you steer them to a thinner part of the nebula. They're not sure what to think, but transfer over some supplies all the same.</text>
+        <autoReward level="HIGH">standard</autoReward>
+      </event>
+    </choice>
+  </event>
+</FTL>

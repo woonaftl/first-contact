@@ -2,6 +2,7 @@
 <FTL>
   <eventList name="NEBULA_HOSTILE_HAZARD_ZOLTAN">
     <event load="STORM_ZOLTAN_FIGHT"/>
+    <event load="STORM_ZOLTAN_AUTO_FIGHT"/>
     <event load="STORM_ZOLTAN_PIRATE_FIGHT"/>
   </eventList>
 
@@ -13,6 +14,16 @@
     </textList>
     <environment type="storm"/>
     <ship load="ZOLTAN_SHIP" hostile="true"/>
+  </event>
+
+  <event name="STORM_ZOLTAN_AUTO_FIGHT">
+    <textList>
+      <text>The Rebel automated ships were designed for combat in harsh environments as they do not require life support. As the plasma storm disables your ship's reactor, the auto-ship attacks!</text>
+      <text>The Zoltan space has shown to be treacherous once again. The plasma storm has rendered half of your ship's systems unusable and the Rebel automated ship is firing upon you.</text>
+      <text>The odds are stacked against your ship once again. A plasma storm is raging in the depths of Zoltan space, but the Rebel auto-scout completely disregards it and targets your ship with all of its weapons.</text>
+    </textList>
+    <environment type="storm"/>
+    <ship load="REBEL_AUTO" hostile="true"/>
   </event>
 
   <event name="STORM_ZOLTAN_PIRATE_FIGHT" unique="true">

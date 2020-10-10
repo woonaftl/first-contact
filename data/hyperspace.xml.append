@@ -352,39 +352,6 @@
         </temporaryEffect>
       </powerEffect>
     </race>
-
-    <race name="cyborglice">
-      <damageTakenMultiplier>0.5</damageTakenMultiplier>
-      <!--
-      <deathSounds>
-        <deathSound>orchidDeath</deathSound>
-      </deathSounds>-->
-      <powerEffect>
-        <cooldown>0</cooldown>
-        <cooldownColor r="0" g="0" b="0"/>
-        <!--
-        <powerSounds>
-          <powerSound>lockdown1</powerSound>
-          <powerSound>lockdown2</powerSound>
-        </powerSounds>-->
-        <buttonText>DISABLED</buttonText>
-        <activateWhenReady>true</activateWhenReady>
-        <req>
-          <maxHealth>25</maxHealth>
-        </req>
-        <!--<effectAnim>explosion_crystal</effectAnim>-->
-        <temporaryEffect>
-          <duration>1</duration>
-          <cooldownColor r="0" g="0" b="0"/>
-          <!--
-          <finishSounds>
-            <finishSound>mindControlEnd</finishSound>
-          </finishSounds>-->
-          <!--<effectAnim>mindcontrol</effectAnim>-->
-          <controllable>false</controllable>
-        </temporaryEffect>
-      </powerEffect>
-    </race>
   </crew>
 
   <augments>

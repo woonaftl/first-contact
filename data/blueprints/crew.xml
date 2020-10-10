@@ -7,6 +7,8 @@
     <name>human</name>
     <name>slug</name>
     <name>energy</name>
+    <name>lizard</name>
+    <name>pavonian</name>
   </blueprintList>
 
   <crewBlueprint name="human">
@@ -21,13 +23,13 @@
 	  </powerList>
     <colorList>
       <layer>
-        <color a="0.7" b="255" g="140" r="140"/>
+        <color r="140" g="140" b="255" a="0.7"/>
       </layer>
       <layer>
-        <color a="0.4" b="150" g="150" r="255"/>
-        <color a="0.7" b="40" g="60" r="90"/>
-        <color a="0" b="89" g="124" r="255"/>
-        <color a="0.2" b="255" g="255" r="255"/>
+        <color r="255" g="150" b="150" a="0.4"/>
+        <color r="90" g="60" b="40" a="0.7"/>
+        <color r="255" g="124" b="89" a="0"/>
+        <color r="255" g="255" b="255" a="0.2"/>
       </layer>
     </colorList>
   </crewBlueprint>
@@ -38,7 +40,7 @@
   <crewBlueprint name="engi">
     <title>Engi</title>
     <short>Engi</short>
-    <desc>It's unclear if the 'Engi' are partly organic or entirely mechanical, but it's well known that they make exceptional engineers.</desc>
+    <desc>It's unclear if the Engi are partly organic or entirely mechanical, but it's well known that they make exceptional engineers.</desc>
     <cost>50</cost>
     <bp>2</bp>
     <rarity>2</rarity>
@@ -46,6 +48,15 @@
       <power>Repair speed is doubled</power>
       <power>Deals half damage to crew and systems</power>
     </powerList>
+    <colorList>
+      <layer>
+        <color r="0" g="0" b="0" a="0"/>
+        <color r="226" g="209" b="199" a="0.7"/>
+        <color r="183" g="186" b="223" a="0.7"/>
+        <color r="169" g="219" b="235" a="0.7"/>
+        <color r="113" g="127" b="146" a="0.7"/>
+      </layer>
+    </colorList>
   </crewBlueprint>
 
   <changelog>
@@ -66,11 +77,11 @@
     </powerList>
     <colorList>
       <layer>
-        <color a="0" b="45" g="165" r="119"/>
-        <color a="0.5" b="35" g="156" r="156"/>
-        <color a="0.9" b="0" g="241" r="51"/>
-        <color a="0.9" b="207" g="241" r="111"/>
-        <color a="0.2" b="0" g="0" r="255"/>
+        <color r="119"  g="165" b="45"  a="0"     />
+        <color r="156"  g="156" b="35"  a="0.5"   />
+        <color r="51"   g="241" b="0"   a="0.9"   />
+        <color r="111"  g="241" b="207" a="0.9"   />
+        <color r="255"  g="0"   b="0"   a="0.2"   />
       </layer>
     </colorList>
   </crewBlueprint>
@@ -92,12 +103,12 @@
     </powerList>
     <colorList>
       <layer>
-        <color a="0.8" b="175" g="230" r="255"/>
-        <color a="0.6" b="60" g="240" r="120"/>
-        <color a="1" b="0" g="241" r="255"/>
-        <color a="1" b="0" g="170" r="255"/>
-        <color a="0" b="0" g="0" r="0"/>
-        <color a="0.5" b="200" g="140" r="140"/>
+        <color r="255" g="230" b="175" a="0.8"   />
+        <color r="120" g="240" b="60"  a="0.6"   />
+        <color r="255" g="241" b="0"   a="1"     />
+        <color r="255" g="170" b="0"   a="1"     />
+        <color r="0"   g="0"   b="0"   a="0"     />
+        <color r="140" g="140" b="200" a="0.5"   />
       </layer>
     </colorList>
   </crewBlueprint>
@@ -110,7 +121,7 @@
   <crewBlueprint name="rock">
     <title>Rockman</title>
     <short>Rockman</short>
-    <desc>The 'Rockmen' of Vrachos IV are rarely seen and are known for their fortitude.</desc>
+    <desc>The Rockmen of Vrachos IV are known for their fortitude.</desc>
     <cost>50</cost>
     <bp>4</bp>
     <rarity>3</rarity>
@@ -122,10 +133,10 @@
     </powerList>
     <colorList>
       <layer>
-        <color a="0.7" b="31" g="42" r="76"/>
-        <color a="0.2" b="35" g="80" r="120"/>
-        <color a="0.7" b="220" g="100" r="140"/>
-        <color a="0.7" b="64" g="111" r="240"/>
+        <color r="76"  g="42"  b="31"  a="0.7"  />
+        <color r="120" g="80"  b="35"  a="0.2"  />
+        <color r="140" g="100" b="220" a="0.7"  />
+        <color r="240" g="111" b="64"  a="0.7"  />
       </layer>
     </colorList>
   </crewBlueprint>
@@ -133,7 +144,7 @@
   <crewBlueprint name="energy">
     <title>Zoltan</title>
     <short>Zoltan</short>
-    <desc>The 'Zoltan' are allies of the 'Engi.' Their innate energy can power ship systems.</desc>
+    <desc>Immaterial beings of pure energy, the Zoltan are able to change their shape at will. They use humanoid appearance only for communication and prefer spherical form.</desc>
     <cost>60</cost>
     <bp>4</bp>
     <rarity>5</rarity>
@@ -144,11 +155,11 @@
     </powerList>
     <colorList>
       <layer>
-        <color a="1" b="147" g="255" r="249"/>
-        <color a="0.8" b="161" g="241" r="212"/>
-        <color a="1" b="87" g="255" r="79"/>
-        <color a="0.6" b="109" g="133" r="99"/>
-        <color a="0.1" b="200" g="255" r="240"/>
+        <color r="249" g="255" b="147" a="1"   />
+        <color r="212" g="241" b="161" a="0.8" />
+        <color r="79"  g="255" b="87"  a="1"   />
+        <color r="99"  g="133" b="109" a="0.6" />
+        <color r="240" g="255" b="200" a="0.1" />
       </layer>
     </colorList>
   </crewBlueprint>
@@ -171,10 +182,10 @@
     </powerList>
     <colorList>
       <layer>
-        <color a="0.5" b="255" g="187" r="40"/>
-        <color a="0.4" b="255" g="40" r="55"/>
-        <color a="0.2" b="255" g="40" r="55"/>
-        <color a="0.1" b="138" g="131" r="115"/>
+        <color r="40" g="187" b="255" a="0.5"/>
+        <color r="55" g="40" b="255" a="0.4"/>
+        <color r="55" g="40" b="255" a="0.2"/>
+        <color r="115" g="131" b="138" a="0.1"/>
       </layer>
     </colorList>
   </crewBlueprint>
@@ -195,10 +206,10 @@
     </powerList>
     <colorList>
       <layer>
-        <color a="0.3" b="232" g="117" r="196"/>
-        <color a="0" b="1" g="1" r="1"/>
-        <color a="0.2" b="1" g="1" r="1"/>
-        <color a="0.5" b="117" g="220" r="232"/>
+        <color r="0" g="0" b="0" a="0"/>
+        <color r="1" g="1" b="1" a="0.2"/>
+        <color r="196" g="117" b="232" a="0.3"/>
+        <color r="232" g="220" b="117" a="0.5"/>
       </layer>
     </colorList>
   </crewBlueprint>
@@ -213,6 +224,21 @@
     <powerList>
       <power>Active: become invisible and invulnerable for 10 seconds</power>
     </powerList>
+    <colorList>
+      <layer>
+        <color r="0" g="0" b="0" a="0"/>
+        <color r="131" g="219" b="255" a="0.7"/>
+        <color r="76" g="235" b="220" a="0.7"/>
+        <color r="130" g="255" b="223" a="0.7"/>
+        <color r="163" g="163" b="163" a="0.7"/>
+      </layer>
+      <layer>
+        <color r="0" g="0" b="0" a="0"/>
+        <color r="178" g="255" b="202" a="0.7"/>
+        <color r="255" g="188" b="203" a="0.7"/>
+        <color r="154" g="219" b="255" a="0.7"/>
+      </layer>
+    </colorList>
   </crewBlueprint>
 
   <crewBlueprint name="lizard">
@@ -221,7 +247,7 @@
     <desc>The Lizards are respected in the Federation for their ability to withstand hardship and come out alive after any disaster.</desc>
     <cost>50</cost>
     <bp>2</bp>
-    <rarity>0</rarity>
+    <rarity>4</rarity>
     <powerList>
       <power>Regenerates health when not in danger</power>
     </powerList>
@@ -281,23 +307,24 @@
     <desc>Proud Pavonians are fragile creatures, but useful to keep ship systems operational.</desc>
     <cost>50</cost>
     <bp>2</bp>
-    <rarity>0</rarity>
+    <rarity>5</rarity>
     <powerList>
       <power>Active: repair 1 system damage</power>
       <power>Takes double damage in close combat</power>
     </powerList>
-  </crewBlueprint>
-
-  <crewBlueprint name="cyborglice">
-    <title>?</title>
-    <short>?</short>
-    <desc>?</desc>
-    <cost>60</cost>
-    <bp>2</bp>
-    <rarity>0</rarity>
-    <powerList>
-      <power>Take half damage in close combat</power>
-      <power>Become auto-piloted on low health</power>
-    </powerList>
+    <colorList>
+      <layer>
+        <color r="0" g="0" b="0" a="0"/>
+        <color r="255" g="183" b="142" a="0.7"/>
+        <color r="170" g="233" b="255" a="0.7"/>
+        <color r="193" g="233" b="192" a="0.7"/>
+      </layer>
+      <layer>
+        <color r="0" g="0" b="0" a="0"/>
+        <color r="255" g="160" b="205" a="0.7"/>
+        <color r="216" g="153" b="255" a="0.7"/>
+        <color r="199" g="255" b="170" a="0.7"/>
+      </layer>
+    </colorList>
   </crewBlueprint>
 </FTL>

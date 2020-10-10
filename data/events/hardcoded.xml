@@ -88,6 +88,8 @@
     <event load="NEBULA_PIRATE"/>
     <event load="NEBULA_PIRATE_SMUGGLE"/>
     <event load="NEBULA_REBEL"/>
+    <event load="WRECKAGE_EVENT"/>
+    <event load="STORM_ITEMS"/>
   </eventList>
 
   <event name="STORE">

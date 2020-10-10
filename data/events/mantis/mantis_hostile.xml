@@ -46,7 +46,7 @@
   </event>
 
   <event name="MANTIS_BOARDERS_SWARM" unique="true">
-    <text>It seems that the entire Mantis hive has teleported on your ship from nearby station. A small military ship is attacking while your ship is filled with screeches and gunshots.</text>
+    <text>It seems that an entire Mantis brood has teleported on your ship from nearby station. A small military ship is attacking while your ship is filled with screeches and gunshots.</text>
     <boarders min="4" max="5" class="mantis"/>
     <ship load="MANTIS_FIGHT" hostile="true"/>
   </event>

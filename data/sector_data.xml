@@ -2,44 +2,43 @@
 <FTL>
   <!--TODO unique upgrade events and texts for each sector-->
   <sectorType name="CIVILIAN">
-    <sector>ENGI_SECTOR</sector>
-    <sector>ENGI_SECTOR_2</sector>
-    <!--<sector>LIZARD_SECTOR</sector>
-    <sector>LIZARD_SECTOR_2</sector>-->
-    <sector>ORCHID_SECTOR</sector>
-    <sector>ORCHID_SECTOR_2</sector>
-    <sector>PAVONIAN_SECTOR</sector>
-    <sector>PAVONIAN_SECTOR_2</sector>
-    <sector>ZOLTAN_SECTOR</sector>
-    <sector>ZOLTAN_SECTOR_2</sector>
+    <sector>CIVILIAN_FILLER_SECTOR</sector>
+    <sector>ENGI_RESEARCH_SECTOR</sector>
+    <sector>ENGI_WARZONE_SECTOR</sector>
+    <sector>LIZARD_REFUGE_SECTOR</sector>
+    <sector>ORCHID_GARDEN_SECTOR</sector>
+    <sector>PAVONIAN_ANARCHY_SECTOR</sector>
+    <sector>PAVONIAN_RAINBOW_SECTOR</sector>
+    <sector>ZOLTAN_INSPECTION_SECTOR</sector>
   </sectorType>
 
   <sectorType name="HOSTILE">
-    <sector>LANIUS_SECTOR</sector>
-    <sector>LANIUS_SECTOR_2</sector>
-    <sector>MANTIS_SECTOR</sector>
-    <sector>MANTIS_SECTOR_2</sector>
+    <sector>LANIUS_WARZONE_SECTOR</sector>
+    <sector>LEPTOD_WEAPON_TEST_SECTOR</sector>
+    <sector>MANTIS_BROOD_SECTOR</sector>
+    <sector>MANTIS_HUNTING_SECTOR</sector>
     <sector>PIRATE_SECTOR</sector>
-    <sector>PIRATE_SECTOR_2</sector>
-    <sector>REBEL_SECTOR</sector>
-    <sector>REBEL_SECTOR_2</sector>
-    <sector>ROCK_SECTOR</sector>
-    <sector>ROCK_SECTOR_2</sector>
+    <sector>REBEL_FILLER_SECTOR</sector>
+    <sector>REBEL_STRONGHOLD_SECTOR</sector>
+    <sector>ROCK_FORTRESS_SECTOR</sector>
+    <sector>ROCK_HAZARD_SECTOR</sector>
   </sectorType>
 
   <sectorType name="NEBULA">
-    <!--<sector>CYBORG_SECTOR</sector>
-    <sector>CYBORG_SECTOR_2</sector>-->
-    <sector>SLUG_SECTOR</sector>
-    <sector>SLUG_SECTOR_2</sector>
-    <!--<sector>LEPTOD_SECTOR</sector>
-    <sector>LEPTOD_SECTOR_2</sector>-->
+    <sector>LANIUS_HOME_SECTOR</sector>
+    <sector>LEPTOD_HOME_SECTOR</sector>
+    <sector>LIZARD_RUINS_SECTOR</sector>
+    <sector>NEBULA_FILLER_SECTOR</sector>
+    <sector>SLUG_HOME_SECTOR</sector>
+    <sector>SLUG_HAZARD_SECTOR</sector>
+    <sector>ZOLTAN_HAZARD_SECTOR</sector>
   </sectorType>
 
   <sectorType name="UNKNOWN">
     <sector>STANDARD_SPACE</sector>
   </sectorType>
 
+  <!-- HARDCODED SECTORS -->
   <sectorDescription name="STANDARD_SPACE" minSector="0" unique="false">
     <nameList>
       <name>Federation Space</name>
@@ -77,6 +76,7 @@
     <event name="BOSS_NEUTRAL" min="9" max="9"/>
   </sectorDescription>
 
+  <!-- HIDDEN SECTORS -->
   <sectorDescription name="CRYSTAL_HOME" minSector="0" unique="true">
     <nameList>
       <name>Hidden Crystal Worlds</name>
@@ -103,9 +103,33 @@
     <event name="HOSTILE_CRYSTAL" min="9" max="9"/>
   </sectorDescription>
 
-  <sectorDescription name="ENGI_SECTOR" minSector="1" unique="true">
+  <!-- MAIN SECTORS -->
+  <sectorDescription name="CIVILIAN_FILLER_SECTOR" minSector="1" unique="false">
     <nameList>
-      <name>Engi Homeworlds</name>
+      <name>Civilian Sector</name>
+    </nameList>
+    <trackList>
+      <track>civilian</track>
+      <track>cosmos</track>
+      <track>milkyway</track>
+      <track>lostship</track>
+    </trackList>
+    <startEvent>START_BEACON</startEvent>
+    <event name="STORE" min="1" max="1"/>
+
+    <event name="ASTEROID_DERELICT_SHIP" min="1" max="1"/>
+
+    <event name="NEBULA_NEUTRAL_CIVILIAN" min="2" max="2"/>
+    <event name="NEBULA_HOSTILE_CIVILIAN" min="1" max="1"/>
+
+    <event name="NEUTRAL_CIVILIAN" min="6" max="6"/>
+    <event name="HOSTILE_CIVILIAN" min="4" max="4"/>
+    <event name="NOSHIP_CIVILIAN" min="7" max="7"/>
+  </sectorDescription>
+
+  <sectorDescription name="ENGI_RESEARCH_SECTOR" minSector="1" unique="true">
+    <nameList>
+      <name>Engi Research Hub</name>
     </nameList>
     <trackList>
       <track>engi</track>
@@ -113,14 +137,12 @@
       <track>hacking</track>
     </trackList>
     <rarityList>
+      <blueprint name="human" rarity="5"/>
       <blueprint name="engi" rarity="1"/>
       <blueprint name="mantis" rarity="0"/>
-      <blueprint name="energy" rarity="3"/>
-      <blueprint name="slug" rarity="0"/>
+      <blueprint name="energy" rarity="2"/>
       <blueprint name="rock" rarity="0"/>
-      <blueprint name="human" rarity="3"/>
       <blueprint name="orchid" rarity="5"/>
-      <blueprint name="pavonian" rarity="5"/>
     </rarityList>
     <startEvent>START_BEACON_ENGI</startEvent>
     <event name="STORE_ENGI" min="2" max="2"/>
@@ -139,9 +161,9 @@
     <event name="HOSTILE_HAZARD_ENGI" min="1" max="1"/>
   </sectorDescription>
 
-  <sectorDescription name="ENGI_SECTOR_2" minSector="1" unique="false">
+  <sectorDescription name="ENGI_WARZONE_SECTOR" minSector="1" unique="true">
     <nameList>
-      <name>Engi Controlled Sector</name>
+      <name>Engi Contested Worlds</name>
     </nameList>
     <trackList>
       <track>engi</track>
@@ -174,9 +196,9 @@
     <event name="HOSTILE_HAZARD_ENGI" min="1" max="1"/>
   </sectorDescription>
 
-  <sectorDescription name="LANIUS_SECTOR" minSector="2" unique="true">
+  <sectorDescription name="LANIUS_WARZONE_SECTOR" minSector="1" unique="true">
     <nameList>
-      <name>Abandoned Sector</name>
+      <name>Lanius Resurgence Point</name>
     </nameList>
     <trackList>
       <track>shrike</track>
@@ -203,9 +225,9 @@
     <event name="NEUTRAL_LANIUS" min="9" max="9"/>
   </sectorDescription>
 
-  <sectorDescription name="LANIUS_SECTOR_2" minSector="1" unique="false">
+  <sectorDescription name="LANIUS_HOME_SECTOR" minSector="2" unique="true">
     <nameList>
-      <name>Abandoned Sector</name>
+      <name>Lanius Stasis Nebula</name>
     </nameList>
     <trackList>
       <track>shrike</track>
@@ -231,104 +253,100 @@
     <event name="HOSTILE_LANIUS" min="6" max="6"/>
     <event name="NEUTRAL_LANIUS" min="9" max="9"/>
   </sectorDescription>
-  <!--
-    <sectorDescription name="LEPTOD_SECTOR" minSector="3" unique="true">
-      <nameList>
-        <name>LEPTOD Home Nebula</name>
-      </nameList>
-      <trackList>
-        <track>void</track>
-        <track>deepspace</track>
-        <track>wasteland</track>
-        <track>debris</track>
-      </trackList>
-      <rarityList>
-        <blueprint name="LEPTOD" rarity="1"/>
-        <blueprint name="human" rarity="0"/>
-        <blueprint name="engi" rarity="0"/>
-        <blueprint name="mantis" rarity="5"/>
-        <blueprint name="rock" rarity="0"/>
-        <blueprint name="slug" rarity="4"/>
-      </rarityList>
-      <startEvent>START_BEACON_LEPTOD</startEvent>
-      <event name="STORE" min="1" max="1"/>
-      <event name="UPGRADE_LIST_NEBULA" min="1" max="1"/>
 
-      <event name="LEPTOD_DEAL_DEVIL" min="1" max="1"/>
-    </sectorDescription>
-
-    <sectorDescription name="LEPTOD_SECTOR_2" minSector="2" unique="false">
-      <nameList>
-        <name>LEPTOD Controlled Nebula</name>
-      </nameList>
-      <trackList>
-        <track>void</track>
-        <track>deepspace</track>
-        <track>wasteland</track>
-        <track>debris</track>
-      </trackList>
-      <rarityList>
-        <blueprint name="LEPTOD" rarity="1"/>
-        <blueprint name="human" rarity="0"/>
-        <blueprint name="engi" rarity="0"/>
-        <blueprint name="mantis" rarity="5"/>
-        <blueprint name="rock" rarity="0"/>
-        <blueprint name="slug" rarity="4"/>
-      </rarityList>
-      <startEvent>START_BEACON_LEPTOD</startEvent>
-      <event name="STORE" min="1" max="1"/>
-      <event name="UPGRADE_LIST_NEBULA" min="1" max="1"/>
-
-      <event name="LEPTOD_DEAL_DEVIL" min="1" max="1"/>
-    </sectorDescription>
-
-    <sectorDescription name="LIZARD_SECTOR" minSector="1" unique="true">
-      <nameList>
-        <name>Lizard Homeworlds</name>
-      </nameList>
-      <trackList>
-        <track>cosmos</track>
-        <track>debris</track>
-        <track>milkyway</track>
-      </trackList>
-      <rarityList>
-        <blueprint name="lizard" rarity="1"/>
-        <blueprint name="mantis" rarity="3"/>
-        <blueprint name="human" rarity="3"/>
-        <blueprint name="engi" rarity="3"/>
-      </rarityList>
-      <startEvent>START_BEACON_LIZARD</startEvent>
-      <event name="STORE" min="2" max="2"/>
-      <event name="UPGRADE_LIST_ALL" min="2" max="2"/>
-
-      <event name="ASTEROID_DERELICT_SHIP" min="1" max="1"/>
-    </sectorDescription>
-
-    <sectorDescription name="LIZARD_SECTOR_2" minSector="1" unique="false">
-      <nameList>
-        <name>Lizard Controlled Sector</name>
-      </nameList>
-      <trackList>
-        <track>cosmos</track>
-        <track>debris</track>
-        <track>milkyway</track>
-      </trackList>
-      <rarityList>
-        <blueprint name="lizard" rarity="1"/>
-        <blueprint name="mantis" rarity="3"/>
-        <blueprint name="human" rarity="3"/>
-        <blueprint name="engi" rarity="3"/>
-      </rarityList>
-      <startEvent>START_BEACON_LIZARD</startEvent>
-      <event name="STORE" min="2" max="2"/>
-      <event name="UPGRADE_LIST_ALL" min="2" max="2"/>
-
-      <event name="ASTEROID_DERELICT_SHIP" min="1" max="1"/>
-    </sectorDescription>
-  -->
-  <sectorDescription name="MANTIS_SECTOR" minSector="2" unique="true">
+  <sectorDescription name="LEPTOD_WEAPON_TEST_SECTOR" minSector="1" unique="true">
     <nameList>
-      <name>Mantis Homeworlds</name>
+      <name>Leptod Weapon Test Sector</name>
+    </nameList>
+    <trackList>
+      <track>void</track>
+      <track>deepspace</track>
+      <track>wasteland</track>
+      <track>debris</track>
+    </trackList>
+    <rarityList>
+      <blueprint name="LEPTOD" rarity="1"/>
+      <blueprint name="human" rarity="0"/>
+      <blueprint name="engi" rarity="0"/>
+      <blueprint name="mantis" rarity="5"/>
+      <blueprint name="rock" rarity="0"/>
+      <blueprint name="slug" rarity="4"/>
+    </rarityList>
+    <startEvent>START_BEACON_LEPTOD</startEvent>
+    <event name="STORE" min="1" max="1"/>
+    <event name="UPGRADE_LIST_NEBULA" min="1" max="1"/>
+  </sectorDescription>
+
+  <sectorDescription name="LEPTOD_HOME_SECTOR" minSector="2" unique="true">
+    <nameList>
+      <name>Leptod Hidden Home Nebula</name>
+    </nameList>
+    <trackList>
+      <track>void</track>
+      <track>deepspace</track>
+      <track>wasteland</track>
+      <track>debris</track>
+    </trackList>
+    <rarityList>
+      <blueprint name="LEPTOD" rarity="1"/>
+      <blueprint name="human" rarity="0"/>
+      <blueprint name="engi" rarity="0"/>
+      <blueprint name="mantis" rarity="5"/>
+      <blueprint name="rock" rarity="0"/>
+      <blueprint name="slug" rarity="4"/>
+    </rarityList>
+    <startEvent>START_BEACON_LEPTOD</startEvent>
+    <event name="STORE" min="1" max="1"/>
+    <event name="UPGRADE_LIST_NEBULA" min="1" max="1"/>
+  </sectorDescription>
+
+  <sectorDescription name="LIZARD_REFUGE_SECTOR" minSector="1" unique="true">
+    <nameList>
+      <name>Lizard Last Refuge</name>
+    </nameList>
+    <trackList>
+      <track>cosmos</track>
+      <track>debris</track>
+      <track>milkyway</track>
+    </trackList>
+    <rarityList>
+      <blueprint name="lizard" rarity="1"/>
+      <blueprint name="mantis" rarity="3"/>
+      <blueprint name="human" rarity="3"/>
+      <blueprint name="engi" rarity="3"/>
+    </rarityList>
+    <startEvent>START_BEACON_LIZARD</startEvent>
+    <event name="STORE" min="2" max="2"/>
+    <event name="UPGRADE_LIST_ALL" min="2" max="2"/>
+
+    <event name="ASTEROID_DERELICT_SHIP" min="1" max="1"/>
+  </sectorDescription>
+
+  <sectorDescription name="LIZARD_RUINS_SECTOR" minSector="1" unique="true">
+    <nameList>
+      <name>Lizard Ruins</name>
+    </nameList>
+    <trackList>
+      <track>cosmos</track>
+      <track>debris</track>
+      <track>milkyway</track>
+    </trackList>
+    <rarityList>
+      <blueprint name="lizard" rarity="1"/>
+      <blueprint name="mantis" rarity="3"/>
+      <blueprint name="human" rarity="3"/>
+      <blueprint name="engi" rarity="3"/>
+    </rarityList>
+    <startEvent>START_BEACON_LIZARD</startEvent>
+    <event name="STORE" min="2" max="2"/>
+    <event name="UPGRADE_LIST_ALL" min="2" max="2"/>
+
+    <event name="ASTEROID_DERELICT_SHIP" min="1" max="1"/>
+  </sectorDescription>
+
+  <sectorDescription name="MANTIS_HUNTING_SECTOR" minSector="1" unique="true">
+    <nameList>
+      <name>Mantis Hunting Grounds</name>
     </nameList>
     <trackList>
       <track>mantis</track>
@@ -358,9 +376,9 @@
     <event name="HOSTILE_MANTIS" min="8" max="8"/>
   </sectorDescription>
 
-  <sectorDescription name="MANTIS_SECTOR_2" minSector="1" unique="false">
+  <sectorDescription name="MANTIS_BROOD_SECTOR" minSector="2" unique="true">
     <nameList>
-      <name>Mantis Controlled Sector</name>
+      <name>Mantis Brood Sector</name>
     </nameList>
     <trackList>
       <track>mantis</track>
@@ -368,14 +386,14 @@
       <track>void</track>
     </trackList>
     <rarityList>
+      <blueprint name="human" rarity="0"/>
+      <blueprint name="engi" rarity="0"/>
       <blueprint name="mantis" rarity="1"/>
+      <blueprint name="rock" rarity="0"/>
       <blueprint name="energy" rarity="0"/>
-      <blueprint name="rock" rarity="5"/>
-      <blueprint name="lizard" rarity="5"/>
-      <blueprint name="human" rarity="3"/>
     </rarityList>
     <startEvent>START_BEACON_MANTIS</startEvent>
-    <event name="STORE_MANTIS" min="2" max="2"/>
+    <event name="STORE_MANTIS" min="1" max="1"/>
     <event name="UPGRADE_LIST_ALL" min="1" max="1"/>
 
     <event name="ASTEROID_DERELICT_SHIP" min="1" max="1"/>
@@ -389,9 +407,30 @@
     <event name="HOSTILE_MANTIS" min="9" max="9"/>
   </sectorDescription>
 
-  <sectorDescription name="ORCHID_SECTOR" minSector="1" unique="true">
+  <sectorDescription name="NEBULA_FILLER_SECTOR" minSector="1" unique="false">
     <nameList>
-      <name>Orchid Homeworlds</name>
+      <name>Uncharted Nebula</name>
+    </nameList>
+    <trackList>
+      <track>civilian</track>
+      <track>cosmos</track>
+      <track>milkyway</track>
+      <track>lostship</track>
+    </trackList>
+    <startEvent>START_BEACON</startEvent>
+    <event name="STORE" min="1" max="1"/>
+
+    <event name="NEBULA_NEUTRAL_CIVILIAN" min="8" max="8"/>
+    <event name="NEBULA_HOSTILE_CIVILIAN" min="6" max="6"/>
+
+    <event name="NEUTRAL_CIVILIAN" min="2" max="2"/>
+    <event name="HOSTILE_CIVILIAN" min="2" max="2"/>
+    <event name="NOSHIP_CIVILIAN" min="3" max="3"/>
+  </sectorDescription>
+
+  <sectorDescription name="ORCHID_GARDEN_SECTOR" minSector="1" unique="true">
+    <nameList>
+      <name>Orchid Gardenworlds</name>
     </nameList>
     <trackList>
       <track>milkyway</track>
@@ -418,38 +457,9 @@
     <event name="ORCHID_FIGHT" min="2" max="2"/>
   </sectorDescription>
 
-  <sectorDescription name="ORCHID_SECTOR_2" minSector="1" unique="false">
+  <sectorDescription name="PAVONIAN_RAINBOW_SECTOR" minSector="1" unique="true">
     <nameList>
-      <name>Orchid Controlled Sector</name>
-    </nameList>
-    <trackList>
-      <track>milkyway</track>
-      <track>cosmos</track>
-      <track>lostship</track>
-    </trackList>
-    <rarityList>
-      <blueprint name="orchid" rarity="1"/>
-      <blueprint name="human" rarity="3"/>
-      <blueprint name="rock" rarity="3"/>
-      <blueprint name="mantis" rarity="4"/>
-      <blueprint name="engi" rarity="5"/>
-      <blueprint name="pavonian" rarity="5"/>
-    </rarityList>
-    <startEvent>START_BEACON_ORCHID</startEvent>
-    <event name="STORE_ORCHID" min="2" max="2"/>
-    <event name="UPGRADE_LIST_LEGIT" min="2" max="2"/>
-
-    <event name="ASTEROID_DERELICT_SHIP" min="1" max="1"/>
-
-    <event name="NOSHIP_ORCHID" min="5" max="5"/>
-    <event name="NEUTRAL_ORCHID" min="4" max="4"/>
-    <event name="HOSTILE_ORCHID" min="6" max="6"/>
-    <event name="ORCHID_FIGHT" min="2" max="2"/>
-  </sectorDescription>
-
-  <sectorDescription name="PAVONIAN_SECTOR" minSector="1" unique="true">
-    <nameList>
-      <name>Pavonian Homeworlds</name>
+      <name>Pavonian Iridescent Worlds</name>
     </nameList>
     <trackList>
       <track>hacking</track>
@@ -465,18 +475,11 @@
     <startEvent>START_BEACON_PAVONIAN</startEvent>
     <event name="STORE_PAVONIAN" min="2" max="2"/>
     <event name="UPGRADE_LIST_ALL" min="2" max="2"/>
-
-    <event name="ASTEROID_DERELICT_SHIP" min="1" max="1"/>
-
-    <event name="HOSTILE_HAZARD_PAVONIAN" min="1" max="1"/>
-    <event name="HOSTILE_PAVONIAN" min="6" max="6"/>
-    <event name="NEUTRAL_PAVONIAN" min="6" max="6"/>
-    <event name="NOSHIP_PAVONIAN" min="4" max="4"/>
   </sectorDescription>
 
-  <sectorDescription name="PAVONIAN_SECTOR_2" minSector="1" unique="false">
+  <sectorDescription name="PAVONIAN_ANARCHY_SECTOR" minSector="1" unique="true">
     <nameList>
-      <name>Pavonian Controlled Sector</name>
+      <name>Pavonian Disordered Sector</name>
     </nameList>
     <trackList>
       <track>hacking</track>
@@ -484,10 +487,17 @@
       <track>lostship</track>
     </trackList>
     <rarityList>
-      <blueprint name="pavonian" rarity="1"/>
-      <blueprint name="human" rarity="3"/>
-      <blueprint name="orchid" rarity="3"/>
+      <blueprint name="human" rarity="4"/>
+      <blueprint name="engi" rarity="4"/>
+      <blueprint name="mantis" rarity="4"/>
+      <blueprint name="energy" rarity="4"/>
+      <blueprint name="rock" rarity="4"/>
       <blueprint name="slug" rarity="4"/>
+      <blueprint name="anaerobic" rarity="4"/>
+      <blueprint name="lizard" rarity="4"/>
+      <blueprint name="pavonian" rarity="1"/>
+      <blueprint name="orchid" rarity="4"/>
+      <blueprint name="leptod" rarity="4"/>
     </rarityList>
     <startEvent>START_BEACON_PAVONIAN</startEvent>
     <event name="STORE_PAVONIAN" min="2" max="2"/>
@@ -527,32 +537,7 @@
     <event name="NOSHIP_PIRATE" min="3" max="3"/>
   </sectorDescription>
 
-  <sectorDescription name="PIRATE_SECTOR_2" minSector="1" unique="false">
-    <nameList>
-      <name>Pirate Controlled Sector</name>
-    </nameList>
-    <trackList>
-      <track>colonial</track>
-      <track>void</track>
-      <track>lostship</track>
-      <track>hacking</track>
-    </trackList>
-    <startEvent>START_BEACON_PIRATE</startEvent>
-    <event name="STORE_PIRATE" min="2" max="2"/>
-    <event name="UPGRADE_LIST_SKETCHY" min="2" max="2"/>
-
-    <event name="ASTEROID_DERELICT_SHIP" min="1" max="1"/>
-
-    <event name="NEBULA_HOSTILE_PIRATE" min="1" max="1"/>
-    <event name="NEBULA_NEUTRAL_PIRATE" min="1" max="1"/>
-
-    <event name="HOSTILE_HAZARD_PIRATE" min="2" max="2"/>
-    <event name="HOSTILE_PIRATE" min="6" max="6"/>
-    <event name="NEUTRAL_PIRATE" min="4" max="4"/>
-    <event name="NOSHIP_PIRATE" min="3" max="3"/>
-  </sectorDescription>
-
-  <sectorDescription name="REBEL_SECTOR" minSector="4" unique="true">
+  <sectorDescription name="REBEL_STRONGHOLD_SECTOR" minSector="4" unique="true">
     <nameList>
       <name>Rebel Stronghold</name>
     </nameList>
@@ -585,7 +570,7 @@
     <event name="NOSHIP_REBEL" min="1" max="1"/>
   </sectorDescription>
 
-  <sectorDescription name="REBEL_SECTOR_2" minSector="1" unique="false">
+  <sectorDescription name="REBEL_FILLER_SECTOR" minSector="1" unique="false">
     <nameList>
       <name>Rebel Controlled Sector</name>
     </nameList>
@@ -617,9 +602,9 @@
     <event name="NOSHIP_REBEL" min="1" max="1"/>
   </sectorDescription>
 
-  <sectorDescription name="ROCK_SECTOR" minSector="3" unique="true">
+  <sectorDescription name="ROCK_FORTRESS_SECTOR" minSector="1" unique="true">
     <nameList>
-      <name>Rock Homeworlds</name>
+      <name>Rock Fortified Sector</name>
     </nameList>
     <trackList>
       <track>rock</track>
@@ -641,7 +626,7 @@
     </rarityList>
     <startEvent>START_BEACON_ROCK</startEvent>
     <event name="STORE_ROCK" min="2" max="2"/>
-    <event name="UPGRADE_LIST_ALL" min="1" max="1"/>
+    <event name="UPGRADE_LIST_ALL" min="2" max="2"/>
 
     <event name="ROCK_CRYSTAL_BEACON" min="1" max="1"/>
     <event name="ROCK_UNLOCK1" min="1" max="1"/>
@@ -650,14 +635,14 @@
     <event name="ROCK_MISSIONARY" min="1" max="1"/>
 
     <event name="NOSHIP_ROCK" min="1" max="1"/>
-    <event name="NEUTRAL_ROCK" min="3" max="3"/>
-    <event name="HOSTILE_ROCK" min="3" max="3"/>
-    <event name="HOSTILE_HAZARD_ROCK" min="7" max="7"/>
+    <event name="NEUTRAL_ROCK" min="4" max="4"/>
+    <event name="HOSTILE_ROCK" min="7" max="7"/>
+    <event name="HOSTILE_HAZARD_ROCK" min="2" max="2"/>
   </sectorDescription>
 
-  <sectorDescription name="ROCK_SECTOR_2" minSector="2" unique="false">
+  <sectorDescription name="ROCK_HAZARD_SECTOR" minSector="2" unique="true">
     <nameList>
-      <name>Rock Controlled Sector</name>
+      <name>Rock Perilous Sector</name>
     </nameList>
     <trackList>
       <track>rock</track>
@@ -679,19 +664,15 @@
     </rarityList>
     <startEvent>START_BEACON_ROCK</startEvent>
     <event name="STORE_ROCK" min="2" max="2"/>
-    <event name="UPGRADE_LIST_ALL" min="1" max="1"/>
-
-    <event name="ROCK_DESOLATE_TRIBE" min="1" max="1"/>
-    <event name="ROCK_QUEST_MARRIAGE_START" min="1" max="1"/>
-    <event name="ROCK_MISSIONARY" min="1" max="1"/>
+    <event name="UPGRADE_LIST_ALL" min="2" max="2"/>
 
     <event name="NOSHIP_ROCK" min="1" max="1"/>
     <event name="NEUTRAL_ROCK" min="4" max="4"/>
-    <event name="HOSTILE_ROCK" min="3" max="3"/>
-    <event name="HOSTILE_HAZARD_ROCK" min="8" max="8"/>
+    <event name="HOSTILE_ROCK" min="2" max="2"/>
+    <event name="HOSTILE_HAZARD_ROCK" min="11" max="11"/>
   </sectorDescription>
 
-  <sectorDescription name="SLUG_SECTOR" minSector="2" unique="true">
+  <sectorDescription name="SLUG_HOME_SECTOR" minSector="2" unique="true">
     <nameList>
       <name>Slug Home Nebula</name>
     </nameList>
@@ -718,18 +699,17 @@
     <event name="NEBULA_SLUG_FIGHT_UNLOCK" min="1" max="1"/>
     <event name="DONOR_BLACK_RAVEN" min="1" max="1"/>
 
-    <event name="NEBULA_HOSTILE_HAZARD_SLUG" min="1" max="1"/>
     <event name="NEBULA_NOSHIP_SLUG" min="2" max="2"/>
-    <event name="NEBULA_NEUTRAL_SLUG" min="6" max="6"/>
+    <event name="NEBULA_NEUTRAL_SLUG" min="7" max="7"/>
     <event name="NEBULA_HOSTILE_SLUG" min="4" max="4"/>
 
     <event name="NEUTRAL_SLUG" min="1" max="1"/>
     <event name="HOSTILE_SLUG" min="2" max="2"/>
   </sectorDescription>
 
-  <sectorDescription name="SLUG_SECTOR_2" minSector="1" unique="false">
+  <sectorDescription name="SLUG_HAZARD_SECTOR" minSector="2" unique="true">
     <nameList>
-      <name>Slug Controlled Nebula</name>
+      <name>Slug Volatile Nebula</name>
     </nameList>
     <trackList>
       <track>slug</track>
@@ -751,83 +731,74 @@
     <event name="NEBULA_STORE_SLUG" min="2" max="2"/>
     <event name="UPGRADE_LIST_NEBULA" min="2" max="2"/>
 
-    <event name="NEBULA_HOSTILE_HAZARD_SLUG" min="1" max="1"/>
+    <event name="NEBULA_HOSTILE_HAZARD_SLUG" min="4" max="4"/>
     <event name="NEBULA_NOSHIP_SLUG" min="2" max="2"/>
-    <event name="NEBULA_NEUTRAL_SLUG" min="7" max="7"/>
-    <event name="NEBULA_HOSTILE_SLUG" min="5" max="5"/>
+    <event name="NEBULA_NEUTRAL_SLUG" min="6" max="6"/>
+    <event name="NEBULA_HOSTILE_SLUG" min="3" max="3"/>
 
     <event name="NEUTRAL_SLUG" min="1" max="1"/>
     <event name="HOSTILE_SLUG" min="2" max="2"/>
   </sectorDescription>
 
-  <sectorDescription name="ZOLTAN_SECTOR" minSector="2" unique="true">
+  <sectorDescription name="ZOLTAN_INSPECTION_SECTOR" minSector="1" unique="true">
     <nameList>
-      <name>Zoltan Homeworlds</name>
+      <name>Zoltan Perquisition Zone</name>
     </nameList>
     <trackList>
       <track>zoltan</track>
       <track>cosmos</track>
     </trackList>
     <rarityList>
+      <blueprint name="human" rarity="3"/>
       <blueprint name="engi" rarity="2"/>
       <blueprint name="mantis" rarity="5"/>
+      <blueprint name="rock" rarity="5"/>
       <blueprint name="energy" rarity="1"/>
-      <blueprint name="slug" rarity="3"/>
-      <blueprint name="rock" rarity="3"/>
-      <blueprint name="human" rarity="3"/>
+      <blueprint name="slug" rarity="4"/>
+      <blueprint name="orchid" rarity="4"/>
+      <blueprint name="lizard" rarity="4"/>
     </rarityList>
-    <startEvent>START_BEACON_ZOLTAN</startEvent>
-    <event name="STORE_ZOLTAN" min="1" max="1"/>
-    <event name="NEBULA_STORE_ZOLTAN" min="1" max="1"/>
-    <event name="UPGRADE_LIST_LEGIT" min="1" max="1"/>
-    <event name="UPGRADE_LIST_NEBULA" min="1" max="1"/>
+    <startEvent>START_BEACON_ZOLTAN_INSPECTION</startEvent>
+    <event name="STORE_ZOLTAN" min="2" max="2"/>
+    <event name="UPGRADE_LIST_LEGIT" min="2" max="2"/>
 
     <event name="ZOLTAN_PEACE_QUEST" min="1" max="1"/>
     <event name="ZOLTAN_CREW_STUDY" min="1" max="1"/>
 
-    <event name="NEBULA_HOSTILE_HAZARD_ZOLTAN" min="2" max="2"/>
     <event name="NEBULA_HOSTILE_ZOLTAN" min="1" max="1"/>
-    <event name="NEBULA_NOSHIP_ZOLTAN" min="2" max="2"/>
-    <event name="NEBULA_NEUTRAL_ZOLTAN" min="1" max="1"/>
 
-    <event name="HOSTILE_HAZARD_ZOLTAN" min="1" max="1"/>
-    <event name="NOSHIP_ZOLTAN" min="1" max="1"/>
-    <event name="NEUTRAL_ZOLTAN" min="4" max="4"/>
-    <event name="HOSTILE_ZOLTAN" min="4" max="4"/>
+    <event name="NOSHIP_ZOLTAN" min="3" max="3"/>
+    <event name="NEUTRAL_ZOLTAN" min="5" max="5"/>
+    <event name="HOSTILE_ZOLTAN" min="7" max="7"/>
   </sectorDescription>
 
-  <sectorDescription name="ZOLTAN_SECTOR_2" minSector="1" unique="false">
+  <sectorDescription name="ZOLTAN_HAZARD_SECTOR" minSector="1" unique="true">
     <nameList>
-      <name>Zoltan Controlled Sector</name>
+      <name>Zoltan Turbulent Nebula</name>
     </nameList>
     <trackList>
       <track>zoltan</track>
       <track>cosmos</track>
     </trackList>
     <rarityList>
-      <blueprint name="engi" rarity="2"/>
-      <blueprint name="mantis" rarity="5"/>
+      <blueprint name="human" rarity="4"/>
+      <blueprint name="engi" rarity="0"/>
+      <blueprint name="mantis" rarity="0"/>
+      <blueprint name="rock" rarity="0"/>
       <blueprint name="energy" rarity="1"/>
       <blueprint name="slug" rarity="3"/>
-      <blueprint name="rock" rarity="3"/>
-      <blueprint name="human" rarity="3"/>
+      <blueprint name="leptod" rarity="5"/>
     </rarityList>
-    <startEvent>START_BEACON_ZOLTAN</startEvent>
-    <event name="STORE_ZOLTAN" min="1" max="1"/>
-    <event name="NEBULA_STORE_ZOLTAN" min="1" max="1"/>
-    <event name="UPGRADE_LIST_ALL" min="1" max="1"/>
-    <event name="UPGRADE_LIST_NEBULA" min="1" max="1"/>
+    <startEvent>START_BEACON_ZOLTAN_HAZARD</startEvent>
+    <event name="NEBULA_STORE_ZOLTAN" min="2" max="2"/>
+    <event name="UPGRADE_LIST_NEBULA" min="2" max="2"/>
 
-    <event name="ZOLTAN_CREW_STUDY" min="1" max="1"/>
-
-    <event name="NEBULA_HOSTILE_HAZARD_ZOLTAN" min="2" max="2"/>
-    <event name="NEBULA_HOSTILE_ZOLTAN" min="1" max="1"/>
+    <event name="NEBULA_HOSTILE_HAZARD_ZOLTAN" min="6" max="6"/>
     <event name="NEBULA_NOSHIP_ZOLTAN" min="2" max="2"/>
-    <event name="NEBULA_NEUTRAL_ZOLTAN" min="1" max="1"/>
+    <event name="NEBULA_NEUTRAL_ZOLTAN" min="4" max="4"/>
 
-    <event name="HOSTILE_HAZARD_ZOLTAN" min="1" max="1"/>
-    <event name="NOSHIP_ZOLTAN" min="1" max="1"/>
-    <event name="NEUTRAL_ZOLTAN" min="5" max="5"/>
-    <event name="HOSTILE_ZOLTAN" min="4" max="4"/>
+    <event name="NOSHIP_ZOLTAN" min="2" max="2"/>
+    <event name="ZOLTAN_RIFT_FIGHT" min="1" max="1"/>
+    <event name="HOSTILE_HAZARD_ZOLTAN" min="3" max="3"/>
   </sectorDescription>
 </FTL>

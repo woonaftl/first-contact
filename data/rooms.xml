@@ -97,6 +97,9 @@
   <roomLayout name="engines_15">
     <computerGlow x="0" y="44" slot="2" dir="LEFT"/>
   </roomLayout>
+  <roomLayout name="engines_16">
+    <computerGlow x="5" y="53" slot="2" dir="DOWN"/>
+  </roomLayout>
 
   <roomLayout name="medbay">
     <computerGlow slot="1"/>
@@ -226,6 +229,12 @@
   </roomLayout>
   <roomLayout name="shields_18">
     <computerGlow x="40" y="53" slot="3" dir="DOWN"/>
+  </roomLayout>
+  <roomLayout name="shields_19">
+    <computerGlow x="1" y="5" slot="0" dir="LEFT"/>
+  </roomLayout>
+  <roomLayout name="shields_20">
+    <computerGlow x="5" y="1" slot="0" dir="UP"/>
   </roomLayout>
 
   <roomLayout name="weapons">
