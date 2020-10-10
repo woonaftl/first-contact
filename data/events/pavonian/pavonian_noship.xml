@@ -7,7 +7,7 @@
     <event load="PAVONIAN_OUT_OF_FUEL"/>
   </eventList>
   <event name="PAVONIAN_GIFT" unique="true">
-    <text>The Pavonian vessel contacts you and offers some supplies for free. A rainbow-colored face appears on the comm: "I sense positive vibes around your ship."</text>
+    <text>A Pavonian vessel contacts you and offers some supplies for free. A rainbow-colored face appears on the comm: "I sense positive vibes from your ship."</text>
     <autoReward level="RANDOM">stuff</autoReward>
   </event>
   <event name="PAVONIAN_FIND_DRONE" unique="true">

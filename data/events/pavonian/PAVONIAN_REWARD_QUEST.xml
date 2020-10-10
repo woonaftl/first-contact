@@ -27,7 +27,7 @@
           </choice>
         </event>
         <event>
-          <text>Another Pavonian ship offers you a weapon: "I'm sure that you will use it only when absolutely necessary and never brandish this weapon against innocents.".</text>
+          <text>Another Pavonian ship offers you a weapon: "I'm sure that you will use it only when absolutely necessary and never brandish this weapon against innocents."</text>
           <weapon name="WEAPONS_CHAIN"/>
           <choice hidden="true">
             <text id="continue"/>
