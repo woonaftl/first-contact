@@ -83,11 +83,11 @@
             <ship auto_blueprint="SHIPS_MANTIS" hostile="true">
               <destroyed>
                 <text>The attacking ship is destroyed. You start collecting scrap from the remains, but are forced to leave the system by the Mantis war fleet.</text>
-                <autoReward level="LOW">scrap_only</autoReward>
+                <autoReward level="LOW">standard</autoReward>
               </destroyed>
               <deadCrew>
                 <text>The attacking ship shows no life signs. You start collecting resources, but are forced to leave the system by the Mantis war fleet.</text>
-                <autoReward level="LOW">standard</autoReward>
+                <autoReward level="MED">standard</autoReward>
               </deadCrew>
               <crew>
                 <crewMember type="mantis" prop="0.80"/>

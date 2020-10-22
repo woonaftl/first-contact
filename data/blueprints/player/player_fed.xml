@@ -45,7 +45,7 @@
     <unlock>There have been rumors of advanced ship construction in the Rebel Stronghold...</unlock>
     <desc>This ship features the latest in Federation technology: an advanced beam weapon that pierces through shields.</desc>
     <systemList>
-      <artillery power="1" room="6" start="true" weapon="ARTILLERY_FED"/>
+      <artillery power="2" room="6" start="true" weapon="ARTILLERY_FED"/>
       <battery power="1" room="14" start="false" img="room_battery_3"/>
       <cloaking power="1" room="12" start="false" img="room_cloaking_8"/>
       <clonebay power="1" room="10" start="false"/>
@@ -68,7 +68,7 @@
       <weapon name="LASER_BURST_3_UPGRADED"/>
     </weaponList>
     <health amount="30"/>
-    <maxPower amount="8"/>
+    <maxPower amount="9"/>
     <crewCount amount="1" class="rock"/>
     <crewCount amount="1" class="mantis"/>
     <crewCount amount="1" class="human"/>
@@ -122,7 +122,7 @@
     <unlock>Complete 2/3 of the Federation Cruiser Achievements to unlock this ship.</unlock>
     <desc>?</desc>
     <systemList>
-      <artillery power="1" room="19" start="true" weapon="ARTILLERY_FED_MISSILES"/>
+      <artillery power="2" room="19" start="true" weapon="ARTILLERY_FED_MISSILES"/>
       <battery power="1" room="17" start="false" img="room_battery_14"/>
       <cloaking power="1" room="16" start="false" img="room_cloaking_3"/>
       <clonebay power="1" room="2" start="false" slot="0"/>
@@ -146,7 +146,7 @@
       <weapon name="MISSILES_1"/>
     </weaponList>
     <health amount="30"/>
-    <maxPower amount="7"/>
+    <maxPower amount="8"/>
     <crewCount amount="1" class="rock"/>
     <crewCount amount="1" class="energy"/>
     <crewCount amount="1" class="human"/>
@@ -213,7 +213,7 @@
     <unlock>Get to Sector 8 with the Federation Cruiser Type B and Advanced Mode enabled to unlock this ship.</unlock>
     <desc>?</desc>
     <systemList>
-      <artillery power="1" room="13" start="true" weapon="ARTILLERY_FED_C"/>
+      <artillery power="2" room="13" start="true" weapon="ARTILLERY_FED_C"/>
       <battery power="1" room="12" start="false" img="room_battery_22"/>
       <cloaking power="1" room="5" start="false" img="room_cloaking"/>
       <clonebay power="1" room="1" start="true" slot="1"/>
@@ -236,7 +236,7 @@
       <weapon name="BEAM_2_LONG_UPGRADED"/>
     </weaponList>
     <health amount="30"/>
-    <maxPower amount="7"/>
+    <maxPower amount="8"/>
     <crewCount amount="1" class="slug"/>
     <crewCount amount="1" class="energy"/>
     <crewCount amount="1" class="lizard"/>

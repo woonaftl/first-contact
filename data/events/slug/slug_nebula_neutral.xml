@@ -503,12 +503,12 @@
     <destroyed>
       <text>The Slug ship breaks apart and your systems return to normal. You collect what you can.</text>
       <status amount="100" system="oxygen" target="player" type="clear"/>
-      <autoReward level="LOW">standard</autoReward>
+      <autoReward level="MED">standard</autoReward>
     </destroyed>
     <deadCrew>
       <text>With their crew dead, your systems return to normal. You strip the ship.</text>
       <status amount="100" system="oxygen" target="player" type="clear"/>
-      <autoReward level="MED">standard</autoReward>
+      <autoReward level="HIGH">standard</autoReward>
     </deadCrew>
   </ship>
 

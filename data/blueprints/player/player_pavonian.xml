@@ -35,9 +35,9 @@
     <cloakImage>pavonian_cruiser</cloakImage>
   </shipBlueprint>
 
-  <shipBlueprint name="PLAYER_SHIP_PAVONIAN_2" layout="pavonian_cruiser_colorful" img="pavonian_cruiser">
+  <shipBlueprint name="PLAYER_SHIP_PAVONIAN_2" layout="pavonian_cruiser_black" img="pavonian_cruiser_black">
     <class>Pavonian Cruiser</class>
-    <name>?</name>
+    <name>Kouda</name>
     <desc>The Chain Eraser can deal massive damage to hull and systems winning a battle with one precise shot.</desc>
     <systemList>
       <battery power="1" room="19" start="false" img="room_battery_3"/>
@@ -69,12 +69,12 @@
     <crewCount amount="1" class="pavonian"/>
     <shieldImage>kestral</shieldImage>
     <cloakImage>pavonian_cruiser</cloakImage>
-    <floorImage>pavonian_cruiser_colorful</floorImage>
+    <floorImage>pavonian_cruiser_black</floorImage>
   </shipBlueprint>
 
-  <shipBlueprint name="PLAYER_SHIP_PAVONIAN_3" layout="pavonian_cruiser_black" img="pavonian_cruiser_black">
+  <shipBlueprint name="PLAYER_SHIP_PAVONIAN_3" layout="pavonian_cruiser_blue" img="pavonian_cruiser_blue">
     <class>Pavonian Cruiser</class>
-    <name>Kouda</name>
+    <name>Dash</name>
     <desc>The Vulcan laser needs a long time to spin up, but once it started going, it is able to penetrate most defenses.</desc>
     <systemList>
       <battery power="1" room="10" start="false" img="room_battery_6"/>
@@ -106,6 +106,6 @@
     <crewCount amount="2" class="pavonian"/>
     <shieldImage>kestral</shieldImage>
     <cloakImage>pavonian_cruiser</cloakImage>
-    <floorImage>pavonian_cruiser_black</floorImage>
+    <floorImage>pavonian_cruiser_blue</floorImage>
   </shipBlueprint>
 </FTL>

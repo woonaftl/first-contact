@@ -389,6 +389,7 @@
 
   <changelog>
     <entry>Blue option for Ion Drone in DISTRESS_SATELLITE_DEFENSE event</entry>
+    <entry>Less scrap in blue options in DISTRESS_SATELLITE_DEFENSE event</entry>
   </changelog>
   <event name="DISTRESS_SATELLITE_DEFENSE" unique="true">
     <text>The distress signal is coming from a small space station orbiting an uninhabited planet. Their satellite defense system has gone haywire and their repair crew can't approach without being fired on. They're looking for help to fix or disable it.</text>
@@ -416,35 +417,35 @@
           <text>(Ion Weapon) Disable the defense system.</text>
           <event>
             <text>You use your ion weaponry to disable the gun long enough for their repair crews to fix it. They message you, "I've never seen a weapon like that before! Thanks for your help. Please accept this reward."</text>
-            <autoReward level="MED">standard</autoReward>
+            <autoReward level="HIGH">stuff</autoReward>
           </event>
         </choice>
         <choice hidden="true" req="COMBAT_ION_DRONE_LIST">
           <text>(Ion Drone) Disable the defense system.</text>
           <event>
             <text>You use your ion drone to disable the gun long enough for their repair crews to fix it. They message you, "I've never seen a drone like that before! Thanks for your help. Please accept this reward."</text>
-            <autoReward level="MED">standard</autoReward>
+            <autoReward level="HIGH">stuff</autoReward>
           </event>
         </choice>
         <choice hidden="true" req="cloaking" lvl="1" max_group="0">
           <text>(Cloaking) Use your Cloaking to disable the system.</text>
           <event>
             <text>You use your ship's Cloaking to try to prevent the defense system from getting a lock. However before you are able to safely disable the system your cloaking gives out and you are forced to destroy the satellite. No one was harmed but they don't seem happy with your solution.</text>
-            <autoReward level="LOW">standard</autoReward>
+            <autoReward level="MED">stuff</autoReward>
           </event>
         </choice>
         <choice hidden="true" req="cloaking" lvl="3" max_group="0">
           <text>(Advanced Cloaking) Use your Cloaking to disable the system.</text>
           <event>
             <text>Your ship's Advanced Cloaking allows you to approach the defense system without an issue. Once closer, you are able to safely disable the system. They thank you for your help and offer a reward.</text>
-            <autoReward level="MED">standard</autoReward>
+            <autoReward level="HIGH">stuff</autoReward>
           </event>
         </choice>
         <choice hidden="true" req="engi">
           <text>(Engi Crew) Remotely repair its targeting system.</text>
           <event>
             <text>Your crew-member is able to remotely fix the glitch in the defense AI, allowing the repair crew to close in and finish the job. The station gives you its thanks along with a reward.</text>
-            <autoReward level="MED">standard</autoReward>
+            <autoReward level="HIGH">stuff</autoReward>
           </event>
         </choice>
       </event>
@@ -746,7 +747,9 @@
     </choice>
   </event>
 
-
+  <changelog>
+    <entry>More scrap if you kill the enemy crew in STORE_RESCUE event</entry>
+  </changelog>
   <event name="STORE_RESCUE" unique="true">
     <img planet="PLANET_POPULATED"/>
     <text>Once you arrive at this populated region, you immediately pick up a distress signal. A small shuttle is asking anyone who'll listen for help protecting their family from a Rebel ship. Unsurprisingly, no one has yet responded to their request.</text>
@@ -779,7 +782,7 @@
       </destroyed>
       <deadCrew>
         <text>The outpost hails you, "Thank you! I don't know what we did to anger the Rebels, but they were ready to kill us. I'll show you our goods and patch up your hull.</text>
-        <autoReward level="MED">scrap_only</autoReward>
+        <autoReward level="HIGH">scrap_only</autoReward>
         <damage amount="-5"/>
         <store/>
       </deadCrew>
@@ -798,14 +801,18 @@
     </choice>
   </event>
 
+  <changelog>
+    <entry>No scrap when you take the quest in QUEST_MANTIS_INVASION event but some fuel instead</entry>
+    <entry>Higher rewards for enemy ship in QUEST_MANTIS_INVASION event</entry>
+  </changelog>
   <event name="QUEST_MANTIS_INVASION_START" unique="true">
     <text>You receive a request, "All of our military ships have been destroyed or damaged during the Rebellion. However, there have been reports of a Mantis war camp only a few jumps from us. Can you help?"</text>
     <choice hidden="true">
       <text>Pledge to do what you can.</text>
       <event>
         <text>"Thank you! If you can just give us a count on their numbers perhaps we can get the Rebels to help."</text>
+        <autoReward level="LOW">fuel_only</autoReward>
         <quest event="QUEST_MANTIS_INVASION"/>
-        <autoReward level="LOW">scrap_only</autoReward>
       </event>
     </choice>
     <choice>
@@ -879,11 +886,11 @@
   <ship name="MANTIS_LANDING_PARTY" auto_blueprint="SHIPS_MANTIS">
     <destroyed>
       <text>With the patrol ship destroyed you hasten to leave. It won't be long before the other ships catch up.</text>
-      <autoReward level="LOW">standard</autoReward>
+      <autoReward level="MED">standard</autoReward>
     </destroyed>
     <deadCrew>
       <text>With the patrol ship taken care of you hasten to leave. It won't be long before the other ships catch up.</text>
-      <autoReward level="MED">standard</autoReward>
+      <autoReward level="HIGH">standard</autoReward>
     </deadCrew>
     <crew>
       <crewMember type="mantis" prop="0.80"/>

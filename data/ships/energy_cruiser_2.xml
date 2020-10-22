@@ -16,43 +16,43 @@
 		<velocity min="0.10" max="0.20" />
 		<direction min="80" max="150" />
 		<angular min="0.10" max="0.30" />
-		<x>72</x>
-		<y>135</y>
+		<x>76</x>
+		<y>140</y>
 	</gib1>
 	<gib2>
 		<velocity min="0.30" max="0.80" />
 		<direction min="140" max="180" />
 		<angular min="0.30" max="0.50" />
-		<x>0</x>
-		<y>164</y>
+		<x>1</x>
+		<y>169</y>
 	</gib2>
 	<gib3>
 		<velocity min="0.30" max="0.60" />
 		<direction min="290" max="330" />
 		<angular min="-0.50" max="-0.20" />
 		<x>306</x>
-		<y>28</y>
+		<y>34</y>
 	</gib3>
 	<gib4>
 		<velocity min="0.30" max="0.50" />
 		<direction min="220" max="250" />
 		<angular min="-0.30" max="0.30" />
-		<x>352</x>
-		<y>94</y>
+		<x>354</x>
+		<y>93</y>
 	</gib4>
 	<gib5>
 		<velocity min="0.10" max="0.30" />
 		<direction min="20" max="50" />
 		<angular min="-0.30" max="0.30" />
-		<x>122</x>
-		<y>47</y>
+		<x>124</x>
+		<y>50</y>
 	</gib5>
 	<gib6>
 		<velocity min="0.40" max="1.00" />
 		<direction min="30" max="60" />
 		<angular min="-0.60" max="-0.20" />
-		<x>39</x>
-		<y>0</y>
+		<x>42</x>
+		<y>4</y>
 	</gib6>
 </explosion>
 </FTL>
