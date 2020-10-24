@@ -23,7 +23,7 @@
         </event>
         <event>
           <text>You approach the planet carefully, trying to keep your ship from breaking up in orbit. The monolith, whatever it is, must sense as much because the next thing you know you have enough scrap to patch up your damage and more besides!</text>
-          <autoReward level="HIGH">scrap_only</autoReward>
+          <autoReward level="HIGH">stuff</autoReward>
         </event>
         <event>
           <text>As you approach, a kaleidoscope of colors fills the viewscreen and one of your crew begins to age rapidly in reverse, eventually disappearing into nothingness. Let's hope they've transcended physical existence, and not just been forced out of it.</text>

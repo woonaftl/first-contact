@@ -17,7 +17,7 @@
       <text back="BG_DARK" planet="NONE">The beacon is empty, with no ships or stars around. A single container, resembling a giant seed, is drifting through space. There are some useful scrap and resources within.</text>
       <text back="BG_DARK" planet="NONE">The beacon is located far away from systems populated by Orchids. Some remains of destroyed ships are floating around: aftermath of a battle long ago. You harvest what you can.</text>
     </textList>
-    <autoReward level="LOW">standard</autoReward>
+    <autoReward level="LOW">stuff</autoReward>
   </event>
 
   <event name="ORCHID_FIND_DRONE" unique="true">
@@ -25,7 +25,7 @@
       <text>Given how fragile Orchids are, they often resort to using drones to deal with emergencies on their ships. A drone factory, still loyal to Federation, is located at the beacon. Orchid engineers offer one of their creations for free.</text>
       <text>While the FTL drive charges, you decide to explore the surface of a planet nearby. A depowered drone is hidden within foliage of a giant tree, probably left by pirates. You can find some use for it in your journey.</text>
     </textList>
-    <autoReward level="LOW">drone</autoReward>
+    <drone name="RANDOM"/>
   </event>
 
   <event name="ORCHID_FIND_WEAPON" unique="true">
@@ -34,7 +34,7 @@
       <text>An Orchid colony at the nearby moon agrees to give you a weapon in exchange for some rare plant specimen from your home planet you were lucky to have on hand.</text>
       <text>As you complete the jump, an Orchid ship explodes nearby for unknown reason. The only things that survive the explosion are some melt metal parts and a single weapon.</text>
     </textList>
-    <autoReward level="LOW">weapon</autoReward>
+    <weapon name="RANDOM"/>
   </event>
 
   <event name="ORCHID_FREE_CREW" unique="true">
@@ -69,7 +69,7 @@
   </event>
   <event name="ORCHID_ZOLTAN_QUEST_FINISH">
     <text>You arrive at the coordinates, transferred by Zoltan ship carrying their gift and present it to Orchid council. Even though they are unable to talk themselves, the Orchids perfectly understand any language. They seem satisfied and offer you a small reward.</text>
-    <autoReward level="MED">standard</autoReward>
+    <autoReward level="HIGH">stuff</autoReward>
   </event>
 
   <event name="ORCHID_DISTRESS_EMPTY_SHIP" unique="true">
@@ -81,7 +81,7 @@
       <eventList>
         <event>
           <text>You board the ship to find the aftermath of explosion and fire. You can only guess what was the reason of the accident. Most of equipment is burnt, and there is no one alive, but you still manage to find some useful scrap and resources.</text>
-          <autoReward level="MED">standard</autoReward>
+          <autoReward level="MED">stuff</autoReward>
         </event>
         <event>
           <text>The only person alive on the ship is a dehydrated Orchid. The ship ran out of water and life support systems broke down. The whole crew is dead except one resilient Orchid who was reanimated after irrigation.</text>

@@ -15,7 +15,7 @@
 
   <event name="LANIUS_FREE_STUFF" unique="true">
     <text>You stumble across a badly damaged Lanius craft. It jumps away as soon as it sees you. Looking around the area, you discover a number of destroyed Rebel automated ships. It must have been quite the fight. You scrap what remains.</text>
-    <autoReward level="LOW">standard</autoReward>
+    <autoReward level="LOW">stuff</autoReward>
   </event>
 
   <event name="LANIUS_RESEARCHER_CONTACT" unique="true">
@@ -25,11 +25,11 @@
       <eventList name="LANIUS_RESEARCHER_CONTACT_LIST">
         <event>
           <text>"There should be some extra junk metal in some cargo bay..." You thank them once they transfer the scrap and prepare to move on.</text>
-          <autoReward level="MED">scrap_only</autoReward>
+          <autoReward level="LOW">stuff</autoReward>
         </event>
         <event>
           <text>"We use drones frequently in our work and have extra parts lying around." They transfer the parts over and you thank them for their generosity.</text>
-          <autoReward level="MED">droneparts</autoReward>
+          <autoReward level="MED">droneparts_only</autoReward>
         </event>
         <event>
           <text>"We were doing research on some Lanius weaponry before. I hope you don't have to use it but perhaps it will aid you on your mission." You thank them and prepare to move on.</text>

@@ -44,7 +44,7 @@
   <event name="ORCHID_MANTIS_FIGHT">
     <textList>
       <text>The warlike Mantis send their ships all over the galaxy to hunt other ships for loot and glory. Orchid sectors are no exception.</text>
-      <text>The Orchids put tremendous effort into pacifying invading Mantis and forming friendly relations with them. But some Mantis will never leave the path of a warrior. The ship at the beacon belongs to those.</text>
+      <text>The Orchids put tremendous effort into pacifying invading Mantis and forming friendly relations with them. But some Mantis will never leave the path of a hunter. The ship at the beacon belongs to those.</text>
       <text>Some Mantis are influenced by Orchids so much that they begin to worship all kinds of plants and do the only thing they think would please their gods: kill everyone who doesn't belong.</text>
     </textList>
     <ship hostile="true" load="MANTIS_FIGHT"/>

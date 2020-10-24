@@ -23,12 +23,12 @@
     <ship name="REBEL_AUTO_REFUEL" auto_blueprint="SHIPS_AUTO" hostile="false">
       <destroyed>
         <text>The ship breaks apart and you quickly salvage what you can.</text>
-        <autoReward level="LOW">standard</autoReward>
+        <autoReward level="MED">standard</autoReward>
         <choice hidden="true">
           <text id="continue"/>
           <event>
             <text>The outpost hails you after the scout was destroyed, "Thanks for the help. We've been harassed non-stop by those scouts. Take this on the house."</text>
-            <autoReward level="MED">standard</autoReward>
+            <autoReward level="LOW">stuff</autoReward>
           </event>
         </choice>
       </destroyed>
@@ -102,11 +102,11 @@
           <event>
             <text>Despite your efforts, the majority do not survive. The sole survivor offers to join your crew and helps you strip the now derelict ship of useful components.</text>
             <crewMember amount="1"/>
-            <autoReward level="LOW">standard</autoReward>
+            <autoReward level="LOW">stuff</autoReward>
           </event>
           <event>
             <text>Despite your efforts, the crew does not survive. You strip the now derelict ship of useful components.</text>
-            <autoReward level="LOW">standard</autoReward>
+            <autoReward level="LOW">stuff</autoReward>
           </event>
         </eventList>
       </choice>
@@ -116,7 +116,7 @@
           <text>You drag the injured and dying crew on to your ship. The Med-bots help stabilize their condition, but most perish. The surviving shields operator offers to join your crew and helps you strip their broken ship of scrap.</text>
           <crewMember shields="1" amount="1"/>
           <quest event="HIDDEN_FEDERATION_BASE_LIST"/>
-          <autoReward level="LOW">standard</autoReward>
+          <autoReward level="LOW">stuff</autoReward>
         </event>
       </choice>
       <choice req="teleporter" hidden="true">
@@ -125,7 +125,7 @@
           <text>Your quick reactions allow you to stabilize a few of the seriously wounded crewmembers. An infantryman offers to join your crew and the rest tell you of a hidden Federation base a few jumps from here.</text>
           <crewMember combat="1" amount="1"/>
           <quest event="HIDDEN_FEDERATION_BASE_LIST"/>
-          <autoReward level="LOW">standard</autoReward>
+          <autoReward level="LOW">stuff</autoReward>
         </event>
       </choice>
       <choice req="BOMB_HEAL">
@@ -141,7 +141,7 @@
               <text>Now that they're safe an engineer offers to join your crew and the rest tell you of a hidden Federation base a few jumps from here.</text>
               <crewMember engines="1" amount="1"/>
               <quest event="HIDDEN_FEDERATION_BASE_LIST"/>
-              <autoReward level="LOW">standard</autoReward>
+              <autoReward level="LOW">stuff</autoReward>
             </event>
           </choice>
         </event>
@@ -159,7 +159,7 @@
               <text>Now that they're safe, a weapons specialist offers to join your crew and the others tell you of a hidden Federation base a few jumps away.</text>
               <crewMember weapons="1" amount="1"/>
               <quest event="HIDDEN_FEDERATION_BASE_LIST"/>
-              <autoReward level="LOW">scrap_only</autoReward>
+              <autoReward level="LOW">stuff</autoReward>
             </event>
           </choice>
         </event>
@@ -167,7 +167,7 @@
     </event>
     <event>
       <text>"Thanks, we didn't think there would be Rebel ships all the way out here. They seem to be searching for something. Take some extra supplies as thanks for your aid."</text>
-      <autoReward level="MED">standard</autoReward>
+      <autoReward level="MED">stuff</autoReward>
     </event>
   </eventList>
 
@@ -214,6 +214,7 @@
                     <event/>
                   </choice>
                 </surrender>
+                <!--TODO bigger reward?-->
                 <destroyed>
                   <text>With all of the would-be pirates dead, you think it best not to return to the settlement... You prepare to jump.</text>
                   <autoReward level="LOW">standard</autoReward>

@@ -27,7 +27,7 @@
           <event>
             <text>"May your children erode into dust!" she screams as she's bundled into the waiting shuttle. The Rock guards on board hurriedly drop off an exotic piece of technology and return to the Grand Basilisk.</text>
             <augment name="RANDOM"/>
-            <autoReward level="LOW">scrap_only</autoReward>
+            <autoReward level="MED">stuff</autoReward>
           </event>
         </choice>
         <choice hidden="true">

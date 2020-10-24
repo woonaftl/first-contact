@@ -26,7 +26,6 @@
             </event>
             <event>
               <text>"Truly, it is our holy duty to contain the ever growing threat of aliens. They threaten our traditional ways of life. They threaten out religion. They threaten God!" I hope this gift will help you continue fighting the righteous war.</text>
-              <autoReward level="low">scrap_only</autoReward>
               <weapon name="BEAM_FIRE"/>
             </event>
           </eventList>
@@ -40,7 +39,6 @@
             </event>
             <event>
               <text>"The most noble deed I have heard of in years! You have done well to follow the teachings of our Lord and save helpless civilians from horrors of war. I hope this humble gift will help you when you need it."</text>
-              <autoReward level="low">scrap_only</autoReward>
               <augment name="ROCK_ARMOR"/>
             </event>
           </eventList>
@@ -54,7 +52,6 @@
             </event>
             <event>
               <text>"My dearest friend, I will join you in that prayer! Our people are tired of neverending war and destruction. Whole planets are barren, devastated by fighting between Rebels and Federation. I wish you safe journey whenever you go and bestow this humble gift."</text>
-              <autoReward level="low">scrap_only</autoReward>
               <augment name="FLEET_DISTRACTION"/>
             </event>
           </eventList>

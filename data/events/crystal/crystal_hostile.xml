@@ -54,7 +54,7 @@
       </destroyed>
       <deadCrew>
         <text>The crew of the enemy ship has been eliminated. You scrap what you can. The rest of the convoy used the time to put a significant amount of distance between you and them. Nothing left to do but jump.</text>
-        <autoReward level="MED">standard</autoReward>
+        <autoReward level="HIGH">standard</autoReward>
       </deadCrew>
     </ship>
   </event>
@@ -85,7 +85,7 @@
       </destroyed>
       <deadCrew>
         <text>The crew of the enemy ship has been eliminated. You scrap what you can. Who knows how many people you've saved by stopping this ship.</text>
-        <autoReward level="MED">standard</autoReward>
+        <autoReward level="HIGH">standard</autoReward>
       </deadCrew>
     </ship>
   </event>

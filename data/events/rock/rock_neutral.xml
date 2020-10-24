@@ -15,12 +15,11 @@
       <eventList name="ROCK_LOOTING_STRIP">
         <event>
           <text>You salvage what you can from the ship. No one bothers you during the operation.</text>
-          <autoReward level="low">standard</autoReward>
+          <autoReward level="MED">stuff</autoReward>
         </event>
         <event>
           <text>A Rock patrol ship jumps in while you are salvaging the ship. They message you, "Filthy pirates! Prepare to die!" You doubt explaining your mission will convince them of your need.</text>
           <ship load="ROCK_SHIP" hostile="true"/>
-          <autoReward level="low">standard</autoReward>
         </event>
       </eventList>
     </choice>
@@ -43,12 +42,11 @@
       <text>(Slug Crew) Check for lifeforms and keep a lookout for ships while looting the wreck.</text>
       <eventList name="ROCK_LOOTING_SLUG">
         <event>
-          <text>You salvage what you can from the ship. No lifeforms or ships are detected nearby.</text>
-          <autoReward level="low">standard</autoReward>
-        </event>
-        <event>
-          <text>You begin the salvage operation but before long your crew warns you of an approaching ship. You hasten to leave before they get within firing range.</text>
-          <autoReward level="low">standard</autoReward>
+          <textList>
+            <text>You salvage what you can from the ship. No lifeforms or ships are detected nearby.</text>
+            <text>You begin the salvage operation but before long your crew warns you of an approaching ship. You hasten to leave before they get within firing range.</text>
+          </textList>
+          <autoReward level="MED">stuff</autoReward>
         </event>
       </eventList>
     </choice>
@@ -119,7 +117,7 @@
         <choice>
           <text id="continue"/>
           <event>
-            <autoReward level="HIGH">standard</autoReward>
+            <autoReward level="HIGH">stuff</autoReward>
           </event>
         </choice>
       </event>
@@ -142,7 +140,7 @@
     </destroyed>
     <deadCrew>
       <text>In the time it took you to eliminate the Mantis ship the Rock must have repaired their FTL drive and jumped away. You pick the bones of both Mantis vessels.</text>
-      <autoReward level="MED">standard</autoReward>
+      <autoReward level="HIGH">standard</autoReward>
     </deadCrew>
     <crew>
       <crewMember type="mantis" prop="0.80"/>

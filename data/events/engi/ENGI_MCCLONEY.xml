@@ -9,7 +9,7 @@
       <text>Give a lift to Doctor McCloney.</text>
       <event>
         <text>"Of course you will make sure that I attend the meeting as soon as possible. But did you know that I am not Doctor McCloney himself, just one of his countless clones? I am the only person in the Federation who is legally allowed to have clones."</text>
-        <autoReward level="RANDOM">stuff</autoReward>
+        <autoReward level="LOW">fuel_only</autoReward>
         <quest event="ENGI_MCCLONEY_QUEST"/>
       </event>
     </choice>
@@ -24,7 +24,7 @@
       <text id="continue"/>
       <event>
         <text>There are all kinds of medical equipment in the Engi system. The Engi doctors are operating on all kinds of patients: saving burnt Mantis and dried Slugs, transplanting organs and removing tumors with their superior knowledge and technology.</text>
-        <autoReward level="LOW">standard</autoReward>
+        <autoReward level="HIGH">stuff</autoReward>
         <choice blue="false" hidden="true" lvl="0" max_group="0" req="clonebay">
           <text id="continue"/>
           <event>
@@ -103,7 +103,7 @@
       <text id="continue"/>
       <event>
         <text>There are all kinds of medical equipment in the Engi system. The Engi doctors are operating on all kinds of patients: saving burnt Mantis and dried Slugs, transplanting organs and removing tumors with their superior knowledge and technology.</text>
-        <autoReward level="LOW">standard</autoReward>
+        <autoReward level="HIGH">stuff</autoReward>
         <choice hidden="true">
           <text id="continue"/>
           <event>

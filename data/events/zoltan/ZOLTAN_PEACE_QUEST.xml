@@ -61,18 +61,18 @@
     </destroyed>
     <deadCrew>
       <text>You begin to strip their ship and don't find anything that would indicate they were on anything other than a peaceful mission. Perhaps you were too hasty.</text>
-      <autoReward level="RANDOM">standard</autoReward>
+      <autoReward level="MED">standard</autoReward>
     </deadCrew>
   </ship>
 
   <ship name="ZOLTAN_PEACE_QUEST_ATTACK2" auto_blueprint="SHIPS_ZOLTAN">
     <destroyed>
       <text>You defeat your assailant, but the peace ship has jumped away in the commotion.</text>
-      <autoReward level="LOW">standard</autoReward>
+      <autoReward level="MED">standard</autoReward>
     </destroyed>
     <deadCrew>
       <text>You defeat your assailant, but the peace ship has jumped away in the commotion.</text>
-      <autoReward level="RANDOM">standard</autoReward>
+      <autoReward level="HIGH">standard</autoReward>
     </deadCrew>
   </ship>
 
@@ -134,12 +134,12 @@
     <event>
       <text>"Although your methods are crude and most certainly ineffective, it is clear you took our previous meeting to heart. If your ship represents the Federation's willingness to adapt we shall do what we can to aid in their fight. This technology should aid your quest."</text>
       <unlockShip id="7">A Zoltan cruiser has been unlocked and added to the hangar!</unlockShip>
-      <autoReward level="LOW">scrap_only</autoReward>
+      <autoReward level="LOW">stuff</autoReward>
       <augment name="ENERGY_SHIELD"/>
     </event>
     <event>
       <text>"Although your methods are crude and most certainly ineffective, it is clear you took our previous meeting to heart. If your ship represents the Federation's willingness to adapt we shall do what we can to aid in their fight. I will personally assist."</text>
-      <autoReward level="HIGH">standard</autoReward>
+      <autoReward level="HIGH">stuff</autoReward>
       <unlockShip id="7">A Zoltan cruiser has been unlocked and added to the hangar!</unlockShip>
       <crewMember amount="1" class="energy" all_skills="2">Envoy</crewMember>
     </event>

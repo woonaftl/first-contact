@@ -12,7 +12,7 @@
   </event>
   <event name="PAVONIAN_FIND_DRONE" unique="true">
     <text>While many races use slaves for hard physical work, the Pavonians prefer drones. A Pavonian colony, sympathetic to Federation, offers to install a drone useful in combat on your ship for free.</text>
-    <autoReward level="LOW">drone</autoReward>
+    <drone name="RANDOM"/>
   </event>
   <event name="PAVONIAN_SUPERVOLCANO" unique="true">
     <text>The distress signal is coming from a small Pavonian colony on a surface of a nearby moon. Scans show that the colony is located near a supervolcano, so you make a guess that distress signal is related to that.</text>
@@ -27,7 +27,7 @@
             <eventList>
               <event>
                 <text>Your crew collects as many Pavonians as they can as quickly as possible before they can understand what is going on. As you take off with half the colony rescued and the other left to die, the Pavonians are devastated but do not object. You are offered a reward for saving them on a nearby planet.</text>
-                <autoReward level="LOW">standard</autoReward>
+                <autoReward level="LOW">stuff</autoReward>
               </event>
               <event>
                 <text>You allow the Pavonians to choose who will be evacuated and who will be left to die. "We don't understand. Either take us all or leave us all". There is no point in talking to these folks. The community is more important than personal survival for them.</text>
@@ -42,7 +42,7 @@
               <damage amount="2" effect="fire" system="random"/>
               <damage amount="2" effect="fire" system="random"/>
               <damage amount="2" effect="fire" system="room"/>
-              <autoReward level="LOW">standard</autoReward>
+              <autoReward level="HIGH">stuff</autoReward>
               <crewMember amount="1" class="pavonian"/>
             </event>
           </choice>
@@ -66,7 +66,7 @@
             <text>Help the drones by killing the Pavonians for them.</text>
             <event>
               <text>If the drones attacked their masters, there probably was a valid reason for that. You enter the colony with guns blazing, killing every Pavonian on sight. The drones have no means to express their gratitude but at least they don't attack you. You loot the colony.</text>
-              <autoReward level="LOW">standard</autoReward>
+              <autoReward level="LOW">stuff</autoReward>
               <choice>
                 <text>Are we the baddies?</text>
                 <event/>
@@ -88,7 +88,7 @@
     </choice>
   </event>
   <event name="PAVONIAN_OUT_OF_FUEL" unique="true">
-    <text>A distress signal is being sent by a lonely Pavonian ship drifting in space. As soon as they saw you entering the system, one of the Pavoians contacts you: "I have a bad feeling about this. Our ship needs to be elsewhere but there is no way we could jump. Any ideas?"</text>
+    <text>A distress signal is being sent by a lonely Pavonian ship drifting in space. As soon as they saw you entering the system, one of the Pavonians contacts you: "I have a bad feeling about this. Our ship needs to be elsewhere but there is no way we could jump. Any ideas?"</text>
     <distressBeacon/>
     <choice>
       <text>Offer to share some fuel.</text>

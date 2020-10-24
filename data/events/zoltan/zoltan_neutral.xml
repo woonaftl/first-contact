@@ -74,17 +74,17 @@
             </surrender>
             <destroyed>
               <text>While you search the debris, you wonder what it was that could have provoked them to act so irrationally.</text>
-              <autoReward level="LOW">standard</autoReward>
+              <autoReward level="MED">standard</autoReward>
             </destroyed>
             <deadCrew>
               <text>While you scrap their ship, you wonder what it was that could have provoked them to act so irrationally.</text>
-              <autoReward level="MED">standard</autoReward>
+              <autoReward level="HIGH">standard</autoReward>
             </deadCrew>
           </ship>
         </event>
         <event>
           <text>"We have been studying the relationships between the species and have determined that the 'Federation' still has potential to be a net positive for the galaxy. Please accept this gift to aid your journey."</text>
-          <autoReward level="MED">stuff</autoReward>
+          <autoReward level="HIGH">stuff</autoReward>
         </event>
       </eventList>
     </choice>
@@ -108,11 +108,11 @@
         <ship name="ZOLTAN_SHIP_SAVE_MANTIS1" auto_blueprint="SHIPS_ZOLTAN" hostile="true">
           <destroyed>
             <text>The Mantis are so grateful that they only take three quarters of the loot, leaving the rest for you. How civilized.</text>
-            <autoReward level="LOW">standard</autoReward>
+            <autoReward level="MED">standard</autoReward>
           </destroyed>
           <deadCrew>
             <text>The Mantis are so grateful that they only take three quarters of the loot, leaving the rest for you. How civilized.</text>
-            <autoReward level="MED">standard</autoReward>
+            <autoReward level="HIGH">standard</autoReward>
           </deadCrew>
         </ship>
       </event>
@@ -125,11 +125,11 @@
         <ship name="ZOLTAN_SHIP_SAVE_MANTIS2" auto_blueprint="SHIPS_MANTIS" hostile="true">
           <destroyed>
             <text>As you're salvaging the Mantis wreck the Zoltan security patrol returns with three other ships. You quickly salvage what you can and set off before they can stop you for questioning.</text>
-            <autoReward level="LOW">standard</autoReward>
+            <autoReward level="MED">standard</autoReward>
           </destroyed>
           <deadCrew>
             <text>As you're salvaging the Mantis wreck the Zoltan security patrol returns with three other ships. You quickly salvage what you can and set off before they can stop you for questioning.</text>
-            <autoReward level="MED">standard</autoReward>
+            <autoReward level="HIGH">standard</autoReward>
           </deadCrew>
           <crew>
             <crewMember type="mantis" prop="0.80"/>
@@ -225,12 +225,12 @@
               <destroyed>
                 <text>The Rebel contacts you. "Lovely, you've done our job for us! We'll let you live as thanks. However, I can't promise the fleet will show you the same courtesy." They jump off. You collect what you can from the remains of the Zoltan ship.</text>
                 <modifyPursuit amount="1"/>
-                <autoReward level="LOW">standard</autoReward>
+                <autoReward level="MED">standard</autoReward>
               </destroyed>
               <deadCrew>
                 <text>The Rebel contacts you. "Lovely, you've done our job for us! We'll let you live as thanks. However, I can't promise the fleet will show you the same courtesy." They jump off. You collect what you can from the remains of the Zoltan ship.</text>
                 <modifyPursuit amount="1"/>
-                <autoReward level="RANDOM">standard</autoReward>
+                <autoReward level="HIGH">standard</autoReward>
               </deadCrew>
             </ship>
           </event>

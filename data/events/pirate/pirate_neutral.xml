@@ -28,11 +28,11 @@
         </event>
         <event>
           <text>You discover the remains of ship embedded into an asteroid. It still has some functional missiles.</text>
-          <autoReward level="MED">missiles</autoReward>
+          <autoReward level="MED">missiles_only</autoReward>
         </event>
         <event>
           <text>You happen upon an abandoned mining site. A few mining drones were left behind and could be repurposed.</text>
-          <autoReward level="MED">droneparts</autoReward>
+          <autoReward level="MED">droneparts_only</autoReward>
         </event>
         <event>
           <text>The asteroid field proved more dangerous than expected. Some asteroids managed to get through your ship's defenses.</text>
@@ -69,18 +69,18 @@
     <choice hidden="true">
       <text>Try to dislodge the ship by shooting at the rocks.</text>
       <eventList name="DISTRESS_TRAPPED_MINER_SHOOT">
-        <event count="2">
+        <event>
           <text>You take a few careful shots but you expose a mineral patch in the rock that reacts violently with your weapon. A shockwave forces you back as debris pelts against your hull. When you regain control you find there is not much left of the ship.</text>
-          <autoReward level="LOW">scrap_only</autoReward>
+          <autoReward level="MED">stuff</autoReward>
           <damage amount="2" system="random"/>
         </event>
-        <event count="2">
+        <event>
           <text>You fire a few volleys into the rock and it starts to shudder and break apart. Without shields the pirate ship takes a beating but eventually pulls free. They thank you for your assistance.</text>
-          <autoReward level="MED">standard</autoReward>
+          <autoReward level="MED">stuff</autoReward>
         </event>
         <event>
           <text>You fire a few volleys into the rock and it breaks into pieces. The pirate ship takes a few hits but manages to pull free. They thank you for your assistance, and reveal the hidden location of a black market store.</text>
-          <autoReward level="LOW">standard</autoReward>
+          <autoReward level="MED">stuff</autoReward>
           <quest event="QUEST_STORE"/>
         </event>
       </eventList>
@@ -90,7 +90,7 @@
       <eventList name="DISTRESS_TRAPPED_MINER_LOOT">
         <event>
           <text>You decide the pirate is not worth saving and fire a few volleys into their hull causing the ship to depressurize and break apart. You move in to loot the remains.</text>
-          <autoReward level="MED">standard</autoReward>
+          <autoReward level="LOW">stuff</autoReward>
         </event>
         <event>
           <text>You decide the pirate is not worth saving and fire a few volleys into their hull. Before you can scrap the remains another pirate ship flashes on your radar. Perhaps they saw your deed, or perhaps they want to claim the spoils for themselves, but for whatever reason, they're charging weapons!</text>
@@ -102,7 +102,7 @@
       <text>(Beam Weapon) Carefully cut the ship out.</text>
       <event>
         <text>You use your beam to make a few precision cuts in the asteroid. The ship gives a quick burst of thrust and the rock crumbles away. They thank you and offer some of the resources they have collected.</text>
-        <autoReward level="MED">standard</autoReward>
+        <autoReward level="HIGH">stuff</autoReward>
       </event>
     </choice>
     <choice req="COMBAT_BEAM_DRONE_LIST">
@@ -115,7 +115,7 @@
         <choice>
           <text id="continue"/>
           <event>
-            <autoReward level="MED">standard</autoReward>
+            <autoReward level="HIGH">stuff</autoReward>
           </event>
         </choice>
       </event>
@@ -202,11 +202,11 @@
       <eventList name="FLOATING_CARGO_LIST">
         <event>
           <text>They appear to be filled with military supplies! You take everything you can use and jettison the rest.</text>
-          <autoReward level="MED">standard</autoReward>
+          <autoReward level="HIGH">stuff</autoReward>
         </event>
         <event>
           <text>The cargo was primarily consumer goods and clothing, nothing particularly useful. You manage to collect some scrap.</text>
-          <autoReward level="LOW">scrap_only</autoReward>
+          <autoReward level="LOW">stuff</autoReward>
         </event>
         <event>
           <text>Once you bring the cargo onto your ship, a pirate bursts out of one of the crates saying, "Ugh... I was getting cramped in there. Oh, yeah! Prepare to die!" Immediately after this battle-cry your ship is filled with the sound of crates breaking open...</text>
@@ -239,12 +239,12 @@
         <event>
           <text>The cargo appears to contain nothing of much interest. You salvage some scrap from the destroyed ship.</text>
           <item_modify>
-            <item type="scrap" min="20" max="35"/>
+            <item type="scrap" min="18" max="25"/>
           </item_modify>
         </event>
         <event>
           <text>Your Advanced Sensors are able to breach the protective barrier and scan the cargo. It appears to be filled with military supplies! You take everything you can use.</text>
-          <autoReward level="MED">standard</autoReward>
+          <autoReward level="HIGH">stuff</autoReward>
         </event>
         <event>
           <text>Your advanced sensors pick up faint life signatures inside the cargo. The life forms appear to be armed. This looks like a planned pirate ambush.</text>
@@ -322,7 +322,7 @@
       <text>Accept their bribe.</text>
       <event>
         <text>"Good choice, son. We've both come out of this richer."</text>
-        <autoReward level="LOW">standard</autoReward>
+        <autoReward level="RANDOM">stuff</autoReward>
       </event>
     </choice>
     <choice>
@@ -360,7 +360,7 @@
     </gotaway>
     <destroyed>
       <text>The pirate explodes, leaving behind a substantial collection of useful scrap material. You go to examine the ship you just saved.</text>
-      <autoReward level="RANDOM">scrap_only</autoReward>
+      <autoReward level="MED">standard</autoReward>
       <choice hidden="true">
         <text id="continue"/>
         <event load="PIRATE_BRIBER_WIN"/>
@@ -368,7 +368,7 @@
     </destroyed>
     <deadCrew>
       <text>The pirates are all dead, leaving the ship dead in space. You scrounge what you can from their ship before contacting its former prey.</text>
-      <autoReward level="MED">standard</autoReward>
+      <autoReward level="HIGH">standard</autoReward>
       <choice hidden="true">
         <text id="continue"/>
         <event load="PIRATE_BRIBER_WIN"/>
@@ -382,7 +382,7 @@
         <text>Destroy the ship and salvage it.</text>
         <event>
           <text>You strip the ship of anything useful and leave its crew to hope help arrives.</text>
-          <autoReward level="LOW">standard</autoReward>
+          <autoReward level="LOW">stuff</autoReward>
         </event>
       </choice>
       <choice>
@@ -395,7 +395,7 @@
     </event>
     <event>
       <text>You were too late. A hull breach deprived the crew of oxygen during your fight with the pirate. You salvage what you can.</text>
-      <autoReward level="MED">scrap_only</autoReward>
+      <autoReward level="LOW">stuff</autoReward>
     </event>
     <event>
       <text>The pirate's victim quickly jumps away before you have a chance to speak to them.</text>
@@ -476,7 +476,7 @@
         <choice>
           <text id="continue"/>
           <event>
-            <autoReward level="LOW">scrap_only</autoReward>
+            <autoReward level="LOW">stuff</autoReward>
           </event>
         </choice>
       </event>
@@ -573,7 +573,7 @@
       </destroyed>
       <deadCrew>
         <text>You pick through the remains and contact the settlement.</text>
-        <autoReward level="MED">standard</autoReward>
+        <autoReward level="HIGH">standard</autoReward>
         <choice hidden="true">
           <text id="continue"/>
           <event load="PIRATE_STATION_CROPS_RESULT"/>

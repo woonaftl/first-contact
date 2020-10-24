@@ -149,6 +149,6 @@
   </ship>
   <event name="MANTIS_NAMED_THIEF_STASH">
     <text>You arrive at small asteroid field and discover the hidden cache among the debris. You input the codes given to you by KazaaakplethKilik and find a weapon inside.</text>
-    <autoReward level="HIGH">weapon</autoReward>
+    <autoReward level="LOW">weapon</autoReward>
   </event>
 </FTL>

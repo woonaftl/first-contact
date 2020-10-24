@@ -75,11 +75,11 @@
           <eventList name="ALISON_MANTIS_CREW_REJECT">
             <event>
               <text>The Engi captain is delighted, and quickly arranges for the transfer of the prisoner.</text>
-              <autoReward level="HIGH">scrap_only</autoReward>
+              <autoReward level="HIGH">stuff</autoReward>
             </event>
             <event>
               <text>Fury sparks in the eyes of the Mantis. He won't go easily, and causes serious damage before he can be captured.</text>
-              <autoReward level="HIGH">scrap_only</autoReward>
+              <autoReward level="HIGH">stuff</autoReward>
               <damage amount="4"/>
               <damage amount="1" system="room" effect="fire"/>
             </event>
@@ -201,28 +201,28 @@
         <text>Request fuel.</text>
         <event>
           <text>"Request granted. Fuel transferring."</text>
-          <autoReward level="HIGH">fuel</autoReward>
+          <autoReward level="HIGH">fuel_only</autoReward>
         </event>
       </choice>
       <choice hidden="true">
         <text>Request weapon.</text>
         <event>
           <text>"Request granted. Weapon transferring."</text>
-          <autoReward level="LOW">weapon</autoReward>
+          <weapon name="RANDOM"/>
         </event>
       </choice>
       <choice hidden="true">
         <text>Request drone.</text>
         <event>
           <text>"Request granted. Drone schematic transferring."</text>
-          <autoReward level="LOW">drone</autoReward>
+          <drone name="RANDOM"/>
         </event>
       </choice>
       <choice req="engi" hidden="true">
         <text>(Engi Crew) Threat unresolved. Current mission imperative: Protocol 52.34.</text>
         <event>
           <text>They respond, "Understood. Re-establishment of Federation highest import. Transmitting hidden base coordinates. Repairing hull and attaching ship to ship ordnance."</text>
-          <autoReward level="LOW">weapon</autoReward>
+          <weapon name="RANDOM"/>
           <quest event="HIDDEN_FEDERATION_BASE_LIST"/>
           <damage amount="-10"/>
         </event>
@@ -231,7 +231,6 @@
     <event>
       <text>They thank you for the assistance and when you tell them of your mission, one of the Engi asks if they can assist your crew. You welcome them aboard.</text>
       <crewMember amount="1" class="engi"/>
-      <autoReward level="LOW">standard</autoReward>
     </event>
   </eventList>
 </FTL>

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
+  <changelog>
+    <entry>Removed free scrap rewards in DISTRESS_ENGI_REACTOR event</entry>
+  </changelog>
   <event name="DISTRESS_ENGI_REACTOR" unique="true">
     <text>You arrive at a smoldering Engi research station, its distress call unanswered - attacked by pirates or Mantis most likely. There may be someone left alive, or else something of value left on board.</text>
     <distressBeacon/>
@@ -25,14 +28,12 @@
                   <event>
                     <text>The Engi who was saved offers to join your crew.</text>
                     <crewMember amount="1" class="engi"/>
-                    <autoReward level="LOW">scrap_only</autoReward>
                   </event>
                 </choice>
               </event>
               <event>
                 <text>Your crew return safely to the airlock with the injured Engi and you put some distance on the station before it blows. The Engi, impressed by your crew, volunteers to join you.</text>
                 <crewMember amount="1" class="engi"/>
-                <autoReward level="LOW">scrap_only</autoReward>
               </event>
             </eventList>
           </choice>
@@ -45,11 +46,11 @@
                   <clone>true</clone>
                   <text>Fortunately, your crewmember was close enough to the ship for the Clone Bay to revive them.</text>
                 </removeCrew>
-                <autoReward level="LOW">scrap_only</autoReward>
+                <drone name="RANDOM"/>
               </event>
               <event>
                 <text>The Engi don't feel things the same way other species do. They'd want the tech to be saved. Your crew return safely to the airlock with the drone control and you put some distance on the station before it blows.</text>
-                <autoReward level="LOW">drone</autoReward>
+                <drone name="RANDOM"/>
               </event>
             </eventList>
           </choice>
@@ -57,7 +58,6 @@
             <text>Save yourselves!</text>
             <event>
               <text>It's a tough order, but your crew's lives are the priority. They drop everything and return to the ship unharmed. You put some distance on the station before it blows.</text>
-              <autoReward level="LOW">scrap_only</autoReward>
             </event>
           </choice>
         </event>
@@ -78,14 +78,13 @@
           <event>
             <text>Your away team heads straight for the Engi and returns with time to spare. You put some distance on the station before it blows and the Engi is so impressed by your crew that they volunteer to join you!</text>
             <crewMember amount="1" class="engi"/>
-            <autoReward level="LOW">scrap_only</autoReward>
           </event>
         </choice>
         <choice hidden="true">
           <text>Save the Drone Schematic!</text>
           <event>
             <text>The Engi don't feel things the same way other species do. They'd want the tech to be saved. Your away team heads straight for the goods and returns with time to spare. You put some distance on the station before it blows.</text>
-            <autoReward level="LOW">drone</autoReward>
+            <drone name="RANDOM"/>
           </event>
         </choice>
       </event>

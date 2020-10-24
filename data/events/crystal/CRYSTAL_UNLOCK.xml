@@ -13,7 +13,7 @@
         </event>
         <event>
           <text>You find a pirate ship, damaged and abandoned. You salvage what you can and move on.</text>
-          <autoReward level="RANDOM">standard</autoReward>
+          <autoReward level="RANDOM">stuff</autoReward>
         </event>
         <event>
           <text>You find the decaying remains of some kind of ship coated with ice or crystal. You send some crew aboard to explore. Nearly everything is either destroyed or unidentifiable, but one of the weapons appears salvageable and there's a strange stasis pod that catches your eye.</text>
@@ -25,7 +25,7 @@
                 <text>Take the weapon and any spare scrap.</text>
                 <event>
                   <text>Your crew grabs what they can and returns to the ship before the asteroid hits. You take a look at what you've recovered once you move clear of the asteroid field.</text>
-                  <autoReward level="LOW">weapon</autoReward>
+                  <weapon name="RANDOM"/>
                 </event>
               </choice>
               <choice hidden="true">
@@ -37,7 +37,6 @@
                     <event>
                       <text>The pod appears to be functioning but you see nothing but shards of crystal inside. Perhaps someone else will know how to open it.</text>
                       <augment name="STASIS_POD"/>
-                      <autoReward level="LOW">scrap_only</autoReward>
                     </event>
                   </choice>
                 </event>
@@ -66,7 +65,7 @@
                 <text>Take the weapon and any spare scrap.</text>
                 <event>
                   <text>Your crew grabs what they can and returns to the ship before the asteroid hits. You take a look at what you've recovered once you move clear of the asteroid field.</text>
-                  <autoReward level="LOW">weapon</autoReward>
+                  <weapon name="RANDOM"/>
                 </event>
               </choice>
               <choice hidden="true">
@@ -78,7 +77,6 @@
                     <event>
                       <text>The pod appears to be functioning but you see nothing but shards of crystal inside. Perhaps someone else will know how to open it.</text>
                       <augment name="STASIS_POD"/>
-                      <autoReward level="LOW">scrap_only</autoReward>
                     </event>
                   </choice>
                 </event>
@@ -97,7 +95,7 @@
       <eventList name="ZOLTAN_CREW_STUDY_LIST">
         <event count="2">
           <text>Your crew calmly lines up for the Zoltans to take their readings. After a short time, the process is done. They contact you, "Thank you for your participation in our study. Please accept these small cakes made from stiff dough as well as some scrap."</text>
-          <autoReward level="LOW">scrap_only</autoReward>
+          <autoReward level="LOW">stuff</autoReward>
         </event>
         <event>
           <text>As soon as you dock, pirates burst on board and a hostile ship appears on the radar. You hear the Zoltans yell in the distance, "We're being held hostage!"</text>
@@ -142,7 +140,7 @@
       <event>
         <text>"Thank you! We didn't expect to receive such a significant amount of data regarding your crew's health during FTL travel. Please, accept this for your trouble."</text>
         <drone name="RANDOM"/>
-        <autoReward level="LOW">stuff</autoReward>
+        <autoReward level="MED">stuff</autoReward>
       </event>
     </choice>
     <choice hidden="true" req="STASIS_POD">
@@ -173,7 +171,7 @@
       <eventList name="ROCK_CRYSTAL_BEACON_LIST">
         <event>
           <text>You break it apart and take it for scrap. No one will miss it.</text>
-          <autoReward level="HIGH">scrap_only</autoReward>
+          <autoReward level="HIGH">stuff</autoReward>
         </event>
         <event>
           <text>As you start to break it apart a Rock military ship jumps nearby, "You think you can come into our sector and just steal whatever you please?! Prepare to die, vandals!"</text>

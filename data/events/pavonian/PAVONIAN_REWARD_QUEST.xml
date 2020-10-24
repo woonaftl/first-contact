@@ -2,7 +2,7 @@
 <FTL>
   <event name="PAVONIAN_REWARD_QUEST">
     <text>You jump to coordinates left by a Pavonian ship you helped previously. A small Pavonian fleet greets you: "Oh, those are the people who helped you?". One of the Pavonian ships moves towards you and offloads a little bit of scrap to help on your journey.</text>
-    <autoReward level="LOW">scrap_only</autoReward>
+    <autoReward level="HIGH">stuff</autoReward>
     <choice hidden="true">
       <text id="continue"/>
       <eventList>

@@ -113,10 +113,11 @@
     </textList>
     <ship load="BOSS_FLEETS_REBEL" hostile="true"/>
   </event>
+  <!--TODO bigger reward? -->
   <ship name="BOSS_FLEETS_REBEL" auto_blueprint="SHIPS_REBEL">
     <destroyed>
       <text>There's no time to salvage all of the wreck, the fleet is still nearby. Get ready to jump!</text>
-      <autoReward level="LOW">scrap_only</autoReward>
+      <autoReward level="LOW">standard</autoReward>
     </destroyed>
     <deadCrew>
       <text>There isn't time to salvage the enemy ship but your crew made off with a few nearby materials. Prepare to jump.</text>

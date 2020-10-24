@@ -222,7 +222,7 @@
         </event>
         <event>
           <text>You find a small cache of supplies that were surely left for any loyal Federation ships in trouble. You take all that you need, leaving some for others to find.</text>
-          <autoReward level="HIGH">standard</autoReward>
+          <autoReward level="HIGH">stuff</autoReward>
         </event>
         <event>
           <text>As you approach the signal you receive a message on a Rebel channel, "I knew we'd catch some Federation fish with this signal. Prepare to be boarded, scum!"</text>
@@ -242,16 +242,15 @@
   <eventList name="HIDDEN_FEDERATION_BASE_LIST">
     <event>
       <text>You find the planet at the indicated coordinates. Your initial scans show the planet to be barren and devoid of life, but you get a prompt reply when you broadcast on Federation frequencies. "Hello! So nice to see friends. We'll bring you up some supplies."</text>
-      <autoReward level="HIGH">drone</autoReward>
+      <autoReward level="LOW">drone</autoReward>
     </event>
     <event>
       <text>By following the directions given to you, you find a well-disguised outpost. You are welcomed by a friendly face who offers to assist you in your quest by joining your crew.</text>
-      <autoReward level="LOW">standard</autoReward>
       <crewMember amount="1"/>
     </event>
     <event>
       <text>After a quick search you discover the hidden Federation space-dock. They offer you some supplies in addition to fully repairing your ship.</text>
-      <autoReward level="MED">standard</autoReward>
+      <autoReward level="MED">stuff</autoReward>
       <damage amount="-35"/>
     </event>
     <event>
@@ -264,14 +263,14 @@
         <text>(Improved Sensors) Run a second scan pass.</text>
         <event>
           <text>Your Advanced Sensors pick faint signatures of what appears to be a storage space hidden under the rock. You find the access point and discover a supply cache whose Federation signal emitter has malfunctioned.</text>
-          <autoReward level="MED">standard</autoReward>
+          <autoReward level="MED">stuff</autoReward>
         </event>
       </choice>
       <choice req="sensors" lvl="3" hidden="true" max_group="0">
         <text>(Advanced Sensors) Run a second scan pass.</text>
         <event>
           <text>Your advanced sensors pick faint signatures of what appears to be a storage space hidden under the rock. You find the access point and discover a weapons cache whose Federation signal emitter has malfunctioned.</text>
-          <autoReward level="MED">weapon</autoReward>
+          <autoReward level="LOW">weapon</autoReward>
         </event>
       </choice>
       <choice req="LIFE_SCANNER" hidden="true">
@@ -315,7 +314,7 @@
         <event>
           <text>With the threat gone, you contact the Federation outpost. They respond, "Our location has been compromised! Take everything you can and please drop our survivors off at the next station." One soldier offers to stay and fight.</text>
           <crewMember amount="1"/>
-          <autoReward level="MED">scrap</autoReward>
+          <autoReward level="MED">stuff</autoReward>
         </event>
       </choice>
     </gotaway>
@@ -327,7 +326,7 @@
         <event>
           <text>With the threat gone, you contact the Federation outpost. They respond, "Our location has been compromised! Take everything you can and please drop our survivors off at the next station." One soldier offers to stay and fight.</text>
           <crewMember amount="1"/>
-          <autoReward level="MED">scrap</autoReward>
+          <autoReward level="MED">stuff</autoReward>
         </event>
       </choice>
     </destroyed>
@@ -339,7 +338,7 @@
         <event>
           <text>With the threat gone, you contact the Federation outpost. They respond, "Our location has been compromised! Take everything you can and please drop our survivors off at the next station." One soldier offers to stay and fight.</text>
           <crewMember amount="1"/>
-          <autoReward level="MED">scrap</autoReward>
+          <autoReward level="MED">stuff</autoReward>
         </event>
       </choice>
     </deadCrew>

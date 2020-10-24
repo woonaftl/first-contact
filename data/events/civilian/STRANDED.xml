@@ -44,12 +44,12 @@
             <text>Take him home to his family on a nearby planet in this system.</text>
             <eventList name="FAMILY_RETURN">
               <event>
-                <text>The family apparently owns one of the most valuable mining enterprises in the sector. For the safe return of his son, the patron of the family offers you a substantial reward.</text>
-                <autoReward level="HIGH">scrap_only</autoReward>
+                <text>The family apparently owns one of the most valuable mining enterprises in the sector. For the safe return of their child, the head of the family offers you a substantial reward.</text>
+                <autoReward level="HIGH">stuff</autoReward>
               </event>
               <event>
                 <text>The survivor's family is of modest means, yet they manage to offer you a reward for your virtuous deed.</text>
-                <autoReward level="MED">scrap_only</autoReward>
+                <autoReward level="MED">stuff</autoReward>
               </event>
               <event>
                 <text>Overjoyed with the return of their son, the family of the survivor arranges to repair your ship's hull as compensation.</text>
@@ -240,9 +240,7 @@
         <choice>
           <text id="continue"/>
           <event>
-            <item_modify>
-              <item max="2" min="2" type="fuel"/>
-            </item_modify>
+            <autoReward level="LOW">fuel_only</autoReward>
           </event>
         </choice>
       </event>
@@ -255,7 +253,7 @@
           <choice>
             <text id="continue"/>
             <event>
-              <autoReward level="MEDIUM">scrap_only</autoReward>
+              <autoReward level="MED">stuff</autoReward>
               <augment name="SLUG_GEL"/>
             </event>
           </choice>

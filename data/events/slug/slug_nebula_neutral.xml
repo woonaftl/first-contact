@@ -542,7 +542,7 @@
           <eventList>
             <event>
               <text>The Slug captain calms down and pings you again. "I never expected you would actually agree to thisss deal. Might as well pay you sssome scrap."</text>
-              <autoReward level="LOW">scrap_only</autoReward>
+              <autoReward level="LOW">stuff</autoReward>
             </event>
             <event/>
           </eventList>
@@ -705,7 +705,7 @@
         </event>
         <event>
           <text>You cautiously board their ship and immediately smell the stale air of a malfunctioning life support. In no time at all you're able to fix up the problem and head off again with some extra scrap in your hold.</text>
-          <autoReward level="HIGH">scrap_only</autoReward>
+          <autoReward level="MED">scrap_only</autoReward>
         </event>
       </eventList>
     </choice>
@@ -719,7 +719,7 @@
       <text>(Mantis Crew) Have your Mantis oversee the repairs.</text>
       <event>
         <text>Once on board, it becomes clear that nothing is wrong with their O2 system. Almost expecting this, your Mantis calmly responds to the trap. Once a couple of the Slugs have been spread across the walls of their ship, the rest surrender.</text>
-        <autoReward level="HIGH">scrap_only</autoReward>
+        <autoReward level="MED">scrap_only</autoReward>
       </event>
     </choice>
   </event>

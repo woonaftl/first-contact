@@ -104,28 +104,28 @@
         <event/>
       </choice>
     </event>
-    <event count="2">
+    <event>
       <text>Apparently the ship that was being assaulted was a science vessel. They thank you for saving them and offer a small reward.</text>
-      <autoReward level="MED">standard</autoReward>
+      <autoReward level="MED">stuff</autoReward>
     </event>
-    <event count="2">
+    <event>
       <text>It seems the crew did not survive the assault. You take what you can from the remains of the ship.</text>
-      <autoReward level="LOW">standard</autoReward>
+      <autoReward level="LOW">stuff</autoReward>
     </event>
     <event>
       <text>They respond, "It's a good thing you came when you did; we'd be dead now otherwise. I'm a shipwright and I'd like to help you like you helped me."</text>
       <choice>
         <text>The captain offers to install a piece of equipment on your ship.</text>
         <event>
-          <autoReward level="LOW">weapon</autoReward>
+          <weapon name="RANDOM"/>
         </event>
       </choice>
     </event>
-    <event count="2">
+    <event>
       <text>"This sector has become increasingly dangerous for friends of the Federation. I think my crew can patch up some of your hull damage as thanks."</text>
       <damage amount="-5"/>
     </event>
-    <event count="2">
+    <event>
       <text>The civilian ship wisely made a fast retreat while you distracted the hostile ship.</text>
     </event>
   </eventList>

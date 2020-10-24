@@ -21,7 +21,7 @@
   <event name="ENGI_FIND_DRONE" unique="true">
     <!--text taken from FIND_DRONE event -->
     <text>A small Engi research vessel is trying to fend off a Mantis ship. You move in to engage, but after a quick scan of your ship the Mantis ship retreats. The Engi offer you a drone schematic as thanks for your timely arrival.</text>
-    <autoReward level="LOW">drone</autoReward>
+   <drone name="RANDOM"/>
   </event>
 
   <event name="ENGI_FLEET_DELAY" unique="true">
@@ -40,7 +40,7 @@
       <text>Secure the cache.</text>
       <event>
         <text>You have the Engi complete their excavations and bring the supplies on-board.</text>
-        <autoReward level="LOW">drone</autoReward>
+        <drone name="RANDOM"/>
       </event>
     </choice>
   </event>
@@ -91,14 +91,14 @@
           <text>(Mantis Crew) Send your Mantis crewmember to communicate with the Mantis.</text>
           <event>
             <text>The Mantis is terrified at the sight of your crewmember. He immediately attacks his Engi rescuers, and your crewmember is forced to kill him. The Engi are grateful for your help and offer a small reward.</text>
-            <autoReward level="LOW">standard</autoReward>
+            <autoReward level="MED">stuff</autoReward>
           </event>
         </choice>
         <choice req="mind" lvl="1" hidden="true">
           <text>(Mind Control) Use your Mind control System to calm him down.</text>
           <event>
             <text>The Mantis calms down and communicates thanks to the Engi and yourself for helping. He requests to be dropped off at a nearby planet, at the human colony where he was raised. They are grateful for his return and offer a reward.</text>
-            <autoReward level="MED">standard</autoReward>
+            <autoReward level="MED">stuff</autoReward>
           </event>
         </choice>
       </event>

@@ -97,7 +97,6 @@
         <event>
           <text>Within the ship graveyard you find one ship that seems relatively untouched. On board you find an unconscious passenger, and take them back to the ship. Once awake they offer to join your crew in thanks.</text>
           <crewMember amount="1"/>
-          <autoReward level="LOW">standard</autoReward>
         </event>
         <event>
           <text>While the crew is off the ship searching through the wrecks, two hulls crash into each other breaking the crew's tethers. You have no time to react as someone is knocked away, floating helplessly into the gaseous clouds...</text>
@@ -105,7 +104,7 @@
             <clone>true</clone>
             <text>Fortunately, your crewmember was close enough to the ship for the Clone Bay to revive them.</text>
           </removeCrew>
-          <autoReward level="LOW">standard</autoReward>
+          <autoReward level="LOW">stuff</autoReward>
         </event>
         <event>
           <text>Among the junk and scrap you find a salvageable drone schematic. You decide to quit while ahead and prepare to jump with your recent find.</text>
@@ -113,7 +112,7 @@
         </event>
         <event>
           <text>Most of the debris is hardly even usable as scrap. However, you eventually find an intact weapon that can be mounted on your ship.</text>
-          <autoReward level="LOW">weapon</autoReward>
+          <weapon name="RANDOM"/>
         </event>
       </eventList>
     </choice>
@@ -127,7 +126,6 @@
         <event>
           <text>Within the ship graveyard you find one ship that seems relatively untouched. On board you find an unconscious passenger and take him back to the ship. Once awake they offer to join your crew in thanks.</text>
           <crewMember amount="1"/>
-          <autoReward level="LOW">standard</autoReward>
         </event>
         <event>
           <text>Among the junk and scrap you find a salvageable drone schematic. You decide to quit while ahead and prepare to jump with your recent find.</text>
@@ -135,7 +133,7 @@
         </event>
         <event>
           <text>Most of the debris is hardly even usable as scrap. However, you eventually find an intact weapon that can be mounted on your ship.</text>
-          <autoReward level="LOW">weapon</autoReward>
+           <weapon name="RANDOM"/>
         </event>
         <event>
           <text>Your pilot carefully explores the wrecks, but the storm has taken its toll. Any crew are long-since dead and the floating debris has been scorched beyond repair.</text>

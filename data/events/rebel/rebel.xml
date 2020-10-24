@@ -52,7 +52,7 @@
     </gotaway>
     <destroyed>
       <text>The ship breaks apart and you feel relief in the knowledge that you will hopefully still be one step ahead of the fleet.</text>
-      <autoReward level="LOW">standard</autoReward>
+      <autoReward level="MED">standard</autoReward>
     </destroyed>
   </ship>
 </FTL>

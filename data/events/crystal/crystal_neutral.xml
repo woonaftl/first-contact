@@ -204,7 +204,6 @@
     <event>
       <text>The ship looks battered and ready to break apart. You quickly move in to help rescue the survivors, but it looks like only one person made it. They offer to join your crew as thanks.</text>
       <crewMember amount="1" class="random"/>
-      <autoReward level="LOW">standard</autoReward>
     </event>
   </eventList>
 
@@ -276,10 +275,10 @@
       </eventList>
     </choice>
     <choice hidden="true" req="rock">
-      <text>(Rock crewmember) Send your Rockman crew.</text>
+      <text>(Rock crewmember) Send your Rockman.</text>
       <event>
         <text>"Ah! My dear evolutionary cousin! This is truly wonderful! We have countless historical records of your kind but we lack information on the past few hundreds of years. We can learn so much from these scans, we must get to analyzing them as soon as possible! Please, take this."</text>
-        <autoReward level="MED">standard</autoReward>
+        <autoReward level="HIGH">stuff</autoReward>
       </event>
     </choice>
     <choice hidden="true" req="BACKUP_DNA">
@@ -302,7 +301,7 @@
           <text>Leave your crewmember behind.</text>
           <event>
             <text>You're committed to both saving the Federation and upholding the principles it worked to maintain. Your crewmember will remain and make good on the promise - you still have a galaxy to save. They give you some supplies for your trouble.</text>
-            <autoReward level="MED">fuel</autoReward>
+            <autoReward level="MED">stuff</autoReward>
             <removeCrew>
               <clone>false</clone>
               <text/>
@@ -325,7 +324,7 @@
               <text>Leave your crewmember behind.</text>
               <event>
                 <text>You're committed to both saving the Federation and upholding the principles it worked to maintain. Your crewmember will remain and make good on the promise - you still have a galaxy to save. They give you some supplies for your trouble.</text>
-                <autoReward level="HIGH">fuel</autoReward>
+                <autoReward level="HIGH">stuff</autoReward>
                 <removeCrew>
                   <clone>false</clone>
                   <text/>

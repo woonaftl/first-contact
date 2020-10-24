@@ -62,14 +62,14 @@
                   </event>
                   <event>
                     <text>It appears the Rock ship was long since abandoned. You strip what you can from it.</text>
-                    <autoReward level="MED">standard</autoReward>
+                    <autoReward level="MED">stuff</autoReward>
                   </event>
                 </eventList>
               </choice>
             </destroyed>
             <deadCrew>
               <text>With the Slugs no longer a threat, you strip the ship and return to the Rockmen.</text>
-              <autoReward level="MED">standard</autoReward>
+              <autoReward level="HIGH">standard</autoReward>
               <choice hidden="true">
                 <text id="continue"/>
                 <event load="SLUG_DISTRESS_ROCK_RESULT"/>

@@ -30,21 +30,21 @@
             <text>(Rock) Communicate peacefully.</text>
             <event>
               <text>The natives trust your Rock crewmember much more than "smelly aliens". You trade a useless pebble souvenir from your home planet for a reasonable amount of scrap and reach the ship peacefully.</text>
-              <autoReward level="LOW">scrap_only</autoReward>
+              <autoReward level="HIGH">stuff</autoReward>
             </event>
           </choice>
           <choice hidden="true" req="mantis">
             <text>(Mantis) Carve them up.</text>
             <event>
               <text>The Mantis unleashes their fury on the primitives. The Rock people fight fiercely but cannot defeat a member of previously unseen alien race. You manage not only to repel the enemy but to loot their homes and bring a small amount of scrap back to your ship.</text>
-              <autoReward level="LOW">scrap_only</autoReward>
+              <autoReward level="HIGH">stuff</autoReward>
             </event>
           </choice>
         </event>
         <event>
           <!-- Zoltan poppers! -->
           <text>As the small shuttle lands on the planet, a Rock tribe has gathered to greet you. They offer a meager amount of supplies as a welcoming gift.</text>
-          <autoReward level="LOW">stuff</autoReward>
+          <autoReward level="MED">stuff</autoReward>
           <choice blue="false" hidden="true" lvl="0" max_group="0" req="energy">
             <text id="continue"/>
             <event>
@@ -123,14 +123,14 @@
                 <text>(Beam) Crack the Rocks from orbit.</text>
                 <event>
                   <text>The primitives were not ready to get fried by a giant beam. As soon as the first wave falls to the ground in agony, the Rocks disperse, carrying the wounded to caves and hiding them. You return to the ship safely carrying the stuff found in stash.</text>
-                  <autoReward level="MED">standard</autoReward>
+                  <autoReward level="HIGH">stuff</autoReward>
                 </event>
               </choice>
               <choice hidden="true" req="CREW_STIMS">
                 <text>(Mantis Pheromones) Sprint towards the shuttle.</text>
                 <event>
                   <text>The team is able to outrun the Rocks easily. As soon as you enter the shuttle, the pilot takes off. You reach the ship in one piece with resources onboard.</text>
-                  <autoReward level="MED">standard</autoReward>
+                  <autoReward level="HIGH">stuff</autoReward>
                 </event>
               </choice>
               <choice req="BATTLE_LIST">
@@ -144,7 +144,7 @@
                     <text id="continue"/>
                     <event>
                       <text>You return to the ship with all the scrap found in secret stash on the planet.</text>
-                      <autoReward level="MED">standard</autoReward>
+                      <autoReward level="HIGH">stuff</autoReward>
                     </event>
                   </choice>
                 </event>

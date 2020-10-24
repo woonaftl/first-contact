@@ -10,7 +10,7 @@
   <event name="PIRATE_FREE_ITEMS">
     <!-- text taken from FREE_ITEMS -->
     <text>You arrive in a system and immediately discover a pirate ship nearby. Strangely, scans indicate there are no lifeforms aboard. You salvage anything useful, but find no clue as to the whereabouts of the former crew.</text>
-    <autoReward level="LOW">standard</autoReward>
+    <autoReward level="LOW">stuff</autoReward>
   </event>
 
   <event name="SELL_MISSILES_STATION" unique="true">
@@ -86,27 +86,27 @@
         </event>
         <event>
           <text>You board the Kestrel with a support team. You search the ship and find out that the oxygen generation system is out of order. You search for crew, but find only several skeletons hugging in the medbay. Presumably they died of starvation.</text>
-          <autoReward level="LOW">standard</autoReward>
+          <autoReward level="MED">stuff</autoReward>
         </event>
         <event>
           <text>Your team boards the Kestrel. The ship is relatively intact, the only system that took serious damage is a teleporter. The crew is nowhere to be found. One of your teammates suggests that they abandoned their ship for another.</text>
-          <autoReward level="LOW">standard</autoReward>
+          <autoReward level="MED">stuff</autoReward>
         </event>
         <event>
           <text>You enter the Kestrel through the airlock. Surprisingly, it is open. Turns out that every single door on the ship is open. Your team finds the door control system, but it is blown up. What an unfortunate situation former crew found themselves in. You scrap the remains of the ship.</text>
-          <autoReward level="LOW">standard</autoReward>
+          <autoReward level="MED">stuff</autoReward>
         </event>
         <event>
           <text>The boarding team enter deactivated Kestrel searching for anyone alive. All they find is half-eaten remains of several humans. You cannot imagine the horrors that had happened on a Federation ship.</text>
-          <autoReward level="LOW">standard</autoReward>
+          <autoReward level="MED">stuff</autoReward>
         </event>
         <event>
           <text>Closer examination shows that the Kestrel spaceship's hull is not intact. Its edges are torn up like they were eaten. Both from inside and outside. There is no explanation what had happened here. You harvest all resources that can be found.</text>
-          <autoReward level="LOW">standard</autoReward>
+          <autoReward level="MED">stuff</autoReward>
         </event>
         <event>
           <text>There is nobody alive on the Kestrel. Your team found the remains of former crew: two Mantis corpses with bad burns struggling to repair the life support system. You loot the ship and hope not to have similar fate.</text>
-          <autoReward level="LOW">standard</autoReward>
+          <autoReward level="MED">stuff</autoReward>
         </event>
         <event>
           <text>You board the Kestrel and find several bodies starved to death. The ship is intact, but completely lacks any FTL fuel. You collect the resources from the ship and leave a note to buy some fuel in the next store.</text>
@@ -114,7 +114,7 @@
         </event>
         <event>
           <text>The boarding team enters the inactive Kestrel. There are no people on board, but the ship is relatively undamaged. As you search the ship for resources, you find a malfunctioning clonebay. The system is of modern design, and even has a backup bank installed.</text>
-          <autoReward level="LOW">standard</autoReward>
+          <autoReward level="MED">stuff</autoReward>
           <choice hidden="true" req="clonebay">
             <text>(Clonebay) Copy data to your system and create a clone.</text>
             <event>

@@ -10,12 +10,12 @@
   <event name="ZOLTAN_DISTRESS_SHELL" unique="true">
     <text>You arrive to find a lumbering Zoltan freighter with no one at the helm. It's a mystery what happened to the crew, but it'd be a shame to let the opportunity go to waste.</text>
     <distressBeacon/>
-    <autoReward level="RANDOM">stuff</autoReward>
+    <autoReward level="LOW">stuff</autoReward>
   </event>
 
   <event name="ZOLTAN_FREE_AUGMENT" unique="true">
     <text>A Zoltan academy sits docked just outside the beacon perimeter. They're happy to show you the fruits of their labor, and offer something to take home with you.</text>
-    <autoReward level="LOW">augment</autoReward>
+    <augment name="RANDOM"/>
   </event>
 
   <event name="ZOLTAN_FREE_MAP" unique="true">
@@ -34,11 +34,11 @@
         </event>
         <event>
           <text>Sending a shuttle to explore a beckoning cave system you discover signs of a battle - and a still-functioning weapon!</text>
-          <autoReward level="LOW">weapon</autoReward>
+          <weapon name="RANDOM"/>
         </event>
         <event>
           <text>A deep scan of the surface reveals a cave system that runs for miles, and what looks like a scrap heap left over from some heavy-duty construction.</text>
-          <autoReward level="MED">scrap_only</autoReward>
+          <autoReward level="MED">stuff</autoReward>
         </event>
         <event>
           <text>It looks as if a team could break through the fragile layer of the moon's surface into a hidden cavern.</text>
@@ -50,7 +50,7 @@
                 <item_modify>
                   <item type="missiles" min="-1" max="-1"/>
                 </item_modify>
-                <autoReward level="RANDOM">scrap_only</autoReward>
+                <autoReward level="MED">stuff</autoReward>
               </event>
               <event>
                 <text>The explosives are set remotely, but the detonation achieves nothing. What a waste.</text>
@@ -60,7 +60,7 @@
               </event>
               <event>
                 <text>Your explosives reveal the 'cave' is actually a secret base, located in a network of bunkers just under the surface. Everyone inside is dead; some Mantis clearly came through here recently. It looks like the Zoltan were researching advanced ship weaponry. You take one of their better examples back to your ship.</text>
-                <autoReward level="RANDOM">weapon</autoReward>
+               <weapon name="RANDOM"/>
                 <item_modify>
                   <item type="missiles" min="-1" max="-1"/>
                 </item_modify>

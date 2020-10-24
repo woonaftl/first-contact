@@ -124,7 +124,7 @@
   <ship name="REBEL_AUTO_ITEM" auto_blueprint="SHIPS_AUTO">
     <destroyed>
       <text>You salvage what you can from the broken ship.</text>
-      <autoReward level="MED">scrap_only</autoReward>
+      <autoReward level="MED">standard</autoReward>
       <choice hidden="true">
         <text>Investigate the station.</text>
         <event load="DEFENSE_ITEM_LIST"/>
@@ -137,11 +137,11 @@
     </event>
     <event>
       <text>The station was apparently designed to outfit Rebel ships with Drone Systems. You find a functioning Schematic.</text>
-      <autoReward level="LOW">drone</autoReward>
+      <drone name="RANDOM"/>
     </event>
     <event>
       <text>The station is a storage site for military grade weapons. You find one that can be easily attached to the ship.</text>
-      <autoReward level="LOW">weapon</autoReward>
+      <weapon name="RANDOM"/>
     </event>
     <event>
       <text>The station is a storage site for various resources. You salvage everything possible.</text>

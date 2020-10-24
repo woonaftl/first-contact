@@ -61,12 +61,12 @@
   <ship auto_blueprint="SHIPS_JELLY" name="SLUG_FREE_WEAPON_TRAP_SHIP">
     <destroyed>
       <text>The Slug ship breaks apart and your systems return to normal. You collect what you can.</text>
-      <autoReward level="LOW">standard</autoReward>
+      <autoReward level="MED">standard</autoReward>
       <status amount="100" system="weapons" target="player" type="clear"/>
     </destroyed>
     <deadCrew>
       <text>With their crew dead, your systems return to normal. You strip the ship.</text>
-      <autoReward level="MED">standard</autoReward>
+      <autoReward level="HIGH">standard</autoReward>
       <status amount="100" system="weapons" target="player" type="clear"/>
     </deadCrew>
   </ship>

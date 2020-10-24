@@ -190,7 +190,7 @@
           <text>Give them your flight plans.</text>
           <event>
             <text>It was never your intention to lead the Rebels here, and frankly you could do with the scrap. The Crystalline ship immediately jumps off to inform the Rebels, leaving you with a fleet to outrun!</text>
-            <autoReward level="HIGH">scrap_only</autoReward>
+            <autoReward level="HIGH">stuff</autoReward>
             <modifyPursuit amount="1"/>
           </event>
         </choice>
@@ -199,7 +199,7 @@
           <eventList name="CRYSTAL_REQUEST_LIST">
             <event>
               <text>Unable to interpret it themselves, the Crystalline Beings assume your data will mean something to the Rebels. It should see the pursuing fleet taking a leisurely cruise before they get back on track.</text>
-              <autoReward level="HIGH">scrap_only</autoReward>
+              <autoReward level="HIGH">stuff</autoReward>
               <modifyPursuit amount="-1"/>
             </event>
             <event>
@@ -213,7 +213,7 @@
           <text>(Distraction Buoy) Accept the scrap but give them falsified flight plans.</text>
           <event>
             <text>Your distraction buoy allows you to create very convincing flight plan. They accept it as true and give you the scrap. The deception may not be the most honorable tactic but staying ahead of the fleet is your highest priority.</text>
-            <autoReward level="HIGH">scrap_only</autoReward>
+            <autoReward level="HIGH">stuff</autoReward>
             <modifyPursuit amount="-1"/>
           </event>
         </choice>

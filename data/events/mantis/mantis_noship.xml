@@ -8,7 +8,7 @@
   <event name="MANTIS_FIND_WEAPON">
     <!-- text taken from FIND_WEAPON -->
     <text>As soon as you arrive a small Mantis ship detaches from a wreck and jumps away. You must have interrupted their salvage operation because you find a weapon ready to be installed!</text>
-    <autoReward level="LOW">weapon</autoReward>
+    <weapon name="RANDOM"/>
   </event>
 
   <changelog>
@@ -22,12 +22,12 @@
       <eventList>
         <event>
           <text>You approach the wreck. As the heat sensors turn red, and the fire starts in engines, you quickly understand why the Mantis ship was destroyed.</text>
-          <autoReward level="MED">scrap_only</autoReward>
+          <autoReward level="MED">stuff</autoReward>
           <damage amount="3" effect="fire" system="engines"/>
         </event>
         <event>
           <text>You approach the wreck. As the heat sensors turn red, and the fire starts in engines, you quickly understand why the Mantis ship was destroyed.</text>
-          <autoReward level="MED">scrap_only</autoReward>
+          <autoReward level="MED">stuff</autoReward>
           <damage amount="5" effect="fire" system="engines"/>
         </event>
       </eventList>
@@ -36,7 +36,7 @@
       <text>(Engines) Quickly scrap the wreck.</text>
       <event>
         <text>"Full power to engines!" You manage to scrap the remains of Mantis ship and make the safe distance from the sun just before the ship overheats.</text>
-        <autoReward level="MED">scrap_only</autoReward>
+        <autoReward level="MED">stuff</autoReward>
       </event>
     </choice>
     <choice hidden="true">

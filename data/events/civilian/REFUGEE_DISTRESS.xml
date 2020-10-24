@@ -85,7 +85,7 @@
         <text>Contact the refugee ship.</text>
         <event>
           <text>The refugee ship thanks you for your assistance. As a gesture of good will (and seeing how effectively you dispatched the enemy ship), they offer up what supplies they can spare.</text>
-          <autoReward level="LOW">standard</autoReward>
+          <autoReward level="LOW">stuff</autoReward>
         </event>
       </choice>
     </destroyed>
@@ -96,7 +96,7 @@
         <text>Contact the refugee ship.</text>
         <event>
           <text>The refugee ship claims pirates have been following their trail since they left their homeworld. As a gesture of good will (and seeing how effectively you dispatched the enemy ship), they offer up what supplies they can spare.</text>
-          <autoReward level="LOW">standard</autoReward>
+          <autoReward level="LOW">stuff</autoReward>
         </event>
       </choice>
     </deadCrew>
@@ -109,7 +109,7 @@
         <text>Contact the refugee ship.</text>
         <event>
           <text>The refugee ship claims the Slugs have been hounding them since they left their homeworld. As a gesture of good will (and seeing how effectively you dispatched the enemy ship), they offer up what supplies they can spare.</text>
-          <autoReward level="LOW">standard</autoReward>
+          <autoReward level="LOW">stuff</autoReward>
         </event>
       </choice>
     </destroyed>
@@ -120,7 +120,7 @@
         <text>Contact the refugee ship.</text>
         <event>
           <text>The refugee ship claims the Slugs have been hounding them since they left their homeworld. As a gesture of good will (and seeing how effectively you dispatched the enemy ship), they offer up what supplies they can spare.</text>
-          <autoReward level="LOW">standard</autoReward>
+          <autoReward level="LOW">stuff</autoReward>
         </event>
       </choice>
     </deadCrew>

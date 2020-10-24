@@ -357,7 +357,7 @@
       <text>(Engi Crew) Say ABADOTH.</text>
       <event>
         <text>Your Engi crewman easily recalls the phrase the deadman used from its memory banks. There is a moment of silence, and the ship's captain solemnly thanks you for the information. He wishes you well on your journey, and he offers several upgrades to assist you in exchange for your service to the Zoltan race.</text>
-        <autoReward level="MED">standard</autoReward>
+        <autoReward level="HIGH">stuff</autoReward>
       </event>
     </choice>
     <choice hidden="true">
@@ -371,7 +371,7 @@
       <text>Say ABADOTH.</text>
       <event>
         <text>There is a moment of silence, and the ship's captain solemnly thanks you for the information. He wishes you well on your journey, and he offers several upgrades to assist you in exchange for your service to the Zoltan race.</text>
-        <autoReward level="MED">standard</autoReward>
+      <autoReward level="HIGH">stuff</autoReward>
       </event>
     </choice>
     <choice hidden="true">

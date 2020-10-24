@@ -19,7 +19,7 @@
       <text>(Rock crewmember) Offer to lead them out of the nebula.</text>
       <event>
         <text>The Rock grudgingly transfer control of their helm to you and you steer them to a thinner part of the nebula. They're not sure what to think, but transfer over some supplies all the same.</text>
-        <autoReward level="HIGH">standard</autoReward>
+        <autoReward level="HIGH">stuff</autoReward>
       </event>
     </choice>
   </event>

@@ -16,7 +16,7 @@
           <eventList name="ROCK_STARSHIP_MINE_DEFUSE">
             <event>
               <text>Your crewmember dons a space suit and exits the airlock. They make quick work of the basic device and return inside to relief all round. The mine makes good scrap pickings too.</text>
-              <autoReward level="MED">scrap_only</autoReward>
+              <autoReward level="MED">stuff</autoReward>
             </event>
             <event>
               <text>Your crewmember dons a space suit and exits the airlock. When they open up the mine housing, though, they panic. The red wire or the blue?! 3... 2... 1...</text>
@@ -42,7 +42,9 @@
             </item_modify>
             <choice>
               <text id="continue"/>
-              <event><autoReward level="LOW">scrap_only</autoReward></event>
+              <event>
+                <autoReward level="MED">stuff</autoReward>
+              </event>
             </choice>
           </event>
         </choice>
@@ -56,7 +58,7 @@
             <choice>
               <text id="continue"/>
               <event>
-                <autoReward level="LOW">scrap_only</autoReward>
+                <autoReward level="MED">stuff</autoReward>
               </event>
             </choice>
           </event>
@@ -73,7 +75,7 @@
   <eventList name="ROCK_STARSHIP_MINE_DEFUSE2">
     <event>
       <text>You open your eyes and everything is still where it was a moment ago. You did it!</text>
-      <autoReward level="MED">scrap_only</autoReward>
+      <autoReward level="MED">stuff</autoReward>
     </event>
     <event>
       <text>The weapon detonates. Everything goes dark, the bridge illuminated by flames pouring from the hull, your bomb disposal volunteer spinning off toward a nearby sun. You put out the fires and prepare to move on.</text>

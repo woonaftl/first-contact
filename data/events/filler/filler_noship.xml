@@ -671,7 +671,7 @@
       <eventList name="MERCHANT_INVESTIGATE_LIST">
         <event>
           <text>You find the remains of the ship. It seems to have severe external damage, but you cannot pinpoint a cause. The majority of its cargo seems intact. You manage to discern the ship's intended destination.</text>
-          <autoReward level="MED">standard</autoReward>
+          <autoReward level="MED">stuff</autoReward>
           <choice>
             <text>Take the cargo and head to its original destination in search of a reward.</text>
             <event>
@@ -717,7 +717,7 @@
             </destroyed>
             <deadCrew>
               <text>You contact the delivery ship, who are grateful for your assistance. They offer you a reward for saving them.</text>
-              <autoReward level="MED">standard</autoReward>
+              <autoReward level="HIGH">standard</autoReward>
             </deadCrew>
           </ship>
         </event>
@@ -735,12 +735,12 @@
     </event>
     <event>
       <text>There were general military supplies in the cargo crates. You take what you can use.</text>
-      <autoReward level="HIGH">standard</autoReward>
+      <autoReward level="MED">stuff</autoReward>
     </event>
   </eventList>
   <event name="MERCHANT_INVESTIGATE_DELIVER">
     <text>You find the station that had ordered your cargo. You drop it off and they respond, "Ignoring the fact that this is days late, we really appreciate that you delivered our materials. We realize how dangerous this sector is these days. Take this as payment."</text>
-    <autoReward level="MED">drone</autoReward>
+    <autoReward level="LOW">drone</autoReward>
   </event>
 
 
@@ -854,7 +854,7 @@
               <text>Ask your crew if they agree.</text>
               <event>
                 <text>Once your Lanius crewmember understands the situation it appears to like the idea of assisting with construction in deep space. Much less dangerous. They offer you some goods in exchange.</text>
-                <autoReward level="HIGH">augment</autoReward>
+                <autoReward level="MED">augment</autoReward>
                 <removeCrew class="anaerobic">
                   <clone>false</clone>
                   <text>Your clonebay obviously does not revive your crewmember since they did not die.</text>
@@ -865,7 +865,7 @@
               <text>Our crew is not for sale.</text>
               <event>
                 <text>"A pity. In terms of payment, here's some of the scrap metal we don't need now that we've got necessary parts."</text>
-                <autoReward level="MED">scrap_only</autoReward>
+                <autoReward level="LOW">scrap_only</autoReward>
               </event>
             </choice>
           </event>
@@ -910,9 +910,10 @@
         <text>Give them the requested 4 fuel.</text>
         <event>
           <text>"Great, thank you. Here's some scrap metal for your troubles. Be careful out there."</text>
-          <autoReward level="MED">scrap_only</autoReward>
           <item_modify>
             <item type="fuel" min="-4" max="-4"/>
+            <item type="scrap" min="12" max="18"/>
+            <item type="missiles" min="2" max="3"/>
           </item_modify>
         </event>
       </choice>

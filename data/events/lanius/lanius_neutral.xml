@@ -247,7 +247,7 @@
         </event>
         <event>
           <text>You try your best to convey the notion that the approaching Rebel fleet has countless automated ships scouting for them. They thank you for the tip and prepare to jump in the direction you came. That will hopefully delay the fleet. You scrap what remains of the Rebel station.</text>
-          <autoReward level="MED">standard</autoReward>
+          <autoReward level="MED">stuff</autoReward>
           <modifyPursuit amount="-1"/>
         </event>
       </eventList>
@@ -262,7 +262,7 @@
       <text>(Lanius Crew) Try to use them to delay the Rebels.</text>
       <event>
         <text>Your crewmember tells them of the approaching fleet and the number of automated ships they use to scout ahead. They thank you for the tip and prepare to jump in the direction you came. That will hopefully delay the fleet. You scrap what remains of the Rebel station.</text>
-        <autoReward level="MED">standard</autoReward>
+        <autoReward level="MED">stuff</autoReward>
         <modifyPursuit amount="-1"/>
       </event>
     </choice>
@@ -429,7 +429,7 @@
       <text>(Lanius) Send over a Lanius crewmember to plunder the ship of resources.</text>
       <event>
         <text>Your crewmember manages to salvage some resources without waking the hibernating crew.</text>
-        <autoReward level="MED">standard</autoReward>
+        <autoReward level="HIGH">stuff</autoReward>
       </event>
     </choice>
     <choice hidden="true">
@@ -441,7 +441,7 @@
         </event>
         <event>
           <text>You clumsily manage to strip some hull plating before being forced to retreat or risk collision.</text>
-          <autoReward level="LOW">scrap_only</autoReward>
+          <autoReward level="LOW">stuff</autoReward>
         </event>
       </eventList>
     </choice>
@@ -449,7 +449,7 @@
       <text>(Advanced Piloting) Engage the autopilot to strip the ship safely.</text>
       <event>
         <text>The computer matches the rotation and speed of the target ship, and you take the opportunity to gather what residual scrap you can without awakening the Lanius crew. You get an excellent haul!</text>
-        <autoReward level="MED">standard</autoReward>
+        <autoReward level="HIGH">stuff</autoReward>
       </event>
     </choice>
   </event>
@@ -540,7 +540,7 @@
     </destroyed>
     <deadCrew>
       <text>There are no more life-signs remaining on the ship. You strip it of useful materials.</text>
-      <autoReward level="MED">standard</autoReward>
+      <autoReward level="HIGH">standard</autoReward>
       <choice hidden="true">
         <text>Investigate the fueling platform.</text>
         <event load="LANIUS_FUELING_STATION_END"/>
@@ -567,14 +567,14 @@
       <text>[Improved Piloting] Engage the auto-pilot and safely harvest the debris.</text>
       <event>
         <text>With help from the computer, you are able to keep a comfortable distance between you and the Lanius ship, and you are able to gather resources from the debris field without conflict.</text>
-        <autoReward level="MED">standard</autoReward>
+        <autoReward level="MED">stuff</autoReward>
       </event>
     </choice>
     <choice req="pilot" lvl="3" hidden="true" max_group="0">
       <text>[Advanced Piloting] Engage the auto-pilot and safely harvest the debris.</text>
       <event>
         <text>With help from the computer, you are able to keep a comfortable distance between you and the Lanius ship, and you gather a considerable amount of resources from the debris field without conflict.</text>
-        <autoReward level="HIGH">standard</autoReward>
+        <autoReward level="HIGH">stuff</autoReward>
       </event>
     </choice>
     <choice hidden="true">
@@ -602,7 +602,7 @@
     </destroyed>
     <deadCrew>
       <text>There are no more life-signs remaining on the ship. You strip it of useful materials.</text>
-      <autoReward level="MED">standard</autoReward>
+      <autoReward level="HIGH">standard</autoReward>
       <choice hidden="true">
         <text>Investigate the debris.</text>
         <event load="LANIUS_HARVESTER_SHIP_LIST"/>
@@ -618,11 +618,11 @@
     </event>
     <event>
       <text>The competitor gone, you proceed to investigate the field and scavenge what you can.</text>
-      <autoReward level="LOW">standard</autoReward>
+      <autoReward level="LOW">stuff</autoReward>
     </event>
     <event>
       <text>It looks like you interrupted the Lanius before they had a chance to scavenge much from the debris, and you make off with a good haul.</text>
-      <autoReward level="MED">standard</autoReward>
+      <autoReward level="MED">stuff</autoReward>
     </event>
   </eventList>
 
@@ -684,7 +684,7 @@
     </event>
     <event>
       <text>The Slugs reluctantly thank you for your help, protest they had the whole situation under control, attempt to make you pay for them helping you, and an hour later, finally relent and give you some supplies.</text>
-      <autoReward level="MED">standard</autoReward>
+      <autoReward level="MED">stuff</autoReward>
     </event>
   </eventList>
   <ship name="LANIUS_SLUG_DISTRESS_SHIP" auto_blueprint="SHIPS_LANIUS">
@@ -698,7 +698,7 @@
     </destroyed>
     <deadCrew>
       <text>There are no more life-signs remaining on the ship. You strip it of useful materials.</text>
-      <autoReward level="MED">standard</autoReward>
+      <autoReward level="HIGH">standard</autoReward>
       <choice hidden="true">
         <text>Contact the Slugs.</text>
         <event load="LANIUS_SLUG_DISTRESS_END"/>
@@ -726,11 +726,11 @@
   <eventList name="LANIUS_MANTIS_DISTRESS_END">
     <event>
       <text>The Mantis hiss and click, angry at being saved, and angry at themselves for needing to be saved. They part ways with some scrap metal that is no longer attached to their hull and a few missiles they can no longer use.</text>
-      <autoReward level="MED">missiles</autoReward>
+      <autoReward level="LOW">missiles</autoReward>
     </event>
     <event>
       <text>The Mantis ship has sustained too much damage - there are no survivors. You gather what resources you can from the wreckage.</text>
-      <autoReward level="MED">standard</autoReward>
+      <autoReward level="LOW">standard</autoReward>
     </event>
   </eventList>
   <ship name="LANIUS_MANTIS_DISTRESS_SHIP" auto_blueprint="SHIPS_LANIUS">
@@ -744,7 +744,7 @@
     </destroyed>
     <deadCrew>
       <text>There are no more life-signs remaining on the ship. You strip it of useful materials.</text>
-      <autoReward level="MED">standard</autoReward>
+      <autoReward level="HIGH">standard</autoReward>
       <choice hidden="true">
         <text>Contact the Mantis.</text>
         <event load="LANIUS_MANTIS_DISTRESS_END"/>
@@ -775,7 +775,7 @@
     </event>
     <event>
       <text>The Rockman ship jumped away during the battle, but it left much of its hull and spare parts floating behind - you salvage what you can, and prepare to jump.</text>
-      <autoReward level="MED">standard</autoReward>
+      <autoReward level="MED">stuff</autoReward>
     </event>
   </eventList>
   <ship name="LANIUS_ROCK_DISTRESS_SHIP" auto_blueprint="SHIPS_LANIUS">
@@ -789,7 +789,7 @@
     </destroyed>
     <deadCrew>
       <text>There are no more life-signs remaining on the ship. You strip it of useful materials.</text>
-      <autoReward level="MED">standard</autoReward>
+      <autoReward level="HIGH">standard</autoReward>
       <choice hidden="true">
         <text>Contact the Rockmen.</text>
         <event load="LANIUS_ROCK_DISTRESS_END"/>

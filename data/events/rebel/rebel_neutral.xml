@@ -88,7 +88,7 @@
       <destroyed>
         <text>You access the recent scans from the unguarded station. Your map has been updated with details of the surrounding area.</text>
         <reveal_map/>
-        <autoReward level="LOW">scrap_only</autoReward>
+        <autoReward level="MED">scrap_only</autoReward>
       </destroyed>
     </ship>
     <choice>
@@ -128,7 +128,7 @@
     <ship name="REBEL_AUTO_RADAR" auto_blueprint="SHIPS_AUTO" hostile="false">
       <destroyed>
         <text>You salvage what you can and approach the station. It is used to relay information to the Rebel Fleet. You could attempt to hack it to give the Rebels false information.</text>
-        <autoReward level="MED">scrap_only</autoReward>
+        <autoReward level="MED">standard</autoReward>
         <choice>
           <text>Attempt to manually hack into the station.</text>
           <event load="DEFENSE_RADAR_LIST"/>
@@ -339,7 +339,7 @@
             </event>
             <event>
               <text>One of the civilian ships quietly teleports over a crate of Federation military supplies.</text>
-              <autoReward level="LOW">standard</autoReward>
+              <autoReward level="MED">stuff</autoReward>
             </event>
             <event>
               <text>One of the civilian ships contacts you and reveals they are Federation loyalists. An eavesdropping Rebel swoops in, destroys the ship, and turns to attack you!</text>
@@ -401,19 +401,20 @@
       <eventList name="REBEL_HELPERS_SUPPLIES">
         <event>
           <text>The colonists hand over the supplies. It appears to be mostly equipment meant for automated farming, but you can make use of it. As you leave, you receive a message: "This is why the Rebels will always have support!"</text>
-          <autoReward level="LOW">droneparts</autoReward>
+          <autoReward level="MED">droneparts_only</autoReward>
         </event>
         <event>
           <text>The colonists hand over the supplies and you load it onto your ship. As you jump away, you crack it open and discover nothing more than vaccinations for a local plague.</text>
         </event>
         <event>
           <text>You make the colonists teleport the supplies to your ship. It's nothing more than building construction supplies. Oh well, scrap is scrap.</text>
-          <autoReward level="LOW">scrap_only</autoReward>
+          <autoReward level="MED">stuff</autoReward>
         </event>
-        <event count="3">
+        <event>
           <text>The colonists willingly give up their supplies. But as you make to jump away, an explosion rocks your ship. The cargo was booby trapped!</text>
           <damage amount="2" system="room" effect="random"/>
-        </event>
+          <damage amount="2" system="room" effect="random"/>
+       </event>
       </eventList>
     </choice>
     <choice>
@@ -481,47 +482,47 @@
     </choice>
   </event>
   <eventList name="REBEL_TRANSPORT_DESTROYED">
-    <event>
+    <!--<event>
       <text>You search the ship and discover that its cargo was new military-grade weaponry! It was somehow undamaged in the fight and can easily be mounted on the ship.</text>
       <autoReward level="MED">weapon</autoReward>
-    </event>
-    <event count="2">
-      <text>You search the remains of the ship, but only come across blueprints and debris from broken machinery. A shame, but you take what scrap you can salvage.</text>
-      <autoReward level="LOW">standard</autoReward>
-    </event>
+    </event>-->
     <event>
+      <text>You search the remains of the ship, but only come across blueprints and debris from broken machinery. A shame, but you take what scrap you can salvage.</text>
+      <autoReward level="MED">standard</autoReward>
+    </event>
+    <!--<event>
       <text>The ship was transporting weaponry. You find a piece still intact, despite the battle.</text>
       <autoReward level="LOW">weapon</autoReward>
-    </event>
-    <event count="2">
-      <text>The ship was apparently transporting weaponry; however, nothing seems to have survived the battle.</text>
-      <autoReward level="MED">scrap_only</autoReward>
-    </event>
+    </event>-->
     <event>
+      <text>The ship was apparently transporting weaponry; however, nothing seems to have survived the battle.</text>
+      <autoReward level="MED">missiles</autoReward>
+    </event>
+    <!--<event>
       <text>Searching the remains, you find that the cargo was military-grade Drone Schematics! You bring them aboard to install in your ship.</text>
       <autoReward level="MED">drone</autoReward>
-    </event>
+    </event>-->
     <event>
       <text>The debris implies that the ship was carrying Drone Schematics, but unfortunately nothing remains. You do find functioning Drone Parts, however.</text>
       <autoReward level="MED">droneparts</autoReward>
     </event>
-    <event>
+    <!--<event>
       <text>This ship's cargo was not salvageable. However, they seem to have been surveying the region; they possess detailed maps and data. You download what you can to the ship's map.</text>
       <reveal_map/>
       <autoReward level="MED">scrap_only</autoReward>
-    </event>
+    </event>-->
     <event>
       <text>From the bits and pieces you find, you decide that this ship was gathering information. Nothing seems useful.</text>
-      <autoReward level="MED">scrap_only</autoReward>
+      <autoReward level="MED">standard</autoReward>
     </event>
-    <event>
+    <!--event>
       <text>You detect faint life signatures from an intact piece of the hull. They were transporting prisoners, and the sole survivor offers to join your crew, as a first step on his path to get revenge.</text>
       <crewMember amount="1"/>
       <autoReward level="LOW">standard</autoReward>
-    </event>
-    <event count="2">
+    </event>-->
+    <event>
       <text>The ship appears to have been transporting prisoners. Unfortunately they were all killed in the battle. You salvage what you can.</text>
-      <autoReward level="LOW">standard</autoReward>
+      <autoReward level="MED">standard</autoReward>
     </event>
     <event>
       <text>The ship was carrying military supplies. You pick up anything that looks salvageable from the debris.</text>
@@ -529,21 +530,21 @@
     </event>
   </eventList>
   <eventList name="REBEL_TRANSPORT_CAPTURED">
-    <event count="2">
+    <event>
       <text>With the crew dead, you search the ship. You find military-grade weaponry and take what looks most useful.</text>
       <autoReward level="MED">weapon</autoReward>
     </event>
     <event>
       <text>The ship refuses to fight, but you still detect life signatures. Apparently this was a prisoner transport. The single survivor offers to join your crew in exchange for their freedom.</text>
       <crewMember amount="1"/>
-      <autoReward level="HIGH">scrap_only</autoReward>
-    </event>
-    <event count="2">
-      <text>This ship was apparently carrying information about the surrounding beacons. You download what you can to the ship's map, and scrap the rest of the ship.</text>
-      <reveal_map/>
       <autoReward level="MED">scrap_only</autoReward>
     </event>
-    <event count="2">
+    <event>
+      <text>This ship was apparently carrying information about the surrounding beacons. You download what you can to the ship's map, and scrap the rest of the ship.</text>
+      <reveal_map/>
+      <autoReward level="HIGH">standard</autoReward>
+    </event>
+    <event>
       <text>Searching the remains you find that the cargo was military-grade Drone Schematics! You bring them aboard to install on your ship.</text>
       <autoReward level="MED">drone</autoReward>
     </event>
@@ -604,7 +605,7 @@
     <ship name="SQUAT_REFUEL_STATION" auto_blueprint="SHIPS_REBEL" hostile="false">
       <destroyed>
         <text>The ship breaks apart and you quickly salvage what you can.</text>
-        <autoReward level="LOW">standard</autoReward>
+        <autoReward level="MED">standard</autoReward>
         <choice hidden="true">
           <text id="continue"/>
           <event>
@@ -615,12 +616,12 @@
       </destroyed>
       <deadCrew>
         <text>With the crew dead you quickly salvage what you can.</text>
-        <autoReward level="MED">standard</autoReward>
+        <autoReward level="HIGH">standard</autoReward>
         <choice hidden="true">
           <text id="continue"/>
           <event>
             <text>The outpost hails you, "The pompous bastards expected free service just because they defeated the Federation. Take this for the help."</text>
-            <autoReward level="MED">fuel</autoReward>
+            <autoReward level="HIGH">fuel_only</autoReward>
           </event>
         </choice>
       </deadCrew>
@@ -651,7 +652,7 @@
         </event>
         <event>
           <text>Your search for a friendly marketplace yields no results but after a time a small shuttle approaches. They release some supplies in your direction with the message, "We are not all friends of the Rebel fleet. Stay strong."</text>
-          <autoReward level="RANDOM">standard</autoReward>
+          <autoReward level="RANDOM">stuff</autoReward>
         </event>
         <event count="2">
           <text>You apparently spoke to the wrong person in your search for a store. Warnings go off and you detect an automated Rebel ship moving in to attack.</text>
@@ -676,7 +677,7 @@
       <text>(Improved Mind Control) Alter the announcer's opinions.</text>
       <event>
         <text>You locate the source of the announcement and 'convince' the speaker to rescind his previous statement. In addition he apologizes by offering complimentary supplies. Hopefully you will have enough time to shop before he can figure out what just happened.</text>
-        <autoReward level="MED">standard</autoReward>
+        <autoReward level="MED">stuff</autoReward>
         <store/>
       </event>
     </choice>
@@ -684,7 +685,7 @@
       <text>(Advanced Mind Control) Alter the announcer's opinions.</text>
       <event>
         <text>You locate the source of the announcement and 'convince' the speaker to rescind his previous statement. In addition he apologizes by offering considerable complimentary supplies. Hopefully you will have enough time to shop before he can figure out what just happened.</text>
-        <autoReward level="HIGH">standard</autoReward>
+        <autoReward level="HIGH">stuff</autoReward>
         <store/>
       </event>
     </choice>

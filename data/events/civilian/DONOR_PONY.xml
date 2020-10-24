@@ -17,7 +17,7 @@
               <event>
                 <text>None of your attempts to communicate seem to work: they just stare at you silently. As you prepare to leave, one of the creatures canters forward and forcefully nudges you away from the ship. He seems to want you to follow him. Eventually, they guide you to an old Engi ship's crash site. Inside you are able to find and reactivate an Engi!</text>
                 <crewMember amount="1" class="engi"/>
-                <autoReward level="LOW">standard</autoReward>
+                <autoReward level="LOW">stuff</autoReward>
               </event>
               <event>
                 <text>You try to communicate in every possible way you can but they just stand there, silently judging you with their large, expressionless eyes. You prepare to leave.</text>
@@ -62,7 +62,7 @@
             <text>(Orchid) Attract the herbivore creatures and carefully lead them to your hold to sell.</text>
             <event>
               <text>Your crewmember easily herds primitive animals into the cargo hold. You sell the creatures to the exotic restaurant on a nearby planet.</text>
-              <autoReward level="HIGH">scrap_only</autoReward>
+              <autoReward level="HIGH">stuff</autoReward>
             </event>
           </choice>
         </event>
@@ -118,8 +118,8 @@
       <text>Submerge the shuttle.</text>
       <eventList>
         <event>
-          <text>On the seabed, you find ruins of lost civilization. Metallic dwellings, vehicles and factories are everywhere. There is no one to stop you from looting the place and bring the best metal materials back to the orbit.</text>
-          <autoReward level="HIGH">scrap_only</autoReward>
+          <text>On the seabed, you find ruins of lost civilization. Metallic dwellings, vehicles and factories are everywhere. There is no one to stop you from looting the place and bring the best materials back to the orbit.</text>
+          <autoReward level="HIGH">stuff</autoReward>
         </event>
         <event>
           <text>As the shuttle moves through the water, you notice growing shapes on the radar. They appear to be similar to giant worms and move very quickly in your direction. When a giant tentacle slams your shuttle, you quickly realize the mistake of diving into the ocean.</text>

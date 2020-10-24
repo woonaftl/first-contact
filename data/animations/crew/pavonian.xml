@@ -82,6 +82,7 @@
     <time>1.0</time>
   </anim>
 
+<!--FIXME-->
   <anim name="pavonian_shoot_down">
     <sheet>pavonian</sheet>
     <desc length="3" x="0" y="7"/>

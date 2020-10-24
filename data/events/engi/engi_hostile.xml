@@ -28,13 +28,16 @@
     <ship load="PIRATE" hostile="true"/>
   </event>
 
+  <changelog>
+    <entry>Increased rewards for defeating enemy ship in DISTRESS_ENGI_REBEL event</entry>
+  </changelog>
   <event name="DISTRESS_ENGI_REBEL" unique="true">
     <text>The distress signal originates from a small Engi ship under attack by a Rebel fighter - but when the Rebels see Federation markings they turn to attack!</text>
     <distressBeacon/>
     <ship name="DISTRESS_ENGI_REBEL" auto_blueprint="SHIPS_REBEL" hostile="true">
       <destroyed>
         <text>The Rebels destroyed, you pick the bones of their ship and wait for the small Engi ship to catch up.</text>
-        <autoReward level="LOW">standard</autoReward>
+        <autoReward level="MED">standard</autoReward>
         <choice hidden="true">
           <text id="continue"/>
           <event load="DISTRESS_ENGI_REBEL_RESULT"/>
@@ -42,7 +45,7 @@
       </destroyed>
       <deadCrew>
         <text>The Rebels destroyed, you pick the bones of their ship and wait for the small Engi ship to catch up.</text>
-        <autoReward level="MED">standard</autoReward>
+        <autoReward level="HIGH">standard</autoReward>
         <choice hidden="true">
           <text id="continue"/>
           <event load="DISTRESS_ENGI_REBEL_RESULT"/>
@@ -99,6 +102,7 @@
 
   <changelog>
     <entry>ENGI_VIRUS event reward changed from Drone Reactor Booster to Engi Med-bot Dispersal</entry>
+    <entry>Increased reward for killing enemy crew in ENGI_VIRUS event</entry>
   </changelog>
   <event name="ENGI_VIRUS" unique="true">
     <text>The Engi are awaiting you at the beacon, with their weapons on-line! They explain a computer virus that is wanted for hostile acts against the Engi (multiple counts of binary scrambling, nano-dissolution, and variable interference) is aboard your vessel.</text>
@@ -130,7 +134,7 @@
               <text id="continue"/>
               <event>
                 <text>The Engi thank you for deleting the virus, and jump away. They offer a unique ship augmentation as a reward.</text>
-                <autoReward level="LOW">standard</autoReward>
+                <autoReward level="MED">stuff</autoReward>
                 <augment name="NANO_MEDBAY"/>
               </event>
             </choice>
@@ -182,7 +186,7 @@
           <text>[Lanius Crew] Your Lanius crewmember gestures frantically.</text>
           <event>
             <text>Oddly enough, the Lanius seems aware of which computer the virus is present in, and proceeds to... digest the terminal. There is a burst of O2, and the Engi ship powers down its weapons, no longer sensing the virus on board. The Engi send some parts over to repair your damaged computer, along with a unique ship augmentation as a reward for terminating the virus.</text>
-            <autoReward level="MEDIUM">scrap_only</autoReward>
+            <autoReward level="MEDIUM">stuff</autoReward>
             <augment name="NANO_MEDBAY"/>
           </event>
         </choice>
@@ -203,13 +207,13 @@
   <ship name="ENGI_VIRUS_SHIP" auto_blueprint="SHIPS_CIRCLE">
     <destroyed>
       <text>With the ship destroyed, you detect that the virus has abandoned your ship and disappeared somewhere within the systems of the wreckage. It will likely infect whatever Engi ship passes next, but your mission is too vital to risk re-infection by stopping it.</text>
-      <autoReward level="MEDIUM">standard</autoReward>
+      <autoReward level="MED">standard</autoReward>
       <status type="clear" target="player" system="engines" amount="100"/>
       <status type="clear" target="player" system="shields" amount="100"/>
     </destroyed>
     <deadCrew>
       <text>With the Engi crew dead, you detect that the virus has abandoned your ship and disappeared somewhere within the systems of Engi vessel. It will likely infect whatever Engi ship passes next, but your mission is too vital to risk re-infection by stopping it.</text>
-      <autoReward level="MEDIUM">standard</autoReward>
+      <autoReward level="HIGH">standard</autoReward>
       <status type="clear" target="player" system="engines" amount="100"/>
       <status type="clear" target="player" system="shields" amount="100"/>
     </deadCrew>
@@ -217,7 +221,7 @@
   <ship name="ENGI_VIRUS_SHIP_ALT" auto_blueprint="SHIPS_CIRCLE">
     <destroyed>
       <text>With the ship destroyed, you scrap it and prepare to jump away.</text>
-      <autoReward level="MEDIUM">standard</autoReward>
+      <autoReward level="MED">standard</autoReward>
       <choice hidden="true">
         <text id="continue"/>
         <event load="ENGI_VIRUS_REBORN"/>
@@ -225,7 +229,7 @@
     </destroyed>
     <deadCrew>
       <text>With all the Engi dead, you take what you can and prepare to jump away.</text>
-      <autoReward level="MEDIUM">standard</autoReward>
+      <autoReward level="HIGH">standard</autoReward>
       <choice hidden="true">
         <text id="continue"/>
         <event load="ENGI_VIRUS_REBORN"/>

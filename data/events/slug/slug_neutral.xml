@@ -14,7 +14,7 @@
         <ship name="SLUG_DISTRESS_MANTIS" auto_blueprint="SHIPS_MANTIS" hostile="true">
           <destroyed>
             <text>The Mantis defeated, you contact the weakened Slug vessel. "You ssseee," they begin, "we are most grateful, but, that isss, we do not currently have the liquid asssets to reward you at this time."</text>
-            <autoReward level="LOW">standard</autoReward>
+            <autoReward level="MED">standard</autoReward>
             <choice hidden="true">
               <text>Leave them be.</text>
               <event>
@@ -26,18 +26,18 @@
               <eventList name="SLUG_DISTRESS_MANTIS_SURRENDER">
                 <event>
                   <text>It doesn't look like they can stand much more damage. After a few shots their ship breaks apart and you move in to loot the remains.</text>
-                  <autoReward level="LOW">standard</autoReward>
+                  <autoReward level="LOW">stuff</autoReward>
                 </event>
                 <event>
                   <text>The Slug captain hails you: "A misstake! A sssimple misstake. Of course we can pay you! Ssseee? An augmentation has already transported." You allow them to leave with their lives.</text>
-                  <autoReward level="LOW">augment</autoReward>
+                  <augment name="RANDOM"/>
                 </event>
               </eventList>
             </choice>
           </destroyed>
           <deadCrew>
             <text>The Mantis defeated, you contact the weakened Slug vessel. "You sssee," they begin, "we are most grateful, but, that isss, we do not currently have the liquid asssets to reward you at thiss time."</text>
-            <autoReward level="MED">standard</autoReward>
+            <autoReward level="HIGH">standard</autoReward>
             <choice hidden="true">
               <text>Leave them be.</text>
               <event>

@@ -11,37 +11,41 @@
   </ship>
 
   <eventList name="DEAD_CREW_DEFAULT">
-    <event count="8">
-      <text>There are no more life-signs remaining on the ship. You strip it of useful materials.</text>
-      <autoReward level="MED">standard</autoReward>
-    </event>
-    <event count="4">
+    <event>
       <text>There are no more life-signs remaining on the ship. You strip it of useful materials.</text>
       <autoReward level="HIGH">standard</autoReward>
     </event>
-    <event count="4">
+    <event>
       <text>With the crew dead, you are able to take the fuel out of storage. You also take all the scrap you can manage.</text>
       <autoReward level="HIGH">fuel</autoReward>
     </event>
     <event>
+      <text>You find substantial ammunition reserves on captured ship in addition to scrap material.</text>
+      <autoReward level="HIGH">missiles</autoReward>
+    </event>
+    <event>
+      <text>Their ship, emptied of hostiles, was carrying a lot of drone parts and scrap in the hold.</text>
+      <autoReward level="HIGH">droneparts</autoReward>
+    </event>
+    <event>
+      <text>You find a drone schematic on their ship. With no crew to stop you, you can install it on your own.</text>
+      <autoReward level="MED">drone</autoReward>
+    </event>
+    <event>
       <text>Now that their ship has been emptied of hostiles, you search it. Eventually you find a prisoner who offers to join your crew.</text>
       <crewMember amount="1"/>
-      <autoReward level="LOW">scrap_only</autoReward>
+      <autoReward level="MED">scrap_only</autoReward>
     </event>
     <event>
       <text>You find a weapon system on their ship. With no crew to stop you, you can install it on your own.</text>
-      <autoReward level="LOW">weapon</autoReward>
+      <autoReward level="MED">weapon</autoReward>
     </event>
   </eventList>
 
   <eventList name="DESTROYED_DEFAULT">
-    <event count="3">
-      <text>The ship explodes, leaving behind a substantial collection of useful scrap material.</text>
-      <autoReward level="MED">standard</autoReward>
-    </event>
     <event>
       <text>The ship explodes, leaving behind a substantial collection of useful scrap material.</text>
-      <autoReward level="MED">scrap_only</autoReward>
+      <autoReward level="MED">standard</autoReward>
     </event>
   </eventList>
 </FTL>

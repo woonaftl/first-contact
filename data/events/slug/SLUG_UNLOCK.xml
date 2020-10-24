@@ -113,7 +113,7 @@
   <ship name="JELLY_UNLOCK2" auto_blueprint="SLUG_ASSAULT_LIST">  <!-- this is the hard ship defending the platform-->
     <destroyed>
       <text>With the assault ship taken care of, you turn your attention to the construction platform. However, you find that it has long since disappeared into the clouds. You scrap what you can and prepare to move on.</text>
-      <autoReward level="HIGH">standard</autoReward>
+      <autoReward level="MED">standard</autoReward>
     </destroyed>
     <deadCrew>
       <text>With the assault ship taken care of, you turn your attention to the construction platform. However, you find that it has long since disappeared into the clouds. You scrap what you can and prepare to move on.</text>
@@ -131,7 +131,7 @@
     <destroyed>
       <text>With the escort destroyed you take a look at your impressive prize. Your mission is too pressing to take a test flight. Before you rig the ship's computer to guide it back to the main Federation hangar you discover a unique augment that duplicates the Slug's ability to heal breaches!</text>
       <unlockShip id="5">The Slug cruiser has been unlocked and added to the hangar!</unlockShip>
-      <autoReward level="HIGH">standard</autoReward>
+      <autoReward level="MED">standard</autoReward>
       <augment name="SLUG_GEL"/>
     </destroyed>
     <deadCrew>

@@ -5,7 +5,7 @@
   </changelog>
   <event name="REBEL_WRECK_TRACKER" unique="true">
     <text>You arrive to see the remains of a derelict ship. Most likely the captain felt overconfident and attacked someone out of their league. Most of useful materials are already salvaged, but you manage to find some scrap.</text>
-    <autoReward level="LOW">scrap_only</autoReward>
+    <autoReward level="LOW">stuff</autoReward>
     <choice hidden="true">
       <text id="continue"/>
       <event>

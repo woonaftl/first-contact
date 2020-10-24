@@ -8,7 +8,7 @@
   <event name="REBEL_FREE_ITEMS">
     <!-- text taken from FREE_ITEMS -->
     <text>You receive a message from a nearby station, "A Federation cruiser jumping into Rebel territory? Quite the bold move." You quickly move to arm the weapons but he continues, "Lucky for you we're not all in support of the Rebellion. Perhaps these supplies will help you get to friendlier space alive."</text>
-    <autoReward level="LOW">standard</autoReward>
+    <autoReward level="LOW">stuff</autoReward>
   </event>
 
   <event name="HELP_MINERS" unique="true">

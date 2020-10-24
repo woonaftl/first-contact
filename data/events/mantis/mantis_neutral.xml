@@ -74,7 +74,7 @@
       </destroyed>
       <deadCrew>
         <text>No more life signs detected on the pirate ship. You hasten to contact the civilian ship.</text>
-        <autoReward level="MED">standard</autoReward>
+        <autoReward level="HIGH">standard</autoReward>
         <choice hidden="true">
           <text>Attempt to contact the civilian ship.</text>
           <event load="SAVE_CIVILIAN_LIST"/>
@@ -112,11 +112,11 @@
     <ship auto_blueprint="SHIPS_ZOLTAN" hostile="false">
       <destroyed>
         <text>The Zoltan ship breaks apart. It seems they did not have any resources. You scrap the remains of the ship.</text>
-        <autoReward level="LOW">scrap_only</autoReward>
+        <autoReward level="MED">standard</autoReward>
       </destroyed>
       <deadCrew>
         <text>No more life signs detected on the Zoltan ship. It turns out Zoltans were carrying a drone schematic to their homeworlds.</text>
-        <autoReward level="LOW">drone</autoReward>
+        <autoReward level="MED">drone</autoReward>
       </deadCrew>
     </ship>
     <choice>
