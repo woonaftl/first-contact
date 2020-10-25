@@ -211,7 +211,7 @@
                   </event>
                 </choice>
                 <choice hidden="true">
-                  <text>Let the pirate escape and go after the Slugman ship.</text>
+                  <text>Let the pirate escape and go after the Slug ship.</text>
                   <event>
                     <text>The pirate's too badly damaged to pursue you, and you catch up to the Slugs before they jump. "Ah, of courssse, we would never leave without providing the agreed upon ssspoils." They transfer over a decent chunk of the profits and set off.</text>
                     <autoReward level="HIGH">scrap_only</autoReward>

@@ -52,6 +52,7 @@
   </event>
 
   <event name="MANTIS_LEPTOD_FIGHT" unique="true">
+    <!--text taken from MANTIS_NOTHING event -->
     <text>You fancy you see something moving in the shadow of the beacon, but all remains still.</text>
     <choice>
       <text id="continue"/>

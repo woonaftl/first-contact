@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <event name="ENGI_SYSTEM_UPGRADE" unique="true">
+    <text>A giant Engi ship construction yard is located at the beacon. Learning that you're Federation, the Engis offers you to upgrade a system of your choice for free.</text>
+    <choice req="shields" blue="false">
+      <text>Upgrade Shields.</text>
+      <event>
+        <text>The necessary modifications to shield system are installed, allowing for more protective layers.</text>
+        <upgrade amount="1" system="shields"/>
+      </event>
+    </choice>
+    <choice req="engines" blue="false">
+      <text>Upgrade Engines.</text>
+      <event>
+        <text>The necessary modifications to engine system are installed, allowing for faster FTL charge speed.</text>
+        <upgrade amount="1" system="engines"/>
+      </event>
+    </choice>
+   <choice req="medbay" blue="false">
+      <text>Upgrade Medbay.</text>
+      <event>
+        <text>The necessary modifications to medical system are installed, allowing for faster healing.</text>
+        <upgrade amount="1" system="medbay"/>
+      </event>
+    </choice>
+   <choice req="clonebay" blue="false">
+      <text>Upgrade Clonebay.</text>
+      <event>
+        <text>The necessary modifications to cloning system are installed, speeding up internal processes.</text>
+        <upgrade amount="1" system="clonebay"/>
+      </event>
+    </choice>
+   <choice req="oxygen" blue="false">
+      <text>Upgrade Oxygen.</text>
+      <event>
+        <text>The necessary modifications to life support system are installed, your crew is very grateful.</text>
+        <upgrade amount="1" system="oxygen"/>
+      </event>
+    </choice>
+   <choice req="teleporter" blue="false">
+      <text>Upgrade Teleporter.</text>
+      <event>
+        <text>The necessary modifications to teleporter are installed, minimizing downtime.</text>
+        <upgrade amount="1" system="teleporter"/>
+      </event>
+    </choice>
+   <choice req="cloaking" blue="false">
+      <text>Upgrade Cloaking.</text>
+      <event>
+        <text>The necessary modifications to cloaking system are installed, your enemies did not see that coming.</text>
+        <upgrade amount="1" system="cloaking"/>
+      </event>
+    </choice>
+   <choice req="artillery" blue="false">
+      <text>Upgrade Artillery.</text>
+      <event>
+        <text>The necessary modifications to artillery system are installed, speeding up charge time.</text>
+        <upgrade amount="1" system="artillery"/>
+      </event>
+    </choice>
+   <choice req="hacking" blue="false">
+      <text>Upgrade Hacking.</text>
+      <event>
+        <text>The necessary modifications to hacking system are installed, increasing duration.</text>
+        <upgrade amount="1" system="hacking"/>
+      </event>
+    </choice>
+   <choice req="mind" blue="false">
+      <text>Upgrade Mind Control.</text>
+      <event>
+        <text>The necessary modifications to mind control system are installed, increasing efficiency.</text>
+        <upgrade amount="1" system="mind"/>
+      </event>
+    </choice>
+   <choice req="weapons" blue="false">
+      <text>Upgrade Weapons.</text>
+      <event>
+         <text>The necessary modifications to weapon system are installed, allowing to expand your arsenal.</text>
+       <upgrade amount="1" system="weapons"/>
+      </event>
+    </choice>
+   <choice req="drones" blue="false">
+      <text>Upgrade Drone Control.</text>
+      <event>
+         <text>The necessary modifications to drone control system are installed, allowing to expand your drone fleet.</text>
+        <upgrade amount="1" system="drones"/>
+      </event>
+    </choice>
+   <choice hidden="true">
+      <text>Decline. We don't need free upgrades.</text>
+      <event/>
+    </choice>
+  </event>
+</FTL>

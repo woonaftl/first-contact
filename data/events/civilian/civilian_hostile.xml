@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
+  <eventList name="HOSTILE_SECTOR1">
+    <!--mantis events-->
+    <event load="MANTIS_FIGHT"/>
+    <!--pirate events-->
+    <event load="PIRATE"/>
+    <event load="PIRATE_CHOICE"/>
+    <event load="TRAP_BEACON"/>
+    <event load="PIRATE_SLAVER"/>
+    <!--rebel events-->
+    <event load="REBEL"/>
+    <event load="REBEL_AUTO"/>
+  </eventList>
+
   <eventList name="HOSTILE_CIVILIAN">
     <!--mantis events-->
     <event load="MANTIS_FIGHT"/>

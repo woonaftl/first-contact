@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
-  <event name="START_BEACON_ENGI">
+  <!--<event name="START_BEACON_ENGI">
     <textList name="START_BEACON_ENGI">
       <text>You have arrived in Engi space. The Mantis have been threatening the Engi core worlds, but you should be able to stock up for your journey.</text>
       <text>You have arrived in Engi space. The fall of the Federation has brought tough times for these robotic lifeforms, but they're usually willing to help.</text>
+    </textList>
+  </event>-->
+
+  <event name="START_BEACON_ENGI_RESEARCH">
+    <text>You have arrived in a thriving Engi research hub. This sector is located far away from front lines, and you should be able to have a peaceful journey and find a lot of opportunities for trading and upgrading your ship.</text>
+  </event>
+
+  <event name="START_BEACON_ENGI_WARZONE">
+    <textList>
+      <text>You have arrived in Engi space that is currently under attack. The Mantis have been threatening the Engi core worlds, but you should be able to stock up for your journey.</text>
+      <text>You have arrived in Engi space that is currently under attack. The fall of the Federation has brought tough times for these robotic lifeforms, but they're usually willing to help.</text>
     </textList>
   </event>
 
@@ -15,21 +26,17 @@
     </textList>
     <store/>
   </event>
-
+<!--
   <event name="NOTHING_ENGI">
     <textList name="NOTHING_ENGI">
-      <text>The complex arrangements of ship hulls and FTL drive capacitors floating abandoned in space suggest the Engi were here not too long ago; but no longer.</text>
-      <text>Even though each "individual" Engi is made up of trillions of nano-machines, their culture still revolves around traditional social interactions. A nearby station seems to be constructed for entertainment of passing Engi travellers.</text>
       <text>You have arrived near an Engi construction yard. Most Engi maintain their bi-pedal appearance out of habit but here you see a number of Engi hives working together to create massive organic machines adept at building ships. Truly a sight to behold.</text>
       <text>You see a number of Engi space stations and fleets nearby. Despite looking like piles of junk loosely tied together they are actually a model of efficiency. They just lack a certain aesthetic emphasis in their constructions.</text>
       <text>This system appears quite peaceful. You're not sure how long it'll last between the combined threats of the Rebels and Mantis.</text>
-      <text>There are a number of merchant ships passing through the area despite the threat of Mantis invasion. No doubt interested in buying the efficient technology of the Engi.</text>
       <text>You see a small Rebel carrier in the distance. You lay low and try to blend in with the other traffic. However it's surprising to see a Rebel military ship alone deep in Engi space.</text>
-      <text>The Engi seem to have avoided this particular node, along with every other life-form. You keep your eyes peeled for reasons why, but spin up the FTL without event.</text>
       <text>A cluster of Engi satellites in orbit of a nearby planet are the only clue the mechanical species was ever here. You have other places to be.</text>
     </textList>
   </event>
-
+-->
   <ship name="ENGI_SHIP" auto_blueprint="SHIPS_CIRCLE">
     <surrender chance="0.5" min="2" max="2" load="ENGI_SURRENDER"/>
     <destroyed load="DESTROYED_DEFAULT"/>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="HOSTILE_HAZARD_CIVILIAN">
+    <!--pirate events-->
+    <event load="PIRATE_ASTEROID"/>
+    <event load="PIRATE_SUN"/>
+    <event load="PIRATE_PULSAR"/>
+    <!--rebel events-->
+    <event load="AUTO_ASTEROID"/>
+    <event load="AUTO_SUN"/>
+    <event load="REBEL_PULSAR"/>
+  </eventList>
+</FTL>

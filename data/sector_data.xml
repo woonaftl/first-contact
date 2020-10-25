@@ -9,6 +9,7 @@
     <sector>ORCHID_GARDEN_SECTOR</sector>
     <sector>PAVONIAN_ANARCHY_SECTOR</sector>
     <sector>PAVONIAN_RAINBOW_SECTOR</sector>
+    <sector>ROCK_FORTRESS_SECTOR</sector>
     <sector>ZOLTAN_INSPECTION_SECTOR</sector>
   </sectorType>
 
@@ -17,10 +18,10 @@
     <sector>LEPTOD_WEAPON_TEST_SECTOR</sector>
     <sector>MANTIS_BROOD_SECTOR</sector>
     <sector>MANTIS_HUNTING_SECTOR</sector>
+    <sector>ORCHID_OVERGROWN_SECTOR</sector>
     <sector>PIRATE_SECTOR</sector>
     <sector>REBEL_FILLER_SECTOR</sector>
     <sector>REBEL_STRONGHOLD_SECTOR</sector>
-    <sector>ROCK_FORTRESS_SECTOR</sector>
     <sector>ROCK_HAZARD_SECTOR</sector>
   </sectorType>
 
@@ -38,6 +39,8 @@
     <sector>STANDARD_SPACE</sector>
   </sectorType>
 
+  <!-- each sector should have 22 events total + 1 start beacon + 1 exit beacon, more than that won't spawn -->
+
   <!-- HARDCODED SECTORS -->
   <sectorDescription name="STANDARD_SPACE" minSector="0" unique="false">
     <nameList>
@@ -54,12 +57,17 @@
 
     <event name="ASTEROID_DERELICT_SHIP" min="1" max="1"/>
 
-    <event name="NEBULA_NEUTRAL_CIVILIAN" min="2" max="2"/>
-    <event name="NEBULA_HOSTILE_CIVILIAN" min="1" max="1"/>
+    <event name="NEBULA_NOSHIP_SECTOR1" min="2" max="2"/>
+    <event name="NEBULA_NEUTRAL_SECTOR1" min="1" max="1"/>
+    <event name="NEBULA_HOSTILE_SECTOR1" min="1" max="1"/>
 
-    <event name="NEUTRAL_CIVILIAN" min="6" max="6"/>
-    <event name="HOSTILE_CIVILIAN" min="4" max="4"/>
-    <event name="NOSHIP_CIVILIAN" min="7" max="7"/>
+    <event name="NEUTRAL_SECTOR1" min="5" max="5"/>
+    <event name="HOSTILE_SECTOR1" min="2" max="2"/>
+    <event name="NOSHIP_SECTOR1" min="6" max="6"/>
+
+    <event name="NEUTRAL_SECTOR1" min="1" max="1"/>
+    <event name="HOSTILE_SECTOR1" min="1" max="1"/>
+    <event name="NOSHIP_SECTOR1" min="1" max="1"/>
   </sectorDescription>
 
   <sectorDescription name="FINAL" minSector="7" unique="true">
@@ -98,9 +106,14 @@
     <startEvent>START_BEACON_CRYSTAL</startEvent>
     <event name="STORE_CRYSTAL" min="2" max="2"/>
     <event name="UPGRADE_LIST_ALL" min="1" max="1"/>
-    <event name="NOSHIP_CRYSTAL" min="3" max="3"/>
-    <event name="NEUTRAL_CRYSTAL" min="7" max="7"/>
-    <event name="HOSTILE_CRYSTAL" min="9" max="9"/>
+
+    <event name="NOSHIP_CRYSTAL" min="2" max="2"/>
+    <event name="NEUTRAL_CRYSTAL" min="6" max="6"/>
+    <event name="HOSTILE_CRYSTAL" min="8" max="8"/>
+
+    <event name="NOSHIP_CRYSTAL" min="1" max="1"/>
+    <event name="NEUTRAL_CRYSTAL" min="1" max="1"/>
+    <event name="HOSTILE_CRYSTAL" min="1" max="1"/>
   </sectorDescription>
 
   <!-- MAIN SECTORS -->
@@ -115,16 +128,20 @@
       <track>lostship</track>
     </trackList>
     <startEvent>START_BEACON</startEvent>
-    <event name="STORE" min="1" max="1"/>
+    <event name="STORE" min="3" max="3"/>
+    <event name="UPGRADE_LIST_ALL" min="1" max="1"/>
 
-    <event name="ASTEROID_DERELICT_SHIP" min="1" max="1"/>
-
-    <event name="NEBULA_NEUTRAL_CIVILIAN" min="2" max="2"/>
+    <event name="NEBULA_NOSHIP_CIVILIAN" min="2" max="2"/>
+    <event name="NEBULA_NEUTRAL_CIVILIAN" min="1" max="1"/>
     <event name="NEBULA_HOSTILE_CIVILIAN" min="1" max="1"/>
 
-    <event name="NEUTRAL_CIVILIAN" min="6" max="6"/>
-    <event name="HOSTILE_CIVILIAN" min="4" max="4"/>
-    <event name="NOSHIP_CIVILIAN" min="7" max="7"/>
+    <event name="NEUTRAL_CIVILIAN" min="4" max="4"/>
+    <event name="HOSTILE_HAZARD_CIVILIAN" min="2" max="2"/>
+    <event name="NOSHIP_CIVILIAN" min="5" max="5"/>
+
+    <event name="NEUTRAL_CIVILIAN" min="1" max="1"/>
+    <event name="HOSTILE_CIVILIAN" min="1" max="1"/>
+    <event name="NOSHIP_CIVILIAN" min="1" max="1"/>
   </sectorDescription>
 
   <sectorDescription name="ENGI_RESEARCH_SECTOR" minSector="1" unique="true">
@@ -140,25 +157,30 @@
       <blueprint name="human" rarity="5"/>
       <blueprint name="engi" rarity="1"/>
       <blueprint name="mantis" rarity="0"/>
-      <blueprint name="energy" rarity="2"/>
       <blueprint name="rock" rarity="0"/>
+      <blueprint name="energy" rarity="2"/>
+      <blueprint name="slug" rarity="0"/>
       <blueprint name="orchid" rarity="5"/>
+      <blueprint name="lizard" rarity="5"/>
     </rarityList>
-    <startEvent>START_BEACON_ENGI</startEvent>
-    <event name="STORE_ENGI" min="2" max="2"/>
+    <startEvent>START_BEACON_ENGI_RESEARCH</startEvent>
+    <event name="STORE_ENGI" min="3" max="3"/>
     <event name="UPGRADE_LIST_LEGIT" min="2" max="2"/>
 
-    <!--<event name="ENGI_UNLOCK_1" min="1" max="1"/>-->
     <event name="ZOLTAN_CREW_STUDY" min="1" max="1"/>
-    <event name="ASTEROID_DERELICT_SHIP" min="1" max="1"/>
     <event name="ENGI_MCCLONEY" min="1" max="1"/>
     <event name="ENGI_GREEN_PLANET" min="1" max="1"/>
-    <event name="DISTRESS_ENGI_REACTOR" min="1" max="1"/>
+    <event name="ENGI_VIRUS" min="1" max="1"/>
+    <event name="ENGI_ENTERTAINMENT" min="1" max="1"/>
+    <event name="ENGI_SEX" min="1" max="1"/>
+    <event name="CONFUSED_MANTIS" min="1" max="1"/>
+    <event name="ENGI_SYSTEM_UPGRADE" min="1" max="1"/>
 
     <event name="NEUTRAL_ENGI" min="3" max="3"/>
-    <event name="HOSTILE_ENGI" min="5" max="5"/>
     <event name="NOSHIP_ENGI" min="4" max="4"/>
-    <event name="HOSTILE_HAZARD_ENGI" min="1" max="1"/>
+
+    <event name="NEUTRAL_ENGI" min="1" max="1"/>
+    <event name="NOSHIP_ENGI" min="1" max="1"/>
   </sectorDescription>
 
   <sectorDescription name="ENGI_WARZONE_SECTOR" minSector="1" unique="true">
@@ -167,42 +189,45 @@
     </nameList>
     <trackList>
       <track>engi</track>
-      <track>cosmos</track>
+      <track>debris</track>
       <track>hacking</track>
     </trackList>
     <rarityList>
+      <blueprint name="human" rarity="2"/>
       <blueprint name="engi" rarity="1"/>
-      <blueprint name="mantis" rarity="0"/>
-      <blueprint name="energy" rarity="3"/>
-      <blueprint name="slug" rarity="0"/>
+      <blueprint name="mantis" rarity="2"/>
       <blueprint name="rock" rarity="0"/>
-      <blueprint name="human" rarity="3"/>
+      <blueprint name="energy" rarity="4"/>
+      <blueprint name="slug" rarity="0"/>
       <blueprint name="orchid" rarity="5"/>
+      <blueprint name="lizard" rarity="5"/>
       <blueprint name="pavonian" rarity="5"/>
     </rarityList>
-    <startEvent>START_BEACON_ENGI</startEvent>
+    <startEvent>START_BEACON_ENGI_WARZONE</startEvent>
     <event name="STORE_ENGI" min="2" max="2"/>
-    <event name="UPGRADE_LIST_LEGIT" min="2" max="2"/>
+    <event name="UPGRADE_LIST_ALL" min="1" max="1"/>
 
-    <event name="ZOLTAN_CREW_STUDY" min="1" max="1"/>
     <event name="ASTEROID_DERELICT_SHIP" min="1" max="1"/>
-    <event name="ENGI_MCCLONEY" min="1" max="1"/>
     <event name="ENGI_GREEN_PLANET" min="1" max="1"/>
     <event name="DISTRESS_ENGI_REACTOR" min="1" max="1"/>
 
-    <event name="NEUTRAL_ENGI" min="3" max="3"/>
+    <event name="NEUTRAL_ENGI" min="4" max="4"/>
+    <event name="HOSTILE_HAZARD_ENGI" min="1" max="1"/>
     <event name="HOSTILE_ENGI" min="5" max="5"/>
     <event name="NOSHIP_ENGI" min="4" max="4"/>
-    <event name="HOSTILE_HAZARD_ENGI" min="1" max="1"/>
+
+    <event name="HOSTILE_ENGI" min="1" max="1"/>
+    <event name="NOSHIP_ENGI" min="1" max="1"/>
   </sectorDescription>
 
   <sectorDescription name="LANIUS_WARZONE_SECTOR" minSector="1" unique="true">
+    <!-- TODO challenge sector, what's the challenge? -->
     <nameList>
       <name>Lanius Resurgence Point</name>
     </nameList>
     <trackList>
       <track>shrike</track>
-      <track>deepspace</track>
+      <track>colonial</track>
       <track>wasteland</track>
     </trackList>
     <rarityList>
@@ -232,7 +257,7 @@
     <trackList>
       <track>shrike</track>
       <track>deepspace</track>
-      <track>wasteland</track>
+      <track>void</track>
     </trackList>
     <rarityList>
       <blueprint name="anaerobic" rarity="1"/>
@@ -255,13 +280,13 @@
   </sectorDescription>
 
   <sectorDescription name="LEPTOD_WEAPON_TEST_SECTOR" minSector="1" unique="true">
+    <!-- TODO challenge sector, what's the challenge? at the start beacon, give a quest, if you get to the end beacon without finishing it, take damage? force into a secret sector? -->
     <nameList>
       <name>Leptod Weapon Test Sector</name>
     </nameList>
     <trackList>
-      <track>void</track>
-      <track>deepspace</track>
-      <track>wasteland</track>
+      <!--TODO <track>leptod</track>-->
+      <track>hacking</track>
       <track>debris</track>
     </trackList>
     <rarityList>
@@ -279,13 +304,12 @@
 
   <sectorDescription name="LEPTOD_HOME_SECTOR" minSector="2" unique="true">
     <nameList>
-      <name>Leptod Hidden Home Nebula</name>
+      <name>Leptod Secret Lair</name>
     </nameList>
     <trackList>
-      <track>void</track>
+      <!--TODO <track>leptod</track>-->
       <track>deepspace</track>
-      <track>wasteland</track>
-      <track>debris</track>
+      <track>void</track>
     </trackList>
     <rarityList>
       <blueprint name="LEPTOD" rarity="1"/>
@@ -305,9 +329,9 @@
       <name>Lizard Last Refuge</name>
     </nameList>
     <trackList>
-      <track>cosmos</track>
-      <track>debris</track>
-      <track>milkyway</track>
+      <!--TODO <track>lizard</track>-->
+      <track>wasteland</track>
+      <track>lostship</track>
     </trackList>
     <rarityList>
       <blueprint name="lizard" rarity="1"/>
@@ -327,9 +351,9 @@
       <name>Lizard Ruins</name>
     </nameList>
     <trackList>
-      <track>cosmos</track>
+      <!--TODO <track>lizard</track>-->
+      <track>wasteland</track>
       <track>debris</track>
-      <track>milkyway</track>
     </trackList>
     <rarityList>
       <blueprint name="lizard" rarity="1"/>
@@ -345,6 +369,7 @@
   </sectorDescription>
 
   <sectorDescription name="MANTIS_HUNTING_SECTOR" minSector="1" unique="true">
+    <!-- TODO challenge sector, what's the challenge? -->
     <nameList>
       <name>Mantis Hunting Grounds</name>
     </nameList>
@@ -377,21 +402,18 @@
   </sectorDescription>
 
   <sectorDescription name="MANTIS_BROOD_SECTOR" minSector="2" unique="true">
+    <!-- challenge sector: you're boarded every jump -->
     <nameList>
       <name>Mantis Brood Sector</name>
     </nameList>
     <trackList>
       <track>mantis</track>
       <track>debris</track>
-      <track>void</track>
+      <track>wasteland</track>
     </trackList>
-    <rarityList>
-      <blueprint name="human" rarity="0"/>
-      <blueprint name="engi" rarity="0"/>
+    <rarityListExcept crew="0">
       <blueprint name="mantis" rarity="1"/>
-      <blueprint name="rock" rarity="0"/>
-      <blueprint name="energy" rarity="0"/>
-    </rarityList>
+    </rarityListExcept>
     <startEvent>START_BEACON_MANTIS</startEvent>
     <event name="STORE_MANTIS" min="1" max="1"/>
     <event name="UPGRADE_LIST_ALL" min="1" max="1"/>
@@ -412,10 +434,8 @@
       <name>Uncharted Nebula</name>
     </nameList>
     <trackList>
-      <track>civilian</track>
-      <track>cosmos</track>
-      <track>milkyway</track>
-      <track>lostship</track>
+      <track>deepspace</track>
+      <track>void</track>
     </trackList>
     <startEvent>START_BEACON</startEvent>
     <event name="STORE" min="1" max="1"/>
@@ -433,9 +453,39 @@
       <name>Orchid Gardenworlds</name>
     </nameList>
     <trackList>
+      <!--TODO <track>orchid</track>-->
       <track>milkyway</track>
       <track>cosmos</track>
-      <track>lostship</track>
+    </trackList>
+    <rarityList>
+      <blueprint name="orchid" rarity="1"/>
+      <blueprint name="human" rarity="3"/>
+      <blueprint name="rock" rarity="3"/>
+      <blueprint name="mantis" rarity="4"/>
+      <blueprint name="engi" rarity="5"/>
+      <blueprint name="pavonian" rarity="5"/>
+    </rarityList>
+    <startEvent>START_BEACON_ORCHID</startEvent>
+    <event name="STORE_ORCHID" min="2" max="2"/>
+    <event name="UPGRADE_LIST_LEGIT" min="2" max="2"/>
+
+    <event name="ASTEROID_DERELICT_SHIP" min="1" max="1"/>
+
+    <event name="NOSHIP_ORCHID" min="5" max="5"/>
+    <event name="NEUTRAL_ORCHID" min="4" max="4"/>
+    <event name="HOSTILE_ORCHID" min="6" max="6"/>
+    <event name="ORCHID_FIGHT" min="2" max="2"/>
+  </sectorDescription>
+
+  <sectorDescription name="ORCHID_OVERGROWN_SECTOR" minSector="1" unique="true">
+    <!-- challenge sector: you're boarded every jump -->
+    <nameList>
+      <name>Overgrown Orchid Sector</name>
+    </nameList>
+    <trackList>
+      <!--TODO <track>orchid</track>-->
+      <track>debris</track>
+      <track>cosmos</track>
     </trackList>
     <rarityList>
       <blueprint name="orchid" rarity="1"/>
@@ -458,12 +508,14 @@
   </sectorDescription>
 
   <sectorDescription name="PAVONIAN_RAINBOW_SECTOR" minSector="1" unique="true">
+    <!-- special sector: beautiful backgrounds -->
     <nameList>
       <name>Pavonian Iridescent Worlds</name>
     </nameList>
     <trackList>
-      <track>hacking</track>
-      <track>cosmos</track>
+      <!--TODO <track>pavonian</track>-->
+      <track>colonial</track>
+      <track>milkyway</track>
       <track>lostship</track>
     </trackList>
     <rarityList>
@@ -482,7 +534,8 @@
       <name>Pavonian Disordered Sector</name>
     </nameList>
     <trackList>
-      <track>hacking</track>
+      <!--TODO <track>pavonian</track>-->
+      <track>colonial</track>
       <track>cosmos</track>
       <track>lostship</track>
     </trackList>
@@ -512,6 +565,7 @@
   </sectorDescription>
 
   <sectorDescription name="PIRATE_SECTOR" minSector="1" unique="true">
+    <!-- challenge sector: special mini-bosses -->
     <nameList>
       <name>Pirate Hideout</name>
     </nameList>
@@ -538,6 +592,7 @@
   </sectorDescription>
 
   <sectorDescription name="REBEL_STRONGHOLD_SECTOR" minSector="4" unique="true">
+    <!-- challenge sector: double fleet speed -->
     <nameList>
       <name>Rebel Stronghold</name>
     </nameList>
@@ -571,6 +626,7 @@
   </sectorDescription>
 
   <sectorDescription name="REBEL_FILLER_SECTOR" minSector="1" unique="false">
+    <!-- challenge sector: double fleet speed -->
     <nameList>
       <name>Rebel Controlled Sector</name>
     </nameList>
@@ -604,7 +660,7 @@
 
   <sectorDescription name="ROCK_FORTRESS_SECTOR" minSector="1" unique="true">
     <nameList>
-      <name>Rock Fortified Sector</name>
+      <name>Rock Safe Haven</name>
     </nameList>
     <trackList>
       <track>rock</track>
@@ -641,12 +697,14 @@
   </sectorDescription>
 
   <sectorDescription name="ROCK_HAZARD_SECTOR" minSector="2" unique="true">
+    <!-- challenge sector: environmental hazard every jump -->
     <nameList>
       <name>Rock Perilous Sector</name>
     </nameList>
     <trackList>
       <track>rock</track>
       <track>wasteland</track>
+      <track>void</track>
     </trackList>
     <rarityList>
       <blueprint name="engi" rarity="0"/>
@@ -713,8 +771,7 @@
     </nameList>
     <trackList>
       <track>slug</track>
-      <track>debris</track>
-      <track>wasteland</track>
+      <track>void</track>
       <track>deepspace</track>
     </trackList>
     <rarityList>
@@ -778,7 +835,8 @@
     </nameList>
     <trackList>
       <track>zoltan</track>
-      <track>cosmos</track>
+      <track>deepspace</track>
+      <track>void</track>
     </trackList>
     <rarityList>
       <blueprint name="human" rarity="4"/>

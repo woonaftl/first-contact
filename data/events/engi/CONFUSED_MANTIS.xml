@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <event name="CONFUSED_MANTIS" unique="true">
+    <text>As soon as you jump into the system, you receive a hail from a nearby civilian Engi vessel. Their captain appears on your screen: "Strange bug. Can you assist in debugging?"</text>
+    <choice>
+      <text>Listen to their problem.</text>
+      <event>
+        <text>"Found malfunctioning Mantis. Believes it is human. Will receive input only from human. Danger Evaluation: Extremely High. Provide assistance."</text>
+        <choice>
+          <text>Send a shuttle with an away team to help.</text>
+          <eventList name="CONFUSED_MANTIS_DEFAULT">
+            <event>
+              <text>After an hour of convincing, the Mantis finally calms down and introduces himself as Robert Smith. He explains he's from a nearby human colony and would appreciate being returned there.</text>
+              <choice>
+                <text id="continue"/>
+                <event load="CONFUSED_MANTIS_HOME"/>
+              </choice>
+            </event>
+            <event>
+              <text>The cornered and frightened Mantis attacks as soon as you approach. One of your crew is eviscerated before the rest are able to stop him. The Engi apologize for your loss.</text>
+              <removeCrew>
+                <clone>true</clone>
+                <text>Your crew's clone is waiting when you return to the ship.</text>
+              </removeCrew>
+            </event>
+            <event>
+              <text>The cornered and frightened Mantis attacks as soon as you approach. You're able to subdue him and leave him at a Mantis colony in a neighboring system. They don't seem pleased or grateful at his return.</text>
+            </event>
+          </eventList>
+        </choice>
+        <choice>
+          <text>Leave them, a cornered Mantis is too dangerous.</text>
+          <event/>
+        </choice>
+        <choice req="human" hidden="true">
+          <text>(Human Crew) Send your human crewmember to communicate with the Mantis.</text>
+          <event>
+            <text>The Mantis is grateful to see 'another human', and introduces himself as Robert Smith. He explains he's from a nearby human colony and would appreciate being returned there.</text>
+            <choice>
+              <text>Return him home.</text>
+              <event load="CONFUSED_MANTIS_HOME"/>
+            </choice>
+          </event>
+        </choice>
+        <choice req="mantis" hidden="true">
+          <text>(Mantis Crew) Send your Mantis crewmember to communicate with the Mantis.</text>
+          <event>
+            <text>The Mantis is terrified at the sight of your crewmember. He immediately attacks his Engi rescuers, and your crewmember is forced to kill him. The Engi are grateful for your help and offer a small reward.</text>
+            <autoReward level="MED">stuff</autoReward>
+          </event>
+        </choice>
+        <choice req="mind" lvl="1" hidden="true">
+          <text>(Mind Control) Use your Mind control System to calm him down.</text>
+          <event>
+            <text>The Mantis calms down and communicates thanks to the Engi and yourself for helping. He requests to be dropped off at a nearby planet, at the human colony where he was raised. They are grateful for his return and offer a reward.</text>
+            <autoReward level="MED">stuff</autoReward>
+          </event>
+        </choice>
+      </event>
+    </choice>
+    <choice>
+      <text>Explain that you can't do any programming and leave.</text>
+      <event/>
+    </choice>
+  </event>
+  <event name="CONFUSED_MANTIS_HOME">
+    <text>The colony is a mining operation that specializes in FTL fuel. Robert's family, the head engineers, are excited to see him, and are very grateful for his return. Apparently he ran away to 'join the Federation' like his older brother, but was never accepted onto a ship.</text>
+    <choice hidden="true">
+      <text>Offer him a position on your ship.</text>
+      <event>
+        <text>He graciously accepts, having always wanted to serve in the Federation.</text>
+        <crewMember amount="1" class="mantis">Robert Smith</crewMember>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Ask if they can take a look at your engines.</text>
+      <event>
+        <text>They are happy to take a look, and are able to offer some suggestions for improvements.</text>
+        <upgrade amount="1" system="engines"/>
+      </event>
+    </choice>
+  </event>
+</FTL>

@@ -412,6 +412,10 @@
   </augments>
 
   <events>
+  <!-- TODO special exit events for each sector
+	  <sector name="CIVILIAN_SECTOR">
+      <exitBeacon event="FINISH_BEACON" rebelEvent="FLEET_EASY_DLC" nebulaEvent="FINISH_BEACON_NEBULA"/>
+    </sector>-->
     <event name="UPGRADE_FREE_FAKE">
       <preventQuest/>
       <checkCargo/>

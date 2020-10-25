@@ -283,10 +283,19 @@
     <environment type="PDS" target="player"/>
   </event>
 
+  <changelog>
+    <entry>Ion storm is replaced with Anti-ship battery when fighting the Rebel Fleet in a nebula</entry>
+  </changelog>
   <event name="FLEET_EASY_NEBULA">
     <text>An advanced Rebel hunter easily found your ship. You can't see it through the nebula, but you can assume the fleet is right on top of you. You need to escape quickly.</text>
     <ship load="LONG_FLEET" hostile="true"/>
-    <environment type="storm"/>
+    <environment type="nebula"/>
+    <choice>
+      <text id="continue"/>
+      <event>
+        <environment type="PDS" target="player"/>
+      </event>
+    </choice>
   </event>
 
   <event name="FLEET_EASY_DLC">

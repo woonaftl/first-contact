@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
+  <eventList name="NEBULA_NEUTRAL_SECTOR1">
+    <event load="NEBULA_LOST_SHIP"/>
+    <event load="NEBULA_MANTIS_CHOICE"/>
+    <!--pirate events-->
+    <event load="NEBULA_PIRATE_SMUGGLE"/>
+    <!--rebel events-->
+    <event load="NEBULA_AUTO_DEFENSE_ITEM"/>
+  </eventList>
+
   <eventList name="NEBULA_NEUTRAL_CIVILIAN">
     <event load="NEBULA_LOST_SHIP"/>
     <event load="NEBULA_MANTIS_CHOICE"/>

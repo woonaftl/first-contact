@@ -3,8 +3,8 @@
   <eventList name="NEUTRAL_ENGI">
     <event load="ENGI_IMMEDIATE_SURRENDER"/>
     <event load="ALISON_MANTIS_CREW"/>
-    <event load="ENGI_SEX"/>
     <event load="ENGI_STATION_DISTRESS"/>
+    <event load="ENGI_LOOT"/>
   </eventList>
 
   <changelog>
@@ -89,53 +89,6 @@
               <ship load="ENGI_MANTIS_CONTROLLED" hostile="true"/>
             </event>
           </eventList>
-        </choice>
-      </event>
-    </choice>
-  </event>
-
-  <event name="ENGI_SEX" unique="true">
-    <text>What appeared to be a single damaged ship is in fact two ships that have smashed into each other... there is a flurry of comm signals and damage, and it's hard to determine what occurred. The vessels appear to be... Engi? They look locked together by the impact and can't free themselves.</text>
-    <choice hidden="true">
-      <text>Attempt to help the ships by prying them apart.</text>
-      <event>
-        <text>To your surprise, one of the Engi vessels attacks! One ship detaches itself, surprisingly still quite whole, and opens fire - it looks like it's somehow identified you as hostile!</text>
-        <ship name="ENGI_SEX_SHIP" auto_blueprint="SHIPS_CIRCLE" hostile="true">
-          <destroyed>
-            <text>With the ship destroyed, the remaining Engi ship hails you frantically and explains the situation to you.</text>
-            <choice hidden="true">
-              <text id="continue"/>
-              <event>
-                <text>Apparently, you interrupted the equivalent of a "consolidation" of two ships that were using each other's parts to construct a new vessel. The Engi were not truly hostile, their targeting computers had not finished adjusting. There's nothing to be done about it now. You leave the remains for the surviving ship.</text>
-              </event>
-            </choice>
-          </destroyed>
-          <deadCrew>
-            <text>With the ship disabled, the remaining Engi ship hails you frantically and explains the situation to you.</text>
-            <choice hidden="true">
-              <text id="continue"/>
-              <event>
-                <text>Apparently, you interrupted the equivalent of a "consolidation" of two ships that were using each other's parts to construct a new vessel. The Engi were not truly hostile, their targeting computers had not finished adjusting. There's nothing to be done about it now. You leave the remains for the surviving ship.</text>
-              </event>
-            </choice>
-          </deadCrew>
-        </ship>
-      </event>
-    </choice>
-    <choice hidden="true">
-      <text>Ignore the damaged vessels.</text>
-      <event/>
-    </choice>
-    <choice req="engi">
-      <text>(Engi) Have your Engi crewmember hail the vessel and assess the damage.</text>
-      <event>
-        <text>Your Engi crewmember refuses. In a halting use of adjectives and nouns, followed by some animated holographic aids, the Engi explains the ships are... using each other to, loosely translated, "achieve a union." For some reason, this consolidation of ship matter sounds embarrassing and personal.</text>
-        <choice hidden="true">
-          <text id="continue"/>
-          <event>
-            <text>You elect to leave the two Engi ships... to their "business." After questioning your Engi crewmember, however, you do manage to salvage what scrap parts you can from the perimeter, even though you feel slightly dirty for doing so.</text>
-            <autoReward level="MEDIUM">stuff</autoReward>
-          </event>
         </choice>
       </event>
     </choice>
@@ -233,4 +186,49 @@
       <crewMember amount="1" class="engi"/>
     </event>
   </eventList>
+
+  <event name="ENGI_LOOT" unique="true">
+    <!--text taken from NOTHING_ENGI event -->
+    <text>The complex arrangements of ship hulls and FTL drive capacitors floating abandoned in space suggest the Engi were here not too long ago; but no longer.</text>
+    <choice hidden="true">
+      <text>Search the abandoned hulls.</text>
+      <eventList>
+        <event>
+          <text>You chose a ship to loot at random. It turned out to contain a functioning drone schematic.</text>
+          <drone name="RANDOM"/>
+        </event>
+        <event>
+          <text>The first ship you stumbled upon was loaded with high quality FTL fuel. You decided not to waste more time here and prepare to jump.</text>
+          <autoReward level="HIGH">fuel_only</autoReward>
+        </event>
+        <event>
+          <text>Before you managed to get to the closest abandoned ship, an Engi patrol appeared out of nowhere: "Purpose unknown. Question mark." You are prompted to explain yourself.</text>
+          <ship load="ENGI_SHIP" hostile="false"/>
+          <choice hidden="true">
+            <text>"Well, I just wanted to loot some Engi ships."</text>
+            <event>
+              <text>The Engi ship finds your response offensive and powers its weapons and drones.</text>
+              <ship hostile="true"/>
+            </event>
+          </choice>
+          <choice hidden="true">
+            <text>"I'm leaving already."</text>
+            <event/>
+          </choice>
+          <choice req="engi" hidden="true">
+            <text>(Engi) Current mission: 155.02. Target location: 63.14. Assistance required.</text>
+            <event>
+              <text>The Engi ship responds, "Affirmative. Dispatching necessary resources."</text>
+              <weapon name="RANDOM"/>
+              <autoReward level="HIGH">stuff</autoReward>
+            </event>
+          </choice>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true">
+      <text>Don't risk it: charge the FTL drive.</text>
+      <event/>
+    </choice>
+  </event>
 </FTL>
