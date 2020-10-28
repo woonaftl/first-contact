@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="NEBULA_HOSTILE_BOSS_PIRATE">
+    <event load="NEBULA_PIRATE_NYX"/>
+  </eventList>
+
+  <event name="NEBULA_PIRATE_NYX" unique="true">
+    <text>A notorious pirate, who is known for only attacking inside the thickest of nebulae to maximize their advantage, briefly appears on the vidscreen before attacking.</text>
+    <environment type="nebula"/>
+    <ship auto_blueprint="PIRATE_NYX_LIST" hostile="true">
+      <escape chance="0.5" min="2" max="4" load="PIRATE_ESCAPE"/>
+      <destroyed load="DESTROYED_DEFAULT"/>
+      <gotaway>
+        <text>The pirate jumped away.</text>
+      </gotaway>
+      <deadCrew load="DEAD_CREW_DEFAULT"/>
+    </ship>
+  </event>
+</FTL>

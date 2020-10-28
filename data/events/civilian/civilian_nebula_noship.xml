@@ -1,16 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
   <eventList name="NEBULA_NEUTRAL_SECTOR1">
+    <event load="NEBULA_FREE_FUEL"/>
+    <event load="NEBULA_FREE_MISSILES"/>
+    <event load="NEBULA_FREE_DRONEPARTS"/>
+    <event load="NEBULA_FREE_AUGMENT"/>
     <event load="NEBULA_TRADER"/>
     <event load="WRECKAGE_EVENT"/>
     <event load="STORM_ITEMS"/>
   </eventList>
 
   <eventList name="NEBULA_NEUTRAL_CIVILIAN">
+    <event load="NEBULA_FREE_FUEL"/>
+    <event load="NEBULA_FREE_MISSILES"/>
+    <event load="NEBULA_FREE_DRONEPARTS"/>
+    <event load="NEBULA_FREE_AUGMENT"/>
     <event load="NEBULA_TRADER"/>
     <event load="WRECKAGE_EVENT"/>
     <event load="STORM_ITEMS"/>
   </eventList>
+
+  <event name="NEBULA_FREE_FUEL">
+    <textList>
+      <text>This beacon contains nothing but thick nebula gases. Before leaving you stumble upon a container with some FTL fuel, used to jump long distances.</text>
+      <text>The only thing of interest on this beacon is a dilapidated refueling station. Upon closer inspection, it has enough fuel to make the next jump.</text>
+    </textList>
+    <environment type="nebula"/>
+    <autoReward level="MED">fuel_only</autoReward>
+  </event>
+
+  <event name="NEBULA_FREE_MISSILES">
+    <textList>
+      <text>You are delighted to find a weapon cache in the depths of the nebula. Sadly, none of the weapons are operational, but you manage to collect some ammunition.</text>
+      <text>The nebula hides a dead body of a giant space-faring creature. Inside its eye socket you find some ammo. One of your crewmembers told it's a favorite hiding spot of space pirates.</text>
+    </textList>
+    <environment type="nebula"/>
+    <autoReward level="HIGH">missiles_only</autoReward>
+  </event>
+
+  <event name="NEBULA_FREE_DRONEPARTS">
+    <textList>
+      <text>This nebula contains a few hundred of broken and inactive drones. You're unsure how they got here but still collect some parts.</text>
+      <text>You encounter a civilian ship hiding from Rebels. Having their location compromised, the civilians jump away. But before that they offload some drone parts to help you.</text>
+    </textList>
+    <environment type="nebula"/>
+    <autoReward level="HIGH">droneparts_only</autoReward>
+  </event>
+
+  <event name="NEBULA_FREE_AUGMENT" unique="true">
+    <text>A Federation ship hiding from the Rebels inside nebula contacts you and offers to install an augmentation to help in your mission.</text>
+    <environment type="nebula"/>
+    <augment name="RANDOM"/>
+  </event>
 
   <event name="NEBULA_TRADER" unique="true">
     <text>It's hard to see why, but this beacon is apparently a tourist destination. One of the ships at the small station is offering a deal.</text>
@@ -139,7 +180,7 @@
         </event>
         <event>
           <text>Most of the debris is hardly even usable as scrap. However, you eventually find an intact weapon that can be mounted on your ship.</text>
-           <weapon name="RANDOM"/>
+          <weapon name="RANDOM"/>
         </event>
         <event>
           <text>Your pilot carefully explores the wrecks, but the storm has taken its toll. Any crew are long-since dead and the floating debris has been scorched beyond repair.</text>

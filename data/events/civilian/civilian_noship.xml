@@ -70,7 +70,7 @@
       <text>You find an abandoned mining station on a nearby moon. A quick scan shows no life forms; however, you discover a usable drone schematic!</text>
       <text>You receive a wide-band message, "Free schematic samples! Be sure to visit our new military-grade drone store opening in sector XR1-45!"</text>
     </textList>
-    <autoReward level="LOW">drone</autoReward>
+    <drone name="RANDOM"/>
   </event>
 
   <event name="FIND_WEAPON" unique="true">
@@ -81,7 +81,7 @@
       <text>A small merchant ship messages you, "Underground Federation comm channels are all talking about your 'secret' mission. Let us install a weapon to help. Good luck!"</text>
       <text>Debris from a battle is scattered around this system. A few pieces bounce against your ship. You passively scan them and discover there is a functioning weapon among them!</text>
     </textList>
-    <autoReward level="LOW">weapon</autoReward>
+    <weapon name="RANDOM"/>
   </event>
 
   <event name="DONOR_PLAGUE" unique="true">

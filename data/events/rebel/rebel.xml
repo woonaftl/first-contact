@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
   <event name="START_BEACON_REBEL">
-    <textList name="START_BEACON_REBEL">
+    <text>You will have to be very cautious in this sector. The Rebels have full control and are no doubt looking for you. The Rebel fleet will chase you faster than usual, being constantly reinforced and facing no resistance from locals.</text>
+    <modifyPursuit amount="1"/>
+    <!--<textList name="START_BEACON_REBEL">
       <text>This sector was bustling with activity just a few years ago. Now, more than half of the jump beacons have been destroyed, many settlements have been abandoned and the Rebels patrol constantly.</text>
       <text>This sector was hit hard by the Rebellion. The many alien settlements and stations located here are now watched over by almost an equal number of Rebel bases, heavy-handedly 'keeping the peace'.</text>
       <text>Once the Federation forces were scattered, the Rebels came down hard on the locals here. Between the 'tax collectors' and military bases, the Rebel presence in this sector is high.</text>
       <text>At one point this was one of the most commonly traveled sectors. Knowing that, the Rebels have stationed a number of fleets here. Be careful.</text>
       <text>You will have to be very cautious in this sector. The Rebels have full control and are no doubt looking for you.</text>
-    </textList>
+    </textList>-->
   </event>
 
   <event name="STORE_REBEL">
@@ -19,6 +21,7 @@
     <store/>
   </event>
 
+  <!--
   <event name="NOTHING_REBEL">
     <textList name="NOTHING_REBEL">
       <text>You enter a system bustling with Rebel activity. Supply freighters and re-supply stations are dwarfed by a few heavy warships. Luckily, no one seems to be paying attention to small cruisers. No ships are scanning or messaging you.</text>
@@ -28,6 +31,7 @@
       <text planet="PLANET_POPULATED_SMALL">There is a small planet nearby with scattered settlements. A small Rebel fleet is in orbit with many ships ferrying back and forth. It must be a more recently 'liberated' planet.</text>
     </textList>
   </event>
+  -->
 
   <ship name="REBEL" auto_blueprint="SHIPS_REBEL">
     <surrender chance="0.5" min="2" max="3" load="PIRATE_SURRENDER"/>
@@ -35,6 +39,25 @@
     <destroyed load="DESTROYED_DEFAULT"/>
     <deadCrew load="DEAD_CREW_DEFAULT"/>
   </ship>
+
+  <ship name="REBEL_WARNING" auto_blueprint="SHIPS_REBEL">
+      <escape timer="40" min="22" max="22">
+        <text>They are powering up their FTL! If they get away, they will no doubt warn the fleet of your position!</text>
+        <ship hostile="true"/>
+      </escape>
+      <gotaway>
+        <text>The scout jumps away. They are sure to have informed the fleet of your position. You must get to the next Sector as soon as possible!</text>
+        <modifyPursuit amount="1"/>
+      </gotaway>
+      <destroyed>
+        <text>Their ship breaks apart and you are relieved to know that you are still one step ahead of the fleet.</text>
+        <autoReward level="MED">standard</autoReward>
+      </destroyed>
+      <deadCrew>
+        <text>Their ship goes silent and you are relieved to know that you are still one step ahead of the fleet.</text>
+        <autoReward level="HIGH">standard</autoReward>
+      </deadCrew>
+    </ship>
 
   <ship name="REBEL_AUTO" auto_blueprint="SHIPS_AUTO">
     <destroyed load="DESTROYED_DEFAULT"/>

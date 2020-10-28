@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
   <eventList name="NEBULA_NOSHIP_ZOLTAN">
+    <event load="STORM_ZOLTAN_FREE_FUEL"/>
     <event load="STORM_MONSTER"/>
     <event load="ZOLTAN_DEAL_DEVIL"/>
   </eventList>
+
+  <event name="STORM_ZOLTAN_FREE_FUEL">
+    <textList>
+      <text>You expected to find a hostile ship inside ongoing plasma storm but instead, you find a lonely FTL fuel canister drifting through space.</text>
+      <text>As the plasma storm rages, one of the surges overloads your ship's fuel storage, unlocking emergency stash of FTL fuel that even you didn't know existed.</text>
+    </textList>
+    <environment type="storm"/>
+    <autoReward level="MED">fuel_only</autoReward>
+  </event>
 
   <event name="STORM_MONSTER" unique="true">
     <text>The nebula is particularly thick at this beacon. The sensors have gone offline, as well as half of high-tech equipment on the ship. The ship can hardly move through the dense gases. The best decision would probably be to charge the FTL drive and hope to leave the dangerous area as soon as possible.</text>

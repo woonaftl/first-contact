@@ -82,7 +82,7 @@
       <clonebay power="1" room="3" start="true" slot="3"/>
       <doors power="1" room="7" start="true" img="room_doors_7"/>
       <drones power="2" room="8" start="false" img="room_drones_15"/>
-      <engines power="2" room="18" start="true" img="room_engines_9"/>
+      <engines power="3" room="18" start="true" img="room_engines_9"/>
       <hacking power="1" room="21" start="false" img="room_hacking_18"/>
       <medbay power="1" room="3" start="false" img="room_medbay_3"/>
       <mind power="1" room="9" start="false" img="room_mind_11"/>
@@ -101,7 +101,7 @@
     </weaponList>
     <aug name="SYSTEM_CASING_LOCKED"/>
     <health amount="30"/>
-    <maxPower amount="9"/>
+    <maxPower amount="10"/>
     <crewCount amount="2" class="human"/>
     <crewCount amount="2" class="pavonian"/>
     <shieldImage>kestral</shieldImage>

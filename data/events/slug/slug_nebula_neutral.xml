@@ -493,7 +493,7 @@
     </event>
   </eventList>
   <ship auto_blueprint="SHIPS_JELLY" name="SLUG_UPGRADE_OXYGEN_SHIP">
-    <escape max="22" min="22" timer="35">
+    <escape max="22" min="22" timer="40">
       <!--<text>The Slugs clearly do not want to fight. They try to escape.</text>-->
       <ship hostile="true"/>
     </escape>

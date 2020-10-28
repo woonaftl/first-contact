@@ -29,7 +29,7 @@
         </event>
         <event>
           <text>"We use drones frequently in our work and have extra parts lying around." They transfer the parts over and you thank them for their generosity.</text>
-          <autoReward level="MED">droneparts_only</autoReward>
+          <autoReward level="HIGH">droneparts_only</autoReward>
         </event>
         <event>
           <text>"We were doing research on some Lanius weaponry before. I hope you don't have to use it but perhaps it will aid you on your mission." You thank them and prepare to move on.</text>

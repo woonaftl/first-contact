@@ -5,20 +5,20 @@
     <sector>CIVILIAN_FILLER_SECTOR</sector>
     <sector>ENGI_RESEARCH_SECTOR</sector>
     <sector>ENGI_WARZONE_SECTOR</sector>
-    <sector>LIZARD_REFUGE_SECTOR</sector>
+    <!--<sector>LIZARD_REFUGE_SECTOR</sector>-->
     <sector>ORCHID_GARDEN_SECTOR</sector>
     <sector>PAVONIAN_ANARCHY_SECTOR</sector>
-    <sector>PAVONIAN_RAINBOW_SECTOR</sector>
+    <!--<sector>PAVONIAN_RAINBOW_SECTOR</sector>-->
     <sector>ROCK_FORTRESS_SECTOR</sector>
     <sector>ZOLTAN_INSPECTION_SECTOR</sector>
   </sectorType>
 
   <sectorType name="HOSTILE">
-    <sector>LANIUS_WARZONE_SECTOR</sector>
-    <sector>LEPTOD_WEAPON_TEST_SECTOR</sector>
-    <sector>MANTIS_BROOD_SECTOR</sector>
-    <sector>MANTIS_HUNTING_SECTOR</sector>
-    <sector>ORCHID_OVERGROWN_SECTOR</sector>
+    <!--<sector>LANIUS_WARZONE_SECTOR</sector>-->
+    <!--<sector>LEPTOD_DIMMED_SECTOR</sector>-->
+    <!--<sector>MANTIS_BROOD_SECTOR</sector>-->
+    <!--<sector>MANTIS_HUNTING_SECTOR</sector>-->
+    <!--<sector>ORCHID_OVERGROWN_SECTOR</sector>-->
     <sector>PIRATE_SECTOR</sector>
     <sector>REBEL_FILLER_SECTOR</sector>
     <sector>REBEL_STRONGHOLD_SECTOR</sector>
@@ -26,12 +26,12 @@
   </sectorType>
 
   <sectorType name="NEBULA">
-    <sector>LANIUS_HOME_SECTOR</sector>
-    <sector>LEPTOD_HOME_SECTOR</sector>
-    <sector>LIZARD_RUINS_SECTOR</sector>
+    <!--<sector>LANIUS_HOME_SECTOR</sector>-->
+    <!--<sector>LEPTOD_HOME_SECTOR</sector>-->
+    <!--<sector>LIZARD_RUINS_SECTOR</sector>-->
     <sector>NEBULA_FILLER_SECTOR</sector>
     <sector>SLUG_HOME_SECTOR</sector>
-    <sector>SLUG_HAZARD_SECTOR</sector>
+    <!--<sector>SLUG_HAZARD_SECTOR</sector>-->
     <sector>ZOLTAN_HAZARD_SECTOR</sector>
   </sectorType>
 
@@ -134,9 +134,10 @@
     <event name="NEBULA_NOSHIP_CIVILIAN" min="2" max="2"/>
     <event name="NEBULA_NEUTRAL_CIVILIAN" min="1" max="1"/>
     <event name="NEBULA_HOSTILE_CIVILIAN" min="1" max="1"/>
+    <event name="NEBULA_HOSTILE_HAZARD_CIVILIAN" min="1" max="1"/>
 
     <event name="NEUTRAL_CIVILIAN" min="4" max="4"/>
-    <event name="HOSTILE_HAZARD_CIVILIAN" min="2" max="2"/>
+    <event name="HOSTILE_HAZARD_CIVILIAN" min="1" max="1"/>
     <event name="NOSHIP_CIVILIAN" min="5" max="5"/>
 
     <event name="NEUTRAL_CIVILIAN" min="1" max="1"/>
@@ -250,7 +251,7 @@
     <event name="NEUTRAL_LANIUS" min="9" max="9"/>
   </sectorDescription>
 
-  <sectorDescription name="LANIUS_HOME_SECTOR" minSector="2" unique="true">
+  <sectorDescription name="LANIUS_HOME_SECTOR" minSector="1" unique="true">
     <nameList>
       <name>Lanius Stasis Nebula</name>
     </nameList>
@@ -279,10 +280,10 @@
     <event name="NEUTRAL_LANIUS" min="9" max="9"/>
   </sectorDescription>
 
-  <sectorDescription name="LEPTOD_WEAPON_TEST_SECTOR" minSector="1" unique="true">
-    <!-- TODO challenge sector, what's the challenge? at the start beacon, give a quest, if you get to the end beacon without finishing it, take damage? force into a secret sector? -->
+  <sectorDescription name="LEPTOD_DIMMED_SECTOR" minSector="2" unique="true">
+    <!-- challenge sector, beacons are hidden on the star map -->
     <nameList>
-      <name>Leptod Weapon Test Sector</name>
+      <name>Leptod Dimmed Space</name>
     </nameList>
     <trackList>
       <!--TODO <track>leptod</track>-->
@@ -303,6 +304,7 @@
   </sectorDescription>
 
   <sectorDescription name="LEPTOD_HOME_SECTOR" minSector="2" unique="true">
+    <!-- challenge sector, beacons are hidden on the star map -->
     <nameList>
       <name>Leptod Secret Lair</name>
     </nameList>
@@ -402,7 +404,7 @@
   </sectorDescription>
 
   <sectorDescription name="MANTIS_BROOD_SECTOR" minSector="2" unique="true">
-    <!-- challenge sector: you're boarded every jump -->
+    <!-- challenge sector: a lot of event boarders -->
     <nameList>
       <name>Mantis Brood Sector</name>
     </nameList>
@@ -438,14 +440,19 @@
       <track>void</track>
     </trackList>
     <startEvent>START_BEACON</startEvent>
-    <event name="STORE" min="1" max="1"/>
+    <event name="NEBULA_STORE" min="2" max="2"/>
+    <event name="UPGRADE_LIST_NEBULA" min="1" max="1"/>
 
-    <event name="NEBULA_NEUTRAL_CIVILIAN" min="8" max="8"/>
-    <event name="NEBULA_HOSTILE_CIVILIAN" min="6" max="6"/>
+    <event name="NEBULA_ROCK_RACIST" min="1" max="1"/>
 
-    <event name="NEUTRAL_CIVILIAN" min="2" max="2"/>
-    <event name="HOSTILE_CIVILIAN" min="2" max="2"/>
-    <event name="NOSHIP_CIVILIAN" min="3" max="3"/>
+    <event name="NEBULA_NOSHIP_CIVILIAN" min="7" max="7"/>
+    <event name="NEBULA_NEUTRAL_CIVILIAN" min="3" max="3"/>
+    <event name="NEBULA_HOSTILE_CIVILIAN" min="2" max="2"/>
+    <event name="NEBULA_HOSTILE_HAZARD_CIVILIAN" min="2" max="2"/>
+
+    <event name="NEUTRAL_CIVILIAN" min="1" max="1"/>
+    <event name="HOSTILE_CIVILIAN" min="1" max="1"/>
+    <event name="NOSHIP_CIVILIAN" min="2" max="2"/>
   </sectorDescription>
 
   <sectorDescription name="ORCHID_GARDEN_SECTOR" minSector="1" unique="true">
@@ -477,8 +484,8 @@
     <event name="ORCHID_FIGHT" min="2" max="2"/>
   </sectorDescription>
 
-  <sectorDescription name="ORCHID_OVERGROWN_SECTOR" minSector="1" unique="true">
-    <!-- challenge sector: you're boarded every jump -->
+  <sectorDescription name="ORCHID_OVERGROWN_SECTOR" minSector="2" unique="true">
+    <!-- challenge sector: a lot of event boarders -->
     <nameList>
       <name>Overgrown Orchid Sector</name>
     </nameList>
@@ -531,7 +538,7 @@
 
   <sectorDescription name="PAVONIAN_ANARCHY_SECTOR" minSector="1" unique="true">
     <nameList>
-      <name>Pavonian Disordered Sector</name>
+      <name>Pavonian Folly</name>
     </nameList>
     <trackList>
       <!--TODO <track>pavonian</track>-->
@@ -580,15 +587,16 @@
     <event name="UPGRADE_LIST_SKETCHY" min="2" max="2"/>
 
     <event name="ASTEROID_DERELICT_SHIP" min="1" max="1"/>
-    <event name="PIRATE_TUCO" min="1" max="1"/>
 
-    <event name="NEBULA_HOSTILE_PIRATE" min="1" max="1"/>
+    <event name="NEBULA_HOSTILE_BOSS_PIRATE" min="1" max="1"/>
+    <event name="NEBULA_NOSHIP_PIRATE" min="2" max="2"/>
     <event name="NEBULA_NEUTRAL_PIRATE" min="1" max="1"/>
 
+    <event name="HOSTILE_BOSS_PIRATE" min="2" max="2"/>
     <event name="HOSTILE_HAZARD_PIRATE" min="2" max="2"/>
-    <event name="HOSTILE_PIRATE" min="5" max="5"/>
-    <event name="NEUTRAL_PIRATE" min="4" max="4"/>
-    <event name="NOSHIP_PIRATE" min="3" max="3"/>
+    <event name="HOSTILE_PIRATE" min="2" max="2"/>
+    <event name="NEUTRAL_PIRATE" min="2" max="2"/>
+    <event name="NOSHIP_PIRATE" min="5" max="5"/>
   </sectorDescription>
 
   <sectorDescription name="REBEL_STRONGHOLD_SECTOR" minSector="4" unique="true">
@@ -620,8 +628,8 @@
     <event name="NEBULA_NEUTRAL_REBEL" min="1" max="1"/>
 
     <event name="HOSTILE_HAZARD_REBEL" min="1" max="1"/>
-    <event name="HOSTILE_REBEL" min="6" max="6"/>
-    <event name="NEUTRAL_REBEL" min="7" max="7"/>
+    <event name="HOSTILE_REBEL" min="8" max="8"/>
+    <event name="NEUTRAL_REBEL" min="5" max="5"/>
     <event name="NOSHIP_REBEL" min="1" max="1"/>
   </sectorDescription>
 
@@ -653,8 +661,8 @@
     <event name="NEBULA_NEUTRAL_REBEL" min="1" max="1"/>
 
     <event name="HOSTILE_HAZARD_REBEL" min="1" max="1"/>
-    <event name="HOSTILE_REBEL" min="6" max="6"/>
-    <event name="NEUTRAL_REBEL" min="8" max="8"/>
+    <event name="HOSTILE_REBEL" min="8" max="8"/>
+    <event name="NEUTRAL_REBEL" min="6" max="6"/>
     <event name="NOSHIP_REBEL" min="1" max="1"/>
   </sectorDescription>
 
@@ -672,8 +680,8 @@
       <blueprint name="energy" rarity="3"/>
       <blueprint name="slug" rarity="0"/>
       <blueprint name="rock" rarity="1"/>
-      <blueprint name="human" rarity="2"/>
-      <blueprint name="orchid" rarity="4"/>
+      <blueprint name="human" rarity="3"/>
+      <blueprint name="orchid" rarity="3"/>
       <blueprint name="BOMB_LOCK" rarity="2"/>
       <blueprint name="MISSILES_1" rarity="1"/>
       <blueprint name="MISSILES_3" rarity="1"/>
@@ -690,16 +698,20 @@
     <event name="ROCK_QUEST_MARRIAGE_START" min="1" max="1"/>
     <event name="ROCK_MISSIONARY" min="1" max="1"/>
 
+    <event name="NOSHIP_ROCK" min="5" max="5"/>
+    <event name="NEUTRAL_ROCK" min="3" max="3"/>
+    <event name="HOSTILE_ROCK" min="1" max="1"/>
+    <event name="HOSTILE_HAZARD_ROCK" min="1" max="1"/>
+
     <event name="NOSHIP_ROCK" min="1" max="1"/>
-    <event name="NEUTRAL_ROCK" min="4" max="4"/>
-    <event name="HOSTILE_ROCK" min="7" max="7"/>
-    <event name="HOSTILE_HAZARD_ROCK" min="2" max="2"/>
+    <event name="NEUTRAL_ROCK" min="1" max="1"/>
+    <event name="HOSTILE_ROCK" min="1" max="1"/>
   </sectorDescription>
 
   <sectorDescription name="ROCK_HAZARD_SECTOR" minSector="2" unique="true">
-    <!-- challenge sector: environmental hazard every jump -->
+    <!-- challenge sector: a lot of environmental hazards -->
     <nameList>
-      <name>Rock Perilous Sector</name>
+      <name>Rock Volatile Wasteland</name>
     </nameList>
     <trackList>
       <track>rock</track>
@@ -709,10 +721,10 @@
     <rarityList>
       <blueprint name="engi" rarity="0"/>
       <blueprint name="mantis" rarity="0"/>
-      <blueprint name="energy" rarity="3"/>
+      <blueprint name="energy" rarity="4"/>
       <blueprint name="slug" rarity="0"/>
       <blueprint name="rock" rarity="1"/>
-      <blueprint name="human" rarity="2"/>
+      <blueprint name="human" rarity="4"/>
       <blueprint name="orchid" rarity="4"/>
       <blueprint name="BOMB_LOCK" rarity="2"/>
       <blueprint name="MISSILES_1" rarity="1"/>
@@ -721,13 +733,16 @@
       <blueprint name="MISSILES_CHARGE_HEAVY" rarity="2"/>
     </rarityList>
     <startEvent>START_BEACON_ROCK</startEvent>
-    <event name="STORE_ROCK" min="2" max="2"/>
-    <event name="UPGRADE_LIST_ALL" min="2" max="2"/>
+    <event name="STORE_ROCK" min="1" max="1"/>
+    <event name="UPGRADE_LIST_ALL" min="1" max="1"/>
+
+    <event name="NOSHIP_ROCK" min="3" max="3"/>
+    <event name="NEUTRAL_ROCK" min="1" max="1"/>
+    <event name="HOSTILE_ROCK" min="1" max="1"/>
+    <event name="HOSTILE_HAZARD_ROCK" min="13" max="13"/>
 
     <event name="NOSHIP_ROCK" min="1" max="1"/>
-    <event name="NEUTRAL_ROCK" min="4" max="4"/>
-    <event name="HOSTILE_ROCK" min="2" max="2"/>
-    <event name="HOSTILE_HAZARD_ROCK" min="11" max="11"/>
+    <event name="NEUTRAL_ROCK" min="1" max="1"/>
   </sectorDescription>
 
   <sectorDescription name="SLUG_HOME_SECTOR" minSector="2" unique="true">
@@ -766,8 +781,9 @@
   </sectorDescription>
 
   <sectorDescription name="SLUG_HAZARD_SECTOR" minSector="2" unique="true">
+    <!-- challenge sector: a lot of environmental hazards -->
     <nameList>
-      <name>Slug Volatile Nebula</name>
+      <name>Slug Stormy Nebula</name>
     </nameList>
     <trackList>
       <track>slug</track>
@@ -822,14 +838,13 @@
     <event name="ZOLTAN_PEACE_QUEST" min="1" max="1"/>
     <event name="ZOLTAN_CREW_STUDY" min="1" max="1"/>
 
-    <event name="NEBULA_HOSTILE_ZOLTAN" min="1" max="1"/>
-
-    <event name="NOSHIP_ZOLTAN" min="3" max="3"/>
+    <event name="NOSHIP_ZOLTAN" min="4" max="4"/>
     <event name="NEUTRAL_ZOLTAN" min="5" max="5"/>
     <event name="HOSTILE_ZOLTAN" min="7" max="7"/>
   </sectorDescription>
 
   <sectorDescription name="ZOLTAN_HAZARD_SECTOR" minSector="1" unique="true">
+    <!-- challenge sector: a lot of environmental hazards -->
     <nameList>
       <name>Zoltan Turbulent Nebula</name>
     </nameList>
@@ -851,12 +866,13 @@
     <event name="NEBULA_STORE_ZOLTAN" min="2" max="2"/>
     <event name="UPGRADE_LIST_NEBULA" min="2" max="2"/>
 
-    <event name="NEBULA_HOSTILE_HAZARD_ZOLTAN" min="6" max="6"/>
-    <event name="NEBULA_NOSHIP_ZOLTAN" min="2" max="2"/>
+    <event name="NEBULA_HOSTILE_HAZARD_ZOLTAN" min="5" max="5"/>
+    <event name="NEBULA_NOSHIP_ZOLTAN" min="3" max="3"/>
     <event name="NEBULA_NEUTRAL_ZOLTAN" min="4" max="4"/>
 
-    <event name="NOSHIP_ZOLTAN" min="2" max="2"/>
     <event name="ZOLTAN_RIFT_FIGHT" min="1" max="1"/>
+
+    <event name="NOSHIP_ZOLTAN" min="2" max="2"/>
     <event name="HOSTILE_HAZARD_ZOLTAN" min="3" max="3"/>
   </sectorDescription>
 </FTL>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="NEBULA_HOSTILE_HAZARD_CIVILIAN">
+    <!--rebel events-->
+    <event load="STORM_AUTO"/>
+    <event load="STORM_REBEL"/>
+  </eventList>
+</FTL>

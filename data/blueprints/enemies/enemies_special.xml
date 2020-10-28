@@ -5,7 +5,15 @@
     <name>PIRATE_TUCO</name>
   </blueprintList>
 
-  <shipBlueprintSuper name="PIRATE_TUCO" layout="pirate_tuco" img="pirate_tuco">
+  <blueprintList name="PIRATE_EVE_LIST">
+    <name>PIRATE_EVE</name>
+  </blueprintList>
+
+  <blueprintList name="PIRATE_NYX_LIST">
+    <name>PIRATE_NYX</name>
+  </blueprintList>
+
+  <shipBlueprintSuperNew name="PIRATE_TUCO" layout="pirate_tuco" img="pirate_tuco">
     <class>Tuco's Dreadnaught</class>
     <systemList>
       <pilot power="1" max="3" room="0"/>
@@ -14,61 +22,232 @@
       <shields power="2" max="8" room="2"/>
       <oxygen power="1" max="3" room="8"/>
       <medbay power="1" max="3" room="4"/>
-      <teleporter power="1" max="2" room="6" start="false"/>
-      <drones power="1" max="5" room="3" start="false"/>
-      <doors power="1" max="3" room="5" start="false"/>
+      <teleporter power="1" max="2" room="6"/>
+      <drones room="3"/>
+      <doors power="1" max="3" room="5"/>
     </systemList>
-    <weaponList sector="0" missiles="1" system_power="3">
-      <weapon name="WEAPONS_MISSILES_1"/>
-      <weapon name="WEAPONS_CORE_2"/>
-      <weapon name="WEAPONS_CORE_1"/>
-    </weaponList>
-    <weaponList sector="1" missiles="1" system_power="4">
-      <weapon name="WEAPONS_MISSILES_1"/>
-      <weapon name="WEAPONS_CORE_1"/>
-      <weapon name="WEAPONS_HEAVY_2"/>
-      <weapon name="WEAPONS_CORE_1"/>
-    </weaponList>
-    <weaponList sector="2" missiles="1" system_power="4">
-      <weapon name="WEAPONS_MISSILES_1"/>
-      <weapon name="WEAPONS_CORE_1"/>
-      <weapon name="WEAPONS_HEAVY_2"/>
-      <weapon name="WEAPONS_CORE_1"/>
-    </weaponList>
-    <weaponList sector="3" missiles="1" system_power="5">
-      <weapon name="WEAPONS_MISSILES_1"/>
-      <weapon name="WEAPONS_CORE_2"/>
-      <weapon name="WEAPONS_HEAVY_2"/>
-      <weapon name="WEAPONS_CORE_1"/>
-    </weaponList>
-    <weaponList sector="4" missiles="1" system_power="6">
-      <weapon name="WEAPONS_MISSILES_1"/>
-      <weapon name="WEAPONS_CORE_2"/>
-      <weapon name="WEAPONS_HEAVY_3"/>
-      <weapon name="WEAPONS_CORE_1"/>
-    </weaponList>
-    <weaponList sector="5" missiles="2" system_power="7">
-      <weapon name="WEAPONS_MISSILES_1"/>
-      <weapon name="WEAPONS_CORE_3"/>
-      <weapon name="WEAPONS_HEAVY_3"/>
-      <weapon name="WEAPONS_CORE_1"/>
-    </weaponList>
-    <weaponList sector="6" missiles="2" system_power="8">
-      <weapon name="WEAPONS_MISSILES_2"/>
-      <weapon name="WEAPONS_CORE_3"/>
-      <weapon name="WEAPONS_HEAVY_3"/>
-      <weapon name="WEAPONS_CORE_2"/>
-    </weaponList>
-    <weaponList sector="7" missiles="3" system_power="8">
-      <weapon name="WEAPONS_MISSILES_2"/>
-      <weapon name="WEAPONS_CORE_3"/>
-      <weapon name="WEAPONS_HEAVY_3"/>
-      <weapon name="WEAPONS_CORE_2"/>
-    </weaponList>
-    <droneList drones="4" load="DRONES_STANDARD"/>
+    <sector id="0">
+      <weaponList missiles="1" system_power="3">
+        <weapon name="WEAPONS_MISSILES_1"/>
+        <weapon name="WEAPONS_CORE_2"/>
+        <weapon name="WEAPONS_CORE_1"/>
+      </weaponList>
+      <droneList drones="5" system_power="2" load="DRONES_BOARDER"/>
+    </sector>
+    <sector id="1">
+      <weaponList missiles="1" system_power="4">
+        <weapon name="WEAPONS_MISSILES_1"/>
+        <weapon name="WEAPONS_CORE_1"/>
+        <weapon name="WEAPONS_HEAVY_2"/>
+        <weapon name="WEAPONS_CORE_1"/>
+      </weaponList>
+      <droneList drones="5" system_power="2" load="DRONES_BOARDER"/>
+    </sector>
+    <sector id="2">
+      <weaponList missiles="1" system_power="4">
+        <weapon name="WEAPONS_MISSILES_1"/>
+        <weapon name="WEAPONS_CORE_1"/>
+        <weapon name="WEAPONS_HEAVY_2"/>
+        <weapon name="WEAPONS_CORE_1"/>
+      </weaponList>
+      <droneList drones="5" system_power="3" load="DRONES_BOARDER"/>
+    </sector>
+    <sector id="3">
+      <weaponList missiles="1" system_power="5">
+        <weapon name="WEAPONS_MISSILES_1"/>
+        <weapon name="WEAPONS_CORE_2"/>
+        <weapon name="WEAPONS_HEAVY_2"/>
+        <weapon name="WEAPONS_CORE_1"/>
+      </weaponList>
+      <droneList drones="5" system_power="3" load="DRONES_BOARDER"/>
+    </sector>
+    <sector id="4">
+      <weaponList missiles="1" system_power="6">
+        <weapon name="WEAPONS_MISSILES_1"/>
+        <weapon name="WEAPONS_CORE_2"/>
+        <weapon name="WEAPONS_HEAVY_3"/>
+        <weapon name="WEAPONS_CORE_1"/>
+      </weaponList>
+      <droneList drones="5" system_power="4" load="DRONES_BOARDER"/>
+    </sector>
+    <sector id="5">
+      <weaponList missiles="2" system_power="7">
+        <weapon name="WEAPONS_MISSILES_1"/>
+        <weapon name="WEAPONS_CORE_3"/>
+        <weapon name="WEAPONS_HEAVY_3"/>
+        <weapon name="WEAPONS_CORE_1"/>
+      </weaponList>
+      <droneList drones="5" system_power="4" load="DRONES_BOARDER"/>
+    </sector>
+    <sector id="6">
+      <weaponList missiles="2" system_power="8">
+        <weapon name="WEAPONS_MISSILES_2"/>
+        <weapon name="WEAPONS_CORE_3"/>
+        <weapon name="WEAPONS_HEAVY_3"/>
+        <weapon name="WEAPONS_CORE_2"/>
+      </weaponList>
+      <droneList drones="5" system_power="5" load="DRONES_BOARDER"/>
+    </sector>
+    <sector id="7">
+      <weaponList missiles="3" system_power="8">
+        <weapon name="WEAPONS_MISSILES_2"/>
+        <weapon name="WEAPONS_CORE_3"/>
+        <weapon name="WEAPONS_HEAVY_3"/>
+        <weapon name="WEAPONS_CORE_2"/>
+      </weaponList>
+      <droneList drones="5" system_power="5" load="DRONES_BOARDER"/>
+    </sector>
+    <health amount="11"/>
+    <crewCount amount="5" max="10" class="random"/>
+    <boardingAI>sabotage</boardingAI>
+    <cloakImage>pirate_tuco</cloakImage>
+  </shipBlueprintSuperNew>
+
+  <shipBlueprintSuperNew name="PIRATE_EVE" layout="pirate_eve" img="pirate_eve">
+    <class>"The Exiled"</class>
+    <systemList>
+      <pilot power="1" max="3" room="0"/>
+      <engines power="1" max="5" room="2"/>
+      <weapons room="8"/>
+      <shields power="2" max="8" room="3"/>
+      <oxygen power="1" max="3" room="7"/>
+      <clonebay power="1" max="3" room="1"/>
+      <cloaking power="1" max="2" room="5"/>
+    </systemList>
+    <sector id="0">
+      <weaponList missiles="0" system_power="4">
+        <weapon name="WEAPONS_CORE_2"/>
+        <weapon name="WEAPONS_BEAM_2"/>
+      </weaponList>
+    </sector>
+    <sector id="1">
+      <weaponList missiles="0" system_power="5">
+        <weapon name="WEAPONS_CORE_3"/>
+        <weapon name="WEAPONS_BEAM_2"/>
+      </weaponList>
+    </sector>
+    <sector id="2">
+      <weaponList missiles="0" system_power="5">
+        <weapon name="WEAPONS_CORE_3"/>
+        <weapon name="WEAPONS_BEAM_2"/>
+      </weaponList>
+    </sector>
+    <sector id="3">
+      <weaponList missiles="0" system_power="6">
+        <weapon name="WEAPONS_CORE_3"/>
+        <weapon name="WEAPONS_BEAM_3"/>
+      </weaponList>
+    </sector>
+    <sector id="4">
+      <weaponList missiles="0" system_power="7">
+        <weapon name="WEAPONS_CORE_3"/>
+        <weapon name="WEAPONS_BEAM_4"/>
+      </weaponList>
+    </sector>
+    <sector id="5">
+      <weaponList missiles="0" system_power="8">
+        <weapon name="WEAPONS_CORE_4"/>
+        <weapon name="WEAPONS_BEAM_4"/>
+      </weaponList>
+    </sector>
+    <sector id="6">
+      <weaponList missiles="0" system_power="8">
+        <weapon name="WEAPONS_CORE_4"/>
+        <weapon name="WEAPONS_BEAM_4"/>
+      </weaponList>
+    </sector>
+    <sector id="7">
+      <weaponList missiles="0" system_power="8">
+        <weapon name="WEAPONS_CORE_4"/>
+        <weapon name="WEAPONS_BEAM_4"/>
+      </weaponList>
+    </sector>
     <health amount="10"/>
     <crewCount amount="4" max="8" class="random"/>
     <boardingAI>sabotage</boardingAI>
-    <cloakImage>pirate_tuco</cloakImage>
-  </shipBlueprintSuper>
+    <cloakImage>pirate_eve</cloakImage>
+  </shipBlueprintSuperNew>
+
+  <shipBlueprintSuperNew name="PIRATE_NYX" layout="pirate_nyx" img="pirate_nyx">
+    <class>"Dark Lady"</class>
+    <systemList>
+      <pilot power="1" max="3" room="0"/>
+      <engines power="1" max="6" room="10"/>
+      <weapons room="1"/>
+      <shields power="2" max="8" room="9"/>
+      <oxygen power="1" max="3" room="2"/>
+      <clonebay power="1" max="3" room="3"/>
+      <cloaking power="1" max="2" room="5"/>
+      <drones room="6"/>
+      <mind power="1" max="2" room="4"/>
+      <hacking power="1" max="2" room="8"/>
+    </systemList>
+    <sector id="0">
+      <weaponList missiles="0" system_power="3">
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_LASER_1"/>
+      </weaponList>
+      <droneList drones="5" system_power="2" load="DRONES_COMBAT"/>
+    </sector>
+    <sector id="1">
+      <weaponList missiles="0" system_power="4">
+        <weapon name="WEAPONS_LASER_1"/>
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_LASER_1"/>
+      </weaponList>
+      <droneList drones="5" system_power="2" load="DRONES_COMBAT"/>
+    </sector>
+    <sector id="2">
+      <weaponList missiles="0" system_power="4">
+        <weapon name="WEAPONS_LASER_1"/>
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_LASER_1"/>
+      </weaponList>
+      <droneList drones="5" system_power="3" load="DRONES_COMBAT"/>
+    </sector>
+    <sector id="3">
+      <weaponList missiles="0" system_power="5">
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_LASER_1"/>
+      </weaponList>
+      <droneList drones="5" system_power="3" load="DRONES_COMBAT"/>
+    </sector>
+    <sector id="4">
+      <weaponList missiles="0" system_power="6">
+        <weapon name="WEAPONS_LASER_3"/>
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_LASER_1"/>
+      </weaponList>
+      <droneList drones="5" system_power="4" load="DRONES_COMBAT"/>
+    </sector>
+    <sector id="5">
+      <weaponList missiles="0" system_power="7">
+        <weapon name="WEAPONS_LASER_3"/>
+        <weapon name="WEAPONS_LASER_3"/>
+        <weapon name="WEAPONS_LASER_1"/>
+      </weaponList>
+      <droneList drones="5" system_power="4" load="DRONES_COMBAT"/>
+    </sector>
+    <sector id="6">
+      <weaponList missiles="0" system_power="8">
+        <weapon name="WEAPONS_LASER_3"/>
+        <weapon name="WEAPONS_LASER_3"/>
+        <weapon name="WEAPONS_LASER_2"/>
+      </weaponList>
+      <droneList drones="5" system_power="5" load="DRONES_COMBAT"/>
+    </sector>
+    <sector id="7">
+      <weaponList missiles="0" system_power="8">
+        <weapon name="WEAPONS_LASER_3"/>
+        <weapon name="WEAPONS_LASER_3"/>
+        <weapon name="WEAPONS_LASER_2"/>
+      </weaponList>
+      <droneList drones="5" system_power="5" load="DRONES_COMBAT"/>
+    </sector>
+    <health amount="10"/>
+    <crewCount amount="4" max="8" class="random"/>
+    <boardingAI>sabotage</boardingAI>
+    <cloakImage>pirate_nyx</cloakImage>
+  </shipBlueprintSuperNew>
 </FTL>

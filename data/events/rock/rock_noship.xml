@@ -1,101 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
   <eventList name="NOSHIP_ROCK">
-    <event load="ROCK_STARSHIP_MINE"/>
+    <event load="ROCK_FREE_ITEMS"/>
+    <event load="ROCK_FREE_MISSILES"/>
+    <event load="ROCK_FIND_WEAPON"/>
+    <event load="ROCK_ZOLTAN_MERCHANT"/>
     <event load="ROCK_RACIST_STORE"/>
   </eventList>
 
-  <event name="ROCK_STARSHIP_MINE" unique="true">
-    <text>The burnt out hull of a Rock mine layer drifts by. Behind the wreck drifts a live mine; an automated drone that drills into ships' hulls before exploding. It locks onto your ship's signature and heads your way!</text>
+  <event name="ROCK_FREE_ITEMS">
+    <textList>
+      <text>You stumble upon the remains of a tiny Rock ship, probably destroyed by Rebels. You find no life signatures and collect scrap material.</text>
+      <text>An unusually friendly Rock station contacts you and offers some resources to help the Federation.</text>
+    </textList>
+    <autoReward level="LOW">stuff</autoReward>
+  </event>
+
+  <event name="ROCK_FREE_MISSILES">
+    <textList>
+      <!--text taken from NOTHING_ROCK-->
+      <text>No one bothers your ship as you float among numerous space stations and mining platforms. The Rock certainly run efficient operations. One of the Rock ships offers some excess ammunition for free to help the Federation.</text>
+      <text>A Rock ship sends some missiles to you. Thankfully, in ammo crates this time. The Rock captain is glad to help against the Rebels.</text>
+    </textList>
+    <autoReward level="HIGH">missiles_only</autoReward>
+  </event>
+
+  <event name="ROCK_FIND_WEAPON" unique="true">
+    <text>A fortified Rock military station is giving away weapons to smaller ships for them to be able to protect themselves. Your ship counts as small and helpless so you get a weapon for free.</text>
+    <weapon name="RANDOM"/>
+  </event>
+
+  <event name="ROCK_ZOLTAN_MERCHANT" unique="true">
+    <!--text taken from NOTHING_ROCK-->
+    <text>You see a Zoltan merchant and ask about his wares. He responds, "Sorry, but it took years to gain their trust. I can't be seen communicating with you. I hope you understand." He cuts communications.</text>
     <choice hidden="true">
-      <text>Attempt evasive maneuvers.</text>
+      <text>Offer to pay some scrap in advance to open the store.</text>
       <event>
-        <text>The ship's turning circle proves too wide and the mine bites down onto the hull. You can hear it now, chewing through the armor.</text>
-        <choice hidden="true">
-          <text>Send someone out there to defuse it.</text>
-          <eventList name="ROCK_STARSHIP_MINE_DEFUSE">
-            <event>
-              <text>Your crewmember dons a space suit and exits the airlock. They make quick work of the basic device and return inside to relief all round. The mine makes good scrap pickings too.</text>
-              <autoReward level="MED">stuff</autoReward>
-            </event>
-            <event>
-              <text>Your crewmember dons a space suit and exits the airlock. When they open up the mine housing, though, they panic. The red wire or the blue?! 3... 2... 1...</text>
-              <choice hidden="true">
-                <text>Red!</text>
-                <event load="ROCK_STARSHIP_MINE_DEFUSE2"/>
-              </choice>
-              <choice hidden="true">
-                <text>Blue!</text>
-                <event load="ROCK_STARSHIP_MINE_DEFUSE2"/>
-              </choice>
-            </event>
-          </eventList>
-        </choice>
-        <choice req="WEAPONS_MISSILES">
-          <text>(Missile Weapon) Attempt a controlled detonation using a missile.</text>
-          <event>
-            <text>After drawing straws, a crewmember goes out to fix a modified warhead to the mine. You detonate the missile in a way that dislodges the mine. It blows up shortly after. The ship takes some damage in the blasts, but you're still sailing.</text>
-            <damage amount="3"/>
-            <damage amount="1" system="random"/>
-            <item_modify>
-              <item type="missiles" min="-1" max="-1"/>
-            </item_modify>
-            <choice>
-              <text id="continue"/>
-              <event>
-                <autoReward level="MED">stuff</autoReward>
-              </event>
-            </choice>
-          </event>
-        </choice>
-        <choice req="COMBAT_BEAM_DRONE_LIST">
-          <text>(Beam Drone) Use a drone to cut away the mine with a precision beam.</text>
-          <event>
-            <text>Carefully guided from the bridge, your beam drone removes the mine's grappling arms and sends it drifting off into space, where you shoot at it until it detonates at a safe distance.</text>
-            <item_modify>
-              <item type="drones" min="-1" max="-1"/>
-            </item_modify>
-            <choice>
-              <text id="continue"/>
-              <event>
-                <autoReward level="MED">stuff</autoReward>
-              </event>
-            </choice>
-          </event>
-        </choice>
+        <text>The Zoltan merchant checks the radar to find any Rock ships nearby and, having found no one, reluctantly opens the store.</text>
+        <item_modify>
+          <item type="scrap" min="-15" max="-12"/>
+        </item_modify>
+        <store/>
       </event>
     </choice>
-    <choice hidden="true" req="engines" lvl="5">
-      <text>(Improved Engines) Reverse thrusters!</text>
-      <event>
-        <text>It stresses the inertial dampeners, but you reverse course and outrun the mine. You prepare to jump off.</text>
-      </event>
+    <choice>
+      <text>Leave.</text>
+      <event/>
     </choice>
   </event>
-  <eventList name="ROCK_STARSHIP_MINE_DEFUSE2">
-    <event>
-      <text>You open your eyes and everything is still where it was a moment ago. You did it!</text>
-      <autoReward level="MED">stuff</autoReward>
-    </event>
-    <event>
-      <text>The weapon detonates. Everything goes dark, the bridge illuminated by flames pouring from the hull, your bomb disposal volunteer spinning off toward a nearby sun. You put out the fires and prepare to move on.</text>
-      <removeCrew>
-        <clone>true</clone>
-        <text>Fortunately, your crewmember was close enough to the ship for the Clone Bay to revive them. Sheepish and apologetic, they rejoin the crew.</text>
-      </removeCrew>
-      <damage amount="5"/>
-      <damage amount="1" system="room" effect="breach"/>
-    </event>
-  </eventList>
 
   <changelog>
     <entry>Added Rock racist store event</entry>
   </changelog>
   <event name="ROCK_RACIST_STORE" unique="true">
+    <!--text taken from NOTHING_ROCK-->
     <text>You see a small trading post and ask about refuelling but they respond, "Go away! We don't serve your kind here."</text>
     <choice hidden="true">
       <text id="continue"/>
       <event/>
+    </choice>
+    <choice hidden="true">
+      <text>Offer to pay some scrap in advance to open the store.</text>
+      <event>
+        <text>The trading post reluctantly agrees to show their wares to you.</text>
+        <item_modify>
+          <item type="scrap" min="-15" max="-12"/>
+        </item_modify>
+        <store/>
+      </event>
     </choice>
     <choice hidden="true" lvl="1" max_group="0" req="rock">
       <text>(Rock) Send a crewmember to negotiate.</text>

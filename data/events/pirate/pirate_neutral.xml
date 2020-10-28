@@ -28,11 +28,11 @@
         </event>
         <event>
           <text>You discover the remains of ship embedded into an asteroid. It still has some functional missiles.</text>
-          <autoReward level="MED">missiles_only</autoReward>
+          <autoReward level="HIGH">missiles_only</autoReward>
         </event>
         <event>
           <text>You happen upon an abandoned mining site. A few mining drones were left behind and could be repurposed.</text>
-          <autoReward level="MED">droneparts_only</autoReward>
+          <autoReward level="HIGH">droneparts_only</autoReward>
         </event>
         <event>
           <text>The asteroid field proved more dangerous than expected. Some asteroids managed to get through your ship's defenses.</text>
@@ -217,7 +217,7 @@
           <boarders min="2" max="4" class="human"/>
           <ship name="JELLY_PIRATE_WITHBOARDERS" auto_blueprint="SHIPS_PIRATE" hostile="true">
             <surrender min="0" max="5" load="PIRATE_SURRENDER"/>
-            <escape chance="0.3" min="2" max="4" timer="15" load="PIRATE_ESCAPE"/>
+            <escape chance="0.3" min="2" max="4" load="PIRATE_ESCAPE"/>
             <gotaway>
               <text>The pirate jumped away in search of weaker targets.</text>
             </gotaway>

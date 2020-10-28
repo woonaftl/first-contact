@@ -8,7 +8,7 @@
     <event load="AUTO_LURE_HAZARD"/>
     <event load="BROKEN_REBEL_DRONE"/>
     <event load="REBEL_CHECKPOINT"/>
-    <event load="REBEL_FIGHT_ASB"/>
+    <event load="REBEL_FIGHT_ASB_WARNING"/>
     <event load="REBEL_HELPERS"/>
     <event load="REBEL_TRANSPORT"/>
     <event load="ROGUE_REBEL"/>
@@ -31,14 +31,6 @@
               <event load="SAVE_CIVILIAN_LIST"/>
             </choice>
           </destroyed>
-          <deadCrew>
-            <text>No more life signs detected on the pirate ship. You hasten to contact the civilian ship.</text>
-            <autoReward level="MED">standard</autoReward>
-            <choice hidden="true">
-              <text>Contact the civilian ship.</text>
-              <event load="SAVE_CIVILIAN_LIST"/>
-            </choice>
-          </deadCrew>
         </ship>
       </event>
     </choice>
@@ -308,7 +300,7 @@
       <text>A Rebel space station and single fighter is monitoring this beacon for Federation activity. A number of civilian ships are docked, awaiting inspection by the Rebels and possible detainment if they are Federation loyalists. The Rebels haven't noticed you yet.</text>
       <text>A rather large fleet of civilian ships are held up at this beacon. It appears to be a Rebel checkpoint; everyone is being inspected for possible ties to the Federation. No one has noticed you yet.</text>
     </textList>
-    <ship load="REBEL" hostile="false"/>
+    <ship load="REBEL_WARNING" hostile="false"/>
     <choice>
       <text>Fend for yourself, attack and escape.</text>
       <event>
@@ -363,20 +355,21 @@
   <changelog>
     <entry>Added Rebel ASB fight event</entry>
   </changelog>
-  <event name="REBEL_FIGHT_ASB" unique="true">
+  <event name="REBEL_FIGHT_ASB_WARNING" unique="true">
     <text planet="PLANET_POPULATED">You arrive at the beacon to locate a small Rebel scout orbiting a heavily fortified planet nearby. Luckily, the Rebels haven't noticed your arrival yet but that can change in a moment.</text>
     <choice hidden="true">
       <text>Preemptively attack the Rebel ship.</text>
       <event>
         <text>As soon as you lock on your weapons, the Rebel ship notices a threat and retaliates. To make matters worse, another danger is identified by your sensors. The planetary defense system has come online and is going to fire at you in a few moments!</text>
         <environment target="player" type="PDS"/>
-        <ship hostile="true" load="REBEL"/>
+        <ship hostile="true" load="REBEL_WARNING"/>
       </event>
     </choice>
     <choice hidden="true">
-      <text>Charge FTL drive.</text>
+      <text load="GENERIC_HIDE_TEXT"/>
       <event>
-        <text>The Rebel scout does not notice your ship. You are ready to jump to next beacon.</text>
+        <text>Just before you finish charging FTL drive and start the jumping maneuver, the Rebels find you and transfer your coordinates to the incoming fleet.</text>
+        <modifyPursuit amount="1"/>
       </event>
     </choice>
   </event>
@@ -401,7 +394,7 @@
       <eventList name="REBEL_HELPERS_SUPPLIES">
         <event>
           <text>The colonists hand over the supplies. It appears to be mostly equipment meant for automated farming, but you can make use of it. As you leave, you receive a message: "This is why the Rebels will always have support!"</text>
-          <autoReward level="MED">droneparts_only</autoReward>
+          <autoReward level="HIGH">droneparts_only</autoReward>
         </event>
         <event>
           <text>The colonists hand over the supplies and you load it onto your ship. As you jump away, you crack it open and discover nothing more than vaccinations for a local plague.</text>
@@ -414,7 +407,7 @@
           <text>The colonists willingly give up their supplies. But as you make to jump away, an explosion rocks your ship. The cargo was booby trapped!</text>
           <damage amount="2" system="room" effect="random"/>
           <damage amount="2" system="room" effect="random"/>
-       </event>
+        </event>
       </eventList>
     </choice>
     <choice>
@@ -654,9 +647,10 @@
           <text>Your search for a friendly marketplace yields no results but after a time a small shuttle approaches. They release some supplies in your direction with the message, "We are not all friends of the Rebel fleet. Stay strong."</text>
           <autoReward level="RANDOM">stuff</autoReward>
         </event>
-        <event count="2">
+        <event>
           <text>You apparently spoke to the wrong person in your search for a store. Warnings go off and you detect an automated Rebel ship moving in to attack.</text>
-          <ship load="REBEL_AUTO" hostile="true"/>
+          <modifyPursuit amount="1"/>
+          <ship load="REBEL_AUTO_WARNING" hostile="true"/>
         </event>
       </eventList>
     </choice>

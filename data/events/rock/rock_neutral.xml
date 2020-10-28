@@ -1,12 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
   <eventList name="NEUTRAL_ROCK">
+    <event load="ROCK_ATTACK_CIVILIANS"/>
     <event load="ROCK_LOOTING"/>
     <event load="ROCK_MANTIS_HUNTER"/>
     <event load="ROCK_MANTIS_FREIGHTER"/>
     <event load="ROCK_ATHEIST"/>
     <event load="ROCK_SLUG_ARGUMENT"/>
   </eventList>
+
+  <event name="ROCK_ATTACK_CIVILIANS" unique="true">
+    <!-- text from NOTHING_ROCK -->
+    <text>You receive a message meant to degrade you as aliens. You half expect an attack but it seems to have come from a small civilian shuttle.</text>
+    <ship auto_blueprint="SHIPS_ROCK" hostile="false">
+      <escape timer="40" min="22" max="22" load="PIRATE_ESCAPE"/>
+      <surrender chance="0.7" min="3" max="4" load="ROCK_SHIP_SURRENDER"/>
+      <destroyed load="DESTROYED_DEFAULT"/>
+      <deadCrew load="DEAD_CREW_DEFAULT"/>
+    </ship>
+    <choice hidden="true">
+      <text>Attack the civilians.</text>
+      <event>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Leave them be.</text>
+      <event/>
+    </choice>
+  </event>
 
   <event name="ROCK_LOOTING" unique="true">
     <text>You find a disabled rock transport floating near the beacon. You consider stripping it of useful parts but are uncertain why it's there in the first place.</text>

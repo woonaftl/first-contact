@@ -18,16 +18,15 @@
     <store/>
   </event>
 
+  <!--
   <event name="NOTHING_ROCK">
     <textList name="NOTHING_ROCK">
-      <text>You receive a message meant to degrade you as aliens. You half expect an attack but it seems to have come from a small civilian shuttle.</text>
-      <text>No one bothers your ship as you float among numerous space stations and mining platforms. The Rock certainly run efficient operations.</text>
       <text>You arrive and detect signs of battle. A few ships are taking passes at each other near a small station. You don't know if it's a territory issue, a contest or a rite of passage but you decide it's best to stay out of it.</text>
       <text>There's not much at this beacon. Just a few abandoned depots, stripped clean.</text>
       <text>A few freighters pass by but they refuse all communications. Must not want to sully their reputation by talking with foreigners.</text>
-      <text>You see a Zoltan merchant and ask about his wares. He responds, "Sorry, but it took years to gain their trust. I can't be seen communicating with you. I hope you understand." He cuts communications.</text>
     </textList>
   </event>
+  -->
 
   <ship name="ROCK_SHIP" auto_blueprint="SHIPS_ROCK">
     <surrender chance="0.7" min="3" max="4" load="ROCK_SHIP_SURRENDER"/>

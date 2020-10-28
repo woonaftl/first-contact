@@ -121,7 +121,7 @@
     </deadCrew>
   </ship>
   <ship name="JELLY_UNLOCK3" auto_blueprint="SLUG_INTERCEPTOR_LIST">
-    <escape timer="35" min="22" max="22">
+    <escape timer="40" min="22" max="22">
       <text>The interceptor powers up its FTL drive in preparation to escape. At the same time, the cruiser's FTL drive does the same. They must be linked! Don't let them get away!</text>
       <ship hostile="true"/>
     </escape>

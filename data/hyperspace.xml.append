@@ -507,4 +507,7 @@
       </beaconType>
     </event>
   </events>
+
+  <!--TODO minefield hazard: replace Rock living mine event, mines are basically bombs of all kinds (small, fire, breach, ion) that are fired on both ships-->
+  <!--TODO nanobot field: all systems are rapidly repaired, fires put out and breaches patched up on both ships-->
 </FTL>

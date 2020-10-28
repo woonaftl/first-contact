@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="NEBULA_NOSHIP_PIRATE">
+    <event load="NEBULA_TRADER"/>
+    <event load="WRECKAGE_EVENT"/>
+    <event load="STORM_ITEMS"/>
+  </eventList>
+</FTL>
