@@ -8,7 +8,7 @@
     </xsl:copy>
   </xsl:template>
 
-  <xsl:template match="FTL/event[@name = document('../../result/data/sector_data.xml')/FTL/sectorDescription/startEvent][@name != 'START_GAME']">
+  <xsl:template match="FTL/event[@name = document('../../result/data/sector_data.xml')/FTL/sectorDescription/startEvent][@name != 'START_GAME'][@name != 'START_BEACON_SECTOR1']">
     <xsl:copy>
       <xsl:apply-templates select="@* | node()"/>
       <choice blue="false" hidden="false" req="GREENHOUSE_LIST" lvl="0" max_group="0">

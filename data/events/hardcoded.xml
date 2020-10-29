@@ -4,6 +4,10 @@
     <text>The data you carry is vital to the remaining Federation fleet. You'll need supplies for the journey, so make sure to explore each sector before moving on to the next. But get to the exit before the pursuing Rebel fleet can catch up!</text>
   </event>
 
+  <event name="START_BEACON_SECTOR1">
+    <text>Welcome to a new sector! Get to the exit beacon and jump to the next sector before the pursuing Rebels catch you!</text>
+  </event>
+
   <event name="START_BEACON">
     <text>Welcome to a new sector! Get to the exit beacon and jump to the next sector before the pursuing Rebels catch you!</text>
   </event>
@@ -120,11 +124,11 @@
   <event name="START_BEACON_NEBULA">
     <textList name="START_BEACON_NEBULA">
       <text>This nebula must have been an important hub at one point; placing all of these jump beacons would be no easy task. However, now it's hardly navigable.</text>
-      <text>Nebulas were always dangerous places. Many electronics fail in these clouds. You will have to tread lightly.</text>
-      <text>You've entered a sector thick with nebulas. You'll have to navigate on instinct.</text>
+      <text>Nebulae were always dangerous places. Many electronics fail in these clouds. You will have to tread lightly.</text>
+      <text>You've entered a sector thick with nebula. You'll have to navigate on instinct.</text>
       <text>You've entered a nebula-rich sector. You may put a few light years on the fleet, but that's only useful if you make it out the other side.</text>
       <text>Thanks to the high nebula density of this sector very little of it has been charted, and rumours of what lurks in the depths abound.</text>
-      <text>The gases that make up the nebulas in this sector threaten to impair your systems; but you have to press on.</text>
+      <text>The gases that make up the nebulae in this sector threaten to impair your systems; but you have to press on.</text>
     </textList>
   </event>
 
@@ -494,7 +498,7 @@
     <text>TIP: Fuel - Every jump consumes one unit of fuel, so keep an eye on your reserves. Buy fuel at stores to avoid being left stranded.</text>
     <text>TIP: Sound - Go into the options menu to turn on or off the sound effects and music.</text>
     <text>TIP: Asteroids - Fighting in asteroid fields is dangerous, but use it to your advantage. Take out enemy Shields and let the rocks take care of the rest.</text>
-    <text>TIP: Nebulas - Passing through a Nebula will allow you to temporarily slow down the fleet advancement but they contain their own unique dangers.</text>
+    <text>TIP: Nebula - Passing through a Nebula will allow you to temporarily slow down the fleet advancement but they contain their own unique dangers.</text>
     <text>TIP: Solar Flares - Solar flares will cause hull damage in addition to starting fires. Make sure your shields are up to help mitigate this effect.</text>
     <text>TIP: Score - Your score is based on how many ships you defeat, the number of beacons explored, and your total scrap collection.</text>
     <text>TIP: Augmentations - Your ship can only hold 3 augmentations. They provide unique benefits to a system, the crew or the entire ship.</text>

@@ -8,7 +8,7 @@
     <class>Slug Cruiser</class>
     <name>Man of War</name>
     <unlock>One of the Slug ships must know something about this advanced cruiser. Perhaps you can "convince" them to tell you.</unlock>
-    <desc>Designed for use inside nebulas, this cruiser lacks sensors and relies instead on the guile and cunning of the Slugs.</desc>
+    <desc>Designed for use inside nebula, this cruiser lacks sensors and relies instead on the guile and cunning of the Slugs.</desc>
     <systemList>
       <battery power="1" room="9" start="false" img="room_battery_10"/>
       <cloaking power="1" room="2" start="false" img="room_cloaking_6"/>

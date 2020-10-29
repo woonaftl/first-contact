@@ -1,12 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
   <eventList name="NEBULA_NOSHIP_SLUG">
+    <event load="SLUG_TRADER_FUEL"/>
+    <event load="SLUG_TRADER_MISSILES"/>
+    <event load="SLUG_TRADER_DRONEPARTS"/>
+    <event load="SLUG_TRADER_AUGMENT"/>
     <event load="SLUG_DISTRESS_QUESTION"/>
     <event load="SLUG_DISTRESS_RESCUE"/>
     <event load="QUEST_SLUG_PIRATE_TRAP"/>
     <event load="NEBULA_BATTLEFIELD"/>
     <event load="SLUG_SNEAKY_THIEF"/>
   </eventList>
+
+  <event name="SLUG_TRADER_FUEL" unique="true">
+    <text>This area of the nebula seems entirely empty until a small Slug transport and its escorts emerges suddenly from through the clouds. The Slugs offer some fuel in exchange for scrap.</text>
+    <environment type="nebula"/>
+    <choice>
+      <text>Buy fuel.</text>
+      <event>
+        <text>You transfer the scrap and receive some fuel.</text>
+        <item_modify>
+          <item type="scrap" min="-18" max="-15"/>
+          <item type="fuel" min="6" max="7"/>
+        </item_modify>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Decline.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <event name="SLUG_TRADER_MISSILES" unique="true">
+    <text>A slug military station advertises weaponry at ridiculous prices. You can afford to buy the ammunition though.</text>
+    <environment type="nebula"/>
+    <choice>
+      <text>Buy missiles.</text>
+      <event>
+        <text>While the Slugs seemed sketchy at first, their missiles proved to be in excellent condition.</text>
+        <item_modify>
+          <item type="scrap" min="-18" max="-15"/>
+          <item type="missiles" min="8" max="10"/>
+        </item_modify>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Decline.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <event name="SLUG_TRADER_DRONEPARTS" unique="true">
+    <text>There are a number of small stations for travellers in the area, lit up by guiding lights and advertisements. One of the docked Slug ships contacts you and offers to trade a cargo of drone parts for scrap.</text>
+    <environment type="nebula"/>
+    <choice>
+      <text>Buy drone parts.</text>
+      <event>
+        <text>You transfer the scrap and receive several drone parts.</text>
+        <item_modify>
+          <item type="scrap" min="-18" max="-15"/>
+          <item type="drones" min="5" max="6"/>
+        </item_modify>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Decline.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <event name="SLUG_TRADER_AUGMENT" unique="true">
+    <text>A lonely Slug trading station is hidden inside nebula gases. Having found it, you can't resist checking what the Slugs offer for sale.</text>
+    <environment type="nebula"/>
+    <choice>
+      <text>Buy an augment.</text>
+      <event>
+        <text>The Slugs at the station proved to be honest merchants. The newly bought augmentation is already installed on your ship.</text>
+        <item_modify>
+          <item type="scrap" min="-25" max="-21"/>
+        </item_modify>
+        <augment name="RANDOM"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Decline.</text>
+      <event/>
+    </choice>
+  </event>
 
   <event name="SLUG_DISTRESS_QUESTION" unique="true">
     <environment type="nebula"/>
@@ -371,7 +451,7 @@
       <text>Say ABADOTH.</text>
       <event>
         <text>There is a moment of silence, and the ship's captain solemnly thanks you for the information. He wishes you well on your journey, and he offers several upgrades to assist you in exchange for your service to the Zoltan race.</text>
-      <autoReward level="HIGH">stuff</autoReward>
+        <autoReward level="HIGH">stuff</autoReward>
       </event>
     </choice>
     <choice hidden="true">

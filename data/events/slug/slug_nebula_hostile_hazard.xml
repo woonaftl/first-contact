@@ -2,6 +2,11 @@
 <FTL>
   <eventList name="NEBULA_HOSTILE_HAZARD_SLUG">
     <event load="STORM_SLUG_FIGHT"/>
+    <event load="STORM_SLUG_FIGHT_EXTORT_SCRAP"/>
+    <event load="STORM_SLUG_FIGHT_EXTORT_CREW"/>
+    <event load="STORM_SLUG_AUTO_FIGHT"/>
+    <event load="STORM_SLUG_MANTIS_FIGHT"/>
+    <event load="STORM_SLUG_CHOOSE_DEATH"/>
   </eventList>
 
   <event name="STORM_SLUG_FIGHT">
@@ -13,5 +18,100 @@
     </textList>
     <ship load="JELLY" hostile="true"/>
     <environment type="storm"/>
+  </event>
+
+  <event name="STORM_SLUG_FIGHT_EXTORT_SCRAP" unique="true">
+    <text>A small Slug ship contacts you: "This sssection of nebula is too dangerousss. Let us protect you from the posssible hazards. For some ssscrap."</text>
+    <ship load="JELLY" hostile="false"/>
+    <environment type="storm"/>
+    <choice>
+      <text>Pay the Slugs to protect you.</text>
+      <event>
+        <text>These Slugs seem too nice not to oblige them. They gladly protect your ship until your FTL drive is ready for next jump.</text>
+        <item_modify>
+          <item type="scrap" min="-25" max="-20"/>
+        </item_modify>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Attack.</text>
+      <event>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+  </event>
+
+  <event name="STORM_SLUG_FIGHT_EXTORT_CREW" unique="true">
+    <text>A combat-ready Slug ship is waiting for civilians deep inside the hazardous nebula. "Sssend over one of your ssslaves or die."</text>
+    <ship load="JELLY" hostile="false"/>
+    <environment type="storm"/>
+    <choice>
+      <text>Give up a crewmember.</text>
+      <event>
+        <text>Your crewmember obeys. This is a sad day when Federation has to sacrifice their own people to stay alive.</text>
+        <removeCrew>
+          <clone>false</clone>
+          <text>You briefly consider cloning a replacement, but decide to respect the Federation laws regarding simultaneous duplicates.</text>
+        </removeCrew>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>These are not slaves, but my siblings. Attack!</text>
+      <event>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+  </event>
+
+  <event name="STORM_SLUG_AUTO_FIGHT" unique="true">
+    <text>A Rebel automated scout is stationed here, undoubtedly waiting for you. Either the Slugs and the Rebels are collaborating or this turbulent nebula section has zero value to the Slugs.</text>
+    <ship load="REBEL_AUTO" hostile="true"/>
+    <environment type="storm"/>
+  </event>
+
+  <event name="STORM_SLUG_CHOOSE_DEATH" unique="true">
+    <text>You are immediately hailed by a dangerous looking ship guarding a station. "I'm feeling generouss today. I shall allow you to choose your own death. Which do you like leasst: shields, oxygen, or weaponsss?"</text>
+    <environment type="storm"/>
+    <choice hidden="true">
+      <text>Shields.</text>
+      <event>
+        <text>"Very good then!" Your shield power suddenly drops and they charge.</text>
+        <ship load="JELLY_STATUS" hostile="true"/>
+        <status type="limit" target="player" system="shields" amount="0"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Oxygen.</text>
+      <event>
+        <text>"A being that would choose sssuffocation? Who am I to judge..." Your life support is sabatoged and they move in to attack.</text>
+        <ship load="JELLY_STATUS" hostile="true"/>
+        <status type="limit" target="player" system="oxygen" amount="0"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Weapons.</text>
+      <event>
+        <text>"Your acceptance of death is almosst admirable... Almosst." Your weapons system registers a hacking module. You hardly have time to respond before they attack.</text>
+        <ship load="JELLY_STATUS" hostile="true"/>
+        <status type="limit" target="player" system="weapons" amount="0"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Offer 35 scrap to leave you alone.</text>
+      <event>
+        <text>"I really am feeling generousss..." They take the scrap and leave.</text>
+        <item_modify>
+          <item type="scrap" min="-35" max="-35"/>
+        </item_modify>
+      </event>
+    </choice>
+    <choice hidden="true" req="hacking">
+      <text>(Hacking System) Counter any hack attempt.</text>
+      <event>
+        <text>"Sssilence won't protect you. I'll make the choice mysself... Wait. Why isn't this working?" You cut transmission and move in to attack.</text>
+        <ship load="JELLY_STATUS" hostile="true"/>
+        <status type="limit" target="player" system="hacking" amount="0"/>
+      </event>
+    </choice>
   </event>
 </FTL>

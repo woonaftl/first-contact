@@ -18,18 +18,19 @@
       <pilot power="1" room="0" start="true" img="room_pilot_2"/>
       <sensors power="1" room="7" start="true"/>
       <shields power="2" room="3" start="true" img="room_shields_3"/>
-      <teleporter power="1" room="5" start="true"/>
+      <teleporter power="1" room="5" start="false"/>
       <weapons power="1" room="10" start="true" img="room_weapons_5"/>
     </systemList>
     <weaponSlots>4</weaponSlots>
     <droneSlots>2</droneSlots>
-    <weaponList count="1" missiles="18">
-      <weapon name="MISSILES_2"/>
+    <weaponList count="2" missiles="0">
+      <weapon name="SPAWNER_2"/>
+      <weapon name="SPAWNER_2"/>
     </weaponList>
     <aug name="GREENHOUSE_LOCKED"/>
     <health amount="30"/>
     <maxPower amount="6"/>
-    <crewCount amount="4" class="orchid"/>
+    <crewCount amount="3" class="orchid"/>
     <shieldImage>stealth</shieldImage>
     <cloakImage>orchid_cruiser</cloakImage>
   </shipBlueprint>
@@ -47,7 +48,7 @@
       <engines power="2" room="14" start="true" img="room_engines_8"/>
       <hacking power="1" room="10" start="false" img="room_hacking_6"/>
       <medbay power="1" room="7" start="false" img="room_medbay_3"/>
-      <mind power="1" room="12" start="false" img="room_mind_5"/>
+      <mind power="1" room="12" start="true" img="room_mind_5"/>
       <oxygen power="1" room="13" start="true" img="room_oxygen_17"/>
       <pilot power="1" room="0" start="true" img="room_pilot"/>
       <sensors power="1" room="8" start="true" img="room_sensors_7"/>
@@ -57,11 +58,14 @@
     </systemList>
     <weaponSlots>4</weaponSlots>
     <droneSlots>2</droneSlots>
-    <weaponList count="0" missiles="0"/>
+    <weaponList count="1" missiles="0">
+      <weapon name="SPAWNER_4"/>
+    </weaponList>
     <aug name="GREENHOUSE_LOCKED"/>
     <health amount="30"/>
     <maxPower amount="6"/>
-    <crewCount amount="3" class="orchid"/>
+    <crewCount amount="1" class="slug"/>
+    <crewCount amount="2" class="orchid"/>
     <shieldImage>stealth</shieldImage>
     <cloakImage>orchid_cruiser</cloakImage>
   </shipBlueprint>
@@ -85,16 +89,20 @@
       <pilot power="1" room="0" start="true" img="room_pilot_2"/>
       <sensors power="1" room="10" start="true" img="room_sensors"/>
       <shields power="2" room="6" start="true" img="room_shields"/>
-      <teleporter power="1" room="8" start="false"/>
+      <teleporter power="1" room="8" start="true"/>
       <weapons power="1" room="7" start="true" img="room_weapons"/>
     </systemList>
     <weaponSlots>4</weaponSlots>
     <droneSlots>2</droneSlots>
-    <weaponList count="0" missiles="0"/>
+    <weaponList count="1" missiles="18">
+      <weapon name="MISSILES_SPAWNER"/>
+    </weaponList>
     <aug name="GREENHOUSE_LOCKED"/>
     <health amount="30"/>
     <maxPower amount="6"/>
-    <crewCount amount="3" class="orchid"/>
+    <crewCount amount="2" class="orchid"/>
+    <crewCount amount="1" class="rock"/>
+    <crewCount amount="1" class="orchid"/>
     <shieldImage>stealth</shieldImage>
     <cloakImage>orchid_cruiser_strawberry</cloakImage>
   </shipBlueprint>

@@ -22,7 +22,7 @@
     <textList name="SLUG_PIRATE">
       <text>There appears to be a pirate ship nearby. Be on your guard; anyone trying to hunt in Slug territory is either formidable or deeply stupid, and in space, either can be dangerous.</text>
       <text>"We knew anyone foolish enough to try and sneak through a Slug nebula would stick to open space. Yield your goods and we may let you live." You cut the transmission in lieu of a response.</text>
-      <text>Before you can take a moment's rest from the ever present nebulas in this sector, a pirate ship appears behind you and opens fire.</text>
+      <text>Before you can take a moment's rest from the ever present nebula in this sector, a pirate ship appears behind you and opens fire.</text>
     </textList>
     <ship load="PIRATE" hostile="true"/>
   </event>

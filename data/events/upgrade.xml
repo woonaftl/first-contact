@@ -419,6 +419,39 @@ Tip: Upgraded weapons require 1 less power and charge faster, than stock weapons
         </choice>
       </event>
     </choice>
+    <choice req="SPAWNER_2" hidden="true">
+      <text>Risk it: ask to upgrade NotFlak Mark I.</text>
+      <event>
+        <text>The pirates have taken your weapon to their station to install necessary modifications.</text>
+        <remove name="SPAWNER_2"/>
+        <choice hidden="true">
+          <text id="continue"/>
+          <event load="UPGRADE_FREE_FAKE_WEAPON_LIST"/>
+        </choice>
+      </event>
+    </choice>
+    <choice req="SPAWNER_4" hidden="true">
+      <text>Risk it: ask to upgrade NotFlak Mark II.</text>
+      <event>
+        <text>The pirates have taken your weapon to their station to install necessary modifications.</text>
+        <remove name="SPAWNER_4"/>
+        <choice hidden="true">
+          <text id="continue"/>
+          <event load="UPGRADE_FREE_FAKE_WEAPON_LIST"/>
+        </choice>
+      </event>
+    </choice>
+    <choice req="MISSILES_SPAWNER" hidden="true">
+      <text>Risk it: ask to upgrade Gemini Missiles.</text>
+      <event>
+        <text>The pirates have taken your weapon to their station to install necessary modifications.</text>
+        <remove name="MISSILES_SPAWNER"/>
+        <choice hidden="true">
+          <text id="continue"/>
+          <event load="UPGRADE_FREE_FAKE_WEAPON_LIST"/>
+        </choice>
+      </event>
+    </choice>
     <choice req="COMBAT_1" hidden="true">
       <text>Risk it: ask to upgrade Combat Drone Mark I.</text>
       <event>
@@ -951,6 +984,39 @@ Tip: Upgraded weapons require 1 less power and charge faster, than stock weapons
       <event>
         <text>The pirates have taken your weapon to their station to install necessary modifications.</text>
         <remove name="MISSILES_CHARGE_HEAVY"/>
+        <choice hidden="true">
+          <text id="continue"/>
+          <event load="UPGRADE_FREE_FAKE_WEAPON_LIST"/>
+        </choice>
+      </event>
+    </choice>
+    <choice req="SPAWNER_2" hidden="true">
+      <text>Risk it: ask to upgrade NotFlak Mark I.</text>
+      <event>
+        <text>The pirates have taken your weapon to their station to install necessary modifications.</text>
+        <remove name="SPAWNER_2"/>
+        <choice hidden="true">
+          <text id="continue"/>
+          <event load="UPGRADE_FREE_FAKE_WEAPON_LIST"/>
+        </choice>
+      </event>
+    </choice>
+    <choice req="SPAWNER_4" hidden="true">
+      <text>Risk it: ask to upgrade NotFlak Mark II.</text>
+      <event>
+        <text>The pirates have taken your weapon to their station to install necessary modifications.</text>
+        <remove name="SPAWNER_4"/>
+        <choice hidden="true">
+          <text id="continue"/>
+          <event load="UPGRADE_FREE_FAKE_WEAPON_LIST"/>
+        </choice>
+      </event>
+    </choice>
+    <choice req="MISSILES_SPAWNER" hidden="true">
+      <text>Risk it: ask to upgrade Gemini Missiles.</text>
+      <event>
+        <text>The pirates have taken your weapon to their station to install necessary modifications.</text>
+        <remove name="MISSILES_SPAWNER"/>
         <choice hidden="true">
           <text id="continue"/>
           <event load="UPGRADE_FREE_FAKE_WEAPON_LIST"/>
@@ -1572,6 +1638,42 @@ Tip: Upgraded weapons require 1 less power and charge faster, than stock weapons
         </choice>
       </event>
     </choice>
+    <choice req="SPAWNER_2" hidden="true">
+      <text>Risk it: ask to upgrade NotFlak Mark I.</text>
+      <event>
+        <text>While pirates looked sketchy at first, they installed some newest modifications to your weapon making it charge faster and use less power.</text>
+        <remove name="SPAWNER_2"/>
+        <weapon name="SPAWNER_2_UPGRADED"/>
+        <choice hidden="true">
+          <text id="continue"/>
+          <event load="UPGRADE_FREE_TRUE_WEAPON_LIST"/>
+        </choice>
+      </event>
+    </choice>
+    <choice req="SPAWNER_4" hidden="true">
+      <text>Risk it: ask to upgrade NotFlak Mark II.</text>
+      <event>
+        <text>While pirates looked sketchy at first, they installed some newest modifications to your weapon making it charge faster and use less power.</text>
+        <remove name="SPAWNER_4"/>
+        <weapon name="SPAWNER_4_UPGRADED"/>
+        <choice hidden="true">
+          <text id="continue"/>
+          <event load="UPGRADE_FREE_TRUE_WEAPON_LIST"/>
+        </choice>
+      </event>
+    </choice>
+    <choice req="MISSILES_SPAWNER" hidden="true">
+      <text>Risk it: ask to upgrade Gemini Missiles.</text>
+      <event>
+        <text>While pirates looked sketchy at first, they installed some newest modifications to your weapon making it charge faster and use less power.</text>
+        <remove name="MISSILES_SPAWNER"/>
+        <weapon name="MISSILES_SPAWNER_UPGRADED"/>
+        <choice hidden="true">
+          <text id="continue"/>
+          <event load="UPGRADE_FREE_TRUE_WEAPON_LIST"/>
+        </choice>
+      </event>
+    </choice>
     <choice req="COMBAT_1" hidden="true">
       <text>Risk it: ask to upgrade Combat Drone Mark I.</text>
       <event>
@@ -2152,6 +2254,42 @@ Tip: Upgraded weapons require 1 less power and charge faster, than stock weapons
         <text>While pirates looked sketchy at first, they installed some newest modifications to your weapon making it charge faster and use less power.</text>
         <remove name="MISSILES_CHARGE_HEAVY"/>
         <weapon name="MISSILES_CHARGE_HEAVY_UPGRADED"/>
+        <choice hidden="true">
+          <text id="continue"/>
+          <event load="UPGRADE_FREE_TRUE_WEAPON_LIST"/>
+        </choice>
+      </event>
+    </choice>
+    <choice req="SPAWNER_2" hidden="true">
+      <text>Risk it: ask to upgrade NotFlak Mark I.</text>
+      <event>
+        <text>While pirates looked sketchy at first, they installed some newest modifications to your weapon making it charge faster and use less power.</text>
+        <remove name="SPAWNER_2"/>
+        <weapon name="SPAWNER_2_UPGRADED"/>
+        <choice hidden="true">
+          <text id="continue"/>
+          <event load="UPGRADE_FREE_TRUE_WEAPON_LIST"/>
+        </choice>
+      </event>
+    </choice>
+    <choice req="SPAWNER_4" hidden="true">
+      <text>Risk it: ask to upgrade NotFlak Mark II.</text>
+      <event>
+        <text>While pirates looked sketchy at first, they installed some newest modifications to your weapon making it charge faster and use less power.</text>
+        <remove name="SPAWNER_4"/>
+        <weapon name="SPAWNER_4_UPGRADED"/>
+        <choice hidden="true">
+          <text id="continue"/>
+          <event load="UPGRADE_FREE_TRUE_WEAPON_LIST"/>
+        </choice>
+      </event>
+    </choice>
+    <choice req="MISSILES_SPAWNER" hidden="true">
+      <text>Risk it: ask to upgrade Gemini Missiles.</text>
+      <event>
+        <text>While pirates looked sketchy at first, they installed some newest modifications to your weapon making it charge faster and use less power.</text>
+        <remove name="MISSILES_SPAWNER"/>
+        <weapon name="MISSILES_SPAWNER_UPGRADED"/>
         <choice hidden="true">
           <text id="continue"/>
           <event load="UPGRADE_FREE_TRUE_WEAPON_LIST"/>
@@ -2787,6 +2925,39 @@ Tip: Upgraded weapons require 1 less power and charge faster, than stock weapons
         </item_modify>
         <remove name="MISSILES_CHARGE_HEAVY"/>
         <weapon name="MISSILES_CHARGE_HEAVY_UPGRADED"/>
+      </event>
+    </choice>
+    <choice req="SPAWNER_2">
+      <text>Upgrade NotFlak Mark I.</text>
+      <event>
+        <text>The engineers at the factory upgraded your weapon. It uses less power now, and charges faster.</text>
+        <item_modify>
+          <item type="scrap" min="-80" max="-60"/>
+        </item_modify>
+        <remove name="SPAWNER_2"/>
+        <weapon name="SPAWNER_2_UPGRADED"/>
+      </event>
+    </choice>
+    <choice req="SPAWNER_4">
+      <text>Upgrade NotFlak Mark II.</text>
+      <event>
+        <text>The engineers at the factory upgraded your weapon. It uses less power now, and charges faster.</text>
+        <item_modify>
+          <item type="scrap" min="-80" max="-60"/>
+        </item_modify>
+        <remove name="SPAWNER_4"/>
+        <weapon name="SPAWNER_4_UPGRADED"/>
+      </event>
+    </choice>
+    <choice req="MISSILES_SPAWNER">
+      <text>Upgrade Gemini Missiles.</text>
+      <event>
+        <text>The engineers at the factory upgraded your weapon. It uses less power now, and charges faster.</text>
+        <item_modify>
+          <item type="scrap" min="-80" max="-60"/>
+        </item_modify>
+        <remove name="MISSILES_SPAWNER"/>
+        <weapon name="MISSILES_SPAWNER_UPGRADED"/>
       </event>
     </choice>
     <choice req="COMBAT_1">
@@ -3470,6 +3641,51 @@ Tip: Upgraded weapons require 1 less power and charge faster, than stock weapons
         <weapon name="MISSILES_CHARGE_HEAVY_UPGRADED"/>
       </event>
     </choice>
+    <choice req="SPAWNER_2">
+      <text>Upgrade NotFlak Mark I.</text>
+      <event>
+        <text>Your weapon is upgraded at the scientific station. It uses less power now, and charges faster.</text>
+        <item_modify>
+          <item type="scrap" min="-40" max="-30"/>
+        </item_modify>
+        <removeCrew>
+          <clone>false</clone>
+          <text>Since your lost crewmember is still alive, you cannot clone them.</text>
+        </removeCrew>
+        <remove name="SPAWNER_2"/>
+        <weapon name="SPAWNER_2_UPGRADED"/>
+      </event>
+    </choice>
+    <choice req="SPAWNER_4">
+      <text>Upgrade NotFlak Mark II.</text>
+      <event>
+        <text>Your weapon is upgraded at the scientific station. It uses less power now, and charges faster.</text>
+        <item_modify>
+          <item type="scrap" min="-40" max="-30"/>
+        </item_modify>
+        <removeCrew>
+          <clone>false</clone>
+          <text>Since your lost crewmember is still alive, you cannot clone them.</text>
+        </removeCrew>
+        <remove name="SPAWNER_4"/>
+        <weapon name="SPAWNER_4_UPGRADED"/>
+      </event>
+    </choice>
+    <choice req="MISSILES_SPAWNER">
+      <text>Upgrade Gemini Missiles.</text>
+      <event>
+        <text>Your weapon is upgraded at the scientific station. It uses less power now, and charges faster.</text>
+        <item_modify>
+          <item type="scrap" min="-40" max="-30"/>
+        </item_modify>
+        <removeCrew>
+          <clone>false</clone>
+          <text>Since your lost crewmember is still alive, you cannot clone them.</text>
+        </removeCrew>
+        <remove name="MISSILES_SPAWNER"/>
+        <weapon name="MISSILES_SPAWNER_UPGRADED"/>
+      </event>
+    </choice>
     <choice req="COMBAT_1">
       <text>Upgrade Combat Drone Mark I.</text>
       <event>
@@ -4091,6 +4307,42 @@ Tip: Upgraded weapons require 1 less power and charge faster, than stock weapons
         <weapon name="MISSILES_CHARGE_HEAVY_UPGRADED"/>
       </event>
     </choice>
+    <choice req="SPAWNER_2">
+      <text>Upgrade NotFlak Mark I.</text>
+      <event>
+        <text>Your weapon is upgraded at the automated station. It uses less power now, and charges faster.</text>
+        <item_modify>
+          <item type="scrap" min="-40" max="-30"/>
+          <item type="drones" min="-12" max="-8"/>
+        </item_modify>
+        <remove name="SPAWNER_2"/>
+        <weapon name="SPAWNER_2_UPGRADED"/>
+      </event>
+    </choice>
+    <choice req="SPAWNER_4">
+      <text>Upgrade NotFlak Mark II.</text>
+      <event>
+        <text>Your weapon is upgraded at the automated station. It uses less power now, and charges faster.</text>
+        <item_modify>
+          <item type="scrap" min="-40" max="-30"/>
+          <item type="drones" min="-12" max="-8"/>
+        </item_modify>
+        <remove name="SPAWNER_4"/>
+        <weapon name="SPAWNER_4_UPGRADED"/>
+      </event>
+    </choice>
+    <choice req="MISSILES_SPAWNER">
+      <text>Upgrade Gemini Missiles.</text>
+      <event>
+        <text>Your weapon is upgraded at the automated station. It uses less power now, and charges faster.</text>
+        <item_modify>
+          <item type="scrap" min="-40" max="-30"/>
+          <item type="drones" min="-12" max="-8"/>
+        </item_modify>
+        <remove name="MISSILES_SPAWNER"/>
+        <weapon name="MISSILES_SPAWNER_UPGRADED"/>
+      </event>
+    </choice>
     <choice req="COMBAT_1">
       <text>Upgrade Combat Drone Mark I.</text>
       <event>
@@ -4676,6 +4928,42 @@ Tip: Upgraded weapons require 1 less power and charge faster, than stock weapons
         <weapon name="MISSILES_CHARGE_HEAVY_UPGRADED"/>
       </event>
     </choice>
+    <choice req="SPAWNER_2">
+      <text>Upgrade NotFlak Mark I.</text>
+      <event>
+        <text>Your weapon is upgraded. It uses less power now, and charges faster. The friendly ship jumps away.</text>
+        <item_modify>
+          <item type="scrap" min="-40" max="-30"/>
+          <item type="fuel" min="-12" max="-8"/>
+        </item_modify>
+        <remove name="SPAWNER_2"/>
+        <weapon name="SPAWNER_2_UPGRADED"/>
+      </event>
+    </choice>
+    <choice req="SPAWNER_4">
+      <text>Upgrade NotFlak Mark II.</text>
+      <event>
+        <text>Your weapon is upgraded. It uses less power now, and charges faster. The friendly ship jumps away.</text>
+        <item_modify>
+          <item type="scrap" min="-40" max="-30"/>
+          <item type="fuel" min="-12" max="-8"/>
+        </item_modify>
+        <remove name="SPAWNER_4"/>
+        <weapon name="SPAWNER_4_UPGRADED"/>
+      </event>
+    </choice>
+    <choice req="MISSILES_SPAWNER">
+      <text>Upgrade Gemini Missiles.</text>
+      <event>
+        <text>Your weapon is upgraded. It uses less power now, and charges faster. The friendly ship jumps away.</text>
+        <item_modify>
+          <item type="scrap" min="-40" max="-30"/>
+          <item type="fuel" min="-12" max="-8"/>
+        </item_modify>
+        <remove name="MISSILES_SPAWNER"/>
+        <weapon name="MISSILES_SPAWNER_UPGRADED"/>
+      </event>
+    </choice>
     <choice req="COMBAT_1">
       <text>Upgrade Combat Drone Mark I.</text>
       <event>
@@ -5259,6 +5547,42 @@ Tip: Upgraded weapons require 1 less power and charge faster, than stock weapons
         </item_modify>
         <remove name="MISSILES_CHARGE_HEAVY"/>
         <weapon name="MISSILES_CHARGE_HEAVY_UPGRADED"/>
+      </event>
+    </choice>
+    <choice req="SPAWNER_2">
+      <text>Upgrade NotFlak Mark I.</text>
+      <event>
+        <text>Your weapon is upgraded. It uses less power now, and charges faster.</text>
+        <item_modify>
+          <item type="scrap" min="-35" max="-25"/>
+          <item type="missiles" min="-20" max="-15"/>
+        </item_modify>
+        <remove name="SPAWNER_2"/>
+        <weapon name="SPAWNER_2_UPGRADED"/>
+      </event>
+    </choice>
+    <choice req="SPAWNER_4">
+      <text>Upgrade NotFlak Mark II.</text>
+      <event>
+        <text>Your weapon is upgraded. It uses less power now, and charges faster.</text>
+        <item_modify>
+          <item type="scrap" min="-35" max="-25"/>
+          <item type="missiles" min="-20" max="-15"/>
+        </item_modify>
+        <remove name="SPAWNER_4"/>
+        <weapon name="SPAWNER_4_UPGRADED"/>
+      </event>
+    </choice>
+    <choice req="MISSILES_SPAWNER">
+      <text>Upgrade Gemini Missiles.</text>
+      <event>
+        <text>Your weapon is upgraded. It uses less power now, and charges faster.</text>
+        <item_modify>
+          <item type="scrap" min="-35" max="-25"/>
+          <item type="missiles" min="-20" max="-15"/>
+        </item_modify>
+        <remove name="MISSILES_SPAWNER"/>
+        <weapon name="MISSILES_SPAWNER_UPGRADED"/>
       </event>
     </choice>
     <choice req="COMBAT_1">

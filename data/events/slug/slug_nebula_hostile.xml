@@ -100,6 +100,7 @@
   </event>
 
   <event name="NEBULA_SLUG_PIRATE" unique="true">
+    <!--TODO make sure it's actually not a Slug ship-->
     <text>You're surprised to find a ship without Slug markings stranded all the way out here, and move in to provide assistance. When you see the pirate insignia on the hull you quickly reconsider.</text>
     <ship load="PIRATE" hostile="false"/>
     <environment type="nebula"/>

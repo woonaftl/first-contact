@@ -6,9 +6,13 @@
     <name>MISSILES_3</name>
     <name>MISSILE_CHARGEGUN</name>
     <name>MISSILES_CHARGE_HEAVY</name>
+    <name>MISSILES_3_UPGRADED</name>
+    <name>MISSILE_CHARGEGUN_UPGRADED</name>
+    <name>MISSILES_CHARGE_HEAVY_UPGRADED</name>
   </blueprintList>
   <blueprintList name="WEAPONS_ALL_FIRE">
     <name>MISSILES_3</name>
+    <name>MISSILES_3_UPGRADED</name>
   </blueprintList>
   <blueprintList name="WEAPONS_MISSILES">
     <name>MISSILES_1</name>
@@ -16,6 +20,9 @@
     <name>MISSILES_3</name>
     <name>MISSILE_CHARGEGUN</name>
     <name>MISSILES_CHARGE_HEAVY</name>
+    <name>MISSILES_3_UPGRADED</name>
+    <name>MISSILE_CHARGEGUN_UPGRADED</name>
+    <name>MISSILES_CHARGE_HEAVY_UPGRADED</name>
   </blueprintList>
 
   <blueprintList name="WEAPONS_MISSILES_1">

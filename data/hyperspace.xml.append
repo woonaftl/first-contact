@@ -4,9 +4,9 @@
   <forceDlc enabled="true"/>
 
   <ships>
+    <ship name="PLAYER_SHIP_ORCHID" b="true" c="true"/>
     <ship name="PLAYER_SHIP_PAVONIAN" b="true" c="true"/>
     <ship name="PLAYER_SHIP_LIZARD" b="false" c="false"/>
-    <ship name="PLAYER_SHIP_ORCHID" b="false" c="false"/>
     <!--
     <customShip name="MANTIS_SCOUT_0">
       <crew>
@@ -284,6 +284,27 @@
       </shootingSounds>
     </race>
 
+    <race name="sprout">
+      <controllable>false</controllable>
+      <canRepair>false</canRepair>
+      <canSabotage>false</canSabotage>
+      <canMan>false</canMan>
+      <!--<canTeleport>false</canTeleport>-->
+      <!--<canClone>false</canClone>-->
+      <!--<hideIcon>false</hideIcon>-->
+      <maxHealth>50</maxHealth>
+      <fireDamageMultiplier>4.0</fireDamageMultiplier>
+      <animBase>mantis</animBase>
+      <deathSounds>
+        <deathSound>orchidDeath</deathSound>
+      </deathSounds>
+      <shootingSounds>
+        <shootingSound>orchidShoot1</shootingSound>
+        <shootingSound>orchidShoot2</shootingSound>
+        <shootingSound>orchidShoot3</shootingSound>
+      </shootingSounds>
+    </race>
+
     <race name="lizard">
       <passiveHealAmount>0.65</passiveHealAmount>
       <passiveHealDelay>4</passiveHealDelay>
@@ -412,10 +433,10 @@
   </augments>
 
   <events>
-  <!-- TODO special exit events for each sector
-	  <sector name="CIVILIAN_SECTOR">
-      <exitBeacon event="FINISH_BEACON" rebelEvent="FLEET_EASY_DLC" nebulaEvent="FINISH_BEACON_NEBULA"/>
-    </sector>-->
+    <!-- TODO special exit events for each sector
+      <sector name="CIVILIAN_SECTOR">
+        <exitBeacon event="FINISH_BEACON" rebelEvent="FLEET_EASY_DLC" nebulaEvent="FINISH_BEACON_NEBULA"/>
+      </sector>-->
     <event name="UPGRADE_FREE_FAKE">
       <preventQuest/>
       <checkCargo/>

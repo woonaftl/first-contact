@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <blueprintList name="WEAPONS_MISSILES_EVENTS">
+    <name>MISSILES_SPAWNER</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_MISSILES">
+    <name>MISSILES_SPAWNER</name>
+  </blueprintList>
+
+  <blueprintList name="WEAPONS_SPAWNER">
+    <name>SPAWNER_2</name>
+    <name>SPAWNER_4</name>
+  </blueprintList>
+
+  <blueprintList name="WEAPONS_SPAWNER_2">
+    <name>SPAWNER_2</name>
+  </blueprintList>
+  <blueprintList name="WEAPONS_SPAWNER_3">
+    <name>SPAWNER_4</name>
+  </blueprintList>
+
+  <!--TODO weapon sprites-->
+  <weaponBlueprint name="SPAWNER_2">
+    <type>BURST</type>
+    <flavorType>Physical Projectile Blast</flavorType>
+    <title>NotFlak Mark I</title>
+    <tip>tip_flak</tip>
+    <short>NotFlak I</short>
+    <desc>?</desc>
+    <tooltip>?</tooltip>
+    <radius>45</radius>
+    <damage>2</damage>
+    <shots>1</shots>
+    <drone_targetable>1</drone_targetable>
+    <sp>0</sp>
+    <spin>720</spin>
+    <fireChance>0</fireChance>
+    <breachChance>0</breachChance>
+    <cooldown>12</cooldown>
+    <power>2</power>
+    <cost>60</cost>
+    <bp>10</bp>
+    <speed>26</speed>
+    <rarity>0</rarity>
+    <projectiles>
+      <projectile count="2" fake="false">debris_large</projectile>
+    </projectiles>
+    <launchSounds>
+      <sound>flak</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>flakImpact1</sound>
+      <sound>flakImpact2</sound>
+      <sound>flakImpact3</sound>
+      <sound>flakImpact4</sound>
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>hitShield1</sound>
+      <sound>hitShield2</sound>
+      <sound>hitShield3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <weaponArt>flak_2</weaponArt>
+    <iconImage>flak</iconImage>
+  </weaponBlueprint>
+  <weaponBlueprintInherit name="SPAWNER_2_UPGRADED" base="SPAWNER_2">
+    <tip>tip_flak_upgraded</tip>
+    <title>NotFlak Mark I+</title>
+    <short>NotFlak I+</short>
+    <cooldown>11</cooldown>
+    <power>1</power>
+    <rarity>0</rarity>
+  </weaponBlueprintInherit>
+
+  <weaponBlueprint name="SPAWNER_4">
+    <type>BURST</type>
+    <flavorType>Physical Projectile Blast</flavorType>
+    <drone_targetable>1</drone_targetable>
+    <title>NotFlak Mark II</title>
+    <tip>tip_flak</tip>
+    <short>NotFlak II</short>
+    <desc>?</desc>
+    <tooltip>?</tooltip>
+    <radius>60</radius>
+    <damage>2</damage>
+    <shots>1</shots>
+    <sp>0</sp>
+    <spin>720</spin>
+    <fireChance>0</fireChance>
+    <breachChance>0</breachChance>
+    <cooldown>15</cooldown>
+    <power>3</power>
+    <cost>75</cost>
+    <bp>10</bp>
+    <speed>26</speed>
+    <rarity>0</rarity>
+    <projectiles>
+      <projectile count="4" fake="false">debris_large</projectile>
+    </projectiles>
+    <launchSounds>
+      <sound>flak</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>flakImpact1</sound>
+      <sound>flakImpact2</sound>
+      <sound>flakImpact3</sound>
+      <sound>flakImpact4</sound>
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>hitShield1</sound>
+      <sound>hitShield2</sound>
+      <sound>hitShield3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <weaponArt>flak_4</weaponArt>
+    <iconImage>flak</iconImage>
+  </weaponBlueprint>
+  <weaponBlueprintInherit name="SPAWNER_4_UPGRADED" base="SPAWNER_4">
+    <tip>tip_flak_upgraded</tip>
+    <title>NotFlak Mark II+</title>
+    <short>NotFlak II+</short>
+    <cooldown>14</cooldown>
+    <power>2</power>
+    <rarity>0</rarity>
+  </weaponBlueprintInherit>
+
+  <weaponBlueprint name="MISSILES_SPAWNER">
+    <type>MISSILES</type>
+    <tip>tip_missiles</tip>
+    <title>Gemini Missiles</title>
+    <short>Gemini</short>
+    <desc>?</desc>
+    <tooltip>?</tooltip>
+    <damage>2</damage>
+    <missiles>1</missiles>
+    <shots>2</shots>
+    <sp>5</sp>
+    <fireChance>0</fireChance>
+    <breachChance>0</breachChance>
+    <cooldown>13</cooldown>
+    <power>2</power>
+    <cost>40</cost>
+    <bp>5</bp>
+    <rarity>0</rarity>
+    <image>missile_2</image>
+    <launchSounds>
+      <sound>smallMissile1</sound>
+      <sound>smallMissile2</sound>
+    </launchSounds>
+    <hitShipSounds>
+      <sound>smallExplosion</sound>
+    </hitShipSounds>
+    <hitShieldSounds>
+      <sound>hitShield1</sound>
+      <sound>hitShield2</sound>
+      <sound>hitShield3</sound>
+    </hitShieldSounds>
+    <missSounds>
+      <sound>miss</sound>
+    </missSounds>
+    <weaponArt>missiles_1</weaponArt>
+    <iconImage>missile</iconImage>
+  </weaponBlueprint>
+  <weaponBlueprintInherit name="MISSILES_SPAWNER_UPGRADED" base="MISSILES_SPAWNER">
+    <tip>tip_missiles_upgraded</tip>
+    <title>Gemini Missiles+</title>
+    <short>Gemini+</short>
+    <cooldown>12</cooldown>
+    <power>1</power>
+    <rarity>0</rarity>
+  </weaponBlueprintInherit>
+</FTL>

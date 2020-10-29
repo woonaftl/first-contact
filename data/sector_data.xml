@@ -14,10 +14,10 @@
   </sectorType>
 
   <sectorType name="HOSTILE">
-    <!--<sector>LANIUS_WARZONE_SECTOR</sector>-->
+    <sector>LANIUS_WARZONE_SECTOR</sector>
     <!--<sector>LEPTOD_DIMMED_SECTOR</sector>-->
     <!--<sector>MANTIS_BROOD_SECTOR</sector>-->
-    <!--<sector>MANTIS_HUNTING_SECTOR</sector>-->
+    <sector>MANTIS_HUNTING_SECTOR</sector>
     <!--<sector>ORCHID_OVERGROWN_SECTOR</sector>-->
     <sector>PIRATE_SECTOR</sector>
     <sector>REBEL_FILLER_SECTOR</sector>
@@ -31,7 +31,7 @@
     <!--<sector>LIZARD_RUINS_SECTOR</sector>-->
     <sector>NEBULA_FILLER_SECTOR</sector>
     <sector>SLUG_HOME_SECTOR</sector>
-    <!--<sector>SLUG_HAZARD_SECTOR</sector>-->
+    <sector>SLUG_HAZARD_SECTOR</sector>
     <sector>ZOLTAN_HAZARD_SECTOR</sector>
   </sectorType>
 
@@ -52,7 +52,7 @@
       <track>milkyway</track>
       <track>lostship</track>
     </trackList>
-    <startEvent>START_BEACON</startEvent>
+    <startEvent>START_BEACON_SECTOR1</startEvent>
     <event name="STORE" min="1" max="1"/>
 
     <event name="ASTEROID_DERELICT_SHIP" min="1" max="1"/>
@@ -772,9 +772,9 @@
     <event name="NEBULA_SLUG_FIGHT_UNLOCK" min="1" max="1"/>
     <event name="DONOR_BLACK_RAVEN" min="1" max="1"/>
 
-    <event name="NEBULA_NOSHIP_SLUG" min="2" max="2"/>
-    <event name="NEBULA_NEUTRAL_SLUG" min="7" max="7"/>
-    <event name="NEBULA_HOSTILE_SLUG" min="4" max="4"/>
+    <event name="NEBULA_NOSHIP_SLUG" min="4" max="4"/>
+    <event name="NEBULA_NEUTRAL_SLUG" min="6" max="6"/>
+    <event name="NEBULA_HOSTILE_SLUG" min="3" max="3"/>
 
     <event name="NEUTRAL_SLUG" min="1" max="1"/>
     <event name="HOSTILE_SLUG" min="2" max="2"/>
@@ -801,13 +801,12 @@
       <blueprint name="BOMB_DELAY_BIO" rarity="3"/>
     </rarityList>
     <startEvent>START_BEACON_SLUG</startEvent>
-    <event name="NEBULA_STORE_SLUG" min="2" max="2"/>
-    <event name="UPGRADE_LIST_NEBULA" min="2" max="2"/>
+    <event name="NEBULA_STORE_SLUG" min="1" max="1"/>
+    <event name="UPGRADE_LIST_NEBULA" min="1" max="1"/>
 
-    <event name="NEBULA_HOSTILE_HAZARD_SLUG" min="4" max="4"/>
-    <event name="NEBULA_NOSHIP_SLUG" min="2" max="2"/>
-    <event name="NEBULA_NEUTRAL_SLUG" min="6" max="6"/>
-    <event name="NEBULA_HOSTILE_SLUG" min="3" max="3"/>
+    <event name="NEBULA_HOSTILE_HAZARD_SLUG" min="8" max="8"/>
+    <event name="NEBULA_NOSHIP_SLUG" min="5" max="5"/>
+    <event name="NEBULA_NEUTRAL_SLUG" min="4" max="4"/>
 
     <event name="NEUTRAL_SLUG" min="1" max="1"/>
     <event name="HOSTILE_SLUG" min="2" max="2"/>

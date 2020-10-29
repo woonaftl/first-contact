@@ -77,7 +77,9 @@
     <entry>Chain Ion scrap cost 55 to 45</entry>
     <entry>Chain Ion rarity 4 to 3</entry>
   </changelog>
-  <weaponBlueprint name="ION_CHAINGUN">
+  <!-- TODO number of projectiles increases with chain instead of damage -->
+  <!-- TODO chain ion 2, power 3, charge time 14, projectiles 3 up to 5 -->
+ <weaponBlueprint name="ION_CHAINGUN">
     <type>LASER</type>
     <title>Chain Ion</title>
     <short>Chain I.</short>
