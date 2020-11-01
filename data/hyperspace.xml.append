@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FTL>
+  <version>54</version>
+
   <hackingDroneFix enabled="true"/>
   <forceDlc enabled="true"/>
 
@@ -106,15 +108,6 @@
     <customShip name="PLAYER_SHIP_STEALTH_3">
       <crewLimit>6</crewLimit>
     </customShip>
-    <customShip name="PLAYER_SHIP_PAVONIAN">
-      <crewLimit>6</crewLimit>
-    </customShip>
-    <customShip name="PLAYER_SHIP_PAVONIAN_2">
-      <crewLimit>6</crewLimit>
-    </customShip>
-    <customShip name="PLAYER_SHIP_PAVONIAN_3">
-      <crewLimit>6</crewLimit>
-    </customShip>
   </ships>
 
   <crew>
@@ -205,7 +198,6 @@
       <deathEffect>
         <persDamage>1</persDamage>
         <friendlyFire>false</friendlyFire>
-        <shipFriendlyFire>false</shipFriendlyFire>
       </deathEffect>
     </race>-->
 
@@ -267,6 +259,57 @@
       <repairSounds>
         <repairSound>shrikeRepair</repairSound>
       </repairSounds>
+      <powerEffect>
+        <cooldown>30</cooldown>
+        <jumpCooldown>full</jumpCooldown>
+        <shipFriendlyFire>true</shipFriendlyFire>
+        <breachChance>10</breachChance>
+        <req type="enemy">
+          <maxHealth>70</maxHealth>
+        </req>
+        <buttonText>BREACH</buttonText>
+        <tooltip>Ready: Click to create a hull breach</tooltip>
+        <cooldownColor r="170" g="168" b="170"/>
+        <selfHealth>30.0</selfHealth>
+        <activateWhenReady enemiesOnly="true">true</activateWhenReady>
+      </powerEffect>
+    </race>
+
+    <race name="aquarian">
+      <maxHealth>70</maxHealth>
+      <!--
+      <deathSounds>
+        <deathSound>orchidDeath</deathSound>
+      </deathSounds>-->
+      <animBase>mantis</animBase>
+      <powerEffect>
+        <cooldown>30</cooldown>
+        <jumpCooldown>full</jumpCooldown>
+        <!--
+        <powerSounds>
+          <powerSound>lockdown1</powerSound>
+          <powerSound>lockdown2</powerSound>
+        </powerSounds>-->
+        <req type="enemy">
+          <maxHealth>25</maxHealth>
+        </req>
+        <buttonText>STEALTH</buttonText>
+        <tooltip>Ready: Click to become invisible and invulnerable</tooltip>
+        <cooldownColor r="0" g="110" b="155"/>
+        <!--<effectAnim>explosion_crystal</effectAnim>-->
+        <activateWhenReady enemiesOnly="true">true</activateWhenReady>
+        <temporaryEffect>
+          <duration>8</duration>
+          <cooldownColor r="100" g="210" b="255"/>
+          <!--
+          <finishSounds>
+            <finishSound>mindControlEnd</finishSound>
+          </finishSounds>-->
+          <!--<effectAnim>mindcontrol</effectAnim>-->
+          <invulnerable>true</invulnerable>
+          <animSheet baseVisible="false">aquarian_stealth</animSheet>
+        </temporaryEffect>
+      </powerEffect>
     </race>
 
     <race name="orchid">
@@ -315,62 +358,30 @@
     </race>
 
     <race name="pavonian">
-      <damageTakenMultiplier>2.0</damageTakenMultiplier>
+      <maxHealth>70</maxHealth>
       <!--
-      <deathSounds>
-        <deathSound>orchidDeath</deathSound>
-      </deathSounds>-->
+    <deathSounds>
+      <deathSound>orchidDeath</deathSound>
+    </deathSounds>-->
       <powerEffect>
         <cooldown>30</cooldown>
         <jumpCooldown>full</jumpCooldown>
-        <req>
-          <aiDisabled/>
+        <!--
+        <powerSounds>
+          <powerSound>lockdown1</powerSound>
+          <powerSound>lockdown2</powerSound>
+        </powerSounds>-->
+        <req type="enemy">
+          <maxHealth>40</maxHealth>
         </req>
-        <!--
-        <powerSounds>
-          <powerSound>lockdown1</powerSound>
-          <powerSound>lockdown2</powerSound>
-        </powerSounds>-->
-        <sysDamage>-1</sysDamage>
-        <friendlyFire>true</friendlyFire>
-        <shipFriendlyFire>true</shipFriendlyFire>
-        <buttonText>REPAIR</buttonText>
-        <tooltip>Ready: Click to repair a system</tooltip>
-        <cooldownColor r="240" g="220" b="120"/>
+        <buttonText>RESTORE</buttonText>
+        <tooltip>Ready: Click to restore health to self and allies</tooltip>
+        <cooldownColor r="255" g="180" b="220"/>
         <effectAnim>rainbow_spiral</effectAnim>
-        <animFrame>2</animFrame>
-      </powerEffect>
-    </race>
-
-    <race name="leptod">
-      <!--
-      <deathSounds>
-        <deathSound>orchidDeath</deathSound>
-      </deathSounds>-->
-      <animBase>rock</animBase>
-      <powerEffect>
-        <cooldown>30</cooldown>
-        <jumpCooldown>full</jumpCooldown>
-        <!--
-        <powerSounds>
-          <powerSound>lockdown1</powerSound>
-          <powerSound>lockdown2</powerSound>
-        </powerSounds>-->
-        <buttonText>STEALTH</buttonText>
-        <tooltip>Ready: Click to become invisible and invulnerable</tooltip>
-        <cooldownColor r="0" g="110" b="155"/>
-        <!--<effectAnim>explosion_crystal</effectAnim>-->
-        <temporaryEffect>
-          <duration>10</duration>
-          <cooldownColor r="100" g="210" b="255"/>
-          <!--
-          <finishSounds>
-            <finishSound>mindControlEnd</finishSound>
-          </finishSounds>-->
-          <!--<effectAnim>mindcontrol</effectAnim>-->
-          <invulnerable>true</invulnerable>
-          <animSheet baseVisible="false">leptod_stealth</animSheet>
-        </temporaryEffect>
+        <animFrame>3</animFrame>
+        <selfHealth>30.0</selfHealth>
+        <crewHealth>30.0</crewHealth>
+        <activateWhenReady enemiesOnly="true">true</activateWhenReady>
       </powerEffect>
     </race>
   </crew>

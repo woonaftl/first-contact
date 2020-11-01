@@ -559,8 +559,8 @@
       <environment type="PDS" target="enemy"/>
     </event>
   </eventList>
-  <ship name="REBEL_FEDERATION_PDS" auto_blueprint="SHIPS_REBEL_ELITE">
-    <escape chance="0.8" min="4" max="6">
+  <ship name="REBEL_FEDERATION_PDS" auto_blueprint="SHIPS_REBEL">
+    <escape chance="0.8" min="3" max="4">
       <text>After watching their squadron get destroyed, it looks like their leader is prepared to turn tail and run.</text>
     </escape>
     <gotaway>

@@ -279,33 +279,29 @@
     </systemList>
     <sector id="0">
       <weaponList missiles="0" system_power="3">
+        <weapon name="WEAPONS_LASER_2"/>
         <weapon name="WEAPONS_LASER_1"/>
-        <weapon name="WEAPONS_LASER_1"/>
-        <weapon name="WEAPONS_ION_1"/>
       </weaponList>
       <droneList drones="4"/>
     </sector>
     <sector id="1">
       <weaponList missiles="0" system_power="4">
         <weapon name="WEAPONS_LASER_2"/>
-        <weapon name="WEAPONS_LASER_1"/>
-        <weapon name="WEAPONS_ION_1"/>
+        <weapon name="WEAPONS_LASER_2"/>
       </weaponList>
       <droneList drones="4"/>
     </sector>
     <sector id="2">
       <weaponList missiles="0" system_power="4">
         <weapon name="WEAPONS_LASER_2"/>
-        <weapon name="WEAPONS_LASER_1"/>
-        <weapon name="WEAPONS_ION_1"/>
+        <weapon name="WEAPONS_LASER_2"/>
       </weaponList>
       <droneList drones="4"/>
     </sector>
     <sector id="3">
       <weaponList missiles="0" system_power="5">
+        <weapon name="WEAPONS_LASER_3"/>
         <weapon name="WEAPONS_LASER_2"/>
-        <weapon name="WEAPONS_LASER_1"/>
-        <weapon name="WEAPONS_ION_2"/>
       </weaponList>
       <droneList drones="4"/>
     </sector>

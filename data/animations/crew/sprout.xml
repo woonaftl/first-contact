@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <animSheet name="sprout" w="490" h="805" fw="35" fh="35">people/sprout_base.png</animSheet>
+  
+  <anim name="sprout_walk_down">
+    <sheet>sprout</sheet>
+    <desc length="4" x="0" y="22"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="sprout_walk_left">
+    <sheet>sprout</sheet>
+    <desc length="4" x="0" y="21"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="sprout_walk_right">
+    <sheet>sprout</sheet>
+    <desc length="4" x="0" y="20"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="sprout_walk_up">
+    <sheet>sprout</sheet>
+    <desc length="4" x="0" y="19"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="sprout_repair">
+    <sheet>sprout</sheet>
+    <desc length="9" x="0" y="18"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="sprout_type_down">
+    <sheet>sprout</sheet>
+    <desc length="4" x="0" y="17"/>
+    <time>0.75</time>
+  </anim>
+  <anim name="sprout_type_left">
+    <sheet>sprout</sheet>
+    <desc length="4" x="0" y="16"/>
+    <time>0.75</time>
+  </anim>
+  <anim name="sprout_type_right">
+    <sheet>sprout</sheet>
+    <desc length="4" x="0" y="15"/>
+    <time>0.75</time>
+  </anim>
+  <anim name="sprout_type_up">
+    <sheet>sprout</sheet>
+    <desc length="4" x="0" y="14"/>
+    <time>0.75</time>
+  </anim>
+
+  <anim name="sprout_fire_down">
+    <sheet>sprout</sheet>
+    <desc length="4" x="0" y="13"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="sprout_fire_left">
+    <sheet>sprout</sheet>
+    <desc length="4" x="0" y="12"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="sprout_fire_right">
+    <sheet>sprout</sheet>
+    <desc length="4" x="0" y="11"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="sprout_fire_up">
+    <sheet>sprout</sheet>
+    <desc length="4" x="0" y="10"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="sprout_punch_down">
+    <sheet>sprout</sheet>
+    <desc length="14" x="0" y="9"/>
+    <time>2.0</time>
+  </anim>
+  <anim name="sprout_punch_up">
+    <sheet>sprout</sheet>
+    <desc length="14" x="0" y="8"/>
+    <time>2.0</time>
+  </anim>
+
+  <anim name="sprout_shoot_down">
+    <sheet>sprout</sheet>
+    <desc length="5" x="0" y="7"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="sprout_shoot_left">
+    <sheet>sprout</sheet>
+    <desc length="5" x="0" y="6"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="sprout_shoot_right">
+    <sheet>sprout</sheet>
+    <desc length="5" x="0" y="5"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="sprout_shoot_up">
+    <sheet>sprout</sheet>
+    <desc length="5" x="0" y="4"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="sprout_teleport">
+    <sheet>sprout</sheet>
+    <desc length="9" x="0" y="3"/>
+    <time>0.5</time>
+  </anim>
+
+  <anim name="sprout_death_right">
+    <sheet>sprout</sheet>
+    <desc length="9" x="0" y="2"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="sprout_clone">
+    <sheet>sprout</sheet>
+    <desc length="7" x="0" y="1"/>
+    <time>0.75</time>
+  </anim>
+
+  <anim name="sprout_portrait">
+    <sheet>sprout</sheet>
+    <desc length="1" x="0" y="0"/>
+    <time>1</time>
+  </anim>
+</FTL>

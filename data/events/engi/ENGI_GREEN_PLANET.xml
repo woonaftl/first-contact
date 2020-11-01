@@ -89,10 +89,10 @@
                   <autoReward level="HIGH">stuff</autoReward>
                 </event>
               </choice>
-              <choice hidden="true" req="leptod">
-                <text>(Leptod) Sneak into the cave.</text>
+              <choice hidden="true" req="aquarian">
+                <text>(Aquarian) Sneak into the cave.</text>
                 <event>
-                  <text>The Leptod successfully sneaks into the cave using their cloak. Your crewmember picks up as much equipment as they can carry, choosing what they deem most valuable: everything shiny and of blue color.</text>
+                  <text>The Aquarian successfully sneaks into the cave using their cloak. Your crewmember picks up as much equipment as they can carry, choosing what they deem most valuable: everything shiny and of blue color.</text>
                   <autoReward level="HIGH">stuff</autoReward>
                 </event>
               </choice>

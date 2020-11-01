@@ -5,7 +5,7 @@
     <event load="ENGI_REBEL_FIGHT"/>
     <event load="ENGI_PIRATE_FIGHT"/>
     <event load="DISTRESS_ENGI_REBEL"/>
-    <event load="ENGI_LEPTOD_FIGHT"/>
+    <event load="ENGI_AQUARIAN_FIGHT"/>
   </eventList>
 
   <event name="ENGI_MANTIS_FIGHT">
@@ -100,14 +100,14 @@
     </choice>
   </event>
 
-  <event name="ENGI_LEPTOD_FIGHT" unique="true">
+  <event name="ENGI_AQUARIAN_FIGHT" unique="true">
     <!--text taken from ENGI_NOTHING event -->
     <text>The Engi seem to have avoided this particular node, along with every other life-form. You keep your eyes peeled for reasons why, but spin up the FTL without event.</text>
     <choice hidden="true">
       <text id="continue"/>
       <event>
-        <text>A hostile Leptod ship de-cloaks and attacks you with advanced weaponry, becoming undetectable again shortly.</text>
-        <ship load="LEPTOD_SHIP" hostile="true"/>
+        <text>A hostile Aquarian ship de-cloaks and attacks you with advanced weaponry, becoming undetectable again shortly.</text>
+        <ship load="AQUARIAN_SHIP" hostile="true"/>
       </event>
     </choice>
   </event>

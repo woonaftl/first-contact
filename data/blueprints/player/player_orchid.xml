@@ -19,13 +19,13 @@
       <sensors power="1" room="7" start="true"/>
       <shields power="2" room="3" start="true" img="room_shields_3"/>
       <teleporter power="1" room="5" start="false"/>
-      <weapons power="1" room="10" start="true" img="room_weapons_5"/>
+      <weapons power="2" room="10" start="true" img="room_weapons_5"/>
     </systemList>
     <weaponSlots>4</weaponSlots>
     <droneSlots>2</droneSlots>
     <weaponList count="2" missiles="0">
-      <weapon name="SPAWNER_2"/>
-      <weapon name="SPAWNER_2"/>
+      <weapon name="SPAWNER_2_UPGRADED"/>
+      <weapon name="SPAWNER_2_UPGRADED"/>
     </weaponList>
     <aug name="GREENHOUSE_LOCKED"/>
     <health amount="30"/>
@@ -54,16 +54,16 @@
       <sensors power="1" room="8" start="true" img="room_sensors_7"/>
       <shields power="2" room="6" start="true" img="room_shields_3"/>
       <teleporter power="1" room="3" start="false"/>
-      <weapons power="1" room="1" start="true" img="room_weapons_9"/>
+      <weapons power="2" room="1" start="true" img="room_weapons_9"/>
     </systemList>
     <weaponSlots>4</weaponSlots>
     <droneSlots>2</droneSlots>
     <weaponList count="1" missiles="0">
-      <weapon name="SPAWNER_4"/>
+      <weapon name="SPAWNER_4_UPGRADED"/>
     </weaponList>
     <aug name="GREENHOUSE_LOCKED"/>
     <health amount="30"/>
-    <maxPower amount="6"/>
+    <maxPower amount="7"/>
     <crewCount amount="1" class="slug"/>
     <crewCount amount="2" class="orchid"/>
     <shieldImage>stealth</shieldImage>
@@ -95,7 +95,7 @@
     <weaponSlots>4</weaponSlots>
     <droneSlots>2</droneSlots>
     <weaponList count="1" missiles="18">
-      <weapon name="MISSILES_SPAWNER"/>
+      <weapon name="MISSILES_SPAWNER_UPGRADED"/>
     </weaponList>
     <aug name="GREENHOUSE_LOCKED"/>
     <health amount="30"/>

@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <nameList race="human" sex="male">
+    <name>AJ Hager</name>
+    <name>Adnan</name>
+    <name>Alain</name>
+    <name>Alex Rigopulos</name>
+    <name>Andrew Fenn</name>
+    <name>Arries</name>
+    <name>Artyom</name>
+    <name>Atreyu</name>
+    <name>Berko</name>
+    <name>Bigby</name>
+    <name>Bjorn</name>
+    <name>Bomfy M</name>
+    <name>Borman</name>
+    <name>Bruce Geryk</name>
+    <name>Bruno</name>
+    <name>Bryan</name>
+    <name>Butters</name>
+    <name>Caio</name>
+    <name>CY Heng</name>
+    <name>Chris Malott</name>
+    <name>Chris Phillips</name>
+    <name>Colin</name>
+    <name short="Chriz">Christoph Z</name>
+    <name>Craig Dolan</name>
+    <name>Cremity</name>
+    <name>Davion</name>
+    <name>Declan</name>
+    <name>Dengler</name>
+    <name>Dermot</name>
+    <name>Diego</name>
+    <name>Dmitry</name>
+    <name>Dre Kozar</name>
+    <name>Eckman</name>
+    <name>Elnubnub</name>
+    <name>Enzo</name>
+    <name>Eoin</name>
+    <name>Eric</name>
+    <name>Fabio</name>
+    <name>Feras</name>
+    <name>Ferry</name>
+    <name>Filip</name>
+    <name>Firedihm</name>
+    <name>Fleischy</name>
+    <name>Frederic</name>
+    <name>GM Faux</name>
+    <name>Giles</name>
+    <name>Graeme</name>
+    <name>Graffin</name>
+    <name>Grozoly</name>
+    <name>Gumpo</name>
+    <name>Hassifa</name>
+    <name>Hector</name>
+    <name>Henrik Aasted</name>
+    <name>Hiroyuki</name>
+    <name>Hutz</name>
+    <name>Ibrahim</name>
+    <name>Ihlay Caris</name>
+    <name>Jack</name>
+    <name>James Pomeroy</name>
+    <name>Jan Magne</name>
+    <name>Jason Bovee</name>
+    <name>Jax</name>
+    <name>Jeff Baars</name>
+    <name>Joel</name>
+    <name>Johnny Maloney</name>
+    <name>Jon Caldwell</name>
+    <name>Jon</name>
+    <name>Jorlack</name>
+    <name>Jose</name>
+    <name>Josh Cubbin</name>
+    <name>Julian Rafn</name>
+    <name>Junpeng</name>
+    <name>Justin</name>
+    <name>Kadreal</name>
+    <name>Kapalka</name>
+    <name>Ken</name>
+    <name>Kevin</name>
+    <name>Kimitaka</name>
+    <name>King</name>
+    <name>Kirby</name>
+    <name>Kirkner</name>
+    <name>Kiwi</name>
+    <name>Kusy</name>
+    <name>Lagardi</name>
+    <name>Liam</name>
+    <name>Liu Jun</name>
+    <name>Logan Johnson</name>
+    <name>Lombard</name>
+    <name>Lorenzo</name>
+    <name>Luaan Ti</name>
+    <name>Ma Fan</name>
+    <name short="Magmar">Magmaros</name>
+    <name short="Mara">Maradine</name>
+    <name>Markand</name>
+    <name>Markel</name>
+    <name>Markus</name>
+    <name>Martin</name>
+    <name>Matt</name>
+    <!--<name>Matthieu</name>-->
+    <name>Maxim</name>
+    <name>Maxwell</name>
+    <name>Mikael Olofsson</name>
+    <name>Mike Weston</name>
+    <name>Mikhail</name>
+    <name>Monsvik</name>
+    <name short="Mort">Mortraven</name>
+    <name>Mr Buga</name>
+    <name>Mullett</name>
+    <name short="Narth">Narthollis</name>
+    <name>Nathan</name>
+    <name>Nekose</name>
+    <name>Nelis</name>
+    <name>Nemo</name>
+    <name>Nick Breckon</name>
+    <name>Nick Lanng</name>
+    <name>Nikmi</name>
+    <name>Nikola</name>
+    <name>Noodle</name>
+    <name>Norwyn</name>
+    <name>Notch</name>
+    <name>O. Williams</name>
+    <name>Ohm</name>
+    <name>Oni</name>
+    <name>Potap</name>
+    <name>Ramón</name>
+    <name>Randy Walker</name>
+    <name>Remo</name>
+    <name>Roland</name>
+    <name>Roper</name>
+    <name>Ryan Maniscalco</name>
+    <name>Rynhart</name>
+    <name>Schultze</name>
+    <name>Scoops</name>
+    <name>Scott Kletzkin</name>
+    <name>Sean O'Regan</name>
+    <name>Sem</name>
+    <name>Shelton</name>
+    <name>Shirai</name>
+    <name>Starger</name>
+    <name>Stelly</name>
+    <name>Steven</name>
+    <name>Stick</name>
+    <name>Swamps</name>
+    <name>Tach</name>
+    <name>Tariq</name>
+    <name>Tai Yi</name>
+    <name>Tee Lek</name>
+    <name>Teldarin</name>
+    <name>Thierry</name>
+    <name>Thomas Bloch</name>
+    <name>Tom Banks</name>
+    <name>Tomas</name>
+    <name>Triko</name>
+    <name>Turing</name>
+    <name>Ulrich</name>
+    <name>Vincent</name>
+    <name>Vitalij</name>
+    <name>Vitas Varnas</name>
+    <name>Vivimord</name>
+    <name>Vladimir</name>
+    <name>WaiShing</name>
+    <name>Will</name>
+    <name>Xemu</name>
+    <name>Yeoz</name>
+    <name>Yevon Si</name>
+    <name>Yuri</name>
+    <name>Zas</name>
+    <name>Zerimar</name>
+  </nameList>
+
+  <nameList race="human" sex="female">
+    <name>Aisha</name>
+    <name>Aki</name>
+    <name>Alba</name>
+    <name>Alison</name>
+    <name>Amy</name>
+    <name>Anfisa</name>
+    <name>Ariel</name>
+    <name>Ashley</name>
+    <name>Beth</name>
+    <name>Bérangère</name>
+    <name>Cassandra</name>
+    <name>Catherine</name>
+    <name>Carolyn</name>
+    <name>Chloe</name>
+    <name>Constanze</name>
+    <name>Debbie</name>
+    <name>Elaine</name>
+    <name>Elizabeth</name>
+    <name>Emily</name>
+    <name>Emma</name>
+    <name>Eugenia</name>
+    <name>Fatima</name>
+    <name>Felicity</name>
+    <name>Flora</name>
+    <name>Gracie</name>
+    <name>Hana</name>
+    <name>Hinata</name>
+    <name>Irina</name>
+    <name>Irma</name>
+    <name>Isabel</name>
+    <name>Ivy</name>
+    <name>Jessica</name>
+    <name>Jill</name>
+    <name>Kara</name>
+    <name>Karen</name>
+    <name>Lana</name>
+    <name>Lauren</name>
+    <name>Layla</name>
+    <name>Lily</name>
+    <name>Lisandra</name>
+    <name>Luna</name>
+    <name>Manon</name>
+    <name>Masyanya</name>
+    <name>Maria</name>
+    <name>Mercy</name>
+    <name>Miku</name>
+    <name>Minnie</name>
+    <name>Mitty</name>
+    <name>Monika</name>
+    <name>Nancy</name>
+    <name>Natasha</name>
+    <name>Nazia</name>
+    <name>Nina</name>
+    <name>Noëlle</name>
+    <name>Noemi</name>
+    <name>Pipaluk</name>
+    <name>Polina</name>
+    <name>Rebekah</name>
+    <name>Risa</name>
+    <name>Rose</name>
+    <name>Samantha</name>
+    <name>Sophia</name>
+    <name>Susan</name>
+    <name>T'ten</name>
+    <name>Tamara</name>
+    <name>Tanyuu</name>
+    <name>Valeriya</name>
+    <name>Willow</name>
+    <name>Xin Xin</name>
+    <name>Zoe</name>
+  </nameList>
+</FTL>

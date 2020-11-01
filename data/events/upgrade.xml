@@ -2460,10 +2460,9 @@ Tip: Upgraded weapons require 1 less power and charge faster, than stock weapons
       <modifyPursuit amount="2"/>
     </event>
     <event>
-      <text>After upgrading your weapon, the pirates decided that they would like to take over your ship. You are boarded, while the anti-ship battery is firing from the pirate station.</text>
+      <text>After upgrading your weapon, the pirates decided that they would like to take over your ship.</text>
       <damage amount="8" system="weapons" effect="fire"/>
       <boarders min="4" max="5" class="random"/>
-      <environment type="PDS" target="player"/>
       <ship auto_blueprint="SHIPS_PIRATE" hostile="true">
         <destroyed>
           <text>There's no time to salvage the enemy ship. The anti-ship battery keeps firing at you.</text>
@@ -2474,9 +2473,9 @@ Tip: Upgraded weapons require 1 less power and charge faster, than stock weapons
       </ship>
     </event>
     <event>
-      <text>While the pirates did upgrade your weapon, after they did their job, a Rebel Elite with weapons online has entered the system. The pirate station seems to be working with Rebels since it fires at you with anti-ship battery.</text>
+      <text>While the pirates did upgrade your weapon, after they did their job, a Rebel ship with weapons online has entered the system. The pirate station seems to be working with Rebels since it fires at you with anti-ship battery.</text>
       <environment type="PDS" target="player"/>
-      <ship auto_blueprint="SHIPS_REBEL_ELITE" hostile="true">
+      <ship auto_blueprint="SHIPS_REBEL" hostile="true">
         <destroyed>
           <text>There's no time to salvage the enemy ship. The anti-ship battery keeps firing at you.</text>
         </destroyed>
@@ -2501,10 +2500,9 @@ Tip: Upgraded weapons require 1 less power and charge faster, than stock weapons
       <modifyPursuit amount="2"/>
     </event>
     <event>
-      <text>After upgrading your drone, the pirates decided that they would like to take over your ship. You are boarded, while the anti-ship battery is firing from the pirate station.</text>
+      <text>After upgrading your drone, the pirates decided that they would like to take over your ship.</text>
       <damage amount="8" system="drones" effect="fire"/>
       <boarders min="4" max="5" class="random"/>
-      <environment type="PDS" target="player"/>
       <ship auto_blueprint="SHIPS_PIRATE" hostile="true">
         <destroyed>
           <text>There's no time to salvage the enemy ship. The anti-ship battery keeps firing at you.</text>
@@ -2515,9 +2513,9 @@ Tip: Upgraded weapons require 1 less power and charge faster, than stock weapons
       </ship>
     </event>
     <event>
-      <text>While the pirates did upgrade your drone, after they did their job, a Rebel Elite with weapons online has entered the system. The pirate station seems to be working with Rebels since it fires at you with anti-ship battery.</text>
+      <text>While the pirates did upgrade your drone, after they did their job, a Rebel ship with weapons online has entered the system. The pirate station seems to be working with Rebels since it fires at you with anti-ship battery.</text>
       <environment type="PDS" target="player"/>
-      <ship auto_blueprint="SHIPS_REBEL_ELITE" hostile="true">
+      <ship auto_blueprint="SHIPS_REBEL" hostile="true">
         <destroyed>
           <text>There's no time to salvage the enemy ship. The anti-ship battery keeps firing at you.</text>
         </destroyed>

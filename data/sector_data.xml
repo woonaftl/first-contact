@@ -14,8 +14,8 @@
   </sectorType>
 
   <sectorType name="HOSTILE">
+    <!--<sector>AQUARIAN_DIMMED_SECTOR</sector>-->
     <sector>LANIUS_WARZONE_SECTOR</sector>
-    <!--<sector>LEPTOD_DIMMED_SECTOR</sector>-->
     <!--<sector>MANTIS_BROOD_SECTOR</sector>-->
     <sector>MANTIS_HUNTING_SECTOR</sector>
     <!--<sector>ORCHID_OVERGROWN_SECTOR</sector>-->
@@ -26,8 +26,8 @@
   </sectorType>
 
   <sectorType name="NEBULA">
+    <!--<sector>AQUARIAN_HOME_SECTOR</sector>-->
     <!--<sector>LANIUS_HOME_SECTOR</sector>-->
-    <!--<sector>LEPTOD_HOME_SECTOR</sector>-->
     <!--<sector>LIZARD_RUINS_SECTOR</sector>-->
     <sector>NEBULA_FILLER_SECTOR</sector>
     <sector>SLUG_HOME_SECTOR</sector>
@@ -143,6 +143,52 @@
     <event name="NEUTRAL_CIVILIAN" min="1" max="1"/>
     <event name="HOSTILE_CIVILIAN" min="1" max="1"/>
     <event name="NOSHIP_CIVILIAN" min="1" max="1"/>
+  </sectorDescription>
+
+  <sectorDescription name="AQUARIAN_DIMMED_SECTOR" minSector="2" unique="true">
+    <!-- challenge sector, beacons are hidden on the star map -->
+    <nameList>
+      <name>Aquarian Dimmed Space</name>
+    </nameList>
+    <trackList>
+      <!--TODO <track>aquarian</track>-->
+      <track>hacking</track>
+      <track>debris</track>
+    </trackList>
+    <rarityList>
+      <blueprint name="aquarian" rarity="1"/>
+      <blueprint name="human" rarity="0"/>
+      <blueprint name="engi" rarity="0"/>
+      <blueprint name="mantis" rarity="5"/>
+      <blueprint name="rock" rarity="0"/>
+      <blueprint name="slug" rarity="4"/>
+    </rarityList>
+    <startEvent>START_BEACON_AQUARIAN</startEvent>
+    <event name="STORE" min="1" max="1"/>
+    <event name="UPGRADE_LIST_NEBULA" min="1" max="1"/>
+  </sectorDescription>
+
+  <sectorDescription name="AQUARIAN_HOME_SECTOR" minSector="2" unique="true">
+    <!-- challenge sector, beacons are hidden on the star map -->
+    <nameList>
+      <name>Aquarian Secret Lair</name>
+    </nameList>
+    <trackList>
+      <!--TODO <track>aquarian</track>-->
+      <track>deepspace</track>
+      <track>void</track>
+    </trackList>
+    <rarityList>
+      <blueprint name="aquarian" rarity="1"/>
+      <blueprint name="human" rarity="0"/>
+      <blueprint name="engi" rarity="0"/>
+      <blueprint name="mantis" rarity="5"/>
+      <blueprint name="rock" rarity="0"/>
+      <blueprint name="slug" rarity="4"/>
+    </rarityList>
+    <startEvent>START_BEACON_AQUARIAN</startEvent>
+    <event name="STORE" min="1" max="1"/>
+    <event name="UPGRADE_LIST_NEBULA" min="1" max="1"/>
   </sectorDescription>
 
   <sectorDescription name="ENGI_RESEARCH_SECTOR" minSector="1" unique="true">
@@ -278,52 +324,6 @@
     <event name="HOSTILE_HAZARD_LANIUS" min="1" max="1"/>
     <event name="HOSTILE_LANIUS" min="6" max="6"/>
     <event name="NEUTRAL_LANIUS" min="9" max="9"/>
-  </sectorDescription>
-
-  <sectorDescription name="LEPTOD_DIMMED_SECTOR" minSector="2" unique="true">
-    <!-- challenge sector, beacons are hidden on the star map -->
-    <nameList>
-      <name>Leptod Dimmed Space</name>
-    </nameList>
-    <trackList>
-      <!--TODO <track>leptod</track>-->
-      <track>hacking</track>
-      <track>debris</track>
-    </trackList>
-    <rarityList>
-      <blueprint name="LEPTOD" rarity="1"/>
-      <blueprint name="human" rarity="0"/>
-      <blueprint name="engi" rarity="0"/>
-      <blueprint name="mantis" rarity="5"/>
-      <blueprint name="rock" rarity="0"/>
-      <blueprint name="slug" rarity="4"/>
-    </rarityList>
-    <startEvent>START_BEACON_LEPTOD</startEvent>
-    <event name="STORE" min="1" max="1"/>
-    <event name="UPGRADE_LIST_NEBULA" min="1" max="1"/>
-  </sectorDescription>
-
-  <sectorDescription name="LEPTOD_HOME_SECTOR" minSector="2" unique="true">
-    <!-- challenge sector, beacons are hidden on the star map -->
-    <nameList>
-      <name>Leptod Secret Lair</name>
-    </nameList>
-    <trackList>
-      <!--TODO <track>leptod</track>-->
-      <track>deepspace</track>
-      <track>void</track>
-    </trackList>
-    <rarityList>
-      <blueprint name="LEPTOD" rarity="1"/>
-      <blueprint name="human" rarity="0"/>
-      <blueprint name="engi" rarity="0"/>
-      <blueprint name="mantis" rarity="5"/>
-      <blueprint name="rock" rarity="0"/>
-      <blueprint name="slug" rarity="4"/>
-    </rarityList>
-    <startEvent>START_BEACON_LEPTOD</startEvent>
-    <event name="STORE" min="1" max="1"/>
-    <event name="UPGRADE_LIST_NEBULA" min="1" max="1"/>
   </sectorDescription>
 
   <sectorDescription name="LIZARD_REFUGE_SECTOR" minSector="1" unique="true">
@@ -538,7 +538,7 @@
 
   <sectorDescription name="PAVONIAN_ANARCHY_SECTOR" minSector="1" unique="true">
     <nameList>
-      <name>Pavonian Folly</name>
+      <name>Pavonian Communitites</name>
     </nameList>
     <trackList>
       <!--TODO <track>pavonian</track>-->
@@ -557,7 +557,7 @@
       <blueprint name="lizard" rarity="4"/>
       <blueprint name="pavonian" rarity="1"/>
       <blueprint name="orchid" rarity="4"/>
-      <blueprint name="leptod" rarity="4"/>
+      <blueprint name="aquarian" rarity="4"/>
     </rarityList>
     <startEvent>START_BEACON_PAVONIAN</startEvent>
     <event name="STORE_PAVONIAN" min="2" max="2"/>
@@ -859,7 +859,7 @@
       <blueprint name="rock" rarity="0"/>
       <blueprint name="energy" rarity="1"/>
       <blueprint name="slug" rarity="3"/>
-      <blueprint name="leptod" rarity="5"/>
+      <blueprint name="aquarian" rarity="5"/>
     </rarityList>
     <startEvent>START_BEACON_ZOLTAN_HAZARD</startEvent>
     <event name="NEBULA_STORE_ZOLTAN" min="2" max="2"/>

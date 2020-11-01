@@ -35,7 +35,7 @@
   </crewBlueprint>
 
   <changelog>
-    <entry>Engi deal half damage to systems in addition to crew</entry>
+    <entry>Engi system sabotage speed 1.0 to 0.5</entry>
   </changelog>
   <crewBlueprint name="engi">
     <title>Engi</title>
@@ -60,7 +60,7 @@
 
   <changelog>
     <entry>Mantis store price 55 to 50</entry>
-    <entry>Mantis deal 50 percent more damage to systems in addition to crew</entry>
+    <entry>Mantis system sabotage speed 1.0 to 1.5</entry>
   </changelog>
   <crewBlueprint name="mantis">
     <title>Mantis</title>
@@ -164,8 +164,8 @@
   </crewBlueprint>
 
   <changelog>
-    <entry>Crystal crew fire extinguishing speed 0.83 to 1.0</entry>
-    <entry>Crystal crew suffocation damage 0.5 to 1.0</entry>
+    <entry>Crystal crew fire extinguishing speed 0.83 to 1.0 (same as human)</entry>
+    <entry>Crystal crew suffocation damage 0.5 to 1.0 (same as human)</entry>
   </changelog>
   <crewBlueprint name="crystal">
     <title>Crystal</title>
@@ -175,9 +175,9 @@
     <bp>4</bp>
     <rarity>0</rarity>
     <powerList>
+      <power>Active: lock the room with a wall of crystals</power>
       <power>Max Health is increased to 125</power>
       <power>Movement speed reduced by 20 percent</power>
-      <power>Active: lock the room with a wall of crystals</power>
     </powerList>
     <colorList>
       <layer>
@@ -191,6 +191,7 @@
 
   <changelog>
     <entry>Lanius movement speed 0.85 to 1.0 (normal)</entry>
+    <entry>Lanius have a new active ability: create a hull breach restoring 30 health to self</entry>
   </changelog>
   <crewBlueprint name="anaerobic">
     <title>Lanius</title>
@@ -200,6 +201,7 @@
     <bp>2</bp>
     <rarity>0</rarity>
     <powerList>
+      <power>Active: create a hull breach restoring 30 health</power>
       <power>Drains oxygen from rooms</power>
       <power>No damage from lack of oxygen</power>
     </powerList>
@@ -213,31 +215,18 @@
     </colorList>
   </crewBlueprint>
 
-  <crewBlueprint name="leptod">
-    <title>Leptod</title>
-    <short>Leptod</short>
-    <desc>Masters of staying unseen, even the Leptods have not managed to remain neutral in the Galactic War.</desc>
-    <cost>60</cost>
+  <crewBlueprint name="aquarian">
+    <!--named by Moreorlesser -->
+    <title>Aquarian</title>
+    <short>Aquarian</short>
+    <desc>Masters of staying unseen, even the Aquarians have not managed to remain neutral in the Galactic War.</desc>
+    <cost>50</cost>
     <bp>2</bp>
     <rarity>0</rarity>
     <powerList>
-      <power>Active: become invisible and invulnerable for 10 seconds</power>
+      <power>Active: become invisible and invulnerable for 8 seconds</power>
+      <power>Max health reduced to 70</power>
     </powerList>
-    <colorList>
-      <layer>
-        <color r="0" g="0" b="0" a="0"/>
-        <color r="131" g="219" b="255" a="0.7"/>
-        <color r="76" g="235" b="220" a="0.7"/>
-        <color r="130" g="255" b="223" a="0.7"/>
-        <color r="163" g="163" b="163" a="0.7"/>
-      </layer>
-      <layer>
-        <color r="0" g="0" b="0" a="0"/>
-        <color r="178" g="255" b="202" a="0.7"/>
-        <color r="255" g="188" b="203" a="0.7"/>
-        <color r="154" g="219" b="255" a="0.7"/>
-      </layer>
-    </colorList>
   </crewBlueprint>
 
   <crewBlueprint name="lizard">
@@ -299,17 +288,51 @@
     </colorList>
   </crewBlueprint>
 
+  <crewBlueprint name="sprout">
+    <title>Sprout</title>
+    <short>Sprout</short>
+    <desc>?</desc>
+    <cost>50</cost>
+    <bp>2</bp>
+    <rarity>0</rarity>
+    <powerList>
+      <power>?</power>
+    </powerList>
+    <colorList>
+      <layer><!-- Layer 1 - Leaves -->
+        <color r="0" g="0" b="0" a="0"/>
+        <color r="191" g="234" b="32" a="0.7"/>
+        <color r="0" g="229" b="237" a="0.7"/>
+        <color r="255" g="206" b="255" a="0.7"/>
+      </layer>
+      <layer><!-- Layer 2 - Flower -->
+        <color r="0" g="0" b="0" a="0"/>
+        <color r="0" g="71" b="255" a="0.6"/>
+        <color r="255" g="222" b="0" a="0.6"/>
+        <color r="138" g="82" b="255" a="0.7"/>
+        <color r="246" g="18" b="195" a="0.93"/>
+        <color r="124" g="187" b="235" a="0.93"/>
+        <color r="255" g="148" b="0" a="0.93"/>
+        <color r="255" g="119" b="205" a="1"/>
+        <color r="245" g="60" b="0" a="1"/>
+        <color r="255" g="238" b="0" a="1"/>
+        <color r="214" g="43" b="161" a="1"/>
+        <color r="80" g="180" b="210" a="1"/>
+      </layer>
+    </colorList>
+  </crewBlueprint>
+
   <crewBlueprint name="pavonian">
     <!--named by SallySpartan -->
     <title>Pavonian</title>
     <short>Pavonian</short>
-    <desc>Proud Pavonians are fragile creatures, but useful to keep ship systems operational.</desc>
+    <desc>Proud Pavonians are fragile creatures but have extraordinary restorative abilities.</desc>
     <cost>50</cost>
     <bp>2</bp>
-    <rarity>5</rarity>
+    <rarity>0</rarity>
     <powerList>
-      <power>Active: repair 1 system damage</power>
-      <power>Takes double damage in close combat</power>
+      <power>Active: restore 30 health to all allies nearby</power>
+      <power>Max health reduced to 70</power>
     </powerList>
     <colorList>
       <layer>

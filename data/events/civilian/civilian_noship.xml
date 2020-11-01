@@ -6,15 +6,12 @@
     <event load="DISTRESS_SATELLITE_DEFENSE"/>
     <event load="DISTRESS_STATION_DISEASE"/>
     <event load="DISTRESS_STATION_FIRE"/>
-    <event load="DONOR_PLAGUE"/>
-    <event load="DONOR_PONY"/>
     <event load="ESCORT_BEACON"/>
     <event load="FIND_DRONE"/>
     <event load="FIND_WEAPON"/>
     <event load="FREE_ITEMS"/>
     <event load="FRIENDLY_BEACON"/>
     <event load="QUEST_MANTIS_INVASION_START"/>
-    <event load="REFUGEE_GHOST"/>
     <event load="STATION_SICK"/>
     <event load="STORE_RESCUE"/>
     <event load="STRANDED_BEACON"/>
@@ -91,16 +88,13 @@
       <eventList name="DONOR_PLAGUE_LIST">
         <event>
           <text>All around you is the stench of death and decay. The life sign readings must have been malfunctioning because you really doubt anything could be alive in here. You quickly return to the ship.</text>
-          <autoReward level="LOW">scrap_only</autoReward>
         </event>
         <event>
           <text>Human corpses are scattered across the station. You find the source of the signal, a lone survivor that locked themselves in a storage closet. You quickly retreat with them in tow back to the ship, and hope they can recover enough to be of some use.</text>
-          <autoReward level="LOW">scrap_only</autoReward>
           <crewMember amount="1" class="human"/>
         </event>
         <event>
           <text>All around you is the stench of death and decay. Suddenly, one of your crew bends over and starts retching violently. Some sort of disease must have wiped out this station. You pull back to the ship, but it looks like your crewmember is not going to make it.</text>
-          <autoReward level="LOW">scrap_only</autoReward>
           <choice hidden="true">
             <text id="continue"/>
             <event>
@@ -591,7 +585,7 @@
             <clone>false</clone>
             <text>As your crewman is still alive and working towards a cure, it would be against Federation regulation to create a clone to continue with you on your journey.</text>
           </removeCrew>
-          <autoReward level="HIGH">stuff</autoReward>
+          <autoReward level="MED">stuff</autoReward>
         </event>
       </eventList>
     </choice>

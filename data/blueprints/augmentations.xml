@@ -216,7 +216,7 @@
     <entry>Long-Ranged Scanners made exclusive to new race</entry>
   </changelog>
   <augBlueprint name="ADV_SCANNERS">
-    <title>Leptod Pelengator</title>
+    <title>Aquarian Pelengator</title>
     <desc>Adds additional info about nearby beacons on the star map.</desc>
     <cost>30</cost>
     <bp>3</bp>

@@ -4,7 +4,7 @@
     <event load="MANTIS_FIGHT"/>
     <event load="MANTIS_FIGHT_WITH_BOARDERS"/>
     <event load="MANTIS_BOARDERS_SWARM"/>
-    <event load="MANTIS_LEPTOD_FIGHT"/>
+    <event load="MANTIS_AQUARIAN_FIGHT"/>
   </eventList>
 
   <event name="MANTIS_FIGHT">
@@ -51,14 +51,14 @@
     <ship load="MANTIS_FIGHT" hostile="true"/>
   </event>
 
-  <event name="MANTIS_LEPTOD_FIGHT" unique="true">
+  <event name="MANTIS_AQUARIAN_FIGHT" unique="true">
     <!--text taken from MANTIS_NOTHING event -->
     <text>You fancy you see something moving in the shadow of the beacon, but all remains still.</text>
     <choice>
       <text id="continue"/>
       <event>
-        <text>Suddenly, a Leptod ship appears out of nowhere and attacks you. It seems they were waiting in ambush to hunt the Mantis, but you disrupted their plan.</text>
-        <ship load="LEPTOD_SHIP" hostile="true"/>
+        <text>Suddenly, a Aquarian ship appears out of nowhere and attacks you. It seems they were waiting in ambush to hunt the Mantis, but you disrupted their plan.</text>
+        <ship load="AQUARIAN_SHIP" hostile="true"/>
       </event>
     </choice>
   </event>

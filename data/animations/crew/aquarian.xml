@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <animSheet name="aquarian" w="315" h="840" fw="35" fh="35">people/aquarian_base.png</animSheet>
+
+  <anim name="aquarian_walk_down">
+    <sheet>aquarian</sheet>
+    <desc length="6" x="0" y="23"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="aquarian_walk_left">
+    <sheet>aquarian</sheet>
+    <desc length="6" x="0" y="22"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="aquarian_walk_right">
+    <sheet>aquarian</sheet>
+    <desc length="6" x="0" y="21"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="aquarian_walk_up">
+    <sheet>aquarian</sheet>
+    <desc length="6" x="0" y="20"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="aquarian_repair">
+    <sheet>aquarian</sheet>
+    <desc length="9" x="0" y="19"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="aquarian_type_down">
+    <sheet>aquarian</sheet>
+    <desc length="4" x="0" y="18"/>
+    <time>0.75</time>
+  </anim>
+  <anim name="aquarian_type_left">
+    <sheet>aquarian</sheet>
+    <desc length="4" x="0" y="17"/>
+    <time>0.75</time>
+  </anim>
+  <anim name="aquarian_type_right">
+    <sheet>aquarian</sheet>
+    <desc length="4" x="0" y="16"/>
+    <time>0.75</time>
+  </anim>
+  <anim name="aquarian_type_up">
+    <sheet>aquarian</sheet>
+    <desc length="4" x="0" y="15"/>
+    <time>0.75</time>
+  </anim>
+
+  <anim name="aquarian_fire_down">
+    <sheet>aquarian</sheet>
+    <desc length="7" x="0" y="14"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="aquarian_fire_left">
+    <sheet>aquarian</sheet>
+    <desc length="7" x="0" y="13"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="aquarian_fire_right">
+    <sheet>aquarian</sheet>
+    <desc length="7" x="0" y="12"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="aquarian_fire_up">
+    <sheet>aquarian</sheet>
+    <desc length="7" x="0" y="11"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="aquarian_punch_down">
+    <sheet>aquarian</sheet>
+    <desc length="6" x="0" y="10"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="aquarian_punch_up">
+    <sheet>aquarian</sheet>
+    <desc length="6" x="0" y="9"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="aquarian_shoot_down">
+    <sheet>aquarian</sheet>
+    <desc length="4" x="0" y="8"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="aquarian_shoot_left">
+    <sheet>aquarian</sheet>
+    <desc length="4" x="0" y="7"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="aquarian_shoot_right">
+    <sheet>aquarian</sheet>
+    <desc length="4" x="0" y="6"/>
+    <time>1.0</time>
+  </anim>
+  <anim name="aquarian_shoot_up">
+    <sheet>aquarian</sheet>
+    <desc length="4" x="0" y="5"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="aquarian_teleport">
+    <sheet>aquarian</sheet>
+    <desc length="9" x="0" y="4"/>
+    <time>0.5</time>
+  </anim>
+
+  <anim name="aquarian_death_left">
+    <sheet>aquarian</sheet>
+    <desc length="4" x="0" y="3"/>
+    <time>0.75</time>
+  </anim>
+
+  <anim name="aquarian_death_right">
+    <sheet>aquarian</sheet>
+    <desc length="4" x="0" y="2"/>
+    <time>0.75</time>
+  </anim>
+
+  <anim name="aquarian_clone">
+    <sheet>aquarian</sheet>
+    <desc length="5" x="0" y="1"/>
+    <time>0.75</time>
+  </anim>
+
+  <anim name="aquarian_portrait">
+    <sheet>aquarian</sheet>
+    <desc length="1" x="0" y="0"/>
+    <time>1</time>
+  </anim>
+  <anim name="aquarian_crewLaser">
+    <sheet>aquarian</sheet>
+    <desc length="1" x="1" y="0"/>
+    <time>0.5</time>
+  </anim>
+</FTL>

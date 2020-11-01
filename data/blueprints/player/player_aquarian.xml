@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <changelog>
+    <entry>Stealth ships replaced with ships of the new race, with a very similar stealth theme</entry>
+  </changelog>
+  <shipBlueprint name="PLAYER_SHIP_STEALTH" layout="aquarian_cruiser" img="aquarian_cruiser">
+    <class>Aquarian Cruiser</class>
+    <name>?</name>
+    <!--TODO change stealth unlock quest -->
+    <unlock>?</unlock>
+    <desc>Constructed by Aquarians, this ship is designed to use cloaking technology and speed to get behind enemy lines.</desc>
+    <systemList>
+      <battery power="1" room="13" start="false" img="room_battery_17"/>
+      <cloaking power="1" room="6" start="true" img="room_cloaking_16"/>
+      <clonebay power="1" room="7" start="false" slot="0"/>
+      <doors power="1" room="14" start="true" img="room_doors_9"/>
+      <drones power="2" room="16" start="false" img="room_drones_18"/>
+      <engines power="4" room="8" start="true" img="room_engines_14"/>
+      <hacking power="1" room="10" start="false" img="room_hacking_12"/>
+      <medbay power="1" room="7" start="true" img="room_medbay_4"/>
+      <mind power="1" room="12" start="false" img="room_mind_19"/>
+      <oxygen power="1" room="2" start="true" img="room_oxygen_9"/>
+      <pilot power="1" room="0" start="true" img="room_pilot_2"/>
+      <sensors power="1" room="15" start="true" img="room_sensors_3"/>
+      <shields power="2" room="11" start="false" img="room_shields_19"/>
+      <teleporter power="1" room="1" start="false"/>
+      <weapons power="2" room="5" start="true" img="room_weapons_8"/>
+    </systemList>
+    <weaponList count="2" missiles="0">
+      <weapon name="BEAM_1_UPGRADED"/>
+      <weapon name="LASER_BURST_2_UPGRADED"/>
+    </weaponList>
+    <weaponSlots>3</weaponSlots>
+    <droneSlots>2</droneSlots>
+    <aug name="ADV_SCANNERS_LOCKED"/>
+    <droneList count="0" drones="0"/>
+    <health amount="30"/>
+    <maxPower amount="8"/>
+    <crewCount amount="3" class="aquarian"/>
+    <shieldImage>anaerobic_cruiser</shieldImage>
+    <cloakImage>aquarian_cruiser</cloakImage>
+    <floorImage>aquarian_cruiser</floorImage>
+  </shipBlueprint>
+
+  <shipBlueprint name="PLAYER_SHIP_STEALTH_2" layout="aquarian_cruiser_2" img="aquarian_cruiser">
+    <class>Aquarian Cruiser</class>
+    <name>?</name>
+    <unlock>Complete 2/3 of the Stealth Cruiser Achievements to unlock this ship.</unlock>
+    <desc>Built like a glass cannon, this ship is hard to handle. If its cloaking can keep it safe long enough to charge its weapon, few cruisers can withstand its might.</desc>
+    <systemList>
+      <battery power="1" room="2" start="false" img="room_battery_23"/>
+      <cloaking power="2" room="3" start="true" img="room_cloaking_12"/>
+      <clonebay power="1" room="15" start="false" slot="1"/>
+      <doors power="1" room="16" start="true" img="room_doors_9"/>
+      <drones power="2" room="5" start="false" img="room_drones_21"/>
+      <engines power="2" room="7" start="true" img="room_engines_16"/>
+      <hacking power="1" room="12" start="false" img="room_hacking_17"/>
+      <medbay power="1" room="15" start="true" img="room_medbay_5"/>
+      <mind power="1" room="11" start="false" img="room_mind_6"/>
+      <oxygen power="1" room="9" start="true" img="room_oxygen_13"/>
+      <pilot power="1" room="0" start="true" img="room_pilot"/>
+      <sensors power="1" room="10" start="true" img="room_sensors_4"/>
+      <shields power="2" room="4" start="false" img="room_shields_20"/>
+      <teleporter power="1" room="1" start="false"/>
+      <weapons power="3" room="6" start="true" img="room_weapons_12"/>
+    </systemList>
+    <weaponList count="1" missiles="0">
+      <weapon name="BEAM_3_UPGRADED"/>
+    </weaponList>
+    <weaponSlots>3</weaponSlots>
+    <droneSlots>2</droneSlots>
+    <aug name="ADV_SCANNERS_LOCKED"/>
+    <droneList count="0" drones="0"/>
+    <health amount="30"/>
+    <maxPower amount="8"/>
+    <crewCount amount="3" class="aquarian"/>
+    <shieldImage>anaerobic_cruiser</shieldImage>
+    <cloakImage>aquarian_cruiser</cloakImage>
+    <floorImage>aquarian_cruiser_2</floorImage>
+  </shipBlueprint>
+
+  <shipBlueprint name="PLAYER_SHIP_STEALTH_3" layout="aquarian_cruiser_3" img="aquarian_cruiser">
+    <class>Aquarian Cruiser</class>
+    <name>?</name>
+    <unlock>Get to Sector 8 with the Stealth Cruiser Type B and Advanced Mode enabled to unlock this ship.</unlock>
+    <desc>?</desc>
+    <systemList>
+      <battery power="1" room="2" start="false" img="room_battery_13"/>
+      <cloaking power="2" room="1" start="true" img="room_cloaking_16"/>
+      <clonebay power="1" room="6" start="false" slot="0"/>
+      <doors power="1" room="16" start="true" img="room_doors_5"/>
+      <drones power="2" room="8" start="false" img="room_drones_18"/>
+      <engines power="3" room="3" start="true" img="room_engines_3"/>
+      <hacking power="1" room="10" start="true" img="room_hacking_15"/>
+      <medbay power="1" room="6" start="true" img="room_medbay_10"/>
+      <mind power="1" room="11" start="false" img="room_mind_17"/>
+      <oxygen power="1" room="17" start="true" img="room_oxygen_6"/>
+      <pilot power="1" room="0" start="true" img="room_pilot_2"/>
+      <sensors power="1" room="7" start="true" img="room_sensors_5"/>
+      <shields power="2" room="13" start="false" img="room_shields_6"/>
+      <teleporter power="1" room="9" start="false"/>
+      <weapons power="2" room="12" start="true" img="room_weapons_13"/>
+    </systemList>
+    <weaponList count="2" missiles="0">
+      <weapon name="BEAM_1_UPGRADED"/>
+      <weapon name="BEAM_1_UPGRADED"/>
+    </weaponList>
+    <weaponSlots>3</weaponSlots>
+    <droneSlots>2</droneSlots>
+    <aug name="ADV_SCANNERS_LOCKED"/>
+    <droneList count="0" drones="15"/>
+    <health amount="30"/>
+    <maxPower amount="9"/>
+    <crewCount amount="1" class="anaerobic"/>
+    <crewCount amount="1" class="aquarian"/>
+    <shieldImage>anaerobic_cruiser</shieldImage>
+    <cloakImage>aquarian_cruiser</cloakImage>
+    <floorImage>aquarian_cruiser_3</floorImage>
+  </shipBlueprint>
+</FTL>

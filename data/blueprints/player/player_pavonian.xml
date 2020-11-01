@@ -7,7 +7,7 @@
     <systemList>
       <battery power="1" room="1" start="false" img="room_battery_13"/>
       <cloaking power="1" room="14" start="false" img="room_cloaking_16"/>
-      <clonebay power="1" room="2" start="true" slot="1"/>
+      <clonebay power="1" room="2" start="false" slot="1"/>
       <doors power="1" room="7" start="true" img="room_doors_9"/>
       <drones power="2" room="5" start="false" img="room_drones_21"/>
       <engines power="2" room="3" start="true" img="room_engines_6"/>
@@ -42,7 +42,7 @@
     <systemList>
       <battery power="1" room="19" start="false" img="room_battery_3"/>
       <cloaking power="1" room="20" start="false" img="room_cloaking_7"/>
-      <clonebay power="1" room="5" start="true" slot="3"/>
+      <clonebay power="1" room="5" start="false" slot="3"/>
       <doors power="1" room="18" start="true" img="room_doors_2"/>
       <drones power="2" room="6" start="false" img="room_drones"/>
       <engines power="2" room="13" start="true" img="room_engines_11"/>
@@ -79,10 +79,10 @@
     <systemList>
       <battery power="1" room="10" start="false" img="room_battery_6"/>
       <cloaking power="1" room="22" start="false" img="room_cloaking_7"/>
-      <clonebay power="1" room="3" start="true" slot="3"/>
+      <clonebay power="1" room="3" start="false" slot="3"/>
       <doors power="1" room="7" start="true" img="room_doors_7"/>
       <drones power="2" room="8" start="false" img="room_drones_15"/>
-      <engines power="3" room="18" start="true" img="room_engines_9"/>
+      <engines power="4" room="18" start="true" img="room_engines_9"/>
       <hacking power="1" room="21" start="false" img="room_hacking_18"/>
       <medbay power="1" room="3" start="false" img="room_medbay_3"/>
       <mind power="1" room="9" start="false" img="room_mind_11"/>
@@ -102,7 +102,8 @@
     <aug name="SYSTEM_CASING_LOCKED"/>
     <health amount="30"/>
     <maxPower amount="10"/>
-    <crewCount amount="2" class="human"/>
+    <crewCount amount="1" class="human"/>
+    <crewCount amount="1" class="orchid"/>
     <crewCount amount="2" class="pavonian"/>
     <shieldImage>kestral</shieldImage>
     <cloakImage>pavonian_cruiser</cloakImage>
