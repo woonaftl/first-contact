@@ -2,11 +2,12 @@
 <FTL>
   <eventList name="HOSTILE_HAZARD_MANTIS">
     <event load="MANTIS_SUN_FIGHT"/>
+   <!--TODO add-->
   </eventList>
 
-  <event name="MANTIS_SUN_FIGHT">
+  <event name="MANTIS_SUN_FIGHT" unique="true">
     <text>Who knows why the Mantis would venture so close to a sun. Perhaps it makes for more of a challenge?</text>
-    <ship load="MANTIS_FIGHT" hostile="true"/>
+    <ship load="MANTIS_SHIP" hostile="true"/>
     <environment type="sun"/>
   </event>
 </FTL>

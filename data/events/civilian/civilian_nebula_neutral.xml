@@ -59,7 +59,7 @@
 
   <event name="NEBULA_MANTIS_CHOICE" unique="true">
     <text>Navigating the fog blind, you practically bump hulls with a Mantis ship. They hail you: "Pah! This transgression will be overlooked. Nebula, very dangerous. Next time, humans all die."</text>
-    <ship load="MANTIS_FIGHT" hostile="false"/>
+    <ship load="MANTIS_SHIP" hostile="false"/>
     <environment type="nebula"/>
     <choice>
       <text>There won't be a next time. Open fire!</text>

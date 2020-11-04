@@ -279,10 +279,10 @@
           <boarders min="4" max="5" class="random"/>
           <ship auto_blueprint="SHIPS_PIRATE" hostile="true">
             <destroyed>
-              <text>There's no time to salvage the enemy ship. The anti-ship battery keeps firing at you.</text>
+              <text>There's no time to salvage the enemy ship. Several pirate ships, much bigger than yours, are coming towards you. Get ready to jump.</text>
             </destroyed>
             <deadCrew>
-              <text>There's no time to salvage the enemy ship. The anti-ship battery keeps firing at you.</text>
+              <text>There's no time to salvage the enemy ship. Several pirate ships, much bigger than yours, are coming towards you. Get ready to jump.</text>
             </deadCrew>
           </ship>
         </event>

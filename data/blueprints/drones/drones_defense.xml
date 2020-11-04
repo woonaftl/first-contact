@@ -246,7 +246,6 @@
     <iconImage>ion</iconImage>
   </weaponBlueprint>
   <droneBlueprint name="ANTI_DRONE">
-  <!-- TODO new art without ion if changes are actually good -->
     <type>DEFENSE</type>
     <tip>tip_defense</tip>
     <target>DRONES</target>

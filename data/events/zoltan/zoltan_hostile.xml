@@ -8,10 +8,13 @@
     <event load="ZOLTAN_BOARDERS"/>
     <event load="ZOLTAN_BOARDERS_MANTIS"/>
     <event load="ZOLTAN_CREW_SCAN"/>
+  </eventList>
+
+   <eventList name="HOSTILE_ZOLTAN_TURBULENT">
     <event load="ZOLTAN_RIFT_FIGHT"/>
   </eventList>
 
-  <event name="ZOLTAN_FIGHT">
+ <event name="ZOLTAN_FIGHT">
     <textList name="ZOLTAN_FIGHT">
       <text>A Zoltan ship makes contact. "The nature of the day is rotational. The fever is emaciated. The reason is-" They've caught some nasty deep space dementia. Before you can consider finding help for them, they open fire.</text>
       <text>You're surprised when a stationary Zoltan ship opens fire. It appears there are aggressive pugilists even among the 'enlightened'.</text>
@@ -37,7 +40,7 @@
 
   <event name="ZOLTAN_MANTIS" unique="true">
     <text>You pick up the last broadcast from a rupturing Zoltan freighter: "The Mantis, they're here, please-" You're interrupted by fire off the port bow!</text>
-    <ship load="MANTIS_FIGHT" hostile="true"/>
+    <ship load="MANTIS_SHIP" hostile="true"/>
   </event>
 
   <event name="ZOLTAN_ENGI" unique="true">
@@ -53,7 +56,7 @@
 
   <event name="ZOLTAN_BOARDERS_MANTIS" unique="true">
     <text>The Mantis outcasts sometimes make the mistake of taking the Zoltan for easy game. A scout moves in to attack while a boarding party beams aboard from a nearby transport!</text>
-    <ship load="MANTIS_FIGHT" hostile="true"/>
+    <ship load="MANTIS_SHIP" hostile="true"/>
     <boarders min="2" max="3" class="mantis"/>
   </event>
 

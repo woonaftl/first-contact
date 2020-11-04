@@ -113,7 +113,7 @@
   <changelog>
     <entry>Flak I radius 42 to 45</entry>
     <entry>Flak I charge time 10 to 18</entry>
-    <entry>Flak I projectile cound 3 to 4</entry>
+    <entry>Flak I projectile count 3 to 4</entry>
     <entry>Flak I rarity 1 to 2</entry>
   </changelog>
   <weaponBlueprint name="SHOTGUN">

@@ -6,6 +6,11 @@
     <event load="ZOLTAN_PIRATE_PULSAR"/>
   </eventList>
 
+  <eventList name="HOSTILE_HAZARD_ZOLTAN_TURBULENT">
+    <event load="ZOLTAN_PULSAR"/>
+    <event load="ZOLTAN_PIRATE_PULSAR"/>
+  </eventList>
+
   <event name="ZOLTAN_ASTEROID" unique="true">
     <text>You arrive in an asteroid field and are greeted by a Zoltan guard, "By attempting to access these closed mining fields, you are in violation of the Natural Mineral Protection Act. Your weaponry will be confiscated for processing." You don't have time for this.</text>
     <environment type="asteroid"/>

@@ -147,7 +147,7 @@
           <choice hidden="true" req="clonebay">
             <text>(Clonebay) Search for a surviving DNA bank.</text>
             <event>
-              <text>While the cloning facilites are no longer functioning, you find someone was in queue to be cloned. You transfer their data to your Clonebay and after a time their body is rebuilt.</text>
+              <text>While the cloning facilities are no longer functioning, you find someone was in queue to be cloned. You transfer their data to your Clonebay and after a time their body is rebuilt.</text>
               <choice hidden="true">
                 <text id="continue"/>
                 <eventList name="EMPTY_STATION2_CLONE">
@@ -413,12 +413,7 @@
   <event name="PIRATE_ESCAPE_SHINY">
     <!--text taken from NOTHING_PIRATE-->
     <text>A small pirate ship messages you, "That sure is a shiny ship you got there." You fire a warning shot across their bow and they respond, "Hey! No need for violence! It was just a comment..."</text>
-    <ship auto_blueprint="SHIPS_PIRATE" hostile="false">
-      <surrender chance="0.5" min="3" max="4" load="PIRATE_SURRENDER"/>
-      <escape timer="40" min="22" max="22" load="PIRATE_ESCAPE"/>
-      <destroyed load="DESTROYED_DEFAULT"/>
-      <deadCrew load="DEAD_CREW_DEFAULT"/>
-    </ship>
+    <ship load="PIRATE_ESCAPE" hostile="false"/>
     <choice>
       <text>There shall be violence.</text>
       <event>

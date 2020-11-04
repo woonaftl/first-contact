@@ -26,7 +26,7 @@
     <name>ROCK_EXPLORER_PIRATE</name>
   </blueprintList>
 
-  <!--TODO add 1-2 generic ships-->
+  <!--TODO add 1 generic ship (7) -->
 
   <blueprintList name="ROCK_ASSAULT_ELITE_LIST">
     <name>ROCK_ASSAULT_ELITE</name>

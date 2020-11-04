@@ -771,7 +771,7 @@
           <text>Sensors show scattered signs of life although most of the crew are deceased. However the health signatures of the living indicate they are violent and unstable. You decide it's better to move on than risk engaging the remaining crew.</text>
         </event>
         <event>
-          <text>There are no life signs detected on the ship although there appears to be a number of deceased crew. There does not appear to be any airborn contagions so your crew quickly salvages what they can before moving on. You can only wonder what befell the station.</text>
+          <text>There are no life signs detected on the ship although there appears to be a number of deceased crew. There does not appear to be any airborne contagions so your crew quickly salvages what they can before moving on. You can only wonder what befell the station.</text>
           <autoReward level="MED">stuff</autoReward>
         </event>
       </eventList>
@@ -1586,7 +1586,6 @@
       <eventList name="MERCHANT_INVESTIGATE_LIST">
         <event>
           <text>You find the remains of the ship. It seems to have severe external damage, but you cannot pinpoint a cause. The majority of its cargo seems intact. You manage to discern the ship's intended destination.</text>
-          <autoReward level="MED">stuff</autoReward>
           <choice>
             <text>Take the cargo and head to its original destination in search of a reward.</text>
             <event>

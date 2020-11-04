@@ -6,7 +6,7 @@
       <text>Look around.</text>
       <event>
         <text>Warning lights flash as scans identify the gigantic ship under construction - it's a second Rebel Flagship! This must be the secret shipyards where the first one was built, and you've accidentally stumbled across it! Even in its weakened state, the Rebel ship powers up... get ready, you've got a hell of a fight on your hands.</text>
-        <ship load="FLASHSHIP_CONSTRUCTION_SHIP" hostile="true"/>
+        <ship load="FLAGSHIP_CONSTRUCTION_SHIP" hostile="true"/>
       </event>
     </choice>
     <choice>
@@ -33,10 +33,10 @@
       </event>
     </choice>
   </event>
-  <ship name="FLASHSHIP_CONSTRUCTION_SHIP" auto_blueprint="BOSS_SPECIAL">
+  <ship name="FLAGSHIP_CONSTRUCTION_SHIP" auto_blueprint="BOSS_SPECIAL">
     <destroyed load="FLAGSHIP_CONSTRUCTION_DONE"/>
     <deadCrew>
-      <text>You detect no more lifesigns on the incomplete Flagship. You'd expect a ship of that size to have more security measures, but perhaps their computer systems aren't complete yet.</text>
+      <text>You detect no more life signs on the incomplete Flagship. You'd expect a ship of that size to have more security measures, but perhaps their computer systems aren't complete yet.</text>
       <choice hidden="true">
         <text>Pillage the ship for supplies.</text>
         <event load="FLAGSHIP_CONSTRUCTION_DONE"/>

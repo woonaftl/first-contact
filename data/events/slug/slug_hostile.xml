@@ -15,7 +15,7 @@
 
   <event name="SLUG_MANTIS" unique="true">
     <text>You intercept comm chatter from an incoming Mantis ship. "Look. This ship appears not to be owned by the squishy ones. Maybe they won't smell so bad when we cut them open." They move in on your position.</text>
-    <ship load="MANTIS_FIGHT" hostile="true"/>
+    <ship load="MANTIS_SHIP" hostile="true"/>
   </event>
 
   <event name="SLUG_PIRATE">

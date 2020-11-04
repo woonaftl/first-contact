@@ -1,77 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
   <nameList race="human" sex="male">
-    <name>AJ Hager</name>
+    <name short="Aasted">Henrik Aasted</name>
     <name>Adnan</name>
     <name>Alain</name>
-    <name>Alex Rigopulos</name>
-    <name>Andrew Fenn</name>
+    <name short="Alex">Alex Rigopulos</name>
     <name>Arries</name>
     <name>Artyom</name>
     <name>Atreyu</name>
+    <name short="Baars">Jeff Baars</name>
+    <name short="Banks">Tom Banks</name>
     <name>Berko</name>
     <name>Bigby</name>
     <name>Bjorn</name>
+    <name short="Bloch">Thomas Bloch</name>
     <name>Bomfy M</name>
     <name>Borman</name>
-    <name>Bruce Geryk</name>
+    <name short="Bovee">Jason Bovee</name>
+    <name short="Breckon">Nick Breckon</name>
     <name>Bruno</name>
     <name>Bryan</name>
     <name>Butters</name>
     <name>Caio</name>
+    <name short="Caldwell">Jon Caldwell</name>
+    <name short="Caris">Ihlay Caris</name>
     <name>CY Heng</name>
-    <name>Chris Malott</name>
-    <name>Chris Phillips</name>
+    <name>Chase</name>
     <name>Colin</name>
     <name short="Chriz">Christoph Z</name>
-    <name>Craig Dolan</name>
     <name>Cremity</name>
+    <name short="Cubbin">Josh Cubbin</name>
     <name>Davion</name>
     <name>Declan</name>
-    <name>Dengler</name>
+    <name short="Dengler">Steven Dengler</name>
     <name>Dermot</name>
     <name>Diego</name>
     <name>Dmitry</name>
-    <name>Dre Kozar</name>
-    <name>Eckman</name>
+    <name short="Dolan">Craig Dolan</name>
+    <name short="Eckman">Stephen Eckman</name>
     <name>Elnubnub</name>
-    <name>Enzo</name>
     <name>Eoin</name>
     <name>Eric</name>
     <name>Fabio</name>
+    <name short="Fenn">Andrew Fenn</name>
     <name>Feras</name>
     <name>Ferry</name>
     <name>Filip</name>
+    <name short="Fish">Kevin Fish</name>
     <name>Firedihm</name>
     <name>Fleischy</name>
     <name>Frederic</name>
     <name>GM Faux</name>
+    <name short="Geryk">Bruce Geryk</name>
     <name>Giles</name>
     <name>Graeme</name>
     <name>Graffin</name>
     <name>Grozoly</name>
     <name>Gumpo</name>
+    <name short="Hager">AJ Hager</name>
+    <name>Harold</name>
     <name>Hassifa</name>
     <name>Hector</name>
-    <name>Henrik Aasted</name>
     <name>Hiroyuki</name>
     <name>Hutz</name>
+    <name>Ian</name>
     <name>Ibrahim</name>
-    <name>Ihlay Caris</name>
+    <name>Isaac</name>
+    <name>Isamu</name>
     <name>Jack</name>
-    <name>James Pomeroy</name>
-    <name>Jan Magne</name>
-    <name>Jason Bovee</name>
     <name>Jax</name>
-    <name>Jeff Baars</name>
     <name>Joel</name>
-    <name>Johnny Maloney</name>
-    <name>Jon Caldwell</name>
     <name>Jon</name>
+    <name short="Johnson">Logan Johnson</name>
     <name>Jorlack</name>
     <name>Jose</name>
-    <name>Josh Cubbin</name>
-    <name>Julian Rafn</name>
     <name>Junpeng</name>
     <name>Justin</name>
     <name>Kadreal</name>
@@ -82,28 +84,33 @@
     <name>King</name>
     <name>Kirby</name>
     <name>Kirkner</name>
-    <name>Kiwi</name>
+    <name short="Kletzkin">Scott Kletzkin</name>
+    <name short="Kozar">Dre Kozar</name>
     <name>Kusy</name>
     <name>Lagardi</name>
+    <name short="Lanng">Nick Lanng</name>
     <name>Liam</name>
     <name>Liu Jun</name>
-    <name>Logan Johnson</name>
     <name>Lombard</name>
     <name>Lorenzo</name>
     <name>Luaan Ti</name>
     <name>Ma Fan</name>
     <name short="Magmar">Magmaros</name>
+    <name short="Magne">Jan Magne</name>
+    <name short="Maloney">Johnny Maloney</name>
+    <name short="Malott">Chris Malott</name>
     <name short="Mara">Maradine</name>
+    <name>Mario</name>
     <name>Markand</name>
     <name>Markel</name>
     <name>Markus</name>
-    <name>Martin</name>
+    <name short="Martin">Enzo Martin</name>
     <name>Matt</name>
-    <!--<name>Matthieu</name>-->
+    <name>Matthieu</name>
     <name>Maxim</name>
     <name>Maxwell</name>
-    <name>Mikael Olofsson</name>
-    <name>Mike Weston</name>
+    <name short="Mikael">Mikael Olofsson</name>
+    <name>Mike</name>
     <name>Mikhail</name>
     <name>Monsvik</name>
     <name short="Mort">Mortraven</name>
@@ -114,31 +121,35 @@
     <name>Nekose</name>
     <name>Nelis</name>
     <name>Nemo</name>
-    <name>Nick Breckon</name>
-    <name>Nick Lanng</name>
+    <name>Nick</name>
     <name>Nikmi</name>
     <name>Nikola</name>
     <name>Noodle</name>
     <name>Norwyn</name>
     <name>Notch</name>
-    <name>O. Williams</name>
     <name>Ohm</name>
+    <name>Omar</name>
     <name>Oni</name>
+    <name short="O'Regan">Sean O'Regan</name>
+    <name>Patric</name>
+    <name short="Phillips">Chris Phillips</name>
+    <name short="Pomeroy">James Pomeroy</name>
     <name>Potap</name>
+    <name short="Rafn">Julian Rafn</name>
+    <name>Ralph</name>
     <name>Ramón</name>
-    <name>Randy Walker</name>
+    <name>Randy</name>
     <name>Remo</name>
     <name>Roland</name>
     <name>Roper</name>
-    <name>Ryan Maniscalco</name>
+    <name>Ryan</name>
     <name>Rynhart</name>
-    <name>Schultze</name>
+    <name short="Schultze">Norwyn Schultze</name>
     <name>Scoops</name>
-    <name>Scott Kletzkin</name>
-    <name>Sean O'Regan</name>
+    <name>Scott</name>
     <name>Sem</name>
     <name>Shelton</name>
-    <name>Shirai</name>
+    <name short="Shirai">Jack Shirai</name>
     <name>Starger</name>
     <name>Stelly</name>
     <name>Steven</name>
@@ -150,19 +161,21 @@
     <name>Tee Lek</name>
     <name>Teldarin</name>
     <name>Thierry</name>
-    <name>Thomas Bloch</name>
-    <name>Tom Banks</name>
+    <name>Thomas</name>
     <name>Tomas</name>
     <name>Triko</name>
     <name>Turing</name>
     <name>Ulrich</name>
+    <name short="Varnas">Vitas Varnas</name>
     <name>Vincent</name>
     <name>Vitalij</name>
-    <name>Vitas Varnas</name>
     <name>Vivimord</name>
     <name>Vladimir</name>
-    <name>WaiShing</name>
+    <name short="WaiShing">Wai-Shing</name>
+    <name short="Walker">Randy Walker</name>
+    <name short="Weston">Mike Weston</name>
     <name>Will</name>
+    <name short="Williams">O. Williams</name>
     <name>Xemu</name>
     <name>Yeoz</name>
     <name>Yevon Si</name>
@@ -172,6 +185,8 @@
   </nameList>
 
   <nameList race="human" sex="female">
+    <name>Agatha</name>
+    <name>Agniya</name>
     <name>Aisha</name>
     <name>Aki</name>
     <name>Alba</name>
@@ -180,41 +195,47 @@
     <name>Anfisa</name>
     <name>Ariel</name>
     <name>Ashley</name>
+    <name>Aurora</name>
+    <name>Beatriz</name>
     <name>Beth</name>
-    <name>Bérangère</name>
-    <name>Cassandra</name>
-    <name>Catherine</name>
+    <name>Camila</name>
     <name>Carolyn</name>
     <name>Chloe</name>
-    <name>Constanze</name>
+    <name>Derya</name>
     <name>Debbie</name>
+    <name>Dolorès</name>
     <name>Elaine</name>
-    <name>Elizabeth</name>
+    <name>Elsa</name>
     <name>Emily</name>
     <name>Emma</name>
     <name>Eugenia</name>
     <name>Fatima</name>
     <name>Felicity</name>
+    <name>Flavia</name>
     <name>Flora</name>
     <name>Gracie</name>
     <name>Hana</name>
+    <name>Hilda</name>
     <name>Hinata</name>
+    <name>Inés</name>
     <name>Irina</name>
     <name>Irma</name>
     <name>Isabel</name>
     <name>Ivy</name>
+    <name>Jasmine</name>
     <name>Jessica</name>
     <name>Jill</name>
     <name>Kara</name>
     <name>Karen</name>
+    <name>Kate</name>
+    <name>Kiwi</name>
+    <name>Kumiko</name>
     <name>Lana</name>
     <name>Lauren</name>
     <name>Layla</name>
     <name>Lily</name>
-    <name>Lisandra</name>
-    <name>Luna</name>
+    <name>Liza</name>
     <name>Manon</name>
-    <name>Masyanya</name>
     <name>Maria</name>
     <name>Mercy</name>
     <name>Miku</name>
@@ -224,22 +245,27 @@
     <name>Nancy</name>
     <name>Natasha</name>
     <name>Nazia</name>
+    <name>Nerea</name>
     <name>Nina</name>
     <name>Noëlle</name>
     <name>Noemi</name>
+    <name>Nur</name>
     <name>Pipaluk</name>
     <name>Polina</name>
     <name>Rebekah</name>
+    <name>Regina</name>
     <name>Risa</name>
     <name>Rose</name>
-    <name>Samantha</name>
+    <name>Sarah</name>
     <name>Sophia</name>
     <name>Susan</name>
+    <name>Tyyne</name>
     <name>T'ten</name>
     <name>Tamara</name>
-    <name>Tanyuu</name>
+    <name>Tanya</name>
     <name>Valeriya</name>
     <name>Willow</name>
+    <name>Xóchitl</name>
     <name>Xin Xin</name>
     <name>Zoe</name>
   </nameList>

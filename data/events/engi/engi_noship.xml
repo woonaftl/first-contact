@@ -7,11 +7,27 @@
     <event load="ENGI_TRADER"/>
     <event load="ENGI_FLEET_DELAY"/>
     <event load="ENGI_STATION_REQUIRES_WORKERS"/>
+    <event load="DISTRESS_ENGI_REACTOR"/>
+    <event load="ENGI_GREEN_PLANET"/>
   </eventList>
+
+  <eventList name="NOSHIP_ENGI_RESEARCH">
+    <event load="ENGI_FIND_AUGMENT"/>
+    <event load="ENGI_FIND_DRONE"/>
+    <event load="ENGI_GIFT"/>
+    <event load="ENGI_TRADER"/>
+    <event load="ENGI_FLEET_DELAY"/>
+    <event load="CONFUSED_MANTIS"/>
+    <event load="ENGI_STATION_REQUIRES_WORKERS"/>
+    <event load="ENGI_GREEN_PLANET"/>
+    <event load="ENGI_SYSTEM_UPGRADE"/>
+    <event load="ENGI_MCCLONEY"/>
+    <event load="ENGI_ENTERTAINMENT"/>
+   </eventList>
 
   <event name="ENGI_FIND_AUGMENT">
     <textList>
-      <text>Even though the Engis were not made for close combat, the Federation owes them a lot in terms of military research. The Engi station at the beacon offers a breakthrough combat augment for free.</text>
+      <text>Even though the Engi were not made for close combat, the Federation owes them a lot in terms of military research. The Engi station at the beacon offers a breakthrough combat augment for free.</text>
       <text>A friendly Engi research station contacts you: "Combat testing required. Transferring equipment."</text>
       <text>A tiny Engi scientific vessel, that you mistook for a drone at first, contacts you: "Collected military equipment. Model unsuitable. Ejecting."</text>
     </textList>
@@ -73,6 +89,178 @@
   </event>
 
   <changelog>
+    <entry>Removed free scrap rewards in DISTRESS_ENGI_REACTOR event</entry>
+  </changelog>
+  <event name="DISTRESS_ENGI_REACTOR" unique="true">
+    <text>You arrive at a smoldering Engi research station, its distress call unanswered - attacked by pirates or Mantis most likely. There may be someone left alive, or else something of value left on board.</text>
+    <distressBeacon/>
+    <choice hidden="true">
+      <text>Board the station.</text>
+      <eventList name="DISTRESS_ENGI_REACTOR_LIST1">
+        <event>
+          <text>You send an away team to investigate, but there's nothing save for the acidic stench of burnt Engi parts. This place is dead.</text>
+        </event>
+        <event>
+          <text>Your away team reports a wounded Engi and a functioning drone schematic. Then someone yells. The station reactor is overloading and they're running out of time!</text>
+          <choice hidden="true">
+            <text>Save the Engi!</text>
+            <eventList name="DISTRESS_ENGI_REACTOR_ENGI">
+              <event>
+                <text>One of your crew valiantly grabs the Engi and throws it into the airlock right before the reactor blows and the automatic blast doors slam shut. You have no choice but to mourn their sacrifice and move on.</text>
+                <removeCrew>
+                  <clone>true</clone>
+                  <text>The brave crewmember's clone strides from the Clone Bay, rather full of themself after such a heroic act.</text>
+                </removeCrew>
+                <choice hidden="true">
+                  <text id="continue"/>
+                  <event>
+                    <text>The Engi who was saved offers to join your crew.</text>
+                    <crewMember amount="1" class="engi"/>
+                  </event>
+                </choice>
+              </event>
+              <event>
+                <text>Your crew return safely to the airlock with the injured Engi and you put some distance on the station before it blows. The Engi, impressed by your crew, volunteers to join you.</text>
+                <crewMember amount="1" class="engi"/>
+              </event>
+            </eventList>
+          </choice>
+          <choice hidden="true">
+            <text>Save the drone schematic.</text>
+            <eventList name="DISTRESS_ENGI_REACTOR_DRONE">
+              <event>
+                <text>Your away team heads home with the goods, but as they transfer back to the ship a small explosion blows the airlock and one of the crew is sucked out into space!</text>
+                <removeCrew>
+                  <clone>true</clone>
+                  <text>Fortunately, your crewmember was close enough to the ship for the Clone Bay to revive them.</text>
+                </removeCrew>
+                <drone name="RANDOM"/>
+              </event>
+              <event>
+                <text>The Engi don't feel things the same way other species do. They'd want the tech to be saved. Your crew return safely to the airlock with the drone control and you put some distance on the station before it blows.</text>
+                <drone name="RANDOM"/>
+              </event>
+            </eventList>
+          </choice>
+          <choice hidden="true">
+            <text>Save yourselves!</text>
+            <event>
+              <text>It's a tough order, but your crew's lives are the priority. They drop everything and return to the ship unharmed. You put some distance on the station before it blows.</text>
+            </event>
+          </choice>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true">
+      <text>Ignore it.</text>
+      <event>
+        <text>The place looks in bad state, probably nothing of use there. Time to move on.</text>
+      </event>
+    </choice>
+    <choice hidden="true" req="sensors" lvl="2">
+      <text>(Improved Sensors) Run another scan.</text>
+      <event name="DISTRESS_ENGI_REACTOR_SCAN">
+        <text>Scans reveal the station's reactor is overloading! Not only that, but an injured Engi and a functioning drone schematic are still on board! There's not time for both...</text>
+        <choice hidden="true">
+          <text>Save the Engi!</text>
+          <event>
+            <text>Your away team heads straight for the Engi and returns with time to spare. You put some distance on the station before it blows and the Engi is so impressed by your crew that they volunteer to join you!</text>
+            <crewMember amount="1" class="engi"/>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>Save the Drone Schematic!</text>
+          <event>
+            <text>The Engi don't feel things the same way other species do. They'd want the tech to be saved. Your away team heads straight for the goods and returns with time to spare. You put some distance on the station before it blows.</text>
+            <drone name="RANDOM"/>
+          </event>
+        </choice>
+      </event>
+    </choice>
+  </event>
+
+  <event name="CONFUSED_MANTIS" unique="true">
+    <text>As soon as you jump into the system, you receive a hail from a nearby civilian Engi vessel. Their captain appears on your screen: "Strange bug. Can you assist in debugging?"</text>
+    <choice>
+      <text>Listen to their problem.</text>
+      <event>
+        <text>"Found malfunctioning Mantis. Believes it is human. Will receive input only from human. Danger Evaluation: Extremely High. Provide assistance."</text>
+        <choice>
+          <text>Send a shuttle with an away team to help.</text>
+          <eventList name="CONFUSED_MANTIS_DEFAULT">
+            <event>
+              <text>After an hour of convincing, the Mantis finally calms down and introduces himself as Robert Smith. He explains he's from a nearby human colony and would appreciate being returned there.</text>
+              <choice>
+                <text id="continue"/>
+                <event load="CONFUSED_MANTIS_HOME"/>
+              </choice>
+            </event>
+            <event>
+              <text>The cornered and frightened Mantis attacks as soon as you approach. One of your crew is eviscerated before the rest are able to stop him. The Engi apologize for your loss.</text>
+              <removeCrew>
+                <clone>true</clone>
+                <text>Your crew's clone is waiting when you return to the ship.</text>
+              </removeCrew>
+            </event>
+            <event>
+              <text>The cornered and frightened Mantis attacks as soon as you approach. You're able to subdue him and leave him at a Mantis colony in a neighboring system. They don't seem pleased or grateful at his return.</text>
+            </event>
+          </eventList>
+        </choice>
+        <choice>
+          <text>Leave them, a cornered Mantis is too dangerous.</text>
+          <event/>
+        </choice>
+        <choice req="human" hidden="true">
+          <text>(Human Crew) Send your human crewmember to communicate with the Mantis.</text>
+          <event>
+            <text>The Mantis is grateful to see 'another human', and introduces himself as Robert Smith. He explains he's from a nearby human colony and would appreciate being returned there.</text>
+            <choice>
+              <text>Return him home.</text>
+              <event load="CONFUSED_MANTIS_HOME"/>
+            </choice>
+          </event>
+        </choice>
+        <choice req="mantis" hidden="true">
+          <text>(Mantis Crew) Send your Mantis crewmember to communicate with the Mantis.</text>
+          <event>
+            <text>The Mantis is terrified at the sight of your crewmember. He immediately attacks his Engi rescuers, and your crewmember is forced to kill him. The Engi are grateful for your help and offer a small reward.</text>
+            <autoReward level="MED">stuff</autoReward>
+          </event>
+        </choice>
+        <choice req="mind" lvl="1" hidden="true">
+          <text>(Mind Control) Use your Mind control System to calm him down.</text>
+          <event>
+            <text>The Mantis calms down and communicates thanks to the Engi and yourself for helping. He requests to be dropped off at a nearby planet, at the human colony where he was raised. They are grateful for his return and offer a reward.</text>
+            <autoReward level="MED">stuff</autoReward>
+          </event>
+        </choice>
+      </event>
+    </choice>
+    <choice>
+      <text>Explain that you can't do any programming and leave.</text>
+      <event/>
+    </choice>
+  </event>
+  <event name="CONFUSED_MANTIS_HOME">
+    <text>The colony is a mining operation that specializes in FTL fuel. Robert's family, the head engineers, are excited to see him, and are very grateful for his return. Apparently he ran away to 'join the Federation' like his older brother, but was never accepted onto a ship.</text>
+    <choice hidden="true">
+      <text>Offer him a position on your ship.</text>
+      <event>
+        <text>He graciously accepts, having always wanted to serve in the Federation.</text>
+        <crewMember amount="1" class="mantis">Robert Smith</crewMember>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Ask if they can take a look at your engines.</text>
+      <event>
+        <text>They are happy to take a look, and are able to offer some suggestions for improvements.</text>
+        <upgrade amount="1" system="engines"/>
+      </event>
+    </choice>
+  </event>
+
+  <changelog>
     <entry>Added Engi station requires workers event</entry>
   </changelog>
   <event name="ENGI_STATION_REQUIRES_WORKERS" unique="true">
@@ -102,6 +290,465 @@
     </choice>
     <choice hidden="true">
       <text>Ignore them.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <event name="ENGI_SYSTEM_UPGRADE" unique="true">
+    <text>A giant Engi ship construction yard is located at the beacon. Learning that you're Federation, the Engi offers you to upgrade a system of your choice for free.</text>
+    <choice req="shields" blue="false">
+      <text>Upgrade Shields.</text>
+      <event>
+        <text>The necessary modifications to shield system are installed, allowing for more protective layers.</text>
+        <upgrade amount="1" system="shields"/>
+      </event>
+    </choice>
+    <choice req="engines" blue="false">
+      <text>Upgrade Engines.</text>
+      <event>
+        <text>The necessary modifications to engine system are installed, allowing for faster FTL charge speed.</text>
+        <upgrade amount="1" system="engines"/>
+      </event>
+    </choice>
+    <choice req="medbay" blue="false">
+      <text>Upgrade Medbay.</text>
+      <event>
+        <text>The necessary modifications to medical system are installed, allowing for faster healing.</text>
+        <upgrade amount="1" system="medbay"/>
+      </event>
+    </choice>
+    <choice req="clonebay" blue="false">
+      <text>Upgrade Clonebay.</text>
+      <event>
+        <text>The necessary modifications to cloning system are installed, speeding up internal processes.</text>
+        <upgrade amount="1" system="clonebay"/>
+      </event>
+    </choice>
+    <choice req="oxygen" blue="false">
+      <text>Upgrade Oxygen.</text>
+      <event>
+        <text>The necessary modifications to life support system are installed, your crew is very grateful.</text>
+        <upgrade amount="1" system="oxygen"/>
+      </event>
+    </choice>
+    <choice req="teleporter" blue="false">
+      <text>Upgrade Teleporter.</text>
+      <event>
+        <text>The necessary modifications to teleporter are installed, minimizing downtime.</text>
+        <upgrade amount="1" system="teleporter"/>
+      </event>
+    </choice>
+    <choice req="cloaking" blue="false">
+      <text>Upgrade Cloaking.</text>
+      <event>
+        <text>The necessary modifications to cloaking system are installed, your enemies did not see that coming.</text>
+        <upgrade amount="1" system="cloaking"/>
+      </event>
+    </choice>
+    <choice req="artillery" blue="false">
+      <text>Upgrade Artillery.</text>
+      <event>
+        <text>The necessary modifications to artillery system are installed, speeding up charge time.</text>
+        <upgrade amount="1" system="artillery"/>
+      </event>
+    </choice>
+    <choice req="hacking" blue="false">
+      <text>Upgrade Hacking.</text>
+      <event>
+        <text>The necessary modifications to hacking system are installed, increasing duration.</text>
+        <upgrade amount="1" system="hacking"/>
+      </event>
+    </choice>
+    <choice req="mind" blue="false">
+      <text>Upgrade Mind Control.</text>
+      <event>
+        <text>The necessary modifications to mind control system are installed, increasing efficiency.</text>
+        <upgrade amount="1" system="mind"/>
+      </event>
+    </choice>
+    <choice req="weapons" blue="false">
+      <text>Upgrade Weapons.</text>
+      <event>
+        <text>The necessary modifications to weapon system are installed, allowing to expand your arsenal.</text>
+        <upgrade amount="1" system="weapons"/>
+      </event>
+    </choice>
+    <choice req="drones" blue="false">
+      <text>Upgrade Drone Control.</text>
+      <event>
+        <text>The necessary modifications to drone control system are installed, allowing to expand your drone fleet.</text>
+        <upgrade amount="1" system="drones"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Decline. We don't need free upgrades.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <changelog>
+    <entry>Added Engi clonebay quest</entry>
+  </changelog>
+  <event name="ENGI_MCCLONEY" unique="true">
+    <text>An intruder teleports on deck. You cannot believe your eyes: it's Doctor McCloney, a famous human researcher and inventor of a clonebay! "Spare me from your most honorable reception. This ship has to change course immediately, I am late for scientific conference in an Engi world nearby."</text>
+    <choice hidden="true">
+      <text>Give a lift to Doctor McCloney.</text>
+      <event>
+        <text>"Of course you will make sure that I attend the meeting as soon as possible. But did you know that I am not Doctor McCloney himself, just one of his countless clones? I am the only person in the Federation who is legally allowed to have clones."</text>
+        <autoReward level="LOW">fuel_only</autoReward>
+        <quest event="ENGI_MCCLONEY_QUEST"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Decline.</text>
+      <event/>
+    </choice>
+  </event>
+  <event name="ENGI_MCCLONEY_QUEST">
+    <text>Doctor McCloney leaves the cabin reserved for VIP, safe from fire hazards and equipped with autonomous oxygen generator. "A bit late, but I won't blame you for the delay." The researcher leaves the ship, and you have time to explore what Engi have to offer.</text>
+    <choice blue="false" hidden="true" lvl="0" max_group="0" req="medbay">
+      <text id="continue"/>
+      <event>
+        <text>There are all kinds of medical equipment in the Engi system. The Engi doctors are operating on all kinds of patients: saving burnt Mantis and dried Slugs, transplanting organs and removing tumors with their superior knowledge and technology.</text>
+        <autoReward level="HIGH">stuff</autoReward>
+        <choice blue="false" hidden="true" lvl="0" max_group="0" req="clonebay">
+          <text id="continue"/>
+          <event>
+            <text>One of the Engi doctors learns that you are one of the last remnants of Federation force and offers to help you. "Medical facilities. Clonebay recommended."</text>
+            <choice hidden="true">
+              <text>Install a medbay.</text>
+              <event>
+                <text>For a small amount of scrap, the Engi workers agree to install a medical system on your ship. The doctors from the hospital provide medications and observe the installation process.</text>
+                <system lvl="1" name="medbay"/>
+              </event>
+            </choice>
+            <choice hidden="true">
+              <text>Install a clonebay.</text>
+              <event>
+                <text>The Engi doctors and laborers flood your ship, bringing materials, and installing a cloning system in one of empty rooms. The crew transfers their DNA data. They are not looking forward to getting cloned, but do not question your orders.</text>
+                <system lvl="1" name="clonebay"/>
+              </event>
+            </choice>
+            <choice hidden="true">
+              <text>Buy a Healing burst.</text>
+              <event>
+                <text>An unorthodox choice. The crew installs a med-bot delivery system in one of your weapon slots and loads it up with ammunition.</text>
+                <weapon name="BOMB_HEAL"/>
+                <item_modify>
+                  <item max="7" min="5" type="missiles"/>
+                </item_modify>
+              </event>
+            </choice>
+            <choice hidden="true" req="teleporter">
+              <text>(Teleporter) Buy a reconstructive augmentation.</text>
+              <event>
+                <text>The Engi doctor brings one of their latest inventions. He tries to explain you how it works, but you struggle to understand anything but a few words: "Nano-bots" and "Micro-cloning."</text>
+                <augment name="TELEPORT_HEAL"/>
+              </event>
+            </choice>
+            <choice hidden="true">
+              <text>Leave.</text>
+              <event/>
+            </choice>
+          </event>
+        </choice>
+        <choice blue="false" hidden="true" lvl="1" max_group="0" req="clonebay">
+          <text id="continue"/>
+          <event>
+            <text>One of the Engi doctors learns that you are one of the last remnants of Federation force and offers to help you. "Medical facilities. System interchange."</text>
+            <choice hidden="true" lvl="1" max_group="0" req="clonebay">
+              <text>Swap your clonebay for medbay.</text>
+              <event>
+                <text>The Engi from the station help you with installation. They clear the DNA data and remove your cloning system and install a new medbay in its place. Leaving the system, you make sure not to cross paths with Doctor McCloney again.</text>
+                <system lvl="1" name="medbay"/>
+              </event>
+            </choice>
+            <choice hidden="true" lvl="2" max_group="0" req="clonebay">
+              <text>Swap your clonebay for medbay.</text>
+              <event>
+                <text>The Engi from the station help you with installation. They clear the DNA data and remove your cloning system and install a new medbay in its place. Leaving the system, you make sure not to cross paths with Doctor McCloney again.</text>
+                <system lvl="2" name="medbay"/>
+              </event>
+            </choice>
+            <choice hidden="true" lvl="3" max_group="0" req="clonebay">
+              <text>Swap your clonebay for medbay.</text>
+              <event>
+                <text>The Engi from the station help you with installation. They clear the DNA data and remove your cloning system and install a new medbay in its place. Leaving the system, you make sure not to cross paths with Doctor McCloney again.</text>
+                <system lvl="3" name="medbay"/>
+              </event>
+            </choice>
+            <choice hidden="true">
+              <text>Leave.</text>
+              <event/>
+            </choice>
+          </event>
+        </choice>
+      </event>
+    </choice>
+    <choice blue="false" hidden="true" lvl="1" max_group="0" req="medbay">
+      <text id="continue"/>
+      <event>
+        <text>There are all kinds of medical equipment in the Engi system. The Engi doctors are operating on all kinds of patients: saving burnt Mantis and dried Slugs, transplanting organs and removing tumors with their superior knowledge and technology.</text>
+        <autoReward level="HIGH">stuff</autoReward>
+        <choice hidden="true">
+          <text id="continue"/>
+          <event>
+            <text>One of the Engi doctors learns that you are one of the last remnants of Federation force and offers to help you. "Crew immortality. Mission success probability increase: 0.174%."</text>
+            <choice hidden="true" lvl="1" max_group="0" req="medbay">
+              <text>Swap your medbay for clonebay.</text>
+              <event>
+                <text>The medbay is uninstalled, and Engi laborers bring a cloning system as a replacement. The crew transfers their DNA data. They are not looking forward to getting cloned, but do not question your orders.</text>
+                <system lvl="1" name="clonebay"/>
+              </event>
+            </choice>
+            <choice hidden="true" lvl="2" max_group="0" req="medbay">
+              <text>Swap your medbay for clonebay.</text>
+              <event>
+                <text>The medbay is uninstalled, and Engi laborers bring a cloning system as a replacement. The crew transfers their DNA data. They are not looking forward to getting cloned, but do not question your orders.</text>
+                <system lvl="2" name="clonebay"/>
+              </event>
+            </choice>
+            <choice hidden="true" lvl="3" max_group="0" req="medbay">
+              <text>Swap your medbay for clonebay.</text>
+              <event>
+                <text>The medbay is uninstalled, and Engi laborers bring a cloning system as a replacement. The crew transfers their DNA data. They are not looking forward to getting cloned, but do not question your orders.</text>
+                <system lvl="3" name="clonebay"/>
+              </event>
+            </choice>
+            <choice>
+              <text>Ask for an augmentation.</text>
+              <event>
+                <text>"Med-Bot Dispersal. Area of effect wound treatment. Mission success probability increase: 0.002%."</text>
+                <augment name="NANO_MEDBAY"/>
+              </event>
+            </choice>
+            <choice hidden="true">
+              <text>Leave.</text>
+              <event/>
+            </choice>
+          </event>
+        </choice>
+      </event>
+    </choice>
+  </event>
+
+  <event name="ENGI_ENTERTAINMENT">
+    <!--text taken from NOTHING_ENGI event -->
+    <text>Even though each "individual" Engi is made up of trillions of nano-machines, their culture still revolves around traditional social interactions. A nearby station seems to be constructed for entertainment of passing Engi travellers.</text>
+    <choice>
+      <text>Pay an entrance fee.</text>
+      <event>
+        <text>You pay a small fee and make your way into the station. Most of the Engi are just resting at the bar, and "talking" using emoticons, fragmentary phrases and, mostly, numbers. The main event seems to be going on in the conference hall. It should be worth visiting.</text>
+        <item_modify>
+          <item type="scrap" min="-9" max="-7"/>
+        </item_modify>
+        <choice hidden="true">
+          <text>Visit the conference hall.</text>
+          <event load="ENGI_ENTERTAINMENT_STAGE"/>
+        </choice>
+      </event>
+    </choice>
+    <choice hidden="true" req="slug">
+      <text>(Slug) Explain that you absolutely have to get in for free.</text>
+      <event>
+        <text>The bouncers reluctantly agree and let your crew into the station.Most of the Engi are just resting at the bar, and "talking" using emoticons, fragmentary phrases and, mostly, numbers. The main event seems to be going on in the conference hall, largest room on the station. It should be worth visiting.</text>
+        <choice hidden="true">
+          <text>Visit the conference hall.</text>
+          <event load="ENGI_ENTERTAINMENT_STAGE"/>
+        </choice>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>There is no time for entertainment.</text>
+      <event/>
+    </choice>
+  </event>
+  <event name="ENGI_ENTERTAINMENT_STAGE">
+    <text>You enter the hall, and it looks like you interrupted some sort of a stand up show. The Engi comedian, performing on a makeshift stage, tries really hard at making fun of your crew, but his attempts fall short.</text>
+    <choice hidden="true">
+      <text>Go on stage yourself.</text>
+      <event>
+        <text>You have no idea how to entertain the Engi and none of your jokes reach the audience. In the end, you say: "Protocol 8.06". Everyone cringes. You leave the station very embarrassed.</text>
+      </event>
+    </choice>
+    <choice hidden="true" req="mantis">
+      <text>(Mantis) Send your crewmember to the stage to perform next.</text>
+      <event>
+        <text>As the Mantis moves towards the stage, the previous comedian drops the mic and runs away in fear. The audience, visibly afraid, makes a line to the exit. The Mantis makes a great performance... to an empty hall. After some time, security kicks you out.</text>
+      </event>
+    </choice>
+    <choice hidden="true" req="rock">
+      <text>(Rockman) Send your crewmember to the stage to perform next.</text>
+      <event>
+        <text>The Rockman goes up on stage and makes a silly face. Then another one. It seems that the entire comedy culture of Rock people is based on body language. No one in the hall even looks at the stage. You leave the station with empty hands.</text>
+      </event>
+    </choice>
+    <choice hidden="true" req="slug">
+      <text>(Slug) Send your crewmember to the stage to perform next.</text>
+      <event>
+        <text>With telepathic abilities, Slugs are good at reading the room. Your crewmember is able to entertain the Engi audience. One of the newfound fans wants to join your crew.</text>
+        <crewMember amount="1" class="engi" repair="2"/>
+      </event>
+    </choice>
+    <choice hidden="true" req="pavonian">
+      <text>(Pavonian) Send your crewmember to the stage to perform next.</text>
+      <event>
+        <text>You were sceptical at sending the Pavonian at first, but they make an amazing performance, somehow managing to entertain even the nerdiest of Engi. One of those offers to join your crew.</text>
+        <crewMember amount="1" class="engi" repair="2"/>
+      </event>
+    </choice>
+  </event>
+
+  <changelog>
+    <entry>Added Green Planet event to Engi sector</entry>
+  </changelog>
+  <event name="ENGI_GREEN_PLANET" unique="true">
+    <text>You arrive at a green planet with great plains and rolling waterfalls. It would be of little interest to the Engi nearby.</text>
+    <img planet="PLANET_GREEN"/>
+    <choice hidden="true">
+      <text>Send the shuttle to the planet.</text>
+      <eventList>
+        <event>
+          <!-- metal-eating animals -->
+          <text>Your team landed in a shuttle and spread out to explore the planet. After a few minutes, a cloud of dust appeared on the horizon. Using optic magnifiers, you could make out a herd of giant long-legged alien beasts.</text>
+          <choice blue="false" hidden="true" lvl="0" max_group="0" req="engi">
+            <text id="continue"/>
+            <event>
+              <text>As soon as the animals saw a shuttle made of metallic parts, they charged. The herd moved so fast, that your team was too late to react and the animals managed to eat large parts of shuttle's hull before being driven away. You would need to use all spare scrap to repair the transport.</text>
+              <item_modify>
+                <item max="-12" min="-15" type="scrap"/>
+              </item_modify>
+              <choice hidden="true">
+                <text>The exploration team did not find anything useful on the planet and returned with empty hands, understanding why Engi had so little interest in settling there.</text>
+                <event/>
+              </choice>
+            </event>
+          </choice>
+          <choice blue="false" hidden="true" lvl="1" max_group="0" req="engi">
+            <text id="continue"/>
+            <event>
+              <text>As soon as the animals saw an Engi, they charged. The herd moved so fast, your team did not have enough time to react. The animals ate the Engi and galloped away, uninterested in attacking anyone else.</text>
+              <removeCrew class="engi">
+                <clone>true</clone>
+                <text>You are sure that the eaten crewmember is already being cloned back on the ship.</text>
+              </removeCrew>
+              <choice hidden="true">
+                <text id="continue"/>
+                <event>
+                  <text>The exploration team did not find anything useful on the planet and returned with empty hands, understanding why Engi had so little interest in settling there.</text>
+                </event>
+              </choice>
+            </event>
+          </choice>
+        </event>
+        <event>
+          <!-- windy desert -->
+          <text>Even though it seemed that the planet would be full of life after initial scans, after landing the team found nothing but a devastated desert. The winds on the planet are so strong, that organic life is eroded away.</text>
+          <choice hidden="true" lvl="2" req="sensors">
+            <text>(Advanced Sensors) Scan the landing site thoroughly.</text>
+            <event>
+              <text>Scanning indicated that there is an abnormal amount of rare metals deep within the soil near the landing site. After hours of drilling, your team excavates a cache left by someone years ago. Probably, pirates.</text>
+              <autoReward level="LOW">scrap_only</autoReward>
+            </event>
+          </choice>
+          <choice hidden="true" req="LIFE_SCANNER">
+            <text>(Lifeform Scanner) Scan the planet again.</text>
+            <event>
+              <text>It turns out, that the planet is not barren after all. The atmosphere is full of microscopic organisms, that fly very fast, causing the winds. Using the nets, your team captures some of the creatures who are revealed to have high concentration of rare metals in their bodies.</text>
+              <autoReward level="LOW">scrap_only</autoReward>
+            </event>
+          </choice>
+          <choice hidden="true" req="slug">
+            <text>(Slug) A crewmember senses something in the air.</text>
+            <event>
+              <text>It turns out, that the planet is not barren after all. The atmosphere is full of microscopic organisms, that fly very fast, causing the winds. Using the nets, your team captures some of the creatures who are revealed to have high concentration of rare metals in their bodies.</text>
+              <autoReward level="MED">scrap_only</autoReward>
+            </event>
+          </choice>
+          <choice hidden="true">
+            <text>Leave the planet.</text>
+            <event/>
+          </choice>
+        </event>
+        <event>
+          <!-- flying reptiles -->
+          <text>After landing on the planet, your team learns that it is inhabited by flying reptiles of enormous size. Scanning the surface shows that the lair nearby contains useful materials including rare metals.</text>
+          <choice hidden="true">
+            <text>Visit the lair.</text>
+            <event>
+              <text>Your team approaches the reptile's lair. It is a cave in a giant mountain, far above the surface. Entering the cave using powered exoskeletons will not be difficult, but someone must distract the reptile.</text>
+              <choice hidden="true">
+                <text>Order one of your crewmembers to distract the reptile.</text>
+                <event>
+                  <text>A volunteer makes a distraction, while the rest of the team sneaks into the cave. The reptile eats the sacrificed crewmember alive and returns back to the lair. Your team grabs whatever they can, and gets safely to the shuttle, almost detected by an animal.</text>
+                  <removeCrew>
+                    <clone>true</clone>
+                    <text>The clone of the lost crewmember is ready on the ship, making a note to themselves to never volunteer to distract giant monsters ever again.</text>
+                  </removeCrew>
+                  <autoReward level="HIGH">stuff</autoReward>
+                </event>
+              </choice>
+              <choice hidden="true" req="aquarian">
+                <text>(Aquarian) Sneak into the cave.</text>
+                <event>
+                  <text>The Aquarian successfully sneaks into the cave using their cloak. Your crewmember picks up as much equipment as they can carry, choosing what they deem most valuable: everything shiny and of blue color.</text>
+                  <autoReward level="HIGH">stuff</autoReward>
+                </event>
+              </choice>
+              <choice hidden="true" req="lizard">
+                <text>(Lizard) Communicate with the reptile.</text>
+                <event>
+                  <text>Your crewmember boldly approaches the reptile and attempts to become acquainted with them. To everyone's surprise, they quickly become friends. A reptile gladly donates one of its favorite "toys" for their "little sibling".</text>
+                  <autoReward level="HIGH">stuff</autoReward>
+                  <weapon name="RANDOM"/>
+                </event>
+              </choice>
+              <choice hidden="true" req="BATTLE">
+                <text>(Anti-Personnel Drone) Use a drone as a distraction.</text>
+                <event>
+                  <text>The drone makes an excellent distraction, letting your team into the dangerous cave without losses. The team does not have much time, so they grab whatever they see first, what will be used as scrap later.</text>
+                  <item_modify>
+                    <item max="-1" min="-1" type="drones"/>
+                  </item_modify>
+                  <autoReward level="HIGH">stuff</autoReward>
+                </event>
+              </choice>
+              <choice hidden="true" req="BOARDER_LIST">
+                <text>(Boarding Drone) Use a drone as a distraction.</text>
+                <event>
+                  <text>The drone makes an excellent distraction, letting your team into the dangerous cave without losses. The team does not have much time, so they grab whatever they see first, what will be used as scrap later.</text>
+                  <item_modify>
+                    <item max="-1" min="-1" type="drones"/>
+                  </item_modify>
+                  <autoReward level="HIGH">stuff</autoReward>
+                </event>
+              </choice>
+              <choice hidden="true" req="BOARDER_ION_LIST">
+                <text>(Ion Intruder) Use a drone as a distraction.</text>
+                <event>
+                  <text>The Ion Intruder distracts the reptile successfully, and even manages to stun it when devoured. Your team has enough time to enter the cave, pick the most valuable equipment there, and leave safely.</text>
+                  <item_modify>
+                    <item max="-1" min="-1" type="drones"/>
+                  </item_modify>
+                  <autoReward level="HIGH">stuff</autoReward>
+                  <weapon name="RANDOM"/>
+                </event>
+              </choice>
+              <choice hidden="true">
+                <text>Leave the planet.</text>
+                <event/>
+              </choice>
+            </event>
+          </choice>
+          <choice hidden="true">
+            <text>Leave the planet.</text>
+            <event/>
+          </choice>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true">
+      <text>Jump away.</text>
       <event/>
     </choice>
   </event>

@@ -66,11 +66,22 @@ desc_metadata = tree_metadata.getroot().findall("./description[1]")[0]
 for clear_file in clear_files:
     tree_empty.write(join("result", "data", clear_file))
 
+# room_count_dict = {}
+# for file in os.listdir(join("data", "ships")):
+#     fullname = join("data", "ships", file)
+#     if isfile(fullname) and fullname[-4:] == ".txt":
+#         with open(fullname, "r") as ship_file:
+#             lines = ship_file.readlines()
+#         room_count_dict[file[:-4]] = lines.count("ROOM\n")
+#         # TODO validate door links somehow
+# ship_min_rooms = min(room_count_dict, key=room_count_dict.get)
+# print(f"Fewest rooms on a ship {ship_min_rooms}: {room_count_dict[ship_min_rooms]}")
+
+
 merge("animations")
 merge("blueprints")
 # TODO validate all rooms referred in shipBlueprints actually exist - can cause a crash
 # TODO validate no room is referred by 2 different systems
-# TODO validate door links somehow
 transform(join("result", "data", "blueprints.xml"),
           join("tools", "blueprints.xslt"),
           join("result", "data", "blueprints.xml"))
@@ -142,6 +153,7 @@ schema_events = et.XMLSchema(et.parse(join("schema", "events.xsd")))
 events = et.parse(join("result", "data", "events.xml"))
 if not schema_events.validate(events):
     for error in schema_events.error_log:
+        # TODO print human readable name of event or ship in addition to line
         print(f"Line {error.line}: {error.message}")
 
 if not isdir(join("result", "mod-appendix")):

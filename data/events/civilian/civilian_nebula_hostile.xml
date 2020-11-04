@@ -26,7 +26,7 @@
       <text>A Mantis ship hails you through the storm: "These are sacred Urggghtnag clan hunting grounds. You are prey." Shields up!</text>
       <text>You notice a Mantis attack ship ducking between the clouds of swirling space stuff; it's hunting you. You try to get the jump and move in to attack.</text>
     </textList>
-    <ship load="MANTIS_FIGHT" hostile="true"/>
+    <ship load="MANTIS_SHIP" hostile="true"/>
     <environment type="nebula"/>
   </event>
 </FTL>

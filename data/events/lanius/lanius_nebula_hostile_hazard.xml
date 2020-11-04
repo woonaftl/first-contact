@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="NEBULA_HOSTILE_HAZARD_LANIUS">
+    <event load="STORM_LANIUS_FIGHT"/>
+  </eventList>
+
+  <event name="STORM_LANIUS_FIGHT">
+    <textList>
+      <text>The Lanius ship was activated from stasis by a violent plasma storm. With no other metallic targets in sight, the Lanius choose you to attack and harvest.</text>
+      <text>This section of nebula is experiencing a plasma storm. A Lanius ship was harvesting the debris, but seeing a bigger threat in you, they arm their weapons, preparing for combat.</text>
+    </textList>
+    <environment type="storm"/>
+    <ship load="LANIUS_SHIP" hostile="true"/>
+  </event>
+</FTL>

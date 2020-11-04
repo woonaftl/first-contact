@@ -372,7 +372,6 @@
   </shipBlueprintSuper>
 
   <shipBlueprintSuper name="SLUG_INTERCEPTOR" layout="jelly_button" img="jelly_button">
-    <!--TODO sprite-->
     <class>Slug Interceptor</class>
     <systemList>
       <oxygen power="1" max="3" room="1"/>
@@ -422,7 +421,6 @@
   </shipBlueprintSuper>
 
   <shipBlueprintSuper name="SLUG_ASSAULT" layout="jelly_truffle" img="jelly_truffle">
-    <!--TODO sprite-->
     <class>Slug Assault</class>
     <systemList>
       <pilot power="1" max="3" room="0"/>

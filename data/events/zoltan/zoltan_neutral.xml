@@ -54,7 +54,7 @@
     <choice>
       <text>Leave.</text>
       <event>
-        <text>You refuse to get his ship back, but still offer to drop him off at the next station. The Zoltan is displeased, but directs you to a nearby starbase just the same.</text>
+        <text>You refuse to get his ship back, but still offer to drop him off at the next station. The Zoltan is displeased, but directs you to a nearby star base just the same.</text>
       </event>
     </choice>
   </event>
@@ -69,8 +69,17 @@
           <ship name="ZOLTAN_SCIENCE_DOCK" auto_blueprint="SHIPS_ZOLTAN" hostile="true">
             <surrender chance="0.5" min="3" max="4">
               <text>The Zoltan captain sends an urgent hail: "Wait, this was all a test! A test that you passed! A diverse crew, working together, surely a sight to warm the heart of any dispassionate observer. Come, I shall join your crew!"</text>
-              <ship hostile="false"/>
-              <crewMember amount="1" class="energy"/>
+              <choice>
+                <text>And I will we glad to accept you.</text>
+                <event>
+                  <ship hostile="false"/>
+                  <crewMember amount="1" class="energy"/>
+                </event>
+              </choice>
+              <choice hidden="true">
+                <text>We will not accept surrender!</text>
+                <event/>
+              </choice>
             </surrender>
             <destroyed>
               <text>While you search the debris, you wonder what it was that could have provoked them to act so irrationally.</text>
@@ -201,7 +210,7 @@
       <store/>
     </event>
     <event>
-      <text>You head into the cantina for gossip. Topics of conversation in the cantina range from crop distribution microbes to the joys of Slug pleasure cruises.</text>
+      <text>You head into the canteen for gossip. Topics of conversation in the canteen range from crop distribution microbes to the joys of Slug pleasure cruises.</text>
       <choice hidden="true">
         <text id="continue"/>
         <event>
@@ -212,7 +221,7 @@
     </event>
   </eventList>
   <event name="ZOLTAN_QUEST_PRIMITIVES" unique="true">
-    <text>You arrive at the primitive planet that you heard about at the cantina and are surprised to see a Zoltan ship facing off against a Rebel assault craft.</text>
+    <text>You arrive at the primitive planet that you heard about at the canteen and are surprised to see a Zoltan ship facing off against a Rebel assault craft.</text>
     <choice hidden="true">
       <text id="continue"/>
       <event>

@@ -19,7 +19,7 @@
     <name>ENERGY_INSTIGATOR_PIRATE</name>
   </blueprintList>
 
-  <!--TODO add 3 generic ships-->
+  <!--TODO add 3 generic ships (7) -->
 
   <shipBlueprintSuper name="ZOLTAN_FIGHTER" layout="energy_fighter" img="energy_fighter">
     <class>Energy Fighter</class>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="NEBULA_NOSHIP_LANIUS">
+    <event load="NEBULA_LANIUS_FREE_ITEMS"/>
+    <event load="NEBULA_LANIUS_FREE_FUEL"/>
+    <event load="NEBULA_LANIUS_FREE_MISSILES"/>
+    <event load="NEBULA_LANIUS_FREE_DRONEPARTS"/>
+    <event load="NEBULA_LANIUS_FREE_WEAPON"/>
+    <event load="NEBULA_LANIUS_FREE_AUGMENT"/>
+  </eventList>
+
+  <event name="NEBULA_LANIUS_FREE_ITEMS">
+    <textList>
+      <text>A civilian Federation ship lost in the nebula contacts you and asks for directions. You share updated star maps with a way how to get to safety without activating any of Lanius ships. In return, the civilians give some resources.</text>
+      <text>At first you didn't see anything but thick nebula gases, but just before making the next jump, you stumble upon a wreck of a Lanius ship that can be safely harvested for scrap.</text>
+    </textList>
+    <environment type="nebula"/>
+    <autoReward level="LOW">stuff</autoReward>
+  </event>
+
+  <event name="NEBULA_LANIUS_FREE_FUEL">
+    <textList>
+      <text>The nebula here hides a refueling station. Half of the it is melted by the Lanius, just enough for your crew to get inside and take all of fuel without registering or paying.</text>
+      <text>This section of nebula is devoid of any activity. Before making the next jump, you were able to extract some low-quality FTL fuel from local gases.</text>
+    </textList>
+    <environment type="nebula"/>
+    <autoReward level="MED">fuel_only</autoReward>
+  </event>
+
+  <event name="NEBULA_LANIUS_FREE_MISSILES">
+    <textList>
+      <text>A small part of a Lanius ship destroyed long ago is slowly drifting through the nebula. Closer inspection shows that this section of Lanius ships holds ammunition. You're able to collect some.</text>
+      <text>You stumble upon the debris of a Lanius ship floating inside nebula. You start collecting the ammunition, but before finishing, you realize that you have lost all the other debris from sight.</text>
+    </textList>
+    <environment type="nebula"/>
+    <autoReward level="HIGH">missiles_only</autoReward>
+  </event>
+
+  <event name="NEBULA_LANIUS_FREE_DRONEPARTS">
+    <textList>
+      <text>The nebula clouds at this beacon shroud a several deactivated hacking drones, commonly used by the Lanius. Your crew is able to utilize them for drone parts.</text>
+      <text>A package of consumer electronics is drifting through the nebula, ignored by Lanius scavengers. Inside the package, you also find some military-grade drone parts.</text>
+    </textList>
+    <environment type="nebula"/>
+    <autoReward level="HIGH">droneparts_only</autoReward>
+  </event>
+
+  <event name="NEBULA_LANIUS_FREE_WEAPON" unique="true">
+    <text>A weapon floats at the beacon, aimlessly drifting through nebula. You inspect the weapon and find a decapitated Lanius body still clutching it with immense strength. Thankfully, it didn't put much resistance and you were able to secure the weapon.</text>
+    <environment type="nebula"/>
+    <weapon name="RANDOM"/>
+  </event>
+
+  <event name="NEBULA_LANIUS_FREE_AUGMENT" unique="true">
+    <text>An active Lanius ship is waiting at the beacon. Seeing your ship, it offers an augmentation. There is no way to tell why the Lanius are so generous today.</text>
+    <environment type="nebula"/>
+    <augment name="RANDOM"/>
+  </event>
+</FTL>

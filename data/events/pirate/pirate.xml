@@ -36,6 +36,14 @@
     </gotaway>
     <deadCrew load="DEAD_CREW_DEFAULT"/>
   </ship>
+
+  <ship name="PIRATE_ESCAPE" auto_blueprint="SHIPS_PIRATE">
+    <surrender chance="0.5" min="3" max="4" load="PIRATE_SURRENDER"/>
+    <escape timer="40" min="22" max="22" load="PIRATE_ESCAPE"/>
+    <destroyed load="DESTROYED_DEFAULT"/>
+    <deadCrew load="DEAD_CREW_DEFAULT"/>
+  </ship>
+
   <event name="PIRATE_SURRENDER">
     <textList name="PIRATE_SURRENDER_TEXT">
       <text>"Alright, you win! Here's some equipment from our stores, leave us alone!"</text>

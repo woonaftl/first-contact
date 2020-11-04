@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
   <changelog>
-    <entry>Added Save the moon from collision with asteriod event</entry>
+    <entry>Added Save the moon from collision with asteroid event</entry>
   </changelog>
   <event name="STRANDED_BEACON" unique="true">
     <text>It appears the distress beacon is coming from the surface of a nearby moon. Your sensors are picking up a single life form.</text>

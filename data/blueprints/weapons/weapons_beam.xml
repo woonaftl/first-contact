@@ -127,6 +127,7 @@
 
   <changelog>
     <entry>Pike Beam length 170 to 140</entry>
+    <entry>Pike Beam speed 13 to 9</entry>
     <entry>Pike Beam rarity 2 to 3</entry>
   </changelog>
   <weaponBlueprint name="BEAM_LONG">
@@ -140,7 +141,7 @@
     <sp>0</sp>
     <fireChance>0</fireChance>
     <breachChance>0</breachChance>
-    <speed>13</speed>
+    <speed>9</speed>
     <cooldown>16</cooldown>
     <power>2</power>
     <cost>55</cost>
@@ -222,7 +223,7 @@
     <cost>80</cost>
     <bp>7</bp>
     <rarity>5</rarity>
-    <speed>13</speed>
+    <speed>9</speed>
     <length>140</length>
     <image>beam_contact</image>
     <launchSounds>
@@ -278,7 +279,7 @@
   </weaponBlueprintInherit>
 
   <changelog>
-    <entry>Glaive Beam length 80 to 140, speed 5 to 13</entry>
+    <entry>Glaive Beam length 80 to 140, speed 5 to 9</entry>
   </changelog>
   <weaponBlueprint name="BEAM_3">
     <type>BEAM</type>
@@ -291,7 +292,7 @@
     <sp>0</sp>
     <fireChance>0</fireChance>
     <breachChance>0</breachChance>
-    <speed>13</speed>
+    <speed>9</speed>
     <cooldown>25</cooldown>
     <power>4</power>
     <cost>95</cost>
@@ -330,6 +331,8 @@
     <cost>50</cost>
     <bp>6</bp>
     <rarity>3</rarity>
+    <!--TODO faster???-->
+    <speed>5</speed>
     <length>140</length>
     <image>beam_contact</image>
     <launchSounds>
@@ -370,6 +373,7 @@
       <g>110</g>
       <b>0</b>
     </color>
+    <!--TODO slower???-->
     <speed>13</speed>
     <power>2</power>
     <cost>50</cost>

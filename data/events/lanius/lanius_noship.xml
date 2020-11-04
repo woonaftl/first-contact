@@ -7,10 +7,16 @@
     <event load="LANIUS_TRADER"/>
   </eventList>
 
+  <eventList name="NOSHIP_LANIUS_HOME">
+    <event load="LANIUS_FREE_STUFF"/>
+    <event load="LANIUS_TRADER_TRANSLATOR"/>
+    <event load="LANIUS_TRADER"/>
+  </eventList>
+
   <changelog>
     <entry>Removed LANIUS_RESEARCHER_CRAFT event</entry>
     <entry>Removed LANIUS_DISTRESS_EMPTY event</entry>
-    <entry>Removed LANIUS_DISTRESS_TOOLATE event</entry>
+    <entry>Removed LANIUS_DISTRESS_TOO_LATE event</entry>
   </changelog>
 
   <event name="LANIUS_FREE_STUFF" unique="true">

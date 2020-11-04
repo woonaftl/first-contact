@@ -29,7 +29,7 @@
     <name>REBEL_INTERCEPTOR_PIRATE</name>
   </blueprintList>
 
-  <!--TODO add 4 generic ships-->
+  <!--TODO add 3 generic ships (9)-->
 
   <blueprintList name="SHIPS_REBEL_TRANSPORT">
     <name>REBEL_TRANSPORT</name>
@@ -143,7 +143,7 @@
       <drones room="10" room_elite="7"/>
     </systemList>
     <sector id="4">
-      <weaponList sector="4" missiles="1" system_power="4">
+      <weaponList missiles="1" system_power="4">
         <weapon name="WEAPONS_MISSILES_1"/>
         <weapon name="WEAPONS_LASER_2"/>
         <weapon name="WEAPONS_LASER_1"/>

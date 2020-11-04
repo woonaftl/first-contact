@@ -64,7 +64,7 @@
         <autoReward level="MED">fuel</autoReward>
       </destroyed>
       <deadCrew>
-        <text>With the hostile Engies subdued you carefully extract as much fuel as possible from the ship.</text>
+        <text>With the hostile Engi subdued you carefully extract as much fuel as possible from the ship.</text>
         <autoReward level="HIGH">fuel</autoReward>
       </deadCrew>
     </ship>

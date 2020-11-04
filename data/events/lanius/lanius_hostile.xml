@@ -9,6 +9,11 @@
     <event load="LANIUS_KNOCK_KNOCK"/>
   </eventList>
 
+  <eventList name="HOSTILE_LANIUS_HOME">
+    <event load="LANIUS_FIGHT"/>
+    <event load="LANIUS_KNOCK_KNOCK"/>
+  </eventList>
+
   <event name="LANIUS_FIGHT">
     <textList name="LANIUS_FIGHT_TEXT">
       <text>Sensors indicate a small Lanius cruiser in the process of salvaging another small Lanius ship. Before you have a chance to wonder what caused them to turn on each other, the survivor notices you and moves in to attack.</text>
@@ -42,7 +47,7 @@
       <text>A pirate ship appears to be threatening a small refugee ship near the beacon. Upon seeing you jump in, it turns to approach. The civilian wastes no time and jumps away, but that appears only to harden the pirate's resolve.</text>
       <text>An upgraded pirate ship sits among the remains of a number of Lanius ships. It hails you, "These punks think they can jus' waltz in here into our sector? Obnoxious, right? Well, I'm sure you know the routine, let's do this."</text>
       <text>Debris from a number of battleships are scattered around the beacon. As you approach the area a pirate ship thrusts itself through the hulks to attack. It must be using the metal to lure the Lanius into a trap.</text>
-      <text>The pirate ship patroling this sector has been busy. The debris of several Rebel scouts and at least one civilian ship litter the area. "Welcome, welcome, there's room for one more!" The over-confident pirate hails you as he charges his weapons and moves in to attack.</text>
+      <text>The pirate ship patrolling this sector has been busy. The debris of several Rebel scouts and at least one civilian ship litter the area. "Welcome, welcome, there's room for one more!" The over-confident pirate hails you as he charges his weapons and moves in to attack.</text>
       <text>The pirate sees you before you see him... prepare for a fight!</text>
     </textList>
     <ship load="PIRATE" hostile="true"/>

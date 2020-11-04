@@ -86,33 +86,6 @@
   </crewBlueprint>
 
   <changelog>
-    <entry>Slug store price 45 to 60</entry>
-  </changelog>
-  <crewBlueprint name="slug">
-    <title>Slug</title>
-    <short>Slug</short>
-    <desc>These telepathic Slugs were shunned in the Galactic Federation for their constant thievery and attempts at manipulation.</desc>
-    <cost>60</cost>
-    <bp>2</bp>
-    <rarity>0</rarity>
-    <powerList>
-      <power>Reveal adjacent rooms</power>
-      <power>Reveal lifeforms</power>
-      <power>Immune to mind control</power>
-    </powerList>
-    <colorList>
-      <layer>
-        <color r="255" g="230" b="175" a="0.8"   />
-        <color r="120" g="240" b="60"  a="0.6"   />
-        <color r="255" g="241" b="0"   a="1"     />
-        <color r="255" g="170" b="0"   a="1"     />
-        <color r="0"   g="0"   b="0"   a="0"     />
-        <color r="140" g="140" b="200" a="0.5"   />
-      </layer>
-    </colorList>
-  </crewBlueprint>
-
-  <changelog>
     <entry>Rockmen movement speed 0.5 to 0.6</entry>
     <entry>Rockmen fire fire extinguishing speed 1.67 to 2.0</entry>
     <entry>Rockmen store price 55 to 50</entry>
@@ -159,6 +132,33 @@
         <color r="79"  g="255" b="87"  a="1"   />
         <color r="99"  g="133" b="109" a="0.6" />
         <color r="240" g="255" b="200" a="0.1" />
+      </layer>
+    </colorList>
+  </crewBlueprint>
+
+  <changelog>
+    <entry>Slug store price 45 to 60</entry>
+  </changelog>
+  <crewBlueprint name="slug">
+    <title>Slug</title>
+    <short>Slug</short>
+    <desc>These telepathic Slugs were shunned in the Galactic Federation for their constant thievery and attempts at manipulation.</desc>
+    <cost>60</cost>
+    <bp>2</bp>
+    <rarity>0</rarity>
+    <powerList>
+      <power>Reveal adjacent rooms</power>
+      <power>Reveal lifeforms</power>
+      <power>Immune to mind control</power>
+    </powerList>
+    <colorList>
+      <layer>
+        <color r="255" g="230" b="175" a="0.8"   />
+        <color r="120" g="240" b="60"  a="0.6"   />
+        <color r="255" g="241" b="0"   a="1"     />
+        <color r="255" g="170" b="0"   a="1"     />
+        <color r="0"   g="0"   b="0"   a="0"     />
+        <color r="140" g="140" b="200" a="0.5"   />
       </layer>
     </colorList>
   </crewBlueprint>
@@ -235,7 +235,7 @@
     <desc>The Lizards are respected in the Federation for their ability to withstand hardship and come out alive after any disaster.</desc>
     <cost>50</cost>
     <bp>2</bp>
-    <rarity>4</rarity>
+    <rarity>5</rarity>
     <powerList>
       <power>Regenerates health when not in danger</power>
     </powerList>
@@ -329,7 +329,7 @@
     <desc>Proud Pavonians are fragile creatures but have extraordinary restorative abilities.</desc>
     <cost>50</cost>
     <bp>2</bp>
-    <rarity>0</rarity>
+    <rarity>5</rarity>
     <powerList>
       <power>Active: restore 30 health to all allies nearby</power>
       <power>Max health reduced to 70</power>

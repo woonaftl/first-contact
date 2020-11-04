@@ -2,13 +2,193 @@
 <FTL>
   <eventList name="NOSHIP_MANTIS">
     <event load="MANTIS_FIND_WEAPON"/>
+    <event load="MANTIS_CREW"/>
     <event load="MANTIS_SUN_WRECK"/>
- </eventList>
+    <!--TODO add-->
+  </eventList>
 
-  <event name="MANTIS_FIND_WEAPON">
+  <eventList name="NOSHIP_MANTIS_BROOD">
+    <!--TODO add-->
+  </eventList>
+
+  <event name="MANTIS_FIND_WEAPON" unique="true">
     <!-- text taken from FIND_WEAPON -->
     <text>As soon as you arrive a small Mantis ship detaches from a wreck and jumps away. You must have interrupted their salvage operation because you find a weapon ready to be installed!</text>
     <weapon name="RANDOM"/>
+  </event>
+
+  <changelog>
+    <entry>Added Lifeform Scanner and Slug blue options in MANTIS_CREW event</entry>
+  </changelog>
+  <event name="MANTIS_CREW" unique="true">
+    <text>You detect and retrieve an escape pod floating nearby. You consider returning it to space when you learn it's Mantis.</text>
+    <choice>
+      <text>Jettison the pod.</text>
+      <event>
+        <text>You send the pod back out the airlock. You're not stupid.</text>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Pry it open.</text>
+      <eventList name="MANTIS_CREW_LIST">
+        <event count="2">
+          <text>The Mantis inside is FURIOUS. He cuts the closest person in half with a single swipe. Kill it before anyone else is hurt.</text>
+          <boarders min="1" max="1" class="mantis"/>
+          <removeCrew>
+            <clone>true</clone>
+            <text>The Mantis is shocked to see the crewmember it just slaughtered step out of the Clone Bay.</text>
+          </removeCrew>
+        </event>
+        <event>
+          <text>The Mantis inside considers you a messenger from the god of mercy and demands to join your crew.</text>
+          <crewMember amount="1" class="mantis"/>
+        </event>
+        <event>
+          <text>A man bursts out of the life-pod screaming and claws his way into a corner. A rare survivor of Mantis captivity. Once calm, the survivor offers to join your crew for a time.</text>
+          <crewMember amount="1" class="human"/>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true" req="orchid">
+      <text>(Orchid) Fill the room with calming aroma before opening the escape pod.</text>
+      <eventList>
+        <event count="3">
+          <text>The Mantis inside is resting. After waking up, they are happy to breathe fresh air, and move their limbs freely. The Mantis offers to join your crew until they can find the way home.</text>
+          <crewMember amount="1" class="mantis"/>
+        </event>
+        <event>
+          <text>A man steps out of the pod. He looks stressed after spending so much time in a tiny pod but seeing that you're friendly, composes himself and offers to join your crew for a time.</text>
+          <crewMember amount="1" class="human"/>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true" req="orchid">
+      <text>(Pavonian) Stun whoever is hidden inside the pod after opening.</text>
+      <eventList>
+        <event count="2">
+          <text>The Mantis inside is FURIOUS. But it's completely blinded by radiant colors of your Pavonian crewmember after spending so long in tiny escape pod. Kill it before anyone is hurt.</text>
+          <boarders min="1" max="1" class="mantis"/>
+        </event>
+        <event>
+          <text>The Mantis inside is shocked by radiant colors colors of your Pavonian crewmember and considers you a messenger from the god of mercy. It demands to join your crew.</text>
+          <crewMember amount="1" class="mantis"/>
+        </event>
+        <event>
+          <text>A man bursts out of the life-pod screaming, blinded by radiant colors colors of your Pavonian crewmember, and claws his way into a corner. A rare survivor of Mantis captivity. Once calm, the survivor offers to join your crew for a time.</text>
+          <crewMember amount="1" class="human"/>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true" req="LIFE_SCANNER">
+      <text>(Lifeform Scanner) Check the pod for life.</text>
+      <eventList>
+        <event>
+          <text>You're surprised to detect a human inside. You pry open the pod and they burst out in a panic, screaming - a rare survivor of Mantis captivity. Once calm, the survivor offers to join your crew.</text>
+          <crewMember amount="1" class="human"/>
+        </event>
+        <event count="3">
+          <text>You detect a live Mantis inside. Mantis are not known for their gratefulness; you consider how to proceed.</text>
+          <choice>
+            <text>Jettison the pod.</text>
+            <event>
+              <text>You send the pod back out the airlock - it's not worth the risk.</text>
+            </event>
+          </choice>
+          <choice hidden="true">
+            <text>Pry it open anyway.</text>
+            <eventList name="MANTIS_CREW_LIST_SCAN_MANT">
+              <event count="2">
+                <text>The Mantis inside is FURIOUS. She cuts the closest person in half with a single swipe. Kill them before anyone else is hurt.</text>
+                <boarders min="1" max="1" class="mantis"/>
+                <removeCrew>
+                  <clone>true</clone>
+                  <text>The Mantis is shocked to see the crewmember it just slaughtered step out of the Clone Bay.</text>
+                </removeCrew>
+              </event>
+              <event>
+                <text>The Mantis inside considers you a messenger from the god of mercy and demands to join your crew.</text>
+                <crewMember amount="1" class="mantis"/>
+              </event>
+            </eventList>
+          </choice>
+          <choice hidden="true" req="orchid">
+            <text>(Orchid) Fill the room with calming aroma before opening the escape pod.</text>
+            <event>
+              <text>The Mantis inside is resting. After waking up, they are happy to breathe fresh air, and move their limbs freely. The Mantis offers to join your crew until they can find the way home.</text>
+              <crewMember amount="1" class="mantis"/>
+            </event>
+          </choice>
+          <choice hidden="true" req="orchid">
+            <text>(Pavonian) Stun the Mantis immediately after opening.</text>
+            <eventList>
+              <event count="2">
+                <text>The Mantis inside is FURIOUS. But it's completely blinded by radiant colors of your Pavonian crewmember after spending so long in tiny escape pod. Kill it before anyone is hurt.</text>
+                <boarders min="1" max="1" class="mantis"/>
+              </event>
+              <event>
+                <text>The Mantis inside is shocked by radiant colors colors of your Pavonian crewmember and considers you a messenger from the god of mercy. It demands to join your crew.</text>
+                <crewMember amount="1" class="mantis"/>
+              </event>
+            </eventList>
+          </choice>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true" req="slug">
+      <text>(Slug) Check the pod for life.</text>
+      <eventList>
+        <event>
+          <text>You're surprised to detect a human inside. You pry open the pod and they burst out in a panic, screaming - a rare survivor of Mantis captivity. Once calm, the survivor offers to join your crew.</text>
+          <crewMember amount="1" class="human"/>
+        </event>
+        <event count="3">
+          <text>You detect a live Mantis inside. Mantis are not known for their gratefulness; you consider how to proceed.</text>
+          <choice>
+            <text>Jettison the pod.</text>
+            <event>
+              <text>You send the pod back out the airlock - it's not worth the risk.</text>
+            </event>
+          </choice>
+          <choice hidden="true">
+            <text>Pry it open anyway.</text>
+            <eventList name="MANTIS_CREW_LIST_SCAN_MANT">
+              <event count="2">
+                <text>The Mantis inside is FURIOUS. She cuts the closest person in half with a single swipe. Kill them before anyone else is hurt.</text>
+                <boarders min="1" max="1" class="mantis"/>
+                <removeCrew>
+                  <clone>true</clone>
+                  <text>The Mantis is shocked to see the crewmember it just slaughtered step out of the Clone Bay.</text>
+                </removeCrew>
+              </event>
+              <event>
+                <text>The Mantis inside considers you a messenger from the god of mercy and demands to join your crew.</text>
+                <crewMember amount="1" class="mantis"/>
+              </event>
+            </eventList>
+          </choice>
+          <choice hidden="true" req="orchid">
+            <text>(Orchid) Fill the room with calming aroma before opening the escape pod.</text>
+            <event>
+              <text>The Mantis inside is resting. After waking up, they are happy to breathe fresh air, and move their limbs freely. The Mantis offers to join your crew until they can find the way home.</text>
+              <crewMember amount="1" class="mantis"/>
+            </event>
+          </choice>
+          <choice hidden="true" req="orchid">
+            <text>(Pavonian) Stun the Mantis immediately after opening.</text>
+            <eventList>
+              <event count="2">
+                <text>The Mantis inside is FURIOUS. But it's completely blinded by radiant colors of your Pavonian crewmember after spending so long in tiny escape pod. Kill it before anyone is hurt.</text>
+                <boarders min="1" max="1" class="mantis"/>
+              </event>
+              <event>
+                <text>The Mantis inside is shocked by radiant colors colors of your Pavonian crewmember and considers you a messenger from the god of mercy. It demands to join your crew.</text>
+                <crewMember amount="1" class="mantis"/>
+              </event>
+            </eventList>
+          </choice>
+        </event>
+      </eventList>
+    </choice>
   </event>
 
   <changelog>

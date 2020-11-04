@@ -647,7 +647,7 @@
       <text>(Lanius Crew) Have your crew admonish their captain.</text>
       <eventList name="LANIUS_DISTRESS_FIGHT_LANIUS">
         <event>
-          <text>After a discussion that your translator fails to comprehend, the enemy ship powers down its weapons. You learn that your crewmember sucessfully reminded them of their treatise promising to leave the property of sentient aliens alone. If this is a widespread rule of this race, there appear to be many who disagree with it. You attempt to hail the civilian ship now that it's safe.</text>
+          <text>After a discussion that your translator fails to comprehend, the enemy ship powers down its weapons. You learn that your crewmember successfully reminded them of their treatise promising to leave the property of sentient aliens alone. If this is a widespread rule of this race, there appear to be many who disagree with it. You attempt to hail the civilian ship now that it's safe.</text>
           <choice hidden="true">
             <text id="continue"/>
             <event load="SAVE_CIVILIAN_LIST"/>

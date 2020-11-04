@@ -87,7 +87,7 @@
         <choice hidden="true">
           <text>Send a crewmember to distract giant alien spiders while the rest of the team frees the shuttle from web.</text>
           <event>
-            <text>A volunteer takes all heavy weapons from the shuttle and moves towards the swarm of giant anthropods, trying to distract them. The hero does not survive for long but their sacrifice is enough to buy time to free the shuttle from web.</text>
+            <text>A volunteer takes all heavy weapons from the shuttle and moves towards the swarm of giant arthropods, trying to distract them. The hero does not survive for long but their sacrifice is enough to buy time to free the shuttle from web.</text>
             <removeCrew>
               <clone>true</clone>
               <text>The clone of lost crewmember awaits you on the ship.</text>

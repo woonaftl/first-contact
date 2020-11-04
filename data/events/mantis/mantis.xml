@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
-  <event name="START_BEACON_MANTIS">
-    <text>You've entered a poorly charted area of space that's known to be home to the Mantis. Ensure your hull plating is up to scratch and that you have enough fuel in the tank to make it through.</text>
+  <event name="START_BEACON_MANTIS_SLAVER">
+    <text>You complete long-distance jump and find yourself in the industrial sector powering the Mantis war machine. Most of the captured Engi slaves end up here, working endlessly in the mines and factories, extracting metal and building red warships out of it.</text>
+  </event>
+
+  <event name="START_BEACON_MANTIS_BROOD">
+    <text>You've entered a poorly charted area of space that's known to be vastly overpopulated by the Mantis. Every Federation captain, wanting to stay alive, thinks twice before entering this place. Even the Rebels are going to have a hard time here.</text>
   </event>
 
   <event name="STORE_MANTIS">
@@ -16,8 +20,10 @@
     <store/>
   </event>
 
+  <!--
   <event name="NOTHING_MANTIS">
     <textList name="NOTHING_MANTIS">
+    <text>The giant Mantis war fleet moves slowly in the distance.</text>
       <text>At this point you almost expect a fight with the Mantis, but this beacon appears to be entirely devoid of other ships. You take the time to catch your breath and double check the ship's systems.</text>
       <text>The only thing this beacon offers is a view of deep space and a brief respite from battles. For some this must be a welcome refuge.</text>
       <text>A nearby Mantis mining operation is clearly using heavy Engi slave labor. You briefly consider the possibility of emancipating the slaves, but the Mantis presence is too formidable. You decide to lay low.</text>
@@ -25,10 +31,47 @@
       <text>There's nothing here but space debris and some uninhabitable planetoids.</text>
     </textList>
   </event>
+  -->
 
-  <ship name="MANTIS_FIGHT" auto_blueprint="SHIPS_MANTIS">
+  <ship name="MANTIS_SHIP" auto_blueprint="SHIPS_MANTIS">
     <destroyed load="DESTROYED_DEFAULT"/>
     <deadCrew load="DEAD_CREW_DEFAULT"/>
+    <crew>
+      <crewMember type="mantis" prop="0.80"/>
+      <crewMember type="engi" prop="0.20"/>
+    </crew>
+  </ship>
+
+  <ship name="MANTIS_SHIP_SLAVER" auto_blueprint="SHIPS_MANTIS">
+    <surrender chance="0.5" min="2" max="4">
+      <text>The Mantis can't believe they're losing the battle but their survival instinct takes over: "Take one of my slaves. Or I will kill them all myself!"</text>
+      <choice>
+        <text>Accept their offer.</text>
+        <event>
+          <crewMember amount="1" class="engi"/>
+          <ship hostile="false"/>
+        </event>
+      </choice>
+      <choice>
+        <text>We will not accept surrender!</text>
+        <event/>
+      </choice>
+    </surrender>
+    <destroyed>
+      <text>The Mantis slaver ship is destroyed. They won't continue their evil trade, but many lives were probably lost on that ship.</text>
+      <autoReward level="MED">standard</autoReward>
+    </destroyed>
+    <deadCrewList>
+      <event>
+        <text>All of the slavers are dead. Your crew searches the ship, looking for anyone alive. After some time, you find a former Engi slave in hidden compartment. Unable to pilot Mantis ship without help, they agree to join your crew.</text>
+        <crewMember amount="1" class="engi"/>
+        <autoReward level="HIGH">standard</autoReward>
+      </event>
+      <event>
+        <text>You scan the ship and detect no life signs. It appears the slaves died in the fight. You strip the ship and prepare to jump.</text>
+        <autoReward level="HIGH">standard</autoReward>
+      </event>
+    </deadCrewList>
     <crew>
       <crewMember type="mantis" prop="0.80"/>
       <crewMember type="engi" prop="0.20"/>

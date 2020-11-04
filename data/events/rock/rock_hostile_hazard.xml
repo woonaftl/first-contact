@@ -7,6 +7,12 @@
     <event load="ROCK_BOARDERS_ASTEROID"/>
   </eventList>
 
+  <eventList name="HOSTILE_HAZARD_ROCK_HOLY">
+    <event load="ROCK_FIGHT_ASTEROID"/>
+    <event load="ROCK_PIRATE_ASTEROID"/>
+    <event load="ROCK_PIRATE_SUN"/>
+  </eventList>
+
   <event name="ROCK_FIGHT_ASTEROID">
     <textList name="ROCK_FIGHT_ASTEROID">
       <text>A Rock mining vessel is harvesting the mineral-rich asteroids in this locality, and their scouts take your presence to be a transgression. Battle stations!</text>

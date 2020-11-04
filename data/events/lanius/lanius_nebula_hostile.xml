@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="NEBULA_HOSTILE_LANIUS">
+    <event load="NEBULA_LANIUS_FIGHT"/>
+    <event load="NEBULA_LANIUS_SLUG_EXTORTION"/>
+  </eventList>
+
+  <event name="NEBULA_LANIUS_FIGHT">
+    <textList>
+      <text>An active Lanius ship appears from nebula right before you and fires all of its weapons before hiding inside nebula clouds again. You won't be able to avoid the confrontation.</text>
+      <text>The nebula seems quiet and peaceful but the hostile Lanius ship ruins the calm mood. The Lanius took you for prey and are already arming their weapons.</text>
+    </textList>
+    <environment type="nebula"/>
+    <ship load="LANIUS_SHIP" hostile="true"/>
+  </event>
+
+  <event name="NEBULA_LANIUS_SLUG_EXTORTION" unique="true">
+    <text>You jump in to find a dormant Lanius ship. Suddenly, a Slug ship appears from a gas cloud and moves towards you: "Greetingsss. This Laniusss ship lookss deadly. You wouldn't want to sssee it become active again? I think we could find a compromissse."</text>
+    <environment type="nebula"/>
+    <choice>
+      <text>Pay the Slugs so the Lanius ship would stay asleep.</text>
+      <event>
+        <text>"Correct decision. You will go far." The Slugs disappear inside nebula again.</text>
+        <item_modify>
+          <item type="scrap" min="-16" max="-12"/>
+        </item_modify>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Attack the Lanius ship yourself.</text>
+      <event>
+        <text>Seeing how bold you are, the Slugs disconnect and quickly hide in nebula never to be seen again.</text>
+        <ship load="LANIUS_SHIP" hostile="true"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Attack the Slug ship.</text>
+      <event>
+        <text>The Slugs were prepared for that. They activate the Lanius ship and jump away before you were able to fire a single shot at them. You're alone to deal with the hostile Lanius ship.</text>
+        <ship load="LANIUS_SHIP" hostile="true"/>
+      </event>
+    </choice>
+  </event>
+</FTL>

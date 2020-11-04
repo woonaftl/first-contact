@@ -21,7 +21,7 @@
   </event>
 
   <event name="PAVONIAN_MANTIS_FIGHT" unique="true">
-    <text>Mantis warships are comparatively rare in Pavonian space since Pavonians do not survive for long as slaves. Mantis prefer to kill Pavonians, and take their colorful plumage as loot. One of these humter ships is attacking you.</text>
-    <ship load="MANTIS_FIGHT" hostile="true"/>
+    <text>Mantis warships are comparatively rare in Pavonian space since Pavonians do not survive for long as slaves. Mantis prefer to kill Pavonians, and take their colorful plumage as loot. One of these hunter ships is attacking you.</text>
+    <ship load="MANTIS_SHIP" hostile="true"/>
   </event>
 </FTL>

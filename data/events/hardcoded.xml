@@ -513,7 +513,7 @@
     <text load="TIPS_LIST"/>
     <text>TIP: Pausing - Press SPACE at any time to pause the game. You can still issue orders to crew or manipulate system power while paused.</text>
     <text>TIP: Selling - Weapons, Drones and Augments can be sold for 1/2 the purchasing price at stores. Click on the SELL tab at the top.</text>
-    <text>TIP: Hotkeys - You can charge or arm weapons using number hotkeys: The Weapon Slots are 1-4 on your keyboard, and the Drones are 5-7 (customizeable in the options).</text>
+    <text>TIP: Hotkeys - You can charge or arm weapons using number hotkeys: The Weapon Slots are 1-4 on your keyboard, and the Drones are 5-7 (customizable in the options).</text>
     <text>TIP: Font Size - Pressing +/- (customizable in options) will let you change the event text size.</text>
     <text>TIP: Weapon Order - Rearrange a Weapon or Drone schematic by dragging it into the desired position. The left-most slot will be the last to power down if the system is damaged.</text>
   </textList>

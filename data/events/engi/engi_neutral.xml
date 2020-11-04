@@ -7,6 +7,15 @@
     <event load="ENGI_LOOT"/>
   </eventList>
 
+  <eventList name="NEUTRAL_ENGI_RESEARCH">
+    <event load="ENGI_IMMEDIATE_SURRENDER"/>
+    <event load="ALISON_MANTIS_CREW"/>
+    <event load="ENGI_STATION_DISTRESS"/>
+    <event load="ENGI_LOOT"/>
+    <event load="ENGI_SEX"/>
+    <event load="ENGI_SELLING_SENSORS"/>
+  </eventList>
+
   <changelog>
     <entry>ENGI_SURRENDER has an option to attack the Engi ship</entry>
     <entry>If you choose to explain that you're friendly in ENGI_SURRENDER, you also get a free map reveal</entry>
@@ -158,14 +167,14 @@
         </event>
       </choice>
       <choice hidden="true">
-        <text>Request weapon.</text>
+        <text>Request a weapon.</text>
         <event>
           <text>"Request granted. Weapon transferring."</text>
           <weapon name="RANDOM"/>
         </event>
       </choice>
       <choice hidden="true">
-        <text>Request drone.</text>
+        <text>Request a drone.</text>
         <event>
           <text>"Request granted. Drone schematic transferring."</text>
           <drone name="RANDOM"/>
@@ -186,6 +195,53 @@
       <crewMember amount="1" class="engi"/>
     </event>
   </eventList>
+
+  <event name="ENGI_SEX" unique="true">
+    <text>What appeared to be a single damaged ship is in fact two ships that have smashed into each other... there is a flurry of comm signals and damage, and it's hard to determine what occurred. The vessels appear to be... Engi? They look locked together by the impact and can't free themselves.</text>
+    <choice hidden="true">
+      <text>Attempt to help the ships by prying them apart.</text>
+      <event>
+        <text>To your surprise, one of the Engi vessels attacks! One ship detaches itself, surprisingly still quite whole, and opens fire - it looks like it's somehow identified you as hostile!</text>
+        <ship name="ENGI_SEX_SHIP" auto_blueprint="SHIPS_CIRCLE" hostile="true">
+          <destroyed>
+            <text>With the ship destroyed, the remaining Engi ship hails you frantically and explains the situation to you.</text>
+            <choice hidden="true">
+              <text id="continue"/>
+              <event>
+                <text>Apparently, you interrupted the equivalent of a "consolidation" of two ships that were using each other's parts to construct a new vessel. The Engi were not truly hostile, their targeting computers had not finished adjusting. There's nothing to be done about it now. You leave the remains for the surviving ship.</text>
+              </event>
+            </choice>
+          </destroyed>
+          <deadCrew>
+            <text>With the ship disabled, the remaining Engi ship hails you frantically and explains the situation to you.</text>
+            <choice hidden="true">
+              <text id="continue"/>
+              <event>
+                <text>Apparently, you interrupted the equivalent of a "consolidation" of two ships that were using each other's parts to construct a new vessel. The Engi were not truly hostile, their targeting computers had not finished adjusting. There's nothing to be done about it now. You leave the remains for the surviving ship.</text>
+              </event>
+            </choice>
+          </deadCrew>
+        </ship>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Ignore the damaged vessels.</text>
+      <event/>
+    </choice>
+    <choice req="engi">
+      <text>(Engi) Have your Engi crewmember hail the vessel and assess the damage.</text>
+      <event>
+        <text>Your Engi crewmember refuses. In a halting use of adjectives and nouns, followed by some animated holographic aids, the Engi explains the ships are... using each other to, loosely translated, "achieve a union." For some reason, this consolidation of ship matter sounds embarrassing and personal.</text>
+        <choice hidden="true">
+          <text id="continue"/>
+          <event>
+            <text>You elect to leave the two Engi ships... to their "business." After questioning your Engi crewmember, however, you do manage to salvage what scrap parts you can from the perimeter, even though you feel slightly dirty for doing so.</text>
+            <autoReward level="MED">stuff</autoReward>
+          </event>
+        </choice>
+      </event>
+    </choice>
+  </event>
 
   <event name="ENGI_LOOT" unique="true">
     <!--text taken from NOTHING_ENGI event -->
@@ -229,6 +285,76 @@
     <choice hidden="true">
       <text>Don't risk it: charge the FTL drive.</text>
       <event/>
+    </choice>
+  </event>
+
+  <changelog>
+    <text>Added Engi ship selling sensors event heavily inspired by Arsenal+ event.</text>
+  </changelog>
+  <event name="ENGI_SELLING_SENSORS" unique="true">
+    <text>An Engi research ship offers a variety of sensors, scanners and detectors for sale. You're looking for options that would fit your ship class.</text>
+    <ship load="ENGI_SHIP" hostile="false"/>
+    <choice req="sensors" max_lvl="0" blue="false">
+      <text>Install the sensors system.</text>
+      <event>
+        <text>The Engi are quick to install a sensors system. While useful for gathering information, you doubt it will be able to function in nebula.</text>
+        <system name="sensors"/>
+        <item_modify>
+          <item type="scrap" min="-30" max="-25"/>
+        </item_modify>
+      </event>
+    </choice>
+    <choice req="sensors" max_lvl="1" blue="false">
+      <text>Upgrade the sensors system.</text>
+      <event>
+        <text>The Engi are quick to upgrade your sensors system. While useful for gathering information, you doubt it will be able to function in nebula.</text>
+        <upgrade amount="1" system="sensors"/>
+        <item_modify>
+          <item type="scrap" min="-20" max="-15"/>
+        </item_modify>
+      </event>
+    </choice>
+    <choice req="sensors" max_lvl="2" blue="false">
+      <text>Upgrade the sensors system.</text>
+      <event>
+        <text>The Engi are quick to upgrade your sensors system. While useful for gathering information, you doubt it will be able to function in nebula.</text>
+        <upgrade amount="1" system="sensors"/>
+        <item_modify>
+          <item type="scrap" min="-30" max="-20"/>
+        </item_modify>
+      </event>
+    </choice>
+    <choice>
+      <text>Buy a Lifeform scanner.</text>
+      <event>
+        <text>You transfer the payment but it takes some time for Engi merchants to bring the goods to your ship.</text>
+        <item_modify>
+          <item type="scrap" min="-25" max="-20"/>
+        </item_modify>
+        <choice hidden="true">
+          <text id="continue"/>
+          <eventList>
+            <event>
+              <text>The Engi install their newest invention, an augmentation, very useful for traversing nebula. Satisfied with your purchase, you prepare to make an FTL jump.</text>
+              <augment name="LIFE_SCANNER"/>
+            </event>
+            <event>
+              <text>The Engi bring a Slug in a tight capsule, hardly able to move. They have very different interpretations of a 'Lifeform scanner'. Finally free from torturers, the SLug agrees to join your crew for a time.</text>
+              <crewMember amount="1" class="slug"/>
+              <choice hidden="true">
+                <text>This treatment is unacceptable! Attack the Engi.</text>
+                <event>
+                  <ship hostile="true"/>
+                </event>
+              </choice>
+              <choice hidden="true">
+                <text>Leave the Engi alone. At least, the SLug is safe with you now.</text>
+                <event/>
+              </choice>
+            </event>
+          </eventList>
+        </choice>
+      </event>
     </choice>
   </event>
 </FTL>

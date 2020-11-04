@@ -6,7 +6,8 @@
     <name>PAVONIAN_SCOUT</name>
   </blueprintList>
 
-  <!--TODO add 3-4 generic ships-->
+  <!--TODO add 2 generic ships (6) -->
+  <!--TODO layout for ship that is drawn-->
   <!--TODO gibs-->
 
   <shipBlueprintSuper name="PAVONIAN_ASSAULT" img="pavonian_assault" layout="pavonian_assault">

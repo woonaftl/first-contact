@@ -14,6 +14,7 @@
     <entry>Fed A starts with upgraded Burst Laser II (no change)</entry>
     <entry>Fed A artillery beam does not pierce shields</entry>
     <entry>Fed A artillery beam damage 1 to 4</entry>
+    <entry>Fed A artillery beam speed 13 to 9</entry>
     <entry>Fed A artillery beam fire chance 0.1 to 0</entry>
   </changelog>
   <weaponBlueprint name="ARTILLERY_FED">
@@ -26,7 +27,7 @@
     <sp>5</sp>
     <fireChance>0</fireChance>
     <breachChance>0</breachChance>
-    <speed>13</speed>
+    <speed>9</speed>
     <cooldown>40</cooldown>
     <power>1</power>
     <cost>0</cost>
@@ -83,12 +84,11 @@
     <tip>tip_missiles</tip>
     <title>Artillery Missiles</title>
     <short>Artillery</short>
-    <desc>Powers a slow, high-powered missile launcher that fires five warheads at no resource cost. More power means faster cooldown.</desc>
-    <tooltip>Artillery: Launcher that automatically fires 4 missiles that deal 2 damage each.</tooltip>
-    <damage>2</damage>
+    <desc>Powers a slow, high-powered missile launcher that up to nine warheads at no resource cost. More power means faster cooldown. Will not target the same room twice in a single volley.</desc>
+    <tooltip>Artillery: Launcher that automatically fires up to 9 missiles that deal 1 damage each.</tooltip>
+    <damage>1</damage>
     <missiles>0</missiles>
-    <!--game does not respond when there are more shots than rooms on enemy ship-->
-    <shots>4</shots>
+    <shots>9</shots>
     <sp>5</sp>
     <fireChance>1</fireChance>
     <breachChance>1</breachChance>
@@ -228,15 +228,15 @@
       <sensors power="1" room="4" start="false" img="room_sensors_2"/>
       <shields power="2" room="8" start="true" img="room_shields_5"/>
       <teleporter power="1" room="10" start="false"/>
-      <weapons power="2" room="14" start="true" img="room_weapons_16"/>
+      <weapons power="1" room="14" start="true" img="room_weapons_16"/>
     </systemList>
     <weaponSlots>3</weaponSlots>
     <droneSlots>2</droneSlots>
     <weaponList count="1" missiles="0">
-      <weapon name="BEAM_2_LONG_UPGRADED"/>
+      <weapon name="SHOTGUN_UPGRADED"/>
     </weaponList>
     <health amount="30"/>
-    <maxPower amount="8"/>
+    <maxPower amount="7"/>
     <crewCount amount="1" class="slug"/>
     <crewCount amount="1" class="energy"/>
     <crewCount amount="1" class="lizard"/>

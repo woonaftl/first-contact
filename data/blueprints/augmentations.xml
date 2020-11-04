@@ -227,7 +227,7 @@
 
   <augBlueprint name="AUTO_COOLDOWN">
     <title>Automated Re-loader</title>
-    <desc>Cooldown between weapon shots is improved by 10 percent.</desc>
+    <desc>Weapons charge 10 percent faster.</desc>
     <cost>40</cost>
     <bp>5</bp>
     <rarity>2</rarity>
@@ -274,7 +274,7 @@
 
   <changelog>
     <entry>Adv. FTL Navigation scrap cost 50 to 40</entry>
-    <entry>Adv. FTL Navigation allows to jump to any beacon in the sector insead of any previously visited beacon.</entry>
+    <entry>Adv. FTL Navigation allows to jump to any beacon in the sector instead of any previously visited beacon.</entry>
   </changelog>
   <augBlueprint name="FTL_JUMPER_UNIVERSAL">
     <title>Universal FTL Navigation</title>

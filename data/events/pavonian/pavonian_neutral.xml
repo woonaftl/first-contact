@@ -315,7 +315,7 @@
       </event>
     </choice>
     <choice hidden="true">
-      <text>Attack the extorters.</text>
+      <text>Attack the extortioners.</text>
       <event>
         <ship hostile="true"/>
       </event>

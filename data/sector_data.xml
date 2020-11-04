@@ -7,16 +7,16 @@
     <sector>ENGI_WARZONE_SECTOR</sector>
     <!--<sector>LIZARD_REFUGE_SECTOR</sector>-->
     <sector>ORCHID_GARDEN_SECTOR</sector>
-    <sector>PAVONIAN_ANARCHY_SECTOR</sector>
+    <!--<sector>PAVONIAN_ANARCHY_SECTOR</sector>-->
     <!--<sector>PAVONIAN_RAINBOW_SECTOR</sector>-->
-    <sector>ROCK_FORTRESS_SECTOR</sector>
+    <sector>ROCK_HOLY_SECTOR</sector>
     <sector>ZOLTAN_INSPECTION_SECTOR</sector>
   </sectorType>
 
   <sectorType name="HOSTILE">
     <!--<sector>AQUARIAN_DIMMED_SECTOR</sector>-->
     <sector>LANIUS_WARZONE_SECTOR</sector>
-    <!--<sector>MANTIS_BROOD_SECTOR</sector>-->
+    <sector>MANTIS_BROOD_SECTOR</sector>
     <sector>MANTIS_HUNTING_SECTOR</sector>
     <!--<sector>ORCHID_OVERGROWN_SECTOR</sector>-->
     <sector>PIRATE_SECTOR</sector>
@@ -27,7 +27,7 @@
 
   <sectorType name="NEBULA">
     <!--<sector>AQUARIAN_HOME_SECTOR</sector>-->
-    <!--<sector>LANIUS_HOME_SECTOR</sector>-->
+    <sector>LANIUS_HOME_SECTOR</sector>
     <!--<sector>LIZARD_RUINS_SECTOR</sector>-->
     <sector>NEBULA_FILLER_SECTOR</sector>
     <sector>SLUG_HOME_SECTOR</sector>
@@ -145,7 +145,7 @@
     <event name="NOSHIP_CIVILIAN" min="1" max="1"/>
   </sectorDescription>
 
-  <sectorDescription name="AQUARIAN_DIMMED_SECTOR" minSector="2" unique="true">
+  <sectorDescription name="AQUARIAN_DIMMED_SECTOR" minSector="1" unique="true">
     <!-- challenge sector, beacons are hidden on the star map -->
     <nameList>
       <name>Aquarian Dimmed Space</name>
@@ -156,19 +156,24 @@
       <track>debris</track>
     </trackList>
     <rarityList>
-      <blueprint name="aquarian" rarity="1"/>
-      <blueprint name="human" rarity="0"/>
+      <blueprint name="human" rarity="4"/>
       <blueprint name="engi" rarity="0"/>
-      <blueprint name="mantis" rarity="5"/>
-      <blueprint name="rock" rarity="0"/>
+      <blueprint name="mantis" rarity="4"/>
+      <blueprint name="rock" rarity="4"/>
+      <blueprint name="energy" rarity="0"/>
       <blueprint name="slug" rarity="4"/>
+      <blueprint name="anaerobic" rarity="0"/>
+      <blueprint name="aquarian" rarity="1"/>
+      <blueprint name="lizard" rarity="0"/>
+      <blueprint name="orchid" rarity="0"/>
+      <blueprint name="pavonian" rarity="0"/>
     </rarityList>
     <startEvent>START_BEACON_AQUARIAN</startEvent>
     <event name="STORE" min="1" max="1"/>
-    <event name="UPGRADE_LIST_NEBULA" min="1" max="1"/>
+    <event name="UPGRADE_LIST_ALL" min="1" max="1"/>
   </sectorDescription>
 
-  <sectorDescription name="AQUARIAN_HOME_SECTOR" minSector="2" unique="true">
+  <sectorDescription name="AQUARIAN_HOME_SECTOR" minSector="1" unique="true">
     <!-- challenge sector, beacons are hidden on the star map -->
     <nameList>
       <name>Aquarian Secret Lair</name>
@@ -179,12 +184,17 @@
       <track>void</track>
     </trackList>
     <rarityList>
-      <blueprint name="aquarian" rarity="1"/>
-      <blueprint name="human" rarity="0"/>
+      <blueprint name="human" rarity="4"/>
       <blueprint name="engi" rarity="0"/>
-      <blueprint name="mantis" rarity="5"/>
+      <blueprint name="mantis" rarity="0"/>
       <blueprint name="rock" rarity="0"/>
+      <blueprint name="energy" rarity="0"/>
       <blueprint name="slug" rarity="4"/>
+      <blueprint name="anaerobic" rarity="0"/>
+      <blueprint name="aquarian" rarity="1"/>
+      <blueprint name="lizard" rarity="0"/>
+      <blueprint name="orchid" rarity="0"/>
+      <blueprint name="pavonian" rarity="0"/>
     </rarityList>
     <startEvent>START_BEACON_AQUARIAN</startEvent>
     <event name="STORE" min="1" max="1"/>
@@ -201,33 +211,30 @@
       <track>hacking</track>
     </trackList>
     <rarityList>
-      <blueprint name="human" rarity="5"/>
+      <blueprint name="human" rarity="4"/>
       <blueprint name="engi" rarity="1"/>
       <blueprint name="mantis" rarity="0"/>
       <blueprint name="rock" rarity="0"/>
       <blueprint name="energy" rarity="2"/>
       <blueprint name="slug" rarity="0"/>
-      <blueprint name="orchid" rarity="5"/>
-      <blueprint name="lizard" rarity="5"/>
+      <blueprint name="anaerobic" rarity="0"/>
+      <blueprint name="aquarian" rarity="0"/>
+      <blueprint name="lizard" rarity="0"/>
+      <blueprint name="orchid" rarity="0"/>
+      <blueprint name="pavonian" rarity="0"/>
     </rarityList>
     <startEvent>START_BEACON_ENGI_RESEARCH</startEvent>
     <event name="STORE_ENGI" min="3" max="3"/>
     <event name="UPGRADE_LIST_LEGIT" min="2" max="2"/>
 
     <event name="ZOLTAN_CREW_STUDY" min="1" max="1"/>
-    <event name="ENGI_MCCLONEY" min="1" max="1"/>
-    <event name="ENGI_GREEN_PLANET" min="1" max="1"/>
-    <event name="ENGI_VIRUS" min="1" max="1"/>
-    <event name="ENGI_ENTERTAINMENT" min="1" max="1"/>
-    <event name="ENGI_SEX" min="1" max="1"/>
-    <event name="CONFUSED_MANTIS" min="1" max="1"/>
-    <event name="ENGI_SYSTEM_UPGRADE" min="1" max="1"/>
 
-    <event name="NEUTRAL_ENGI" min="3" max="3"/>
-    <event name="NOSHIP_ENGI" min="4" max="4"/>
+    <event name="NEUTRAL_ENGI_RESEARCH" min="5" max="5"/>
+    <event name="NOSHIP_ENGI_RESEARCH" min="8" max="8"/>
+    <event name="HOSTILE_ENGI_RESEARCH" min="1" max="1"/>
 
-    <event name="NEUTRAL_ENGI" min="1" max="1"/>
-    <event name="NOSHIP_ENGI" min="1" max="1"/>
+    <event name="NEUTRAL_ENGI_RESEARCH" min="1" max="1"/>
+    <event name="NOSHIP_ENGI_RESEARCH" min="1" max="1"/>
   </sectorDescription>
 
   <sectorDescription name="ENGI_WARZONE_SECTOR" minSector="1" unique="true">
@@ -240,35 +247,35 @@
       <track>hacking</track>
     </trackList>
     <rarityList>
-      <blueprint name="human" rarity="2"/>
+      <blueprint name="human" rarity="1"/>
       <blueprint name="engi" rarity="1"/>
-      <blueprint name="mantis" rarity="2"/>
+      <blueprint name="mantis" rarity="1"/>
       <blueprint name="rock" rarity="0"/>
       <blueprint name="energy" rarity="4"/>
       <blueprint name="slug" rarity="0"/>
-      <blueprint name="orchid" rarity="5"/>
-      <blueprint name="lizard" rarity="5"/>
-      <blueprint name="pavonian" rarity="5"/>
+      <blueprint name="anaerobic" rarity="0"/>
+      <blueprint name="aquarian" rarity="0"/>
+      <blueprint name="lizard" rarity="0"/>
+      <blueprint name="orchid" rarity="0"/>
+      <blueprint name="pavonian" rarity="0"/>
     </rarityList>
     <startEvent>START_BEACON_ENGI_WARZONE</startEvent>
     <event name="STORE_ENGI" min="2" max="2"/>
     <event name="UPGRADE_LIST_ALL" min="1" max="1"/>
 
     <event name="ASTEROID_DERELICT_SHIP" min="1" max="1"/>
-    <event name="ENGI_GREEN_PLANET" min="1" max="1"/>
-    <event name="DISTRESS_ENGI_REACTOR" min="1" max="1"/>
 
-    <event name="NEUTRAL_ENGI" min="4" max="4"/>
+    <event name="NOSHIP_ENGI" min="6" max="6"/>
+    <event name="NEUTRAL_ENGI" min="3" max="3"/>
     <event name="HOSTILE_HAZARD_ENGI" min="1" max="1"/>
     <event name="HOSTILE_ENGI" min="5" max="5"/>
-    <event name="NOSHIP_ENGI" min="4" max="4"/>
 
-    <event name="HOSTILE_ENGI" min="1" max="1"/>
     <event name="NOSHIP_ENGI" min="1" max="1"/>
+    <event name="NEUTRAL_ENGI" min="1" max="1"/>
+    <event name="HOSTILE_ENGI" min="1" max="1"/>
   </sectorDescription>
 
   <sectorDescription name="LANIUS_WARZONE_SECTOR" minSector="1" unique="true">
-    <!-- TODO challenge sector, what's the challenge? -->
     <nameList>
       <name>Lanius Resurgence Point</name>
     </nameList>
@@ -278,23 +285,30 @@
       <track>wasteland</track>
     </trackList>
     <rarityList>
-      <blueprint name="anaerobic" rarity="1"/>
-      <blueprint name="human" rarity="2"/>
+      <blueprint name="human" rarity="1"/>
       <blueprint name="engi" rarity="4"/>
       <blueprint name="mantis" rarity="4"/>
-      <blueprint name="energy" rarity="0"/>
       <blueprint name="rock" rarity="4"/>
-      <blueprint name="SHOTGUN" rarity="1"/>
-      <blueprint name="SHOTGUN_2" rarity="1"/>
+      <blueprint name="energy" rarity="0"/>
+      <blueprint name="slug" rarity="0"/>
+      <blueprint name="anaerobic" rarity="1"/>
+      <blueprint name="aquarian" rarity="0"/>
+      <blueprint name="lizard" rarity="4"/>
+      <blueprint name="orchid" rarity="0"/>
+      <blueprint name="pavonian" rarity="0"/>
     </rarityList>
-    <startEvent>START_BEACON_LANIUS</startEvent>
+    <startEvent>START_BEACON_LANIUS_WARZONE</startEvent>
     <event name="STORE_LANIUS" min="2" max="2"/>
     <event name="UPGRADE_LIST_ALL" min="1" max="1"/>
 
-    <event name="NOSHIP_LANIUS" min="3" max="3"/>
+    <event name="NOSHIP_LANIUS" min="2" max="2"/>
     <event name="HOSTILE_HAZARD_LANIUS" min="1" max="1"/>
-    <event name="HOSTILE_LANIUS" min="6" max="6"/>
-    <event name="NEUTRAL_LANIUS" min="9" max="9"/>
+    <event name="HOSTILE_LANIUS" min="5" max="5"/>
+    <event name="NEUTRAL_LANIUS" min="8" max="8"/>
+
+    <event name="NOSHIP_LANIUS" min="1" max="1"/>
+    <event name="HOSTILE_LANIUS" min="1" max="1"/>
+    <event name="NEUTRAL_LANIUS" min="1" max="1"/>
   </sectorDescription>
 
   <sectorDescription name="LANIUS_HOME_SECTOR" minSector="1" unique="true">
@@ -307,23 +321,31 @@
       <track>void</track>
     </trackList>
     <rarityList>
-      <blueprint name="anaerobic" rarity="1"/>
-      <blueprint name="human" rarity="2"/>
-      <blueprint name="engi" rarity="4"/>
-      <blueprint name="mantis" rarity="4"/>
+      <blueprint name="human" rarity="4"/>
+      <blueprint name="engi" rarity="0"/>
+      <blueprint name="mantis" rarity="0"/>
+      <blueprint name="rock" rarity="0"/>
       <blueprint name="energy" rarity="0"/>
-      <blueprint name="rock" rarity="4"/>
-      <blueprint name="SHOTGUN" rarity="1"/>
-      <blueprint name="SHOTGUN_2" rarity="1"/>
+      <blueprint name="slug" rarity="4"/>
+      <blueprint name="anaerobic" rarity="1"/>
+      <blueprint name="aquarian" rarity="4"/>
+      <blueprint name="lizard" rarity="0"/>
+      <blueprint name="orchid" rarity="0"/>
+      <blueprint name="pavonian" rarity="0"/>
     </rarityList>
-    <startEvent>START_BEACON_LANIUS</startEvent>
-    <event name="STORE_LANIUS" min="2" max="2"/>
-    <event name="UPGRADE_LIST_ALL" min="1" max="1"/>
+    <startEvent>START_BEACON_LANIUS_HOME</startEvent>
+    <event name="NEBULA_STORE_LANIUS" min="1" max="1"/>
+    <event name="UPGRADE_LIST_NEBULA" min="1" max="1"/>
 
-    <event name="NOSHIP_LANIUS" min="3" max="3"/>
-    <event name="HOSTILE_HAZARD_LANIUS" min="1" max="1"/>
-    <event name="HOSTILE_LANIUS" min="6" max="6"/>
-    <event name="NEUTRAL_LANIUS" min="9" max="9"/>
+    <event name="NEBULA_NOSHIP_LANIUS" min="6" max="6"/>
+    <event name="NEBULA_HOSTILE_HAZARD_LANIUS" min="1" max="1"/>
+    <event name="NEBULA_HOSTILE_LANIUS" min="2" max="2"/>
+    <event name="NEBULA_NEUTRAL_LANIUS" min="7" max="7"/>
+
+    <event name="NOSHIP_LANIUS_HOME" min="1" max="1"/>
+    <event name="HOSTILE_LANIUS_HOME" min="1" max="1"/>
+    <event name="NOSHIP_LANIUS_HOME" min="1" max="1"/>
+    <event name="HOSTILE_LANIUS_HOME" min="1" max="1"/>
   </sectorDescription>
 
   <sectorDescription name="LIZARD_REFUGE_SECTOR" minSector="1" unique="true">
@@ -336,14 +358,21 @@
       <track>lostship</track>
     </trackList>
     <rarityList>
+      <blueprint name="human" rarity="2"/>
+      <blueprint name="engi" rarity="4"/>
+      <blueprint name="mantis" rarity="4"/>
+      <blueprint name="rock" rarity="4"/>
+      <blueprint name="energy" rarity="0"/>
+      <blueprint name="slug" rarity="0"/>
+      <blueprint name="anaerobic" rarity="0"/>
+      <blueprint name="aquarian" rarity="0"/>
       <blueprint name="lizard" rarity="1"/>
-      <blueprint name="mantis" rarity="3"/>
-      <blueprint name="human" rarity="3"/>
-      <blueprint name="engi" rarity="3"/>
+      <blueprint name="orchid" rarity="0"/>
+      <blueprint name="pavonian" rarity="0"/>
     </rarityList>
     <startEvent>START_BEACON_LIZARD</startEvent>
     <event name="STORE" min="2" max="2"/>
-    <event name="UPGRADE_LIST_ALL" min="2" max="2"/>
+    <event name="UPGRADE_LIST_ALL" min="1" max="1"/>
 
     <event name="ASTEROID_DERELICT_SHIP" min="1" max="1"/>
   </sectorDescription>
@@ -358,49 +387,62 @@
       <track>debris</track>
     </trackList>
     <rarityList>
+      <blueprint name="human" rarity="4"/>
+      <blueprint name="engi" rarity="0"/>
+      <blueprint name="mantis" rarity="0"/>
+      <blueprint name="rock" rarity="0"/>
+      <blueprint name="energy" rarity="4"/>
+      <blueprint name="slug" rarity="4"/>
+      <blueprint name="anaerobic" rarity="0"/>
+      <blueprint name="aquarian" rarity="0"/>
       <blueprint name="lizard" rarity="1"/>
-      <blueprint name="mantis" rarity="3"/>
-      <blueprint name="human" rarity="3"/>
-      <blueprint name="engi" rarity="3"/>
+      <blueprint name="orchid" rarity="0"/>
+      <blueprint name="pavonian" rarity="0"/>
     </rarityList>
     <startEvent>START_BEACON_LIZARD</startEvent>
-    <event name="STORE" min="2" max="2"/>
-    <event name="UPGRADE_LIST_ALL" min="2" max="2"/>
-
-    <event name="ASTEROID_DERELICT_SHIP" min="1" max="1"/>
+    <event name="STORE" min="1" max="1"/>
+    <event name="UPGRADE_LIST_NEBULA" min="1" max="1"/>
   </sectorDescription>
 
-  <sectorDescription name="MANTIS_HUNTING_SECTOR" minSector="1" unique="true">
-    <!-- TODO challenge sector, what's the challenge? -->
+  <sectorDescription name="MANTIS_SLAVER_SECTOR" minSector="1" unique="true">
     <nameList>
-      <name>Mantis Hunting Grounds</name>
+      <name>Mantis Slaver Colonies</name>
     </nameList>
     <trackList>
       <track>mantis</track>
       <track>debris</track>
+      <track>colonial</track>
       <track>void</track>
     </trackList>
     <rarityList>
+      <blueprint name="human" rarity="4"/>
+      <blueprint name="engi" rarity="2"/>
       <blueprint name="mantis" rarity="1"/>
+      <blueprint name="rock" rarity="0"/>
       <blueprint name="energy" rarity="0"/>
-      <blueprint name="rock" rarity="5"/>
-      <blueprint name="lizard" rarity="5"/>
-      <blueprint name="human" rarity="3"/>
+      <blueprint name="slug" rarity="0"/>
+      <blueprint name="anaerobic" rarity="0"/>
+      <blueprint name="aquarian" rarity="0"/>
+      <blueprint name="lizard" rarity="0"/>
+      <blueprint name="orchid" rarity="0"/>
+      <blueprint name="pavonian" rarity="0"/>
     </rarityList>
-    <startEvent>START_BEACON_MANTIS</startEvent>
+    <startEvent>START_BEACON_MANTIS_SLAVER</startEvent>
     <event name="STORE_MANTIS" min="2" max="2"/>
     <event name="UPGRADE_LIST_ALL" min="1" max="1"/>
 
     <event name="MANTIS_NAMED_THIEF" min="1" max="1"/>
     <event name="ASTEROID_DERELICT_SHIP" min="1" max="1"/>
-    <event name="MANTIS_CREW" min="1" max="1"/>
-    <event name="DONOR_MANTIS_CHASE" min="1" max="1"/>
-    <event name="MANTIS_SLAVE_BUYER" min="1" max="1"/>
+
+    <event name="NOSHIP_MANTIS" min="4" max="4"/>
+    <event name="HOSTILE_HAZARD_MANTIS" min="2" max="2"/>
+    <event name="NEUTRAL_MANTIS" min="3" max="3"/>
+    <event name="HOSTILE_MANTIS" min="4" max="4"/>
 
     <event name="NOSHIP_MANTIS" min="1" max="1"/>
+    <event name="NEUTRAL_MANTIS" min="1" max="1"/>
     <event name="HOSTILE_HAZARD_MANTIS" min="1" max="1"/>
-    <event name="NEUTRAL_MANTIS" min="3" max="3"/>
-    <event name="HOSTILE_MANTIS" min="8" max="8"/>
+    <event name="HOSTILE_MANTIS" min="1" max="1"/>
   </sectorDescription>
 
   <sectorDescription name="MANTIS_BROOD_SECTOR" minSector="2" unique="true">
@@ -416,19 +458,19 @@
     <rarityListExcept crew="0">
       <blueprint name="mantis" rarity="1"/>
     </rarityListExcept>
-    <startEvent>START_BEACON_MANTIS</startEvent>
+    <startEvent>START_BEACON_MANTIS_BROOD</startEvent>
     <event name="STORE_MANTIS" min="1" max="1"/>
     <event name="UPGRADE_LIST_ALL" min="1" max="1"/>
 
     <event name="ASTEROID_DERELICT_SHIP" min="1" max="1"/>
-    <event name="MANTIS_CREW" min="1" max="1"/>
-    <event name="DONOR_MANTIS_CHASE" min="1" max="1"/>
-    <event name="MANTIS_SLAVE_BUYER" min="1" max="1"/>
 
-    <event name="NOSHIP_MANTIS" min="1" max="1"/>
-    <event name="HOSTILE_HAZARD_MANTIS" min="1" max="1"/>
-    <event name="NEUTRAL_MANTIS" min="3" max="3"/>
-    <event name="HOSTILE_MANTIS" min="9" max="9"/>
+    <event name="NOSHIP_MANTIS_BROOD" min="4" max="4"/>
+    <event name="NEUTRAL_MANTIS_BROOD" min="3" max="3"/>
+    <event name="HOSTILE_MANTIS_BROOD" min="9" max="9"/>
+
+    <event name="NOSHIP_MANTIS_BROOD" min="1" max="1"/>
+    <event name="NEUTRAL_MANTIS_BROOD" min="1" max="1"/>
+    <event name="HOSTILE_MANTIS_BROOD" min="1" max="1"/>
   </sectorDescription>
 
   <sectorDescription name="NEBULA_FILLER_SECTOR" minSector="1" unique="false">
@@ -439,6 +481,19 @@
       <track>deepspace</track>
       <track>void</track>
     </trackList>
+    <rarityList>
+      <blueprint name="human" rarity="3"/>
+      <blueprint name="engi" rarity="0"/>
+      <blueprint name="mantis" rarity="4"/>
+      <blueprint name="rock" rarity="4"/>
+      <blueprint name="energy" rarity="4"/>
+      <blueprint name="slug" rarity="4"/>
+      <blueprint name="anaerobic" rarity="0"/>
+      <blueprint name="aquarian" rarity="0"/>
+      <blueprint name="lizard" rarity="0"/>
+      <blueprint name="orchid" rarity="0"/>
+      <blueprint name="pavonian" rarity="0"/>
+    </rarityList>
     <startEvent>START_BEACON</startEvent>
     <event name="NEBULA_STORE" min="2" max="2"/>
     <event name="UPGRADE_LIST_NEBULA" min="1" max="1"/>
@@ -450,14 +505,15 @@
     <event name="NEBULA_HOSTILE_CIVILIAN" min="2" max="2"/>
     <event name="NEBULA_HOSTILE_HAZARD_CIVILIAN" min="2" max="2"/>
 
+    <event name="NOSHIP_CIVILIAN" min="1" max="1"/>
     <event name="NEUTRAL_CIVILIAN" min="1" max="1"/>
     <event name="HOSTILE_CIVILIAN" min="1" max="1"/>
-    <event name="NOSHIP_CIVILIAN" min="2" max="2"/>
+    <event name="NOSHIP_CIVILIAN" min="1" max="1"/>
   </sectorDescription>
 
   <sectorDescription name="ORCHID_GARDEN_SECTOR" minSector="1" unique="true">
     <nameList>
-      <name>Orchid Gardenworlds</name>
+      <name>Orchid Garden Worlds</name>
     </nameList>
     <trackList>
       <!--TODO <track>orchid</track>-->
@@ -465,12 +521,17 @@
       <track>cosmos</track>
     </trackList>
     <rarityList>
-      <blueprint name="orchid" rarity="1"/>
-      <blueprint name="human" rarity="3"/>
-      <blueprint name="rock" rarity="3"/>
+      <blueprint name="human" rarity="4"/>
+      <blueprint name="engi" rarity="0"/>
       <blueprint name="mantis" rarity="4"/>
-      <blueprint name="engi" rarity="5"/>
-      <blueprint name="pavonian" rarity="5"/>
+      <blueprint name="rock" rarity="4"/>
+      <blueprint name="energy" rarity="0"/>
+      <blueprint name="slug" rarity="0"/>
+      <blueprint name="anaerobic" rarity="0"/>
+      <blueprint name="aquarian" rarity="0"/>
+      <blueprint name="lizard" rarity="0"/>
+      <blueprint name="orchid" rarity="1"/>
+      <blueprint name="pavonian" rarity="4"/>
     </rarityList>
     <startEvent>START_BEACON_ORCHID</startEvent>
     <event name="STORE_ORCHID" min="2" max="2"/>
@@ -479,15 +540,18 @@
     <event name="ASTEROID_DERELICT_SHIP" min="1" max="1"/>
 
     <event name="NOSHIP_ORCHID" min="5" max="5"/>
-    <event name="NEUTRAL_ORCHID" min="4" max="4"/>
-    <event name="HOSTILE_ORCHID" min="6" max="6"/>
-    <event name="ORCHID_FIGHT" min="2" max="2"/>
+    <event name="NEUTRAL_ORCHID" min="6" max="6"/>
+    <event name="HOSTILE_ORCHID" min="3" max="3"/>
+
+    <event name="NOSHIP_ORCHID" min="1" max="1"/>
+    <event name="NEUTRAL_ORCHID" min="1" max="1"/>
+    <event name="HOSTILE_ORCHID" min="1" max="1"/>
   </sectorDescription>
 
   <sectorDescription name="ORCHID_OVERGROWN_SECTOR" minSector="2" unique="true">
     <!-- challenge sector: a lot of event boarders -->
     <nameList>
-      <name>Overgrown Orchid Sector</name>
+      <name>Orchid Overgrown Sector</name>
     </nameList>
     <trackList>
       <!--TODO <track>orchid</track>-->
@@ -495,23 +559,21 @@
       <track>cosmos</track>
     </trackList>
     <rarityList>
-      <blueprint name="orchid" rarity="1"/>
-      <blueprint name="human" rarity="3"/>
-      <blueprint name="rock" rarity="3"/>
+      <blueprint name="human" rarity="4"/>
+      <blueprint name="engi" rarity="0"/>
       <blueprint name="mantis" rarity="4"/>
-      <blueprint name="engi" rarity="5"/>
-      <blueprint name="pavonian" rarity="5"/>
+      <blueprint name="rock" rarity="4"/>
+      <blueprint name="energy" rarity="0"/>
+      <blueprint name="slug" rarity="0"/>
+      <blueprint name="anaerobic" rarity="0"/>
+      <blueprint name="aquarian" rarity="0"/>
+      <blueprint name="lizard" rarity="0"/>
+      <blueprint name="orchid" rarity="1"/>
+      <blueprint name="pavonian" rarity="4"/>
     </rarityList>
     <startEvent>START_BEACON_ORCHID</startEvent>
     <event name="STORE_ORCHID" min="2" max="2"/>
-    <event name="UPGRADE_LIST_LEGIT" min="2" max="2"/>
-
-    <event name="ASTEROID_DERELICT_SHIP" min="1" max="1"/>
-
-    <event name="NOSHIP_ORCHID" min="5" max="5"/>
-    <event name="NEUTRAL_ORCHID" min="4" max="4"/>
-    <event name="HOSTILE_ORCHID" min="6" max="6"/>
-    <event name="ORCHID_FIGHT" min="2" max="2"/>
+    <event name="UPGRADE_LIST_ALL" min="2" max="2"/>
   </sectorDescription>
 
   <sectorDescription name="PAVONIAN_RAINBOW_SECTOR" minSector="1" unique="true">
@@ -526,10 +588,17 @@
       <track>lostship</track>
     </trackList>
     <rarityList>
-      <blueprint name="pavonian" rarity="1"/>
-      <blueprint name="human" rarity="3"/>
+      <blueprint name="human" rarity="2"/>
+      <blueprint name="engi" rarity="0"/>
+      <blueprint name="mantis" rarity="4"/>
+      <blueprint name="rock" rarity="0"/>
+      <blueprint name="energy" rarity="0"/>
+      <blueprint name="slug" rarity="2"/>
+      <blueprint name="anaerobic" rarity="0"/>
+      <blueprint name="aquarian" rarity="0"/>
+      <blueprint name="lizard" rarity="0"/>
       <blueprint name="orchid" rarity="4"/>
-      <blueprint name="slug" rarity="4"/>
+      <blueprint name="pavonian" rarity="1"/>
     </rarityList>
     <startEvent>START_BEACON_PAVONIAN</startEvent>
     <event name="STORE_PAVONIAN" min="2" max="2"/>
@@ -538,7 +607,7 @@
 
   <sectorDescription name="PAVONIAN_ANARCHY_SECTOR" minSector="1" unique="true">
     <nameList>
-      <name>Pavonian Communitites</name>
+      <name>Pavonian Communities</name>
     </nameList>
     <trackList>
       <!--TODO <track>pavonian</track>-->
@@ -547,28 +616,32 @@
       <track>lostship</track>
     </trackList>
     <rarityList>
-      <blueprint name="human" rarity="4"/>
-      <blueprint name="engi" rarity="4"/>
-      <blueprint name="mantis" rarity="4"/>
-      <blueprint name="energy" rarity="4"/>
-      <blueprint name="rock" rarity="4"/>
-      <blueprint name="slug" rarity="4"/>
-      <blueprint name="anaerobic" rarity="4"/>
-      <blueprint name="lizard" rarity="4"/>
+      <blueprint name="human" rarity="5"/>
+      <blueprint name="engi" rarity="5"/>
+      <blueprint name="mantis" rarity="5"/>
+      <blueprint name="rock" rarity="5"/>
+      <blueprint name="energy" rarity="5"/>
+      <blueprint name="slug" rarity="5"/>
+      <blueprint name="anaerobic" rarity="5"/>
+      <blueprint name="aquarian" rarity="5"/>
+      <blueprint name="lizard" rarity="5"/>
+      <blueprint name="orchid" rarity="5"/>
       <blueprint name="pavonian" rarity="1"/>
-      <blueprint name="orchid" rarity="4"/>
-      <blueprint name="aquarian" rarity="4"/>
     </rarityList>
     <startEvent>START_BEACON_PAVONIAN</startEvent>
     <event name="STORE_PAVONIAN" min="2" max="2"/>
-    <event name="UPGRADE_LIST_ALL" min="2" max="2"/>
+    <event name="UPGRADE_LIST_ALL" min="1" max="1"/>
 
     <event name="ASTEROID_DERELICT_SHIP" min="1" max="1"/>
 
+    <event name="NOSHIP_PAVONIAN" min="5" max="5"/>
+    <event name="NEUTRAL_PAVONIAN" min="8" max="8"/>
+    <event name="HOSTILE_PAVONIAN" min="1" max="1"/>
+
+    <event name="NOSHIP_PAVONIAN" min="1" max="1"/>
+    <event name="NEUTRAL_PAVONIAN" min="1" max="1"/>
     <event name="HOSTILE_HAZARD_PAVONIAN" min="1" max="1"/>
-    <event name="HOSTILE_PAVONIAN" min="6" max="6"/>
-    <event name="NEUTRAL_PAVONIAN" min="6" max="6"/>
-    <event name="NOSHIP_PAVONIAN" min="4" max="4"/>
+    <event name="HOSTILE_PAVONIAN" min="1" max="1"/>
   </sectorDescription>
 
   <sectorDescription name="PIRATE_SECTOR" minSector="1" unique="true">
@@ -593,10 +666,14 @@
     <event name="NEBULA_NEUTRAL_PIRATE" min="1" max="1"/>
 
     <event name="HOSTILE_BOSS_PIRATE" min="2" max="2"/>
+    <event name="NOSHIP_PIRATE" min="4" max="4"/>
+    <event name="NEUTRAL_PIRATE" min="1" max="1"/>
     <event name="HOSTILE_HAZARD_PIRATE" min="2" max="2"/>
-    <event name="HOSTILE_PIRATE" min="2" max="2"/>
-    <event name="NEUTRAL_PIRATE" min="2" max="2"/>
-    <event name="NOSHIP_PIRATE" min="5" max="5"/>
+    <event name="HOSTILE_PIRATE" min="1" max="1"/>
+
+    <event name="NOSHIP_PIRATE" min="1" max="1"/>
+    <event name="NEUTRAL_PIRATE" min="1" max="1"/>
+    <event name="HOSTILE_PIRATE" min="1" max="1"/>
   </sectorDescription>
 
   <sectorDescription name="REBEL_STRONGHOLD_SECTOR" minSector="4" unique="true">
@@ -611,26 +688,36 @@
       <track>hacking</track>
     </trackList>
     <rarityList>
+      <blueprint name="human" rarity="1"/>
       <blueprint name="engi" rarity="5"/>
       <blueprint name="mantis" rarity="4"/>
       <blueprint name="rock" rarity="5"/>
       <blueprint name="energy" rarity="0"/>
+      <blueprint name="slug" rarity="0"/>
+      <blueprint name="anaerobic" rarity="0"/>
+      <blueprint name="aquarian" rarity="0"/>
+      <blueprint name="lizard" rarity="0"/>
+      <blueprint name="orchid" rarity="0"/>
+      <blueprint name="pavonian" rarity="0"/>
     </rarityList>
     <startEvent>START_BEACON_REBEL</startEvent>
     <event name="STORE_REBEL" min="1" max="1"/>
     <event name="UPGRADE_LIST_SKETCHY" min="1" max="1"/>
 
     <event name="FLAGSHIP_CONSTRUCTION" min="1" max="1"/>
-    <event name="REBEL_WRECK_TRACKER" min="1" max="1"/>
 
     <event name="NEBULA_HOSTILE_HAZARD_REBEL" min="1" max="1"/>
     <event name="NEBULA_HOSTILE_REBEL" min="1" max="1"/>
     <event name="NEBULA_NEUTRAL_REBEL" min="1" max="1"/>
 
-    <event name="HOSTILE_HAZARD_REBEL" min="1" max="1"/>
-    <event name="HOSTILE_REBEL" min="8" max="8"/>
-    <event name="NEUTRAL_REBEL" min="5" max="5"/>
     <event name="NOSHIP_REBEL" min="1" max="1"/>
+    <event name="HOSTILE_HAZARD_REBEL" min="1" max="1"/>
+    <event name="NEUTRAL_REBEL" min="4" max="4"/>
+    <event name="HOSTILE_REBEL" min="7" max="7"/>
+
+    <event name="NOSHIP_REBEL" min="1" max="1"/>
+    <event name="NEUTRAL_REBEL" min="1" max="1"/>
+    <event name="HOSTILE_REBEL" min="1" max="1"/>
   </sectorDescription>
 
   <sectorDescription name="REBEL_FILLER_SECTOR" minSector="1" unique="false">
@@ -645,48 +732,57 @@
       <track>hacking</track>
     </trackList>
     <rarityList>
+      <blueprint name="human" rarity="1"/>
       <blueprint name="engi" rarity="5"/>
       <blueprint name="mantis" rarity="4"/>
       <blueprint name="rock" rarity="5"/>
       <blueprint name="energy" rarity="0"/>
+      <blueprint name="slug" rarity="0"/>
+      <blueprint name="anaerobic" rarity="0"/>
+      <blueprint name="aquarian" rarity="0"/>
+      <blueprint name="lizard" rarity="0"/>
+      <blueprint name="orchid" rarity="0"/>
+      <blueprint name="pavonian" rarity="0"/>
     </rarityList>
     <startEvent>START_BEACON_REBEL</startEvent>
     <event name="STORE_REBEL" min="1" max="1"/>
     <event name="UPGRADE_LIST_SKETCHY" min="1" max="1"/>
 
-    <event name="REBEL_WRECK_TRACKER" min="1" max="1"/>
-
     <event name="NEBULA_HOSTILE_HAZARD_REBEL" min="1" max="1"/>
     <event name="NEBULA_HOSTILE_REBEL" min="1" max="1"/>
     <event name="NEBULA_NEUTRAL_REBEL" min="1" max="1"/>
 
-    <event name="HOSTILE_HAZARD_REBEL" min="1" max="1"/>
-    <event name="HOSTILE_REBEL" min="8" max="8"/>
-    <event name="NEUTRAL_REBEL" min="6" max="6"/>
     <event name="NOSHIP_REBEL" min="1" max="1"/>
+    <event name="HOSTILE_HAZARD_REBEL" min="1" max="1"/>
+    <event name="NEUTRAL_REBEL" min="5" max="5"/>
+    <event name="HOSTILE_REBEL" min="7" max="7"/>
+
+    <event name="NOSHIP_REBEL" min="1" max="1"/>
+    <event name="NEUTRAL_REBEL" min="1" max="1"/>
+    <event name="HOSTILE_REBEL" min="1" max="1"/>
   </sectorDescription>
 
-  <sectorDescription name="ROCK_FORTRESS_SECTOR" minSector="1" unique="true">
+  <sectorDescription name="ROCK_HOLY_SECTOR" minSector="1" unique="true">
     <nameList>
-      <name>Rock Safe Haven</name>
+      <name>Rock Holy Sanctuary</name>
     </nameList>
     <trackList>
       <track>rock</track>
       <track>wasteland</track>
+      <track>milkyway</track>
     </trackList>
     <rarityList>
+      <blueprint name="human" rarity="4"/>
       <blueprint name="engi" rarity="0"/>
       <blueprint name="mantis" rarity="0"/>
+      <blueprint name="rock" rarity="1"/>
       <blueprint name="energy" rarity="3"/>
       <blueprint name="slug" rarity="0"/>
-      <blueprint name="rock" rarity="1"/>
-      <blueprint name="human" rarity="3"/>
-      <blueprint name="orchid" rarity="3"/>
-      <blueprint name="BOMB_LOCK" rarity="2"/>
-      <blueprint name="MISSILES_1" rarity="1"/>
-      <blueprint name="MISSILES_3" rarity="1"/>
-      <blueprint name="MISSILE_CHARGEGUN" rarity="1"/>
-      <blueprint name="MISSILES_CHARGE_HEAVY" rarity="2"/>
+      <blueprint name="anaerobic" rarity="0"/>
+      <blueprint name="aquarian" rarity="0"/>
+      <blueprint name="lizard" rarity="0"/>
+      <blueprint name="orchid" rarity="4"/>
+      <blueprint name="pavonian" rarity="4"/>
     </rarityList>
     <startEvent>START_BEACON_ROCK</startEvent>
     <event name="STORE_ROCK" min="2" max="2"/>
@@ -694,14 +790,11 @@
 
     <event name="ROCK_CRYSTAL_BEACON" min="1" max="1"/>
     <event name="ROCK_UNLOCK1" min="1" max="1"/>
-    <event name="ROCK_DESOLATE_TRIBE" min="1" max="1"/>
-    <event name="ROCK_QUEST_MARRIAGE_START" min="1" max="1"/>
-    <event name="ROCK_MISSIONARY" min="1" max="1"/>
 
-    <event name="NOSHIP_ROCK" min="5" max="5"/>
-    <event name="NEUTRAL_ROCK" min="3" max="3"/>
-    <event name="HOSTILE_ROCK" min="1" max="1"/>
-    <event name="HOSTILE_HAZARD_ROCK" min="1" max="1"/>
+    <event name="NOSHIP_ROCK_HOLY" min="6" max="6"/>
+    <event name="NEUTRAL_ROCK_HOLY" min="5" max="5"/>
+    <event name="HOSTILE_ROCK_HOLY" min="1" max="1"/>
+    <event name="HOSTILE_HAZARD_ROCK_HOLY" min="1" max="1"/>
 
     <event name="NOSHIP_ROCK" min="1" max="1"/>
     <event name="NEUTRAL_ROCK" min="1" max="1"/>
@@ -711,7 +804,7 @@
   <sectorDescription name="ROCK_HAZARD_SECTOR" minSector="2" unique="true">
     <!-- challenge sector: a lot of environmental hazards -->
     <nameList>
-      <name>Rock Volatile Wasteland</name>
+      <name>Rock-Owned Wasteland</name>
     </nameList>
     <trackList>
       <track>rock</track>
@@ -719,18 +812,17 @@
       <track>void</track>
     </trackList>
     <rarityList>
+      <blueprint name="human" rarity="4"/>
       <blueprint name="engi" rarity="0"/>
       <blueprint name="mantis" rarity="0"/>
-      <blueprint name="energy" rarity="4"/>
-      <blueprint name="slug" rarity="0"/>
       <blueprint name="rock" rarity="1"/>
-      <blueprint name="human" rarity="4"/>
-      <blueprint name="orchid" rarity="4"/>
-      <blueprint name="BOMB_LOCK" rarity="2"/>
-      <blueprint name="MISSILES_1" rarity="1"/>
-      <blueprint name="MISSILES_3" rarity="1"/>
-      <blueprint name="MISSILE_CHARGEGUN" rarity="1"/>
-      <blueprint name="MISSILES_CHARGE_HEAVY" rarity="2"/>
+      <blueprint name="energy" rarity="0"/>
+      <blueprint name="slug" rarity="0"/>
+      <blueprint name="anaerobic" rarity="0"/>
+      <blueprint name="aquarian" rarity="0"/>
+      <blueprint name="lizard" rarity="0"/>
+      <blueprint name="orchid" rarity="0"/>
+      <blueprint name="pavonian" rarity="0"/>
     </rarityList>
     <startEvent>START_BEACON_ROCK</startEvent>
     <event name="STORE_ROCK" min="1" max="1"/>
@@ -745,7 +837,7 @@
     <event name="NEUTRAL_ROCK" min="1" max="1"/>
   </sectorDescription>
 
-  <sectorDescription name="SLUG_HOME_SECTOR" minSector="2" unique="true">
+  <sectorDescription name="SLUG_HOME_SECTOR" minSector="1" unique="true">
     <nameList>
       <name>Slug Home Nebula</name>
     </nameList>
@@ -756,25 +848,27 @@
       <track>deepspace</track>
     </trackList>
     <rarityList>
+      <blueprint name="human" rarity="4"/>
       <blueprint name="engi" rarity="0"/>
-      <blueprint name="mantis" rarity="4"/>
+      <blueprint name="mantis" rarity="0"/>
+      <blueprint name="rock" rarity="0"/>
       <blueprint name="energy" rarity="4"/>
       <blueprint name="slug" rarity="1"/>
-      <blueprint name="rock" rarity="0"/>
-      <blueprint name="human" rarity="3"/>
-      <blueprint name="BEAM_BIO" rarity="3"/>
-      <blueprint name="BOMB_DELAY_BIO" rarity="3"/>
+      <blueprint name="anaerobic" rarity="0"/>
+      <blueprint name="aquarian" rarity="0"/>
+      <blueprint name="lizard" rarity="0"/>
+      <blueprint name="orchid" rarity="0"/>
+      <blueprint name="pavonian" rarity="0"/>
     </rarityList>
     <startEvent>START_BEACON_SLUG</startEvent>
     <event name="NEBULA_STORE_SLUG" min="2" max="2"/>
     <event name="UPGRADE_LIST_NEBULA" min="2" max="2"/>
 
     <event name="NEBULA_SLUG_FIGHT_UNLOCK" min="1" max="1"/>
-    <event name="DONOR_BLACK_RAVEN" min="1" max="1"/>
 
     <event name="NEBULA_NOSHIP_SLUG" min="4" max="4"/>
     <event name="NEBULA_NEUTRAL_SLUG" min="6" max="6"/>
-    <event name="NEBULA_HOSTILE_SLUG" min="3" max="3"/>
+    <event name="NEBULA_HOSTILE_SLUG_HOME" min="4" max="4"/>
 
     <event name="NEUTRAL_SLUG" min="1" max="1"/>
     <event name="HOSTILE_SLUG" min="2" max="2"/>
@@ -791,14 +885,17 @@
       <track>deepspace</track>
     </trackList>
     <rarityList>
+      <blueprint name="human" rarity="4"/>
       <blueprint name="engi" rarity="0"/>
-      <blueprint name="mantis" rarity="4"/>
+      <blueprint name="mantis" rarity="0"/>
+      <blueprint name="rock" rarity="0"/>
       <blueprint name="energy" rarity="4"/>
       <blueprint name="slug" rarity="1"/>
-      <blueprint name="rock" rarity="0"/>
-      <blueprint name="human" rarity="3"/>
-      <blueprint name="BEAM_BIO" rarity="3"/>
-      <blueprint name="BOMB_DELAY_BIO" rarity="3"/>
+      <blueprint name="anaerobic" rarity="0"/>
+      <blueprint name="aquarian" rarity="0"/>
+      <blueprint name="lizard" rarity="0"/>
+      <blueprint name="orchid" rarity="0"/>
+      <blueprint name="pavonian" rarity="0"/>
     </rarityList>
     <startEvent>START_BEACON_SLUG</startEvent>
     <event name="NEBULA_STORE_SLUG" min="1" max="1"/>
@@ -822,13 +919,16 @@
     </trackList>
     <rarityList>
       <blueprint name="human" rarity="3"/>
-      <blueprint name="engi" rarity="2"/>
+      <blueprint name="engi" rarity="3"/>
       <blueprint name="mantis" rarity="5"/>
       <blueprint name="rock" rarity="5"/>
       <blueprint name="energy" rarity="1"/>
-      <blueprint name="slug" rarity="4"/>
-      <blueprint name="orchid" rarity="4"/>
-      <blueprint name="lizard" rarity="4"/>
+      <blueprint name="slug" rarity="0"/>
+      <blueprint name="anaerobic" rarity="0"/>
+      <blueprint name="aquarian" rarity="0"/>
+      <blueprint name="lizard" rarity="5"/>
+      <blueprint name="orchid" rarity="0"/>
+      <blueprint name="pavonian" rarity="0"/>
     </rarityList>
     <startEvent>START_BEACON_ZOLTAN_INSPECTION</startEvent>
     <event name="STORE_ZOLTAN" min="2" max="2"/>
@@ -837,12 +937,16 @@
     <event name="ZOLTAN_PEACE_QUEST" min="1" max="1"/>
     <event name="ZOLTAN_CREW_STUDY" min="1" max="1"/>
 
-    <event name="NOSHIP_ZOLTAN" min="4" max="4"/>
-    <event name="NEUTRAL_ZOLTAN" min="5" max="5"/>
-    <event name="HOSTILE_ZOLTAN" min="7" max="7"/>
+    <event name="NOSHIP_ZOLTAN" min="3" max="3"/>
+    <event name="NEUTRAL_ZOLTAN" min="4" max="4"/>
+    <event name="HOSTILE_ZOLTAN" min="6" max="6"/>
+
+   <event name="NOSHIP_ZOLTAN" min="1" max="1"/>
+    <event name="NEUTRAL_ZOLTAN" min="1" max="1"/>
+    <event name="HOSTILE_ZOLTAN" min="1" max="1"/>
   </sectorDescription>
 
-  <sectorDescription name="ZOLTAN_HAZARD_SECTOR" minSector="1" unique="true">
+  <sectorDescription name="ZOLTAN_HAZARD_SECTOR" minSector="2" unique="true">
     <!-- challenge sector: a lot of environmental hazards -->
     <nameList>
       <name>Zoltan Turbulent Nebula</name>
@@ -858,8 +962,12 @@
       <blueprint name="mantis" rarity="0"/>
       <blueprint name="rock" rarity="0"/>
       <blueprint name="energy" rarity="1"/>
-      <blueprint name="slug" rarity="3"/>
-      <blueprint name="aquarian" rarity="5"/>
+      <blueprint name="slug" rarity="4"/>
+      <blueprint name="anaerobic" rarity="0"/>
+      <blueprint name="aquarian" rarity="0"/>
+      <blueprint name="lizard" rarity="0"/>
+      <blueprint name="orchid" rarity="0"/>
+      <blueprint name="pavonian" rarity="0"/>
     </rarityList>
     <startEvent>START_BEACON_ZOLTAN_HAZARD</startEvent>
     <event name="NEBULA_STORE_ZOLTAN" min="2" max="2"/>
@@ -869,9 +977,8 @@
     <event name="NEBULA_NOSHIP_ZOLTAN" min="3" max="3"/>
     <event name="NEBULA_NEUTRAL_ZOLTAN" min="4" max="4"/>
 
-    <event name="ZOLTAN_RIFT_FIGHT" min="1" max="1"/>
-
-    <event name="NOSHIP_ZOLTAN" min="2" max="2"/>
-    <event name="HOSTILE_HAZARD_ZOLTAN" min="3" max="3"/>
+    <event name="NOSHIP_ZOLTAN_TURBULENT" min="2" max="2"/>
+    <event name="HOSTILE_ZOLTAN_TURBULENT" min="1" max="1"/>
+    <event name="HOSTILE_HAZARD_ZOLTAN_TURBULENT" min="3" max="3"/>
   </sectorDescription>
 </FTL>

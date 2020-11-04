@@ -21,7 +21,7 @@
       <text>Send a shuttle to the colony.</text>
       <eventList>
         <event>
-          <text>Your inital assumptions were correct: the supervolcano will erupt in mere hours. The Pavonians beg you to take them off the planet but there is no room for everyone in the shuttle.</text>
+          <text>Your initial assumptions were correct: the supervolcano will erupt in mere hours. The Pavonians beg you to take them off the planet but there is no room for everyone in the shuttle.</text>
           <choice hidden="true">
             <text>Save as many souls as we can.</text>
             <eventList>
@@ -54,7 +54,7 @@
           </choice>
         </event>
         <event>
-          <text>As you land, one of the Pavonian colonists greets you. "Things are getting a little wonky here. The drones have become a bit sick and do not do their jobs anymore." It's difficult to understand what the Pavonian means exaclty. Then, a combat drone attacks you from air and kills the Pavonian. Now, everything is clear.</text>
+          <text>As you land, one of the Pavonian colonists greets you. "Things are getting a little wonky here. The drones have become a bit sick and do not do their jobs anymore." It's difficult to understand what the Pavonian means exactly. Then, a combat drone attacks you from air and kills the Pavonian. Now, everything is clear.</text>
           <choice hidden="true">
             <text>Help the Pavonians by defeating the drone uprising.</text>
             <event>

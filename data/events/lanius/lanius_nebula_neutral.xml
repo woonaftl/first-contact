@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="NEBULA_NEUTRAL_LANIUS">
+    <event load="NEBULA_LANIUS_INACTIVE"/>
+    <event load="NEBULA_DISTRESS_LANIUS_FOLLOW"/>
+    <event load="NEBULA_LANIUS_PIRATE_ESCAPE"/>
+    <event load="NEBULA_LANIUS_DISTRESS_ENGI"/>
+    <event load="NEBULA_LANIUS_PIRATE_PILGRIMAGE"/>
+    <event load="STORM_LANIUS_INACTIVE"/>
+    <event load="STORM_ZOLTAN_LANIUS_SCAN"/>
+  </eventList>
+
+  <event name="NEBULA_LANIUS_INACTIVE">
+    <textList>
+      <text>The Lanius ship is in deep stasis, almost hidden from sight by thick nebula clouds. You could hail them, but nobody is known to be tolerant after been woken up. Especially the Lanius.</text>
+      <text>The nebula gases hide a small Lanius ship. You could try to hail them but you doubt that the Lanius will appreciate that.</text>
+      <text>A lonely Lanius ship lies dormant inside thick nebula clouds. While you can try to contact them, will any good come out of it?</text>
+      <text>The nebula obstructs vision at this beacon but you can still see a deactivated Lanius ship drifting nearby.</text>
+    </textList>
+    <environment type="nebula"/>
+    <ship load="LANIUS_SHIP" hostile="false"/>
+    <choice hidden="true">
+      <text>Attack the ship.</text>
+      <event>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Hail the ship.</text>
+      <event load="NEBULA_LANIUS_HAIL"/>
+    </choice>
+    <choice hidden="true">
+      <text>Avoid the conflict.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <event name="NEBULA_DISTRESS_LANIUS_FOLLOW" unique="true">
+    <text>You could not find where the distress beacon was coming out from at first, but then a ship showed up briefly in the distance before disappearing again inside distant nebula clouds.</text>
+    <distressBeacon/>
+    <environment type="nebula"/>
+    <choice hidden="true">
+      <text>Attempt to follow the ship.</text>
+      <eventList>
+        <event>
+          <text>The ship turned out to be civilian, trying to escape from following Lanius scavenger. You should help them before losing them again in the gas clouds.</text>
+          <ship load="LANIUS_SHIP" hostile="false"/>
+          <choice hidden="true">
+            <text>Fight the Lanius.</text>
+            <event>
+              <text>The Lanius ship stops following the civilians and fires its weapons at you instead. The civilian ship quickly disappears into nebula never to be seen again.</text>
+              <ship hostile="true"/>
+            </event>
+          </choice>
+          <choice hidden="true">
+            <text>Let the Lanius have their prey.</text>
+            <event>
+              <text>The Rebellion has taken many lives. At least, the lives of these civilians will not be lost in vain. The Lanius need that scrap.</text>
+            </event>
+          </choice>
+        </event>
+        <event>
+          <text>The ship you were following turned out to be Lanius. Without a single word or message, they open fire.</text>
+          <ship hostile="true"/>
+        </event>
+        <event>
+          <text>It turned out that you were following a Lanius ship. Their ship has turned towards yours, waiting for answers.</text>
+          <ship hostile="false"/>
+          <choice hidden="true">
+            <text>Attack them outright.</text>
+            <event>
+              <ship hostile="true"/>
+            </event>
+          </choice>
+          <choice hidden="true">
+            <text>Attempt to hail them.</text>
+            <event load="LANIUS_TRADE_SCRAP"/>
+          </choice>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true">
+      <text>Stay where you are.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <event name="NEBULA_LANIUS_DISTRESS_ENGI" unique="true">
+    <text>A distress signal was coming from an Engi research ship which, seemingly, is completely lost deep inside hostile nebula infested with Lanius. "Navigation compromised. Fuel insufficient. Aid required."</text>
+    <environment type="nebula"/>
+    <choice>
+      <text>Share some fuel with them.</text>
+      <eventList>
+        <event>
+          <text>"Fuel sufficient. Target coordinates 58.12. Compensation required. Question mark." You are prompted to choose how the Engi can assist you.</text>
+          <item_modify>
+            <item type="fuel" min="-5" max="-3"/>
+          </item_modify>
+          <choice hidden="true">
+            <text>Request a weapon.</text>
+            <event>
+              <text>"Request granted. Weapon transferring."</text>
+              <weapon name="RANDOM"/>
+            </event>
+          </choice>
+          <choice hidden="true">
+            <text>Request a drone.</text>
+            <event>
+              <text>"Request granted. Drone schematic transferring."</text>
+              <drone name="RANDOM"/>
+            </event>
+          </choice>
+          <choice req="engi" hidden="true">
+            <text>(Engi) Current mission: Protocol 885.06. Status: classified.</text>
+            <event>
+              <text>"Request granted. Weapon transferring. Drone schematic transferring. Hull repair routine starting."</text>
+              <weapon name="RANDOM"/>
+              <drone name="RANDOM"/>
+              <damage amount="-10"/>
+            </event>
+          </choice>
+        </event>
+        <event>
+          <text>You load the spare container with FTL fuel and send it to the Engi. Before they are able to receive it, the Lanius ship jumps in! They charge the weapons targeting you immediately. The Engi ship is soon lost in nebula clouds.</text>
+          <ship load="LANIUS_SHIP" hostile="true"/>
+          <item_modify>
+            <item type="fuel" min="-5" max="-3"/>
+          </item_modify>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true">
+      <text>We need the fuel ourselves.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <event name="NEBULA_LANIUS_PIRATE_PILGRIMAGE" unique="true">
+    <text>A lonely ship with faint pirate markings awaits you in the nebula: "Are you here on pilgrimage just as we are? Have you already seen THEM?"</text>
+    <ship load="PIRATE" hostile="false"/>
+    <environment type="nebula"/>
+    <choice hidden="true">
+      <text>Yeah, I've seen THEM. And killed one or two.</text>
+      <event>
+        <text>"How dare you ruin our gods' rest? And how dare you lift your hand on them? For that crime you shall be punished!" The pirate ship charges its weapons.</text>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Not yet.</text>
+      <event>
+        <text>"Well, you will never be able to withstand THEIR might. Because they are gods, unlike us!" The pirate ship vanishes inside the nebula.</text>
+      </event>
+    </choice>
+    <choice hidden="true" req="anaerobic">
+      <text>(Lanius) We have come for you.</text>
+      <event>
+        <text>Panicked, the pirates turn off all systems, going completely dark, hoping you won't notice them. After seeing your ship continues following them, the pirates give up all of their belongings and vanish in the nebula.</text>
+        <weapon name="RANODM"/>
+        <autoReward level="HIGH">stuff</autoReward>
+      </event>
+    </choice>
+  </event>
+
+  <event name="NEBULA_LANIUS_PIRATE_ESCAPE" unique="true">
+    <text>A tiny pirate vessel is hiding inside nebula. Seeing your ship, they broadcast a message: "Hiding from metal freaks. Please show us the directions how to get out from this hell. We promise we won't bother any civilians after getting to safety."</text>
+    <environment type="nebula"/>
+    <ship load="PIRATE_ESCAPE" hostile="false"/>
+    <choice hidden="true">
+      <text>Piracy cannot be forgiven. Attack!</text>
+      <event>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Share the star maps with them.</text>
+      <eventList>
+        <event>
+          <text>The pirates are very grateful and offer some military supplies in return.</text>
+          <autoReward level="LOW">stuff</autoReward>
+        </event>
+        <event>
+          <text>To express their gratitude, the pirate captain personally installs a brand new weapon on your ship.</text>
+          <weapon name="RANDOM"/>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true">
+      <text>Ignore them.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <event name="STORM_LANIUS_INACTIVE" unique="true">
+    <text>Even though the plasma storm is raging nearby, the Lanius ship is completely motionless. It looks like it's still in one piece, so could be very dangerous.</text>
+    <environment type="storm"/>
+    <ship load="LANIUS_SHIP" hostile="false"/>
+    <choice hidden="true">
+      <text>Attack the ship.</text>
+      <event>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Hail the ship.</text>
+      <event load="NEBULA_LANIUS_HAIL"/>
+    </choice>
+    <choice hidden="true">
+      <text>Avoid the conflict.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <eventList name="NEBULA_LANIUS_HAIL">
+    <event count="3">
+      <text>The Lanius ship attacks without delay.</text>
+      <ship hostile="true"/>
+    </event>
+    <event load="LANIUS_TRADE_SCRAP"/>
+    <event>
+      <text>The Lanius ship turned out to be a merchant with a variety of military supplies.</text>
+      <store/>
+    </event>
+    <event>
+      <text>The Lanius ship immediately jumps away.</text>
+    </event>
+  </eventList>
+
+  <event name="LANIUS_TRADE_SCRAP">
+    <text>The Lanius ship offers to exchange resources for some scrap.</text>
+    <choice>
+      <text>Trade.</text>
+      <eventList>
+        <event>
+          <item_modify>
+            <item type="scrap" min="-20" max="-15"/>
+            <item type="fuel" min="7" max="8"/>
+          </item_modify>
+        </event>
+        <event>
+          <item_modify>
+            <item type="scrap" min="-20" max="-15"/>
+            <item type="missiles" min="8" max="10"/>
+          </item_modify>
+        </event>
+        <event>
+          <item_modify>
+            <item type="scrap" min="-20" max="-15"/>
+            <item type="drones" min="6" max="7"/>
+          </item_modify>
+        </event>
+      </eventList>
+    </choice>
+    <choice>
+      <text>Decline.</text>
+      <eventList>
+        <event>
+          <text>The Lanius ship won't take no for the answer. If you're not willingly give up your scrap, they're going to melt your ship themselves.</text>
+          <ship hostile="true"/>
+        </event>
+        <event/>
+      </eventList>
+    </choice>
+  </event>
+</FTL>

@@ -6,7 +6,12 @@
     <event load="ROCK_BOARDERS_SHIP"/>
   </eventList>
 
-  <event name="ROCK_SHIP">
+  <eventList name="HOSTILE_ROCK_HOLY">
+    <event load="ROCK_SHIP"/>
+    <event load="ROCK_PIRATE"/>
+  </eventList>
+
+ <event name="ROCK_SHIP">
     <textList name="ROCK_SHIP">
       <text>You encounter a Rock vessel and attempt to open trading frequencies, but they take it as an act of cultural transgression and open fire.</text>
       <text>You jump into the middle of a Rock excavation project on a nearby moon. Unimpressed with your intrusion they move to defend themselves!</text>

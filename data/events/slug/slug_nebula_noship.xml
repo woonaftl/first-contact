@@ -287,7 +287,7 @@
                 <choice hidden="true">
                   <text>Continue fighting the pirate.</text>
                   <event>
-                    <text>It's best you finish this - but you wonder whether what the pirate is carrying will be as valuable as what the Slugs snuck off with.</text>
+                    <text>It's best you finish this - but you wonder whether what the pirate is carrying will be as valuable as what the Slugs sneaked off with.</text>
                   </event>
                 </choice>
                 <choice hidden="true">
@@ -348,7 +348,7 @@
     </choice>
     <choice>
       <text>Investigate the battlefield.</text>
-      <eventList name="BATTLEFIELD_INVESTIGAGE">
+      <eventList>
         <event>
           <text>As you investigate the battlefield, your ship is pummeled by drifting wreckage - unable to detect anything of interest, you decide not to risk any further damage to your hull and prepare to jump.</text>
           <damage amount="4"/>

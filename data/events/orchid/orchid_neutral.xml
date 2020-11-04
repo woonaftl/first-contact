@@ -5,6 +5,7 @@
     <event load="ORCHID_UNARMED_TRADER"/>
     <event load="ORCHID_SLAVES"/>
     <event load="ORCHID_SLUG_TAUNT"/>
+    <!--TODO add more-->
   </eventList>
 
   <event name="ORCHID_UNDER_ATTACK_PIRATE" unique="true">

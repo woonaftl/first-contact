@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
-  <event name="START_BEACON_LANIUS">
-    <textList name="START_BEACON_LANIUS">
+  <event name="START_BEACON_LANIUS_WARZONE">
+    <textList>
       <text>This sector has been largely abandoned since a series of battles decimated the local population. An unusual alien race is reportedly scavenging in the area. You'd best be on guard.</text>
       <text>This sector was the site of many major battles between the Federation and Rebel fleets. Strangely, there's very little evidence of those battles remaining...</text>
       <text>There have been a number of reports of advanced ships salvaging the wrecks and abandoned mining facilities in this sector. Could it be that the Lanius have resurfaced?</text>
@@ -9,8 +9,12 @@
     </textList>
   </event>
 
+  <event name="START_BEACON_LANIUS_HOME">
+    <text>You enter a very quiet nebula, home to many Lanius ships drifting through space deactivated. Most civilian ships avoid this section of space, afraid to confront metallic scavengers.</text>
+  </event>
+
   <event name="STORE_LANIUS">
-    <textList name="STORE_LANIUS">
+    <textList>
       <text>A large transport ship undergoing maintenance hails you. "Greetings, friend. We're getting out of this sector as soon as this Coolant Shaft is fixed and I suggest you do the same. I half expect those damn metal freaks to come and try to melt down our ship at any moment. We're trying to offload some inventory - interested in buying something?"</text>
       <text>You arrive to discover a number of Lanius ships docked at what appears to be a station. You hasten to leave but are relieved when they message you in your language. "Buy? Sell? Traders." Apparently some merchants emigrated with the scavengers.</text>
       <text>A trading depot is set up near the beacon. A surprising number of military ships guard the station. You pick up an advertisement on a wide band channel, "Ship parts, repairs, refueling, souvenirs - we got it all. Check out the only store not afraid of scavengers this side of Omacron 6."</text>
@@ -21,6 +25,11 @@
     <store/>
   </event>
 
+  <event name="NEBULA_STORE_LANIUS">
+    <text>An automated trading station, abandoned long ago by its owners, is still operating deep inside the nebula. Metallic voice is screeching through the comm: "Fuel. Ammunition. Low prices."</text>
+  </event>
+
+  <!--
   <event name="NOTHING_LANIUS">
     <textList name="NOTHING_LANIUS">
       <text>The charts indicate this was the location of a small skirmish over a military facility on a nearby moon. Oddly, scans pick up no signs of debris from either the battle or the station. Yet another area sucked dry by the Lanius.</text>
@@ -33,6 +42,7 @@
       <text>Scans show no signs of any ships or settlements nearby. You have no way of knowing if the area was always uninhabited or if it was simply erased by the Lanius.</text>
     </textList>
   </event>
+  -->
 
   <event name="LANIUS_SURRENDER">
     <textList name="LANIUS_SURRENDER_TEXT">

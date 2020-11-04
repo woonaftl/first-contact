@@ -3,7 +3,12 @@
   <eventList name="NEUTRAL_MANTIS">
     <event load="MANTIS_FIGHT_CHOICE"/>
     <event load="MANTIS_CIVILIAN"/>
+    <event load="MANTIS_SLAVER_SELLING"/>
     <event load="MANTIS_ZOLTAN_OUT_OF_FUEL"/>
+  </eventList>
+
+  <eventList name="NEUTRAL_MANTIS_BROOD">
+    <!--TODO add-->
   </eventList>
 
   <event name="MANTIS_FIGHT_CHOICE">
@@ -15,7 +20,7 @@
       <text>You overhear Mantis comm chatter: "The one on the right is starting to rot. Take him down. Take off his fingers. Put him out of the airlock." They certainly don't seem to be friendly...</text>
       <text>You overhear Mantis comm chatter: "Agreed. Next ship is your turn. Good hunting." They don't see you yet.</text>
     </textList>
-    <ship load="MANTIS_FIGHT" hostile="false"/>
+    <ship load="MANTIS_SHIP" hostile="false"/>
     <choice hidden="true">
       <text>Attack the ship.</text>
       <event>
@@ -101,6 +106,41 @@
           <text>You let them pass and try not to think about it.</text>
         </textList>
       </event>
+    </choice>
+  </event>
+
+  <event name="MANTIS_SLAVER_SELLING" unique="true">
+    <text>There are several Mantis ships at the beacon, no doubt returning from a successful raid with loot and slaves. One of the Mantis ships moves away from the group and offers you a selection of slaves to buy.</text>
+    <ship load="MANTIS_SHIP_SLAVER" hostile="false"/>
+    <choice>
+      <text>Buy a human.</text>
+      <event>
+        <text>A frightened slave cannot believe how lucky they are to be on a Federation ship. But learning about your mission makes them stressed again.</text>
+        <item_modify>
+          <item type="scrap" min="-35" max="-30"/>
+        </item_modify>
+        <crewMember amount="1" class="human"/>
+      </event>
+    </choice>
+    <choice>
+      <text>Buy an Engi.</text>
+      <event>
+        <text>An Engi slave is emancipated by Federation rules. Having no emotions themselves, it doesn't change anything for the Engi, but the crew is more comfortable knowing that everyone is technically free.</text>
+        <item_modify>
+          <item type="scrap" min="-45" max="-40"/>
+        </item_modify>
+        <crewMember amount="1" class="engi"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Attack the slavers.</text>
+      <event>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Decline.</text>
+      <event/>
     </choice>
   </event>
 

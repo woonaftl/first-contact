@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
-  <eventList name="NEBULA_NEUTRAL_SECTOR1">
+  <eventList name="NEBULA_NOSHIP_SECTOR1">
     <event load="NEBULA_FREE_FUEL"/>
     <event load="NEBULA_FREE_MISSILES"/>
     <event load="NEBULA_FREE_DRONEPARTS"/>
@@ -10,7 +10,7 @@
     <event load="STORM_ITEMS"/>
   </eventList>
 
-  <eventList name="NEBULA_NEUTRAL_CIVILIAN">
+  <eventList name="NEBULA_NOSHIP_CIVILIAN">
     <event load="NEBULA_FREE_FUEL"/>
     <event load="NEBULA_FREE_MISSILES"/>
     <event load="NEBULA_FREE_DRONEPARTS"/>
@@ -104,7 +104,7 @@
         </event>
         <event>
           <text>As you approach the wreckage, a Mantis ship screams into the system... either sensing prey - or to finish the job its fellows started.</text>
-          <ship load="MANTIS_FIGHT" hostile="true"/>
+          <ship load="MANTIS_SHIP" hostile="true"/>
         </event>
         <event>
           <text>The wreckage appears to be a battle between Federation fighters and Rebel cruisers. Though outnumbered, it looks like the Federation fought valiantly. As you begin a more detailed scan of the wreckage, Rebel reinforcements arrive in the system and target your ship!</text>

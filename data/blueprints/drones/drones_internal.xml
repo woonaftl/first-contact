@@ -141,7 +141,7 @@
   </droneBlueprintInherit>
 
   <changelog>
-    <entry>Ion Intuder scrap cost 65 to 40</entry>
+    <entry>Ion Intruder scrap cost 65 to 40</entry>
   </changelog>
   <droneBlueprint name="BOARDER_ION">
     <type>BOARDER</type>

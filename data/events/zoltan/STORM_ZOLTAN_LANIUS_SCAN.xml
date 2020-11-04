@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <event name="STORM_ZOLTAN_LANIUS_SCAN">
+    <text>A Zoltan ship is beset by plasma storm and is completely focused on an unidentified ship deep inside a nebula cloud. Closer inspection show that the distant ship belongs to the Lanius and lies completely dormant.</text>
+    <environment type="storm"/>
+    <choice hidden="true">
+      <text>Get closer and scan the Lanius ship.</text>
+      <eventList>
+        <event>
+          <text>As soon as you scan the Lanius ship, it activates. The Zoltan vessel immediately jumps away leaving you alone. A Lanius ship, hungry for scrap, targets you.</text>
+          <ship load="LANIUS_SHIP" hostile="true"/>
+        </event>
+        <event>
+          <text>The Zoltan ship intercepts you: "The unidentified ship is very dangerous. We cannot allow unauthorized access to it." The Zoltan ship engages you and forces you to move away from the Lanius ship, eventually losing it from sight.</text>
+          <ship load="ZOLTAN_SHIP" hostile="true"/>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true">
+      <text>Ask the Zoltans about the Lanius.</text>
+      <event>
+        <text>The Zoltan captain answers: "This metal ship belongs to the Lanius. It's very dangerous but we managed to capture one of these alive."</text>
+        <choice>
+          <text>Offer to buy a Lanius into your crew.</text>
+          <event>
+            <item_modify>
+              <item type="scrap" min="-55" max="-45"/>
+            </item_modify>
+            <crewMember amount="-1" class="anaerobic"/>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>Offer to rid the Lanius ship of hostile lifeforms.</text>
+          <event>
+            <text>The Zoltan captain is delighted: "That would advance our research immensely. We will gladly pay you for this service." You attack the Lanius ship. Remember, you promised to keep the ship itself intact.</text>
+            <ship auto_blueprint="SHIPS_LANIUS" hostile="true">
+              <destroyed>
+                <text>The ship breaks apart. The Zoltans are very disappointed and you give up on salvaging the remains of the ship offering this opportunity to them.</text>
+              </destroyed>
+              <deadCrew>
+                <text>No more life signs detected on the Lanius ship. The Zoltans are ecstatic and offer all of their scrap and a new weapon in exchange for your service.</text>
+                <autoReward level="HIGH">weapon</autoReward>
+              </deadCrew>
+            </ship>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>We have nothing to offer.</text>
+          <event/>
+        </choice>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Ignore the ships and charge FTL drive.</text>
+      <eventList>
+        <event>
+          <text>Suddenly, a Lanius ship awakes! The Zoltan vessel immediately jumps away leaving you alone. A Lanius ship, hungry for scrap, targets you.</text>
+          <ship load="LANIUS_SHIP" hostile="true"/>
+        </event>
+        <event>
+          <text>The Zoltan ship didn't even notice your arrival and departure.</text>
+        </event>
+      </eventList>
+    </choice>
+  </event>
+</FTL>

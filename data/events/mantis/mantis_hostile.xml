@@ -2,9 +2,14 @@
 <FTL>
   <eventList name="HOSTILE_MANTIS">
     <event load="MANTIS_FIGHT"/>
-    <event load="MANTIS_FIGHT_WITH_BOARDERS"/>
-    <event load="MANTIS_BOARDERS_SWARM"/>
+    <event load="MANTIS_SLAVER_BUYING"/>
     <event load="MANTIS_AQUARIAN_FIGHT"/>
+    <!--TODO add-->
+  </eventList>
+
+  <eventList name="HOSTILE_MANTIS_BROOD">
+    <event load="MANTIS_FIGHT_WITH_BOARDERS"/>
+    <!--TODO add-->
   </eventList>
 
   <event name="MANTIS_FIGHT">
@@ -30,7 +35,7 @@
       <text>Children on Earth are told terrible tales of the blood red Mantis invasion ships - much like the one bearing down on you now - which once threatened the planet. You order weapons free!</text>
       <text>A youthful-looking Mantis captain hails. "You, prey, must know. Your death, Kaaazthwak's final kill before maturity. Kaaazthwak pay respects." Seems respects in Mantis culture are paid with lasers.</text>
     </textList>
-    <ship load="MANTIS_FIGHT" hostile="true"/>
+    <ship load="MANTIS_SHIP" hostile="true"/>
   </event>
 
   <event name="MANTIS_FIGHT_WITH_BOARDERS">
@@ -42,13 +47,45 @@
       <text>All alerts trigger (except fire alert) as the Mantis ship is upon you and the intruders are already on board and sabotaging your critical systems.</text>
     </textList>
     <boarders min="2" max="3" class="mantis"/>
-    <ship load="MANTIS_FIGHT" hostile="true"/>
+    <ship load="MANTIS_SHIP" hostile="true"/>
   </event>
 
-  <event name="MANTIS_BOARDERS_SWARM" unique="true">
-    <text>It seems that an entire Mantis brood has teleported on your ship from nearby station. A small military ship is attacking while your ship is filled with screeches and gunshots.</text>
-    <boarders min="4" max="5" class="mantis"/>
-    <ship load="MANTIS_FIGHT" hostile="true"/>
+  <event name="MANTIS_SLAVER_BUYING" unique="true">
+    <img back="BACKGROUND" planet="PLANET_POPULATED"/>
+    <text>Even before you're able to complete the jump, the speakers start screeching familiar Mantis lines: "Slaves. I need slaves." This time the Mantis are willing to pay some scrap for workforce.</text>
+    <ship load="MANTIS_SHIP_SLAVER" hostile="false"/>
+    <choice>
+      <text>Sell one of your crewmates into slavery.</text>
+      <event>
+        <text>Satisfied, the Mantis ship disconnects and moves towards the local planet.</text>
+        <item_modify>
+          <item type="scrap" min="10" max="12"/>
+        </item_modify>
+        <removeCrew>
+          <clone>false</clone>
+          <text>You briefly consider cloning a replacement, but decide to respect the Federation laws regarding simultaneous duplicates.</text>
+        </removeCrew>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Attack the Mantis.</text>
+      <event>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice req="engi">
+      <text>(Engi) Ask a higher price for Engi.</text>
+      <event>
+        <text>The Mantis hesitates, but seeing how powerful your ship is, agrees to pay the price.</text>
+        <item_modify>
+          <item type="scrap" min="24" max="28"/>
+        </item_modify>
+        <removeCrew class="engi">
+          <clone>false</clone>
+          <text>You briefly consider cloning a replacement, but decide to respect the Federation laws regarding simultaneous duplicates.</text>
+        </removeCrew>
+      </event>
+    </choice>
   </event>
 
   <event name="MANTIS_AQUARIAN_FIGHT" unique="true">

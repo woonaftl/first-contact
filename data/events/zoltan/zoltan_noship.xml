@@ -9,6 +9,15 @@
     <event load="ZOLTAN_ODD_MOON"/>
   </eventList>
 
+ <eventList name="NOSHIP_ZOLTAN_TURBULENT">
+    <event load="ZOLTAN_FREE_ITEMS"/>
+    <event load="ZOLTAN_DISTRESS_SHELL"/>
+    <event load="ZOLTAN_FREE_AUGMENT"/>
+    <event load="ZOLTAN_FREE_MAP"/>
+    <event load="ZOLTAN_ASTEROID_MINING"/>
+    <event load="ZOLTAN_ODD_MOON"/>
+  </eventList>
+
   <event name="ZOLTAN_FREE_ITEMS">
     <textList>
       <text>You jump in to find a Zoltan military fleet, preparing to fight the Rebel invasion. After finding out that you're Federation they offer some resources.</text>
