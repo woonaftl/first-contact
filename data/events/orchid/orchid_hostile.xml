@@ -19,7 +19,7 @@
       <text>An unusually verbose Orchid ship at the beacon sends you a message using a word communicator: "We got reports that you aliens are feeding upon sentient flora after cooking them with fire! For that crime you shall be punished!"</text>
       <text>An Orchid ship awaits you at the beacon. An ominous message appears on communication screen: "In this world... It's KILL or BE killed!"</text>
     </textList>
-    <ship hostile="true" load="ORCHID_SHIP"/>
+    <ship load="ORCHID_SHIP" hostile="true"/>
   </event>
 
   <event name="ORCHID_PIRATE_FIGHT">
@@ -29,7 +29,7 @@
       <text>A ship with pirate markings awaits you at the beacon. You overhear a conversation on their ship: "Those are not space weeds." "Whatever. Kill them anyway."</text>
       <text planet="PLANET_POPULATED">You were enjoying the view of overgrown Orchid planet as the pirate jumped in out of nowhere. Conflict is inevitable.</text>
     </textList>
-    <ship hostile="true" load="PIRATE"/>
+    <ship load="PIRATE" hostile="true"/>
   </event>
 
   <event name="ORCHID_ROCK_FIGHT">
@@ -38,7 +38,7 @@
       <text>Rocks are often seen as useful by Orchids for their ability to withstand fire and for being manipulated easily. A Rock ship at the beacon sees you as a threat to their floral overlords and attacks!</text>
       <text>Orchid sectors are common destination for wealthier Rock travelers. Having a body overgrown with rare plants is considered fashionable in Rock culture. A Rock ship at the beacon considers you threatening and retaliates.</text>
     </textList>
-    <ship hostile="true" load="ROCK_SHIP"/>
+    <ship load="ROCK_SHIP" hostile="true"/>
   </event>
 
   <event name="ORCHID_MANTIS_FIGHT">
@@ -47,7 +47,7 @@
       <text>The Orchids put tremendous effort into pacifying invading Mantis and forming friendly relations with them. But some Mantis will never leave the path of a hunter. The ship at the beacon belongs to those.</text>
       <text>Some Mantis are influenced by Orchids so much that they begin to worship all kinds of plants and do the only thing they think would please their gods: kill everyone who doesn't belong.</text>
     </textList>
-    <ship hostile="true" load="MANTIS_FIGHT"/>
+    <ship load="MANTIS_FIGHT" hostile="true"/>
   </event>
 
   <event name="ORCHID_REBEL_FIGHT">
@@ -56,7 +56,7 @@
       <text>An aggressive Rebel ship has chosen a beacon far away from primary Orchid worlds to wait for your potential arrival. As soon as it sees you, it moves closer with weapons armed.</text>
       <text>This beacon was marked as populated by friendly Orchids on star charts but the Rebel fleet has already began capturing it. One of the smaller Rebel ships attacks.</text>
     </textList>
-    <ship hostile="true" load="REBEL"/>
+    <ship load="REBEL" hostile="true"/>
   </event>
 
   <event name="ORCHID_AUTO_FIGHT">
@@ -65,7 +65,7 @@
       <text>An automated ship is broadcasting a message: "Plant life outlawed. Only humans allowed in the sector. Glory to Rebellion." It's openly hostile to everyone except Rebels.</text>
       <text>The remains of an Orchid civilian ship are drifting at the beacon. The culprit, an automated Rebel ship, turns around and moves towards you with weapons charging.</text>
     </textList>
-    <ship hostile="true" load="REBEL_AUTO"/>
+    <ship load="REBEL_AUTO" hostile="true"/>
   </event>
 
   <event name="ORCHID_CAPTURED_REBEL_FIGHT" unique="true">

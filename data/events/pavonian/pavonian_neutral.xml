@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
   <eventList name="NEUTRAL_PAVONIAN">
+    <event load="PAVONIAN_FIGHT_CHOICE"/>
+    <event load="PAVONIAN_SELLING_DRUGS"/>
+    <event load="PAVONIAN_RACE_TO_FREE_WEAPON"/>
     <event load="PAVONIAN_DO_NOT_CARE"/>
     <event load="PAVONIAN_DRONE_FACTORY"/>
     <event load="PAVONIAN_TWO_MANTIS"/>
@@ -8,6 +11,203 @@
     <event load="PAVONIAN_WASTE"/>
     <event load="PAVONIAN_BEGGAR"/>
   </eventList>
+
+  <event name="PAVONIAN_FIGHT_CHOICE">
+    <textList>
+      <text>A Pavonian scout is harvesting debris of a destroyed pirate ship. You could make use of those remains too, but the Pavonians are unlikely to let you.</text>
+      <text>A Pavonian vessel is busy dispatching an inactive automated Rebel ship. You would like to take some scrap for yourself, but the Pavonians aren't willing to share.</text>
+      <text>You jump in to witness a Pavonian fighter dealing last hit to an unidentified ship, probably civilian. They move on to collect the remains, but you have a chance to intercept them.</text>
+    </textList>
+    <ship load="PAVONIAN_SHIP" hostile="false"/>
+    <choice hidden="true">
+      <text>Attack the ship.</text>
+      <event>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Avoid the conflict.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <event name="PAVONIAN_SELLING_DRUGS" unique="true">
+    <text>A particularly annoying Pavonian ship is bothering you: "You have to buy this stuff, it will open your mind! You will see the rainbow that is flowing deep inside you and become one with the universe. You won't regret it!"</text>
+    <choice hidden="true">
+      <text>Attack the ship.</text>
+      <event>
+        <ship load="PAVONIAN_SHIP" hostile="true"/>
+      </event>
+    </choice>
+    <choice>
+      <text>Buy some stuff.</text>
+      <event>
+        <text>You've decided to buy one dose of the Pavonian drugs. Apparently, for them to have effect, you have to inject the suspicious liquid substance of uncertain color directly into your eyeballs. After doing that, you wait for the drugs to take effect.</text>
+        <item_modify>
+          <item type="scrap" min="-18" max="-12"/>
+        </item_modify>
+        <choice hidden="true">
+          <text id="continue"/>
+          <eventList>
+            <event>
+              <text>A giant space whale comes to visit you in a dream. It changes color from vibrant magenta to plain brown and back again. You have a mind-shattering conversation with the whale. After you come to your senses, you know exactly how to defeat the Rebels and bring peace to the galaxy once again. A weapon will help you with that!</text>
+              <weapon name="RANDOM"/>
+              <choice hidden="true">
+                <text>I wish I had more of this stuff.</text>
+                <event/>
+              </choice>
+            </event>
+            <event>
+              <text>After some time, your mind wanders away, and you start talking with some green people about the nature of existence and your place in the universe. After a while, you realize that those green men are Zoltans and they're real! "Possession of hard drugs is illegal. We will have to apply force!" The Pavonian dealers are long gone.</text>
+              <ship load="ZOLTAN_SHIP" hostile="true"/>
+            </event>
+          </eventList>
+        </choice>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Ignore them.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <event name="PAVONIAN_RACE_TO_FREE_WEAPON" unique="true">
+    <text>Scans show there is a weapon just floating in the local system. You haste to grab it but detect a Pavonian ship jumping in and going in the same direction as you. It looks like they want to race you.</text>
+    <ship auto_blueprint="SHIPS_PAVONIAN" hostile="false">
+      <escape timer="40" min="22" max="22">
+        <text>The Pavonians clearly don't want to fight. They forget about the race and prepare to jump away.</text>
+      </escape>
+      <gotaway>
+        <text>The Pavonian ship jumps away. You grab the drifting weapon, unopposed.</text>
+        <weapon name="RANDOM"/>
+      </gotaway>
+      <destroyed>
+        <text>The ship explodes, leaving behind a substantial collection of useful scrap material.</text>
+        <autoReward level="MED">standard</autoReward>
+        <choice hidden="true">
+          <text id="continue"/>
+          <event>
+            <text>You collect the weapon which the Pavonians gave their lives for.</text>
+            <weapon name="RANDOM"/>
+          </event>
+        </choice>
+      </destroyed>
+      <deadCrew>
+        <text>There are no more life-signs remaining on the ship. You strip it of useful materials.</text>
+        <autoReward level="HIGH">standard</autoReward>
+        <choice hidden="true">
+          <text id="continue"/>
+          <event>
+            <text>You collect the weapon which the Pavonians gave their lives for.</text>
+            <weapon name="RANDOM"/>
+          </event>
+        </choice>
+      </deadCrew>
+    </ship>
+    <choice hidden="true">
+      <text>Race them.</text>
+      <eventList>
+        <event>
+          <text>You have some advantage at first, but the Pavonian ship is closing in. Thankfully, you reached the weapon before they overtook your ship, but that was close. You were clearly slower than them.</text>
+          <weapon name="RANDOM"/>
+        </event>
+        <event>
+          <text>The Pavonian ship overtakes you immediately and is swiftly moving towards the weapon. There is no way you could lose to them!</text>
+          <choice hidden="true">
+            <text>Attack them!</text>
+            <event>
+              <ship hostile="true"/>
+            </event>
+          </choice>
+          <choice hidden="true">
+            <text>Let them win.</text>
+            <event/>
+          </choice>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true">
+      <text>The weapon is rightfully yours. Attack the Pavonians!</text>
+      <event>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Let the Pavonians have the weapon.</text>
+      <event/>
+    </choice>
+    <choice hidden="true" req="engines" lvl="4">
+      <text>(Improved Engines) Full thrust!</text>
+      <event>
+        <text>You outrun the Pavonians with ease and collect the weapon. The Pavonian ship contacts you: "That was fast! Have you ever considered participating in Rainbow Races?" They transfer the coordinates where the main event is going to take place.</text>
+        <weapon name="RANDOM"/>
+        <quest event="PAVONIAN_RAINBOW_RACE"/>
+      </event>
+    </choice>
+  </event>
+  <event name="PAVONIAN_RAINBOW_RACE">
+    <text>This is it, the famous Rainbow Race is going to take place here. Hundreds of ships are waiting for it to begin. There are no rules or audience. Everyone is participating and everything is allowed! That's going to be a great distraction from Galactic War. Hopefully, it won't take too much time.</text>
+    <choice hidden="true">
+      <text>Go to start line.</text>
+      <event name="PAVONIAN_RAINBOW_RACE_START">
+        <text>The race starts, your thrust engines are unrestricted and you rush towards the finish line like everyone else. You're in a leading group, but there are still some ships ahead of you. Time to think of a winning strategy.</text>
+        <choice hidden="true">
+          <text>Slow and steady wins the race.</text>
+          <event>
+            <text>Turns out, that strategy doesn't work in spaceship races. You lose, and receive nothing from the Pavonians.</text>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>Target everyone ahead with weapons.</text>
+          <event>
+            <text>You quickly make way with your superior weaponry. There are few vessels ready for battle here, and most of them behind you. You win the race, but the Pavonians do not offer any rewards. Instead, they bury the killed and tend to wounded.</text>
+          </event>
+        </choice>
+        <choice hidden="true" req="engines" lvl="6">
+          <text>(Advanced Engines) Rely on pure speed.</text>
+          <event>
+            <text>Redirecting all spare power to engines, you accelerate and overtake every opponent one by one. You reached the finish line first. The Pavonians are offering an augmentation, and a weapon for this spectacular performance.</text>
+            <augment name="SYSTEM_CASING"/>
+            <weapon name="RANDOM"/>
+          </event>
+        </choice>
+        <choice hidden="true" req="mind">
+          <text>(Mind Control) Take control of a pilot on the ship ahead of you.</text>
+          <event>
+            <text>The leader of the race suddenly turns and moves into opposite direction! Many ships turn around and follow them like a flock of Arcturus sheep! It takes time to clarify where should they actually go. You reached the finish line first. The Pavonians are offering an augmentation, and a weapon for this spectacular performance.</text>
+            <augment name="SYSTEM_CASING"/>
+            <weapon name="RANDOM"/>
+          </event>
+        </choice>
+        <choice hidden="true" req="ROCK_ARMOR">
+          <text>(Rock Plating) Ram everyone around so they would make some space.</text>
+          <event>
+            <text>One by one, all of the opponents drop out after you ram them. After a few ships become unfit not just for racing but moving at all, every ship ahead retires. You reached the finish line first. The Pavonians are offering an augmentation, and a weapon for this spectacular performance.</text>
+            <augment name="SYSTEM_CASING"/>
+            <weapon name="RANDOM"/>
+          </event>
+        </choice>
+        <choice hidden="true" req="ENGINE_DISABLER">
+          <text>(Engine Disabler) Disable the engines of ships ahead of you.</text>
+          <event>
+            <text>Suddenly, the engine power of the ships ahead of you is dropping. Without constant acceleration, they got overtaken by you first and all outsiders afterwards. You reached the finish line first. The Pavonians are offering an augmentation, and a weapon for this spectacular performance.</text>
+            <augment name="SYSTEM_CASING"/>
+            <weapon name="RANDOM"/>
+          </event>
+        </choice>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Prepare to jump away.</text>
+      <event>
+        <text>You realize that the long-distance travel from this area is restricted until the race ends. This seems logical but awfully inconvenient. You prepare to participate in the race with everyone.</text>
+        <choice hidden="true">
+          <text id="continue"/>
+          <event load="PAVONIAN_RAINBOW_RACE_START"/>
+        </choice>
+      </event>
+    </choice>
+  </event>
 
   <event name="PAVONIAN_DO_NOT_CARE" unique="true">
     <text>The Pavonian ship at the beacon just stays at the same spot without paying you any attention.</text>
@@ -96,9 +296,7 @@
   </event>
 
   <event name="PAVONIAN_DRONE_FACTORY" unique="true">
-    <textList>
-      <text>You stumble upon an automated drone factory. Its structure resembles Pavonian designs. Scans show it is unarmed and completely defenseless not counting the drones swarming inside.</text>
-    </textList>
+    <text>You stumble upon an automated drone factory. Its structure resembles Pavonian designs. Scans show it is unarmed and completely defenseless not counting the drones swarming inside.</text>
     <choice hidden="false">
       <text>Take one of the drones to your ship. You may find some use for it.</text>
       <eventList>

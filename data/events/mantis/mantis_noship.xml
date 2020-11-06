@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
   <eventList name="NOSHIP_MANTIS">
+    <event load="MANTIS_FREE_ITEMS"/>
     <event load="MANTIS_FIND_WEAPON"/>
     <event load="MANTIS_CREW"/>
     <event load="MANTIS_SUN_WRECK"/>
-    <!--TODO add-->
+    <event load="MANTIS_SAVE_ENGI_SLAVES_QUEST_START"/>
+    <event load="MANTIS_SAVE_ENGI_SLAVES_FACTORY"/>
+    <event load="MANTIS_SAVE_ENGI_SLAVES_STATION"/>
+    <event load="MANTIS_SLAVE_MARKET"/>
   </eventList>
 
   <eventList name="NOSHIP_MANTIS_BROOD">
-    <!--TODO add-->
+    <event load="MANTIS_FREE_ITEMS"/>
+    <event load="MANTIS_FIND_WEAPON"/>
+    <event load="MANTIS_CREW"/>
   </eventList>
+
+  <event name="MANTIS_FREE_ITEMS">
+    <textList>
+      <text>You find the remains of a small ship, recently destroyed. The Mantis took some trophies but didn't bother dismantling the whole ship. You collect some resources from the debris.</text>
+      <text>While the Mantis engage in asteroid mining, they often disregard a lot of useful resources. You are able to collect some scrap from a local asteroid even the Mantis did weren't thorough enough.</text>
+    </textList>
+    <autoReward level="LOW">stuff</autoReward>
+  </event>
 
   <event name="MANTIS_FIND_WEAPON" unique="true">
     <!-- text taken from FIND_WEAPON -->
@@ -224,4 +238,333 @@
       <event/>
     </choice>
   </event>
+
+  <event name="MANTIS_SAVE_ENGI_SLAVES_QUEST_START" unique="true">
+    <img back="BACKGROUND" planet="PLANET_POPULATED"/>
+    <text>At first you thought you were alone at the beacon, but then a small Federation ship appeared from nearby moon and is requesting help: "Our Engi allies have been captured by the Mantis slavers and are being kept in nearby colony. Your ship looks like it can take several Mantis war ships, maybe you could look into saving some of your friends, too. You're their last hope for freedom."</text>
+    <ship load="CIVILIAN_SHIP" hostile="false"/>
+    <choice hidden="true">
+      <text>Send the coordinates.</text>
+      <eventList>
+        <event>
+          <text>The civilians are delighted and send you a detailed route how to get to the Engi slaves.</text>
+          <reveal_map/>
+          <quest event="MANTIS_SAVE_ENGI_SLAVES_MINES"/>
+        </event>
+        <event>
+          <text>The civilians are delighted and send you a detailed route how to get to the Engi slaves.</text>
+          <reveal_map/>
+          <quest event="MANTIS_SAVE_ENGI_SLAVES_FACTORY"/>
+        </event>
+        <event>
+          <text>The civilians are delighted and send you a detailed route how to get to the Engi slaves.</text>
+          <reveal_map/>
+          <quest event="MANTIS_SAVE_ENGI_SLAVES_STATION"/>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true">
+      <text>I'm afraid we don't have time for this.</text>
+      <event>
+        <text>"That's a shame." The Federation ship disconnects and moves back into its hiding spot.</text>
+      </event>
+    </choice>
+  </event>
+
+
+  <event name="MANTIS_SAVE_ENGI_SLAVES_FACTORY" unique="true">
+    <text>This beacon marks a large weapon factory, operated by Mantis. Scans show that most defensive systems are targeted at Engi labourers and the factory is weak to attack from outside.</text>
+    <choice hidden="true">
+      <text>Fire a few valleys to distract the Mantis and send a boarding party.</text>
+      <eventList>
+        <event>
+          <text>While you managed to cause some destruction in the factory, it was Engi slaves who were affected by it. The Mantis fought fiercely and you couldn't liberate any of the slaves. One of your crew died of wounds, caused by Mantis claws.</text>
+          <removeCrew>
+            <clone>true</clone>
+            <text>The clone of lost crewmember awaits you on the ship.</text>
+          </removeCrew>
+        </event>
+        <event>
+          <text>You have bombarded Mantis headquarters dealing heavy losses to Mantis forces. Their resistance was still too strong to fully capture the station, but you managed to steal one of the Engi slaves who agrees to join your crew.</text>
+          <crewMember amount="1" class="engi"/>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true">
+      <text>The Engi will have to wait for Federation fleet to save them.</text>
+      <event/>
+    </choice>
+    <choice hidden="true" req="WEAPONS_ALL_FIRE">
+      <text>(Fire weapon) Start fires to distract the Mantis.</text>
+      <event>
+        <text>You were able to ignite Mantis headquarters and, without help from the slaves, they were soon overwhelmed. You deserve a reward from Engi.</text>
+        <choice hidden="true">
+          <text>Request a weapon.</text>
+          <event>
+            <text>The Engi offer a weapon from the class which the factory was specialized in.</text>
+            <weapon name="RANDOM"/>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>Ask the Engi to join your crew.</text>
+          <event>
+            <text>The Engi, who dispatched a Mantis with their bare hands during the last battle, offers to join your crew.</text>
+            <crewMember amount="1" class="engi" combat="2"/>
+          </event>
+        </choice>
+      </event>
+    </choice>
+    <choice hidden="true" req="teleporter">
+      <text>(Teleporter) Get in, grab the Engi, and get out as soon as possible.</text>
+      <event>
+        <text>Before Mantis have noticed their loss, you managed to sneak one of the Engi to your ship. There is no doubt that the Mantis will improve their defenses now and execute some of the slaves.</text>
+        <crewMember amount="1" class="engi"/>
+      </event>
+    </choice>
+    <choice hidden="true" req="aquarian">
+      <text>(Aquarian) Launch a sneak attack and liberate some of the slaves.</text>
+      <event>
+        <text>Even one Aquarian manages to set some of the slaves free. Soon, the uprising starts, and, with help from your ship, the Mantis are overwhelmed. You deserve a reward from Engi.</text>
+        <choice hidden="true">
+          <text>Request a weapon.</text>
+          <event>
+            <text>The Engi offer a weapon from the class which the factory was specialized in.</text>
+            <weapon name="RANDOM"/>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>Ask the Engi to join your crew.</text>
+          <event>
+            <text>The Engi, who dispatched a Mantis with their bare hands during the last battle, offers to join your crew.</text>
+            <crewMember amount="1" class="engi" combat="2"/>
+          </event>
+        </choice>
+      </event>
+    </choice>
+  </event>
+
+  <event name="MANTIS_SAVE_ENGI_SLAVES_STATION" unique="true">
+    <text>A small station, used by Mantis to repair and refuel damaged warships is operating nearby. It has outdated equipment and mostly relies on Engi slave labor. You could try to liberate some slaves, but the Mantis overseers will do anything to protect the station.</text>
+    <choice hidden="true">
+      <text>Dock and attack directly.</text>
+      <eventList>
+        <event>
+          <text>Your crew prepares to board the station but the defending Mantis have already set up traps. One of your crewmembers is cut off and killed by the Mantis, and without them you are unable to defeat the Mantis.</text>
+          <removeCrew>
+            <clone>true</clone>
+            <text>The clone of lost crewmember awaits you on the ship.</text>
+          </removeCrew>
+        </event>
+        <event>
+          <text>While the Mantis defend the station fiercely, there are too few of them. The Engi join the fight and soon the slavers are all dead. You can request any help from liberated Engi.</text>
+          <choice hidden="true">
+            <text>Ask to repair your hull and refuel.</text>
+            <event>
+              <text>The Engi are doing their routine job, using equipment of defeated overlords to repair and refuel your ship. After that they take a shuttle and leave the station heading home.</text>
+              <autoReward level="HIGH">fuel_only</autoReward>
+              <damage amount="-10"/>
+            </event>
+          </choice>
+          <choice hidden="true">
+            <text>Ask Engi to join your crew.</text>
+            <event>
+              <text>One of the Engi, particularly skilled in repairing ships, agrees to serve Federation military on your ship until the Rebels are defeated.</text>
+              <crewMember amount="1" class="engi" repair="2"/>
+            </event>
+          </choice>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true">
+      <text>Avoid the conflict.</text>
+      <event/>
+    </choice>
+    <choice hidden="true" req="mind">
+      <text>(Mind Control) Sabotage Mantis leadership.</text>
+      <event>
+        <text>The Mantis are quickly defeated after their leader joins your side and starts killing their own subordinates. You're still forced to kill the slaver boss after all of other Mantis are dead. You can request any help from liberated Engi.</text>
+        <choice hidden="true">
+          <text>Ask to repair your hull and refuel.</text>
+          <event>
+            <text>The Engi are doing their routine job, using equipment of defeated overlords to repair and refuel your ship. After that they take a shuttle and leave the station heading home.</text>
+            <autoReward level="HIGH">fuel_only</autoReward>
+            <damage amount="-10"/>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>Ask Engi to join your crew.</text>
+          <event>
+            <text>One of the Engi, particularly skilled in repairing ships, agrees to serve Federation military on your ship until the Rebels are defeated.</text>
+            <crewMember amount="1" class="engi" repair="2"/>
+          </event>
+        </choice>
+      </event>
+    </choice>
+    <choice hidden="true" req="BOARDER_LIST">
+      <text>(Boarding Drone) Send the drone first and dock afterwards.</text>
+      <event>
+        <text>The drone moves first taking most of Mantis counterattacks upon itself. You are able to defeat the slavers without much resistance. You can request any help from liberated Engi.</text>
+        <item_modify>
+          <item type="drones" min="-1" max="-1"/>
+        </item_modify>
+        <choice hidden="true">
+          <text>Ask to repair your hull and refuel.</text>
+          <event>
+            <text>The Engi are doing their routine job, using equipment of defeated overlords to repair and refuel your ship. After that they take a shuttle and leave the station heading home.</text>
+            <autoReward level="HIGH">fuel_only</autoReward>
+            <damage amount="-10"/>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>Ask Engi to join your crew.</text>
+          <event>
+            <text>One of the Engi, particularly skilled in repairing ships, agrees to serve Federation military on your ship until the Rebels are defeated.</text>
+            <crewMember amount="1" class="engi" repair="2"/>
+          </event>
+        </choice>
+      </event>
+    </choice>
+    <choice hidden="true" req="BATTLE_LIST">
+      <text>(Anti-Personnel Drone) Dock but send the drone first.</text>
+      <event>
+        <text>The drone moves first taking most of Mantis counterattacks upon itself. You are able to defeat the slavers without much resistance. You can request any help from liberated Engi.</text>
+        <item_modify>
+          <item type="drones" min="-1" max="-1"/>
+        </item_modify>
+        <choice hidden="true">
+          <text>Ask to repair your hull and refuel.</text>
+          <event>
+            <text>The Engi are doing their routine job, using equipment of defeated overlords to repair and refuel your ship. After that they take a shuttle and leave the station heading home.</text>
+            <autoReward level="HIGH">fuel_only</autoReward>
+            <damage amount="-10"/>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>Ask Engi to join your crew.</text>
+          <event>
+            <text>One of the Engi, particularly skilled in repairing ships, agrees to serve Federation military on your ship until the Rebels are defeated.</text>
+            <crewMember amount="1" class="engi" repair="2"/>
+          </event>
+        </choice>
+      </event>
+    </choice>
+    <choice hidden="true" req="WEAPONS_BEAM_BIO">
+      <text>(Anti-Bio Beam) Target Mantis overseers with lethal weapons.</text>
+      <event>
+        <text>The slavers are quickly killed off from the distance, without harming the Engi or risking your own crew. You can request any help from liberated Engi.</text>
+        <choice hidden="true">
+          <text>Ask to repair your hull and refuel.</text>
+          <event>
+            <text>The Engi are doing their routine job, using equipment of defeated overlords to repair and refuel your ship. After that they take a shuttle and leave the station heading home.</text>
+            <autoReward level="HIGH">fuel_only</autoReward>
+            <damage amount="-10"/>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>Ask Engi to join your crew.</text>
+          <event>
+            <text>One of the Engi, particularly skilled in repairing ships, agrees to serve Federation military on your ship until the Rebels are defeated.</text>
+            <crewMember amount="1" class="engi" repair="2"/>
+          </event>
+        </choice>
+      </event>
+    </choice>
+  </event>
+
+  <eventList name="MANTIS_SLAVE_MARKET" unique="true">
+    <event>
+      <text>You enter the central hub of Mantis slave trade. To your surprise, the Mantis do not attack your ship and offer business instead. You think about emancipating some slaves, but the system is too fortified for one ship to take over.</text>
+      <choice>
+        <text>Buy a slave.</text>
+        <event>
+          <text>After getting to your ship, the slave is set free and offered to join your crew. They don't feel like the have a choice here.</text>
+          <crewMember amount="1" class="human"/>
+          <item_modify>
+            <item type="scrap" min="-40" max="-25"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Buy a slave.</text>
+        <event>
+          <text>After getting to your ship, the slave is set free and offered to join your crew. They don't feel like the have a choice here.</text>
+          <crewMember amount="1" class="engi"/>
+          <item_modify>
+            <item type="scrap" min="-50" max="-35"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Buy a slave.</text>
+        <event>
+          <text>After getting to your ship, the slave is set free and offered to join your crew. They don't feel like the have a choice here.</text>
+          <crewMember amount="1" class="rock"/>
+          <item_modify>
+            <item type="scrap" min="-50" max="-35"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Buy a slave.</text>
+        <event>
+          <text>After getting to your ship, the slave is set free and offered to join your crew. They don't feel like the have a choice here.</text>
+          <crewMember amount="1" class="orchid"/>
+          <item_modify>
+            <item type="scrap" min="-50" max="-35"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice hidden="true">
+        <text>Do not engage in slave trade.</text>
+        <event/>
+      </choice>
+    </event>
+    <event>
+      <text>You enter the central hub of Mantis slave trade. To your surprise, the Mantis do not attack your ship and offer business instead. You think about emancipating some slaves, but the system is too fortified for one ship to take over.</text>
+      <choice>
+        <text>Buy a slave.</text>
+        <event>
+          <text>After getting to your ship, the slave is set free and offered to join your crew. They don't feel like the have a choice here.</text>
+          <crewMember amount="1" class="human"/>
+          <item_modify>
+            <item type="scrap" min="-40" max="-25"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Buy a slave.</text>
+        <event>
+          <text>After getting to your ship, the slave is set free and offered to join your crew. They don't feel like the have a choice here.</text>
+          <crewMember amount="1" class="engi"/>
+          <item_modify>
+            <item type="scrap" min="-50" max="-35"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Buy a slave.</text>
+        <event>
+          <text>After getting to your ship, the slave is set free and offered to join your crew. They don't feel like the have a choice here.</text>
+          <crewMember amount="1" class="pavonian"/>
+          <item_modify>
+            <item type="scrap" min="-50" max="-35"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Buy a slave.</text>
+        <event>
+          <text>After getting to your ship, the slave is set free and offered to join your crew. They don't feel like the have a choice here.</text>
+          <crewMember amount="1" class="lizard"/>
+          <item_modify>
+            <item type="scrap" min="-50" max="-35"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice hidden="true">
+        <text>Do not engage in slave trade.</text>
+        <event/>
+      </choice>
+    </event>
+  </eventList>
 </FTL>

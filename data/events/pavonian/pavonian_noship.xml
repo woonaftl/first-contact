@@ -2,91 +2,99 @@
 <FTL>
   <eventList name="NOSHIP_PAVONIAN">
     <event load="PAVONIAN_GIFT"/>
+    <event load="PAVONIAN_FREE_CHOOSE"/>
     <event load="PAVONIAN_FIND_DRONE"/>
+    <event load="PAVONIAN_FIND_AUGMENT"/>
     <event load="PAVONIAN_SUPERVOLCANO"/>
     <event load="PAVONIAN_OUT_OF_FUEL"/>
   </eventList>
-  <event name="PAVONIAN_GIFT" unique="true">
-    <text>A Pavonian vessel contacts you and offers some supplies for free. A rainbow-colored face appears on the comm: "I sense positive vibes from your ship."</text>
-    <autoReward level="RANDOM">stuff</autoReward>
+
+  <event name="PAVONIAN_GIFT">
+    <textList>
+      <text>A local Pavonian colony is offering a small amount of supplies to help you. A newly hatched Pavonian child sums their stance up with words: "Rebellion bad. Diversity good."</text>
+      <text>There is nobody alive at the beacon, but you manage to detect debris of a Pavonian ship in the vicinity. There is no life signs on board, but you manage to collect some resources.</text>
+      <text>A Pavonian vessel contacts you and offers some supplies for free. A rainbow-colored face appears on the comm: "I sense positive vibes on your ship."</text>
+    </textList>
+    <autoReward level="LOW">stuff</autoReward>
   </event>
+
+  <event name="PAVONIAN_FREE_CHOOSE" unique="true">
+    <text>Pavonians on the beacon invite you to visit their station. It turns out to be filled with various supplies and consumer goods. Knowing their traditions of hospitality, you can ask anything as a parting gift. But it has to be one thing only.</text>
+    <choice>
+      <text>Ask some fuel.</text>
+      <event>
+        <autoReward level="MED">fuel_only</autoReward>
+      </event>
+    </choice>
+    <choice>
+      <text>Ask some ammunition.</text>
+      <event>
+        <autoReward level="HIGH">missiles_only</autoReward>
+      </event>
+    </choice>
+    <choice>
+      <text>Ask some drone parts.</text>
+      <event>
+        <autoReward level="HIGH">droneparts_only</autoReward>
+      </event>
+    </choice>
+  </event>
+
   <event name="PAVONIAN_FIND_DRONE" unique="true">
-    <text>While many races use slaves for hard physical work, the Pavonians prefer drones. A Pavonian colony, sympathetic to Federation, offers to install a drone useful in combat on your ship for free.</text>
+    <text>A small Pavonian freighter contacts you: "I'm afraid we're in need of help. We have collected a drone on the last stop, but we didn't realize that it's a military drone. Could you take it? We don't want to raise any suspicions having weaponry on board." You gladly take the drone.</text>
     <drone name="RANDOM"/>
   </event>
+
+  <event name="PAVONIAN_FIND_AUGMENT" unique="true">
+    <text>You jump in to find yourself in the middle of Pavonian fleet, completely surrounded. Luckily, they don't attack you and offer an augmentation and a tour to their strongest ship instead. You notice additional layers of protection, installed to protect each of their systems.</text>
+    <augment name="RANDOM"/>
+  </event>
+
   <event name="PAVONIAN_SUPERVOLCANO" unique="true">
     <text>The distress signal is coming from a small Pavonian colony on a surface of a nearby moon. Scans show that the colony is located near a supervolcano, so you make a guess that distress signal is related to that.</text>
     <distressBeacon/>
     <choice hidden="true">
       <text>Send a shuttle to the colony.</text>
-      <eventList>
-        <event>
-          <text>Your initial assumptions were correct: the supervolcano will erupt in mere hours. The Pavonians beg you to take them off the planet but there is no room for everyone in the shuttle.</text>
-          <choice hidden="true">
-            <text>Save as many souls as we can.</text>
-            <eventList>
-              <event>
-                <text>Your crew collects as many Pavonians as they can as quickly as possible before they can understand what is going on. As you take off with half the colony rescued and the other left to die, the Pavonians are devastated but do not object. You are offered a reward for saving them on a nearby planet.</text>
-                <autoReward level="LOW">stuff</autoReward>
-              </event>
-              <event>
-                <text>You allow the Pavonians to choose who will be evacuated and who will be left to die. "We don't understand. Either take us all or leave us all". There is no point in talking to these folks. The community is more important than personal survival for them.</text>
-              </event>
-            </eventList>
-          </choice>
-          <choice hidden="true">
-            <text>Land the ship and save all Pavonians.</text>
+      <event>
+        <text>Your initial assumptions were correct: the supervolcano will erupt in mere hours. The Pavonians beg you to take them off the planet but there is no room for everyone in the shuttle.</text>
+        <choice hidden="true">
+          <text>Save as many souls as we can.</text>
+          <eventList>
             <event>
-              <text>You contact the pilot left on the ship and order to land immediately. There is no time to lose: all of the colony members are organized and evacuated. Just as the ship takes off, the eruption starts, the hull and some systems are critically damaged by it. The Pavonians are very grateful: one of them offers to join your crew.</text>
-              <damage amount="2" effect="fire" system="random"/>
-              <damage amount="2" effect="fire" system="random"/>
-              <damage amount="2" effect="fire" system="random"/>
-              <damage amount="2" effect="fire" system="room"/>
-              <autoReward level="HIGH">stuff</autoReward>
-              <crewMember amount="1" class="pavonian"/>
-            </event>
-          </choice>
-          <choice hidden="true">
-            <text>Leave Pavonians to die.</text>
-            <event>
-              <text>You just cannot stand this rainbow-colored snobs. There is no way they're getting on your ship. This is a Federation military operation, not animal rescue.</text>
-            </event>
-          </choice>
-        </event>
-        <event>
-          <text>As you land, one of the Pavonian colonists greets you. "Things are getting a little wonky here. The drones have become a bit sick and do not do their jobs anymore." It's difficult to understand what the Pavonian means exactly. Then, a combat drone attacks you from air and kills the Pavonian. Now, everything is clear.</text>
-          <choice hidden="true">
-            <text>Help the Pavonians by defeating the drone uprising.</text>
-            <event>
-              <text>The drones have killed an unarmed civilian and that's enough for you to unleash all of Federation weaponry on them. They're defeated soon and one of the surviving Pavonians is inspired to join your crew.</text>
-              <crewMember amount="1" class="pavonian"/>
-            </event>
-          </choice>
-          <choice hidden="true" blue="false" req="pavonian" max_lvl="0">
-            <text>Help the drones by killing the Pavonians for them.</text>
-            <event>
-              <text>If the drones attacked their masters, there probably was a valid reason for that. You enter the colony with guns blazing, killing every Pavonian on sight. The drones have no means to express their gratitude but at least they don't attack you. You loot the colony.</text>
+              <text>Your crew collects as many Pavonians as they can as quickly as possible before they can understand what is going on. As you take off with half the colony rescued and the other left to die, the Pavonians are devastated but do not object. You are offered a reward for saving them on a nearby planet.</text>
               <autoReward level="LOW">stuff</autoReward>
-              <choice>
-                <text>Are we the baddies?</text>
-                <event/>
-              </choice>
             </event>
-          </choice>
-          <choice hidden="true">
-            <text>Leave immediately without provoking drones.</text>
             <event>
-              <text>Since you didn't attack them directly, the drones do not see you as an enemy. Your crew reaches the ship safely.</text>
+              <text>You allow the Pavonians to choose who will be evacuated and who will be left to die. "We don't understand. Either take us all or leave us all". There is no point in talking to these folks. The community is more important than personal survival for them.</text>
             </event>
-          </choice>
-        </event>
-      </eventList>
+          </eventList>
+        </choice>
+        <choice hidden="true">
+          <text>Land the ship and save all Pavonians.</text>
+          <event>
+            <text>You contact the pilot left on the ship and order to land immediately. There is no time to lose: all of the colony members are organized and evacuated. Just as the ship takes off, the eruption starts, the hull and some systems are critically damaged by it. The Pavonians are very grateful: one of them offers to join your crew.</text>
+            <damage amount="2" effect="fire" system="random"/>
+            <damage amount="2" effect="fire" system="random"/>
+            <damage amount="2" effect="fire" system="random"/>
+            <damage amount="2" effect="fire" system="room"/>
+            <autoReward level="HIGH">stuff</autoReward>
+            <crewMember amount="1" class="pavonian"/>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>Leave Pavonians to die.</text>
+          <event>
+            <text>You just cannot stand this rainbow-colored snobs. There is no way they're getting on your ship. This is a Federation military operation, not animal rescue.</text>
+          </event>
+        </choice>
+      </event>
     </choice>
     <choice hidden="true">
       <text>Leave them to their fate.</text>
       <event/>
     </choice>
   </event>
+
   <event name="PAVONIAN_OUT_OF_FUEL" unique="true">
     <text>A distress signal is being sent by a lonely Pavonian ship drifting in space. As soon as they saw you entering the system, one of the Pavonians contacts you: "I have a bad feeling about this. Our ship needs to be elsewhere but there is no way we could jump. Any ideas?"</text>
     <distressBeacon/>

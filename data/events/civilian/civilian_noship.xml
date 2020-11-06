@@ -35,7 +35,7 @@
     <event load="STATION_SICK"/>
     <event load="STORE_RESCUE"/>
     <event load="STRANDED_BEACON"/>
-    
+
     <event load="FUEL_FOR_DRONE"/>
     <event load="REFUEL_STATION"/>
     <event load="REPAIR_STATION"/>
@@ -405,7 +405,7 @@
       </event>
     </choice>
     <choice hidden="true" req="WEAPONS_BEAM_BIO">
-      <text>(Bio Beam) Use the beam to pick off the spiders.</text>
+      <text>(Anti-Bio Beam) Use the beam to pick off the spiders.</text>
       <event>
         <text>You instruct them to drop their shields and you are able to kill the creatures without damaging the station. "The monsters just started bursting into flame as we watched. What a terrifying weapon... Here, take this for your help, friend."</text>
         <autoReward level="HIGH">stuff</autoReward>
@@ -880,13 +880,10 @@
         <ship load="MANTIS_LANDING_PARTY" hostile="true"/>
       </event>
     </choice>
-    <choice hidden="true" req="BOMB_FIRE">
-      <text>(2 Fire Bombs) Teleport fire bombs into key structures.</text>
+    <choice hidden="true" req="WEAPONS_ALL_FIRE">
+      <text>(Fire weapon) Start a fire in key structures.</text>
       <event>
-        <text>It appears they have not set up a Teleporter disruption field yet. You deposit one bomb in a fuel depot and another in the barracks. Mantis comm channels fill with panicked chatter and you watch a number of structures go up in flames.</text>
-        <item_modify>
-          <item type="missiles" min="-2" max="-2"/>
-        </item_modify>
+        <text>It appears they have not set up any protections against fires yet. You strike a fuel depot and the barracks. Mantis comm channels fill with panicked chatter and you watch a number of structures go up in flames.</text>
         <choice hidden="true">
           <text id="continue"/>
           <event>
@@ -898,7 +895,7 @@
       </event>
     </choice>
     <choice hidden="true" req="BOARDER_ION_LIST">
-      <text>(Ion Intruder Drone) Disrupt their power network.</text>
+      <text>(Ion Intruder) Disrupt their power network.</text>
       <event>
         <text>You find a hole in their provisional defenses, and the intruder drone makes it into their power station. Mantis comm channels fill with panicked chatter as they search for the cause of the sudden blackout.</text>
         <item_modify>
@@ -928,8 +925,8 @@
       <crewMember type="engi" prop="0.20"/>
     </crew>
   </ship>
-  
-    <event name="FUEL_FOR_DRONE">
+
+  <event name="FUEL_FOR_DRONE">
     <textList name="FUEL_FOR_DRONE">
       <text planet="PLANET_POPULATED">A nearby space station hails you. "Greetings! Your arrival is most fortuitous. We recently came across some extra drones. If you have some fuel, perhaps we can make a deal?"</text>
       <text>A strange vessel approaches. A digital message appears on your view-screen: "This is an automated merchant. Refill this vessel with fuel and it will supply you with drones."</text>
@@ -1094,55 +1091,115 @@
     </choice>
   </event>
 
-  <event name="TRADER_CIV">
-    <textList name="TRADER_CIV">
-      <text planet="PLANET_POPULATED">You arrive at a quiet spaceport and are immediately hailed by another ship at port with a "once in a lifetime deal!"</text>
-      <text planet="PLANET_POPULATED">You jump into a sector filled with civilian activity. Your scan the various advertisement channels while waiting for your FTL to charge, and are intrigued by a grey-market shipwright.</text>
-      <text planet="PLANET_POPULATED">Your ship is flooded with advertisement transmissions from nearby merchants as soon as you arrive at this beacon. You arbitrarily pick one to examine in detail.</text>
-      <text planet="NONE">Despite the barren area, a trader has set up shop at this beacon. He presents his offer.</text>
-      <text>The beacon at first glance seems home to a junk yard. Upon closer inspection, it reveals itself to be a ramshackle market. One trader has a deal that catches your eye.</text>
-      <text planet="NONE">A pawn broker has set up shop at this obscure beacon. He might be offering something worth looking at.</text>
-    </textList>
-    <choice>
-      <text>Trade.</text>
-      <event load="TRADER_LIST"/>
-    </choice>
-    <choice>
-      <text>Ignore.</text>
-      <event/>
-    </choice>
-  </event>
-
-  <eventList name="TRADER_LIST">
+  <eventList name="TRADER_CIV">
     <event>
-      <item_modify>
-        <item type="fuel" min="5" max="6"/>
-        <item type="drones" min="-5" max="-4"/>
-      </item_modify>
+      <textList name="TRADER_CIV">
+        <text planet="PLANET_POPULATED">You arrive at a quiet spaceport and are immediately hailed by another ship at port with a "once in a lifetime deal!"</text>
+        <text planet="PLANET_POPULATED">You jump into a sector filled with civilian activity. Your scan the various advertisement channels while waiting for your FTL to charge, and are intrigued by a grey-market shipwright.</text>
+        <text planet="PLANET_POPULATED">Your ship is flooded with advertisement transmissions from nearby merchants as soon as you arrive at this beacon. You arbitrarily pick one to examine in detail.</text>
+        <text planet="NONE">Despite the barren area, a trader has set up shop at this beacon. He presents his offer.</text>
+        <text>The beacon at first glance seems home to a junk yard. Upon closer inspection, it reveals itself to be a ramshackle market. One trader has a deal that catches your eye.</text>
+        <text planet="NONE">A pawn broker has set up shop at this obscure beacon. He might be offering something worth looking at.</text>
+      </textList>
+      <choice>
+        <text>Trade.</text>
+        <event>
+          <item_modify>
+            <item type="scrap" min="-15" max="-12"/>
+            <item type="fuel" min="5" max="6"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Trade.</text>
+        <event>
+          <item_modify>
+            <item type="missiles" min="-8" max="-7"/>
+            <item type="fuel" min="5" max="6"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Trade.</text>
+        <event>
+          <item_modify>
+            <item type="drones" min="-5" max="-4"/>
+            <item type="fuel" min="5" max="6"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Ignore.</text>
+        <event/>
+      </choice>
     </event>
     <event>
-      <item_modify>
-        <item type="missiles" min="8" max="10"/>
-        <item type="fuel" min="-5" max="-4"/>
-      </item_modify>
+      <text load="TRADER_CIV"/>
+      <choice>
+        <text>Trade.</text>
+        <event>
+          <item_modify>
+            <item type="scrap" min="-15" max="-12"/>
+            <item type="missiles" min="8" max="10"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Trade.</text>
+        <event>
+          <item_modify>
+            <item type="fuel" min="-5" max="-4"/>
+            <item type="missiles" min="8" max="10"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Trade.</text>
+        <event>
+          <item_modify>
+            <item type="drones" min="-5" max="-4"/>
+            <item type="missiles" min="8" max="10"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Ignore.</text>
+        <event/>
+      </choice>
     </event>
     <event>
-      <item_modify>
-        <item type="drones" min="5" max="6"/>
-        <item type="missiles" min="-8" max="-7"/>
-      </item_modify>
-    </event>
-    <event>
-      <item_modify>
-        <item type="missiles" min="8" max="10"/>
-        <item type="drones" min="-5" max="-4"/>
-      </item_modify>
-    </event>
-    <event>
-      <item_modify>
-        <item type="fuel" min="5" max="6"/>
-        <item type="missiles" min="-8" max="-7"/>
-      </item_modify>
+      <text load="TRADER_CIV"/>
+      <choice>
+        <text>Trade.</text>
+        <event>
+          <item_modify>
+            <item type="scrap" min="-15" max="-12"/>
+            <item type="drones" min="5" max="6"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Trade.</text>
+        <event>
+          <item_modify>
+            <item type="fuel" min="-5" max="-4"/>
+            <item type="drones" min="5" max="6"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Trade.</text>
+        <event>
+          <item_modify>
+            <item type="missiles" min="-8" max="-7"/>
+            <item type="drones" min="5" max="6"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Ignore.</text>
+        <event/>
+      </choice>
     </event>
   </eventList>
 

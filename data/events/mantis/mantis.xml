@@ -23,7 +23,7 @@
   <!--
   <event name="NOTHING_MANTIS">
     <textList name="NOTHING_MANTIS">
-    <text>The giant Mantis war fleet moves slowly in the distance.</text>
+      <text>The giant Mantis war fleet moves slowly in the distance.</text>
       <text>At this point you almost expect a fight with the Mantis, but this beacon appears to be entirely devoid of other ships. You take the time to catch your breath and double check the ship's systems.</text>
       <text>The only thing this beacon offers is a view of deep space and a brief respite from battles. For some this must be a welcome refuge.</text>
       <text>A nearby Mantis mining operation is clearly using heavy Engi slave labor. You briefly consider the possibility of emancipating the slaves, but the Mantis presence is too formidable. You decide to lay low.</text>

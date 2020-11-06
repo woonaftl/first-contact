@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <shipBlueprint name="PLAYER_SHIP_FIREFLY" layout="kestral" img="kestral">
+    <class>Firefly Cruiser</class>
+    <name>?</name>
+    <desc>?</desc>
+    <systemList>
+      <battery power="1" room="11" start="false" img="room_battery"/>
+      <cloaking power="1" room="8" start="false"/>
+      <clonebay power="1" room="4" start="false" slot="1"/>
+      <doors power="1" room="2" start="true" img="room_doors"/>
+      <drones power="2" room="1" start="false"/>
+      <engines power="2" room="14" start="true" img="room_engines"/>
+      <hacking power="1" room="12" start="false" img="room_hacking"/>
+      <medbay power="1" room="4" start="false" img="room_medbay"/>
+      <mind power="1" room="7" start="false" img="room_mind"/>
+      <oxygen power="1" room="13" start="true" img="room_oxygen"/>
+      <pilot power="1" room="0" start="true" img="room_pilot"/>
+      <sensors power="1" room="3" start="true" img="room_sensors"/>
+      <shields power="2" room="5" start="true" img="room_shields"/>
+      <teleporter power="1" room="15" start="false"/>
+      <weapons power="2" room="10" start="true" img="room_weapons"/>
+    </systemList>
+    <weaponSlots>3</weaponSlots>
+    <droneSlots>2</droneSlots>
+    <weaponList count="3" missiles="15">
+      <weapon name="BEAM_FIRE_UPGRADED"/>
+      <weapon name="BOMB_ION"/>
+      <weapon name="LASER_BURST_1"/>
+    </weaponList>
+    <droneList count="0" drones="0"/>
+    <health amount="30"/>
+    <maxPower amount="7"/>
+    <crewCount amount="2" class="firefly"/>
+  </shipBlueprint>
+
+  <shipBlueprint name="PLAYER_SHIP_FIREFLY_2" layout="kestral" img="kestral">
+    <class>Firefly Cruiser</class>
+    <name>?</name>
+    <desc>?</desc>
+    <systemList>
+      <battery power="1" room="11" start="false" img="room_battery"/>
+      <cloaking power="1" room="8" start="false"/>
+      <clonebay power="1" room="4" start="false" slot="1"/>
+      <doors power="1" room="2" start="true" img="room_doors"/>
+      <drones power="2" room="1" start="false"/>
+      <engines power="2" room="14" start="true" img="room_engines"/>
+      <hacking power="1" room="12" start="false" img="room_hacking"/>
+      <medbay power="1" room="4" start="false" img="room_medbay"/>
+      <mind power="1" room="7" start="false" img="room_mind"/>
+      <oxygen power="1" room="13" start="true" img="room_oxygen"/>
+      <pilot power="1" room="0" start="true" img="room_pilot"/>
+      <sensors power="1" room="3" start="true" img="room_sensors"/>
+      <shields power="2" room="5" start="true" img="room_shields"/>
+      <teleporter power="1" room="15" start="true"/>
+      <weapons power="1" room="10" start="true" img="room_weapons"/>
+    </systemList>
+    <weaponSlots>3</weaponSlots>
+    <droneSlots>2</droneSlots>
+    <weaponList count="1" missiles="12">
+      <weapon name="MISSILES_3_UPGRADED"/>
+    </weaponList>
+    <health amount="30"/>
+    <maxPower amount="7"/>
+    <crewCount amount="3" class="firefly"/>
+    <shieldImage>kestral</shieldImage>
+    <cloakImage>kestral</cloakImage>
+  </shipBlueprint>
+
+  <shipBlueprint name="PLAYER_SHIP_FIREFLY_3" layout="kestral" img="kestral">
+    <class>Firefly Cruiser</class>
+    <name>?</name>
+    <desc>?</desc>
+    <systemList>
+      <battery power="1" room="11" start="false" img="room_battery"/>
+      <cloaking power="1" room="8" start="false"/>
+      <clonebay power="1" room="4" start="false" slot="1"/>
+      <doors power="1" room="2" start="true" img="room_doors"/>
+      <drones power="2" room="1" start="true"/>
+      <engines power="2" room="14" start="true" img="room_engines"/>
+      <hacking power="1" room="12" start="false" img="room_hacking"/>
+      <medbay power="1" room="4" start="false" img="room_medbay"/>
+      <mind power="1" room="7" start="false" img="room_mind"/>
+      <oxygen power="1" room="13" start="true" img="room_oxygen"/>
+      <pilot power="1" room="0" start="true" img="room_pilot"/>
+      <sensors power="1" room="3" start="true" img="room_sensors"/>
+      <shields power="2" room="5" start="true" img="room_shields"/>
+      <teleporter power="1" room="15" start="false"/>
+      <weapons power="2" room="10" start="true" img="room_weapons"/>
+    </systemList>
+    <weaponSlots>3</weaponSlots>
+    <droneSlots>2</droneSlots>
+    <weaponList count="2" missiles="12">
+      <weapon name="LASER_CHARGEGUN_UPGRADED"/>
+      <weapon name="BOMB_FIRE"/>
+    </weaponList>
+    <droneList count="0" drones="0">
+      <drone name="COMBAT_FIRE_UPGRADED"/>
+    </droneList>
+    <health amount="30"/>
+    <maxPower amount="9"/>
+    <crewCount amount="2" class="firefly"/>
+    <shieldImage>kestral</shieldImage>
+    <cloakImage>kestral</cloakImage>
+  </shipBlueprint>
+</FTL>

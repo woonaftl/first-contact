@@ -2,7 +2,6 @@
 <FTL>
   <event name="START_BEACON_PAVONIAN">
     <textList>
-      <text>This sector is marked as Pavonian on your star map. Valuing their personal freedom above everything else, Pavonian ships and colonies rarely engage in politics and do very little to control their sector.</text>
       <text>Having no rules or regulations, the Pavonian sectors could be dangerous even though the Pavonians themselves are rarely a threat. You prepare for the worst.</text>
       <text>Even though the Pavonians have a strong sense of community, their disregard of rules makes the Pavonians worlds chaotic, unpredictable and occasionally dangerous.</text>
     </textList>
@@ -10,7 +9,8 @@
 
   <event name="STORE_PAVONIAN">
     <textList>
-      <text>An automated trading station controlled by various drones awaits at the beacon. You can resupply here, as there are no Pavonian ships present at the moment.</text>
+      <text>Pavonians have set up a small store in this system. They're selling local produce and reselling whatever they managed to buy or scavenger from passing ships.</text>
+      <text>A colony of Slugs, exiled from their home, presumably for their radical views on commerce, have taken refuge in Pavonian space. You check every item and price tag but don't find anything suspicious. Yet.</text>
       <text>The pirates were bold enough to start trading weapons at this beacon. Apparently there are no trading regulations in Pavonian space at all. You briefly consider fighting the pirates but trading seems preferable given the urgency of your mission.</text>
     </textList>
     <store/>
@@ -25,9 +25,11 @@
 
   <event name="PAVONIAN_SURRENDER">
     <textList>
+      <text>The Pavonians no longer wish to fight. They offer resources in return for their lives.</text>
       <text>The Pavonian captain appears on the screen begging for mercy: "It was a misunderstanding. Please cease fire. I promise to do the same. Nobody has to die here."</text>
       <text>The Pavonian ship has stopped firing: "Please be merciful. We will never trouble you ever again. Accept our gift, it's all we have."</text>
       <text>"Chill out, pal! Let's just forget about this. Here is some scrap if you need it." The Pavonians have turned their weapons off and are begging you to spare their lives.</text>
+      <text>The Pavonians are defeated: "Please forgive us and let us go. Take this."</text>
     </textList>
     <choice>
       <text>Accept their offer.</text>

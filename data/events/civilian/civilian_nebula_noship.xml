@@ -53,20 +53,115 @@
     <augment name="RANDOM"/>
   </event>
 
-  <event name="NEBULA_TRADER" unique="true">
-    <text>It's hard to see why, but this beacon is apparently a tourist destination. One of the ships at the small station is offering a deal.</text>
+  <eventList name="NEBULA_TRADER" unique="true">
+    <event>
+     <text>It's hard to see why, but this beacon is apparently a tourist destination. One of the ships at the small station is offering a deal.</text>
+     <environment type="nebula"/>
+     <choice>
+        <text>Trade.</text>
+        <event>
+          <item_modify>
+            <item type="scrap" min="-15" max="-12"/>
+            <item type="fuel" min="5" max="6"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Trade.</text>
+        <event>
+          <item_modify>
+            <item type="missiles" min="-8" max="-7"/>
+            <item type="fuel" min="5" max="6"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Trade.</text>
+        <event>
+          <item_modify>
+            <item type="drones" min="-5" max="-4"/>
+            <item type="fuel" min="5" max="6"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Ignore.</text>
+        <event/>
+      </choice>
+    </event>
+    <event>
+     <text>It's hard to see why, but this beacon is apparently a tourist destination. One of the ships at the small station is offering a deal.</text>
+    <environment type="nebula"/>
+      <choice>
+        <text>Trade.</text>
+        <event>
+          <item_modify>
+            <item type="scrap" min="-15" max="-12"/>
+            <item type="missiles" min="8" max="10"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Trade.</text>
+        <event>
+          <item_modify>
+            <item type="fuel" min="-5" max="-4"/>
+            <item type="missiles" min="8" max="10"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Trade.</text>
+        <event>
+          <item_modify>
+            <item type="drones" min="-5" max="-4"/>
+            <item type="missiles" min="8" max="10"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Ignore.</text>
+        <event/>
+      </choice>
+    </event>
+    <event>
+      <text>It's hard to see why, but this beacon is apparently a tourist destination. One of the ships at the small station is offering a deal.</text>
     <environment type="nebula"/>
     <choice>
-      <text>Trade.</text>
-      <event load="TRADER_LIST"/>
-    </choice>
-    <choice>
-      <text>Ignore.</text>
-      <event/>
-    </choice>
-  </event>
+        <text>Trade.</text>
+        <event>
+          <item_modify>
+            <item type="scrap" min="-15" max="-12"/>
+            <item type="drones" min="5" max="6"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Trade.</text>
+        <event>
+          <item_modify>
+            <item type="fuel" min="-5" max="-4"/>
+            <item type="drones" min="5" max="6"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Trade.</text>
+        <event>
+          <item_modify>
+            <item type="missiles" min="-8" max="-7"/>
+            <item type="drones" min="5" max="6"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Ignore.</text>
+        <event/>
+      </choice>
+    </event>
+  </eventList>
 
-  <event name="WRECKAGE_EVENT" unique="true">
+ <event name="WRECKAGE_EVENT" unique="true">
     <environment type="nebula"/>
     <textList name="WRECKAGE_TEXT">
       <text>What at first seems to be a simple nebula is actually filled with a good amount of debris from a brutal exchange between several ships. Wreckage drifts by your screens and tumbles into the depths of the nebula to be lost to sight. It's hard to determine who the combatants were without closer investigation.</text>

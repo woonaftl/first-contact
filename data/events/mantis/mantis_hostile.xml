@@ -4,12 +4,12 @@
     <event load="MANTIS_FIGHT"/>
     <event load="MANTIS_SLAVER_BUYING"/>
     <event load="MANTIS_AQUARIAN_FIGHT"/>
-    <!--TODO add-->
   </eventList>
 
   <eventList name="HOSTILE_MANTIS_BROOD">
     <event load="MANTIS_FIGHT_WITH_BOARDERS"/>
-    <!--TODO add-->
+    <event load="MANTIS_ROCK_PIRATE_FIGHT_WITH_BOARDERS"/>
+    <event load="MANTIS_MATING_RITUAL"/>
   </eventList>
 
   <event name="MANTIS_FIGHT">
@@ -45,9 +45,59 @@
       <text>Your world, all of a sudden, changes. The Mantis are on board your ship. To make things worse, a Mantis ship approaches.</text>
       <text>You hear a grating rattle and a soft clicking. You reach for your pistol. The Mantis are boarding and their military vessel is charging its weapons.</text>
       <text>All alerts trigger (except fire alert) as the Mantis ship is upon you and the intruders are already on board and sabotaging your critical systems.</text>
+      <text>"How dare you, aliens, enter our precious home?" The Mantis are infuriated and are attacking you with both their weapons and their claws.</text>
+      <text>The Mantis have a lot to learn when it comes to hospitality. A ship attacks and boards you without even asking about your identity.</text>
     </textList>
     <boarders min="2" max="3" class="mantis"/>
     <ship load="MANTIS_SHIP" hostile="true"/>
+  </event>
+
+  <event name="MANTIS_ROCK_PIRATE_FIGHT_WITH_BOARDERS" unique="true">
+    <text>You didn't expect to find a Rock ship so deep into the Mantis territory. Everything comes to its place when the ship attacks you and the Mantis board your ship.</text>
+    <ship auto_blueprint="SHIPS_ROCK_PIRATE" hostile="true">
+      <destroyed load="DESTROYED_DEFAULT"/>
+      <deadCrew load="DEAD_CREW_DEFAULT"/>
+      <crew>
+        <crewMember type="mantis" prop="1"/>
+      </crew>
+    </ship>
+  </event>
+
+  <event name="MANTIS_MATING_RITUAL" unique="true">
+    <text>A Mantis shows up on the vidscreen and makes a little dance with its claws and front legs, expecting something from you.</text>
+    <ship load="MANTIS_SHIP" hostile="false"/>
+    <choice hidden="true">
+      <text>Turn on the screen and return the dance.</text>
+      <event>
+        <text>The Mantis is infuriated. They quickly turn off the video and turn on the weapons. A boarding party is already making noises behind you.</text>
+        <boarders min="2" max="3" class="mantis"/>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice hidden="true" req="mantis">
+      <text>(Mantis) Ask for help.</text>
+      <event>
+        <text>Your crewmember briefly explains that it's a mating ritual. They could do their part, but that would require them to leave your crew and rejoin the Mantis on their ship afterwards.</text>
+        <choice hidden="true">
+          <text>Let your Mantis do it.</text>
+          <event>
+            <text>You watch the ritual with interest from afar. After some time, your crewmember leaves. You hope they won't get eaten alive.</text>
+            <removeCrew class="mantis">
+              <clone>false</clone>
+              <text>You briefly consider cloning a replacement, but decide to respect the Federation laws regarding simultaneous duplicates.</text>
+            </removeCrew>
+          </event>
+        </choice>
+        <choice hidden="true">
+          <text>Attack the Mantis ship.</text>
+          <event>
+            <text>The Mantis weren't expecting an attack, but they immediately power their weapons and send boarders.</text>
+            <boarders min="2" max="3" class="mantis"/>
+            <ship hostile="true"/>
+          </event>
+        </choice>
+      </event>
+    </choice>
   </event>
 
   <event name="MANTIS_SLAVER_BUYING" unique="true">

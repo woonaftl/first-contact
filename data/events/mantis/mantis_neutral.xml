@@ -5,10 +5,12 @@
     <event load="MANTIS_CIVILIAN"/>
     <event load="MANTIS_SLAVER_SELLING"/>
     <event load="MANTIS_ZOLTAN_OUT_OF_FUEL"/>
+    <event load="MANTIS_SAVE_ENGI_SLAVES_MINES"/>
   </eventList>
 
   <eventList name="NEUTRAL_MANTIS_BROOD">
-    <!--TODO add-->
+    <event load="MANTIS_FIGHT_WITH_BOARDERS_CHOICE"/>
+    <event load="MANTIS_EGGS"/>
   </eventList>
 
   <event name="MANTIS_FIGHT_CHOICE">
@@ -57,6 +59,27 @@
           <ship hostile="true"/>
         </event>
       </eventList>
+    </choice>
+  </event>
+
+  <event name="MANTIS_FIGHT_WITH_BOARDERS_CHOICE">
+    <textList>
+      <text>You jump in to find a lonely Mantis ship in the distance. They have not detected you yet, and you still have a chance to avoid bloodshed.</text>
+      <text planet="PLANET_POPULATED">A Mantis ship is slowly orbiting a nearby moon. They're probably resting, feeling safe deep inside their territory.</text>
+      <text>While the Mantis are rarely that careless when it comes to prey, this ship doesn't seem to notice your arrival.</text>
+    </textList>
+    <ship load="MANTIS_SHIP" hostile="false"/>
+    <choice hidden="true">
+      <text>Attack the ship.</text>
+      <event>
+        <text>As soon as you start charging the weapons, intruders board your ship.</text>
+        <boarders min="2" max="3" class="mantis"/>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice>
+      <text>Avoid the conflict.</text>
+      <event/>
     </choice>
   </event>
 
@@ -185,6 +208,102 @@
           <item max="-1" min="-1" type="fuel"/>
         </item_modify>
       </event>
+    </choice>
+    <choice hidden="true" req="WEAPONS_ALL_FIRE">
+      <text>(Fire weapon) Start a fire as a distraction.</text>
+      <event>
+        <text>After successfully starting a fire in Mantis command structures, you were able to get very close to Mantis mines without being detected, send a shuttle and liberate one of the Engi. The Mantis have noticed their loss and send a fighter to stop you!</text>
+        <crewMember amount="1" class="engi"/>
+        <ship load="MANTIS_SHIP" hostile="true"/>
+      </event>
+    </choice>
+  </event>
+
+  <event name="MANTIS_SAVE_ENGI_SLAVES_MINES" unique="true">
+    <img back="BACKGROUND" planet="PLANET_POPULATED"/>
+    <text>A nearby Mantis mining operation is clearly using heavy Engi slave labor. The Mantis presence here is very formidable, but you could still liberate some of the Engi if you play you cards right.</text>
+    <choice hidden="true">
+      <text>Launch a direct attack.</text>
+      <event>
+        <text>The Mantis were ready for combat. As soon as they see your ship, a fighter moves out of hangar to confront you. The Anti-ship battery is firing at your ship from a nearby planet. There is no way you would be able to save the Engi without subterfuge.</text>
+        <environment target="player" type="PDS"/>
+        <ship load="MANTIS_SHIP" hostile="true"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>We will save them another time.</text>
+      <event/>
+    </choice>
+    <choice hidden="true" req="cloaking">
+      <text>(Cloaking) Launch a surprise attack.</text>
+      <event>
+        <text>Using cloaking technology, you were able to get very close to Mantis mines without being detected, send a shuttle and liberate one of the Engi. The Mantis have noticed their loss and send a fighter to stop you!</text>
+        <crewMember amount="1" class="engi"/>
+        <ship load="MANTIS_SHIP" hostile="true"/>
+      </event>
+    </choice>
+    <choice hidden="true" req="sensors" lvl="2">
+      <text>(Advanced Sensors) Scan the system to find the least protected area.</text>
+      <event>
+        <text>Scans show that in addition to the main mining operation, there is a new smaller site, still in construction and almost unprotected. You get closer, but are spotted by a Mantis fighter which wastes no time and attacks.</text>
+        <ship auto_blueprint="SHIPS_MANTIS" hostile="true">
+          <destroyed>
+            <text>The ship explodes, leaving behind a substantial collection of useful scrap material. You hurry to save the Engi from slavery.</text>
+            <autoReward level="MED">standard</autoReward>
+            <choice hidden="true">
+              <text id="continue"/>
+              <event>
+                <text>One of the liberated slaves agrees to join your crew. The others take a Mantis ship and head for their home system.</text>
+                <crewMember amount="1" class="engi"/>
+              </event>
+            </choice>
+          </destroyed>
+          <deadCrew>
+            <text>There are no more life-signs remaining on the ship. You strip it of useful materials. You hurry to save the Engi from slavery.</text>
+            <autoReward level="HIGH">standard</autoReward>
+            <choice hidden="true">
+              <text id="continue"/>
+              <event>
+                <text>One of the liberated slaves agrees to join your crew. The others take a Mantis ship and head for their home system.</text>
+                <crewMember amount="1" class="engi"/>
+              </event>
+            </choice>
+          </deadCrew>
+          <crew>
+            <crewMember type="mantis" prop="0.80"/>
+            <crewMember type="engi" prop="0.20"/>
+          </crew>
+        </ship>
+      </event>
+    </choice>
+  </event>
+
+  <event name="MANTIS_EGGS" unique="true">
+    <text>You've always wondered where the numerous Mantis fighters and pirates come from to spread across the galaxy. Scan show, that this is the place: there are billions of eggs deposited underground the surface of local planet. You have no chance of landing there, but maybe you can do some population control from orbit.</text>
+    <choice hidden="true">
+      <text>Locate and attack biggest clutches.</text>
+      <event>
+        <text>Even before you're able to strike, a Mantis ship starts moving towards you rapidly. Soon, you're boarded by a brood of size you've never could imagine.</text>
+        <boarders min="4" max="5" class="mantis"/>
+        <ship auto_blueprint="SHIPS_MANTIS" hostile="true">
+          <surrender chance="0" min="4" max="6">
+            <text>The Mantis see that they're losing the battle, and afraid to lose any eggs, send reinforcements.</text>
+            <boarders min="4" max="5" class="mantis"/>
+          </surrender>
+          <destroyed>
+            <text>The ship explodes, leaving behind a substantial collection of useful scrap material. Afraid to deal with any more intruders, you jump away.</text>
+            <autoReward level="MED">standard</autoReward>
+          </destroyed>
+          <deadCrew>
+            <text>There are no more life-signs remaining on the ship. You strip it of useful materials. Afraid to deal with any more intruders, you jump away.</text>
+            <autoReward level="HIGH">standard</autoReward>
+          </deadCrew>
+        </ship>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Jump away. You're not suicidal.</text>
+      <event/>
     </choice>
   </event>
 </FTL>

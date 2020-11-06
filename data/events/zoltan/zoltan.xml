@@ -9,7 +9,7 @@
     </textList>
   </event>
 
-  <event name="START_BEACON_ZOLTAN_HAZARD">
+  <event name="START_BEACON_ZOLTAN_TURBULENT">
     <text>This sector is notorious as a place where spaceships get lost. The nebula is particularly unstable here, making any attempt to transit dangerous. The Zoltans can tolerate the harsh conditions but even they have difficulty controlling the most isolated worlds.</text>
   </event>
 

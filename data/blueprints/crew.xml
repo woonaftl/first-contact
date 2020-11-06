@@ -19,8 +19,8 @@
     <bp>2</bp>
     <rarity>1</rarity>
     <powerList>
-		  <power>Skills improve 10% faster</power>
-	  </powerList>
+      <power>Skills improve 10% faster</power>
+    </powerList>
     <colorList>
       <layer>
         <color r="140" g="140" b="255" a="0.7"/>
@@ -54,7 +54,7 @@
         <color r="226" g="209" b="199" a="0.7"/>
         <color r="183" g="186" b="223" a="0.7"/>
         <color r="169" g="219" b="235" a="0.7"/>
-       </layer>
+      </layer>
     </colorList>
   </crewBlueprint>
 
@@ -76,11 +76,11 @@
     </powerList>
     <colorList>
       <layer>
-        <color r="119"  g="165" b="45"  a="0"     />
-        <color r="156"  g="156" b="35"  a="0.5"   />
-        <color r="51"   g="241" b="0"   a="0.9"   />
-        <color r="111"  g="241" b="207" a="0.9"   />
-        <color r="255"  g="0"   b="0"   a="0.2"   />
+        <color r="119" g="165" b="45" a="0"/>
+        <color r="156" g="156" b="35" a="0.5"/>
+        <color r="51" g="241" b="0" a="0.9"/>
+        <color r="111" g="241" b="207" a="0.9"/>
+        <color r="255" g="0" b="0" a="0.2"/>
       </layer>
     </colorList>
   </crewBlueprint>
@@ -105,10 +105,10 @@
     </powerList>
     <colorList>
       <layer>
-        <color r="76"  g="42"  b="31"  a="0.7"  />
-        <color r="120" g="80"  b="35"  a="0.2"  />
-        <color r="140" g="100" b="220" a="0.7"  />
-        <color r="240" g="111" b="64"  a="0.7"  />
+        <color r="76" g="42" b="31" a="0.7"/>
+        <color r="120" g="80" b="35" a="0.2"/>
+        <color r="140" g="100" b="220" a="0.7"/>
+        <color r="240" g="111" b="64" a="0.7"/>
       </layer>
     </colorList>
   </crewBlueprint>
@@ -127,11 +127,11 @@
     </powerList>
     <colorList>
       <layer>
-        <color r="249" g="255" b="147" a="1"   />
-        <color r="212" g="241" b="161" a="0.8" />
-        <color r="79"  g="255" b="87"  a="1"   />
-        <color r="99"  g="133" b="109" a="0.6" />
-        <color r="240" g="255" b="200" a="0.1" />
+        <color r="249" g="255" b="147" a="1"/>
+        <color r="212" g="241" b="161" a="0.8"/>
+        <color r="79" g="255" b="87" a="1"/>
+        <color r="99" g="133" b="109" a="0.6"/>
+        <color r="240" g="255" b="200" a="0.1"/>
       </layer>
     </colorList>
   </crewBlueprint>
@@ -153,12 +153,12 @@
     </powerList>
     <colorList>
       <layer>
-        <color r="255" g="230" b="175" a="0.8"   />
-        <color r="120" g="240" b="60"  a="0.6"   />
-        <color r="255" g="241" b="0"   a="1"     />
-        <color r="255" g="170" b="0"   a="1"     />
-        <color r="0"   g="0"   b="0"   a="0"     />
-        <color r="140" g="140" b="200" a="0.5"   />
+        <color r="255" g="230" b="175" a="0.8"/>
+        <color r="120" g="240" b="60" a="0.6"/>
+        <color r="255" g="241" b="0" a="1"/>
+        <color r="255" g="170" b="0" a="1"/>
+        <color r="0" g="0" b="0" a="0"/>
+        <color r="140" g="140" b="200" a="0.5"/>
       </layer>
     </colorList>
   </crewBlueprint>
@@ -348,5 +348,17 @@
         <color r="199" g="255" b="170" a="0.7"/>
       </layer>
     </colorList>
+  </crewBlueprint>
+
+  <crewBlueprint name="firefly">
+    <title>Firefly</title>
+    <short>Firefly</short>
+    <desc>?</desc>
+    <cost>60</cost>
+    <bp>2</bp>
+    <rarity>0</rarity>
+    <powerList>
+      <power>?</power>
+    </powerList>
   </crewBlueprint>
 </FTL>

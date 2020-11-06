@@ -6,8 +6,11 @@
   <forceDlc enabled="true"/>
 
   <ships>
-    <ship name="PLAYER_SHIP_ORCHID" b="true" c="true"/>
     <ship name="PLAYER_SHIP_PAVONIAN" b="true" c="true"/>
+    <ship name="PLAYER_SHIP_DRONE" b="true" c="true"/>
+    <ship name="PLAYER_SHIP_FIREFLY" b="true" c="true"/>
+    <ship name="PLAYER_SHIP_ORCHID" b="true" c="true"/>
+    <ship name="PLAYER_SHIP_DRONE2" b="false" c="false"/>
     <ship name="PLAYER_SHIP_LIZARD" b="false" c="false"/>
     <!--
     <customShip name="MANTIS_SCOUT_0">
@@ -106,6 +109,24 @@
       <crewLimit>6</crewLimit>
     </customShip>
     <customShip name="PLAYER_SHIP_STEALTH_3">
+      <crewLimit>6</crewLimit>
+    </customShip>
+    <customShip name="PLAYER_SHIP_FIREFLY">
+      <crewLimit>6</crewLimit>
+    </customShip>
+    <customShip name="PLAYER_SHIP_FIREFLY_2">
+      <crewLimit>6</crewLimit>
+    </customShip>
+    <customShip name="PLAYER_SHIP_FIREFLY_3">
+      <crewLimit>6</crewLimit>
+    </customShip>
+    <customShip name="PLAYER_SHIP_DRONE">
+      <crewLimit>6</crewLimit>
+    </customShip>
+    <customShip name="PLAYER_SHIP_DRONE_2">
+      <crewLimit>6</crewLimit>
+    </customShip>
+    <customShip name="PLAYER_SHIP_DRONE_3">
       <crewLimit>6</crewLimit>
     </customShip>
   </ships>
@@ -384,6 +405,20 @@
         <activateWhenReady enemiesOnly="true">true</activateWhenReady>
       </powerEffect>
     </race>
+
+    <race name="firefly">
+      <fireRepairMultiplier>0.0</fireRepairMultiplier>
+      <fireDamageMultiplier>-1.0</fireDamageMultiplier>
+      <powerEffect>
+        <cooldown>30</cooldown>
+        <jumpCooldown>full</jumpCooldown>
+        <shipFriendlyFire>true</shipFriendlyFire>
+        <fireChance>10</fireChance>
+        <buttonText>FIRE</buttonText>
+        <tooltip>Ready: Click to start a fire</tooltip>
+        <cooldownColor r="255" g="120" b="120"/>
+      </powerEffect>
+    </race>
   </crew>
 
   <augments>
@@ -431,8 +466,8 @@
       <function name="ADV_SCANNERS" warning="false"/>
       <locked/>
     </aug>
-    <aug name="O2_MASKS_LOCKED">
-      <function name="O2_MASKS" value="0.5" warning="false"/>
+    <aug name="NANOBOT_DEFENSE_SYSTEM_LOCKED">
+      <function name="NANOBOT_DEFENSE_SYSTEM" value="75" warning="false"/>
       <locked/>
     </aug>
     <aug name="FTL_JUMPER_UNIVERSAL">

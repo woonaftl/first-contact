@@ -94,7 +94,7 @@
             </removeCrew>
           </event>
         </choice>
-        <choice req="BATTLE">
+        <choice req="BATTLE_LIST">
           <text>(Anti-Personnel Drone) Distract giant alien spiders with a drone.</text>
           <event>
             <text>The drone is quickly constructed on site from spare parts. As soon as it is ready, it plunges into a swarm of arachnids, making an excellent distraction while the crew frees the shuttle from sticky web.</text>

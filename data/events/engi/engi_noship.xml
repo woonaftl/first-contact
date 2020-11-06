@@ -23,7 +23,7 @@
     <event load="ENGI_SYSTEM_UPGRADE"/>
     <event load="ENGI_MCCLONEY"/>
     <event load="ENGI_ENTERTAINMENT"/>
-   </eventList>
+  </eventList>
 
   <event name="ENGI_FIND_AUGMENT">
     <textList>
@@ -54,18 +54,111 @@
     <autoReward level="LOW">stuff</autoReward>
   </event>
 
-  <event name="ENGI_TRADER" unique="true">
-    <!--text taken from NOTHING_ENGI event -->
-    <text>There are a number of merchant ships passing through the area despite the threat of Mantis invasion. No doubt interested in buying the efficient technology of the Engi. One of the trading ships makes an offer.</text>
-    <choice>
-      <text>Trade.</text>
-      <event load="TRADER_LIST"/>
-    </choice>
-    <choice>
-      <text>Ignore.</text>
-      <event/>
-    </choice>
-  </event>
+  <eventList name="ENGI_TRADER" unique="true">
+    <event>
+      <!--text taken from NOTHING_ENGI event -->
+      <text>There are a number of merchant ships passing through the area despite the threat of Mantis invasion. No doubt interested in buying the efficient technology of the Engi. One of the trading ships makes an offer.</text>
+      <choice>
+        <text>Trade.</text>
+        <event>
+          <item_modify>
+            <item type="scrap" min="-15" max="-12"/>
+            <item type="fuel" min="5" max="6"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Trade.</text>
+        <event>
+          <item_modify>
+            <item type="missiles" min="-8" max="-7"/>
+            <item type="fuel" min="5" max="6"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Trade.</text>
+        <event>
+          <item_modify>
+            <item type="drones" min="-5" max="-4"/>
+            <item type="fuel" min="5" max="6"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Ignore.</text>
+        <event/>
+      </choice>
+    </event>
+    <event>
+      <text>There are a number of merchant ships passing through the area despite the threat of Mantis invasion. No doubt interested in buying the efficient technology of the Engi. One of the trading ships makes an offer.</text>
+      <choice>
+        <text>Trade.</text>
+        <event>
+          <item_modify>
+            <item type="scrap" min="-15" max="-12"/>
+            <item type="missiles" min="8" max="10"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Trade.</text>
+        <event>
+          <item_modify>
+            <item type="fuel" min="-5" max="-4"/>
+            <item type="missiles" min="8" max="10"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Trade.</text>
+        <event>
+          <item_modify>
+            <item type="drones" min="-5" max="-4"/>
+            <item type="missiles" min="8" max="10"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Ignore.</text>
+        <event/>
+      </choice>
+    </event>
+    <event>
+      <text>There are a number of merchant ships passing through the area despite the threat of Mantis invasion. No doubt interested in buying the efficient technology of the Engi. One of the trading ships makes an offer.</text>
+      <choice>
+        <text>Trade.</text>
+        <event>
+          <item_modify>
+            <item type="scrap" min="-15" max="-12"/>
+            <item type="drones" min="5" max="6"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Trade.</text>
+        <event>
+          <item_modify>
+            <item type="fuel" min="-5" max="-4"/>
+            <item type="drones" min="5" max="6"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Trade.</text>
+        <event>
+          <item_modify>
+            <item type="missiles" min="-8" max="-7"/>
+            <item type="drones" min="5" max="6"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Ignore.</text>
+        <event/>
+      </choice>
+    </event>
+  </eventList>
 
   <event name="ENGI_FLEET_DELAY" unique="true">
     <text>You notice an Engi colony hiding on the other side of a nearby moon. It turns out they're excavating an equipment cache from the Federation-Mantis War, and they suggest it might be used to lure the pursuing Rebel fleet.</text>

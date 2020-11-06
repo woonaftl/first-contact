@@ -66,6 +66,7 @@ desc_metadata = tree_metadata.getroot().findall("./description[1]")[0]
 for clear_file in clear_files:
     tree_empty.write(join("result", "data", clear_file))
 
+# this was needed before arty freeze fix
 # room_count_dict = {}
 # for file in os.listdir(join("data", "ships")):
 #     fullname = join("data", "ships", file)
@@ -148,6 +149,7 @@ transform(join("result", "data", "events.xml"),
           join("tools", "events", "sort.xslt"),
           join("result", "data", "events.xml"))
 
+# TODO validate sectors have enough non-unique events
 # TODO validate autoReward vs item_modify conflicts
 schema_events = et.XMLSchema(et.parse(join("schema", "events.xsd")))
 events = et.parse(join("result", "data", "events.xml"))

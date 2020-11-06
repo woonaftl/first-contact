@@ -18,7 +18,7 @@
 
   <changelog>
     <entry>ENGI_SURRENDER has an option to attack the Engi ship</entry>
-    <entry>If you choose to explain that you're friendly in ENGI_SURRENDER, you also get a free map reveal</entry>
+    <entry>If you choose to explain that you're friendly in ENGI_SURRENDER, you have a chance to also get a free map reveal</entry>
   </changelog>
   <event name="ENGI_IMMEDIATE_SURRENDER" unique="true">
     <text>An Engi ship in the vicinity, seeing you jump in armed to the teeth, immediately broadcasts its surrender: "Subject goal: wealth. Engi motivation: survival. Transfer of goods acceptable?"</text>

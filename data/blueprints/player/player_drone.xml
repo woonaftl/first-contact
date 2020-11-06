@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <shipBlueprint name="PLAYER_SHIP_DRONE" layout="kestral" img="kestral">
+    <class>Drone Cruiser</class>
+    <name>?</name>
+    <desc>?</desc>
+    <systemList>
+      <battery power="1" room="11" start="false" img="room_battery"/>
+      <cloaking power="1" room="8" start="false"/>
+      <clonebay power="1" room="4" start="false" slot="1"/>
+      <doors power="1" room="2" start="true" img="room_doors"/>
+      <drones power="3" room="1" start="true"/>
+      <engines power="2" room="14" start="true" img="room_engines"/>
+      <hacking power="1" room="12" start="false" img="room_hacking"/>
+      <medbay power="1" room="4" start="true" img="room_medbay"/>
+      <mind power="1" room="7" start="false" img="room_mind"/>
+      <oxygen power="1" room="13" start="true" img="room_oxygen"/>
+      <pilot power="1" room="0" start="true" img="room_pilot"/>
+      <sensors power="1" room="3" start="true" img="room_sensors"/>
+      <shields power="2" room="5" start="true" img="room_shields"/>
+      <teleporter power="1" room="15" start="false"/>
+      <weapons power="2" room="10" start="true" img="room_weapons"/>
+    </systemList>
+    <weaponSlots>2</weaponSlots>
+    <droneSlots>4</droneSlots>
+    <weaponList count="1" missiles="0">
+      <weapon name="ION_4_UPGRADED"/>
+    </weaponList>
+    <droneList count="1" drones="18">
+      <drone name="COMBAT_2_UPGRADED"/>
+    </droneList>
+    <health amount="30"/>
+    <maxPower amount="10"/>
+    <crewCount amount="2" class="human"/>
+    <aug name="NANOBOT_DEFENSE_SYSTEM_LOCKED"/>
+  </shipBlueprint>
+
+  <shipBlueprint name="PLAYER_SHIP_DRONE_2" layout="kestral" img="kestral">
+    <class>Drone Cruiser</class>
+    <name>?</name>
+    <desc>?</desc>
+    <systemList>
+      <battery power="1" room="11" start="false" img="room_battery"/>
+      <cloaking power="1" room="8" start="false"/>
+      <clonebay power="1" room="4" start="true" slot="1"/>
+      <doors power="1" room="2" start="true" img="room_doors"/>
+      <drones power="3" room="1" start="true"/>
+      <engines power="2" room="14" start="true" img="room_engines"/>
+      <hacking power="1" room="12" start="false" img="room_hacking"/>
+      <medbay power="1" room="4" start="false" img="room_medbay"/>
+      <mind power="1" room="7" start="false" img="room_mind"/>
+      <oxygen power="1" room="13" start="true" img="room_oxygen"/>
+      <pilot power="1" room="0" start="true" img="room_pilot"/>
+      <sensors power="1" room="3" start="true" img="room_sensors"/>
+      <shields power="2" room="5" start="true" img="room_shields"/>
+      <teleporter power="1" room="15" start="false"/>
+      <weapons power="2" room="10" start="true" img="room_weapons"/>
+    </systemList>
+    <weaponSlots>2</weaponSlots>
+    <droneSlots>4</droneSlots>
+    <weaponList count="1" missiles="0">
+      <weapon name="LASER_CHARGEGUN_2_UPGRADED"/>
+    </weaponList>
+    <droneList count="1" drones="18">
+      <drone name="COMBAT_ION_UPGRADED"/>
+    </droneList>
+    <health amount="30"/>
+    <maxPower amount="10"/>
+    <crewCount amount="2" class="human"/>
+    <aug name="NANOBOT_DEFENSE_SYSTEM_LOCKED"/>
+    <shieldImage>kestral</shieldImage>
+    <cloakImage>kestral</cloakImage>
+  </shipBlueprint>
+
+  <shipBlueprint name="PLAYER_SHIP_DRONE_3" layout="kestral" img="kestral">
+    <class>Drone Cruiser</class>
+    <name>?</name>
+    <desc>?</desc>
+    <systemList>
+      <battery power="1" room="11" start="false" img="room_battery"/>
+      <cloaking power="1" room="8" start="false"/>
+      <clonebay power="1" room="4" start="true" slot="1"/>
+      <doors power="1" room="2" start="true" img="room_doors"/>
+      <drones power="4" room="1" start="true"/>
+      <engines power="2" room="14" start="true" img="room_engines"/>
+      <hacking power="1" room="12" start="false" img="room_hacking"/>
+      <medbay power="1" room="4" start="false" img="room_medbay"/>
+      <mind power="1" room="7" start="false" img="room_mind"/>
+      <oxygen power="1" room="13" start="true" img="room_oxygen"/>
+      <pilot power="1" room="0" start="true" img="room_pilot"/>
+      <sensors power="1" room="3" start="true" img="room_sensors"/>
+      <shields power="2" room="5" start="true" img="room_shields"/>
+      <teleporter power="1" room="15" start="false"/>
+      <weapons power="1" room="10" start="true" img="room_weapons"/>
+    </systemList>
+    <weaponSlots>2</weaponSlots>
+    <droneSlots>4</droneSlots>
+    <weaponList count="1" missiles="0">
+      <weapon name="LASER_BURST_1"/>
+    </weaponList>
+    <droneList count="4" drones="32">
+      <drone name="COMBAT_1_UPGRADED"/>
+      <drone name="COMBAT_1_UPGRADED"/>
+      <drone name="COMBAT_1_UPGRADED"/>
+      <drone name="COMBAT_1_UPGRADED"/>
+    </droneList>
+    <health amount="30"/>
+    <maxPower amount="10"/>
+    <crewCount amount="2" class="human"/>
+    <aug name="NANOBOT_DEFENSE_SYSTEM_LOCKED"/>
+    <shieldImage>kestral</shieldImage>
+    <cloakImage>kestral</cloakImage>
+  </shipBlueprint>
+</FTL>

@@ -7,7 +7,7 @@
     <sector>ENGI_WARZONE_SECTOR</sector>
     <!--<sector>LIZARD_REFUGE_SECTOR</sector>-->
     <sector>ORCHID_GARDEN_SECTOR</sector>
-    <!--<sector>PAVONIAN_ANARCHY_SECTOR</sector>-->
+    <sector>PAVONIAN_ANARCHY_SECTOR</sector>
     <!--<sector>PAVONIAN_RAINBOW_SECTOR</sector>-->
     <sector>ROCK_HOLY_SECTOR</sector>
     <sector>ZOLTAN_INSPECTION_SECTOR</sector>
@@ -17,7 +17,7 @@
     <!--<sector>AQUARIAN_DIMMED_SECTOR</sector>-->
     <sector>LANIUS_WARZONE_SECTOR</sector>
     <sector>MANTIS_BROOD_SECTOR</sector>
-    <sector>MANTIS_HUNTING_SECTOR</sector>
+    <sector>MANTIS_SLAVER_SECTOR</sector>
     <!--<sector>ORCHID_OVERGROWN_SECTOR</sector>-->
     <sector>PIRATE_SECTOR</sector>
     <sector>REBEL_FILLER_SECTOR</sector>
@@ -32,7 +32,7 @@
     <sector>NEBULA_FILLER_SECTOR</sector>
     <sector>SLUG_HOME_SECTOR</sector>
     <sector>SLUG_HAZARD_SECTOR</sector>
-    <sector>ZOLTAN_HAZARD_SECTOR</sector>
+    <sector>ZOLTAN_TURBULENT_SECTOR</sector>
   </sectorType>
 
   <sectorType name="UNKNOWN">
@@ -176,7 +176,7 @@
   <sectorDescription name="AQUARIAN_HOME_SECTOR" minSector="1" unique="true">
     <!-- challenge sector, beacons are hidden on the star map -->
     <nameList>
-      <name>Aquarian Secret Lair</name>
+      <name>Aquarian Secret Base</name>
     </nameList>
     <trackList>
       <!--TODO <track>aquarian</track>-->
@@ -448,7 +448,7 @@
   <sectorDescription name="MANTIS_BROOD_SECTOR" minSector="2" unique="true">
     <!-- challenge sector: a lot of event boarders -->
     <nameList>
-      <name>Mantis Brood Sector</name>
+      <name>Mantis Hatching Lair</name>
     </nameList>
     <trackList>
       <track>mantis</track>
@@ -466,11 +466,11 @@
 
     <event name="NOSHIP_MANTIS_BROOD" min="4" max="4"/>
     <event name="NEUTRAL_MANTIS_BROOD" min="3" max="3"/>
-    <event name="HOSTILE_MANTIS_BROOD" min="9" max="9"/>
+    <event name="HOSTILE_MANTIS_BROOD" min="8" max="8"/>
 
     <event name="NOSHIP_MANTIS_BROOD" min="1" max="1"/>
     <event name="NEUTRAL_MANTIS_BROOD" min="1" max="1"/>
-    <event name="HOSTILE_MANTIS_BROOD" min="1" max="1"/>
+    <event name="HOSTILE_MANTIS_BROOD" min="2" max="2"/>
   </sectorDescription>
 
   <sectorDescription name="NEBULA_FILLER_SECTOR" minSector="1" unique="false">
@@ -911,7 +911,7 @@
 
   <sectorDescription name="ZOLTAN_INSPECTION_SECTOR" minSector="1" unique="true">
     <nameList>
-      <name>Zoltan Perquisition Zone</name>
+      <name>Zoltan Inspection Zone</name>
     </nameList>
     <trackList>
       <track>zoltan</track>
@@ -946,7 +946,7 @@
     <event name="HOSTILE_ZOLTAN" min="1" max="1"/>
   </sectorDescription>
 
-  <sectorDescription name="ZOLTAN_HAZARD_SECTOR" minSector="2" unique="true">
+  <sectorDescription name="ZOLTAN_TURBULENT_SECTOR" minSector="2" unique="true">
     <!-- challenge sector: a lot of environmental hazards -->
     <nameList>
       <name>Zoltan Turbulent Nebula</name>
@@ -969,7 +969,7 @@
       <blueprint name="orchid" rarity="0"/>
       <blueprint name="pavonian" rarity="0"/>
     </rarityList>
-    <startEvent>START_BEACON_ZOLTAN_HAZARD</startEvent>
+    <startEvent>START_BEACON_ZOLTAN_TURBULENT</startEvent>
     <event name="NEBULA_STORE_ZOLTAN" min="2" max="2"/>
     <event name="UPGRADE_LIST_NEBULA" min="2" max="2"/>
 

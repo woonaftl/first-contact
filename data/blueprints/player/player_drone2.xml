@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <shipBlueprint name="PLAYER_SHIP_DRONE2" layout="kestral" img="kestral">
+    <class>Drone Cruiser</class>
+    <name>?</name>
+    <desc>?</desc>
+    <systemList>
+      <battery power="1" room="11" start="false" img="room_battery"/>
+      <cloaking power="1" room="8" start="false"/>
+      <clonebay power="1" room="4" start="false" slot="1"/>
+      <doors power="1" room="2" start="true" img="room_doors"/>
+      <drones power="4" room="1" start="true"/>
+      <engines power="2" room="14" start="true" img="room_engines"/>
+      <hacking power="1" room="12" start="false" img="room_hacking"/>
+      <medbay power="1" room="4" start="true" img="room_medbay"/>
+      <mind power="1" room="7" start="false" img="room_mind"/>
+      <oxygen power="1" room="13" start="true" img="room_oxygen"/>
+      <pilot power="1" room="0" start="true" img="room_pilot"/>
+      <sensors power="1" room="3" start="true" img="room_sensors"/>
+      <shields power="2" room="5" start="true" img="room_shields"/>
+      <teleporter power="1" room="15" start="true"/>
+      <weapons power="1" room="10" start="true" img="room_weapons"/>
+    </systemList>
+    <weaponSlots>3</weaponSlots>
+    <droneSlots>3</droneSlots>
+    <weaponList count="0" missiles="0"/>
+    <droneList count="2" drones="28">
+      <drone name="BOARDER_UPGRADED"/>
+     <drone name="BOARDER_UPGRADED"/>
+    </droneList>
+    <health amount="30"/>
+    <maxPower amount="10"/>
+    <crewCount amount="3" class="human"/>
+    <aug name="DRONE_SPEED_LOCKED"/>
+  </shipBlueprint>
+</FTL>

@@ -1,15 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
   <eventList name="NEUTRAL_ORCHID">
+    <event load="ORCHID_FIGHT_CHOICE"/>
     <event load="ORCHID_UNDER_ATTACK_PIRATE"/>
     <event load="ORCHID_UNARMED_TRADER"/>
     <event load="ORCHID_SLAVES"/>
     <event load="ORCHID_SLUG_TAUNT"/>
-    <!--TODO add more-->
   </eventList>
 
-  <event name="ORCHID_UNDER_ATTACK_PIRATE" unique="true">
-    <text>An unarmed Orchid vessel is trying to flee from a ship with the markings of a space pirate that is chasing behind.</text>
+  <event name="ORCHID_FIGHT_CHOICE">
+    <textList>
+      <text>An Orchid ship stationed nearby is barely able to hide their hostility towards you but still keeps their distance.</text>
+      <text>An Orchid fighter awaits you. They send a simple message: "One wrong move and we open fire."</text>
+      <text>Some Orchids find only plant lifeforms pure, and all animal and mechanical life disgusting. A ship nearby refuses to communicate, being openly hostile toward you, but without direct confrontation.</text>
+    </textList>
+    <ship load="ORCHID_SHIP" hostile="false"/>
+    <choice hidden="true">
+      <text>Fight the Orchids.</text>
+      <event>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice>
+      <text>Avoid the conflict.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <event name="ORCHID_UNDER_ATTACK_PIRATE">
+    <textList>
+      <text>An unarmed Orchid vessel is trying to flee from a ship with the markings of a space pirate that is chasing behind.</text>
+      <text>A tiny Orchid ship contacts you. Without saying a word, they signal at the pirate that is following them.</text>
+      <text>You initially thought that a damaged Orchid ship was alone at the beacon but then realize that they're under attack from space pirates.</text>
+    </textList>
     <choice hidden="true">
       <text>Help the Orchid ship.</text>
       <event>
