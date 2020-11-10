@@ -12,7 +12,6 @@
     <event load="FREE_ITEMS"/>
     <event load="FRIENDLY_BEACON"/>
     <event load="QUEST_MANTIS_INVASION_START"/>
-    <event load="STATION_SICK"/>
     <event load="STORE_RESCUE"/>
     <event load="STRANDED_BEACON"/>
   </eventList>
@@ -1062,6 +1061,7 @@
   </event>
 
   <event name="TAVERN_HIRE" unique="true">
+    <!-- TODO rebalance so 2 of the same race aren't offered -->
     <textList name="TAVERN_HIRE_TEXT">
       <text>You find a space station set up for travelers. Browsing through its listings, you find a tavern full of mercenaries for hire. You look for potential crewmembers.</text>
       <text>There are a number of ships stationed around a rest stop. You immediately receive a message saying, "If you're looking for some bodies to fill your ship, you've come to the right place!"</text>

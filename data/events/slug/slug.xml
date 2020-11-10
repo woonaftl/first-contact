@@ -14,7 +14,6 @@
     <textList name="NOTHING_SLUG">
       <text>You arrive at the beacon and are relieved at the sight of open space. Nebulae are terribly claustrophobic.</text>
       <text>This beacon marks a 'small' gap in the nebula. No colonies or ships in scanning distance.</text>
-      <text>You are relieved to see your sensors blink back on after the jump. No ships detected.</text>
       <text>The Slugs rely heavily on their telepathic powers and are reluctant to give up that advantage by extending beyond nebulae. It's unlikely you'll encounter any this far from the clouds.</text>
       <text>You arrive in an area clear of nebula and quickly check to see if the sensors are working. Everything is fine and no ships are detected in the vicinity.</text>
     </textList>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="NOSHIP_SLUG">
+    <event load="SLUG_TRADER"/>
+    <event load="SLUG_CONTAINER"/>
+  </eventList>
+
+  <eventList name="SLUG_TRADER" unique="true">
+    <event>
+      <text>Sometimes the competition in Slug nebula is so strong, that some merchants are forced to trade outside. Unprotected be concealing environment, the Slugs are clearly nervous and won't try to scam you.</text>
+      <choice>
+        <text>Trade.</text>
+        <event>
+          <item_modify>
+            <item type="scrap" min="-15" max="-12"/>
+            <item type="fuel" min="5" max="6"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Trade.</text>
+        <event>
+          <item_modify>
+            <item type="missiles" min="-8" max="-7"/>
+            <item type="fuel" min="5" max="6"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Trade.</text>
+        <event>
+          <item_modify>
+            <item type="drones" min="-5" max="-4"/>
+            <item type="fuel" min="5" max="6"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Ignore.</text>
+        <event/>
+      </choice>
+    </event>
+    <event>
+      <text>Sometimes the competition in Slug nebula is so strong, that some merchants are forced to trade outside. Unprotected be concealing environment, the Slugs are clearly nervous and won't try to scam you.</text>
+      <choice>
+        <text>Trade.</text>
+        <event>
+          <item_modify>
+            <item type="scrap" min="-15" max="-12"/>
+            <item type="missiles" min="8" max="10"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Trade.</text>
+        <event>
+          <item_modify>
+            <item type="fuel" min="-5" max="-4"/>
+            <item type="missiles" min="8" max="10"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Trade.</text>
+        <event>
+          <item_modify>
+            <item type="drones" min="-5" max="-4"/>
+            <item type="missiles" min="8" max="10"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Ignore.</text>
+        <event/>
+      </choice>
+    </event>
+    <event>
+      <text>Sometimes the competition in Slug nebula is so strong, that some merchants are forced to trade outside. Unprotected be concealing environment, the Slugs are clearly nervous and won't try to scam you.</text>
+      <choice>
+        <text>Trade.</text>
+        <event>
+          <item_modify>
+            <item type="scrap" min="-15" max="-12"/>
+            <item type="drones" min="5" max="6"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Trade.</text>
+        <event>
+          <item_modify>
+            <item type="fuel" min="-5" max="-4"/>
+            <item type="drones" min="5" max="6"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Trade.</text>
+        <event>
+          <item_modify>
+            <item type="missiles" min="-8" max="-7"/>
+            <item type="drones" min="5" max="6"/>
+          </item_modify>
+        </event>
+      </choice>
+      <choice>
+        <text>Ignore.</text>
+        <event/>
+      </choice>
+    </event>
+  </eventList>
+
+  <event name="SLUG_CONTAINER" unique="true">
+    <text>You are relieved to see your sensors blink back on after the jump. Mid-range scans detect a floating container, probably left there by the Slugs. There could be something useful inside.</text>
+    <choice hidden="true">
+      <text>Bring it aboard and open it.</text>
+      <eventList>
+        <event>
+          <text>There are beauty products commonly used by the Slugs inside: scented soaps, moisturizing ointments, massage brushes. There are also some military supplies which you take.</text>
+          <autoReward level="LOW">stuff</autoReward>
+        </event>
+        <event>
+          <text>The container explodes as soon as it's opened. Luckily, no one is hurt, but some of your ship's systems took heavy damage.</text>
+          <damage amount="3"/>
+          <damage amount="1" system="random"/>
+          <damage amount="1" system="random"/>
+        </event>
+      </eventList>
+    </choice>
+    <choice hidden="true">
+      <text>It's probably a trap. Leave the container behind.</text>
+      <event/>
+    </choice>
+    <choice hidden="true" req="sensors" lvl="2">
+      <text>(Upgraded Sensors) Scan the container.</text>
+      <eventList>
+        <event>
+          <text>Scans detect some military goods inside, so you open the container, but it's filled with beauty products commonly used by the Slugs: scented soaps, moisturizing ointments, massage brushes.</text>
+          <autoReward level="LOW">stuff</autoReward>
+        </event>
+        <event>
+          <text>Scans show that the container is booby-trapped! You don't open it and eject it into space after sticking a Rebel logo to the side.</text>
+        </event>
+      </eventList>
+    </choice>
+  </event>
+</FTL>

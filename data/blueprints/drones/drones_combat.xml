@@ -61,6 +61,8 @@
     <name>COMBAT_ION_UPGRADED</name>
   </blueprintList>
 
+  <!--TODO HYPERSPACE chain combat drone that would speed up with each shot-->
+
   <changelog>
     <entry>Combat I Drone scrap cost 50 to 40</entry>
   </changelog>

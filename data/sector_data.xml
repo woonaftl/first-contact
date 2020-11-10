@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
   <!--TODO unique upgrade events and texts for each sector-->
-  <sectorType name="CIVILIAN">
+  <!--TODO show the quest description in tooltip-->
+ <sectorType name="CIVILIAN">
     <sector>CIVILIAN_FILLER_SECTOR</sector>
     <sector>ENGI_RESEARCH_SECTOR</sector>
     <sector>ENGI_WARZONE_SECTOR</sector>
@@ -30,8 +31,8 @@
     <sector>LANIUS_HOME_SECTOR</sector>
     <!--<sector>LIZARD_RUINS_SECTOR</sector>-->
     <sector>NEBULA_FILLER_SECTOR</sector>
-    <sector>SLUG_HOME_SECTOR</sector>
-    <sector>SLUG_HAZARD_SECTOR</sector>
+    <sector>SLUG_MARKET_SECTOR</sector>
+    <sector>SLUG_TREACHERY_SECTOR</sector>
     <sector>ZOLTAN_TURBULENT_SECTOR</sector>
   </sectorType>
 
@@ -764,7 +765,7 @@
 
   <sectorDescription name="ROCK_HOLY_SECTOR" minSector="1" unique="true">
     <nameList>
-      <name>Rock Holy Sanctuary</name>
+      <name>Rock Sanctuary</name>
     </nameList>
     <trackList>
       <track>rock</track>
@@ -837,9 +838,44 @@
     <event name="NEUTRAL_ROCK" min="1" max="1"/>
   </sectorDescription>
 
-  <sectorDescription name="SLUG_HOME_SECTOR" minSector="1" unique="true">
+  <sectorDescription name="SLUG_MARKET_SECTOR" minSector="1" unique="true">
     <nameList>
-      <name>Slug Home Nebula</name>
+      <name>Slug Free Market</name>
+    </nameList>
+    <trackList>
+      <track>slug</track>
+      <track>void</track>
+      <track>lostship</track>
+      <track>deepspace</track>
+    </trackList>
+    <rarityList>
+      <blueprint name="human" rarity="3"/>
+      <blueprint name="engi" rarity="5"/>
+      <blueprint name="mantis" rarity="4"/>
+      <blueprint name="rock" rarity="0"/>
+      <blueprint name="energy" rarity="3"/>
+      <blueprint name="slug" rarity="1"/>
+      <blueprint name="anaerobic" rarity="0"/>
+      <blueprint name="aquarian" rarity="4"/>
+      <blueprint name="lizard" rarity="5"/>
+      <blueprint name="orchid" rarity="0"/>
+      <blueprint name="pavonian" rarity="5"/>
+    </rarityList>
+    <startEvent>START_BEACON_SLUG</startEvent>
+    <event name="NEBULA_STORE_SLUG" min="4" max="4"/>
+    <event name="UPGRADE_LIST_NEBULA" min="2" max="2"/>
+
+    <event name="NEBULA_NOSHIP_SLUG_MARKET" min="6" max="6"/>
+    <event name="NEBULA_NEUTRAL_SLUG_MARKET" min="6" max="6"/>
+
+    <event name="NOSHIP_SLUG" min="1" max="1"/>
+    <event name="NEUTRAL_SLUG" min="1" max="1"/>
+    <event name="HOSTILE_SLUG" min="2" max="2"/>
+  </sectorDescription>
+
+  <sectorDescription name="SLUG_TREACHERY_SECTOR" minSector="2" unique="true">
+    <nameList>
+      <name>Slug Treacherous Nebula</name>
     </nameList>
     <trackList>
       <track>slug</track>
@@ -866,47 +902,14 @@
 
     <event name="NEBULA_SLUG_FIGHT_UNLOCK" min="1" max="1"/>
 
-    <event name="NEBULA_NOSHIP_SLUG" min="4" max="4"/>
-    <event name="NEBULA_NEUTRAL_SLUG" min="6" max="6"/>
-    <event name="NEBULA_HOSTILE_SLUG_HOME" min="4" max="4"/>
+    <event name="NEBULA_NOSHIP_SLUG_TREACHERY" min="3" max="3"/>
+    <event name="NEBULA_NEUTRAL_SLUG_TREACHERY" min="2" max="2"/>
+    <event name="NEBULA_HOSTILE_HAZARD_SLUG" min="3" max="3"/>
+    <event name="NEBULA_HOSTILE_SLUG" min="6" max="6"/>
 
+    <event name="NOSHIP_SLUG" min="1" max="1"/>
     <event name="NEUTRAL_SLUG" min="1" max="1"/>
-    <event name="HOSTILE_SLUG" min="2" max="2"/>
-  </sectorDescription>
-
-  <sectorDescription name="SLUG_HAZARD_SECTOR" minSector="2" unique="true">
-    <!-- challenge sector: a lot of environmental hazards -->
-    <nameList>
-      <name>Slug Stormy Nebula</name>
-    </nameList>
-    <trackList>
-      <track>slug</track>
-      <track>void</track>
-      <track>deepspace</track>
-    </trackList>
-    <rarityList>
-      <blueprint name="human" rarity="4"/>
-      <blueprint name="engi" rarity="0"/>
-      <blueprint name="mantis" rarity="0"/>
-      <blueprint name="rock" rarity="0"/>
-      <blueprint name="energy" rarity="4"/>
-      <blueprint name="slug" rarity="1"/>
-      <blueprint name="anaerobic" rarity="0"/>
-      <blueprint name="aquarian" rarity="0"/>
-      <blueprint name="lizard" rarity="0"/>
-      <blueprint name="orchid" rarity="0"/>
-      <blueprint name="pavonian" rarity="0"/>
-    </rarityList>
-    <startEvent>START_BEACON_SLUG</startEvent>
-    <event name="NEBULA_STORE_SLUG" min="1" max="1"/>
-    <event name="UPGRADE_LIST_NEBULA" min="1" max="1"/>
-
-    <event name="NEBULA_HOSTILE_HAZARD_SLUG" min="8" max="8"/>
-    <event name="NEBULA_NOSHIP_SLUG" min="5" max="5"/>
-    <event name="NEBULA_NEUTRAL_SLUG" min="4" max="4"/>
-
-    <event name="NEUTRAL_SLUG" min="1" max="1"/>
-    <event name="HOSTILE_SLUG" min="2" max="2"/>
+    <event name="HOSTILE_SLUG" min="1" max="1"/>
   </sectorDescription>
 
   <sectorDescription name="ZOLTAN_INSPECTION_SECTOR" minSector="1" unique="true">

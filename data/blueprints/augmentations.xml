@@ -40,7 +40,7 @@
     <desc>Should Never See This Description.</desc>
     <tooltip>Should Never See This Description.</tooltip>
     <damage>2</damage>
-    <!--TODO still 1 damage-->
+    <!--TODO INVESTIGATE still 1 damage-->
     <missiles>0</missiles>
     <shots>1</shots>
     <sp>1</sp>
@@ -135,7 +135,7 @@
     <desc>Your shipboard drones have their movement speed TRIPLED. Whoosh!</desc>
     <cost>30</cost>
     <bp>9</bp>
-    <rarity>4</rarity>
+    <rarity>0</rarity>
     <value>2</value>
     <stackable>false</stackable>
   </augBlueprint>
@@ -158,13 +158,14 @@
 
   <changelog>
     <entry>Reverse Ion Field scrap cost 45 to 30</entry>
-  </changelog>
+    <entry>Reverse Ion Field rarity from 2 to 3</entry>
+ </changelog>
   <augBlueprint name="ION_ARMOR">
     <title>Reverse Ion Field</title>
     <desc>Protects your ship from ion damage, giving a 50 percent chance to negate it entirely.</desc>
     <cost>30</cost>
     <bp>8</bp>
-    <rarity>2</rarity>
+    <rarity>3</rarity>
     <stackable>true</stackable>
     <value>0.50</value>
   </augBlueprint>
@@ -183,7 +184,7 @@
   </augBlueprint>
 
   <changelog>
-    <entry>Repair Arm made exclusive to new race</entry>
+    <entry>Repair Arm made exclusive to a new race</entry>
     <entry>Repair Arm scrap reward decrease from 0.15 to 0.1</entry>
   </changelog>
   <augBlueprint name="REPAIR_ARM">
@@ -213,7 +214,7 @@
   <augBlueprintInherit name="SCRAP_COLLECTOR_LOCKED" base="SCRAP_COLLECTOR"/>
 
   <changelog>
-    <entry>Long-Ranged Scanners made exclusive to new race</entry>
+    <entry>Long-Ranged Scanners made exclusive to a new race</entry>
   </changelog>
   <augBlueprint name="ADV_SCANNERS">
     <title>Aquarian Pelengator</title>
@@ -248,40 +249,42 @@
     <value>0.15</value>
   </augBlueprint>
 
-  <augBlueprint name="WEAPON_PREIGNITE">
+  <changelog>
+    <entry>Weapon Pre-igniter rarity from 4 to 5</entry>
+ </changelog> <augBlueprint name="WEAPON_PREIGNITE">
     <title>Weapon Pre-igniter</title>
     <desc>Weapons are made immediately available after an FTL jump.</desc>
     <cost>120</cost>
     <bp>16</bp>
-    <rarity>4</rarity>
+    <rarity>5</rarity>
     <stackable>false</stackable>
   </augBlueprint>
 
   <changelog>
     <entry>FTL Recharge Booster scrap cost 50 to 30</entry>
     <entry>FTL Recharge Booster modifier 1.25 to 1.5</entry>
-    <entry>FTL Recharge Booster rarity 2 to 1</entry>
   </changelog>
   <augBlueprint name="FTL_BOOSTER">
     <title>FTL Recharge Booster</title>
     <desc>The ship's FTL Drive powers up 50 percent faster.</desc>
     <cost>30</cost>
     <bp>4</bp>
-    <rarity>1</rarity>
+    <rarity>2</rarity>
     <stackable>true</stackable>
     <value>0.5</value>
   </augBlueprint>
 
   <changelog>
-    <entry>Adv. FTL Navigation scrap cost 50 to 40</entry>
     <entry>Adv. FTL Navigation allows to jump to any beacon in the sector instead of any previously visited beacon.</entry>
+    <entry>Adv. FTL Navigation scrap cost 50 to 60</entry>
+    <entry>Adv. FTL Navigation rarity 2 to 3</entry>
   </changelog>
   <augBlueprint name="FTL_JUMPER_UNIVERSAL">
     <title>Universal FTL Navigation</title>
-    <desc>Allows the ship to jump to any beacon in the sector at no additional cost.</desc>
-    <cost>40</cost>
+    <desc>Allows the ship to jump to any beacon in the sector. Jumps to non-connected beacons cost 2 fuel.</desc>
+    <cost>60</cost>
     <bp>5</bp>
-    <rarity>2</rarity>
+    <rarity>3</rarity>
     <stackable>false</stackable>
   </augBlueprint>
 
@@ -323,19 +326,17 @@
 
   <changelog>
     <entry>Emergency Respirators scrap cost 50 to 30</entry>
+    <entry>Emergency Respirators rarity 2 to 3</entry>
   </changelog>
   <augBlueprint name="O2_MASKS">
     <title>Emergency Respirators</title>
     <desc>Crew take half damage from low oxygen.</desc>
     <cost>30</cost>
     <bp>8</bp>
-    <rarity>2</rarity>
+    <rarity>3</rarity>
     <stackable>false</stackable>
     <value>0.5</value>
   </augBlueprint>
-  <augBlueprintInherit name="O2_MASKS_LOCKED" base="O2_MASKS">
-    <rarity>0</rarity>
-  </augBlueprintInherit>
 
   <changelog>
     <entry>Explosive Replicator scrap cost 60 to 40</entry>
@@ -367,14 +368,13 @@
 
   <changelog>
     <entry>Distraction Buoys scrap cost 55 to 40</entry>
-    <entry>Distraction Buoys rarity 3 to 2</entry>
   </changelog>
   <augBlueprint name="FLEET_DISTRACTION">
     <title>Distraction Buoys</title>
     <desc>Leaves a false signal at sector start to delay Rebels 1 jump.</desc>
     <cost>40</cost>
     <bp>8</bp>
-    <rarity>2</rarity>
+    <rarity>3</rarity>
     <stackable>false</stackable>
     <value>1.f</value>
   </augBlueprint>
@@ -394,6 +394,7 @@
 
   <changelog>
     <entry>Battery Charger scrap cost 40 to 30</entry>
+    <entry>Battery Charger rarity 2 to 3</entry>
     <entry>Battery Charger cooldown 10 sec to 5 sec</entry>
   </changelog>
   <augBlueprint name="BATTERY_BOOSTER">
@@ -401,7 +402,7 @@
     <desc>Backup Battery's lock time is 4 times shorter (5 seconds instead of 20).</desc>
     <cost>30</cost>
     <bp>8</bp>
-    <rarity>2</rarity>
+    <rarity>3</rarity>
     <stackable>false</stackable>
     <value>0.25</value>
   </augBlueprint>
@@ -422,13 +423,14 @@
 
   <changelog>
     <entry>Backup DNA scrap cost 40 to 30</entry>
+    <entry>Backup DNA scrap rarity 2 to 3</entry>
   </changelog>
   <augBlueprint name="BACKUP_DNA">
     <title>Backup DNA Bank</title>
     <desc>Your crew is safe in clone storage even if the system is off or broken.</desc>
     <cost>30</cost>
     <bp>8</bp>
-    <rarity>2</rarity>
+    <rarity>3</rarity>
     <stackable>false</stackable>
     <value>0.0</value>
   </augBlueprint>
@@ -448,14 +450,13 @@
 
   <changelog>
     <entry>Lifeform Scanner scrap cost 40 to 30</entry>
-    <entry>Lifeform Scanner rarity 3 to 2</entry>
   </changelog>
   <augBlueprint name="LIFE_SCANNER">
     <title>Lifeform Scanner</title>
     <desc>Detects the location of any life forms, even when sensors don't function.</desc>
     <cost>30</cost>
     <bp>8</bp>
-    <rarity>2</rarity>
+    <rarity>3</rarity>
     <stackable>false</stackable>
     <value>0.0</value>
   </augBlueprint>
@@ -474,17 +475,18 @@
   </augBlueprint>
 
   <changelog>
-    <entry>New Nanobot Defense System augmentation (deals damage to boarders on your ship)</entry>
+    <entry>New Nanobot Defense System augmentation (deals damage to intruders on your ship)</entry>
   </changelog>
   <augBlueprint name="NANOBOT_DEFENSE_SYSTEM">
     <title>Nanobot Defense System</title>
-    <desc>Boarders take damage over time on your ship.</desc>
+    <desc>Intruders take damage over time on your ship.</desc>
     <cost>40</cost>
     <bp>4</bp>
-    <rarity>4</rarity>
+    <rarity>0</rarity>
     <value>75</value>
     <stackable>false</stackable>
   </augBlueprint>
+  <augBlueprintInherit name="NANOBOT_DEFENSE_SYSTEM_LOCKED" base="NANOBOT_DEFENSE_SYSTEM"/>
 
   <changelog>
     <entry>New Missile Recycler augmentation (additional 2 missiles for each defeated ship)</entry>
@@ -522,7 +524,5 @@
     <rarity>0</rarity>
     <stackable>false</stackable>
   </augBlueprint>
-  <augBlueprintInherit name="GREENHOUSE_LOCKED" base="GREENHOUSE">
-    <rarity>0</rarity>
-  </augBlueprintInherit>
+  <augBlueprintInherit name="GREENHOUSE_LOCKED" base="GREENHOUSE"/>
 </FTL>

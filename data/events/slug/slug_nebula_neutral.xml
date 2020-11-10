@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
-  <eventList name="NEBULA_NEUTRAL_SLUG">
+  <eventList name="NEBULA_NEUTRAL_SLUG_MARKET">
     <event load="NEBULA_SLUG_FAKE_STORE"/>
     <event load="NEBULA_SLUG_HULLFIX"/>
     <event load="ROCK_SLUG_ARGUMENT_NEBULA"/>
-    <event load="SLUG_DISTRESS_ROCK"/>
-    <event load="SLUG_DISTRESS_TRICK"/>
     <event load="SLUG_DRINK"/>
-    <event load="SLUG_SLAVER_EXTORTION"/>
     <event load="SLUG_TRADER_LASER"/>
     <event load="SLUG_UPGRADE_OXYGEN"/>
     <event load="SLUG_ZOLTAN_TRADER"/>
+  </eventList>
+
+  <eventList name="NEBULA_NEUTRAL_SLUG_TREACHERY">
+    <event load="ROCK_SLUG_ARGUMENT_NEBULA"/>
+    <event load="SLUG_DISTRESS_TRICK"/>
+    <event load="SLUG_SLAVER_EXTORTION"/>
   </eventList>
 
   <event name="NEBULA_SLUG_FAKE_STORE" unique="true">

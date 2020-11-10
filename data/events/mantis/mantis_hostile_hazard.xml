@@ -1,12 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
   <eventList name="HOSTILE_HAZARD_MANTIS">
+    <event load="MANTIS_ASTEROID_FIGHT"/>
     <event load="MANTIS_SUN_FIGHT"/>
-   <!--TODO add-->
   </eventList>
 
-  <event name="MANTIS_SUN_FIGHT" unique="true">
-    <text>Who knows why the Mantis would venture so close to a sun. Perhaps it makes for more of a challenge?</text>
+  <event name="MANTIS_ASTEROID_FIGHT">
+    <textList>
+      <text>A Mantis fighter engages you in an asteroid field, their pilot skillfully dodging all obstacles. Time to test your own ship and crew.</text>
+      <text>The asteroid fields attract the most reckless of Mantis, who depend on luck for hunting and usually don't survive for long. One of these hunters attacks you.</text>
+      <text>While the asteroids could be devastating for Mantis ships, this particular fighter doesn't seem to care and attacks anyway.</text>
+    </textList>
+    <ship load="MANTIS_SHIP" hostile="true"/>
+    <environment type="asteroid"/>
+  </event>
+
+  <event name="MANTIS_SUN_FIGHT">
+    <textList>
+      <text>Who knows why the Mantis would venture so close to a sun. Perhaps it makes for more of a challenge?</text>
+      <text>Everyone knows that the Mantis aren't particularly good at dealing with fires. Except the ship that attacks you dangerously close to a supergiant.</text>
+      <text>This Mantis ship is either very bold or very stupid: they attack you near a sun, being exposed to its heat as much as you do.</text>
+    </textList>
     <ship load="MANTIS_SHIP" hostile="true"/>
     <environment type="sun"/>
   </event>

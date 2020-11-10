@@ -56,9 +56,9 @@
     <!--<name>BOARDER_ION_UPGRADED</name>-->
   </blueprintList>
 
-  <!--TODO Fire Intruder if possible, 3 power, immune to fire-->
-  <!--TODO Med Drone if possible, follows friendly crew on your ship and heals everyone in the same room, same as lvl1 Medbay, 2 power, add to free drone list-->
-  <!--TODO Locker Drone if possible, 3 power, ability to breach the room, lock it down and suck o2 rapidly for 1 second-->
+  <!--TODO HYPERSPACE Fire Intruder if possible, 3 power, immune to fire-->
+  <!--TODO HYPERSPACE Med Drone if possible, follows friendly crew on your ship and heals everyone in the same room, same as lvl1 Medbay, 2 power, add to free drone list-->
+  <!--TODO HYPERSPACE Locker Drone if possible, 3 power, ability to breach the room, lock it down and suck o2 rapidly for 1 second-->
 
   <crewBlueprint name="repair" NOLOC="1">
     <desc>Dummy blueprint needed now.</desc>
@@ -148,7 +148,9 @@
     <tip>tip_boarding</tip>
     <title>Ion Intruder Drone</title>
     <short>I. Intruder</short>
-    <desc>Breaches through the enemy hull and randomly ionizes systems.</desc>
+    <desc>CANNOT BE UPGRADED!
+
+      Breaches through the enemy hull and randomly ionizes systems.</desc>
     <power>3</power>
     <speed>18</speed>
     <cost>40</cost>

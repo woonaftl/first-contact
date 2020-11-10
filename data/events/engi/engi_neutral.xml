@@ -14,11 +14,11 @@
     <event load="ENGI_LOOT"/>
     <event load="ENGI_SEX"/>
     <event load="ENGI_SELLING_SENSORS"/>
+    <event load="ENGI_MOCK_FIGHT"/>
   </eventList>
 
   <changelog>
-    <entry>ENGI_SURRENDER has an option to attack the Engi ship</entry>
-    <entry>If you choose to explain that you're friendly in ENGI_SURRENDER, you have a chance to also get a free map reveal</entry>
+    <entry>If you choose to explain that you're friendly in ENGI_SURRENDER, you have a chance to get a free map reveal in addition to resources.</entry>
   </changelog>
   <event name="ENGI_IMMEDIATE_SURRENDER" unique="true">
     <text>An Engi ship in the vicinity, seeing you jump in armed to the teeth, immediately broadcasts its surrender: "Subject goal: wealth. Engi motivation: survival. Transfer of goods acceptable?"</text>
@@ -46,12 +46,6 @@
       <event>
         <text>The Engi obediently transfer over the goods and get on their way. Money for nothing.</text>
         <autoReward level="RANDOM">stuff</autoReward>
-      </event>
-    </choice>
-    <choice>
-      <text>Attack the ship anyway.</text>
-      <event>
-        <ship hostile="true"/>
       </event>
     </choice>
   </event>
@@ -355,6 +349,38 @@
           </eventList>
         </choice>
       </event>
+    </choice>
+  </event>
+
+  <event name="ENGI_MOCK_FIGHT" unique="true">
+    <text>You jump in to find a small lonely Engi ship: "Assistance required. Combat testing necessary. Simulation success: 82.66%. Damage threshold: 5."</text>
+    <ship auto_blueprint="SHIPS_CIRCLE" hostile="false">
+      <surrender chance="0" min="5" max="5">
+        <text>"Combat data sufficient. Please cease fire."</text>
+        <choice>
+          <text>Agree.</text>
+          <event>
+            <ship hostile="false"/>
+            <autoReward level="LOW">weapon</autoReward>
+          </event>
+        </choice>
+        <choice>
+          <text>I'm just getting warmed up!</text>
+          <event/>
+        </choice>
+      </surrender>
+      <destroyed load="DESTROYED_DEFAULT"/>
+      <deadCrew load="DEAD_CREW_DEFAULT"/>
+    </ship>
+    <choice hidden="true">
+      <text>Help the Engi with combat testing.</text>
+      <event>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Sounds too dangerous. Ignore them.</text>
+      <event/>
     </choice>
   </event>
 </FTL>

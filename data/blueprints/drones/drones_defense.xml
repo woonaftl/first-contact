@@ -172,7 +172,7 @@
     <rarity>0</rarity>
   </droneBlueprintInherit>
 
-  <!--TODO replace Anti-Drone with Defense Drone Mark III - 4 power, can target all things that mark II and anti-drone can-->
+  <!--TODO HYPERSPACE replace Anti-Drone with Defense Drone Mark III - 4 power, can target all things that mark II and anti-drone can-->
 
   <changelog>
     <entry>Hull Repair Drone power usage 2 to 3</entry>

@@ -5,12 +5,14 @@
     <event load="LANIUS_RESEARCHER_CONTACT"/>
     <event load="LANIUS_TRADER_TRANSLATOR"/>
     <event load="LANIUS_TRADER"/>
+    <event load="LANIUS_HEAD"/>
   </eventList>
 
   <eventList name="NOSHIP_LANIUS_HOME">
     <event load="LANIUS_FREE_STUFF"/>
     <event load="LANIUS_TRADER_TRANSLATOR"/>
     <event load="LANIUS_TRADER"/>
+    <event load="LANIUS_HEAD"/>
   </eventList>
 
   <changelog>
@@ -19,8 +21,12 @@
     <entry>Removed LANIUS_DISTRESS_TOO_LATE event</entry>
   </changelog>
 
-  <event name="LANIUS_FREE_STUFF" unique="true">
-    <text>You stumble across a badly damaged Lanius craft. It jumps away as soon as it sees you. Looking around the area, you discover a number of destroyed Rebel automated ships. It must have been quite the fight. You scrap what remains.</text>
+  <event name="LANIUS_FREE_STUFF">
+    <textList>
+      <text>You stumble across a badly damaged Lanius craft. It jumps away as soon as it sees you. Looking around the area, you discover a number of destroyed Rebel automated ships. It must have been quite the fight. You scrap what remains.</text>
+      <text>The remains of unidentified vessel are floating near the beacon. It's rare to find those unattended in Lanius space. You collect some resources.</text>
+      <text>You arrive to find a tiny Lanius vessel harvesting all available scrap from a destroyed ship. Seeing how powerful your ship is, the Lanius ship jumps away, letting you to collect some scrap.</text>
+    </textList>
     <autoReward level="LOW">stuff</autoReward>
   </event>
 
@@ -187,6 +193,39 @@
             <text>They leave without a word.</text>
           </event>
         </choice>
+      </event>
+    </choice>
+  </event>
+
+  <event name="LANIUS_HEAD" unique="true">
+    <text>The beacon seems empty at first, but your sensors detect a small piece of metal floating nearby. Upon closer examination, a piece of metal turns out to be a head of a Lanius!</text>
+    <choice>
+      <text>Melt the head into scrap.</text>
+      <event>
+        <item_modify>
+          <item type="scrap" min="1" max="1"/>
+        </item_modify>
+      </event>
+    </choice>
+    <choice hidden="true" req="medbay" lvl="2">
+      <text>(Upgraded Medbay) Attempt to restore the Lanius body.</text>
+      <event>
+        <text>You leave the head in the Medbay for a few hours as something for nanobots to work on. It takes a lot of time, but the Lanius body is reformed. They agree to join your crew as thanks.</text>
+        <crewMember amount="1" class="anaerobic"/>
+      </event>
+    </choice>
+    <choice hidden="true" req="pavonian">
+      <text>(Pavonian) Attempt to restore the Lanius body.</text>
+      <event>
+        <text>The Pavonian restorative abilities are truly extraordinary. You knew they were able to restore missing limbs, but reconstructing whole body from just a head is even more impressive. The healed Lanius joins your crew.</text>
+        <crewMember amount="1" class="anaerobic"/>
+      </event>
+    </choice>
+    <choice hidden="true" req="clonebay" lvl="2">
+      <text>(Upgraded Clonebay) Upload Lanius DNA and attempt to clone them.</text>
+      <event>
+        <text>You register the Lanius as a part of your crew without their consent and the Clonebay begins to clone them. After a few seconds, the Lanius steps out, with a completely new body. They agree to join your crew as thanks.</text>
+        <crewMember amount="1" class="anaerobic"/>
       </event>
     </choice>
   </event>

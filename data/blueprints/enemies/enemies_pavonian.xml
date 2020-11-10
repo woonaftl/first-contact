@@ -3,12 +3,11 @@
   <blueprintList name="SHIPS_PAVONIAN">
     <name>PAVONIAN_ASSAULT</name>
     <name>PAVONIAN_FIGHTER</name>
+    <name>PAVONIAN_GUARD</name>
     <name>PAVONIAN_SCOUT</name>
   </blueprintList>
 
   <!--TODO add 2 generic ships (6) -->
-  <!--TODO layout for ship that is drawn-->
-  <!--TODO gibs-->
 
   <shipBlueprintSuper name="PAVONIAN_ASSAULT" img="pavonian_assault" layout="pavonian_assault">
     <class>Pavonian Assault</class>
@@ -21,31 +20,31 @@
       <doors power="1" max="3" room="1" start="false"/>
     </systemList>
     <weaponList sector="4" missiles="1" system_power="6">
+      <weapon name="WEAPONS_MISSILES_2"/>
       <weapon name="WEAPONS_CHAIN_3"/>
       <weapon name="WEAPONS_LASER_1"/>
-      <weapon name="WEAPONS_MISSILES_2"/>
       <weapon name="WEAPONS_LASER_2"/>
     </weaponList>
     <weaponList sector="5" missiles="1" system_power="7">
+      <weapon name="WEAPONS_MISSILES_2"/>
       <weapon name="WEAPONS_CHAIN_3"/>
       <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_MISSILES_2"/>
       <weapon name="WEAPONS_LASER_2"/>
     </weaponList>
     <weaponList sector="6" missiles="1" system_power="8">
+      <weapon name="WEAPONS_MISSILES_2"/>
       <weapon name="WEAPONS_CHAIN_3"/>
       <weapon name="WEAPONS_LASER_3"/>
-      <weapon name="WEAPONS_MISSILES_2"/>
       <weapon name="WEAPONS_LASER_2"/>
     </weaponList>
     <weaponList sector="7" missiles="2" system_power="8">
+      <weapon name="WEAPONS_MISSILES_2"/>
       <weapon name="WEAPONS_CHAIN_3"/>
       <weapon name="WEAPONS_LASER_3"/>
-      <weapon name="WEAPONS_MISSILES_2"/>
       <weapon name="WEAPONS_LASER_2"/>
     </weaponList>
     <health amount="10"/>
-    <crewCount amount="3" max="4" class="pavonian"/>
+    <crewCount amount="4" max="5" class="pavonian"/>
     <boardingAI>sabotage</boardingAI>
     <aug name="SYSTEM_CASING"/>
     <cloakImage>pavonian_assault</cloakImage>
@@ -85,6 +84,46 @@
     <boardingAI>sabotage</boardingAI>
     <aug name="SYSTEM_CASING"/>
     <cloakImage>pavonian_fighter</cloakImage>
+  </shipBlueprintSuper>
+
+  <shipBlueprintSuper name="PAVONIAN_GUARD" img="pavonian_guard" layout="pavonian_guard">
+    <class>Pavonian Guard</class>
+    <systemList>
+      <pilot power="1" max="3" room="0"/>
+      <engines power="1" max="5" room="6"/>
+      <weapons room="5"/>
+      <oxygen power="1" max="3" room="7"/>
+      <shields power="2" max="8" room="4"/>
+      <doors power="1" max="3" room="1" start="false"/>
+    </systemList>
+    <weaponList sector="2" missiles="1" system_power="4">
+      <weapon name="WEAPONS_MISSILES_2"/>
+      <weapon name="WEAPONS_CHAIN_2"/>
+      <weapon name="WEAPONS_CORE_2"/>
+    </weaponList>
+    <weaponList sector="3" missiles="1" system_power="5">
+      <weapon name="WEAPONS_MISSILES_2"/>
+      <weapon name="WEAPONS_CHAIN_2"/>
+      <weapon name="WEAPONS_CORE_1"/>
+      <weapon name="WEAPONS_CORE_2"/>
+    </weaponList>
+    <weaponList sector="4" missiles="1" system_power="6">
+      <weapon name="WEAPONS_MISSILES_2"/>
+      <weapon name="WEAPONS_CHAIN_3"/>
+      <weapon name="WEAPONS_CORE_1"/>
+      <weapon name="WEAPONS_CORE_2"/>
+    </weaponList>
+    <weaponList sector="5" missiles="1" system_power="7">
+      <weapon name="WEAPONS_MISSILES_2"/>
+      <weapon name="WEAPONS_CHAIN_3"/>
+      <weapon name="WEAPONS_CORE_2"/>
+      <weapon name="WEAPONS_CORE_2"/>
+    </weaponList>
+    <health amount="10"/>
+    <crewCount amount="3" max="4" class="pavonian"/>
+    <boardingAI>sabotage</boardingAI>
+    <aug name="SYSTEM_CASING"/>
+    <cloakImage>pavonian_guard</cloakImage>
   </shipBlueprintSuper>
 
   <shipBlueprintSuper name="PAVONIAN_SCOUT" img="pavonian_scout" layout="pavonian_scout">

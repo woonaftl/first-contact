@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FTL>
+  <!-- TODO HYPERSPACE this weapon type should spawn sprouts on hit -->
   <blueprintList name="WEAPONS_MISSILES_EVENTS">
     <name>MISSILES_SPAWNER</name>
   </blueprintList>
@@ -19,7 +20,7 @@
     <name>SPAWNER_4</name>
   </blueprintList>
 
-  <!--TODO weapon sprites-->
+  <!-- TODO weapon sprites -->
   <weaponBlueprint name="SPAWNER_2">
     <type>BURST</type>
     <flavorType>Physical Projectile Blast</flavorType>

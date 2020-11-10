@@ -8,16 +8,6 @@
     <event load="SLUG_REBEL"/>
   </eventList>
 
-  <event name="SLUG_FIGHT" unique="true">
-    <text>It's rare for the Slugs to stay exposed in open space for long periods - the ship here may be lost, or just passing through, but either way he moves in to attack!</text>
-    <ship load="JELLY" hostile="true"/>
-  </event>
-
-  <event name="SLUG_MANTIS" unique="true">
-    <text>You intercept comm chatter from an incoming Mantis ship. "Look. This ship appears not to be owned by the squishy ones. Maybe they won't smell so bad when we cut them open." They move in on your position.</text>
-    <ship load="MANTIS_SHIP" hostile="true"/>
-  </event>
-
   <event name="SLUG_PIRATE">
     <textList name="SLUG_PIRATE">
       <text>There appears to be a pirate ship nearby. Be on your guard; anyone trying to hunt in Slug territory is either formidable or deeply stupid, and in space, either can be dangerous.</text>
@@ -34,6 +24,16 @@
       <text>You receive a message from a nearby ship, "Looks like our intelligence was correct! Sneaking through the clouds with the Slugs... No one can hide from the Rebellion!"</text>
     </textList>
     <ship load="REBEL" hostile="true"/>
+  </event>
+
+  <event name="SLUG_FIGHT" unique="true">
+    <text>It's rare for the Slugs to stay exposed in open space for long periods - the ship here may be lost, or just passing through, but either way he moves in to attack!</text>
+    <ship load="JELLY" hostile="true"/>
+  </event>
+
+  <event name="SLUG_MANTIS" unique="true">
+    <text>You intercept comm chatter from an incoming Mantis ship. "Look. This ship appears not to be owned by the squishy ones. Maybe they won't smell so bad when we cut them open." They move in on your position.</text>
+    <ship load="MANTIS_SHIP" hostile="true"/>
   </event>
 
   <changelog>

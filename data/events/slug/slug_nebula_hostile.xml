@@ -10,18 +10,6 @@
     <event load="SLUG_DISTRESS_ROCK"/>
     <event load="NEBULA_LANIUS_SLUG_EXTORTION"/>
     <event load="NEBULA_SLUG_DISTRESS_TRAP"/>
-  </eventList>
-
-  <eventList name="NEBULA_HOSTILE_SLUG_HOME">
-    <event load="NEBULA_SLUG_MANTIS_STUCK"/>
-    <event load="NEBULA_SLUG_CHOOSE_DEATH"/>
-    <event load="NEBULA_SLUG_FIGHT"/>
-    <event load="NEBULA_SLUG_MANTIS"/>
-    <event load="NEBULA_SLUG_MEDBAY"/>
-    <event load="NEBULA_SLUG_PIRATE"/>
-    <event load="SLUG_DISTRESS_ROCK"/>
-    <event load="NEBULA_LANIUS_SLUG_EXTORTION"/>
-    <event load="NEBULA_SLUG_DISTRESS_TRAP"/>
     <event load="DONOR_BLACK_RAVEN"/>
   </eventList>
 
@@ -35,18 +23,6 @@
     </textList>
     <ship load="JELLY" hostile="true"/>
     <environment type="nebula"/>
-  </event>
-
-  <event name="NEBULA_SLUG_MANTIS_STUCK" unique="true">
-    <text>You arrive to see two ships: a heavily damaged Mantis vessel and a Slug cruiser, mostly intact. A Mantis screeches into comm: "Teleporter's out. Kill these aliens first!" Looks like their whole crew is stuck on Slug ship they just captured.</text>
-    <environment type="nebula"/>
-    <ship auto_blueprint="SHIPS_JELLY" hostile="true">
-      <destroyed load="DESTROYED_DEFAULT"/>
-      <deadCrew load="DEAD_CREW_DEFAULT"/>
-      <crew>
-        <crewMember type="mantis" prop="1"/>
-      </crew>
-    </ship>
   </event>
 
   <event name="SLUG_DISTRESS_ROCK" unique="true">
@@ -394,5 +370,20 @@
         </choice>
       </event>
     </choice>
+  </event>
+  
+  <changelog>
+    <entry>Added event: Mantis boarders stuck on a Slug ship</entry>
+  </changelog>
+  <event name="NEBULA_SLUG_MANTIS_STUCK" unique="true">
+    <text>You arrive to see two ships: a heavily damaged Mantis vessel and a Slug cruiser, mostly intact. A Mantis screeches into comm: "Teleporter's out. Kill these aliens first!" Looks like their whole crew is stuck on Slug ship they just captured.</text>
+    <environment type="nebula"/>
+    <ship auto_blueprint="SHIPS_JELLY" hostile="true">
+      <destroyed load="DESTROYED_DEFAULT"/>
+      <deadCrew load="DEAD_CREW_DEFAULT"/>
+      <crew>
+        <crewMember type="mantis" prop="1"/>
+      </crew>
+    </ship>
   </event>
 </FTL>

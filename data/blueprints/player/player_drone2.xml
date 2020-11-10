@@ -23,7 +23,9 @@
     </systemList>
     <weaponSlots>3</weaponSlots>
     <droneSlots>3</droneSlots>
-    <weaponList count="0" missiles="0"/>
+    <weaponList count="1" missiles="0">
+      <weapon name="ION_1"/>
+    </weaponList>
     <droneList count="2" drones="28">
       <drone name="BOARDER_UPGRADED"/>
      <drone name="BOARDER_UPGRADED"/>

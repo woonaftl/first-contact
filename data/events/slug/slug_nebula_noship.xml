@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
-  <eventList name="NEBULA_NOSHIP_SLUG">
+  <eventList name="NEBULA_NOSHIP_SLUG_MARKET">
     <event load="SLUG_TRADER_FUEL"/>
     <event load="SLUG_TRADER_MISSILES"/>
     <event load="SLUG_TRADER_DRONEPARTS"/>
+    <event load="SLUG_TRADER_WEAPON"/>
+    <event load="SLUG_TRADER_DRONE"/>
+    <event load="SLUG_TRADER_CREW"/>
     <event load="SLUG_TRADER_AUGMENT"/>
-    <event load="SLUG_DISTRESS_QUESTION"/>
     <event load="SLUG_DISTRESS_RESCUE"/>
+  </eventList>
+
+  <eventList name="NEBULA_NOSHIP_SLUG_TREACHERY">
+    <event load="SLUG_DISTRESS_QUESTION"/>
     <event load="QUEST_SLUG_PIRATE_TRAP"/>
     <event load="NEBULA_BATTLEFIELD"/>
     <event load="SLUG_SNEAKY_THIEF"/>
@@ -69,9 +75,106 @@
     </choice>
   </event>
 
+  <event name="SLUG_TRADER_WEAPON" unique="true">
+    <text>You can't see the Slugs but they can see you: "A new cussstomer! Welcome to our ssstore. We offer equipment of highessst quality for very competitive pricess. Our cusstomers are 97% more successsful in combat than everyone elssse."</text>
+    <environment type="nebula"/>
+    <choice>
+      <text>Buy a weapon.</text>
+      <event>
+        <text>"Excellent choice!" The Slugs send you over a weapon in certified manufacturer's package. There is a detailed manual in 28 galactic languages. There could be no doubt about weapon's origin.</text>
+        <item_modify>
+          <item type="scrap" min="-75" max="-65"/>
+        </item_modify>
+        <weapon name="RANDOM"/>
+      </event>
+    </choice>
+    <choice>
+      <text>Buy a weapon.</text>
+      <event>
+        <text>"Excellent choice!" The Slugs send you over a weapon in certified manufacturer's package. There is a detailed manual in 28 galactic languages. There could be no doubt about weapon's origin.</text>
+        <item_modify>
+          <item type="scrap" min="-75" max="-65"/>
+        </item_modify>
+        <weapon name="RANDOM"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Decline.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <event name="SLUG_TRADER_DRONE" unique="true">
+    <text>A small automated station powered by drones is selling military equipment. No doubt, it's owned by the Slugs who restock it and collect the scrap from time to time.</text>
+    <environment type="nebula"/>
+    <choice>
+      <text>Buy a drone.</text>
+      <event>
+        <text>You transfer some scrap as payment and receive a drone, which could be useful in combat. It seems functioning, looks like it was an honest trade by the Slugs, a rarity.</text>
+        <item_modify>
+          <item type="scrap" min="-40" max="-30"/>
+        </item_modify>
+        <drone name="RANDOM"/>
+      </event>
+    </choice>
+    <choice>
+      <text>Buy a drone.</text>
+      <event>
+        <text>You transfer some scrap as payment and receive a drone, which could be useful in combat. It seems functioning, looks like it was an honest trade by the Slugs, a rarity.</text>
+        <item_modify>
+          <item type="scrap" min="-40" max="-30"/>
+        </item_modify>
+        <drone name="RANDOM"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Decline.</text>
+      <event/>
+    </choice>
+  </event>
+
+  <event name="SLUG_TRADER_CREW" unique="true">
+    <text>You stumble upon a mercenary camp located on a asteroid deep in Slug nebula. Most mercenaries don't want to be a part of your crew, as they "value their lives" but some desperate souls agree to join you. For some scrap.</text>
+    <environment type="nebula"/>
+    <choice>
+      <text>Hire a crewmember.</text>
+      <event>
+        <text>"Thanks, without this, I wouldn't be able to repay my debts. If I stayed there one more day, the Slug boss would kill me." Your new addition to the crew grabs a pistol and an oxygen mask.</text>
+        <item_modify>
+          <item type="scrap" min="-45" max="-40"/>
+        </item_modify>
+        <crewMember amount="1"/>
+      </event>
+    </choice>
+    <choice>
+      <text>Hire a crewmember.</text>
+      <event>
+        <text>"Thanks, without this, I wouldn't be able to repay my debts. If I stayed there one more day, the Slug boss would kill me." Your new addition to the crew grabs a pistol and an oxygen mask.</text>
+        <item_modify>
+          <item type="scrap" min="-45" max="-40"/>
+        </item_modify>
+        <crewMember amount="1"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Decline.</text>
+      <event/>
+    </choice>
+  </event>
+
   <event name="SLUG_TRADER_AUGMENT" unique="true">
     <text>A lonely Slug trading station is hidden inside nebula gases. Having found it, you can't resist checking what the Slugs offer for sale.</text>
     <environment type="nebula"/>
+    <choice>
+      <text>Buy an augment.</text>
+      <event>
+        <text>The Slugs at the station proved to be honest merchants. The newly bought augmentation is already installed on your ship.</text>
+        <item_modify>
+          <item type="scrap" min="-25" max="-21"/>
+        </item_modify>
+        <augment name="RANDOM"/>
+      </event>
+    </choice>
     <choice>
       <text>Buy an augment.</text>
       <event>

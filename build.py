@@ -74,9 +74,10 @@ for clear_file in clear_files:
 #         with open(fullname, "r") as ship_file:
 #             lines = ship_file.readlines()
 #         room_count_dict[file[:-4]] = lines.count("ROOM\n")
-#         # TODO validate door links somehow
 # ship_min_rooms = min(room_count_dict, key=room_count_dict.get)
 # print(f"Fewest rooms on a ship {ship_min_rooms}: {room_count_dict[ship_min_rooms]}")
+# TODO validate door links somehow
+# TODO validate very ship has gibs and cloak, cloak img is of same size as the ship img and its coordinates are 0,0
 
 
 merge("animations")
