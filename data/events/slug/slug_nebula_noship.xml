@@ -508,6 +508,13 @@
         <crewMember amount="1"/>
       </event>
     </choice>
+    <choice req="pavonian" hidden="true">
+      <text>(Pavonian) Use your crewmember's restorative powers.</text>
+      <event>
+        <text>Before blinking an eye, the survivor's wounds begin to heal and they rapidly get better. Grateful to be saved, they offer to join your crew and help however they can.</text>
+        <crewMember amount="1"/>
+      </event>
+    </choice>
   </event>
   <event name="SECRET_WORD_ABADOTH">
     <text>You have arrived at the coordinates given to you by the dead crewman you attempted to save. There doesn't seem to be anything here - no planets, no vessels, and no clue as to what he meant by sending you here.</text>

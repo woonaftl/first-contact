@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="HOSTILE_HAZARD_LIZARD">
+    <event load="LIZARD_PIRATE_ASTEROID_FIGHT"/>
+    <event load="LIZARD_PIRATE_SUN_FIGHT"/>
+    <event load="LIZARD_PIRATE_PULSAR_FIGHT"/>
+  </eventList>
+
+  <event name="LIZARD_PIRATE_ASTEROID_FIGHT">
+    <textList>
+      <text>A small Lizard vessel moves swiftly through asteroid field. After it got closer, you realized that the ship has the markings of a space pirate!</text>
+      <text>The scaled hulls of Lizard ships are resistant to mild damage and are able to regenerate out of combat. The Lizard pirates attacks you in the asteroid field, relying on their ship's durability.</text>
+    </textList>
+    <ship load="LIZARD_PIRATE_SHIP" hostile="true"/>
+    <environment type="asteroid"/>
+  </event>
+
+  <event name="LIZARD_PIRATE_SUN_FIGHT">
+    <textList>
+      <text>While the Lizards are vulnerable to fires themselves, these pirates chose to attack you near the sun, making the battle even more dangerous for both sides.</text>
+      <text>The beacon is located closer to nearby star than would be safe for your ship's hull. A Lizard pirate moves in to attack, relying on fires to disable your systems.</text>
+    </textList>
+    <ship load="LIZARD_PIRATE_SHIP" hostile="true"/>
+    <environment type="sun"/>
+  </event>
+
+  <event name="LIZARD_PIRATE_PULSAR_FIGHT">
+    <textList>
+      <text>After completing the jump, you realize that the beacon is located near a pulsating star. Your shields will have a hard time protecting your ship, and Lizard pirates are going to take advantage of that.</text>
+      <text>The Lizards often use tactics that others would consider too dangerous. A ship with pirate markings attacks you near a pulsar, risking their own ship.</text>
+    </textList>
+    <ship load="LIZARD_PIRATE_SHIP" hostile="true"/>
+    <environment type="pulsar"/>
+  </event>
+</FTL>

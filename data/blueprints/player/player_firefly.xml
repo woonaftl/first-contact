@@ -92,6 +92,7 @@
     </systemList>
     <weaponSlots>3</weaponSlots>
     <droneSlots>2</droneSlots>
+    <!-- TODO can't damage airless ships -->
     <weaponList count="2" missiles="12">
       <weapon name="ION_CHARGEGUN_UPGRADED"/>
       <weapon name="BOMB_FIRE"/>

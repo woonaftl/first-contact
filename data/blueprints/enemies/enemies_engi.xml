@@ -15,7 +15,7 @@
 
   <!-- TODO add 2 generic ships (6) -->
 
-  <shipBlueprintSuperNew name="CIRCLE_SCOUT" layout="circle_scout" img="circle_scout">
+  <shipBlueprintEnemy name="CIRCLE_SCOUT" layout="circle_scout" img="circle_scout">
     <class>Engi Scout</class>
     <systemList>
       <pilot power="1" max="3" room="5"/>
@@ -72,9 +72,9 @@
     <boardingAI>sabotage</boardingAI>
     <aug name="NANO_MEDBAY"/>
     <cloakImage>circle_scout</cloakImage>
-  </shipBlueprintSuperNew>
+  </shipBlueprintEnemy>
 
-  <shipBlueprintSuperNew name="CIRCLE_BOMBER" layout="circle_bomber" img="circle_bomber">
+  <shipBlueprintEnemy name="CIRCLE_BOMBER" layout="circle_bomber" img="circle_bomber">
     <class>Engi Bomber</class>
     <systemList>
       <pilot power="1" max="3" room="1"/>
@@ -138,9 +138,9 @@
     <boardingAI>sabotage</boardingAI>
     <aug name="NANO_MEDBAY"/>
     <cloakImage>circle_bomber</cloakImage>
-  </shipBlueprintSuperNew>
+  </shipBlueprintEnemy>
 
-  <shipBlueprintSuperNew name="ENGI_EXPLORER" layout="engi_explorer" img="engi_explorer">
+  <shipBlueprintEnemy name="ENGI_EXPLORER" layout="engi_explorer" img="engi_explorer">
     <class>Engi Explorer</class>
     <systemList>
       <pilot power="1" max="2" room="0"/>
@@ -201,9 +201,9 @@
     <boardingAI>sabotage</boardingAI>
     <aug name="NANO_MEDBAY"/>
     <cloakImage>engi_explorer</cloakImage>
-  </shipBlueprintSuperNew>
+  </shipBlueprintEnemy>
 
-  <shipBlueprintSuperNew name="ENGI_PROTECTOR" layout="engi_protector" img="engi_protector">
+  <shipBlueprintEnemy name="ENGI_PROTECTOR" layout="engi_protector" img="engi_protector">
     <class>Engi Protector</class>
     <systemList>
       <pilot power="1" max="3" room="0"/>
@@ -271,5 +271,5 @@
     <boardingAI>sabotage</boardingAI>
     <aug name="NANO_MEDBAY"/>
     <cloakImage>engi_protector</cloakImage>
-  </shipBlueprintSuperNew>
+  </shipBlueprintEnemy>
 </FTL>

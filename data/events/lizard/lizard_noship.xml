@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="NOSHIP_LIZARD">
+    <event load="LIZARD_FREE_STUFF"/>
+    <event load="LIZARD_FREE_WEAPON"/>
+    <event load="LIZARD_REPAIR"/>
+    <event load="LIZARD_FREE_CREW"/>
+  </eventList>
+
+  <event name="LIZARD_FREE_STUFF">
+    <textList>
+      <text>The beacon is empty, if you don't count debris of several Lizard transports. Looks like the Rebellion has reached even the Lizard colonies, and left nothing but devastation behind. You collect resources from debris.</text>
+      <text>The leader of a small fleet, a tiny remnant of the Lizard navy, greets you: "We're fighting the Rebels, same as you." They offer some supplies.</text>
+      <text>You encounter some Federation loyalists hiding deep inside Lizard space: "The Lizards can be hostile sometimes, but it's nothing compared to Rebels." They share some resources.</text>
+    </textList>
+    <autoReward level="LOW">stuff</autoReward>
+  </event>
+
+  <event name="LIZARD_FREE_WEAPON" unique="true">
+    <text>A Lizard ship is stationed at the beacon, waiting for their FTL to charge: "The Rebels stand no chance. One strong blow, and the Rebellion will fall apart." The Lizards transfer a weapon to you, hoping that you will deal that blow.</text>
+    <weapon name="RANDOM"/>
+  </event>
+
+  <event name="LIZARD_REPAIR" unique="true">
+    <text>A small Lizard station is offering repairs using technology you have never seen before. It seems that the hulls are being patched up here using some sort of rare mold.</text>
+    <choice hidden="true">
+      <text>Repair 5 hull for 5 scrap.</text>
+      <event>
+        <text>Your ship is sprayed with mold from a giant cannon. Most of it gets stuck to hull and begins to fill the scratches and breaches. After repairs are done, a small colony of mold is left on your ship's exterior. Lizard say that it can use scrap metal to repair ship's hull and is not killed by exposure to radiation or FTL travel.</text>
+        <item_modify>
+          <item type="scrap" min="-5" max="-5"/>
+        </item_modify>
+        <augment name="REPAIR_ARM"/>
+        <damage amount="-5"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Repair 10 hull for 10 scrap.</text>
+      <event>
+        <text>Your ship is sprayed with mold from a giant cannon. Most of it gets stuck to hull and begins to fill the scratches and breaches. After repairs are done, a small colony of mold is left on your ship's exterior. Lizard say that it can use scrap metal to repair ship's hull and is not killed by exposure to radiation or FTL travel.</text>
+        <item_modify>
+          <item type="scrap" min="-10" max="-10"/>
+        </item_modify>
+        <augment name="REPAIR_ARM"/>
+        <damage amount="-10"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Repair 20 hull for 20 scrap.</text>
+      <event>
+        <text>Your ship is sprayed with mold from a giant cannon. Most of it gets stuck to hull and begins to fill the scratches and breaches. After repairs are done, a small colony of mold is left on your ship's exterior. Lizard say that it can use scrap metal to repair ship's hull and is not killed by exposure to radiation or FTL travel.</text>
+        <item_modify>
+          <item type="scrap" min="-20" max="-20"/>
+        </item_modify>
+        <augment name="REPAIR_ARM"/>
+        <damage amount="-20"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>We don't need any repairs.</text>
+      <event/>
+    </choice>
+    <choice hidden="true" req="lizard">
+      <text>(Lizard) Ask for emergency repairs.</text>
+      <event>
+        <text>Your ship is sprayed with mold from a giant cannon. Most of it gets stuck to hull and begins to fill the scratches and breaches. After repairs are done, a small colony of mold is left on your ship's exterior. Lizard say that it can use scrap metal to repair ship's hull and is not killed by exposure to radiation or FTL travel.</text>
+        <augment name="REPAIR_ARM"/>
+        <damage amount="-20"/>
+      </event>
+    </choice>
+  </event>
+
+  <event name="LIZARD_FREE_CREW" unique="true">
+    <text>You jump in to find an organized refugee fleet of Lizards escaping from their destroyed systems to a new home. One of the ships contacts you: "Our ship is over capacity. We would be grateful if you take one of us into Federation service."</text>
+    <choice hidden="true">
+      <text>Welcome aboard.</text>
+      <event>
+        <text>A Lizard soldier teleports on your bridge and salutes. With their resilience and the ability to regenerate wounds, the Lizards often find jobs in the Federation military.</text>
+        <crewMember amount="1" class="lizard"/>
+      </event>
+    </choice>
+    <choice hidden="true">
+      <text>Ignore them.</text>
+      <event/>
+    </choice>
+  </event>
+</FTL>

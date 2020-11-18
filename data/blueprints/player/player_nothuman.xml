@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FTL>
-  <shipBlueprint name="PLAYER_SHIP_DRONE" layout="kestral" img="kestral">
-    <class>Drone Cruiser</class>
+  <shipBlueprint name="PLAYER_SHIP_NOTHUMAN" layout="kestral" img="kestral">
+    <class>NotHuman Cruiser</class>
     <name>?</name>
     <desc>?</desc>
     <systemList>
@@ -31,12 +31,12 @@
     </droneList>
     <health amount="30"/>
     <maxPower amount="10"/>
-    <crewCount amount="2" class="human"/>
+    <crewCount amount="2" class="nothuman"/>
     <aug name="NANOBOT_DEFENSE_SYSTEM_LOCKED"/>
   </shipBlueprint>
 
-  <shipBlueprint name="PLAYER_SHIP_DRONE_2" layout="kestral" img="kestral">
-    <class>Drone Cruiser</class>
+  <shipBlueprint name="PLAYER_SHIP_NOTHUMAN_2" layout="kestral" img="kestral">
+    <class>NotHuman Cruiser</class>
     <name>?</name>
     <desc>?</desc>
     <systemList>
@@ -66,14 +66,14 @@
     </droneList>
     <health amount="30"/>
     <maxPower amount="10"/>
-    <crewCount amount="2" class="human"/>
+    <crewCount amount="2" class="nothuman"/>
     <aug name="NANOBOT_DEFENSE_SYSTEM_LOCKED"/>
     <shieldImage>kestral</shieldImage>
     <cloakImage>kestral</cloakImage>
   </shipBlueprint>
 
-  <shipBlueprint name="PLAYER_SHIP_DRONE_3" layout="kestral" img="kestral">
-    <class>Drone Cruiser</class>
+  <shipBlueprint name="PLAYER_SHIP_NOTHUMAN_3" layout="kestral" img="kestral">
+    <class>NotHuman Cruiser</class>
     <name>?</name>
     <desc>?</desc>
     <systemList>
@@ -106,7 +106,7 @@
     </droneList>
     <health amount="30"/>
     <maxPower amount="10"/>
-    <crewCount amount="2" class="human"/>
+    <crewCount amount="2" class="nothuman"/>
     <aug name="NANOBOT_DEFENSE_SYSTEM_LOCKED"/>
     <shieldImage>kestral</shieldImage>
     <cloakImage>kestral</cloakImage>

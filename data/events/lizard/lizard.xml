@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
   <event name="START_BEACON_LIZARD">
-    <text>You arrive at the Lizard sector. While the Lizards don't have the numbers to engage in Galactic wars after their home system was destroyed by a supernova, few races can match Lizard's resilience and aggressiveness.</text>
+    <textList>
+      <text>You arrive at the Lizard sector. While the Lizards don't have the numbers to engage in Galactic war after their home system was destroyed by a supernova, few races can match Lizards' resilience and optimism.</text>
+      <text>After almost all of the Lizard species were wiped out by a supernova, their biggest colony became their last refuge. The Lizards are still optimistic about their future and wish to reclaim their former glory.</text>
+      <text>Days of Lizards' glory are long gone, after their home was devastated by a supernova. The Lizards are doing their best to rebuild and repopulate the galaxy, but the Rebellion thwarted their plans.</text>
+    </textList>
   </event>
+
+  <event name="STORE_LIZARD">
+    <textList>
+      <text>A battered station owned by an old Lizard trader is still operational at this beacon and offers some supplies and equipment.</text>
+      <text>You meet a trading fleet belonging to Lizards. Most of them are offering consumer goods, but you manage to find one with military supplies, too.</text>
+      <text>An automated station is offering some supplies in exchange for scrap. The Lizards owning it are long gone, and you wonder who's going to collect the profits.</text>
+    </textList>
+    <store/>
+  </event>
+
+  <ship name="LIZARD_SHIP" auto_blueprint="SHIPS_LIZARD">
+    <destroyed load="DESTROYED_DEFAULT"/>
+    <deadCrew load="DEAD_CREW_DEFAULT"/>
+  </ship>
+
+  <ship name="LIZARD_PIRATE_SHIP" auto_blueprint="SHIPS_LIZARD_PIRATE">
+    <destroyed load="DESTROYED_DEFAULT"/>
+    <deadCrew load="DEAD_CREW_DEFAULT"/>
+  </ship>
 </FTL>

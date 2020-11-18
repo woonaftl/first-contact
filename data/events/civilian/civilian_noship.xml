@@ -110,6 +110,12 @@
               <text>Your advanced medical suite is able to isolate the cause of the problem and administer an antidote. That was a close one.</text>
             </event>
           </choice>
+          <choice hidden="true" req="pavonian">
+            <text>(Pavonian) Use your crewmember's restorative abilities.</text>
+            <event>
+              <text>With a flash of light, your crew gets better. Nobody apart from leading biologists knows how Pavonians do it, but they seem to be able to cure any disease or wound.</text>
+            </event>
+          </choice>
         </event>
       </eventList>
     </choice>
@@ -608,10 +614,10 @@
         <autoReward level="MED">stuff</autoReward>
       </event>
     </choice>
-    <choice hidden="true" req="orchid">
-      <text>(Orchid) Distract and calm down the infected.</text>
+    <choice hidden="true" req="pavonian">
+      <text>(Pavonian) Help to heal the worst cases.</text>
       <event>
-        <text>The miners in the colony have never seen an Orchid before, and are enthralled by their beauty. Being unable to catch human disease, blessed with natural beauty and pleasant aroma, it seems that Orchids were created just for calming down scared humans.</text>
+        <text>Your crewmember's restorative powers have never been so useful before. People on the brink of death are brought back to life in the matter of seconds. In a few hours, the whole colony is healthy and the mining continues. The colony leaders offer you a reward.</text>
         <autoReward level="MED">stuff</autoReward>
       </event>
     </choice>
@@ -630,7 +636,8 @@
           <text>(Engi Med-bot Dispersal) Use the Nano med-bots to accelerate the dispersal of the cure.</text>
           <event>
             <text>You reconfigure your ship's Nano dispersal system. In a matter of minutes all of the workers are cured. The leaders can hardly believe what you have achieved. They offer you what they can as payment.</text>
-            <autoReward level="HIGH">weapon</autoReward>
+            <autoReward level="MED">stuff</autoReward>
+            <weapon name="RANDOM"/>
           </event>
         </choice>
       </event>

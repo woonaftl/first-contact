@@ -7,40 +7,13 @@
 
   <ships>
     <ship name="PLAYER_SHIP_PAVONIAN" b="true" c="true"/>
-    <ship name="PLAYER_SHIP_DRONE" b="true" c="true"/>
-    <ship name="PLAYER_SHIP_FIREFLY" b="true" c="true"/>
-    <ship name="PLAYER_SHIP_ORCHID" b="true" c="true"/>
-    <ship name="PLAYER_SHIP_DRONE2" b="false" c="false"/>
     <ship name="PLAYER_SHIP_LIZARD" b="false" c="false"/>
     <!--
-    <customShip name="MANTIS_SCOUT_0">
-      <crew>
-        <mantis room="1"/>
-        <engi room="7"/>
-        <mantis room="4"/>
-      </crew>
-    </customShip>
-    <customShip name="MANTIS_INTERCEPTOR_0">
-      <crew>
-        <mantis room="0"/>
-        <engi room="4"/>
-        <mantis room="6"/>
-      </crew>
-    </customShip>
-    <customShip name="MANTIS_SCOUT_PIRATE_0">
-      <crew>
-        <random room="1"/>
-        <random room="7"/>
-        <random room="4"/>
-      </crew>
-    </customShip>
-    <customShip name="MANTIS_INTERCEPTOR_PIRATE_0">
-      <crew>
-        <random room="0"/>
-        <random room="4"/>
-        <random room="6"/>
-      </crew>
-    </customShip>-->
+    <ship name="PLAYER_SHIP_NOTHUMAN" b="true" c="true"/>
+    <ship name="PLAYER_SHIP_NEWRACE" b="false" c="false"/>
+    <ship name="PLAYER_SHIP_ORCHID" b="true" c="true"/>
+    <ship name="PLAYER_SHIP_FIREFLY" b="true" c="true"/>
+    -->
     <customShip name="PLAYER_SHIP_MANTIS">
       <crew>
         <engi room="7"/>
@@ -111,6 +84,16 @@
     <customShip name="PLAYER_SHIP_STEALTH_3">
       <crewLimit>6</crewLimit>
     </customShip>
+    <!--
+    <customShip name="PLAYER_SHIP_NOTHUMAN">
+      <crewLimit>6</crewLimit>
+    </customShip>
+    <customShip name="PLAYER_SHIP_NOTHUMAN_2">
+      <crewLimit>6</crewLimit>
+    </customShip>
+    <customShip name="PLAYER_SHIP_NOTHUMAN_3">
+      <crewLimit>6</crewLimit>
+    </customShip>
     <customShip name="PLAYER_SHIP_FIREFLY">
       <crewLimit>6</crewLimit>
     </customShip>
@@ -120,15 +103,7 @@
     <customShip name="PLAYER_SHIP_FIREFLY_3">
       <crewLimit>6</crewLimit>
     </customShip>
-    <customShip name="PLAYER_SHIP_DRONE">
-      <crewLimit>6</crewLimit>
-    </customShip>
-    <customShip name="PLAYER_SHIP_DRONE_2">
-      <crewLimit>6</crewLimit>
-    </customShip>
-    <customShip name="PLAYER_SHIP_DRONE_3">
-      <crewLimit>6</crewLimit>
-    </customShip>
+    -->
   </ships>
 
   <crew>
@@ -328,45 +303,10 @@
             <finishSound>mindControlEnd</finishSound>
           </finishSounds>-->
           <invulnerable>true</invulnerable>
+          <!--TODO HYPERSPACE cannot be targeted by enemy crew (can't tank damage) -->
           <animSheet baseVisible="false">aquarian_stealth</animSheet>
         </temporaryEffect>
       </powerEffect>
-    </race>
-
-    <race name="orchid">
-      <fireRepairMultiplier>0.6</fireRepairMultiplier>
-      <fireDamageMultiplier>4.0</fireDamageMultiplier>
-      <oxygenChangeSpeed>0.525</oxygenChangeSpeed>
-      <animBase>mantis</animBase>
-      <deathSounds>
-        <deathSound>orchidDeath</deathSound>
-      </deathSounds>
-      <shootingSounds>
-        <shootingSound>orchidShoot1</shootingSound>
-        <shootingSound>orchidShoot2</shootingSound>
-        <shootingSound>orchidShoot3</shootingSound>
-      </shootingSounds>
-    </race>
-
-    <race name="sprout">
-      <controllable>false</controllable>
-      <canRepair>false</canRepair>
-      <canSabotage>false</canSabotage>
-      <canMan>false</canMan>
-      <!--TODO HYPERSPACE <canTeleport>false</canTeleport>-->
-      <!--TODO HYPERSPACE <canClone>false</canClone>-->
-      <!--TODO HYPERSPACE <hideIcon>false</hideIcon>-->
-      <maxHealth>50</maxHealth>
-      <fireDamageMultiplier>4.0</fireDamageMultiplier>
-      <animBase>mantis</animBase>
-      <deathSounds>
-        <deathSound>orchidDeath</deathSound>
-      </deathSounds>
-      <shootingSounds>
-        <shootingSound>orchidShoot1</shootingSound>
-        <shootingSound>orchidShoot2</shootingSound>
-        <shootingSound>orchidShoot3</shootingSound>
-      </shootingSounds>
     </race>
 
     <race name="lizard">
@@ -406,7 +346,83 @@
       </powerEffect>
     </race>
 
+    <!--
+    <race name="newrace">
+      <canSuffocate>false</canSuffocate>
+      <damageMultiplier>0.5</damageMultiplier>
+      <sabotageSpeedMultiplier>0.5</sabotageSpeedMultiplier>
+      <powerEffect>
+        <cooldown>30</cooldown>
+        <jumpCooldown>full</jumpCooldown>
+        <ion>1</ion>
+        <shipFriendlyFire>true</shipFriendlyFire>
+        <buttonText>ION</buttonText>
+        <tooltip>Ready: Click to ionize a system</tooltip>
+        <cooldownColor r="180" g="190" b="255"/>
+      </powerEffect>
+    </race>
+
+    <race name="nothuman">
+    <powerEffect>
+      <cooldown>0</cooldown>
+      <jumpCooldown>full</jumpCooldown>
+      <buttonText>DISABLED</buttonText>
+      <tooltip>Used automatically</tooltip>
+      <cooldownColor r="0" g="0" b="0"/>
+      <req>
+        <maxHealth>25</maxHealth>
+      </req>
+      <activateWhenReady>true</activateWhenReady>
+      <temporaryEffect>
+        <moveSpeedMultiplier>1.5</moveSpeedMultiplier>
+        <repairSpeed>1.5</repairSpeed>
+        <damageMultiplier>1.5</damageMultiplier>
+        <allDamageTakenMultiplier>0.5</allDamageTakenMultiplier>
+				<sabotageSpeedMultiplier>1.5</sabotageSpeedMultiplier>
+        <duration>1</duration>
+        <cooldownColor r="0" g="0" b="0"/>
+      </temporaryEffect>
+    </powerEffect>
+    </race> 
+
+    <race name="orchid">
+      <fireRepairMultiplier>0.6</fireRepairMultiplier>
+      <fireDamageMultiplier>4.0</fireDamageMultiplier>
+      <oxygenChangeSpeed>0.525</oxygenChangeSpeed>
+      <animBase>mantis</animBase>
+      <deathSounds>
+        <deathSound>orchidDeath</deathSound>
+      </deathSounds>
+      <shootingSounds>
+        <shootingSound>orchidShoot1</shootingSound>
+        <shootingSound>orchidShoot2</shootingSound>
+        <shootingSound>orchidShoot3</shootingSound>
+      </shootingSounds>
+    </race>
+
+    <race name="sprout">
+      <controllable>false</controllable>
+      <canRepair>false</canRepair>
+      <canSabotage>false</canSabotage>
+      <canMan>false</canMan>
+      TODO HYPERSPACE <canTeleport>false</canTeleport>
+      TODO HYPERSPACE <canClone>false</canClone>
+      TODO HYPERSPACE <hideIcon>false</hideIcon>
+      <maxHealth>50</maxHealth>
+      <fireDamageMultiplier>4.0</fireDamageMultiplier>
+      <animBase>mantis</animBase>
+      <deathSounds>
+        <deathSound>orchidDeath</deathSound>
+      </deathSounds>
+      <shootingSounds>
+        <shootingSound>orchidShoot1</shootingSound>
+        <shootingSound>orchidShoot2</shootingSound>
+        <shootingSound>orchidShoot3</shootingSound>
+      </shootingSounds>
+    </race>
+    
     <race name="firefly">
+      TODO HYPERSPACE <canFirefight>false</canFirefight>
       <fireRepairMultiplier>0.0</fireRepairMultiplier>
       <fireDamageMultiplier>-1.0</fireDamageMultiplier>
       <hasDeathExplosion>true</hasDeathExplosion>
@@ -416,6 +432,9 @@
         <shipFriendlyFire>true</shipFriendlyFire>
       </deathEffect>
     </race>
+-->
+
+    <!--TODO boarder drone 1.5x sabotage speed-->
   </crew>
 
   <augments>

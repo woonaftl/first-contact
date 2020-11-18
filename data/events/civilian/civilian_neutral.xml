@@ -411,9 +411,7 @@
                   <choice>
                     <text>Accept the bribe and leave.</text>
                     <event>
-                      <item_modify>
-                        <item type="scrap" min="15" max="25"/>
-                      </item_modify>
+                      <autoReward level="MED">stuff</autoReward>
                     </event>
                   </choice>
                   <choice>

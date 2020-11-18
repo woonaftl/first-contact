@@ -22,7 +22,7 @@
 
   <!-- TODO add 3 generic ships (9) -->
 
-  <shipBlueprintSuperNew name="AUTO_BASIC" layout="auto_basic" img="auto_basic">
+  <shipBlueprintEnemy name="AUTO_BASIC" layout="auto_basic" img="auto_basic">
     <class>Auto-Scout</class>
     <systemList>
       <pilot power="1" max="2" room="2"/>
@@ -58,9 +58,9 @@
     <health amount="6"/>
     <crewCount amount="0" max="0" class="human"/>
     <cloakImage>auto_basic</cloakImage>
-  </shipBlueprintSuperNew>
+  </shipBlueprintEnemy>
 
-  <shipBlueprintSuperNew name="AUTO_ASSAULT" layout="auto_assault" img="auto_assault">
+  <shipBlueprintEnemy name="AUTO_ASSAULT" layout="auto_assault" img="auto_assault">
     <class>Auto-Assault</class>
     <systemList>
       <pilot power="1" max="3" room="2"/>
@@ -101,9 +101,9 @@
     <health amount="8"/>
     <crewCount amount="0" max="0" class="human"/>
     <cloakImage>auto_assault</cloakImage>
-  </shipBlueprintSuperNew>
+  </shipBlueprintEnemy>
 
-  <shipBlueprintSuperNew name="AUTO_EXPLORER" layout="auto_explorer" img="auto_explorer">
+  <shipBlueprintEnemy name="AUTO_EXPLORER" layout="auto_explorer" img="auto_explorer">
     <class>Auto-Explorer</class>
     <systemList>
       <pilot power="1" max="3" room="0"/>
@@ -148,9 +148,9 @@
     <health amount="5"/>
     <crewCount amount="0" max="0" class="human"/>
     <cloakImage>auto_explorer</cloakImage>
-  </shipBlueprintSuperNew>
+  </shipBlueprintEnemy>
 
-  <shipBlueprintSuperNew name="AUTO_FUEL" layout="auto_fuel" img="auto_fuel">
+  <shipBlueprintEnemy name="AUTO_FUEL" layout="auto_fuel" img="auto_fuel">
     <class>Auto-Fuel Trader</class>
     <systemList>
       <pilot power="1" max="3" room="0"/>
@@ -218,9 +218,9 @@
     <health amount="6"/>
     <crewCount amount="0" max="0" class="human"/>
     <cloakImage>auto_fuel</cloakImage>
-  </shipBlueprintSuperNew>
+  </shipBlueprintEnemy>
 
-  <shipBlueprintSuperNew name="AUTO_HUNTER" layout="auto_hunter" img="auto_hunter">
+  <shipBlueprintEnemy name="AUTO_HUNTER" layout="auto_hunter" img="auto_hunter">
     <class>Auto-Hunter</class>
     <systemList>
       <pilot power="1" max="3" room="0"/>
@@ -266,9 +266,9 @@
     <health amount="8"/>
     <crewCount amount="0" max="0" class="human"/>
     <cloakImage>auto_hunter</cloakImage>
-  </shipBlueprintSuperNew>
+  </shipBlueprintEnemy>
 
-  <shipBlueprintSuperNew name="AUTO_INVADER" layout="auto_invader" img="auto_invader">
+  <shipBlueprintEnemy name="AUTO_INVADER" layout="auto_invader" img="auto_invader">
     <class>Auto-Invader</class>
     <systemList>
       <pilot power="1" max="3" room="1"/>
@@ -308,9 +308,9 @@
     <health amount="6"/>
     <crewCount amount="0" max="0" class="human"/>
     <cloakImage>auto_invader</cloakImage>
-  </shipBlueprintSuperNew>
+  </shipBlueprintEnemy>
 
-  <shipBlueprintSuperNew name="AUTO_DEFENDER" layout="auto_defender" img="auto_defender">
+  <shipBlueprintEnemy name="AUTO_DEFENDER" layout="auto_defender" img="auto_defender">
     <class>Auto-Defender</class>
     <systemList>
       <pilot power="1" max="3" room="0"/>
@@ -356,5 +356,5 @@
     <health amount="7"/>
     <crewCount amount="0" max="0" class="human"/>
     <cloakImage>auto_defender</cloakImage>
-  </shipBlueprintSuperNew>
+  </shipBlueprintEnemy>
 </FTL>

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
-  <event name="START_BEACON_AQUARIAN">
+  <event name="START_BEACON_AQUARIAN_HOME">
     <text>There is very little known about this nebula. No ship that went to explore its depths, returned to tell the tale. Rumours are that this sector is home to the cryptic Aquarians. Better be very careful.</text>
+  </event>
+
+  <event name="START_BEACON_AQUARIAN_DIM">
+    <text>A galaxy arm, composed almost entirely of white dwarfs, is loved by Aquarians, being a perfect place for stealth operations. There are no maps of this sector, so it's better to be very careful.</text>
   </event>
 
   <ship name="AQUARIAN_SHIP" auto_blueprint="SHIPS_AQUARIAN">

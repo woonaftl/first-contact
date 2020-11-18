@@ -4,12 +4,13 @@
     <name>ANAEROBIC_SCOUT</name>
     <name>ANAEROBIC_BOMBER</name>
     <name>LANIUS_COLLECTOR</name>
+    <name>LANIUS_INTERCEPTOR</name>
     <name>LANIUS_HARVESTER</name>
     <name>LANIUS_SHREDDER</name>
     <name>LANIUS_MARAUDER</name>
   </blueprintList>
 
-  <shipBlueprintSuper name="ANAEROBIC_SCOUT" layout="anaerobic_scout" img="anaerobic_scout">
+  <shipBlueprintEnemy name="ANAEROBIC_SCOUT" layout="anaerobic_scout" img="anaerobic_scout">
     <class>Lanius Scout</class>
     <systemList>
       <pilot power="1" max="3" room="1"/>
@@ -20,32 +21,43 @@
       <doors power="1" max="3" room="0" start="false"/>
       <hacking power="1" max="2" room="2"/>
     </systemList>
-    <weaponList sector="1" missiles="0" system_power="4">
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_CORE_2"/>
-    </weaponList>
-    <weaponList sector="2" missiles="0" system_power="4">
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_CORE_2"/>
-    </weaponList>
-    <weaponList sector="3" missiles="0" system_power="5">
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_CORE_2"/>
-      <weapon name="WEAPONS_CORE_1"/>
-    </weaponList>
-    <weaponList sector="4" missiles="0" system_power="6">
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_CORE_2"/>
-      <weapon name="WEAPONS_CORE_2"/>
-    </weaponList>
-    <droneList drones="3"/>
+    <sector id="1">
+      <weaponList missiles="0" system_power="4">
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_CORE_2"/>
+      </weaponList>
+      <droneList drones="3"/>
+    </sector>
+    <sector id="2">
+      <weaponList missiles="0" system_power="4">
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_CORE_2"/>
+      </weaponList>
+      <droneList drones="3"/>
+    </sector>
+    <sector id="3">
+      <weaponList missiles="0" system_power="5">
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_CORE_2"/>
+        <weapon name="WEAPONS_CORE_1"/>
+      </weaponList>
+      <droneList drones="3"/>
+    </sector>
+    <sector id="4">
+      <weaponList missiles="0" system_power="6">
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_CORE_2"/>
+        <weapon name="WEAPONS_CORE_2"/>
+      </weaponList>
+      <droneList drones="3"/>
+    </sector>
     <health amount="7"/>
     <crewCount amount="2" max="3" class="anaerobic"/>
     <boardingAI>sabotage</boardingAI>
     <cloakImage>anaerobic_scout</cloakImage>
-  </shipBlueprintSuper>
+  </shipBlueprintEnemy>
 
-  <shipBlueprintSuper name="ANAEROBIC_BOMBER" layout="anaerobic_bomber" img="anaerobic_bomber">
+  <shipBlueprintEnemy name="ANAEROBIC_BOMBER" layout="anaerobic_bomber" img="anaerobic_bomber">
     <class>Lanius Bomber</class>
     <systemList>
       <pilot power="1" max="3" room="3"/>
@@ -57,37 +69,49 @@
       <hacking power="1" max="3" room="4"/>
       <teleporter power="1" max="2" room="8" start="false"/>
     </systemList>
-    <weaponList sector="3" missiles="3" system_power="5">
-      <weapon name="WEAPONS_BOMB"/>
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_CORE_2"/>
-      <weapon name="WEAPONS_CORE_1"/>
-    </weaponList>
-    <weaponList sector="4" missiles="3" system_power="6">
-      <weapon name="WEAPONS_BOMB"/>
-      <weapon name="WEAPONS_LASER_3"/>
-      <weapon name="WEAPONS_CORE_2"/>
-      <weapon name="WEAPONS_CORE_1"/>
-    </weaponList>
-    <weaponList sector="5" missiles="3" system_power="7">
-      <weapon name="WEAPONS_BOMB"/>
-      <weapon name="WEAPONS_LASER_3"/>
-      <weapon name="WEAPONS_CORE_3"/>
-      <weapon name="WEAPONS_CORE_1"/>
-    </weaponList>
-    <weaponList sector="6" missiles="3" system_power="8">
-      <weapon name="WEAPONS_BOMB"/>
-      <weapon name="WEAPONS_LASER_3"/>
-      <weapon name="WEAPONS_CORE_4"/>
-      <weapon name="WEAPONS_CORE_1"/>
-    </weaponList>
+    <sector id="3">
+      <weaponList missiles="3" system_power="5">
+        <weapon name="WEAPONS_BOMB"/>
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_CORE_2"/>
+        <weapon name="WEAPONS_CORE_1"/>
+      </weaponList>
+      <droneList drones="3"/>
+    </sector>
+    <sector id="4">
+      <weaponList missiles="3" system_power="6">
+        <weapon name="WEAPONS_BOMB"/>
+        <weapon name="WEAPONS_LASER_3"/>
+        <weapon name="WEAPONS_CORE_2"/>
+        <weapon name="WEAPONS_CORE_1"/>
+      </weaponList>
+      <droneList drones="3"/>
+    </sector>
+    <sector id="5">
+      <weaponList missiles="3" system_power="7">
+        <weapon name="WEAPONS_BOMB"/>
+        <weapon name="WEAPONS_LASER_3"/>
+        <weapon name="WEAPONS_CORE_3"/>
+        <weapon name="WEAPONS_CORE_1"/>
+      </weaponList>
+      <droneList drones="3"/>
+    </sector>
+    <sector id="6">
+      <weaponList missiles="3" system_power="8">
+        <weapon name="WEAPONS_BOMB"/>
+        <weapon name="WEAPONS_LASER_3"/>
+        <weapon name="WEAPONS_CORE_4"/>
+        <weapon name="WEAPONS_CORE_1"/>
+      </weaponList>
+      <droneList drones="3"/>
+    </sector>
     <health amount="9"/>
     <crewCount amount="3" max="5" class="anaerobic"/>
     <boardingAI>sabotage</boardingAI>
     <cloakImage>anaerobic_bomber</cloakImage>
-  </shipBlueprintSuper>
+  </shipBlueprintEnemy>
 
-  <shipBlueprintSuper name="LANIUS_COLLECTOR" layout="lanius_collector" img="lanius_collector">
+  <shipBlueprintEnemy name="LANIUS_COLLECTOR" layout="lanius_collector" img="lanius_collector">
     <class>Lanius Collector</class>
     <systemList>
       <pilot power="1" max="2" room="0"/>
@@ -97,37 +121,49 @@
       <weapons room="1"/>
       <hacking power="1" max="2" room="6"/>
     </systemList>
-    <weaponList sector="1" missiles="1" system_power="4">
-      <weapon name="WEAPONS_MISSILES_1"/>
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_LASER_1"/>
-      <weapon name="WEAPONS_CORE_1"/>
-    </weaponList>
-    <weaponList sector="2" missiles="1" system_power="4">
-      <weapon name="WEAPONS_MISSILES_1"/>
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_LASER_1"/>
-      <weapon name="WEAPONS_CORE_1"/>
-    </weaponList>
-    <weaponList sector="3" missiles="1" system_power="5">
-      <weapon name="WEAPONS_MISSILES_1"/>
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_CORE_1"/>
-    </weaponList>
-    <weaponList sector="4" missiles="1" system_power="6">
-      <weapon name="WEAPONS_MISSILES_2"/>
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_CORE_2"/>
-    </weaponList>
+    <sector id="1">
+      <weaponList missiles="1" system_power="4">
+        <weapon name="WEAPONS_MISSILES_1"/>
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_LASER_1"/>
+        <weapon name="WEAPONS_CORE_1"/>
+      </weaponList>
+      <droneList drones="3"/>
+    </sector>
+    <sector id="2">
+      <weaponList missiles="1" system_power="4">
+        <weapon name="WEAPONS_MISSILES_1"/>
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_LASER_1"/>
+        <weapon name="WEAPONS_CORE_1"/>
+      </weaponList>
+      <droneList drones="3"/>
+    </sector>
+    <sector id="3">
+      <weaponList missiles="1" system_power="5">
+        <weapon name="WEAPONS_MISSILES_1"/>
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_CORE_1"/>
+      </weaponList>
+      <droneList drones="3"/>
+    </sector>
+    <sector id="4">
+      <weaponList missiles="1" system_power="6">
+        <weapon name="WEAPONS_MISSILES_2"/>
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_CORE_2"/>
+      </weaponList>
+      <droneList drones="3"/>
+    </sector>
     <health amount="7"/>
     <crewCount amount="2" max="4" class="anaerobic"/>
     <boardingAI>sabotage</boardingAI>
     <cloakImage>lanius_collector</cloakImage>
-  </shipBlueprintSuper>
+  </shipBlueprintEnemy>
 
-  <shipBlueprintSuper name="LANIUS_HARVESTER" layout="lanius_harvester" img="lanius_harvester">
+  <shipBlueprintEnemy name="LANIUS_HARVESTER" layout="lanius_harvester" img="lanius_harvester">
     <class>Lanius Harvester</class>
     <systemList>
       <pilot power="1" max="3" room="0"/>
@@ -138,33 +174,44 @@
       <doors power="1" max="3" room="6" start="false"/>
       <hacking power="1" max="2" room="4"/>
     </systemList>
-    <weaponList sector="2" missiles="0" system_power="4">
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_BEAM_2"/>
-    </weaponList>
-    <weaponList sector="3" missiles="0" system_power="5">
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_BEAM_2"/>
-      <weapon name="WEAPONS_CORE_1"/>
-    </weaponList>
-    <weaponList sector="4" missiles="0" system_power="6">
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_BEAM_2"/>
-      <weapon name="WEAPONS_CORE_2"/>
-    </weaponList>
-    <weaponList sector="5" missiles="0" system_power="7">
-      <weapon name="WEAPONS_LASER_3"/>
-      <weapon name="WEAPONS_BEAM_2"/>
-      <weapon name="WEAPONS_CORE_2"/>
-    </weaponList>
-    <droneList drones="4"/>
+    <sector id="2">
+      <weaponList missiles="0" system_power="4">
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_BEAM_2"/>
+      </weaponList>
+      <droneList drones="3"/>
+    </sector>
+    <sector id="3">
+      <weaponList missiles="0" system_power="5">
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_BEAM_2"/>
+        <weapon name="WEAPONS_CORE_1"/>
+      </weaponList>
+      <droneList drones="3"/>
+    </sector>
+    <sector id="4">
+      <weaponList missiles="0" system_power="6">
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_BEAM_2"/>
+        <weapon name="WEAPONS_CORE_2"/>
+      </weaponList>
+      <droneList drones="3"/>
+    </sector>
+    <sector id="5">
+      <weaponList missiles="0" system_power="7">
+        <weapon name="WEAPONS_LASER_3"/>
+        <weapon name="WEAPONS_BEAM_2"/>
+        <weapon name="WEAPONS_CORE_2"/>
+      </weaponList>
+      <droneList drones="3"/>
+    </sector>
     <health amount="8"/>
     <crewCount amount="3" max="5" class="anaerobic"/>
     <boardingAI>sabotage</boardingAI>
     <cloakImage>lanius_harvester</cloakImage>
-  </shipBlueprintSuper>
+  </shipBlueprintEnemy>
 
-  <shipBlueprintSuper name="LANIUS_SHREDDER" layout="lanius_shredder" img="lanius_shredder">
+  <shipBlueprintEnemy name="LANIUS_SHREDDER" layout="lanius_shredder" img="lanius_shredder">
     <class>Lanius Shredder</class>
     <systemList>
       <pilot power="1" max="3" room="0"/>
@@ -175,37 +222,49 @@
       <doors power="1" max="3" room="6" start="false"/>
       <hacking power="1" max="3" room="7"/>
     </systemList>
-    <weaponList sector="3" missiles="1" system_power="5">
-      <weapon name="WEAPONS_MISSILES_1"/>
-      <weapon name="WEAPONS_CORE_2"/>
-      <weapon name="WEAPONS_CORE_2"/>
-      <weapon name="WEAPONS_LASER_1"/>
-    </weaponList>
-    <weaponList sector="4" missiles="1" system_power="6">
-      <weapon name="WEAPONS_MISSILES_2"/>
-      <weapon name="WEAPONS_CORE_2"/>
-      <weapon name="WEAPONS_CORE_2"/>
-      <weapon name="WEAPONS_LASER_2"/>
-    </weaponList>
-    <weaponList sector="5" missiles="1" system_power="7">
-      <weapon name="WEAPONS_MISSILES_2"/>
-      <weapon name="WEAPONS_CORE_3"/>
-      <weapon name="WEAPONS_CORE_2"/>
-      <weapon name="WEAPONS_LASER_2"/>
-    </weaponList>
-    <weaponList sector="6" missiles="2" system_power="8">
-      <weapon name="WEAPONS_MISSILES_2"/>
-      <weapon name="WEAPONS_CORE_3"/>
-      <weapon name="WEAPONS_CORE_3"/>
-      <weapon name="WEAPONS_LASER_2"/>
-    </weaponList>
+    <sector id="3">
+      <weaponList missiles="1" system_power="5">
+        <weapon name="WEAPONS_MISSILES_1"/>
+        <weapon name="WEAPONS_CORE_2"/>
+        <weapon name="WEAPONS_CORE_2"/>
+        <weapon name="WEAPONS_LASER_1"/>
+      </weaponList>
+      <droneList drones="3"/>
+    </sector>
+    <sector id="4">
+      <weaponList missiles="1" system_power="6">
+        <weapon name="WEAPONS_MISSILES_2"/>
+        <weapon name="WEAPONS_CORE_2"/>
+        <weapon name="WEAPONS_CORE_2"/>
+        <weapon name="WEAPONS_LASER_2"/>
+      </weaponList>
+      <droneList drones="3"/>
+    </sector>
+    <sector id="5">
+      <weaponList missiles="1" system_power="7">
+        <weapon name="WEAPONS_MISSILES_2"/>
+        <weapon name="WEAPONS_CORE_3"/>
+        <weapon name="WEAPONS_CORE_2"/>
+        <weapon name="WEAPONS_LASER_2"/>
+      </weaponList>
+      <droneList drones="3"/>
+    </sector>
+    <sector id="6">
+      <weaponList missiles="2" system_power="8">
+        <weapon name="WEAPONS_MISSILES_2"/>
+        <weapon name="WEAPONS_CORE_3"/>
+        <weapon name="WEAPONS_CORE_3"/>
+        <weapon name="WEAPONS_LASER_2"/>
+      </weaponList>
+      <droneList drones="3"/>
+    </sector>
     <health amount="9"/>
     <crewCount amount="3" max="5" class="anaerobic"/>
     <boardingAI>sabotage</boardingAI>
     <cloakImage>lanius_shredder</cloakImage>
-  </shipBlueprintSuper>
+  </shipBlueprintEnemy>
 
-  <shipBlueprintSuper name="LANIUS_INTERCEPTOR" layout="lanius_interceptor" img="lanius_interceptor">
+  <shipBlueprintEnemy name="LANIUS_INTERCEPTOR" layout="lanius_interceptor" img="lanius_interceptor">
     <class>Lanius Interceptor</class>
     <systemList>
       <pilot power="1" max="3" room="0"/>
@@ -214,33 +273,45 @@
       <engines power="1" max="6" room="3"/>
       <weapons room="4"/>
     </systemList>
-    <weaponList sector="1" missiles="0" system_power="4">
-      <weapon name="WEAPONS_FLAK_2"/>
-      <weapon name="WEAPONS_CORE_1"/>
-      <weapon name="WEAPONS_LASER_1"/>
-    </weaponList>
-    <weaponList sector="2" missiles="0" system_power="4">
-      <weapon name="WEAPONS_FLAK_2"/>
-      <weapon name="WEAPONS_CORE_1"/>
-      <weapon name="WEAPONS_CORE_1"/>
-    </weaponList>
-    <weaponList sector="3" missiles="0" system_power="5">
-      <weapon name="WEAPONS_FLAK_3"/>
-      <weapon name="WEAPONS_CORE_1"/>
-      <weapon name="WEAPONS_CORE_1"/>
-    </weaponList>
-    <weaponList sector="4" missiles="0" system_power="6">
-      <weapon name="WEAPONS_FLAK_3"/>
-      <weapon name="WEAPONS_CORE_2"/>
-      <weapon name="WEAPONS_CORE_1"/>
-    </weaponList>
+    <sector id="1">
+      <weaponList missiles="0" system_power="4">
+        <weapon name="WEAPONS_FLAK_2"/>
+        <weapon name="WEAPONS_CORE_1"/>
+        <weapon name="WEAPONS_LASER_1"/>
+      </weaponList>
+      <droneList drones="3"/>
+    </sector>
+    <sector id="2">
+      <weaponList missiles="0" system_power="4">
+        <weapon name="WEAPONS_FLAK_2"/>
+        <weapon name="WEAPONS_CORE_1"/>
+        <weapon name="WEAPONS_CORE_1"/>
+      </weaponList>
+      <droneList drones="3"/>
+    </sector>
+    <sector id="3">
+      <weaponList missiles="0" system_power="5">
+        <weapon name="WEAPONS_FLAK_3"/>
+        <weapon name="WEAPONS_CORE_1"/>
+        <weapon name="WEAPONS_CORE_1"/>
+      </weaponList>
+      <droneList drones="3"/>
+    </sector>
+    <sector id="4">
+      <weaponList missiles="0" system_power="6">
+        <weapon name="WEAPONS_FLAK_3"/>
+        <weapon name="WEAPONS_CORE_2"/>
+        <weapon name="WEAPONS_CORE_1"/>
+      </weaponList>
+      <droneList drones="3"/>
+    </sector>
     <health amount="6"/>
     <crewCount amount="2" max="4" class="anaerobic"/>
     <boardingAI>sabotage</boardingAI>
     <cloakImage>lanius_interceptor</cloakImage>
-  </shipBlueprintSuper>
+  </shipBlueprintEnemy>
 
-  <shipBlueprintSuper name="LANIUS_MARAUDER" layout="lanius_marauder" img="lanius_marauder">
+  <shipBlueprintEnemy name="LANIUS_MARAUDER" layout="lanius_marauder" img="lanius_marauder">
     <class>Lanius Marauder</class>
     <systemList>
       <pilot power="1" max="3" room="0"/>
@@ -250,30 +321,42 @@
       <hacking power="1" max="2" room="1"/>
       <weapons room="4"/>
     </systemList>
-    <weaponList sector="3" missiles="0" system_power="5">
-      <weapon name="WEAPONS_CORE_2"/>
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_LASER_1"/>
-    </weaponList>
-    <weaponList sector="4" missiles="0" system_power="6">
-      <weapon name="WEAPONS_CORE_3"/>
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_LASER_1"/>
-    </weaponList>
-    <weaponList sector="5" missiles="0" system_power="7">
-      <weapon name="WEAPONS_CORE_4"/>
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_LASER_1"/>
-    </weaponList>
-    <weaponList sector="6" missiles="0" system_power="8">
-      <weapon name="WEAPONS_CORE_4"/>
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_LASER_1"/>
-      <weapon name="WEAPONS_LASER_1"/>
-    </weaponList>
+    <sector id="3">
+      <weaponList missiles="0" system_power="5">
+        <weapon name="WEAPONS_CORE_2"/>
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_LASER_1"/>
+      </weaponList>
+      <droneList drones="3"/>
+    </sector>
+    <sector id="4">
+      <weaponList missiles="0" system_power="6">
+        <weapon name="WEAPONS_CORE_3"/>
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_LASER_1"/>
+      </weaponList>
+      <droneList drones="3"/>
+    </sector>
+    <sector id="5">
+      <weaponList missiles="0" system_power="7">
+        <weapon name="WEAPONS_CORE_4"/>
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_LASER_1"/>
+      </weaponList>
+      <droneList drones="3"/>
+    </sector>
+    <sector id="6">
+      <weaponList missiles="0" system_power="8">
+        <weapon name="WEAPONS_CORE_4"/>
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_LASER_1"/>
+        <weapon name="WEAPONS_LASER_1"/>
+      </weaponList>
+      <droneList drones="3"/>
+    </sector>
     <health amount="8"/>
     <crewCount amount="3" max="5" class="anaerobic"/>
     <boardingAI>sabotage</boardingAI>
     <cloakImage>lanius_marauder</cloakImage>
-  </shipBlueprintSuper>
+  </shipBlueprintEnemy>
 </FTL>

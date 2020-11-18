@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FTL>
-  <shipBlueprint name="PLAYER_SHIP_DRONE2" layout="kestral" img="kestral">
-    <class>Drone Cruiser</class>
+  <shipBlueprint name="PLAYER_SHIP_NEWRACE" layout="kestral" img="kestral">
+    <class>NewRace Cruiser</class>
     <name>?</name>
     <desc>?</desc>
     <systemList>
@@ -32,7 +32,7 @@
     </droneList>
     <health amount="30"/>
     <maxPower amount="10"/>
-    <crewCount amount="3" class="human"/>
+    <crewCount amount="3" class="newrace"/>
     <aug name="DRONE_SPEED_LOCKED"/>
   </shipBlueprint>
 </FTL>

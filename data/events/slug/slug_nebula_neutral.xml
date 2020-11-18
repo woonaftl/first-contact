@@ -8,6 +8,7 @@
     <event load="SLUG_TRADER_LASER"/>
     <event load="SLUG_UPGRADE_OXYGEN"/>
     <event load="SLUG_ZOLTAN_TRADER"/>
+    <!--TODO slugs trying to sell you ship insurance -->
   </eventList>
 
   <eventList name="NEBULA_NEUTRAL_SLUG_TREACHERY">

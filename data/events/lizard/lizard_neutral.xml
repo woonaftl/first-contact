@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="NEUTRAL_LIZARD">
+    <event load="LIZARD_MERCENARY"/>
+  </eventList>
+
+  <event name="LIZARD_MERCENARY" unique="true">
+    <text>After the whole Lizard society collapsed, many captains of military ships were forced to find new jobs as mercenaries.</text>
+    <ship load="LIZARD_SHIP" hostile="false"/>
+    <choice>
+      <text>Hire them to delay the Rebels.</text>
+      <event>
+        <text>The Lizard ship masks its jump signature to mimic your own and then jumps off in the opposite direction. This should keep the Rebels guessing.</text>
+        <item_modify>
+          <item type="scrap" min="-25" max="-10"/>
+        </item_modify>
+        <modifyPursuit amount="-2"/>
+      </event>
+    </choice>
+    <choice>
+      <text>Hire them to scout the sector.</text>
+      <event>
+        <text>Your map has been updated.</text>
+        <item_modify>
+          <item type="scrap" min="-20" max="-10"/>
+        </item_modify>
+        <reveal_map/>
+      </event>
+    </choice>
+    <choice>
+      <text>Fight them.</text>
+      <event>
+        <ship hostile="true"/>
+      </event>
+    </choice>
+    <choice>
+      <text>Ignore.</text>
+      <event/>
+    </choice>
+    <choice hidden="true" req="lizard">
+      <text>(Lizard) Request help for free.</text>
+      <event>
+        <text>Seeing fellow Lizards in your crew, the mercenaries update your sector map with relevant data. After that, the Lizard ship masks its jump signature to mimic your own and then jumps off in the opposite direction. This should keep the Rebels guessing.</text>
+        <modifyPursuit amount="-2"/>
+        <reveal_map/>
+      </event>
+    </choice>
+  </event>
+</FTL>

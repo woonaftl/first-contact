@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+  <eventList name="HOSTILE_LIZARD">
+    <event load="LIZARD_FIGHT"/>
+    <event load="LIZARD_PIRATE_FIGHT"/>
+    <event load="LIZARD_REBEL_FIGHT"/>
+  </eventList>
+
+  <event name="LIZARD_FIGHT">
+    <textList>
+      <text>A Lizard ship is being aggressive towards you: "I know it was the aliens, who plotted the demise of our great species. Time for revenge!"</text>
+      <text>"Federation, huh? Well, there were you when we, the Lizards, needed help?" The frustrated captain of a Lizard ship attacks!</text>
+      <text>A captain of a Lizard ship nearby is ranting: "First, the cataclysm, then, the Rebellion. It all started when we made a mistake of joining the Federation. Time for it to be destroyed."</text>
+    </textList>
+    <ship load="LIZARD_SHIP" hostile="true"/>
+  </event>
+
+  <event name="LIZARD_PIRATE_FIGHT">
+    <textList>
+      <text>After the cataclysm, many Lizard captains have turned to piracy in desperation. You encounter a ship belonging to one of those captains.</text>
+      <text>A scaled face with glowing eyes appears on a vidscreen: "I'm collecting a toll here. The only way to pay is with your lives."</text>
+      <text>The Lizard space was peaceful long ago, when the military routinely cleared the space of pirates. Now, the Lizard military became the pirates themselves.</text>
+    </textList>
+    <ship load="LIZARD_PIRATE_SHIP" hostile="true"/>
+  </event>
+
+  <event name="LIZARD_REBEL_FIGHT" unique="true">
+    <text>A Rebel scout has penetrated deep into Lizard space, no doubt searching for you. There are no Lizard ships nearby to help you.</text>
+    <ship load="REBEL" hostile="true"/>
+  </event>
+</FTL>

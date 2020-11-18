@@ -47,7 +47,7 @@
       <text>The Orchids put tremendous effort into pacifying invading Mantis and forming friendly relations with them. But some Mantis will never leave the path of a hunter. The ship at the beacon belongs to those.</text>
       <text>Some Mantis are influenced by Orchids so much that they begin to worship all kinds of plants and do the only thing they think would please their gods: kill everyone who doesn't belong.</text>
     </textList>
-    <ship load="MANTIS_FIGHT" hostile="true"/>
+    <ship load="MANTIS_SHIP" hostile="true"/>
   </event>
 
   <event name="ORCHID_REBEL_FIGHT">

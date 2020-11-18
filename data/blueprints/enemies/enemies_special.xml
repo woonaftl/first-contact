@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FTL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../schema/autoBlueprints.xsd">
-
   <blueprintList name="PIRATE_TUCO_LIST">
     <name>PIRATE_TUCO</name>
   </blueprintList>
@@ -13,7 +12,7 @@
     <name>PIRATE_NYX</name>
   </blueprintList>
 
-  <shipBlueprintSuperNew name="PIRATE_TUCO" layout="pirate_tuco" img="pirate_tuco">
+  <shipBlueprintEnemy name="PIRATE_TUCO" layout="pirate_tuco" img="pirate_tuco">
     <class>Tuco's Dreadnought</class>
     <systemList>
       <pilot power="1" max="3" room="0"/>
@@ -101,9 +100,9 @@
     <crewCount amount="5" max="10" class="random"/>
     <boardingAI>sabotage</boardingAI>
     <cloakImage>pirate_tuco</cloakImage>
-  </shipBlueprintSuperNew>
+  </shipBlueprintEnemy>
 
-  <shipBlueprintSuperNew name="PIRATE_EVE" layout="pirate_eve" img="pirate_eve">
+  <shipBlueprintEnemy name="PIRATE_EVE" layout="pirate_eve" img="pirate_eve">
     <class>"The Exiled"</class>
     <systemList>
       <pilot power="1" max="3" room="0"/>
@@ -166,9 +165,9 @@
     <crewCount amount="4" max="8" class="random"/>
     <boardingAI>sabotage</boardingAI>
     <cloakImage>pirate_eve</cloakImage>
-  </shipBlueprintSuperNew>
+  </shipBlueprintEnemy>
 
-  <shipBlueprintSuperNew name="PIRATE_NYX" layout="pirate_nyx" img="pirate_nyx">
+  <shipBlueprintEnemy name="PIRATE_NYX" layout="pirate_nyx" img="pirate_nyx">
     <class>"Dark Lady"</class>
     <systemList>
       <pilot power="1" max="3" room="0"/>
@@ -249,5 +248,5 @@
     <crewCount amount="4" max="8" class="random"/>
     <boardingAI>sabotage</boardingAI>
     <cloakImage>pirate_nyx</cloakImage>
-  </shipBlueprintSuperNew>
+  </shipBlueprintEnemy>
 </FTL>

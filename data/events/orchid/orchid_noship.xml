@@ -59,7 +59,7 @@
       <event>
         <text>The Zoltans transfer coordinates of their destination and a box containing a gift to Orchids. The package contains a replica of Zoltan spaceship of unusual shape, radiating light and heat. It's made from high quality metals, resistant to damage, and very pleasant to look at.</text>
         <quest event="ORCHID_ZOLTAN_QUEST_FINISH"/>
-        <autoReward level="MED">stuff</autoReward>
+        <autoReward level="HIGH">fuel_only</autoReward>
       </event>
     </choice>
     <choice hidden="true">

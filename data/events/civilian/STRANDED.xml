@@ -62,69 +62,25 @@
           <text>You find a man living alone in a cave. From the appearance of his wrecked ship, it seems he's been here for many years. He looks healthy, but his mental state is questionable.</text>
           <choice hidden="true">
             <text>Bring him back to your ship in hopes of finding some help for him.</text>
-            <eventList name="MADMAN">
-              <event>
-                <text>Once back in orbit, the man turns increasingly violent. Eventually he turns on your crew and manages to kill one before you can subdue him.</text>
-                <removeCrew>
-                  <clone>true</clone>
-                  <text>Luckily, your clone bay is able to revive your crewmember.</text>
-                </removeCrew>
-              </event>
-              <event>
-                <text>He seems to improve immensely upon getting back to the ship. It might take a while for him to truly be well again, but until then he seems happy to serve as a member of your crew.</text>
-                <crewMember amount="1">Charlie</crewMember>
-              </event>
-              <event>
-                <text>Being back in space terrifies him. He goes mad and nearly blows a hole in the side of your ship with a makeshift explosive in an attempt to "escape this metal prison." He dies in the explosion.</text>
-                <damage amount="4"/>
-                <damage amount="1" system="random"/>
-              </event>
-              <event>
-                <text>It seems he was in worse health than we first thought. He collapses on the trip up to the ship. It doesn't look like he's going to make it...</text>
-                <choice>
-                  <text id="continue"/>
-                  <event/>
-                </choice>
-                <choice req="medbay" lvl="2" hidden="true">
-                  <text>(Improved Medbay) Quickly bring him to the medbay.</text>
-                  <event>
-                    <text>Your improved medbay was able to resuscitate him. After a short time he recovers greatly saying, "I really thought I was a goner... I haven't eaten for days. Would you mind if I stayed on your ship?"</text>
-                    <crewMember amount="1">Charlie</crewMember>
-                  </event>
-                </choice>
-                <choice req="clonebay" lvl="2" hidden="true">
-                  <text>(Improved Clonebay) Quickly register him into the clonebay.</text>
-                  <event>
-                    <text>Your quick reaction allowed your Clonebay to revive him after he passes. After he steps out of the machine he states, "How am I alive? Wasn't I just dying on some shuttle? Technology sure has changed."</text>
-                    <crewMember amount="1">Charlie</crewMember>
-                  </event>
-                </choice>
-              </event>
-            </eventList>
+            <event load="MADMAN"/>
           </choice>
           <choice>
             <text>Leave the madman to his ravings, he's not worth the risk.</text>
             <event/>
           </choice>
-          <choice req="medbay" lvl="2" hidden="true" max_group="0">
-            <text>(Improved Medbay) Bring him to your medbay.</text>
-            <event>
-              <text>Once inside your medbay, the system is able to restore his body and undo some of the damage to his brain. Once awake he states, "I feel almost like my old self again... Thank you. Please let me serve on your ship."</text>
-              <crewMember amount="1">Charlie</crewMember>
-            </event>
-          </choice>
-          <choice req="medbay" lvl="3" hidden="true" max_group="0">
-            <text>(Advanced Medbay) Bring him to your medbay.</text>
-            <event>
-              <text>Once inside your advanced medbay, the system is able to identify and minimize the trauma associated with being alone for so long. Once awake he states, "I don't know how to repay you, I feel 10 years younger... Let me serve on your ship."</text>
-              <crewMember amount="1" all_skills="1">Charlie</crewMember>
-            </event>
-          </choice>
           <choice req="slug" hidden="true">
-            <text>(Slug Crew) "Sir, allow me to assess his mental state."</text>
+            <text>(Slug) "Sir, allow me to assess his mental state."</text>
             <eventList name="MADMAN_SLUG">
               <event>
                 <text>You bring the ship closer. The Slug enters a trance-like state for 1 to 2 seconds, then quickly snaps out of it. He states, "This person is clearly unstable. It is best we leave them alone."</text>
+                <choice hidden="true">
+                  <text>Bring him to your ship anyway.</text>
+                  <event load="MADMAN"/>
+                </choice>
+                <choice>
+                <text>Leave the madman alone.</text>
+                <event/>
+                </choice>
               </event>
               <event>
                 <text>You bring the ship closer and the Slug, after a pause, says that the person is stable and with good intentions. You offer a position in your crew and it is graciously accepted.</text>
@@ -143,6 +99,52 @@
       <event/>
     </choice>
   </event>
+  <eventList name="MADMAN">
+    <event>
+      <text>Once back in orbit, the man turns increasingly violent. Eventually he turns on your crew and manages to kill one before you can subdue him.</text>
+      <removeCrew>
+        <clone>true</clone>
+        <text>Luckily, your clone bay is able to revive your crewmember.</text>
+      </removeCrew>
+    </event>
+    <event>
+      <text>He seems to improve immensely upon getting back to the ship. It might take a while for him to truly be well again, but until then he seems happy to serve as a member of your crew.</text>
+      <crewMember amount="1">Charlie</crewMember>
+    </event>
+    <event>
+      <text>Being back in space terrifies him. He goes mad and nearly blows a hole in the side of your ship with a makeshift explosive in an attempt to "escape this metal prison." He dies in the explosion.</text>
+      <damage amount="4"/>
+      <damage amount="1" system="random"/>
+    </event>
+    <event>
+      <text>It seems he was in worse health than we first thought. He collapses on the trip up to the ship. It doesn't look like he's going to make it...</text>
+      <choice>
+        <text id="continue"/>
+        <event/>
+      </choice>
+      <choice req="medbay" lvl="2" hidden="true">
+        <text>(Improved Medbay) Quickly bring him to the medbay.</text>
+        <event>
+          <text>Your improved medbay was able to resuscitate him. After a short time he recovers greatly saying, "I really thought I was a goner... I haven't eaten for days. Would you mind if I stayed on your ship?"</text>
+          <crewMember amount="1">Charlie</crewMember>
+        </event>
+      </choice>
+      <choice req="clonebay" lvl="2" hidden="true">
+        <text>(Improved Clonebay) Quickly register him into the clonebay.</text>
+        <event>
+          <text>Your quick reaction allowed your Clonebay to revive him after he passes. After he steps out of the machine he states, "How am I alive? Wasn't I just dying on some shuttle? Technology sure has changed."</text>
+          <crewMember amount="1">Charlie</crewMember>
+        </event>
+      </choice>
+      <choice req="pavonian" hidden="true">
+        <text>(Pavonian) Use restorative abilities of your crew.</text>
+        <event>
+          <text>The Pavonian radiates bright light and the man's wounds rapidly heal and his mind clears: "I really thought I was a goner... I haven't eaten for days. Would you mind if I stayed on your ship?"</text>
+          <crewMember amount="1">Charlie</crewMember>
+        </event>
+      </choice>
+    </event>
+  </eventList>
 
   <!--
   <event name="STRANDED_ASTEROID_COLLISION">

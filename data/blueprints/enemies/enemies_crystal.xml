@@ -8,7 +8,7 @@
     <name>CRYSTAL_GUARD</name>
   </blueprintList>
 
-  <shipBlueprintSuper name="CRYSTAL_SCOUT" layout="crystal_scout" img="crystal_scout">
+  <shipBlueprintEnemy name="CRYSTAL_SCOUT" layout="crystal_scout" img="crystal_scout">
     <class>Crystal Scout</class>
     <systemList>
       <pilot power="1" max="3" room="3"/>
@@ -18,32 +18,39 @@
       <engines power="1" max="5" room="4"/>
       <weapons room="2"/>
     </systemList>
-    <weaponList sector="2" missiles="0" system_power="5">
-      <weapon name="WEAPONS_CRYSTAL_3"/>
-      <weapon name="WEAPONS_CRYSTAL_2"/>
-    </weaponList>
-    <weaponList sector="3" missiles="0" system_power="6">
-      <weapon name="WEAPONS_CRYSTAL_3"/>
-      <weapon name="WEAPONS_CRYSTAL_3"/>
-    </weaponList>
-    <weaponList sector="4" missiles="0" system_power="7">
-      <weapon name="WEAPONS_CRYSTAL_3"/>
-      <weapon name="WEAPONS_CRYSTAL_2"/>
-      <weapon name="WEAPONS_CRYSTAL_2"/>
-    </weaponList>
-    <weaponList sector="5" missiles="0" system_power="8">
-      <weapon name="WEAPONS_CRYSTAL_3"/>
-      <weapon name="WEAPONS_CRYSTAL_3"/>
-      <weapon name="WEAPONS_CRYSTAL_2"/>
-    </weaponList>
+    <sector id="1">
+      <weaponList missiles="0" system_power="5">
+        <weapon name="WEAPONS_CRYSTAL_3"/>
+        <weapon name="WEAPONS_CRYSTAL_2"/>
+      </weaponList>
+    </sector>
+    <sector id="2">
+      <weaponList missiles="0" system_power="5">
+        <weapon name="WEAPONS_CRYSTAL_3"/>
+        <weapon name="WEAPONS_CRYSTAL_2"/>
+      </weaponList>
+    </sector>
+    <sector id="3">
+      <weaponList missiles="0" system_power="6">
+        <weapon name="WEAPONS_CRYSTAL_3"/>
+        <weapon name="WEAPONS_CRYSTAL_3"/>
+      </weaponList>
+    </sector>
+    <sector id="4">
+      <weaponList missiles="0" system_power="7">
+        <weapon name="WEAPONS_CRYSTAL_3"/>
+        <weapon name="WEAPONS_CRYSTAL_2"/>
+        <weapon name="WEAPONS_CRYSTAL_2"/>
+      </weaponList>
+    </sector>
     <health amount="7"/>
     <crewCount amount="2" max="3" class="crystal"/>
     <boardingAI>sabotage</boardingAI>
     <aug name="CRYSTAL_SHARDS"/>
     <cloakImage>crystal_scout</cloakImage>
-  </shipBlueprintSuper>
+  </shipBlueprintEnemy>
 
-  <shipBlueprintSuper name="CRYSTAL_BOMBER" layout="crystal_bomber" img="crystal_bomber">
+  <shipBlueprintEnemy name="CRYSTAL_BOMBER" layout="crystal_bomber" img="crystal_bomber">
     <class>Crystal Bomber</class>
     <systemList>
       <pilot power="1" max="3" room="2"/>
@@ -54,38 +61,46 @@
       <engines power="1" max="5" room="5"/>
       <weapons room="7"/>
     </systemList>
-    <weaponList sector="4" missiles="6" system_power="6">
-      <weapon name="BOMB_LOCK"/>
-      <weapon name="BOMB_LOCK"/>
-      <weapon name="WEAPONS_CRYSTAL_4"/>
-      <weapon name="WEAPONS_CRYSTAL_2"/>
-    </weaponList>
-    <weaponList sector="5" missiles="6" system_power="7">
-      <weapon name="BOMB_LOCK"/>
-      <weapon name="BOMB_LOCK"/>
-      <weapon name="WEAPONS_CRYSTAL_4"/>
-      <weapon name="WEAPONS_CRYSTAL_3"/>
-    </weaponList>
-    <weaponList sector="6" missiles="3" system_power="8">
-      <weapon name="BOMB_LOCK"/>
-      <weapon name="WEAPONS_CRYSTAL_4"/>
-      <weapon name="WEAPONS_CRYSTAL_2"/>
-      <weapon name="WEAPONS_CRYSTAL_2"/>
-    </weaponList>
-    <weaponList sector="7" missiles="3" system_power="8">
-      <weapon name="BOMB_LOCK"/>
-      <weapon name="WEAPONS_CRYSTAL_4"/>
-      <weapon name="WEAPONS_CRYSTAL_2"/>
-      <weapon name="WEAPONS_CRYSTAL_2"/>
-    </weaponList>
+    <sector id="4">
+      <weaponList missiles="6" system_power="6">
+        <weapon name="BOMB_LOCK"/>
+        <weapon name="BOMB_LOCK"/>
+        <weapon name="WEAPONS_CRYSTAL_4"/>
+        <weapon name="WEAPONS_CRYSTAL_2"/>
+      </weaponList>
+    </sector>
+    <sector id="5">
+      <weaponList missiles="6" system_power="7">
+        <weapon name="BOMB_LOCK"/>
+        <weapon name="BOMB_LOCK"/>
+        <weapon name="WEAPONS_CRYSTAL_4"/>
+        <weapon name="WEAPONS_CRYSTAL_3"/>
+      </weaponList>
+    </sector>
+    <sector id="6">
+      <weaponList missiles="3" system_power="8">
+        <weapon name="BOMB_LOCK"/>
+        <weapon name="WEAPONS_CRYSTAL_4"/>
+        <weapon name="WEAPONS_CRYSTAL_2"/>
+        <weapon name="WEAPONS_CRYSTAL_2"/>
+      </weaponList>
+    </sector>
+    <sector id="7">
+      <weaponList missiles="3" system_power="8">
+        <weapon name="BOMB_LOCK"/>
+        <weapon name="WEAPONS_CRYSTAL_4"/>
+        <weapon name="WEAPONS_CRYSTAL_2"/>
+        <weapon name="WEAPONS_CRYSTAL_2"/>
+      </weaponList>
+    </sector>
     <health amount="9"/>
     <crewCount amount="3" max="5" class="crystal"/>
     <boardingAI>sabotage</boardingAI>
     <aug name="CRYSTAL_SHARDS"/>
     <cloakImage>crystal_bomber</cloakImage>
-  </shipBlueprintSuper>
+  </shipBlueprintEnemy>
 
-  <shipBlueprintSuper name="CRYSTAL_ASSAULT" layout="crystal_assault" img="crystal_assault">
+  <shipBlueprintEnemy name="CRYSTAL_ASSAULT" layout="crystal_assault" img="crystal_assault">
     <class>Crystal Assault</class>
     <systemList>
       <pilot power="1" max="3" room="0"/>
@@ -96,34 +111,42 @@
       <weapons room="7"/>
       <oxygen power="1" max="3" room="4"/>
     </systemList>
-    <weaponList sector="4" missiles="0" system_power="7">
-      <weapon name="WEAPONS_CRYSTAL_3"/>
-      <weapon name="WEAPONS_CRYSTAL_2"/>
-      <weapon name="WEAPONS_CRYSTAL_2"/>
-    </weaponList>
-    <weaponList sector="5" missiles="0" system_power="8">
-      <weapon name="WEAPONS_CRYSTAL_4"/>
-      <weapon name="WEAPONS_CRYSTAL_2"/>
-      <weapon name="WEAPONS_CRYSTAL_2"/>
-    </weaponList>
-    <weaponList sector="6" missiles="0" system_power="8">
-      <weapon name="WEAPONS_CRYSTAL_4"/>
-      <weapon name="WEAPONS_CRYSTAL_2"/>
-      <weapon name="WEAPONS_CRYSTAL_2"/>
-    </weaponList>
-    <weaponList sector="7" missiles="0" system_power="8">
-      <weapon name="WEAPONS_CRYSTAL_4"/>
-      <weapon name="WEAPONS_CRYSTAL_2"/>
-      <weapon name="WEAPONS_CRYSTAL_2"/>
-    </weaponList>
+    <sector id="4">
+      <weaponList missiles="0" system_power="7">
+        <weapon name="WEAPONS_CRYSTAL_3"/>
+        <weapon name="WEAPONS_CRYSTAL_2"/>
+        <weapon name="WEAPONS_CRYSTAL_2"/>
+      </weaponList>
+    </sector>
+    <sector id="5">
+      <weaponList missiles="0" system_power="8">
+        <weapon name="WEAPONS_CRYSTAL_4"/>
+        <weapon name="WEAPONS_CRYSTAL_2"/>
+        <weapon name="WEAPONS_CRYSTAL_2"/>
+      </weaponList>
+    </sector>
+    <sector id="6">
+      <weaponList missiles="0" system_power="8">
+        <weapon name="WEAPONS_CRYSTAL_4"/>
+        <weapon name="WEAPONS_CRYSTAL_2"/>
+        <weapon name="WEAPONS_CRYSTAL_2"/>
+      </weaponList>
+    </sector>
+    <sector id="7">
+      <weaponList missiles="0" system_power="8">
+        <weapon name="WEAPONS_CRYSTAL_4"/>
+        <weapon name="WEAPONS_CRYSTAL_2"/>
+        <weapon name="WEAPONS_CRYSTAL_2"/>
+      </weaponList>
+    </sector>
     <health amount="10"/>
     <crewCount amount="3" max="5" class="crystal"/>
     <boardingAI>sabotage</boardingAI>
     <aug name="CRYSTAL_SHARDS"/>
     <cloakImage>crystal_assault</cloakImage>
-  </shipBlueprintSuper>
+  </shipBlueprintEnemy>
 
-  <shipBlueprintSuper name="CRYSTAL_FIGHTER" layout="crystal_fighter" img="crystal_fighter">
+  <shipBlueprintEnemy name="CRYSTAL_FIGHTER" layout="crystal_fighter" img="crystal_fighter">
     <class>Crystal Fighter</class>
     <systemList>
       <pilot power="1" max="3" room="0"/>
@@ -135,30 +158,38 @@
       <oxygen power="1" max="3" room="5"/>
       <cloaking power="1" max="1" room="4" start="false"/>
     </systemList>
-    <weaponList sector="3" missiles="0" system_power="5">
-      <weapon name="WEAPONS_CRYSTAL_3"/>
-      <weapon name="WEAPONS_CRYSTAL_2"/>
-    </weaponList>
-    <weaponList sector="4" missiles="0" system_power="6">
-      <weapon name="WEAPONS_CRYSTAL_3"/>
-      <weapon name="WEAPONS_CRYSTAL_3"/>
-    </weaponList>
-    <weaponList sector="5" missiles="0" system_power="6">
-      <weapon name="WEAPONS_CRYSTAL_3"/>
-      <weapon name="WEAPONS_CRYSTAL_3"/>
-    </weaponList>
-    <weaponList sector="7" missiles="0" system_power="7">
-      <weapon name="WEAPONS_CRYSTAL_4"/>
-      <weapon name="WEAPONS_CRYSTAL_3"/>
-    </weaponList>
+    <sector id="2">
+      <weaponList missiles="0" system_power="5">
+        <weapon name="WEAPONS_CRYSTAL_3"/>
+        <weapon name="WEAPONS_CRYSTAL_2"/>
+      </weaponList>
+    </sector>
+    <sector id="3">
+      <weaponList missiles="0" system_power="5">
+        <weapon name="WEAPONS_CRYSTAL_3"/>
+        <weapon name="WEAPONS_CRYSTAL_2"/>
+      </weaponList>
+    </sector>
+    <sector id="4">
+      <weaponList missiles="0" system_power="6">
+        <weapon name="WEAPONS_CRYSTAL_3"/>
+        <weapon name="WEAPONS_CRYSTAL_3"/>
+      </weaponList>
+    </sector>
+    <sector id="5">
+      <weaponList missiles="0" system_power="6">
+        <weapon name="WEAPONS_CRYSTAL_3"/>
+        <weapon name="WEAPONS_CRYSTAL_3"/>
+      </weaponList>
+    </sector>
     <health amount="8"/>
     <crewCount amount="2" max="4" class="crystal"/>
     <boardingAI>sabotage</boardingAI>
     <aug name="CRYSTAL_SHARDS"/>
     <cloakImage>crystal_fighter</cloakImage>
-  </shipBlueprintSuper>
+  </shipBlueprintEnemy>
 
-  <shipBlueprintSuper name="CRYSTAL_GUARD" layout="crystal_guard" img="crystal_guard">
+  <shipBlueprintEnemy name="CRYSTAL_GUARD" layout="crystal_guard" img="crystal_guard">
     <class>Crystal Guard</class>
     <systemList>
       <pilot power="1" max="3" room="1"/>
@@ -169,28 +200,36 @@
       <weapons room="2"/>
       <oxygen power="1" max="3" room="5"/>
     </systemList>
-    <weaponList sector="3" missiles="0" system_power="5">
-      <weapon name="WEAPONS_CRYSTAL_3"/>
-      <weapon name="WEAPONS_CRYSTAL_2"/>
-    </weaponList>
-    <weaponList sector="4" missiles="0" system_power="6">
-      <weapon name="WEAPONS_CRYSTAL_3"/>
-      <weapon name="WEAPONS_CRYSTAL_3"/>
-    </weaponList>
-    <weaponList sector="5" missiles="0" system_power="7">
-      <weapon name="WEAPONS_CRYSTAL_3"/>
-      <weapon name="WEAPONS_CRYSTAL_2"/>
-      <weapon name="WEAPONS_CRYSTAL_2"/>
-    </weaponList>
-    <weaponList sector="7" missiles="0" system_power="8">
-      <weapon name="WEAPONS_CRYSTAL_4"/>
-      <weapon name="WEAPONS_CRYSTAL_2"/>
-      <weapon name="WEAPONS_CRYSTAL_2"/>
-    </weaponList>
+    <sector id="3">
+      <weaponList missiles="0" system_power="5">
+        <weapon name="WEAPONS_CRYSTAL_3"/>
+        <weapon name="WEAPONS_CRYSTAL_2"/>
+      </weaponList>
+    </sector>
+    <sector id="4">
+      <weaponList missiles="0" system_power="6">
+        <weapon name="WEAPONS_CRYSTAL_3"/>
+        <weapon name="WEAPONS_CRYSTAL_3"/>
+      </weaponList>
+    </sector>
+    <sector id="5">
+      <weaponList missiles="0" system_power="7">
+        <weapon name="WEAPONS_CRYSTAL_3"/>
+        <weapon name="WEAPONS_CRYSTAL_2"/>
+        <weapon name="WEAPONS_CRYSTAL_2"/>
+      </weaponList>
+    </sector>
+    <sector id="6">
+      <weaponList missiles="0" system_power="8">
+        <weapon name="WEAPONS_CRYSTAL_4"/>
+        <weapon name="WEAPONS_CRYSTAL_2"/>
+        <weapon name="WEAPONS_CRYSTAL_2"/>
+      </weaponList>
+    </sector>
     <health amount="8"/>
     <crewCount amount="4" max="6" class="crystal"/>
     <boardingAI>sabotage</boardingAI>
     <aug name="CRYSTAL_SHARDS"/>
     <cloakImage>crystal_guard</cloakImage>
-  </shipBlueprintSuper>
+  </shipBlueprintEnemy>
 </FTL>

@@ -2,7 +2,7 @@
 <xsl:transform xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
   <xsl:output method="xml" omit-xml-declaration="no" encoding="utf-8" indent="yes"/>
 
-  <!--TODO refactor: a lot of unneeded stuff: old blueprints for superluminal, Super vs SuperNew -->
+  <!--TODO remove old blueprints for superluminal -->
 
   <xsl:template match="@* | node()" name="identity">
     <xsl:copy>
@@ -65,22 +65,22 @@
           </name>
         </xsl:for-each>
       </xsl:when>
-      <xsl:when test="../../shipBlueprintSuperNew[@name = $name]">
-        <xsl:for-each select="../../shipBlueprintSuperNew[@name = $name]/sector">
+      <xsl:when test="../../shipBlueprintEnemy[@name = $name]">
+        <xsl:for-each select="../../shipBlueprintEnemy[@name = $name]/sector">
           <name>
             <xsl:value-of select="concat($name, '_', @id)"/>
           </name>
         </xsl:for-each>
       </xsl:when>
-      <xsl:when test="../../shipBlueprintSuperNew[concat(@name, '_ELITE') = $name]">
-        <xsl:for-each select="../../shipBlueprintSuperNew[concat(@name, '_ELITE') = $name]/sector">
+      <xsl:when test="../../shipBlueprintEnemy[concat(@name, '_ELITE') = $name]">
+        <xsl:for-each select="../../shipBlueprintEnemy[concat(@name, '_ELITE') = $name]/sector">
           <name>
             <xsl:value-of select="concat($name, '_', @id)"/>
           </name>
         </xsl:for-each>
       </xsl:when>
-      <xsl:when test="../../shipBlueprintSuperNew[concat(@name, '_PIRATE') = $name]">
-        <xsl:for-each select="../../shipBlueprintSuperNew[concat(@name, '_PIRATE') = $name]/sector">
+      <xsl:when test="../../shipBlueprintEnemy[concat(@name, '_PIRATE') = $name]">
+        <xsl:for-each select="../../shipBlueprintEnemy[concat(@name, '_PIRATE') = $name]/sector">
           <name>
             <xsl:value-of select="concat($name, '_', @id)"/>
           </name>
@@ -185,243 +185,6 @@
     </xsl:copy>
   </xsl:template>
 
-  <xsl:template match="shipBlueprintSuper">
-    <xsl:variable name="maxPower">
-      <xsl:value-of select="sum(@system_power | systemList/engines[(not(@start)) or (@start != 'false')]/@power |
-                                                systemList/oxygen[(not(@start)) or (@start != 'false')]/@power |
-                                                systemList/shields[(not(@start)) or (@start != 'false')]/@power |
-                                                systemList/medbay[(not(@start)) or (@start != 'false')]/@power |
-                                                systemList/clonebay[(not(@start)) or (@start != 'false')]/@power |
-                                                systemList/drones[(not(@start)) or (@start != 'false')]/@power |
-                                                systemList/teleporter[(not(@start)) or (@start != 'false')]/@power |
-                                                systemList/cloaking[(not(@start)) or (@start != 'false')]/@power |
-                                                systemList/artillery[(not(@start)) or (@start != 'false')]/@power |
-                                                systemList/hacking[(not(@start)) or (@start != 'false')]/@power |
-                                                systemList/mind[(not(@start)) or (@start != 'false')]/@power)"/>
-    </xsl:variable>
-
-    <xsl:apply-templates select="weaponList"/>
-
-    <shipBlueprint name="OLD_{@name}" layout="{@layout}" img="{@img}">
-      <xsl:comment>This shipBlueprint exists just for Superluminal to be able to load it</xsl:comment>
-      <class>
-        <xsl:apply-templates select="class/@* | class/node()"/>
-      </class>
-      <xsl:if test="weaponList[1]/@sector &gt; 0">
-        <minSector>
-          <xsl:value-of select="weaponList[1]/@sector"/>
-        </minSector>
-      </xsl:if>
-      <xsl:if test="weaponList[last()]/@sector &lt; 7">
-        <maxSector>
-          <xsl:value-of select="weaponList[last()]/@sector"/>
-        </maxSector>
-      </xsl:if>
-      <systemList>
-        <xsl:apply-templates select="systemList/*[name() != 'weapons']" mode="normal"/>
-        <weapons power="2" max="8" room="{systemList/weapons/@room}"/>
-      </systemList>
-      <weaponList load="WEAPONS_ANY_1" missiles="{weaponList[1]/@missiles}"/>
-      <xsl:apply-templates select="droneList | health"/>
-      <maxPower amount="{2 + $maxPower}"/>
-      <crewCount amount="{crewCount/@amount}" max="{crewCount/@max}" class="human"/>
-      <xsl:apply-templates select="boardingAI | cloakImage"/>
-    </shipBlueprint>
-    <xsl:if test="class_elite">
-      <shipBlueprint name="OLD_{@name}_ELITE" layout="{@layout}_pirate" img="{@img}_pirate">
-        <class>
-          <xsl:apply-templates select="class_elite/@* | class_elite/node()"/>
-        </class>
-        <xsl:if test="weaponList[1]/@sector &gt; 0">
-          <minSector>
-            <xsl:value-of select="weaponList[1]/@sector"/>
-          </minSector>
-        </xsl:if>
-        <xsl:if test="weaponList[last()]/@sector &lt; 7">
-          <maxSector>
-            <xsl:value-of select="weaponList[last()]/@sector"/>
-          </maxSector>
-        </xsl:if>
-        <systemList>
-          <xsl:apply-templates select="systemList/*[name() != 'weapons']" mode="elite"/>
-          <weapons power="4" max="8" room="{systemList/weapons/@room_elite}"/>
-        </systemList>
-        <weaponList load="WEAPONS_ANY_1" missiles="{weaponList[1]/@missiles}"/>
-        <xsl:apply-templates select="droneList | health"/>
-        <maxPower amount="{6 + $maxPower}"/>
-        <crewCount amount="{crewCount/@amount}" max="{crewCount/@max}" class="human"/>
-        <xsl:apply-templates select="boardingAI"/>
-        <xsl:choose>
-          <xsl:when test="cloakImage_elite">
-            <xsl:apply-templates select="cloakImage_elite"/>
-          </xsl:when>
-          <xsl:otherwise>
-            <xsl:apply-templates select="cloakImage"/>
-          </xsl:otherwise>
-        </xsl:choose>
-      </shipBlueprint>
-    </xsl:if>
-    <xsl:if test="class_pirate">
-      <shipBlueprint name="OLD_{@name}_PIRATE" layout="{@layout}_pirate" img="{@img}_pirate">
-        <class>
-          <xsl:apply-templates select="class_pirate/@* | class_pirate/node()"/>
-        </class>
-        <minSector>
-          <xsl:value-of select="weaponList[1]/@sector"/>
-        </minSector>
-        <maxSector>
-          <xsl:value-of select="weaponList[last()]/@sector"/>
-        </maxSector>
-        <systemList>
-          <xsl:apply-templates select="systemList/*[name() != 'weapons']" mode="pirate"/>
-          <weapons power="2" max="8" room="{systemList/weapons/@room_pirate}"/>
-        </systemList>
-        <weaponList load="WEAPONS_ANY_1" missiles="{weaponList[1]/@missiles}"/>
-        <xsl:apply-templates select="droneList | health"/>
-        <maxPower amount="{2 + $maxPower}"/>
-        <crewCount amount="{crewCount/@amount}" max="{crewCount/@max}" class="random"/>
-        <xsl:apply-templates select="boardingAI"/>
-        <xsl:choose>
-          <xsl:when test="cloakImage_pirate">
-            <xsl:apply-templates select="cloakImage_pirate"/>
-          </xsl:when>
-          <xsl:otherwise>
-            <xsl:apply-templates select="cloakImage"/>
-          </xsl:otherwise>
-        </xsl:choose>
-      </shipBlueprint>
-    </xsl:if>
-  </xsl:template>
-
-  <xsl:template match="shipBlueprintSuper/weaponList">
-    <xsl:variable name="maxPower">
-      <xsl:value-of select="sum(@system_power | ../systemList/engines[(not(@start)) or (@start != 'false')]/@power |
-                                                ../systemList/oxygen[(not(@start)) or (@start != 'false')]/@power |
-                                                ../systemList/shields[(not(@start)) or (@start != 'false')]/@power |
-                                                ../systemList/medbay[(not(@start)) or (@start != 'false')]/@power |
-                                                ../systemList/clonebay[(not(@start)) or (@start != 'false')]/@power |
-                                                ../systemList/drones[(not(@start)) or (@start != 'false')]/@power |
-                                                ../systemList/teleporter[(not(@start)) or (@start != 'false')]/@power |
-                                                ../systemList/cloaking[(not(@start)) or (@start != 'false')]/@power |
-                                                ../systemList/artillery[(not(@start)) or (@start != 'false')]/@power |
-                                                ../systemList/hacking[(not(@start)) or (@start != 'false')]/@power |
-                                                ../systemList/mind[(not(@start)) or (@start != 'false')]/@power)"/>
-    </xsl:variable>
-    <shipBlueprint name="{../@name}_{@sector}" layout="{../@layout}" img="{../@img}">
-      <class>
-        <xsl:apply-templates select="../class/@* | ../class/node()"/>
-      </class>
-      <xsl:if test="@sector &gt; 0">
-        <minSector>
-          <xsl:value-of select="@sector"/>
-        </minSector>
-      </xsl:if>
-      <xsl:if test="@sector &lt; 7">
-        <maxSector>
-          <xsl:value-of select="@sector"/>
-        </maxSector>
-      </xsl:if>
-      <systemList>
-        <xsl:apply-templates select="../systemList/*[name() != 'weapons']" mode="normal"/>
-        <weapons power="{@system_power}" room="{../systemList/weapons/@room}"/>
-      </systemList>
-      <weaponList>
-        <xsl:apply-templates select="@missiles | node()"/>
-      </weaponList>
-      <xsl:apply-templates select="../droneList | ../health"/>
-      <maxPower amount="{$maxPower}"/>
-      <xsl:apply-templates select="../crewCount | ../boardingAI | ../aug | ../cloakImage"/>
-    </shipBlueprint>
-
-    <xsl:if test="../class_elite">
-      <shipBlueprint name="{../@name}_ELITE_{@sector}" layout="{../@layout}_elite" img="{../@img}_elite">
-        <class>
-          <xsl:apply-templates select="../class_elite/@* | ../class_elite/node()"/>
-        </class>
-        <xsl:if test="@sector &gt; 0">
-          <minSector>
-            <xsl:value-of select="@sector"/>
-          </minSector>
-        </xsl:if>
-        <xsl:if test="@sector &lt; 7">
-          <maxSector>
-            <xsl:value-of select="@sector"/>
-          </maxSector>
-        </xsl:if>
-        <systemList>
-          <xsl:apply-templates select="../systemList/*[name() != 'weapons']" mode="elite"/>
-          <weapons power="{@system_power}" room="{../systemList/weapons/@room_elite}"/>
-        </systemList>
-        <weaponList missiles="{@missiles + 3}">
-          <xsl:for-each select="weapon">
-            <weapon name="{@name}_UPGRADED"/>
-          </xsl:for-each>
-        </weaponList>
-        <xsl:if test="../droneList">
-          <droneList drones="{../droneList/@drones}" load="{../droneList/@load}_UPGRADED"/>
-        </xsl:if>
-        <health amount="{number(../health/@amount) + 4}"/>
-        <maxPower amount="{number($maxPower) + 6}"/>
-        <xsl:choose>
-          <xsl:when test="../crewCount_elite">
-            <crewCount>
-              <xsl:apply-templates select="../crewCount_elite/@*"/>
-            </crewCount>
-          </xsl:when>
-          <xsl:otherwise>
-            <xsl:apply-templates select="../crewCount"/>
-          </xsl:otherwise>
-        </xsl:choose>
-        <xsl:apply-templates select="../boardingAI | ../aug"/>
-        <xsl:choose>
-          <xsl:when test="../cloakImage_elite">
-            <xsl:apply-templates select="../cloakImage_elite"/>
-          </xsl:when>
-          <xsl:otherwise>
-            <xsl:apply-templates select="../cloakImage"/>
-          </xsl:otherwise>
-        </xsl:choose>
-      </shipBlueprint>
-    </xsl:if>
-
-    <xsl:if test="../class_pirate">
-      <shipBlueprint name="{../@name}_PIRATE_{@sector}" layout="{../@layout}_pirate" img="{../@img}_pirate">
-        <class>
-          <xsl:apply-templates select="../class_pirate/@* | ../class_pirate/node()"/>
-        </class>
-        <xsl:if test="@sector &gt; 0">
-          <minSector>
-            <xsl:value-of select="@sector"/>
-          </minSector>
-        </xsl:if>
-        <xsl:if test="@sector &lt; 7">
-          <maxSector>
-            <xsl:value-of select="@sector"/>
-          </maxSector>
-        </xsl:if>
-        <systemList>
-          <xsl:apply-templates select="../systemList/*[(name() != 'weapons') and @room_pirate]" mode="pirate"/>
-          <weapons power="{@system_power}" room="{../systemList/weapons/@room_pirate}"/>
-        </systemList>
-        <weaponList>
-          <xsl:apply-templates select="@missiles | node()"/>
-        </weaponList>
-        <xsl:apply-templates select="../droneList | ../health"/>
-        <maxPower amount="{$maxPower}"/>
-        <crewCount amount="{../crewCount/@amount}" max="{../crewCount/@max}" class="random"/>
-        <xsl:apply-templates select="../boardingAI | ../aug"/>
-        <xsl:choose>
-          <xsl:when test="../cloakImage_pirate">
-            <xsl:apply-templates select="../cloakImage_pirate"/>
-          </xsl:when>
-          <xsl:otherwise>
-            <xsl:apply-templates select="../cloakImage"/>
-          </xsl:otherwise>
-        </xsl:choose>
-      </shipBlueprint>
-    </xsl:if>
-  </xsl:template>
-
   <xsl:template match="@* | node()" mode="normal">
     <xsl:copy>
       <xsl:apply-templates select="@power | @max | @room | @start | node()" mode="normal"/>
@@ -459,7 +222,7 @@
     </xsl:copy>
   </xsl:template>
 
-  <xsl:template match="shipBlueprintSuperNew">
+  <xsl:template match="shipBlueprintEnemy">
     <xsl:variable name="maxPower">
       <xsl:value-of select="sum(systemList/engines[(not(@start)) or (@start != 'false')]/@power |
                                 systemList/oxygen[(not(@start)) or (@start != 'false')]/@power |
@@ -586,7 +349,7 @@
     </xsl:if>
   </xsl:template>
 
-  <xsl:template match="shipBlueprintSuperNew/sector">
+  <xsl:template match="shipBlueprintEnemy/sector">
     <xsl:variable name="maxPower">
       <xsl:value-of select="sum(weaponList/@system_power |
                                 droneList/@system_power |

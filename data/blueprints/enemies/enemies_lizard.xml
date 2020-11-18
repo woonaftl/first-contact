@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../schema/autoBlueprints.xsd">
+  <blueprintList name="SHIPS_CIVILIAN">
+    <name>LIZARD_SCOUT</name>
+  </blueprintList>
+  <blueprintList name="SHIPS_LIZARD">
+    <name>LIZARD_ASSAULT</name>
+    <name>LIZARD_BOMBER</name>
+    <name>LIZARD_FIGHTER</name>
+    <name>LIZARD_SCOUT</name>
+  </blueprintList>
+  <blueprintList name="SHIPS_LIZARD_PIRATE">
+    <name>LIZARD_ASSAULT_PIRATE</name>
+    <name>LIZARD_BOMBER_PIRATE</name>
+    <name>LIZARD_FIGHTER_PIRATE</name>
+    <name>LIZARD_SCOUT_PIRATE</name>
+  </blueprintList>
+  <blueprintList name="SHIPS_PIRATE">
+    <name>LIZARD_ASSAULT_PIRATE</name>
+    <name>LIZARD_BOMBER_PIRATE</name>
+    <name>LIZARD_FIGHTER_PIRATE</name>
+    <name>LIZARD_SCOUT_PIRATE</name>
+  </blueprintList>
+
+  <!--TODO add 3 generic ships (7) -->
+
+  <shipBlueprintEnemy name="LIZARD_ASSAULT" img="lizard_assault" layout="lizard_assault">
+    <class>Lizard Assault</class>
+    <class_pirate>Pirate Assault</class_pirate>
+    <systemList>
+      <pilot power="1" max="3" room="0" room_pirate="0"/>
+      <clonebay power="1" max="3" room="2" room_pirate="9" start="false"/>
+      <oxygen power="1" max="3" room="12" room_pirate="6"/>
+      <shields power="2" max="8" room="1" room_pirate="12"/>
+      <engines power="1" max="5" room="8" room_pirate="10"/>
+      <weapons room="4" room_pirate="7"/>
+      <teleporter power="1" max="3" room="3" room_pirate="1"/>
+      <cloaking power="1" max="3" room="11" room_pirate="11" start="false"/>
+    </systemList>
+    <sector id="4">
+      <weaponList missiles="1" system_power="6">
+        <weapon name="WEAPONS_MISSILES_1"/>
+        <weapon name="WEAPONS_CORE_3"/>
+        <weapon name="WEAPONS_CORE_2"/>
+        <weapon name="WEAPONS_CORE_1"/>
+      </weaponList>
+    </sector>
+    <sector id="5">
+      <weaponList missiles="1" system_power="7">
+        <weapon name="WEAPONS_MISSILES_2"/>
+        <weapon name="WEAPONS_CORE_3"/>
+        <weapon name="WEAPONS_CORE_2"/>
+        <weapon name="WEAPONS_CORE_2"/>
+      </weaponList>
+    </sector>
+    <sector id="6">
+      <weaponList missiles="1" system_power="8">
+        <weapon name="WEAPONS_MISSILES_2"/>
+        <weapon name="WEAPONS_CORE_3"/>
+        <weapon name="WEAPONS_CORE_3"/>
+        <weapon name="WEAPONS_CORE_2"/>
+      </weaponList>
+    </sector>
+    <sector id="7">
+      <weaponList missiles="2" system_power="8">
+        <weapon name="WEAPONS_MISSILES_2"/>
+        <weapon name="WEAPONS_CORE_3"/>
+        <weapon name="WEAPONS_CORE_3"/>
+        <weapon name="WEAPONS_CORE_2"/>
+      </weaponList>
+    </sector>
+    <health amount="12"/>
+    <crewCount amount="4" max="7" class="lizard"/>
+    <boardingAI>sabotage</boardingAI>
+    <cloakImage>lizard_assault</cloakImage>
+  </shipBlueprintEnemy>
+
+  <shipBlueprintEnemy name="LIZARD_BOMBER" img="lizard_bomber" layout="lizard_bomber">
+    <class>Lizard Bomber</class>
+    <class_pirate>Pirate Bomber</class_pirate>
+    <systemList>
+      <pilot power="1" max="3" room="0" room_pirate="0"/>
+      <clonebay power="1" max="3" room="3" room_pirate="2" start="false"/>
+      <oxygen power="1" max="3" room="4" room_pirate="5"/>
+      <shields power="2" max="8" room="5" room_pirate="6"/>
+      <engines power="1" max="5" room="6" room_pirate="10"/>
+      <weapons room="2" room_pirate="1"/>
+      <teleporter power="1" max="3" room="1" room_pirate="7"/>
+    </systemList>
+    <sector id="2">
+      <weaponList missiles="2" system_power="4">
+        <weapon name="WEAPONS_BOMB"/>
+        <weapon name="WEAPONS_CORE_2"/>
+        <weapon name="WEAPONS_LASER_1"/>
+        <weapon name="WEAPONS_CORE_1"/>
+      </weaponList>
+    </sector>
+    <sector id="3">
+      <weaponList missiles="2" system_power="5">
+        <weapon name="WEAPONS_BOMB"/>
+        <weapon name="WEAPONS_CORE_2"/>
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_CORE_1"/>
+      </weaponList>
+    </sector>
+    <sector id="4">
+      <weaponList missiles="2" system_power="6">
+        <weapon name="WEAPONS_BOMB"/>
+        <weapon name="WEAPONS_CORE_3"/>
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_CORE_1"/>
+      </weaponList>
+    </sector>
+    <sector id="5">
+      <weaponList missiles="2" system_power="7">
+        <weapon name="WEAPONS_BOMB"/>
+        <weapon name="WEAPONS_CORE_4"/>
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_CORE_1"/>
+      </weaponList>
+    </sector>
+    <health amount="11"/>
+    <crewCount amount="4" max="6" class="lizard"/>
+    <boardingAI>sabotage</boardingAI>
+    <cloakImage>lizard_bomber</cloakImage>
+  </shipBlueprintEnemy>
+  
+  <shipBlueprintEnemy name="LIZARD_FIGHTER" img="lizard_fighter" layout="lizard_fighter">
+    <class>Lizard Fighter</class>
+    <class_pirate>Pirate Fighter</class_pirate>
+    <systemList>
+      <pilot power="1" max="3" room="0" room_pirate="0"/>
+      <clonebay power="1" max="3" room="1" room_pirate="3" start="false"/>
+      <oxygen power="1" max="3" room="4" room_pirate="2"/>
+      <shields power="2" max="8" room="2" room_pirate="4"/>
+      <engines power="1" max="5" room="5" room_pirate="5"/>
+      <weapons room="3" room_pirate="1"/>
+      <teleporter power="1" max="3" room="6" room_pirate="6" start="false"/>
+    </systemList>
+    <sector id="1">
+      <weaponList missiles="0" system_power="4">
+        <weapon name="WEAPONS_CORE_2"/>
+        <weapon name="WEAPONS_CORE_2"/>
+      </weaponList>
+    </sector>
+    <sector id="2">
+      <weaponList missiles="0" system_power="4">
+        <weapon name="WEAPONS_CORE_2"/>
+        <weapon name="WEAPONS_CORE_2"/>
+      </weaponList>
+    </sector>
+    <sector id="3">
+      <weaponList missiles="1" system_power="5">
+        <weapon name="WEAPONS_MISSILES_1"/>
+        <weapon name="WEAPONS_CORE_2"/>
+        <weapon name="WEAPONS_CORE_2"/>
+        <weapon name="WEAPONS_CORE_1"/>
+      </weaponList>
+    </sector>
+    <sector id="4">
+      <weaponList missiles="1" system_power="6">
+        <weapon name="WEAPONS_MISSILES_1"/>
+        <weapon name="WEAPONS_CORE_3"/>
+        <weapon name="WEAPONS_CORE_2"/>
+        <weapon name="WEAPONS_CORE_1"/>
+      </weaponList>
+    </sector>
+    <health amount="10"/>
+    <crewCount amount="3" max="5" class="lizard"/>
+    <boardingAI>sabotage</boardingAI>
+    <cloakImage>lizard_fighter</cloakImage>
+  </shipBlueprintEnemy>
+
+  <shipBlueprintEnemy name="LIZARD_SCOUT" img="lizard_scout" layout="lizard_scout">
+    <class>Lizard Scout</class>
+    <class_pirate>Pirate Scout</class_pirate>
+    <systemList>
+      <pilot power="1" max="3" room="0" room_pirate="0"/>
+      <clonebay power="1" max="3" room="3" room_pirate="2" start="false"/>
+      <oxygen power="1" max="3" room="7" room_pirate="5"/>
+      <shields power="2" max="8" room="6" room_pirate="4"/>
+      <engines power="1" max="5" room="8" room_pirate="6"/>
+      <weapons room="2" room_pirate="3"/>
+    </systemList>
+    <sector id="0">
+      <weaponList missiles="1" system_power="3">
+        <weapon name="WEAPONS_MISSILES_1"/>
+        <weapon name="WEAPONS_CORE_2"/>
+        <weapon name="WEAPONS_LASER_1"/>
+      </weaponList>
+    </sector>
+    <sector id="1">
+      <weaponList missiles="1" system_power="4">
+        <weapon name="WEAPONS_MISSILES_1"/>
+        <weapon name="WEAPONS_CORE_2"/>
+        <weapon name="WEAPONS_CORE_1"/>
+        <weapon name="WEAPONS_LASER_1"/>
+      </weaponList>
+    </sector>
+    <sector id="2">
+      <weaponList missiles="1" system_power="4">
+        <weapon name="WEAPONS_MISSILES_1"/>
+        <weapon name="WEAPONS_CORE_2"/>
+        <weapon name="WEAPONS_CORE_1"/>
+        <weapon name="WEAPONS_LASER_1"/>
+      </weaponList>
+    </sector>
+    <sector id="3">
+      <weaponList missiles="1" system_power="5">
+        <weapon name="WEAPONS_MISSILES_1"/>
+        <weapon name="WEAPONS_CORE_3"/>
+        <weapon name="WEAPONS_CORE_1"/>
+        <weapon name="WEAPONS_LASER_1"/>
+      </weaponList>
+    </sector>
+    <health amount="9"/>
+    <crewCount amount="3" max="4" class="lizard"/>
+    <boardingAI>sabotage</boardingAI>
+    <cloakImage>lizard_scout</cloakImage>
+  </shipBlueprintEnemy>
+</FTL>

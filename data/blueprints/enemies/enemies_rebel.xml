@@ -41,7 +41,7 @@
     <name>REBEL_ARTILLERY_MISSILE</name>
   </blueprintList>
 
-  <shipBlueprintSuperNew name="REBEL_FAT" layout="rebel_squat" img="rebel_squat">
+  <shipBlueprintEnemy name="REBEL_FAT" layout="rebel_squat" img="rebel_squat">
     <class>Rebel Rigger</class>
     <class_pirate>Pirate Rigger</class_pirate>
     <systemList>
@@ -86,9 +86,9 @@
     <crewCount amount="3" max="5" class="human"/>
     <boardingAI>sabotage</boardingAI>
     <cloakImage>rebel_squat</cloakImage>
-  </shipBlueprintSuperNew>
+  </shipBlueprintEnemy>
 
-  <shipBlueprintSuper name="REBEL_SKINNY" layout="rebel_long" img="rebel_long">
+  <shipBlueprintEnemy name="REBEL_SKINNY" layout="rebel_long" img="rebel_long">
     <class>Rebel Fighter</class>
     <class_elite>Elite Fighter</class_elite>
     <class_pirate>Pirate Fighter</class_pirate>
@@ -101,34 +101,42 @@
       <medbay power="1" max="2" room="3" room_elite="3" room_pirate="8" start="false"/>
       <teleporter power="1" max="1" room="1" room_elite="1" room_pirate="7" start="false"/>
     </systemList>
-    <weaponList sector="0" missiles="1" system_power="3">
-      <weapon name="WEAPONS_MISSILES_1"/>
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_LASER_1"/>
-    </weaponList>
-    <weaponList sector="1" missiles="1" system_power="4">
-      <weapon name="WEAPONS_MISSILES_1"/>
-      <weapon name="WEAPONS_LASER_3"/>
-      <weapon name="WEAPONS_LASER_1"/>
-    </weaponList>
-    <weaponList sector="2" missiles="1" system_power="4">
-      <weapon name="WEAPONS_MISSILES_1"/>
-      <weapon name="WEAPONS_LASER_3"/>
-      <weapon name="WEAPONS_LASER_1"/>
-    </weaponList>
-    <weaponList sector="3" missiles="1" system_power="5">
-      <weapon name="WEAPONS_MISSILES_2"/>
-      <weapon name="WEAPONS_LASER_3"/>
-      <weapon name="WEAPONS_LASER_2"/>
-    </weaponList>
+    <sector id="0">
+      <weaponList missiles="1" system_power="3">
+        <weapon name="WEAPONS_MISSILES_1"/>
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_LASER_1"/>
+      </weaponList>
+    </sector>
+    <sector id="1">
+      <weaponList missiles="1" system_power="4">
+        <weapon name="WEAPONS_MISSILES_1"/>
+        <weapon name="WEAPONS_LASER_3"/>
+        <weapon name="WEAPONS_LASER_1"/>
+      </weaponList>
+    </sector>
+    <sector id="2">
+      <weaponList missiles="1" system_power="4">
+        <weapon name="WEAPONS_MISSILES_1"/>
+        <weapon name="WEAPONS_LASER_3"/>
+        <weapon name="WEAPONS_LASER_1"/>
+      </weaponList>
+    </sector>
+    <sector id="3">
+      <weaponList missiles="1" system_power="5">
+        <weapon name="WEAPONS_MISSILES_2"/>
+        <weapon name="WEAPONS_LASER_3"/>
+        <weapon name="WEAPONS_LASER_2"/>
+      </weaponList>
+    </sector>
     <health amount="10"/>
     <crewCount amount="3" max="6" class="human"/>
     <crewCount_elite amount="3" max="8" class="human"/>
     <boardingAI>sabotage</boardingAI>
     <cloakImage>rebel_long</cloakImage>
-  </shipBlueprintSuper>
+  </shipBlueprintEnemy>
 
-  <shipBlueprintSuperNew name="REBEL_BATTLESHIP" layout="rebel_battleship" img="rebel_battleship">
+  <shipBlueprintEnemy name="REBEL_BATTLESHIP" layout="rebel_battleship" img="rebel_battleship">
     <class>Rebel Battleship</class>
     <class_elite>Elite Battleship</class_elite>
     <systemList>
@@ -184,9 +192,9 @@
     <boardingAI>sabotage</boardingAI>
     <cloakImage>rebel_battleship</cloakImage>
     <cloakImage_elite>rebel_battleship_elite</cloakImage_elite>
-  </shipBlueprintSuperNew>
+  </shipBlueprintEnemy>
 
-  <shipBlueprintSuper name="REBEL_BOMBER" layout="rebel_bomber" img="rebel_bomber">
+  <shipBlueprintEnemy name="REBEL_BOMBER" layout="rebel_bomber" img="rebel_bomber">
     <class>Rebel Bomber</class>
     <class_elite>Elite Bomber</class_elite>
     <systemList>
@@ -199,39 +207,47 @@
       <medbay power="2" max="3" room="5" room_elite="7"/>
       <doors power="1" max="3" room="8" room_elite="4" start="false"/>
     </systemList>
-    <weaponList sector="4" missiles="3" system_power="6">
-      <weapon name="WEAPONS_BOMB"/>
-      <weapon name="WEAPONS_LASER_3"/>
-      <weapon name="WEAPONS_HEAVY_2"/>
-      <weapon name="WEAPONS_LASER_1"/>
-    </weaponList>
-    <weaponList sector="5" missiles="4" system_power="7">
-      <weapon name="WEAPONS_BOMB"/>
-      <weapon name="WEAPONS_LASER_3"/>
-      <weapon name="WEAPONS_HEAVY_3"/>
-      <weapon name="WEAPONS_LASER_1"/>
-    </weaponList>
-    <weaponList sector="6" missiles="5" system_power="8">
-      <weapon name="WEAPONS_BOMB"/>
-      <weapon name="WEAPONS_LASER_4"/>
-      <weapon name="WEAPONS_HEAVY_3"/>
-      <weapon name="WEAPONS_LASER_1"/>
-    </weaponList>
-    <weaponList sector="7" missiles="6" system_power="8">
-      <weapon name="WEAPONS_BOMB"/>
-      <weapon name="WEAPONS_LASER_4"/>
-      <weapon name="WEAPONS_HEAVY_3"/>
-      <weapon name="WEAPONS_LASER_1"/>
-    </weaponList>
+    <sector id="4">
+      <weaponList missiles="3" system_power="6">
+        <weapon name="WEAPONS_BOMB"/>
+        <weapon name="WEAPONS_LASER_3"/>
+        <weapon name="WEAPONS_HEAVY_2"/>
+        <weapon name="WEAPONS_LASER_1"/>
+      </weaponList>
+    </sector>
+    <sector id="5">
+      <weaponList missiles="4" system_power="7">
+        <weapon name="WEAPONS_BOMB"/>
+        <weapon name="WEAPONS_LASER_3"/>
+        <weapon name="WEAPONS_HEAVY_3"/>
+        <weapon name="WEAPONS_LASER_1"/>
+      </weaponList>
+    </sector>
+    <sector id="6">
+      <weaponList missiles="5" system_power="8">
+        <weapon name="WEAPONS_BOMB"/>
+        <weapon name="WEAPONS_LASER_4"/>
+        <weapon name="WEAPONS_HEAVY_3"/>
+        <weapon name="WEAPONS_LASER_1"/>
+      </weaponList>
+    </sector>
+    <sector id="7">
+      <weaponList missiles="6" system_power="8">
+        <weapon name="WEAPONS_BOMB"/>
+        <weapon name="WEAPONS_LASER_4"/>
+        <weapon name="WEAPONS_HEAVY_3"/>
+        <weapon name="WEAPONS_LASER_1"/>
+      </weaponList>
+    </sector>
     <health amount="12"/>
     <crewCount amount="7" max="9" class="human"/>
     <crewCount_elite amount="9" max="11" class="human"/>
     <boardingAI>sabotage</boardingAI>
     <cloakImage>rebel_bomber</cloakImage>
     <cloakImage_elite>rebel_bomber_elite</cloakImage_elite>
-  </shipBlueprintSuper>
+  </shipBlueprintEnemy>
 
-  <shipBlueprintSuper name="REBEL_INTERCEPTOR" layout="rebel_interceptor" img="rebel_interceptor">
+  <shipBlueprintEnemy name="REBEL_INTERCEPTOR" layout="rebel_interceptor" img="rebel_interceptor">
     <class>Rebel Interceptor</class>
     <class_elite>Elite Interceptor</class_elite>
     <class_pirate>Pirate Interceptor</class_pirate>
@@ -244,35 +260,43 @@
       <clonebay power="1" max="2" room="6" room_elite="4" start="false" room_pirate="3"/>
       <doors power="1" max="3" room="7" room_elite="3" room_pirate="2" start="false"/>
     </systemList>
-    <weaponList sector="0" missiles="1" system_power="3">
-      <weapon name="WEAPONS_MISSILES_1"/>
-      <weapon name="WEAPONS_CORE_2"/>
-      <weapon name="WEAPONS_CORE_1"/>
-    </weaponList>
-    <weaponList sector="1" missiles="1" system_power="4">
-      <weapon name="WEAPONS_MISSILES_2"/>
-      <weapon name="WEAPONS_CORE_2"/>
-      <weapon name="WEAPONS_CORE_2"/>
-    </weaponList>
-    <weaponList sector="2" missiles="1" system_power="4">
-      <weapon name="WEAPONS_MISSILES_2"/>
-      <weapon name="WEAPONS_CORE_2"/>
-      <weapon name="WEAPONS_CORE_2"/>
-    </weaponList>
-    <weaponList sector="3" missiles="1" system_power="5">
-      <weapon name="WEAPONS_MISSILES_2"/>
-      <weapon name="WEAPONS_CORE_3"/>
-      <weapon name="WEAPONS_CORE_2"/>
-    </weaponList>
+    <sector id="0">
+      <weaponList missiles="1" system_power="3">
+        <weapon name="WEAPONS_MISSILES_1"/>
+        <weapon name="WEAPONS_CORE_2"/>
+        <weapon name="WEAPONS_CORE_1"/>
+      </weaponList>
+    </sector>
+    <sector id="1">
+      <weaponList missiles="1" system_power="4">
+        <weapon name="WEAPONS_MISSILES_2"/>
+        <weapon name="WEAPONS_CORE_2"/>
+        <weapon name="WEAPONS_CORE_2"/>
+      </weaponList>
+    </sector>
+    <sector id="2">
+      <weaponList missiles="1" system_power="4">
+        <weapon name="WEAPONS_MISSILES_2"/>
+        <weapon name="WEAPONS_CORE_2"/>
+        <weapon name="WEAPONS_CORE_2"/>
+      </weaponList>
+    </sector>
+    <sector id="3">
+      <weaponList missiles="1" system_power="5">
+        <weapon name="WEAPONS_MISSILES_2"/>
+        <weapon name="WEAPONS_CORE_3"/>
+        <weapon name="WEAPONS_CORE_2"/>
+      </weaponList>
+    </sector>
     <health amount="8"/>
     <crewCount amount="3" max="6" class="human"/>
     <crewCount_elite amount="3" max="8" class="human"/>
     <boardingAI>sabotage</boardingAI>
     <cloakImage>rebel_interceptor</cloakImage>
     <cloakImage_elite>rebel_interceptor_elite</cloakImage_elite>
-  </shipBlueprintSuper>
+  </shipBlueprintEnemy>
 
-  <shipBlueprintSuperNew name="REBEL_PREDATOR" layout="rebel_predator" img="rebel_predator">
+  <shipBlueprintEnemy name="REBEL_PREDATOR" layout="rebel_predator" img="rebel_predator">
     <class>Rebel Predator</class>
     <class_elite>Elite Predator</class_elite>
     <systemList>
@@ -336,9 +360,9 @@
     <boardingAI>sabotage</boardingAI>
     <cloakImage>rebel_predator</cloakImage>
     <cloakImage_elite>rebel_predator_elite</cloakImage_elite>
-  </shipBlueprintSuperNew>
+  </shipBlueprintEnemy>
 
-  <shipBlueprintSuper name="REBEL_TRANSPORT" layout="rebel_transport" img="rebel_transport">
+  <shipBlueprintEnemy name="REBEL_TRANSPORT" layout="rebel_transport" img="rebel_transport">
     <class>Rebel Transport</class>
     <systemList>
       <pilot power="1" max="3" room="0"/>
@@ -349,52 +373,68 @@
       <medbay power="1" max="3" room="7"/>
       <doors power="1" max="3" room="6" start="false"/>
     </systemList>
-    <weaponList sector="0" missiles="0" system_power="3">
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_LASER_1"/>
-    </weaponList>
-    <weaponList sector="1" missiles="0" system_power="4">
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_LASER_1"/>
-      <weapon name="WEAPONS_CORE_1"/>
-    </weaponList>
-    <weaponList sector="2" missiles="0" system_power="4">
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_LASER_1"/>
-      <weapon name="WEAPONS_CORE_1"/>
-    </weaponList>
-    <weaponList sector="3" missiles="0" system_power="5">
-      <weapon name="WEAPONS_LASER_3"/>
-      <weapon name="WEAPONS_LASER_1"/>
-      <weapon name="WEAPONS_CORE_1"/>
-    </weaponList>
-    <weaponList sector="4" missiles="0" system_power="6">
-      <weapon name="WEAPONS_LASER_3"/>
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_CORE_1"/>
-    </weaponList>
-    <weaponList sector="5" missiles="0" system_power="7">
-      <weapon name="WEAPONS_LASER_3"/>
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_CORE_2"/>
-    </weaponList>
-    <weaponList sector="6" missiles="0" system_power="8">
-      <weapon name="WEAPONS_LASER_3"/>
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_CORE_2"/>
-      <weapon name="WEAPONS_CORE_1"/>
-    </weaponList>
-    <weaponList sector="7" missiles="0" system_power="8">
-      <weapon name="WEAPONS_LASER_3"/>
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_CORE_2"/>
-      <weapon name="WEAPONS_CORE_1"/>
-    </weaponList>
+    <sector id="0">
+      <weaponList missiles="0" system_power="3">
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_LASER_1"/>
+      </weaponList>
+    </sector>
+    <sector id="1">
+      <weaponList missiles="0" system_power="4">
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_LASER_1"/>
+        <weapon name="WEAPONS_CORE_1"/>
+      </weaponList>
+    </sector>
+    <sector id="2">
+      <weaponList missiles="0" system_power="4">
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_LASER_1"/>
+        <weapon name="WEAPONS_CORE_1"/>
+      </weaponList>
+    </sector>
+    <sector id="3">
+      <weaponList missiles="0" system_power="5">
+        <weapon name="WEAPONS_LASER_3"/>
+        <weapon name="WEAPONS_LASER_1"/>
+        <weapon name="WEAPONS_CORE_1"/>
+      </weaponList>
+    </sector>
+    <sector id="4">
+      <weaponList missiles="0" system_power="6">
+        <weapon name="WEAPONS_LASER_3"/>
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_CORE_1"/>
+      </weaponList>
+    </sector>
+    <sector id="5">
+      <weaponList missiles="0" system_power="7">
+        <weapon name="WEAPONS_LASER_3"/>
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_CORE_2"/>
+      </weaponList>
+    </sector>
+    <sector id="6">
+      <weaponList missiles="0" system_power="8">
+        <weapon name="WEAPONS_LASER_3"/>
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_CORE_2"/>
+        <weapon name="WEAPONS_CORE_1"/>
+      </weaponList>
+    </sector>
+    <sector id="7">
+      <weaponList missiles="0" system_power="8">
+        <weapon name="WEAPONS_LASER_3"/>
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_CORE_2"/>
+        <weapon name="WEAPONS_CORE_1"/>
+      </weaponList>
+    </sector>
     <health amount="10"/>
     <crewCount amount="3" max="5" class="human"/>
     <boardingAI>sabotage</boardingAI>
     <cloakImage>rebel_transport</cloakImage>
-  </shipBlueprintSuper>
+  </shipBlueprintEnemy>
 
   <shipBlueprint name="REBEL_ARTILLERY_BEAM" layout="rebel_artillery" img="rebel_artillery_beam">
     <class>Rebel Artillery Ship</class>

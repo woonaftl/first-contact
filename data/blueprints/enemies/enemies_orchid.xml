@@ -9,7 +9,7 @@
 
   <!--TODO add 2 generic ships (6) -->
 
-  <shipBlueprintSuper name="ORCHID_DESTROYER" img="orchid_destroyer" layout="orchid_destroyer">
+  <shipBlueprintEnemy name="ORCHID_DESTROYER" img="orchid_destroyer" layout="orchid_destroyer">
     <class>Orchid Destroyer</class>
     <systemList>
       <pilot power="1" max="3" room="0"/>
@@ -20,34 +20,42 @@
       <medbay power="1" max="3" room="6" start="false"/>
       <doors power="1" max="3" room="2"/>
     </systemList>
-    <weaponList sector="2" missiles="0" system_power="4">
-      <weapon name="WEAPONS_SPAWNER_2"/>
-      <weapon name="WEAPONS_LASER_2"/>
-    </weaponList>
-    <weaponList sector="3" missiles="0" system_power="5">
-      <weapon name="WEAPONS_SPAWNER_2"/>
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_LASER_1"/>
-    </weaponList>
-    <weaponList sector="4" missiles="0" system_power="6">
-      <weapon name="WEAPONS_SPAWNER_2"/>
-      <weapon name="WEAPONS_SPAWNER_2"/>
-      <weapon name="WEAPONS_LASER_1"/>
-      <weapon name="WEAPONS_LASER_1"/>
-    </weaponList>
-    <weaponList sector="5" missiles="0" system_power="7">
-      <weapon name="WEAPONS_SPAWNER_2"/>
-      <weapon name="WEAPONS_SPAWNER_2"/>
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_LASER_1"/>
-    </weaponList>
+    <sector id="2">
+      <weaponList missiles="0" system_power="4">
+        <weapon name="WEAPONS_SPAWNER_2"/>
+        <weapon name="WEAPONS_LASER_2"/>
+      </weaponList>
+    </sector>
+    <sector id="3">
+      <weaponList missiles="0" system_power="5">
+        <weapon name="WEAPONS_SPAWNER_2"/>
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_LASER_1"/>
+      </weaponList>
+    </sector>
+    <sector id="4">
+      <weaponList missiles="0" system_power="6">
+        <weapon name="WEAPONS_SPAWNER_2"/>
+        <weapon name="WEAPONS_SPAWNER_2"/>
+        <weapon name="WEAPONS_LASER_1"/>
+        <weapon name="WEAPONS_LASER_1"/>
+      </weaponList>
+    </sector>
+    <sector id="5">
+      <weaponList missiles="0" system_power="7">
+        <weapon name="WEAPONS_SPAWNER_2"/>
+        <weapon name="WEAPONS_SPAWNER_2"/>
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_LASER_1"/>
+      </weaponList>
+    </sector>
     <health amount="10"/>
     <crewCount amount="3" max="6" class="orchid"/>
     <boardingAI>sabotage</boardingAI>
     <cloakImage>orchid_destroyer</cloakImage>
-  </shipBlueprintSuper>
+  </shipBlueprintEnemy>
 
-  <shipBlueprintSuper name="ORCHID_FIGHTER" img="orchid_fighter" layout="orchid_fighter">
+  <shipBlueprintEnemy name="ORCHID_FIGHTER" img="orchid_fighter" layout="orchid_fighter">
     <class>Orchid Fighter</class>
     <systemList>
       <pilot power="1" max="3" room="0"/>
@@ -57,32 +65,40 @@
       <shields power="2" max="7" room="5"/>
       <medbay power="1" max="3" room="2" start="false"/>
     </systemList>
-    <weaponList sector="1" missiles="0" system_power="4">
-      <weapon name="WEAPONS_SPAWNER_2"/>
-      <weapon name="WEAPONS_ANY_2"/>
-    </weaponList>
-    <weaponList sector="2" missiles="0" system_power="4">
-      <weapon name="WEAPONS_SPAWNER_2"/>
-      <weapon name="WEAPONS_ANY_2"/>
-    </weaponList>
-    <weaponList sector="3" missiles="0" system_power="5">
-      <weapon name="WEAPONS_SPAWNER_2"/>
-      <weapon name="WEAPONS_ANY_2"/>
-      <weapon name="WEAPONS_ANY_1"/>
-    </weaponList>
-    <weaponList sector="4" missiles="0" system_power="6">
-      <weapon name="WEAPONS_SPAWNER_2"/>
-      <weapon name="WEAPONS_ANY_2"/>
-      <weapon name="WEAPONS_ANY_1"/>
-      <weapon name="WEAPONS_ANY_1"/>
-    </weaponList>
+    <sector id="1">
+      <weaponList missiles="0" system_power="4">
+        <weapon name="WEAPONS_SPAWNER_2"/>
+        <weapon name="WEAPONS_ANY_2"/>
+      </weaponList>
+    </sector>
+    <sector id="2">
+      <weaponList missiles="0" system_power="4">
+        <weapon name="WEAPONS_SPAWNER_2"/>
+        <weapon name="WEAPONS_ANY_2"/>
+      </weaponList>
+    </sector>
+    <sector id="3">
+      <weaponList missiles="0" system_power="5">
+        <weapon name="WEAPONS_SPAWNER_2"/>
+        <weapon name="WEAPONS_ANY_2"/>
+        <weapon name="WEAPONS_ANY_1"/>
+      </weaponList>
+    </sector>
+    <sector id="4">
+      <weaponList missiles="0" system_power="6">
+        <weapon name="WEAPONS_SPAWNER_2"/>
+        <weapon name="WEAPONS_ANY_2"/>
+        <weapon name="WEAPONS_ANY_1"/>
+        <weapon name="WEAPONS_ANY_1"/>
+      </weaponList>
+    </sector>
     <health amount="9"/>
     <crewCount amount="3" max="5" class="orchid"/>
     <boardingAI>sabotage</boardingAI>
     <cloakImage>orchid_fighter</cloakImage>
-  </shipBlueprintSuper>
+  </shipBlueprintEnemy>
 
-  <shipBlueprintSuper name="ORCHID_GUARD" img="orchid_guard" layout="orchid_guard">
+  <shipBlueprintEnemy name="ORCHID_GUARD" img="orchid_guard" layout="orchid_guard">
     <class>Orchid Guard</class>
     <systemList>
       <pilot power="1" max="3" room="0"/>
@@ -93,36 +109,44 @@
       <medbay power="1" max="3" room="10" start="false"/>
       <doors power="1" max="3" room="6" start="false"/>
     </systemList>
-    <weaponList sector="3" missiles="0" system_power="5">
-      <weapon name="WEAPONS_SPAWNER_3"/>
-      <weapon name="WEAPONS_ANY_1"/>
-      <weapon name="WEAPONS_ANY_1"/>
-    </weaponList>
-    <weaponList sector="4" missiles="0" system_power="6">
-      <weapon name="WEAPONS_SPAWNER_3"/>
-      <weapon name="WEAPONS_ANY_1"/>
-      <weapon name="WEAPONS_ANY_1"/>
-      <weapon name="WEAPONS_ANY_1"/>
-    </weaponList>
-    <weaponList sector="5" missiles="0" system_power="7">
-      <weapon name="WEAPONS_SPAWNER_3"/>
-      <weapon name="WEAPONS_ANY_2"/>
-      <weapon name="WEAPONS_ANY_1"/>
-      <weapon name="WEAPONS_ANY_1"/>
-    </weaponList>
-    <weaponList sector="6" missiles="0" system_power="8">
-      <weapon name="WEAPONS_SPAWNER_3"/>
-      <weapon name="WEAPONS_ANY_2"/>
-      <weapon name="WEAPONS_ANY_2"/>
-      <weapon name="WEAPONS_ANY_1"/>
-    </weaponList>
+    <sector id="3">
+      <weaponList missiles="0" system_power="5">
+        <weapon name="WEAPONS_SPAWNER_3"/>
+        <weapon name="WEAPONS_ANY_1"/>
+        <weapon name="WEAPONS_ANY_1"/>
+      </weaponList>
+    </sector>
+    <sector id="4">
+      <weaponList missiles="0" system_power="6">
+        <weapon name="WEAPONS_SPAWNER_3"/>
+        <weapon name="WEAPONS_ANY_1"/>
+        <weapon name="WEAPONS_ANY_1"/>
+        <weapon name="WEAPONS_ANY_1"/>
+      </weaponList>
+    </sector>
+    <sector id="5">
+      <weaponList missiles="0" system_power="7">
+        <weapon name="WEAPONS_SPAWNER_3"/>
+        <weapon name="WEAPONS_ANY_2"/>
+        <weapon name="WEAPONS_ANY_1"/>
+        <weapon name="WEAPONS_ANY_1"/>
+      </weaponList>
+    </sector>
+    <sector id="6">
+      <weaponList missiles="0" system_power="8">
+        <weapon name="WEAPONS_SPAWNER_3"/>
+        <weapon name="WEAPONS_ANY_2"/>
+        <weapon name="WEAPONS_ANY_2"/>
+        <weapon name="WEAPONS_ANY_1"/>
+      </weaponList>
+    </sector>
     <health amount="11"/>
     <crewCount amount="4" max="7" class="orchid"/>
     <boardingAI>sabotage</boardingAI>
     <cloakImage>orchid_guard</cloakImage>
-  </shipBlueprintSuper>
+  </shipBlueprintEnemy>
 
-  <shipBlueprintSuper name="ORCHID_SCOUT" img="orchid_scout" layout="orchid_scout">
+  <shipBlueprintEnemy name="ORCHID_SCOUT" img="orchid_scout" layout="orchid_scout">
     <class>Orchid Scout</class>
     <systemList>
       <pilot power="1" max="3" room="0"/>
@@ -132,27 +156,35 @@
       <shields power="2" max="7" room="2"/>
       <medbay power="1" max="3" room="3" start="false"/>
     </systemList>
-    <weaponList sector="0" missiles="0" system_power="3">
-      <weapon name="WEAPONS_SPAWNER_2"/>
-      <weapon name="WEAPONS_LASER_1"/>
-    </weaponList>
-    <weaponList sector="1" missiles="0" system_power="4">
-      <weapon name="WEAPONS_SPAWNER_2"/>
-      <weapon name="WEAPONS_LASER_2"/>
-    </weaponList>
-    <weaponList sector="2" missiles="0" system_power="4">
-      <weapon name="WEAPONS_SPAWNER_2"/>
-      <weapon name="WEAPONS_LASER_2"/>
-    </weaponList>
-    <weaponList sector="3" missiles="1" system_power="5">
-      <weapon name="WEAPONS_MISSILES_1"/>
-      <weapon name="WEAPONS_SPAWNER_2"/>
-      <weapon name="WEAPONS_LASER_2"/>
-      <weapon name="WEAPONS_ANY_1"/>
-    </weaponList>
+    <sector id="0">
+      <weaponList missiles="0" system_power="3">
+        <weapon name="WEAPONS_SPAWNER_2"/>
+        <weapon name="WEAPONS_LASER_1"/>
+      </weaponList>
+    </sector>
+    <sector id="1">
+      <weaponList missiles="0" system_power="4">
+        <weapon name="WEAPONS_SPAWNER_2"/>
+        <weapon name="WEAPONS_LASER_2"/>
+      </weaponList>
+    </sector>
+    <sector id="2">
+      <weaponList missiles="0" system_power="4">
+        <weapon name="WEAPONS_SPAWNER_2"/>
+        <weapon name="WEAPONS_LASER_2"/>
+      </weaponList>
+    </sector>
+    <sector id="3">
+      <weaponList missiles="1" system_power="5">
+        <weapon name="WEAPONS_MISSILES_1"/>
+        <weapon name="WEAPONS_SPAWNER_2"/>
+        <weapon name="WEAPONS_LASER_2"/>
+        <weapon name="WEAPONS_ANY_1"/>
+      </weaponList>
+    </sector>
     <health amount="7"/>
     <crewCount amount="2" max="3" class="orchid"/>
     <boardingAI>sabotage</boardingAI>
     <cloakImage>orchid_scout</cloakImage>
-  </shipBlueprintSuper>
+  </shipBlueprintEnemy>
 </FTL>

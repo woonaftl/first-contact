@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FTL>
+  <animSheet name="nothuman" w="315" h="455" fw="35" fh="35">people/nothuman_base.png</animSheet>
+  <anim name="nothuman_clone">
+    <sheet>nothuman</sheet>
+    <desc length="6" x="0" y="2"/>
+    <time>0.75</time>
+  </anim>
+
+  <anim name="nothuman_death_right">
+    <sheet>nothuman</sheet>
+    <desc length="5" x="3" y="0"/>
+    <time>0.75</time>
+  </anim>
+
+  <anim name="nothuman_death_left">
+    <sheet>nothuman</sheet>
+    <desc length="5" x="0" y="2"/>
+    <time>0.75</time>
+  </anim>
+
+  <anim name="nothuman_walk_down">
+    <sheet>nothuman</sheet>
+    <desc length="4" x="0" y="12"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="nothuman_walk_right">
+    <sheet>nothuman</sheet>
+    <desc length="4" x="4" y="12"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="nothuman_walk_up">
+    <sheet>nothuman</sheet>
+    <desc length="4" x="0" y="11"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="nothuman_walk_left">
+    <sheet>nothuman</sheet>
+    <desc length="4" x="4" y="11"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="nothuman_shoot_down">
+    <sheet>nothuman</sheet>
+    <desc length="3" x="0" y="10"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="nothuman_shoot_right">
+    <sheet>nothuman</sheet>
+    <desc length="3" x="3" y="10"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="nothuman_shoot_up">
+    <sheet>nothuman</sheet>
+    <desc length="3" x="6" y="10"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="nothuman_shoot_left">
+    <sheet>nothuman</sheet>
+    <desc length="3" x="0" y="1"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="nothuman_fire_down">
+    <sheet>nothuman</sheet>
+    <desc length="4" x="0" y="9"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="nothuman_fire_right">
+    <sheet>nothuman</sheet>
+    <desc length="4" x="4" y="9"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="nothuman_fire_up">
+    <sheet>nothuman</sheet>
+    <desc length="4" x="0" y="8"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="nothuman_fire_left">
+    <sheet>nothuman</sheet>
+    <desc length="4" x="4" y="8"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="nothuman_repair">
+    <sheet>nothuman</sheet>
+    <desc length="9" x="0" y="7"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="nothuman_punch_up">
+    <sheet>nothuman</sheet>
+    <desc length="6" x="3" y="1"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="nothuman_punch_down">
+    <sheet>nothuman</sheet>
+    <desc length="6" x="0" y="6"/>
+    <time>1.0</time>
+  </anim>
+
+  <anim name="nothuman_teleport">
+    <sheet>nothuman</sheet>
+    <desc length="9" x="0" y="3"/>
+    <time>0.5</time>
+  </anim>
+
+  <anim name="nothuman_type_right">
+    <sheet>nothuman</sheet>
+    <desc length="4" x="0" y="5"/>
+    <time>0.75</time>
+  </anim>
+  <anim name="nothuman_type_left">
+    <sheet>nothuman</sheet>
+    <desc length="4" x="4" y="5"/>
+    <time>0.75</time>
+  </anim>
+  <anim name="nothuman_type_up">
+    <sheet>nothuman</sheet>
+    <desc length="4" x="0" y="4"/>
+    <time>0.75</time>
+  </anim>
+  <anim name="nothuman_type_down">
+    <sheet>nothuman</sheet>
+    <desc length="4" x="4" y="4"/>
+    <time>0.75</time>
+  </anim>
+
+  <anim name="nothuman_portrait">
+    <sheet>nothuman</sheet>
+    <desc length="1" x="0" y="0"/>
+    <time>1</time>
+  </anim>
+</FTL>
