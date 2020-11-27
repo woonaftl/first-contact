@@ -4,6 +4,7 @@
     <event load="LIZARD_MERCENARY"/>
   </eventList>
 
+<!--TODO zoltan humanitarian aid-->
   <event name="LIZARD_MERCENARY" unique="true">
     <text>After the whole Lizard society collapsed, many captains of military ships were forced to find new jobs as mercenaries.</text>
     <ship load="LIZARD_SHIP" hostile="false"/>

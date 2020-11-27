@@ -147,7 +147,6 @@
   </sectorDescription>
 
   <sectorDescription name="AQUARIAN_DIM_SECTOR" minSector="1" unique="true">
-    <!-- challenge sector, beacons are hidden on the star map -->
     <nameList>
       <name>Aquarian Dim Space</name>
     </nameList>
@@ -174,7 +173,6 @@
   </sectorDescription>
 
   <sectorDescription name="AQUARIAN_HOME_SECTOR" minSector="1" unique="true">
-    <!-- challenge sector, beacons are hidden on the star map -->
     <nameList>
       <name>Aquarian Secret Base</name>
     </nameList>
